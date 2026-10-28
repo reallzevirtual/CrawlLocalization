@@ -65,6 +65,13 @@ def collect(game):
                 ref = pointer(reader)
                 assert ref['m_FileID'] == 0
                 mesh = objects[ref['m_PathID']].read_typetree()
+                mesh_game = games[mesh['m_GameObject']['m_PathID']]
+                component_classes = []
+                for _, component in mesh_game['m_Component']:
+                    obj_component = objects[component['m_PathID']]
+                    if obj_component.type.name == 'MonoBehaviour':
+                        component_header = obj_component.read_typetree(check_read=False)
+                        component_classes.append(scripts[component_header['m_Script']['m_PathID']])
                 gid, names, scale = mesh['m_GameObject']['m_PathID'], [], 1.0
                 while gid:
                     names.append(games[gid]['m_Name'])
@@ -75,7 +82,7 @@ def collect(game):
                 font_ref = mesh['m_Font']
                 assert font_ref['m_FileID'] == 0
                 font = objects[font_ref['m_PathID']].read_typetree()['m_Name']
-                layouts.append(dict(kind=kind, source=f'sharedassets0.assets:{ref["m_PathID"]}', path='/'.join(reversed(names)), font=font, size=mesh['m_FontSize'], character_size=mesh['m_CharacterSize'], line_spacing=mesh['m_LineSpacing'], scale_x=scale, anchor=mesh['m_Anchor'], alignment=mesh['m_Alignment']))
+                layouts.append(dict(components=component_classes, kind=kind, source=f'sharedassets0.assets:{ref["m_PathID"]}', path='/'.join(reversed(names)), font=font, size=mesh['m_FontSize'], character_size=mesh['m_CharacterSize'], line_spacing=mesh['m_LineSpacing'], scale_x=scale, anchor=mesh['m_Anchor'], alignment=mesh['m_Alignment']))
         assert reader.Position == len(raw), f'{source}: serialized layout mismatch'
     return dict(entries=entries, layouts=layouts, environments=environments, legacy=legacy)
 
