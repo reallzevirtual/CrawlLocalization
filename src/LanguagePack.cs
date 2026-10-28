@@ -20,7 +20,7 @@ namespace CrawlLocalization
         internal string[] FallbackFonts = new string[0];
         internal readonly Dictionary<string, FontRule> Fonts = new Dictionary<string, FontRule>(StringComparer.Ordinal);
         private readonly Dictionary<string, string> exact = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
-        private readonly List<KeyValuePair<string, string>> numeric = new List<KeyValuePair<string, string>>();
+        private readonly List<NumericTranslation> numeric = new List<NumericTranslation>();
         internal readonly HashSet<string> TextMeshPaths = new HashSet<string>(StringComparer.Ordinal);
         internal int Count { get { return exact.Count + numeric.Count; } }
 
@@ -47,26 +47,29 @@ namespace CrawlLocalization
             LanguagePack pack = new LanguagePack { Id = NormalizeId(id) };
             if (pack.Id == "en") return pack;
             string directory = Path.Combine(Path.Combine(root, "Languages"), pack.Id);
-            ReadLines(Path.Combine(directory, "translations.tsv"), warn, delegate(string line)
+            foreach (string table in new string[] { "translations.tsv", "vault-translations.tsv" })
             {
-                string[] cells = line.Split('\t');
-                if ((cells.Length != 2 && cells.Length != 3) || cells[0].Length == 0 || cells[1].Length == 0) throw new FormatException("Expected source<TAB>translation[<TAB>comment].");
-                string source = NormalizeText(Unescape(cells[0])), target = Unescape(cells[1]);
-                int token = source.IndexOf("{0}", StringComparison.Ordinal);
-                if (token >= 0)
+                string path = Path.Combine(directory, table);
+                if (table != "translations.tsv" && !File.Exists(path)) continue;
+                ReadLines(path, warn, delegate(string line)
                 {
-                    if (source.IndexOf("{0}", token + 3, StringComparison.Ordinal) >= 0 || target.IndexOf("{0}", StringComparison.Ordinal) < 0)
-                        throw new FormatException("Numeric templates require one {0} in the source and a preserved {0} in the translation.");
-                    foreach (KeyValuePair<string, string> entry in pack.numeric)
-                        if (string.Equals(entry.Key, source, StringComparison.OrdinalIgnoreCase)) throw new FormatException("Duplicate source: " + source);
-                    pack.numeric.Add(new KeyValuePair<string, string>(source, target));
-                }
-                else
-                {
-                    if (pack.exact.ContainsKey(source)) throw new FormatException("Duplicate source: " + source);
-                    pack.exact.Add(source, target);
-                }
-            });
+                    string[] cells = line.Split('\t');
+                    if ((cells.Length != 2 && cells.Length != 3) || cells[0].Length == 0 || cells[1].Length == 0) throw new FormatException("Expected source<TAB>translation[<TAB>comment].");
+                    string source = NormalizeText(Unescape(cells[0])), target = Unescape(cells[1]);
+                    NumericTranslation template = NumericTranslation.Create(source, target);
+                    if (template != null)
+                    {
+                        foreach (NumericTranslation entry in pack.numeric)
+                            if (string.Equals(entry.Source, source, StringComparison.OrdinalIgnoreCase)) throw new FormatException("Duplicate source: " + source);
+                        pack.numeric.Add(template);
+                    }
+                    else
+                    {
+                        if (pack.exact.ContainsKey(source)) throw new FormatException("Duplicate source: " + source);
+                        pack.exact.Add(source, target);
+                    }
+                });
+            }
             ReadLines(Path.Combine(directory, "fonts.tsv"), warn, delegate(string line)
             {
                 string[] c = line.Split('\t');
@@ -113,18 +116,8 @@ namespace CrawlLocalization
             if (source == null) return false;
             source = NormalizeText(source);
             if (exact.TryGetValue(source, out translated)) return true;
-            foreach (KeyValuePair<string, string> entry in numeric)
-            {
-                int at = entry.Key.IndexOf("{0}", StringComparison.Ordinal);
-                string prefix = entry.Key.Substring(0, at), suffix = entry.Key.Substring(at + 3);
-                if (source.Length <= prefix.Length + suffix.Length || !source.StartsWith(prefix, StringComparison.OrdinalIgnoreCase) || !source.EndsWith(suffix, StringComparison.OrdinalIgnoreCase)) continue;
-                string value = source.Substring(prefix.Length, source.Length - prefix.Length - suffix.Length);
-                bool digits = true;
-                foreach (char ch in value) if (ch < '0' || ch > '9') { digits = false; break; }
-                if (!digits) continue;
-                translated = entry.Value.Replace("{0}", value);
-                return true;
-            }
+            foreach (NumericTranslation entry in numeric)
+                if (entry.TryTranslate(source, out translated)) return true;
             return false;
         }
 

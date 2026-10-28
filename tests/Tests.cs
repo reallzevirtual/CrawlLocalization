@@ -18,6 +18,50 @@ namespace CrawlLocalization
             string result;
             Check(pack.TryTranslate(source, out result) && result == expected, pack.Id + ": " + source);
         }
+        public static void CheckCatalog(string root, string[] sources)
+        {
+            List<string> warnings = new List<string>();
+            LanguagePack pack = LanguagePack.Load(root, "zh-Hans", warnings.Add);
+            Check(warnings.Count == 0, "Catalog pack has no warnings");
+            foreach (string source in sources)
+            {
+                string result;
+                Check(pack.TryTranslate(source, out result) && ChineseTextWrapper.ContainsChinese(result), "Catalog text translated: " + source);
+            }
+            Console.WriteLine("PASS: " + sources.Length + " asset-derived Vault display cases");
+        }
+
+        private static void CheckVault(LanguagePack pack)
+        {
+            Translation(pack, "3 / 61 entries found\r\r\n2 challenges passed\n\nDiscover more entries by inhabiting monsters in-game", "已发现 3 / 61 个条目\n\n已通过 2 项挑战\n\n在游戏中附身怪物，发现更多条目。");
+            Translation(pack, "Last attempt: LEVEL 0\r\nBest attempt: LEVEL 7", "上次挑战：0 级\n最佳成绩：7 级");
+            Translation(pack, "Last attempt: LEVEL 12\r\nBest attempt: LEVEL 100", "上次挑战：12 级\n最佳成绩：100 级");
+            Translation(pack, "01 Rusted Blade", "01 锈刃");
+            string value;
+            Check(!pack.TryTranslate("Alice Rusted Blade", out value), "Numbered entries cannot swallow player names");
+            NumericTranslation template = NumericTranslation.Create("{0}/{1}/{0}", "{1}：{0}");
+            Check(template.TryTranslate("007/20/007", out value) && value == "20：007", "Reordering and repeated numeric placeholders preserve zeros");
+            Check(!template.TryTranslate("7/20/8", out value), "Repeated placeholder must have the same value");
+            Check(!template.TryTranslate("-7/20/-7", out value), "Negative values are not accepted");
+            foreach (string target in new string[] { "{0}", "{0}/{1}/{2}" })
+            {
+                bool rejected = false;
+                try { NumericTranslation.Create("{0}/{1}", target); } catch (FormatException) { rejected = true; }
+                Check(rejected, "Reject dropped/added placeholders: " + target);
+            }
+            Func<char, float> advance = delegate(char ch) { return 1f; };
+            Check(ChineseTextWrapper.Wrap("中文测试句。", 3, advance) == "中文测\n试句。", "Chinese wraps without English spaces");
+            Check(ChineseTextWrapper.Wrap("甲乙丙，丁", 3, advance) == "甲乙\n丙，丁", "Closing punctuation stays with previous character");
+            Check(ChineseTextWrapper.Wrap("甲乙（丙）", 4, advance) == "甲乙\n（丙）", "Opening punctuation stays with following character");
+            Check(ChineseTextWrapper.Wrap("中LEVEL 123文", 5, advance) == "中\nLEVEL\n123文", "Latin words and numbers stay together");
+            Check(ChineseTextWrapper.Wrap("中文ABCDEFG", 3, advance) == "中文\nABC\nDEF\nG", "Oversized Latin tokens split to fit");
+            Check(ChineseTextWrapper.Wrap("中文\r\n\r\n段落", 3, advance) == "中文\n\n段落", "Explicit paragraphs survive wrapping");
+            Check(ChineseTextWrapper.Wrap("<color=red>中文</color>，测试", 3, advance) == "<color=red>中文</color>，\n测试", "Tags beside punctuation are preserved and have zero width");
+            Check(ChineseTextWrapper.Wrap("（\r\n中文", 3, advance) == "（\n中文", "Opening punctuation cannot consume a CRLF");
+            Check(ChineseTextWrapper.Wrap("中文\r\n，测试", 3, advance) == "中文\n，测试", "Closing punctuation cannot consume a CRLF");
+            Check(ChineseTextWrapper.Wrap("中文", 0, advance) == "中文", "Disabled wrapping preserves source");
+        }
+
         public static void Run(string root)
         {
             checks = 0;
@@ -25,13 +69,15 @@ namespace CrawlLocalization
             LanguagePack simplified = LanguagePack.Load(root, "zh-CN", warnings.Add);
             LanguagePack migrated = LanguagePack.Load(root, "zh-TW", warnings.Add);
             Check(warnings.Count == 0, "Shipped packs load without warnings: " + string.Join("; ", warnings.ToArray()));
-            foreach (string row in File.ReadAllLines(Path.Combine(root, "Languages/zh-Hans/translations.tsv")))
+            foreach (string table in Directory.GetFiles(Path.Combine(root, "Languages/zh-Hans"), "*translations.tsv"))
+            foreach (string row in File.ReadAllLines(table))
             {
                 if (row.Length == 0 || row.StartsWith("#")) continue;
                 string[] columns = row.Split('\t');
                 if (columns.Length != 3 || string.IsNullOrEmpty(columns[2])) throw new Exception("Shipped translation lacks its context comment: " + row);
             }
             Check(true, "Every shipped translation has a context comment");
+            CheckVault(simplified);
             Check(simplified.Id == "zh-Hans" && migrated.Id == "zh-Hans", "Language aliases");
             Translation(simplified, "START GAME", "开始游戏");
             Translation(migrated, "START GAME", "开始游戏");

@@ -67,3 +67,9 @@ MenuPause/MenuTips/Tips/MenuTipVitae/Text
 MenuPrompt/Text
 MenuPrompt/TextTitle
 MenuSignIn/Text
+MenuLibrary/TextCategorySummary
+MenuLibrary/ItemContents/TextDescription
+MenuLibrary/ItemContents/TextDescriptionMonster
+MenuLibrary/ItemContents/TextDescriptionMonsterPassed
+MenuLibrary/ItemContents/TextTitleAchievement
+MenuLibrary/ItemContents/TextDescriptionAchievement

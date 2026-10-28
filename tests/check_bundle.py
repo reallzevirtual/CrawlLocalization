@@ -43,7 +43,7 @@ for name, obj in sorted(fonts.items()):
 checks = 0
 for locale in ("zh-Hans",):
     chars = set()
-    for line in (root / "Languages" / locale / "translations.tsv").read_text(encoding="utf-8-sig").splitlines():
+    for line in (line for table in (root / "Languages" / locale).glob("*translations.tsv") for line in table.read_text(encoding="utf-8-sig").splitlines()):
         if line and not line.startswith("#"):
             chars.update(visible_text(line.split("\t")[1]))
     for line in (root / "Languages" / locale / "fonts.tsv").read_text(encoding="utf-8-sig").splitlines():

@@ -107,7 +107,7 @@ public static class BuildCrawlFonts
         HashSet<char> glyphs = new HashSet<char>();
         foreach (string language in new string[] { "zh-Hans" })
         {
-            string table = Path.Combine(root, "Languages/" + language + "/translations.tsv");
+            foreach (string table in Directory.GetFiles(Path.Combine(root, "Languages/" + language), "*translations.tsv"))
             foreach (string line in File.ReadAllLines(table, Encoding.UTF8))
             {
                 if (line.Length == 0 || line[0] == '#') continue;
@@ -121,7 +121,7 @@ public static class BuildCrawlFonts
                     return "\\";
                 });
                 visible = Regex.Replace(visible, @"</?(?:b|i|size|color|material)(?:=[^>]*)?>|<quad\s[^>]*>", "", RegexOptions.IgnoreCase);
-                foreach (char ch in visible.Replace("{0}", "0123456789"))
+                foreach (char ch in Regex.Replace(visible, @"\{[0-9]\}", "0123456789"))
                     if (!char.IsWhiteSpace(ch)) glyphs.Add(ch);
             }
         }

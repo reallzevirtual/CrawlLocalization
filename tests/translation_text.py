@@ -7,4 +7,4 @@ RICH_TAGS = re.compile(r'</?(?:b|i|size|color|material)(?:=[^>]*)?>|<quad\s[^>]*
 def visible_text(cell):
     escapes = {'n': '\n', 'r': '\r', 't': '\t', '\\': '\\'}
     text = re.sub(r'\\([nrt\\])', lambda match: escapes[match[1]], cell)
-    return RICH_TAGS.sub('', text.replace('{0}', '0123456789'))
+    return RICH_TAGS.sub('', re.sub(r'\{[0-9]\}', '0123456789', text))

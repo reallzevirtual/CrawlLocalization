@@ -28,3 +28,7 @@ __pycache__/
 # OS metadata
 Thumbs.db
 .DS_Store
+
+# Copies of runtime source used by the offline Unity layout check
+/FontBundleProject/Assets/Editor/ValidationGenerated/
+/FontBundleProject/Assets/Editor/ValidationGenerated.meta

@@ -7,7 +7,7 @@ root = Path(__file__).resolve().parents[1]
 failed = False
 for language in sorted((root / "Languages").iterdir()):
     characters = set()
-    for line in (language / "translations.tsv").read_text(encoding="utf-8-sig").splitlines():
+    for line in (line for table in language.glob("*translations.tsv") for line in table.read_text(encoding="utf-8-sig").splitlines()):
         if line and not line.startswith("#"):
             characters.update(visible_text(line.split("\t")[1]))
     for line in (language / "fonts.tsv").read_text(encoding="utf-8-sig").splitlines():

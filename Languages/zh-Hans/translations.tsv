@@ -17,7 +17,7 @@ MONSTERS	怪物	通用菜单／返回、确认与选择按钮；sharedassets2.as
 WEAPONS	武器	宝库／分类按钮
 ITEMS	道具	宝库／分类按钮
 OBJECTS	物件	宝库／分类按钮
-QUESTS	挑战	宝库／分类按钮
+QUESTS	成就	宝库／分类按钮
 RESUME	继续游戏	宝库／分类按钮
 GAMEPLAY TIPS	游戏提示	暂停菜单／操作按钮
 DROP IN	加入游戏	暂停菜单／操作按钮

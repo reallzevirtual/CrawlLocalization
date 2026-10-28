@@ -1,0 +1,596 @@
+# UTF-8: source<TAB>translation<TAB>comment. Vault catalog, achievements and numeric summaries.
+Rusted Blade	锈刃	宝库／武器 01 锈刃；sharedassets0.assets:64768/m_weapons[0]；名称
+An old rusted blade with a dull edge.	一把老旧的锈刃，刀锋早已钝化。	宝库／武器 01 锈刃；sharedassets0.assets:64768/m_weapons[0]；介绍
+{0} Rusted Blade	{0} 锈刃	宝库／武器 01 锈刃；sharedassets0.assets:64768/m_weapons[0]；带编号列表（匹配游戏截断后的原文）
+Shiv	尖刀	宝库／武器 02 尖刀；sharedassets0.assets:64768/m_weapons[1]；名称
+A quick and nasty stabbing blade.	出手迅速、狠辣的刺杀短刃。	宝库／武器 02 尖刀；sharedassets0.assets:64768/m_weapons[1]；介绍
+{0} Shiv	{0} 尖刀	宝库／武器 02 尖刀；sharedassets0.assets:64768/m_weapons[1]；带编号列表（匹配游戏截断后的原文）
+Dagger	匕首	宝库／武器 03 匕首；sharedassets0.assets:64768/m_weapons[2]；名称
+For those who favour speed and accuracy over range and power.	适合偏爱速度与精准，而非距离与力量的人。	宝库／武器 03 匕首；sharedassets0.assets:64768/m_weapons[2]；介绍
+{0} Dagger	{0} 匕首	宝库／武器 03 匕首；sharedassets0.assets:64768/m_weapons[2]；带编号列表（匹配游戏截断后的原文）
+Cutthroat	割喉刀	宝库／武器 04 割喉刀；sharedassets0.assets:64768/m_weapons[3]；名称
+The weapon of choice for the quick fingered thief.	手脚敏捷的盗贼最钟爱的武器。	宝库／武器 04 割喉刀；sharedassets0.assets:64768/m_weapons[3]；介绍
+{0} Cutthroat	{0} 割喉刀	宝库／武器 04 割喉刀；sharedassets0.assets:64768/m_weapons[3]；带编号列表（匹配游戏截断后的原文）
+Magic Dagger	魔法匕首	宝库／武器 05 魔法匕首；sharedassets0.assets:64768/m_weapons[4]；名称
+A light dagger imbued with powerful magic.	一把灌注了强大魔力的轻巧匕首。	宝库／武器 05 魔法匕首；sharedassets0.assets:64768/m_weapons[4]；介绍
+{0} Magic Dagger	{0} 魔法匕首	宝库／武器 05 魔法匕首；sharedassets0.assets:64768/m_weapons[4]；带编号列表（匹配游戏截断后的原文）
+Club	木棒	宝库／武器 06 木棒；sharedassets0.assets:64768/m_weapons[5]；名称
+A heavy club. Unwieldy, but effective.	沉重的木棒。笨拙，却很有效。	宝库／武器 06 木棒；sharedassets0.assets:64768/m_weapons[5]；介绍
+{0} Club	{0} 木棒	宝库／武器 06 木棒；sharedassets0.assets:64768/m_weapons[5]；带编号列表（匹配游戏截断后的原文）
+Magic Club	魔法木棒	宝库／武器 07 魔法木棒；sharedassets0.assets:64768/m_weapons[6]；名称
+A heavy club imbued with powerful magic.	一根灌注了强大魔力的沉重木棒。	宝库／武器 07 魔法木棒；sharedassets0.assets:64768/m_weapons[6]；介绍
+{0} Magic Club	{0} 魔法木棒	宝库／武器 07 魔法木棒；sharedassets0.assets:64768/m_weapons[6]；带编号列表（匹配游戏截断后的原文）
+Battle Axe	战斧	宝库／武器 08 战斧；sharedassets0.assets:64768/m_weapons[7]；名称
+A rough tool of steel and wood, these axes strike with great power, though heavy and slow to swing in battle.	由钢铁与木材制成的粗犷兵器。威力巨大，但分量沉重，挥动缓慢。	宝库／武器 08 战斧；sharedassets0.assets:64768/m_weapons[7]；介绍
+{0} Battle Axe	{0} 战斧	宝库／武器 08 战斧；sharedassets0.assets:64768/m_weapons[7]；带编号列表（匹配游戏截断后的原文）
+Shortsword	短剑	宝库／武器 09 短剑；sharedassets0.assets:64768/m_weapons[8]；名称
+A short bladed sword with well balanced strength, speed and range.	剑刃较短，力量、速度与攻击距离均衡。	宝库／武器 09 短剑；sharedassets0.assets:64768/m_weapons[8]；介绍
+{0} Shortsword	{0} 短剑	宝库／武器 09 短剑；sharedassets0.assets:64768/m_weapons[8]；带编号列表（匹配游戏截断后的原文）
+Katana	武士刀	宝库／武器 10 武士刀；sharedassets0.assets:64768/m_weapons[9]；名称
+A thin blade that whistles through the air.	薄刃破空，发出呼啸声。	宝库／武器 10 武士刀；sharedassets0.assets:64768/m_weapons[9]；介绍
+{0} Katana	{0} 武士刀	宝库／武器 10 武士刀；sharedassets0.assets:64768/m_weapons[9]；带编号列表（匹配游戏截断后的原文）
+Broadsword	阔剑	宝库／武器 11 阔剑；sharedassets0.assets:64768/m_weapons[10]；名称
+A downward strike with this heavy blade has devastating force.	这把重剑的下劈拥有毁灭性的力量。	宝库／武器 11 阔剑；sharedassets0.assets:64768/m_weapons[10]；介绍
+{0} Broadsword	{0} 阔剑	宝库／武器 11 阔剑；sharedassets0.assets:64768/m_weapons[10]；带编号列表（匹配游戏截断后的原文）
+Bloodletter	放血者	宝库／武器 12 放血者；sharedassets0.assets:64768/m_weapons[11]；名称
+The needlefine blade will leave a million fine cuts on your enemies.	针一般细薄的剑刃，会在敌人身上留下无数伤口。	宝库／武器 12 放血者；sharedassets0.assets:64768/m_weapons[11]；介绍
+{0} Bloodletter	{0} 放血者	宝库／武器 12 放血者；sharedassets0.assets:64768/m_weapons[11]；带编号列表（匹配游戏截断后的原文）
+Warcleaver	斩马刀	宝库／武器 13 斩马刀；sharedassets0.assets:64768/m_weapons[12]；名称
+A carefully timed slash can cut a charging horse in two.	把握时机的一斩，足以将冲锋的战马劈成两半。	宝库／武器 13 斩马刀；sharedassets0.assets:64768/m_weapons[12]；介绍
+{0} Warcleaver	{0} 斩马刀	宝库／武器 13 斩马刀；sharedassets0.assets:64768/m_weapons[12]；带编号列表（匹配游戏截断后的原文）
+Heroblade	英雄之刃	宝库／武器 14 英雄之刃；sharedassets0.assets:64768/m_weapons[13]；名称
+Modeled on the blade carried by Banethel, hero of the marshes. Famed for leaping into the midst of battle, scattering foes in all directions.	仿照沼泽英雄班瑟尔的佩剑打造。他以跃入战阵、击散四方敌人而闻名。	宝库／武器 14 英雄之刃；sharedassets0.assets:64768/m_weapons[13]；介绍
+{0} Heroblade	{0} 英雄之刃	宝库／武器 14 英雄之刃；sharedassets0.assets:64768/m_weapons[13]；带编号列表（匹配游戏截断后的原文）
+Khopesh	镰形剑	宝库／武器 15 镰形剑；sharedassets0.assets:64768/m_weapons[14]；名称
+"Then the fanatic was upon us, shrieking and spinning that anchient curved blade like a whirlwind, naked but for the entheogenic warpaint".	「那狂信徒扑向我们，尖叫着将古老的弯刃舞成旋风。他赤身裸体，唯有致幻的战纹覆在身上。」	宝库／武器 15 镰形剑；sharedassets0.assets:64768/m_weapons[14]；介绍
+{0} Khopesh	{0} 镰形剑	宝库／武器 15 镰形剑；sharedassets0.assets:64768/m_weapons[14]；带编号列表（匹配游戏截断后的原文）
+Darkblade	暗黑之刃	宝库／武器 16 暗黑之刃；sharedassets0.assets:64768/m_weapons[15]；名称
+"The ground shook as if in pain as Ernos thrust his heavy blade downward".	「厄诺斯将沉重的剑刃猛刺入地，大地震颤，仿佛也感到了疼痛。」	宝库／武器 16 暗黑之刃；sharedassets0.assets:64768/m_weapons[15]；介绍
+{0} Darkblade	{0} 暗黑之刃	宝库／武器 16 暗黑之刃；sharedassets0.assets:64768/m_weapons[15]；带编号列表（匹配游戏截断后的原文）
+Magic Sword	魔法剑	宝库／武器 17 魔法剑；sharedassets0.assets:64768/m_weapons[16]；名称
+A blade imbued with powerful magic.	一把灌注了强大魔力的剑。	宝库／武器 17 魔法剑；sharedassets0.assets:64768/m_weapons[16]；介绍
+{0} Magic Sword	{0} 魔法剑	宝库／武器 17 魔法剑；sharedassets0.assets:64768/m_weapons[16]；带编号列表（匹配游戏截断后的原文）
+Estoc	破甲剑	宝库／武器 18 破甲剑；sharedassets0.assets:64768/m_weapons[17]；名称
+Although dull edged, a thrust of this huge sword can puncture the heaviest armor.	虽无锋利的刃口，这柄巨剑的一刺却能穿透最厚重的铠甲。	宝库／武器 18 破甲剑；sharedassets0.assets:64768/m_weapons[17]；介绍
+{0} Estoc	{0} 破甲剑	宝库／武器 18 破甲剑；sharedassets0.assets:64768/m_weapons[17]；带编号列表（匹配游戏截断后的原文）
+Longsword	长剑	宝库／武器 19 长剑；sharedassets0.assets:64768/m_weapons[18]；名称
+A heavy two handed sword with a long reach.	沉重的双手剑，攻击距离很长。	宝库／武器 19 长剑；sharedassets0.assets:64768/m_weapons[18]；介绍
+{0} Longsword	{0} 长剑	宝库／武器 19 长剑；sharedassets0.assets:64768/m_weapons[18]；带编号列表（匹配游戏截断后的原文）
+Greatsword	巨剑	宝库／武器 20 巨剑；sharedassets0.assets:64768/m_weapons[19]；名称
+An upward thrust of the heavy greatsword will cleave your enemies in two.	沉重巨剑的上挑，能将敌人一分为二。	宝库／武器 20 巨剑；sharedassets0.assets:64768/m_weapons[19]；介绍
+{0} Greatsword	{0} 巨剑	宝库／武器 20 巨剑；sharedassets0.assets:64768/m_weapons[19]；带编号列表（匹配游戏截断后的原文）
+Claymore	双手大剑	宝库／武器 21 双手大剑；sharedassets0.assets:64768/m_weapons[20]；名称
+This collosal blade strikes downward like thunder.	这柄庞大的剑刃如雷霆般劈落。	宝库／武器 21 双手大剑；sharedassets0.assets:64768/m_weapons[20]；介绍
+{0} Claymore	{0} 双手大剑	宝库／武器 21 双手大剑；sharedassets0.assets:64768/m_weapons[20]；带编号列表（匹配游戏截断后的原文）
+Scimitar	弯刀	宝库／武器 22 弯刀；sharedassets0.assets:64768/m_weapons[21]；名称
+This heavy curved blade could cut a spinning arc through the toughest of enemies.	沉重的弯刃旋斩成弧，连最强悍的敌人也难以抵挡。	宝库／武器 22 弯刀；sharedassets0.assets:64768/m_weapons[21]；介绍
+{0} Scimitar	{0} 弯刀	宝库／武器 22 弯刀；sharedassets0.assets:64768/m_weapons[21]；带编号列表（匹配游戏截断后的原文）
+Magic Longsword	魔法长剑	宝库／武器 23 魔法长剑；sharedassets0.assets:64768/m_weapons[22]；名称
+A heavy blade imbued with powerful magic.	一把灌注了强大魔力的重剑。	宝库／武器 23 魔法长剑；sharedassets0.assets:64768/m_weapons[22]；介绍
+{0} Magic Longsword	{0} 魔法长剑	宝库／武器 23 魔法长剑；sharedassets0.assets:64768/m_weapons[22]；带编号列表（匹配游戏截断后的原文）
+Spear	长矛	宝库／武器 24 长矛；sharedassets0.assets:64768/m_weapons[23]；名称
+Their long range is favoured by hunters and warriors alike.	凭借出色的攻击距离，深受猎人与战士喜爱。	宝库／武器 24 长矛；sharedassets0.assets:64768/m_weapons[23]；介绍
+{0} Spear	{0} 长矛	宝库／武器 24 长矛；sharedassets0.assets:64768/m_weapons[23]；带编号列表（匹配游戏截断后的原文）
+Javelin	标枪	宝库／武器 25 标枪；sharedassets0.assets:64768/m_weapons[24]；名称
+A spear light enough for throwing.	轻巧得足以投掷的长矛。	宝库／武器 25 标枪；sharedassets0.assets:64768/m_weapons[24]；介绍
+{0} Javelin	{0} 标枪	宝库／武器 25 标枪；sharedassets0.assets:64768/m_weapons[24]；带编号列表（匹配游戏截断后的原文）
+Halberd	长戟	宝库／武器 26 长戟；sharedassets0.assets:64768/m_weapons[25]；名称
+A long spear with a slashing blade.	带有劈砍刀刃的长柄武器。	宝库／武器 26 长戟；sharedassets0.assets:64768/m_weapons[25]；介绍
+{0} Halberd	{0} 长戟	宝库／武器 26 长戟；sharedassets0.assets:64768/m_weapons[25]；带编号列表（匹配游戏截断后的原文）
+Partisan	战矛	宝库／武器 27 战矛；sharedassets0.assets:64768/m_weapons[26]；名称
+A battle spear capable of slashing and being thrown.	既能劈砍，也能投掷的战斗长矛。	宝库／武器 27 战矛；sharedassets0.assets:64768/m_weapons[26]；介绍
+{0} Partisan	{0} 战矛	宝库／武器 27 战矛；sharedassets0.assets:64768/m_weapons[26]；带编号列表（匹配游戏截断后的原文）
+Magic Spear	魔法长矛	宝库／武器 28 魔法长矛；sharedassets0.assets:64768/m_weapons[27]；名称
+A spear imbued with powerful magic.	一柄灌注了强大魔力的长矛。	宝库／武器 28 魔法长矛；sharedassets0.assets:64768/m_weapons[27]；介绍
+{0} Magic Spear	{0} 魔法长矛	宝库／武器 28 魔法长矛；sharedassets0.assets:64768/m_weapons[27]；带编号列表（匹配游戏截断后的原文）
+Throwing Knives	飞刀	宝库／武器 29 飞刀；sharedassets0.assets:64768/m_weapons[28]；名称
+Good up close and at range. For the cutpurse that likes to keep their distance.	远近皆宜，适合喜欢与目标保持距离的扒手。	宝库／武器 29 飞刀；sharedassets0.assets:64768/m_weapons[28]；介绍
+{0} Throwing Knives	{0} 飞刀	宝库／武器 29 飞刀；sharedassets0.assets:64768/m_weapons[28]；带编号列表（匹配游戏截断后的原文）
+Kunai	苦无	宝库／武器 30 苦无；sharedassets0.assets:64768/m_weapons[29]；名称
+Dual throwable knives, favoured by the assassin's of Atur.	一对可投掷的短刃，深受阿图尔刺客喜爱。	宝库／武器 30 苦无；sharedassets0.assets:64768/m_weapons[29]；介绍
+{0} Kunai	{0} 苦无	宝库／武器 30 苦无；sharedassets0.assets:64768/m_weapons[29]；带编号列表（匹配游戏截断后的原文）
+Katar	拳刃	宝库／武器 31 拳刃；sharedassets0.assets:64768/m_weapons[30]；名称
+Dual Hand blades for melee slashing.	一对用于近身劈砍的手持短刃。	宝库／武器 31 拳刃；sharedassets0.assets:64768/m_weapons[30]；介绍
+{0} Katar	{0} 拳刃	宝库／武器 31 拳刃；sharedassets0.assets:64768/m_weapons[30]；带编号列表（匹配游戏截断后的原文）
+Hooked Blades	钩刃	宝库／武器 32 钩刃；sharedassets0.assets:64768/m_weapons[31]；名称
+When thrown downwards these daggers are heavy enough to shake the ground.	向下掷出时，这些沉重的匕首足以震动地面。	宝库／武器 32 钩刃；sharedassets0.assets:64768/m_weapons[31]；介绍
+{0} Hooked Blades	{0} 钩刃	宝库／武器 32 钩刃；sharedassets0.assets:64768/m_weapons[31]；带编号列表（匹配游戏截断后的原文）
+Magic Hand Knives	魔法飞刀	宝库／武器 33 魔法飞刀；sharedassets0.assets:64768/m_weapons[32]；名称
+Throwing knives imbued with powerful magic.	灌注了强大魔力的飞刀。	宝库／武器 33 魔法飞刀；sharedassets0.assets:64768/m_weapons[32]；介绍
+{0} Magic Hand Knives	{0} 魔法飞刀	宝库／武器 33 魔法飞刀；sharedassets0.assets:64768/m_weapons[32]；带编号列表（匹配游戏截断后的原文）
+Sling	投石索	宝库／武器 34 投石索；sharedassets0.assets:64768/m_weapons[33]；名称
+A makeshift ranged weapon.	一件简易的远程武器。	宝库／武器 34 投石索；sharedassets0.assets:64768/m_weapons[33]；介绍
+{0} Sling	{0} 投石索	宝库／武器 34 投石索；sharedassets0.assets:64768/m_weapons[33]；带编号列表（匹配游戏截断后的原文）
+Magic Sling	魔法投石索	宝库／武器 35 魔法投石索；sharedassets0.assets:64768/m_weapons[34]；名称
+An enchanted ranged weapon.	一件附魔的远程武器。	宝库／武器 35 魔法投石索；sharedassets0.assets:64768/m_weapons[34]；介绍
+{0} Magic Sling	{0} 魔法投石索	宝库／武器 35 魔法投石索；sharedassets0.assets:64768/m_weapons[34]；带编号列表（匹配游戏截断后的原文）
+Bow	弓	宝库／武器 36 弓；sharedassets0.assets:64768/m_weapons[35]；名称
+A flexible bow of yew and catgut. Fires arrows at moderate speed.	由紫杉木与肠弦制成的柔韧长弓，以适中的速度射出箭矢。	宝库／武器 36 弓；sharedassets0.assets:64768/m_weapons[35]；介绍
+{0} Bow	{0} 弓	宝库／武器 36 弓；sharedassets0.assets:64768/m_weapons[35]；带编号列表（匹配游戏截断后的原文）
+Magic Bow	魔法弓	宝库／武器 37 魔法弓；sharedassets0.assets:64768/m_weapons[36]；名称
+A bow etched with magic runes.	一张刻有魔法符文的弓。	宝库／武器 37 魔法弓；sharedassets0.assets:64768/m_weapons[36]；介绍
+{0} Magic Bow	{0} 魔法弓	宝库／武器 37 魔法弓；sharedassets0.assets:64768/m_weapons[36]；带编号列表（匹配游戏截断后的原文）
+Crossbow	弩	宝库／武器 38 弩；sharedassets0.assets:64768/m_weapons[37]；名称
+Fires a powerful bolt, but takes time to reload.	射出的弩矢威力强大，但重新装填需要时间。	宝库／武器 38 弩；sharedassets0.assets:64768/m_weapons[37]；介绍
+{0} Crossbow	{0} 弩	宝库／武器 38 弩；sharedassets0.assets:64768/m_weapons[37]；带编号列表（匹配游戏截断后的原文）
+Repeater	连弩	宝库／武器 39 连弩；sharedassets0.assets:64768/m_weapons[38]；名称
+Capable of firing three light bolts in quick succession.	能迅速连续射出三支轻型弩矢。	宝库／武器 39 连弩；sharedassets0.assets:64768/m_weapons[38]；介绍
+{0} Repeater	{0} 连弩	宝库／武器 39 连弩；sharedassets0.assets:64768/m_weapons[38]；带编号列表（匹配游戏截断后的原文）
+Magic Staff	魔法杖	宝库／武器 40 魔法杖；sharedassets0.assets:64768/m_weapons[39]；名称
+A staff imbued with powerful magic.	一根灌注了强大魔力的法杖。	宝库／武器 40 魔法杖；sharedassets0.assets:64768/m_weapons[39]；介绍
+{0} Magic Staff	{0} 魔法杖	宝库／武器 40 魔法杖；sharedassets0.assets:64768/m_weapons[39]；带编号列表（匹配游戏截断后的原文）
+Dodge Roll	闪避翻滚	宝库／道具 01 闪避翻滚；sharedassets0.assets:64768/m_items[0]；名称
+Roll out of danger, dodge enemy attacks	翻滚脱离险境，躲避敌人的攻击。	宝库／道具 01 闪避翻滚；sharedassets0.assets:64768/m_items[0]；介绍
+{0} Dodge Roll	{0} 闪避翻滚	宝库／道具 01 闪避翻滚；sharedassets0.assets:64768/m_items[0]；带编号列表（匹配游戏截断后的原文）
+Advanced Roll	进阶翻滚	宝库／道具 02 进阶翻滚；sharedassets0.assets:64768/m_items[1]；名称
+Roll further and more often with this advanced technique	精进的技巧让你翻滚得更远，使用得更频繁。	宝库／道具 02 进阶翻滚；sharedassets0.assets:64768/m_items[1]；介绍
+{0} Advanced Roll	{0} 进阶翻滚	宝库／道具 02 进阶翻滚；sharedassets0.assets:64768/m_items[1]；带编号列表（匹配游戏截断后的原文）
+Hyperdash	极速冲刺	宝库／道具 03 极速冲刺；sharedassets0.assets:64768/m_items[2]；名称
+Dash forwards at super speed	以惊人的速度向前冲刺。	宝库／道具 03 极速冲刺；sharedassets0.assets:64768/m_items[2]；介绍
+{0} Hyperdash	{0} 极速冲刺	宝库／道具 03 极速冲刺；sharedassets0.assets:64768/m_items[2]；带编号列表（匹配游戏截断后的原文）
+Berserker	狂战士	宝库／道具 04 狂战士；sharedassets0.assets:64768/m_items[3]；名称
+Trigger a wild frenzy: Deal double damage and move faster, but take extra damage until the frenzy is over	陷入狂暴：伤害翻倍，移动加快，但在狂暴结束前也会承受更多伤害。	宝库／道具 04 狂战士；sharedassets0.assets:64768/m_items[3]；介绍
+{0} Berserker	{0} 狂战士	宝库／道具 04 狂战士；sharedassets0.assets:64768/m_items[3]；带编号列表（匹配游戏截断后的原文）
+Raging Bull	狂牛	宝库／道具 05 狂牛；sharedassets0.assets:64768/m_items[4]；名称
+Summon the spirit of the beast and charge your foes	召唤野兽之灵，向敌人发起冲锋。	宝库／道具 05 狂牛；sharedassets0.assets:64768/m_items[4]；介绍
+{0} Raging Bull	{0} 狂牛	宝库／道具 05 狂牛；sharedassets0.assets:64768/m_items[4]；带编号列表（匹配游戏截断后的原文）
+Cyclone Summon	旋风召唤	宝库／道具 06 旋风召唤；sharedassets0.assets:64768/m_items[5]；名称
+Throw cyclones that damage your enemies	掷出旋风，对敌人造成伤害。	宝库／道具 06 旋风召唤；sharedassets0.assets:64768/m_items[5]；介绍
+{0} Cyclone Summon	{0} 旋风召唤	宝库／道具 06 旋风召唤；sharedassets0.assets:64768/m_items[5]；带编号列表（匹配游戏截断后的原文）
+Fetid Discharge	腐臭喷涌	宝库／道具 07 腐臭喷涌；sharedassets0.assets:64768/m_items[6]；名称
+Emit a dangerous putrid sludge	喷出危险而恶臭的污泥。	宝库／道具 07 腐臭喷涌；sharedassets0.assets:64768/m_items[6]；介绍
+{0} Fetid Discharge	{0} 腐臭喷涌	宝库／道具 07 腐臭喷涌；sharedassets0.assets:64768/m_items[6]；带编号列表（匹配游戏截断后的原文）
+Floating Beam	浮游光束	宝库／道具 08 浮游光束；sharedassets0.assets:64768/m_items[7]；名称
+Cast an energy beam from a floating rune	从悬浮的符文中射出能量光束。	宝库／道具 08 浮游光束；sharedassets0.assets:64768/m_items[7]；介绍
+{0} Floating Beam	{0} 浮游光束	宝库／道具 08 浮游光束；sharedassets0.assets:64768/m_items[7]；带编号列表（匹配游戏截断后的原文）
+Spirit Bow	灵能弓	宝库／道具 09 灵能弓；sharedassets0.assets:64768/m_items[8]；名称
+Conjure a bow of pure energy	以纯粹的能量凝聚出一张弓。	宝库／道具 09 灵能弓；sharedassets0.assets:64768/m_items[8]；介绍
+{0} Spirit Bow	{0} 灵能弓	宝库／道具 09 灵能弓；sharedassets0.assets:64768/m_items[8]；带编号列表（匹配游戏截断后的原文）
+Tribal Shield	部族之盾	宝库／道具 10 部族之盾；sharedassets0.assets:64768/m_items[9]；名称
+Summon a shield in front of you	在身前召唤一面盾牌。	宝库／道具 10 部族之盾；sharedassets0.assets:64768/m_items[9]；介绍
+{0} Tribal Shield	{0} 部族之盾	宝库／道具 10 部族之盾；sharedassets0.assets:64768/m_items[9]；带编号列表（匹配游戏截断后的原文）
+Spider Venom	蜘蛛毒液	宝库／道具 11 蜘蛛毒液；sharedassets0.assets:64768/m_items[10]；名称
+Attack is the best defense for the fragile beasts that hide in the shadows.\n	对潜藏于阴影中的脆弱生灵而言，进攻就是最好的防守。	宝库／道具 11 蜘蛛毒液；sharedassets0.assets:64768/m_items[10]；介绍
+{0} Spider Venom	{0} 蜘蛛毒液	宝库／道具 11 蜘蛛毒液；sharedassets0.assets:64768/m_items[10]；带编号列表（匹配游戏截断后的原文）
+Ogre Sweat	食人魔汗液	宝库／道具 12 食人魔汗液；sharedassets0.assets:64768/m_items[11]；名称
+When a single blow can crush your enemy, you can afford to take your time.\n	只需一击便能碾碎敌人时，你自然可以慢慢来。	宝库／道具 12 食人魔汗液；sharedassets0.assets:64768/m_items[11]；介绍
+{0} Ogre Sweat	{0} 食人魔汗液	宝库／道具 12 食人魔汗液；sharedassets0.assets:64768/m_items[11]；带编号列表（匹配游戏截断后的原文）
+Undead Ichor	亡灵脓血	宝库／道具 13 亡灵脓血；sharedassets0.assets:64768/m_items[12]；名称
+Spongy flesh may tear away, but it's your bones that keep you standing.\n\n	松软的皮肉或许会被撕裂，但支撑你站立的是骨骼。	宝库／道具 13 亡灵脓血；sharedassets0.assets:64768/m_items[12]；介绍
+{0} Undead Ichor	{0} 亡灵脓血	宝库／道具 13 亡灵脓血；sharedassets0.assets:64768/m_items[12]；带编号列表（匹配游戏截断后的原文）
+Golem Tears	魔像之泪	宝库／道具 14 魔像之泪；sharedassets0.assets:64768/m_items[13]；名称
+To those of stone, mortal lifetimes pass like leaves on the wind.\n	对石头之躯而言，凡人的一生不过如风中落叶。	宝库／道具 14 魔像之泪；sharedassets0.assets:64768/m_items[13]；介绍
+{0} Golem Tears	{0} 魔像之泪	宝库／道具 14 魔像之泪；sharedassets0.assets:64768/m_items[13]；带编号列表（匹配游戏截断后的原文）
+Gnome Brew	侏儒佳酿	宝库／道具 15 侏儒佳酿；sharedassets0.assets:64768/m_items[14]；名称
+Strike quick, strike light, then strike again.\n	出手要快，落手要轻，然后再来一击。	宝库／道具 15 侏儒佳酿；sharedassets0.assets:64768/m_items[14]；介绍
+{0} Gnome Brew	{0} 侏儒佳酿	宝库／道具 15 侏儒佳酿；sharedassets0.assets:64768/m_items[14]；带编号列表（匹配游戏截断后的原文）
+Rodent Blood	鼠血	宝库／道具 16 鼠血；sharedassets0.assets:64768/m_items[15]；名称
+They'll want to kill you, but first they'll have to catch you.\n	他们想杀你，但得先追上你。	宝库／道具 16 鼠血；sharedassets0.assets:64768/m_items[15]；介绍
+{0} Rodent Blood	{0} 鼠血	宝库／道具 16 鼠血；sharedassets0.assets:64768/m_items[15]；带编号列表（匹配游戏截断后的原文）
+Follower Cyclone	随行旋风	宝库／道具 17 随行旋风；sharedassets0.assets:64768/m_items[16]；名称
+A whirlwind of air-magic floats around and damages enemies it touches	一团风之魔法在周围盘旋，对触碰到的敌人造成伤害。	宝库／道具 17 随行旋风；sharedassets0.assets:64768/m_items[16]；介绍
+{0} Follower Cyclone	{0} 随行旋风	宝库／道具 17 随行旋风；sharedassets0.assets:64768/m_items[16]；带编号列表（匹配游戏截断后的原文）
+Haunted Axe	附魂之斧	宝库／道具 18 附魂之斧；sharedassets0.assets:64768/m_items[17]；名称
+An axe that comes alive when you use magic. Use movement to fling it at beasts.	使用魔法时会活过来的斧头。利用移动将它甩向怪物。	宝库／道具 18 附魂之斧；sharedassets0.assets:64768/m_items[17]；介绍
+{0} Haunted Axe	{0} 附魂之斧	宝库／道具 18 附魂之斧；sharedassets0.assets:64768/m_items[17]；带编号列表（匹配游戏截断后的原文）
+Book of The Sun	太阳之书	宝库／道具 19 太阳之书；sharedassets0.assets:64768/m_items[18]；名称；宝库／物件 38 太阳之书；sharedassets0.assets:64768/m_props[37]；名称
+The holy text of the Sun Ray cult. A holy book that follows you and periodically fires a spell	日光教派的圣典。它会跟随你，并定期发射法术。	宝库／道具 19 太阳之书；sharedassets0.assets:64768/m_items[18]；介绍
+{0} Book of The Sun	{0} 太阳之书	宝库／道具 19 太阳之书；sharedassets0.assets:64768/m_items[18]；带编号列表（匹配游戏截断后的原文）；宝库／物件 38 太阳之书；sharedassets0.assets:64768/m_props[37]；带编号列表（匹配游戏截断后的原文）
+Book of Flame	火焰之书	宝库／道具 20 火焰之书；sharedassets0.assets:64768/m_items[19]；名称；宝库／物件 39 火焰之书；sharedassets0.assets:64768/m_props[38]；名称
+A dusty volume that follows you and periodically fires a spell. The Flame monks abide by its words	满是尘埃的典籍，会跟随你并定期发射法术。火焰僧侣奉其文字为戒律。	宝库／道具 20 火焰之书；sharedassets0.assets:64768/m_items[19]；介绍
+{0} Book of Flame	{0} 火焰之书	宝库／道具 20 火焰之书；sharedassets0.assets:64768/m_items[19]；带编号列表（匹配游戏截断后的原文）；宝库／物件 39 火焰之书；sharedassets0.assets:64768/m_props[38]；带编号列表（匹配游戏截断后的原文）
+Book of Tears	泪水之书	宝库／道具 21 泪水之书；sharedassets0.assets:64768/m_items[20]；名称；宝库／物件 40 泪水之书；sharedassets0.assets:64768/m_props[39]；名称
+A living tome that follows you and periodically fires a spell. The pages are soaked with tears	浸透泪水的活体魔典，会跟随你并定期发射法术。	宝库／道具 21 泪水之书；sharedassets0.assets:64768/m_items[20]；介绍
+{0} Book of Tears	{0} 泪水之书	宝库／道具 21 泪水之书；sharedassets0.assets:64768/m_items[20]；带编号列表（匹配游戏截断后的原文）；宝库／物件 40 泪水之书；sharedassets0.assets:64768/m_props[39]；带编号列表（匹配游戏截断后的原文）
+Coward's Shield	懦夫之盾	宝库／道具 22 懦夫之盾；sharedassets0.assets:64768/m_items[21]；名称
+A protective shield which floats directly behind you	一面始终悬浮在你正后方的护盾。	宝库／道具 22 懦夫之盾；sharedassets0.assets:64768/m_items[21]；介绍
+{0} Coward's Shield	{0} 懦夫之盾	宝库／道具 22 懦夫之盾；sharedassets0.assets:64768/m_items[21]；带编号列表（匹配游戏截断后的原文）
+Bleeding Cross	流血十字架	宝库／道具 23 流血十字架；sharedassets0.assets:64768/m_items[22]；名称
+Stand on pentagrams to heal your wounds	站在五芒星法阵上，便能治愈伤口。	宝库／道具 23 流血十字架；sharedassets0.assets:64768/m_items[22]；介绍
+{0} Bleeding Cross	{0} 流血十字架	宝库／道具 23 流血十字架；sharedassets0.assets:64768/m_items[22]；带编号列表（匹配游戏截断后的原文）
+Vampiric Ring	吸血戒指	宝库／道具 24 吸血戒指；sharedassets0.assets:64768/m_items[23]；名称
+Drink the life from your enemies and heal yourself every time you draw blood, however the curse reduces your health	每次令敌人流血，都能汲取其生命来治疗自己；但诅咒会降低你的生命值。	宝库／道具 24 吸血戒指；sharedassets0.assets:64768/m_items[23]；介绍
+{0} Vampiric Ring	{0} 吸血戒指	宝库／道具 24 吸血戒指；sharedassets0.assets:64768/m_items[23]；带编号列表（匹配游戏截断后的原文）
+Vampire Fang	吸血鬼尖牙	宝库／道具 25 吸血鬼尖牙；sharedassets0.assets:64768/m_items[24]；名称
+The hollow tooth still thirsts. It heals you whenever you draw monster blood, but only while bleeding yourself	空心的尖牙依然饥渴难耐。自身流血时，每次令怪物流血都能治疗你。	宝库／道具 25 吸血鬼尖牙；sharedassets0.assets:64768/m_items[24]；介绍
+{0} Vampire Fang	{0} 吸血鬼尖牙	宝库／道具 25 吸血鬼尖牙；sharedassets0.assets:64768/m_items[24]；带编号列表（匹配游戏截断后的原文）
+Feather of The Squinting Shrimp	眯眼虾之羽	宝库／道具 26 眯眼虾之羽；sharedassets0.assets:64768/m_items[25]；名称
+When you are bleeding, you run like the wind	流血时，你会跑得像风一样快。	宝库／道具 26 眯眼虾之羽；sharedassets0.assets:64768/m_items[25]；介绍
+{0} Feather of The Squi...	{0} 眯眼虾之羽	宝库／道具 26 眯眼虾之羽；sharedassets0.assets:64768/m_items[25]；带编号列表（匹配游戏截断后的原文）
+Near Death Necklace	濒死项链	宝库／道具 27 濒死项链；sharedassets0.assets:64768/m_items[26]；名称
+The bone charm activates when you are bleeding near death, and doubles the damage of your blows	当你濒死且流血时，骨制护符会被激活，使你的攻击伤害翻倍。	宝库／道具 27 濒死项链；sharedassets0.assets:64768/m_items[26]；介绍
+{0} Near Death Necklace	{0} 濒死项链	宝库／道具 27 濒死项链；sharedassets0.assets:64768/m_items[26]；带编号列表（匹配游戏截断后的原文）
+Red Soul Gem	赤魂宝石	宝库／道具 28 赤魂宝石；sharedassets0.assets:64768/m_items[27]；名称
+When you are bleeding near death, the gem comes alive to hasten your attacks	当你濒死且流血时，宝石会苏醒，加快你的攻击。	宝库／道具 28 赤魂宝石；sharedassets0.assets:64768/m_items[27]；介绍
+{0} Red Soul Gem	{0} 赤魂宝石	宝库／道具 28 赤魂宝石；sharedassets0.assets:64768/m_items[27]；带编号列表（匹配游戏截断后的原文）
+Ghoul Eye	食尸鬼之眼	宝库／道具 29 食尸鬼之眼；sharedassets0.assets:64768/m_items[28]；名称
+When you're bleeding, the eye activates to reduce the damage you take	流血时，这只眼睛会被激活，减少你承受的伤害。	宝库／道具 29 食尸鬼之眼；sharedassets0.assets:64768/m_items[28]；介绍
+{0} Ghoul Eye	{0} 食尸鬼之眼	宝库／道具 29 食尸鬼之眼；sharedassets0.assets:64768/m_items[28]；带编号列表（匹配游戏截断后的原文）
+Murphy's Belt	墨菲腰带	宝库／道具 30 墨菲腰带；sharedassets0.assets:64768/m_items[29]；名称
+This mythical item grants you double XP and a significant store discount, but only while you are bleeding	这件传说中的物品能让你获得双倍经验和大幅商店折扣，但仅在流血时生效。	宝库／道具 30 墨菲腰带；sharedassets0.assets:64768/m_items[29]；介绍
+{0} Murphy's Belt	{0} 墨菲腰带	宝库／道具 30 墨菲腰带；sharedassets0.assets:64768/m_items[29]；带编号列表（匹配游戏截断后的原文）
+Bleeder Shield	血护之盾	宝库／道具 31 血护之盾；sharedassets0.assets:64768/m_items[30]；名称
+A protective shield which circles you when you are bleeding	流血时，一面护盾会在你周围环绕。	宝库／道具 31 血护之盾；sharedassets0.assets:64768/m_items[30]；介绍
+{0} Bleeder Shield	{0} 血护之盾	宝库／道具 31 血护之盾；sharedassets0.assets:64768/m_items[30]；带编号列表（匹配游戏截断后的原文）
+Haemophilia	血友病	宝库／道具 32 血友病；sharedassets0.assets:64768/m_items[31]；名称
+It takes less damage to get you bleeding	受到更少的伤害便会开始流血。	宝库／道具 32 血友病；sharedassets0.assets:64768/m_items[31]；介绍
+{0} Haemophilia	{0} 血友病	宝库／道具 32 血友病；sharedassets0.assets:64768/m_items[31]；带编号列表（匹配游戏截断后的原文）
+Anticoagulant	抗凝剂	宝库／道具 33 抗凝剂；sharedassets0.assets:64768/m_items[32]；名称
+Bleed for a short time after every hit you take	每次受击后，都会短暂流血。	宝库／道具 33 抗凝剂；sharedassets0.assets:64768/m_items[32]；介绍
+{0} Anticoagulant	{0} 抗凝剂	宝库／道具 33 抗凝剂；sharedassets0.assets:64768/m_items[32]；带编号列表（匹配游戏截断后的原文）
+A Human Heart	人类心脏	宝库／道具 34 人类心脏；sharedassets0.assets:64768/m_items[33]；名称
+Consume a human heart to permanently increase your health by 1	吃下一颗人类心脏，永久增加 1 点生命值。	宝库／道具 34 人类心脏；sharedassets0.assets:64768/m_items[33]；介绍
+{0} A Human Heart	{0} 人类心脏	宝库／道具 34 人类心脏；sharedassets0.assets:64768/m_items[33]；带编号列表（匹配游戏截断后的原文）
+A Monster Heart	怪物心脏	宝库／道具 35 怪物心脏；sharedassets0.assets:64768/m_items[34]；名称
+Devour this heart and your monsters all get 1 extra health	吞食这颗心脏，使你的所有怪物增加 1 点生命值。	宝库／道具 35 怪物心脏；sharedassets0.assets:64768/m_items[34]；介绍
+{0} A Monster Heart	{0} 怪物心脏	宝库／道具 35 怪物心脏；sharedassets0.assets:64768/m_items[34]；带编号列表（匹配游戏截断后的原文）
+Monster Toe	怪物脚趾	宝库／道具 36 怪物脚趾；sharedassets0.assets:64768/m_items[35]；名称
+Swallow this toe to increase the speed of all your monsters	吞下这根脚趾，提高你所有怪物的速度。	宝库／道具 36 怪物脚趾；sharedassets0.assets:64768/m_items[35]；介绍
+{0} Monster Toe	{0} 怪物脚趾	宝库／道具 36 怪物脚趾；sharedassets0.assets:64768/m_items[35]；带编号列表（匹配游戏截断后的原文）
+Monster Hand	怪物之手	宝库／道具 37 怪物之手；sharedassets0.assets:64768/m_items[36]；名称
+Clutch this hand and your monsters' special attacks all recharge faster	紧握这只手，使你所有怪物的特殊攻击恢复得更快。	宝库／道具 37 怪物之手；sharedassets0.assets:64768/m_items[36]；介绍
+{0} Monster Hand	{0} 怪物之手	宝库／道具 37 怪物之手；sharedassets0.assets:64768/m_items[36]；带编号列表（匹配游戏截断后的原文）
+Monster Fang	怪物尖牙	宝库／道具 38 怪物尖牙；sharedassets0.assets:64768/m_items[37]；名称
+Stab your palm with the point of this tooth, and all your monsters gain strength	用牙尖刺入掌心，使你所有的怪物获得更强的力量。	宝库／道具 38 怪物尖牙；sharedassets0.assets:64768/m_items[37]；介绍
+{0} Monster Fang	{0} 怪物尖牙	宝库／道具 38 怪物尖牙；sharedassets0.assets:64768/m_items[37]；带编号列表（匹配游戏截断后的原文）
+Medal of Bravery	勇气勋章	宝库／道具 39 勇气勋章；sharedassets0.assets:64768/m_items[38]；名称
+Taken from a fallen solider. Comes to life and boosts your strength when on a kill streak of 5 or more	从阵亡士兵身上取得。连杀达到 5 次或以上时，它会苏醒，增强你的力量。	宝库／道具 39 勇气勋章；sharedassets0.assets:64768/m_items[38]；介绍
+{0} Medal of Bravery	{0} 勇气勋章	宝库／道具 39 勇气勋章；sharedassets0.assets:64768/m_items[38]；带编号列表（匹配游戏截断后的原文）
+Medal of Service	功勋勋章	宝库／道具 40 功勋勋章；sharedassets0.assets:64768/m_items[39]；名称
+Found on a dead courier. On a kill streak of 5 or more, it awakens and boosts your speed	从死去的信使身上找到。连杀达到 5 次或以上时，它会苏醒，提高你的速度。	宝库／道具 40 功勋勋章；sharedassets0.assets:64768/m_items[39]；介绍
+{0} Medal of Service	{0} 功勋勋章	宝库／道具 40 功勋勋章；sharedassets0.assets:64768/m_items[39]；带编号列表（匹配游戏截断后的原文）
+Medal of Honour	荣誉勋章	宝库／道具 41 荣誉勋章；sharedassets0.assets:64768/m_items[40]；名称
+Stolen from an old magician. On a kill streak of 5 or more, your spells recharge faster	从年迈法师身上偷来。连杀达到 5 次或以上时，你的法术恢复得更快。	宝库／道具 41 荣誉勋章；sharedassets0.assets:64768/m_items[40]；介绍
+{0} Medal of Honour	{0} 荣誉勋章	宝库／道具 41 荣誉勋章；sharedassets0.assets:64768/m_items[40]；带编号列表（匹配游戏截断后的原文）
+Medal of Experience	历练勋章	宝库／道具 42 历练勋章；sharedassets0.assets:64768/m_items[41]；名称
+Stripped from a disgraced general. Kills earn you more XP when on a kill streak of 5 or more	从蒙羞的将军身上剥下。连杀达到 5 次或以上时，击杀会获得更多经验。	宝库／道具 42 历练勋章；sharedassets0.assets:64768/m_items[41]；介绍
+{0} Medal of Experience	{0} 历练勋章	宝库／道具 42 历练勋章；sharedassets0.assets:64768/m_items[41]；带编号列表（匹配游戏截断后的原文）
+Enlightened Scripture	启迪经文	宝库／道具 43 启迪经文；sharedassets0.assets:64768/m_items[42]；名称
+The doctrine speaks of increasing your magic efficiency, allowing your spells to recharge faster	经文传授提高魔法效率的方法，使你的法术恢复得更快。	宝库／道具 43 启迪经文；sharedassets0.assets:64768/m_items[42]；介绍
+{0} Enlightened Scripture	{0} 启迪经文	宝库／道具 43 启迪经文；sharedassets0.assets:64768/m_items[42]；带编号列表（匹配游戏截断后的原文）
+Heathen Scripture	异教经文	宝库／道具 44 异教经文；sharedassets0.assets:64768/m_items[43]；名称
+The forbidden writing explains a method of imbuing your spells with more damage	禁忌的文字记载了增强法术伤害的方法。	宝库／道具 44 异教经文；sharedassets0.assets:64768/m_items[43]；介绍
+{0} Heathen Scripture	{0} 异教经文	宝库／道具 44 异教经文；sharedassets0.assets:64768/m_items[43]；带编号列表（匹配游戏截断后的原文）
+Ruby Signet	红宝石印戒	宝库／道具 45 红宝石印戒；sharedassets0.assets:64768/m_items[44]；名称
+The ruby comes alive when you are on fire to heal your wounds	燃烧时，红宝石会苏醒，治愈你的伤口。	宝库／道具 45 红宝石印戒；sharedassets0.assets:64768/m_items[44]；介绍
+{0} Ruby Signet	{0} 红宝石印戒	宝库／道具 45 红宝石印戒；sharedassets0.assets:64768/m_items[44]；带编号列表（匹配游戏截断后的原文）
+Sapphire Signet	蓝宝石印戒	宝库／道具 46 蓝宝石印戒；sharedassets0.assets:64768/m_items[45]；名称
+The sapphire comes alive when you are frozen to heal your wounds	冻结时，蓝宝石会苏醒，治愈你的伤口。	宝库／道具 46 蓝宝石印戒；sharedassets0.assets:64768/m_items[45]；介绍
+{0} Sapphire Signet	{0} 蓝宝石印戒	宝库／道具 46 蓝宝石印戒；sharedassets0.assets:64768/m_items[45]；带编号列表（匹配游戏截断后的原文）
+Emerald Signet	绿宝石印戒	宝库／道具 47 绿宝石印戒；sharedassets0.assets:64768/m_items[46]；名称
+The emerald comes alive when you are poisoned to heal your wounds	中毒时，绿宝石会苏醒，治愈你的伤口。	宝库／道具 47 绿宝石印戒；sharedassets0.assets:64768/m_items[46]；介绍
+{0} Emerald Signet	{0} 绿宝石印戒	宝库／道具 47 绿宝石印戒；sharedassets0.assets:64768/m_items[46]；带编号列表（匹配游戏截断后的原文）
+Bloodstrike Amulet	血击护符	宝库／道具 48 血击护符；sharedassets0.assets:64768/m_items[47]；名称
+Attack when standing in a pool of blood to summon a deadly strike from above!	站在血泊中攻击，召来从天而降的致命一击！	宝库／道具 48 血击护符；sharedassets0.assets:64768/m_items[47]；介绍
+{0} Bloodstrike Amulet	{0} 血击护符	宝库／道具 48 血击护符；sharedassets0.assets:64768/m_items[47]；带编号列表（匹配游戏截断后的原文）
+Sword Link Amulet	连剑护符	宝库／道具 49 连剑护符；sharedassets0.assets:64768/m_items[48]；名称
+While standing in blood, fire magic swords when you attack.	站在血泊中攻击时，会射出魔法飞剑。	宝库／道具 49 连剑护符；sharedassets0.assets:64768/m_items[48]；介绍
+{0} Sword Link Amulet	{0} 连剑护符	宝库／道具 49 连剑护符；sharedassets0.assets:64768/m_items[48]；带编号列表（匹配游戏截断后的原文）
+Ring of The Acid Curse	酸蚀诅咒之戒	宝库／道具 50 酸蚀诅咒之戒；sharedassets0.assets:64768/m_items[49]；名称
+Upon taking damage you drop pools of acid which may damage your enemies	受到伤害时，会留下可能伤害敌人的酸液池。	宝库／道具 50 酸蚀诅咒之戒；sharedassets0.assets:64768/m_items[49]；介绍
+{0} Ring of The Acid Curse	{0} 酸蚀诅咒之戒	宝库／道具 50 酸蚀诅咒之戒；sharedassets0.assets:64768/m_items[49]；带编号列表（匹配游戏截断后的原文）
+Cadaver Burst	尸爆	宝库／道具 51 尸爆；sharedassets0.assets:64768/m_items[50]；名称
+Vile magic infects your monsters. When killed their corpses will swell, then violently explode	邪恶魔法侵染了你的怪物。它们死后，尸体会膨胀并猛烈爆炸。	宝库／道具 51 尸爆；sharedassets0.assets:64768/m_items[50]；介绍
+{0} Cadaver Burst	{0} 尸爆	宝库／道具 51 尸爆；sharedassets0.assets:64768/m_items[50]；带编号列表（匹配游戏截断后的原文）
+Lucky Claw	幸运之爪	宝库／道具 52 幸运之爪；sharedassets0.assets:64768/m_items[51]；名称
+The devil's luck in this vile object lets its owner wheedle a 20% store discount	这件邪物蕴含魔鬼的好运，使持有者获得商店八折优惠。	宝库／道具 52 幸运之爪；sharedassets0.assets:64768/m_items[51]；介绍
+{0} Lucky Claw	{0} 幸运之爪	宝库／道具 52 幸运之爪；sharedassets0.assets:64768/m_items[51]；带编号列表（匹配游戏截断后的原文）
+Thorn of Wrath	怒气之刺	宝库／道具 53 怒气之刺；sharedassets0.assets:64768/m_items[52]；名称
+The thorn works its way into your flesh, and you gain 15% more wrath when enemy heroes level up	尖刺钻入血肉。敌方英雄升级时，你获得的怒气增加 15％。	宝库／道具 53 怒气之刺；sharedassets0.assets:64768/m_items[52]；介绍
+{0} Thorn of Wrath	{0} 怒气之刺	宝库／道具 53 怒气之刺；sharedassets0.assets:64768/m_items[52]；带编号列表（匹配游戏截断后的原文）
+Toad Necklace	蟾蜍项链	宝库／道具 54 蟾蜍项链；sharedassets0.assets:64768/m_items[53]；名称
+Purchased from an old hag by a greedy merchant.  Cuts store prices to 35%, but intermittently transforms you into a toad	贪婪的商人从老巫婆处买来。商店售价降至原价的 35％，但你会不时变成蟾蜍。	宝库／道具 54 蟾蜍项链；sharedassets0.assets:64768/m_items[53]；介绍
+{0} Toad Necklace	{0} 蟾蜍项链	宝库／道具 54 蟾蜍项链；sharedassets0.assets:64768/m_items[53]；带编号列表（匹配游戏截断后的原文）
+Dwarven Cog	矮人齿轮	宝库／道具 55 矮人齿轮；sharedassets0.assets:64768/m_items[54]；名称
+Increase the damage you deal with traps	提高你操控陷阱造成的伤害。	宝库／道具 55 矮人齿轮；sharedassets0.assets:64768/m_items[54]；介绍
+{0} Dwarven Cog	{0} 矮人齿轮	宝库／道具 55 矮人齿轮；sharedassets0.assets:64768/m_items[54]；带编号列表（匹配游戏截断后的原文）
+Magic Ectoplasm	魔法灵质	宝库／道具 56 魔法灵质；sharedassets0.assets:64768/m_items[55]；名称
+This mysterious ghostly substance increases the ectoplasmic storage capacity of a spirit	神秘的幽灵物质，能增加灵体储存灵质的上限。	宝库／道具 56 魔法灵质；sharedassets0.assets:64768/m_items[55]；介绍
+{0} Magic Ectoplasm	{0} 魔法灵质	宝库／道具 56 魔法灵质；sharedassets0.assets:64768/m_items[55]；带编号列表（匹配游戏截断后的原文）
+Ectothermic Slime	冷血黏液	宝库／道具 57 冷血黏液；sharedassets0.assets:64768/m_items[56]；名称
+This strange ghostly slime imbues your spirit with power, increasing the effectiveness of each ectoplasm collected	奇异的幽灵黏液赋予灵体力量，使每份收集到的灵质更加有效。	宝库／道具 57 冷血黏液；sharedassets0.assets:64768/m_items[56]；介绍
+{0} Ectothermic Slime	{0} 冷血黏液	宝库／道具 57 冷血黏液；sharedassets0.assets:64768/m_items[56]；带编号列表（匹配游戏截断后的原文）
+Hymn of Betrayal	背叛圣歌	宝库／道具 58 背叛圣歌；sharedassets0.assets:64768/m_items[57]；名称
+Chant this horrid tune to rob the leading hero of a random artifact	吟唱这首可怕的曲调，随机夺走领先英雄的一件宝物。	宝库／道具 58 背叛圣歌；sharedassets0.assets:64768/m_items[57]；介绍
+{0} Hymn of Betrayal	{0} 背叛圣歌	宝库／道具 58 背叛圣歌；sharedassets0.assets:64768/m_items[57]；带编号列表（匹配游戏截断后的原文）
+Hymn of Jealousy	嫉妒圣歌	宝库／道具 59 嫉妒圣歌；sharedassets0.assets:64768/m_items[58]；名称
+Sing these eerie tones to steal gold from the leading hero	唱出这些诡异的音调，偷走领先英雄的金币。	宝库／道具 59 嫉妒圣歌；sharedassets0.assets:64768/m_items[58]；介绍
+{0} Hymn of Jealousy	{0} 嫉妒圣歌	宝库／道具 59 嫉妒圣歌；sharedassets0.assets:64768/m_items[58]；带编号列表（匹配游戏截断后的原文）
+Hymn of Envy	妒羡圣歌	宝库／道具 60 妒羡圣歌；sharedassets0.assets:64768/m_items[59]；名称
+Shout this harsh melody to swap weapons with the leading hero	高喊这段刺耳的旋律，与领先英雄交换武器。	宝库／道具 60 妒羡圣歌；sharedassets0.assets:64768/m_items[59]；介绍
+{0} Hymn of Envy	{0} 妒羡圣歌	宝库／道具 60 妒羡圣歌；sharedassets0.assets:64768/m_items[59]；带编号列表（匹配游戏截断后的原文）
+Hymn of Trickery	诡计圣歌	宝库／道具 61 诡计圣歌；sharedassets0.assets:64768/m_items[60]；名称
+Hum this atonal strain to switch all gear with another hero at random	哼唱这段无调性的乐句，随机与另一位英雄交换全部装备。	宝库／道具 61 诡计圣歌；sharedassets0.assets:64768/m_items[60]；介绍
+{0} Hymn of Trickery	{0} 诡计圣歌	宝库／道具 61 诡计圣歌；sharedassets0.assets:64768/m_items[60]；带编号列表（匹配游戏截断后的原文）
+Pentagram	五芒星法阵	宝库／物件 01 五芒星法阵；sharedassets0.assets:64768/m_props[0]；名称
+From ancient runes etched into rotten stone, the dead can bring forth monsters	腐朽石面上刻着古老符文，亡者能借此唤出怪物。	宝库／物件 01 五芒星法阵；sharedassets0.assets:64768/m_props[0]；介绍
+{0} Pentagram	{0} 五芒星法阵	宝库／物件 01 五芒星法阵；sharedassets0.assets:64768/m_props[0]；带编号列表（匹配游戏截断后的原文）
+Haunted Furniture	闹鬼家具	宝库／物件 02 闹鬼家具；sharedassets0.assets:64768/m_props[1]；名称
+Decaying chairs, crates and detritus litter the dungeon. When animated by angry spirits they may be hurled at the living	腐烂的椅子、木箱和杂物散落地牢。愤怒的幽灵赋予它们生命，将其掷向活人。	宝库／物件 02 闹鬼家具；sharedassets0.assets:64768/m_props[1]；介绍
+{0} Haunted Furniture	{0} 闹鬼家具	宝库／物件 02 闹鬼家具；sharedassets0.assets:64768/m_props[1]；带编号列表（匹配游戏截断后的原文）
+Possessed Minecart	附魂矿车	宝库／物件 03 附魂矿车；sharedassets0.assets:64768/m_props[2]；名称
+Watch for rotting carts as you delve the mines.  Their weight may splinter bone should something set them rolling	深入矿井时，留心那些腐朽的矿车。若有什么让它们滚动起来，其重量足以碾碎骨头。	宝库／物件 03 附魂矿车；sharedassets0.assets:64768/m_props[2]；介绍
+{0} Possessed Minecart	{0} 附魂矿车	宝库／物件 03 附魂矿车；sharedassets0.assets:64768/m_props[2]；带编号列表（匹配游戏截断后的原文）
+Spike Block Trap	尖刺石块陷阱	宝库／物件 04 尖刺石块陷阱；sharedassets0.assets:64768/m_props[3]；名称
+Sharp blades flick out as the stone slab slides across the floor	石板滑过地面时，锋利的刀刃会猛然弹出。	宝库／物件 04 尖刺石块陷阱；sharedassets0.assets:64768/m_props[3]；介绍
+{0} Spike Block Trap	{0} 尖刺石块陷阱	宝库／物件 04 尖刺石块陷阱；sharedassets0.assets:64768/m_props[3]；带编号列表（匹配游戏截断后的原文）
+Greater Spike Block	巨型尖刺石块	宝库／物件 05 巨型尖刺石块；sharedassets0.assets:64768/m_props[4]；名称
+A larger blade trap, its vicious strikes are slower, but all the more deadly	更大的刀刃陷阱。攻击虽慢，却更加致命。	宝库／物件 05 巨型尖刺石块；sharedassets0.assets:64768/m_props[4]；介绍
+{0} Greater Spike Block	{0} 巨型尖刺石块	宝库／物件 05 巨型尖刺石块；sharedassets0.assets:64768/m_props[4]；带编号列表（匹配游戏截断后的原文）
+Homing Spike Block	追踪尖刺石块	宝库／物件 06 追踪尖刺石块；sharedassets0.assets:64768/m_props[5]；名称
+This spiked slab grinds across the floor, drawn towards living flesh	这块布满尖刺的石板摩擦着地面，循着活人的血肉而来。	宝库／物件 06 追踪尖刺石块；sharedassets0.assets:64768/m_props[5]；介绍
+{0} Homing Spike Block	{0} 追踪尖刺石块	宝库／物件 06 追踪尖刺石块；sharedassets0.assets:64768/m_props[5]；带编号列表（匹配游戏截断后的原文）
+Crossbow Trap	弩箭陷阱	宝库／物件 07 弩箭陷阱；sharedassets0.assets:64768/m_props[6]；名称
+A mounted crossbow, cocked and ready. Watch you don't stray into its line of fire	一架已上弦、蓄势待发的固定弩。小心别走进它的射界。	宝库／物件 07 弩箭陷阱；sharedassets0.assets:64768/m_props[6]；介绍
+{0} Crossbow Trap	{0} 弩箭陷阱	宝库／物件 07 弩箭陷阱；sharedassets0.assets:64768/m_props[6]；带编号列表（匹配游戏截断后的原文）
+Flame Trap	火焰陷阱	宝库／物件 08 火焰陷阱；sharedassets0.assets:64768/m_props[7]；名称
+Spews searing flame in four directions	向四个方向喷出灼热的火焰。	宝库／物件 08 火焰陷阱；sharedassets0.assets:64768/m_props[7]；介绍
+{0} Flame Trap	{0} 火焰陷阱	宝库／物件 08 火焰陷阱；sharedassets0.assets:64768/m_props[7]；带编号列表（匹配游戏截断后的原文）
+Spear Trap	长矛陷阱	宝库／物件 09 长矛陷阱；sharedassets0.assets:64768/m_props[8]；名称
+A mechanism hidden below thrusts spears upward through the sodden ground	藏在地下的机关将长矛从湿软的地面猛然刺出。	宝库／物件 09 长矛陷阱；sharedassets0.assets:64768/m_props[8]；介绍
+{0} Spear Trap	{0} 长矛陷阱	宝库／物件 09 长矛陷阱；sharedassets0.assets:64768/m_props[8]；带编号列表（匹配游戏截断后的原文）
+Greater Spear Trap	巨型长矛陷阱	宝库／物件 10 巨型长矛陷阱；sharedassets0.assets:64768/m_props[9]；名称
+A larger, more advanced mechanism pushes giant cruel spikes through the floor	更庞大、更精巧的机关，将巨大的凶狠尖刺推向地面之上。	宝库／物件 10 巨型长矛陷阱；sharedassets0.assets:64768/m_props[9]；介绍
+{0} Greater Spear Trap	{0} 巨型长矛陷阱	宝库／物件 10 巨型长矛陷阱；sharedassets0.assets:64768/m_props[9]；带编号列表（匹配游戏截断后的原文）
+Orb Trap	能量球陷阱	宝库／物件 11 能量球陷阱；sharedassets0.assets:64768/m_props[10]；名称
+Fires balls of pure energy that amble across the room	发射纯粹的能量球，缓缓穿过房间。	宝库／物件 11 能量球陷阱；sharedassets0.assets:64768/m_props[10]；介绍
+{0} Orb Trap	{0} 能量球陷阱	宝库／物件 11 能量球陷阱；sharedassets0.assets:64768/m_props[10]；带编号列表（匹配游戏截断后的原文）
+Rapidfire Orb Trap	连射能量球陷阱	宝库／物件 12 连射能量球陷阱；sharedassets0.assets:64768/m_props[11]；名称
+Energy is stored then let off in a mighty barrage of orbs	积蓄能量，再释放猛烈的能量球弹幕。	宝库／物件 12 连射能量球陷阱；sharedassets0.assets:64768/m_props[11]；介绍
+{0} Rapidfire Orb Trap	{0} 连射能量球陷阱	宝库／物件 12 连射能量球陷阱；sharedassets0.assets:64768/m_props[11]；带编号列表（匹配游戏截断后的原文）
+Bouncy Orb Trap	弹跳能量球陷阱	宝库／物件 13 弹跳能量球陷阱；sharedassets0.assets:64768/m_props[12]；名称
+A highly charged orb fires across the room at great speed, careening off flesh and stone	高度充能的球体高速飞过房间，在血肉与岩石之间弹跳。	宝库／物件 13 弹跳能量球陷阱；sharedassets0.assets:64768/m_props[12]；介绍
+{0} Bouncy Orb Trap	{0} 弹跳能量球陷阱	宝库／物件 13 弹跳能量球陷阱；sharedassets0.assets:64768/m_props[12]；带编号列表（匹配游戏截断后的原文）
+Beam Trap	光束陷阱	宝库／物件 14 光束陷阱；sharedassets0.assets:64768/m_props[13]；名称
+A blinding beam of light is cast out from atop the pedestal	从基座顶端射出耀眼的光束。	宝库／物件 14 光束陷阱；sharedassets0.assets:64768/m_props[13]；介绍
+{0} Beam Trap	{0} 光束陷阱	宝库／物件 14 光束陷阱；sharedassets0.assets:64768/m_props[13]；带编号列表（匹配游戏截断后的原文）
+Double Beam Trap	双向光束陷阱	宝库／物件 15 双向光束陷阱；sharedassets0.assets:64768/m_props[14]；名称
+A beam is fired in two directions, bisecting the battle with its violent searing light	向两个方向发射光束，以猛烈的灼光将战场一分为二。	宝库／物件 15 双向光束陷阱；sharedassets0.assets:64768/m_props[14]；介绍
+{0} Double Beam Trap	{0} 双向光束陷阱	宝库／物件 15 双向光束陷阱；sharedassets0.assets:64768/m_props[14]；带编号列表（匹配游戏截断后的原文）
+Saw Trap	锯刃陷阱	宝库／物件 16 锯刃陷阱；sharedassets0.assets:64768/m_props[15]；名称
+Abandoned tools used in construction of this foul place may suddenly spring to life, to cut and rend once more	建造这片邪地时遗弃的工具，可能突然活过来，再次切割、撕裂。	宝库／物件 16 锯刃陷阱；sharedassets0.assets:64768/m_props[15]；介绍
+{0} Saw Trap	{0} 锯刃陷阱	宝库／物件 16 锯刃陷阱；sharedassets0.assets:64768/m_props[15]；带编号列表（匹配游戏截断后的原文）
+Floor Spike Trap	地刺陷阱	宝库／物件 17 地刺陷阱；sharedassets0.assets:64768/m_props[16]；名称
+Tread lightly, for savage iron spikes lie in wait for the ill footed traveller	脚步放轻。凶狠的铁刺正等待着落脚不慎的旅人。	宝库／物件 17 地刺陷阱；sharedassets0.assets:64768/m_props[16]；介绍
+{0} Floor Spike Trap	{0} 地刺陷阱	宝库／物件 17 地刺陷阱；sharedassets0.assets:64768/m_props[16]；带编号列表（匹配游戏截断后的原文）
+Razordisk Trap	圆刃陷阱	宝库／物件 18 圆刃陷阱；sharedassets0.assets:64768/m_props[17]；名称
+Vicious spinning blades are ejected in a limited arc, careening off walls and sinking deep into flesh	在有限角度内射出凶狠的旋转刀刃，撞墙弹开，深深切入血肉。	宝库／物件 18 圆刃陷阱；sharedassets0.assets:64768/m_props[17]；介绍
+{0} Razordisk Trap	{0} 圆刃陷阱	宝库／物件 18 圆刃陷阱；sharedassets0.assets:64768/m_props[17]；带编号列表（匹配游戏截断后的原文）
+Dart Trap	飞镖陷阱	宝库／物件 19 飞镖陷阱；sharedassets0.assets:64768/m_props[18]；名称
+Fires a cruel dart at any intruder that dares to cross in front	向胆敢从前方经过的入侵者射出凶狠的飞镖。	宝库／物件 19 飞镖陷阱；sharedassets0.assets:64768/m_props[18]；介绍
+{0} Dart Trap	{0} 飞镖陷阱	宝库／物件 19 飞镖陷阱；sharedassets0.assets:64768/m_props[18]；带编号列表（匹配游戏截断后的原文）
+Dart Spout Trap	双向飞镖陷阱	宝库／物件 20 双向飞镖陷阱；sharedassets0.assets:64768/m_props[19]；名称
+Fires a fast and deadly dart in front or behind	向前方或后方射出迅疾致命的飞镖。	宝库／物件 20 双向飞镖陷阱；sharedassets0.assets:64768/m_props[19]；介绍
+{0} Dart Spout Trap	{0} 双向飞镖陷阱	宝库／物件 20 双向飞镖陷阱；sharedassets0.assets:64768/m_props[19]；带编号列表（匹配游戏截断后的原文）
+Dart Array Trap	飞镖阵列陷阱	宝库／物件 21 飞镖阵列陷阱；sharedassets0.assets:64768/m_props[20]；名称
+Spits a sequence of darts from an array hidden in the decaying walls	腐朽墙壁中隐藏着一排机关，会接连吐出飞镖。	宝库／物件 21 飞镖阵列陷阱；sharedassets0.assets:64768/m_props[20]；介绍
+{0} Dart Array Trap	{0} 飞镖阵列陷阱	宝库／物件 21 飞镖阵列陷阱；sharedassets0.assets:64768/m_props[20]；带编号列表（匹配游戏截断后的原文）
+Spike Train Trap	连环地刺陷阱	宝库／物件 22 连环地刺陷阱；sharedassets0.assets:64768/m_props[21]；名称
+Triggers a course of spikes that pierces the sod, and the flesh of any who stand upon it	触发一连串尖刺，刺穿泥土和站在上面的血肉之躯。	宝库／物件 22 连环地刺陷阱；sharedassets0.assets:64768/m_props[21]；介绍
+{0} Spike Train Trap	{0} 连环地刺陷阱	宝库／物件 22 连环地刺陷阱；sharedassets0.assets:64768/m_props[21]；带编号列表（匹配游戏截断后的原文）
+Musty Cabinet	霉烂橱柜	宝库／物件 23 霉烂橱柜；sharedassets0.assets:64768/m_props[22]；名称
+As hinges rot and wood does bend, these cabinets offer little protection to the trinkets forgotten within	铰链腐朽，木板弯曲，这些橱柜已无力保护其中被遗忘的小物件。	宝库／物件 23 霉烂橱柜；sharedassets0.assets:64768/m_props[22]；介绍
+{0} Musty Cabinet	{0} 霉烂橱柜	宝库／物件 23 霉烂橱柜；sharedassets0.assets:64768/m_props[22]；带编号列表（匹配游戏截断后的原文）
+Abandoned Pallet	废弃床铺	宝库／物件 24 废弃床铺；sharedassets0.assets:64768/m_props[23]；名称
+Neith festering mattress or tattered sheet, the long-dead inhabitants would secret their measly trinkets	在腐败的床垫或破烂床单下，早已死去的住民曾藏着微薄的财物。	宝库／物件 24 废弃床铺；sharedassets0.assets:64768/m_props[23]；介绍
+{0} Abandoned Pallet	{0} 废弃床铺	宝库／物件 24 废弃床铺；sharedassets0.assets:64768/m_props[23]；带编号列表（匹配游戏截断后的原文）
+Casket	棺木	宝库／物件 25 棺木；sharedassets0.assets:64768/m_props[24]；名称
+The interred remains have long since gone to dust	棺中遗骸早已化为尘土。	宝库／物件 25 棺木；sharedassets0.assets:64768/m_props[24]；介绍
+{0} Casket	{0} 棺木	宝库／物件 25 棺木；sharedassets0.assets:64768/m_props[24]；带编号列表（匹配游戏截断后的原文）
+Bone Pile	骸骨堆	宝库／物件 26 骸骨堆；sharedassets0.assets:64768/m_props[25]；名称
+Once vital totems for dark and epic rituals, these heaps of human skulls are oft used to hide small treasures by subterranean goblin kin	这些人类头骨曾是宏大黑暗仪式的重要图腾，如今常被地下的地精用来藏匿小宝物。	宝库／物件 26 骸骨堆；sharedassets0.assets:64768/m_props[25]；介绍
+{0} Bone Pile	{0} 骸骨堆	宝库／物件 26 骸骨堆；sharedassets0.assets:64768/m_props[25]；带编号列表（匹配游戏截断后的原文）
+Iron Maiden	铁处女	宝库／物件 27 铁处女；sharedassets0.assets:64768/m_props[26]；名称
+The final possessions of many victims can be found in these horrid devices	这些恐怖刑具里，还能找到许多受害者最后的遗物。	宝库／物件 27 铁处女；sharedassets0.assets:64768/m_props[26]；介绍
+{0} Iron Maiden	{0} 铁处女	宝库／物件 27 铁处女；sharedassets0.assets:64768/m_props[26]；带编号列表（匹配游戏截断后的原文）
+Fallen Warrior	陨落战士	宝库／物件 28 陨落战士；sharedassets0.assets:64768/m_props[27]；名称
+Though their souls have long-since been consumed by the void, these once-noble warriors may still carry small treasures	灵魂早已被虚空吞噬，但这些曾经高贵的战士身上，或许仍带着些许宝物。	宝库／物件 28 陨落战士；sharedassets0.assets:64768/m_props[27]；介绍
+{0} Fallen Warrior	{0} 陨落战士	宝库／物件 28 陨落战士；sharedassets0.assets:64768/m_props[27]；带编号列表（匹配游戏截断后的原文）
+Colossal Sarcophagus	巨型石棺	宝库／物件 29 巨型石棺；sharedassets0.assets:64768/m_props[28]；名称
+Though the gargantual warrior has long since turned to dust, his body was interred alongside some earthly treasures	庞大的战士早已化为尘土，但当年入葬时，也带上了一些尘世财宝。	宝库／物件 29 巨型石棺；sharedassets0.assets:64768/m_props[28]；介绍
+{0} Colossal Sarcophagus	{0} 巨型石棺	宝库／物件 29 巨型石棺；sharedassets0.assets:64768/m_props[28]；带编号列表（匹配游戏截断后的原文）
+Cooking Pot	炖锅	宝库／物件 30 炖锅；sharedassets0.assets:64768/m_props[29]；名称
+A vile, but somehow alluring smell tempts you to taste, and be restored... or poisoned	气味恶臭，却莫名诱人，令你想尝上一口。它可能恢复你的生命，也可能让你中毒。	宝库／物件 30 炖锅；sharedassets0.assets:64768/m_props[29]；介绍
+{0} Cooking Pot	{0} 炖锅	宝库／物件 30 炖锅；sharedassets0.assets:64768/m_props[29]；带编号列表（匹配游戏截断后的原文）
+Questionable Meat	可疑肉块	宝库／物件 31 可疑肉块；sharedassets0.assets:64768/m_props[30]；名称
+Meat from an unknown animal, possibly rotting on its spit. It may restore you, if you can keep it down	来历不明的动物肉，或许已在烤架上腐坏。只要你能忍住不吐，它也许能恢复你的生命。	宝库／物件 31 可疑肉块；sharedassets0.assets:64768/m_props[30]；介绍
+{0} Questionable Meat	{0} 可疑肉块	宝库／物件 31 可疑肉块；sharedassets0.assets:64768/m_props[30]；带编号列表（匹配游戏截断后的原文）
+Ancient Fountain	古老喷泉	宝库／物件 32 古老喷泉；sharedassets0.assets:64768/m_props[31]；名称
+Water bubbles up from some vast aquifer deep below. Wash in it's waters, for their healing properties were known... before this place fell to the darkness	泉水从地下深处广阔的含水层涌出。用它洗濯吧，这里的治愈之力早在此地陷入黑暗前便已闻名。	宝库／物件 32 古老喷泉；sharedassets0.assets:64768/m_props[31]；介绍
+{0} Ancient Fountain	{0} 古老喷泉	宝库／物件 32 古老喷泉；sharedassets0.assets:64768/m_props[31]；带编号列表（匹配游戏截断后的原文）
+Restful Hearth	温暖壁炉	宝库／物件 33 温暖壁炉；sharedassets0.assets:64768/m_props[32]；名称
+Warmth is hard to come by in this place, stoke the fire and be healed	在这里，温暖来之不易。拨旺炉火，疗愈伤势。	宝库／物件 33 温暖壁炉；sharedassets0.assets:64768/m_props[32]；介绍
+{0} Restful Hearth	{0} 温暖壁炉	宝库／物件 33 温暖壁炉；sharedassets0.assets:64768/m_props[32]；带编号列表（匹配游戏截断后的原文）
+Dark Bonfire	黑暗篝火	宝库／物件 34 黑暗篝火；sharedassets0.assets:64768/m_props[33]；名称
+Light this fire and rest here to regain your health	点燃篝火，在此休息以恢复生命。	宝库／物件 34 黑暗篝火；sharedassets0.assets:64768/m_props[33]；介绍
+{0} Dark Bonfire	{0} 黑暗篝火	宝库／物件 34 黑暗篝火；sharedassets0.assets:64768/m_props[33]；带编号列表（匹配游戏截断后的原文）
+Rotting Tree	腐朽之树	宝库／物件 35 腐朽之树；sharedassets0.assets:64768/m_props[34]；名称
+Drain the last remaining sliver of life from these warped and twisting plants	从这些扭曲的植物中，汲取最后一丝残存的生命。	宝库／物件 35 腐朽之树；sharedassets0.assets:64768/m_props[34]；介绍
+{0} Rotting Tree	{0} 腐朽之树	宝库／物件 35 腐朽之树；sharedassets0.assets:64768/m_props[34]；带编号列表（匹配游戏截断后的原文）
+Wishing Well	许愿井	宝库／物件 36 许愿井；sharedassets0.assets:64768/m_props[35]；名称
+An old well stands here. Throw in a coin, make a wish, and you may be rewarded	这里立着一口古井。投下一枚金币，许个愿，或许就能得到回报。	宝库／物件 36 许愿井；sharedassets0.assets:64768/m_props[35]；介绍
+{0} Wishing Well	{0} 许愿井	宝库／物件 36 许愿井；sharedassets0.assets:64768/m_props[35]；带编号列表（匹配游戏截断后的原文）
+Tithing Box	奉献箱	宝库／物件 37 奉献箱；sharedassets0.assets:64768/m_props[36]；名称
+The gods ask a hefty price.  Will they see you healed? Or will your prayers fall on dead ears	诸神索要高昂的代价。他们会治愈你，还是对你的祈祷充耳不闻？	宝库／物件 37 奉献箱；sharedassets0.assets:64768/m_props[36]；介绍
+{0} Tithing Box	{0} 奉献箱	宝库／物件 37 奉献箱；sharedassets0.assets:64768/m_props[36]；带编号列表（匹配游戏截断后的原文）
+The holy text of the Sun Ray cult. Read the markings and it comes alive to assist you in battle	日光教派的圣典。诵读其上的文字，它便会活过来，助你作战。	宝库／物件 38 太阳之书；sharedassets0.assets:64768/m_props[37]；介绍
+The flame monks abide by its words. Read the markings and it comes alive to assist you in battle	火焰僧侣奉其文字为戒律。诵读其上的文字，它便会活过来，助你作战。	宝库／物件 39 火焰之书；sharedassets0.assets:64768/m_props[38]；介绍
+The pages are soaked with tears. Read the markings and it comes alive to assist you in battle	书页浸透泪水。诵读其上的文字，它便会活过来，助你作战。	宝库／物件 40 泪水之书；sharedassets0.assets:64768/m_props[39]；介绍
+Gemstone Shrine	宝石祭坛	宝库／物件 41 宝石祭坛；sharedassets0.assets:64768/m_props[40]；名称
+Kneel before these gilded shrines and gaze into the gemstone set within. You will be more powerful for your next battle	跪在这些镀金祭坛前，凝视其中镶嵌的宝石。下一场战斗中，你将更加强大。	宝库／物件 41 宝石祭坛；sharedassets0.assets:64768/m_props[40]；介绍
+{0} Gemstone Shrine	{0} 宝石祭坛	宝库／物件 41 宝石祭坛；sharedassets0.assets:64768/m_props[40]；带编号列表（匹配游戏截断后的原文）
+Altar of Flame	火焰祭坛	宝库／物件 42 火焰祭坛；sharedassets0.assets:64768/m_props[41]；名称
+Pray to the lesser gods of fire and flame. Their fury will follow you into the next battle, enhancing your attacks	向掌管烈火的次等神灵祈祷。他们的怒火将伴你进入下一场战斗，增强你的攻击。	宝库／物件 42 火焰祭坛；sharedassets0.assets:64768/m_props[41]；介绍
+{0} Altar of Flame	{0} 火焰祭坛	宝库／物件 42 火焰祭坛；sharedassets0.assets:64768/m_props[41]；带编号列表（匹配游戏截断后的原文）
+Altar of Blood	鲜血祭坛	宝库／物件 43 鲜血祭坛；sharedassets0.assets:64768/m_props[42]；名称
+For a prayer, the lesser gods will bless your next battle- dropping swords from the sky upon your enemies	献上祈祷，次等神灵便会庇佑你的下一场战斗，让利剑从天而降，刺向敌人。	宝库／物件 43 鲜血祭坛；sharedassets0.assets:64768/m_props[42]；介绍
+{0} Altar of Blood	{0} 鲜血祭坛	宝库／物件 43 鲜血祭坛；sharedassets0.assets:64768/m_props[42]；带编号列表（匹配游戏截断后的原文）
+Altar of Tears	泪水祭坛	宝库／物件 44 泪水祭坛；sharedassets0.assets:64768/m_props[43]；名称
+The tears of the lesser gods flow through this altar. Give a prayer to their memory, and their tears will enhance your attacks for a battle	次等神灵的泪水流经这座祭坛。为纪念他们而祈祷，泪水便会在下一场战斗中增强你的攻击。	宝库／物件 44 泪水祭坛；sharedassets0.assets:64768/m_props[43]；介绍
+{0} Altar of Tears	{0} 泪水祭坛	宝库／物件 44 泪水祭坛；sharedassets0.assets:64768/m_props[43]；带编号列表（匹配游戏截断后的原文）
+Altar of Eldritch Fire	异火祭坛	宝库／物件 45 异火祭坛；sharedassets0.assets:64768/m_props[44]；名称
+Pray upon this altar to the lesser gods, your attacks next battle will be imbued with their sacred flame	在祭坛前向次等神灵祈祷，你在下一场战斗中的攻击将附带他们的圣火。	宝库／物件 45 异火祭坛；sharedassets0.assets:64768/m_props[44]；介绍
+{0} Altar of Eldritch Fire	{0} 异火祭坛	宝库／物件 45 异火祭坛；sharedassets0.assets:64768/m_props[44]；带编号列表（匹配游戏截断后的原文）
+Thirsty Obelisk 	饥渴方尖碑	宝库／物件 46 饥渴方尖碑；sharedassets0.assets:64768/m_props[45]；名称
+Desecrate this ancient obelisk, and your wounds will flow freely until your next battle	亵渎这座古老的方尖碑，你的伤口便会不断流血，直到下一场战斗。	宝库／物件 46 饥渴方尖碑；sharedassets0.assets:64768/m_props[45]；介绍
+{0} Thirsty Obelisk 	{0} 饥渴方尖碑	宝库／物件 46 饥渴方尖碑；sharedassets0.assets:64768/m_props[45]；带编号列表（匹配游戏截断后的原文）
+Pristine Monument	无瑕纪念碑	宝库／物件 47 无瑕纪念碑；sharedassets0.assets:64768/m_props[46]；名称
+Taint the lustrous marble, and for your next battle you need only stand in a puddle of blood to be healed	玷污光洁的大理石。下一场战斗中，只要站在血泊里，你就能得到治疗。	宝库／物件 47 无瑕纪念碑；sharedassets0.assets:64768/m_props[46]；介绍
+{0} Pristine Monument	{0} 无瑕纪念碑	宝库／物件 47 无瑕纪念碑；sharedassets0.assets:64768/m_props[46]；带编号列表（匹配游戏截断后的原文）
+Podium of Flame	火焰台座	宝库／物件 48 火焰台座；sharedassets0.assets:64768/m_props[47]；名称
+Extinguish the flame with your chanting and free the demonic spirit inside. Its flaming skull will assist you in your next battle	以吟唱熄灭火焰，释放其中的恶魔之灵。它燃烧的头骨会在下一场战斗中帮助你。	宝库／物件 48 火焰台座；sharedassets0.assets:64768/m_props[47]；介绍
+{0} Podium of Flame	{0} 火焰台座	宝库／物件 48 火焰台座；sharedassets0.assets:64768/m_props[47]；带编号列表（匹配游戏截断后的原文）
+Podium of Ice	寒冰台座	宝库／物件 49 寒冰台座；sharedassets0.assets:64768/m_props[48]；名称
+A possessed skull imprisoned in magical ice. It may be thawed with your chanting, freeing the skull to follow you into your next battle	一颗被魔法寒冰囚禁的附魂头骨。吟唱可使冰融化，让头骨跟随你进入下一场战斗。	宝库／物件 49 寒冰台座；sharedassets0.assets:64768/m_props[48]；介绍
+{0} Podium of Ice	{0} 寒冰台座	宝库／物件 49 寒冰台座；sharedassets0.assets:64768/m_props[48]；带编号列表（匹配游戏截断后的原文）
+Yearning Altar	渴求祭坛	宝库／物件 50 渴求祭坛；sharedassets0.assets:64768/m_props[49]；名称
+The ritual carved upon this altar lies unfinished. Complete the dark rite, to be filled with manic energy, increasing your agility	祭坛上刻着未完成的仪式。完成这场黑暗祭礼，狂热的力量便会充盈全身，提高你的敏捷。	宝库／物件 50 渴求祭坛；sharedassets0.assets:64768/m_props[49]；介绍
+{0} Yearning Altar	{0} 渴求祭坛	宝库／物件 50 渴求祭坛；sharedassets0.assets:64768/m_props[49]；带编号列表（匹配游戏截断后的原文）
+Inhuman Effigy	异形神像	宝库／物件 51 异形神像；sharedassets0.assets:64768/m_props[50]；名称
+Kneel before the likeness of T'kazh to complete the rite, and you will be rewarded with strength	跪在特卡兹的神像前完成仪式，你将获赐力量。	宝库／物件 51 异形神像；sharedassets0.assets:64768/m_props[50]；介绍
+{0} Inhuman Effigy	{0} 异形神像	宝库／物件 51 异形神像；sharedassets0.assets:64768/m_props[50]；带编号列表（匹配游戏截断后的原文）
+Hungry Candle	饥饿蜡烛	宝库／物件 52 饥饿蜡烛；sharedassets0.assets:64768/m_props[51]；名称
+Light the wick of twisted sinew, and breath the burning tallow rendered of human flesh. Your mind will be focused, your agility permanently increased	点燃扭曲筋腱制成的烛芯，吸入人脂燃烧的气息。你的心神将更加专注，敏捷永久提高。	宝库／物件 52 饥饿蜡烛；sharedassets0.assets:64768/m_props[51]；介绍
+{0} Hungry Candle	{0} 饥饿蜡烛	宝库／物件 52 饥饿蜡烛；sharedassets0.assets:64768/m_props[51]；带编号列表（匹配游戏截断后的原文）
+Bewitched Torch	妖异火炬	宝库／物件 53 妖异火炬；sharedassets0.assets:64768/m_props[52]；名称
+When spirits kindle the flames, these torches and candelabras expel ectoplasm in a burst of fire	幽灵点燃火焰时，这些火炬和烛台会在火光中喷出灵质。	宝库／物件 53 妖异火炬；sharedassets0.assets:64768/m_props[52]；介绍
+{0} Bewitched Torch	{0} 妖异火炬	宝库／物件 53 妖异火炬；sharedassets0.assets:64768/m_props[52]；带编号列表（匹配游戏截断后的原文）
+Rusted Shackles	锈蚀镣铐	宝库／物件 54 锈蚀镣铐；sharedassets0.assets:64768/m_props[53]；名称
+Wailing spirits rattle chains to drain them of ectoplasmic residue	哀号的幽灵摇响锁链，从中榨取残留的灵质。	宝库／物件 54 锈蚀镣铐；sharedassets0.assets:64768/m_props[53]；介绍
+{0} Rusted Shackles	{0} 锈蚀镣铐	宝库／物件 54 锈蚀镣铐；sharedassets0.assets:64768/m_props[53]；带编号列表（匹配游戏截断后的原文）
+Stocks	枷锁	宝库／物件 55 枷锁；sharedassets0.assets:64768/m_props[54]；名称
+An ancient torture device, thick with ectoplasm for spirits to collect	一件古老的刑具，积满了可供幽灵收集的灵质。	宝库／物件 55 枷锁；sharedassets0.assets:64768/m_props[54]；介绍
+{0} Stocks	{0} 枷锁	宝库／物件 55 枷锁；sharedassets0.assets:64768/m_props[54]；带编号列表（匹配游戏截断后的原文）
+Rack	拉伸刑架	宝库／物件 56 拉伸刑架；sharedassets0.assets:64768/m_props[55]；名称
+The tortured souls who lay victim to this horrid mechanism have left a buildup of ectoplasmic discharge for wiley spirits to absorb	惨遭这可怕机关折磨的灵魂，留下了层层灵质，供狡黠的幽灵吸收。	宝库／物件 56 拉伸刑架；sharedassets0.assets:64768/m_props[55]；介绍
+{0} Rack	{0} 拉伸刑架	宝库／物件 56 拉伸刑架；sharedassets0.assets:64768/m_props[55]；带编号列表（匹配游戏截断后的原文）
+Wall Grate	墙面铁栅	宝库／物件 57 墙面铁栅；sharedassets0.assets:64768/m_props[56]；名称
+The walls of this place have drunk an ocean of blood.  Spirits, let it pour forth, and drink the ectoplasm within	这里的墙壁已饮下血海。幽灵们，让鲜血涌出，饮下其中的灵质吧。	宝库／物件 57 墙面铁栅；sharedassets0.assets:64768/m_props[56]；介绍
+{0} Wall Grate	{0} 墙面铁栅	宝库／物件 57 墙面铁栅；sharedassets0.assets:64768/m_props[56]；带编号列表（匹配游戏截断后的原文）
+Rift Being	裂隙异物	宝库／物件 58 裂隙异物；sharedassets0.assets:64768/m_props[57]；名称
+Crumbling walls mark the barrier between this world and the void. Lure close those beings of the other side, and taste the ectoplasm beyond	崩塌的墙壁标示着现世与虚空的边界。诱使彼岸的生灵靠近，品尝另一侧的灵质。	宝库／物件 58 裂隙异物；sharedassets0.assets:64768/m_props[57]；介绍
+{0} Rift Being	{0} 裂隙异物	宝库／物件 58 裂隙异物；sharedassets0.assets:64768/m_props[57]；带编号列表（匹配游戏截断后的原文）
+Living Canvas	活体画布	宝库／物件 59 活体画布；sharedassets0.assets:64768/m_props[58]；名称
+Spirits bring these cursed oils to life, extracting precious ectoplasm	幽灵唤醒这些受诅咒的油画，从中提取珍贵的灵质。	宝库／物件 59 活体画布；sharedassets0.assets:64768/m_props[58]；介绍
+{0} Living Canvas	{0} 活体画布	宝库／物件 59 活体画布；sharedassets0.assets:64768/m_props[58]；带编号列表（匹配游戏截断后的原文）
+Mimic	宝箱怪	宝库／物件 60 宝箱怪；sharedassets0.assets:64768/m_props[59]；名称
+Possessed chests lure greedy treasure hunters with the promise of gold, before devouring their victims	附魂的宝箱以黄金引诱贪婪的寻宝者，随后将他们吞食。	宝库／物件 60 宝箱怪；sharedassets0.assets:64768/m_props[59]；介绍
+{0} Mimic	{0} 宝箱怪	宝库／物件 60 宝箱怪；sharedassets0.assets:64768/m_props[59]；带编号列表（匹配游戏截断后的原文）
+Mason's Tombstone	石匠墓碑	宝库／物件 61 石匠墓碑；sharedassets0.assets:64768/m_props[60]；名称
+Taint it with your ectoplasm to draw on its power. Your next monster will be extra strong	用灵质污染它，汲取其中的力量。你的下一只怪物将更加强壮。	宝库／物件 61 石匠墓碑；sharedassets0.assets:64768/m_props[60]；介绍
+{0} Mason's Tombstone	{0} 石匠墓碑	宝库／物件 61 石匠墓碑；sharedassets0.assets:64768/m_props[60]；带编号列表（匹配游戏截断后的原文）
+Messenger's Tablet	信使碑石	宝库／物件 62 信使碑石；sharedassets0.assets:64768/m_props[61]；名称
+Taint it with your ectoplasm to draw on its power. Your next monster will be extra fast	用灵质污染它，汲取其中的力量。你的下一只怪物将更加迅捷。	宝库／物件 62 信使碑石；sharedassets0.assets:64768/m_props[61]；介绍
+{0} Messenger's Tablet	{0} 信使碑石	宝库／物件 62 信使碑石；sharedassets0.assets:64768/m_props[61]；带编号列表（匹配游戏截断后的原文）
+Bookman's Gravestone	学者墓碑	宝库／物件 63 学者墓碑；sharedassets0.assets:64768/m_props[62]；名称
+Taint it with your ectoplasm to draw on its power. Your next monster will recharge its magic faster	用灵质污染它，汲取其中的力量。你的下一只怪物将更快恢复魔法。	宝库／物件 63 学者墓碑；sharedassets0.assets:64768/m_props[62]；介绍
+{0} Bookman's Gravestone	{0} 学者墓碑	宝库／物件 63 学者墓碑；sharedassets0.assets:64768/m_props[62]；带编号列表（匹配游戏截断后的原文）
+Chandler's Memorial	烛匠纪念碑	宝库／物件 64 烛匠纪念碑；sharedassets0.assets:64768/m_props[63]；名称
+Taint it with your ectoplasm to draw on its power. Your next monster's attacks will be boosted with flame	用灵质污染它，汲取其中的力量。你的下一只怪物的攻击将附带火焰。	宝库／物件 64 烛匠纪念碑；sharedassets0.assets:64768/m_props[63]；介绍
+{0} Chandler's Memorial	{0} 烛匠纪念碑	宝库／物件 64 烛匠纪念碑；sharedassets0.assets:64768/m_props[63]；带编号列表（匹配游戏截断后的原文）
+Bladesmith's Marker	铸刃师墓标	宝库／物件 65 铸刃师墓标；sharedassets0.assets:64768/m_props[64]；名称
+Taint it with your ectoplasm to draw on its power. Swords fall from the sky with your next monster's attacks	用灵质污染它，汲取其中的力量。你的下一只怪物攻击时，会有利剑从天而降。	宝库／物件 65 铸刃师墓标；sharedassets0.assets:64768/m_props[64]；介绍
+{0} Bladesmith's Marker	{0} 铸刃师墓标	宝库／物件 65 铸刃师墓标；sharedassets0.assets:64768/m_props[64]；带编号列表（匹配游戏截断后的原文）
+Woodsman's Grave	樵夫之墓	宝库／物件 66 樵夫之墓；sharedassets0.assets:64768/m_props[65]；名称
+Taint it with your ectoplasm to draw on its power. A magical axe will follow and assist your next monster	用灵质污染它，汲取其中的力量。一把魔法斧会跟随并帮助你的下一只怪物。	宝库／物件 66 樵夫之墓；sharedassets0.assets:64768/m_props[65]；介绍
+{0} Woodsman's Grave	{0} 樵夫之墓	宝库／物件 66 樵夫之墓；sharedassets0.assets:64768/m_props[65]；带编号列表（匹配游戏截断后的原文）
+A Taste For Revenge	初尝复仇	宝库／成就 01 初尝复仇；sharedassets0.assets:68978；名称
+Regain your humanity 10 times	重新获得人类之身 10 次。	宝库／成就 01 初尝复仇；sharedassets0.assets:68978；达成条件
+A Death Feud	生死宿怨	宝库／成就 02 生死宿怨；sharedassets0.assets:68979；名称
+Regain your humanity 50 times	重新获得人类之身 50 次。	宝库／成就 02 生死宿怨；sharedassets0.assets:68979；达成条件
+A Vengeance Insatiable	复仇不休	宝库／成就 03 复仇不休；sharedassets0.assets:68980；名称
+Regain your humanity 100 times	重新获得人类之身 100 次。	宝库／成就 03 复仇不休；sharedassets0.assets:68980；达成条件
+The Butcher	屠夫	宝库／成就 04 屠夫；sharedassets0.assets:68177；名称
+Slay all other heroes in an intro battle with 3 hard bots	在有 3 名困难电脑玩家的开场混战中，杀死其余所有英雄。	宝库／成就 04 屠夫；sharedassets0.assets:68177；达成条件
+Unstoppable Force	势不可挡	宝库／成就 05 势不可挡；sharedassets0.assets:68189；名称
+Get a kill streak of 12 against 3 hard bots	对抗 3 名困难电脑玩家时，达成 12 连杀。	宝库／成就 05 势不可挡；sharedassets0.assets:68189；达成条件
+Vermin's Scourge	害兽克星	宝库／成就 06 害兽克星；sharedassets0.assets:68437；名称
+Kill a total of 100 monsters	累计击杀 100 只怪物。	宝库／成就 06 害兽克星；sharedassets0.assets:68437；达成条件
+Dragon's Bane	屠龙之灾	宝库／成就 07 屠龙之灾；sharedassets0.assets:68438；名称
+Kill a total of 666 monsters	累计击杀 666 只怪物。	宝库／成就 07 屠龙之灾；sharedassets0.assets:68438；达成条件
+The Lonely Miser	孤独守财奴	宝库／成就 08 孤独守财奴；sharedassets0.assets:70580；名称
+Spend a total of 1000 gold	累计花费 1000 枚金币。	宝库／成就 08 孤独守财奴；sharedassets0.assets:70580；达成条件
+The Wealthy Merchant	富甲商人	宝库／成就 09 富甲商人；sharedassets0.assets:70581；名称
+Spend a total of 5000 gold	累计花费 5000 枚金币。	宝库／成就 09 富甲商人；sharedassets0.assets:70581；达成条件
+The Gilded Baron	黄金男爵	宝库／成就 10 黄金男爵；sharedassets0.assets:70582；名称
+Spend a total of 10000 gold	累计花费 10000 枚金币。	宝库／成就 10 黄金男爵；sharedassets0.assets:70582；达成条件
+The Novice Scholar	初学之士	宝库／成就 11 初学之士；sharedassets0.assets:70025；名称
+Discover 25% of entries in the vault	发现宝库中 25％ 的条目。	宝库／成就 11 初学之士；sharedassets0.assets:70025；达成条件
+The Acclaimed Collector	收藏名家	宝库／成就 12 收藏名家；sharedassets0.assets:66828；名称
+Discover 50% of entries in the vault	发现宝库中 50％ 的条目。	宝库／成就 12 收藏名家；sharedassets0.assets:66828；达成条件
+The Renowned Antiquarian	博古大家	宝库／成就 13 博古大家；sharedassets0.assets:69276；名称
+Discover all entries in the vault	发现宝库中的全部条目。	宝库／成就 13 博古大家；sharedassets0.assets:69276；达成条件
+Lloyd and Goliath	劳埃德与巨人	宝库／成就 14 劳埃德与巨人；sharedassets0.assets:68187；名称
+Slay a giant monster with a pebble	用一颗小石子杀死一只巨型怪物。	宝库／成就 14 劳埃德与巨人；sharedassets0.assets:68187；达成条件
+Goliath and Goliath	巨人与巨人	宝库／成就 15 巨人与巨人；sharedassets0.assets:68186；名称
+Slay a giant monster with a boulder	用一块巨石杀死一只巨型怪物。	宝库／成就 15 巨人与巨人；sharedassets0.assets:68186；达成条件
+Adequately Equipped	兵器齐备	宝库／成就 16 兵器齐备；sharedassets0.assets:70199；名称
+Discover all weapons in the vault	发现宝库中的全部武器。	宝库／成就 16 兵器齐备；sharedassets0.assets:70199；达成条件
+Manic Greed	贪得无厌	宝库／成就 17 贪得无厌；sharedassets0.assets:68161；名称
+Clear out a store by buying every item	买下商店里的每一件商品，将商店买空。	宝库／成就 17 贪得无厌；sharedassets0.assets:68161；达成条件
+The Gamekeeper	猎场看守	宝库／成就 18 猎场看守；sharedassets0.assets:68162；名称
+Pass a vault challenge	通过一项宝库挑战。	宝库／成就 18 猎场看守；sharedassets0.assets:68162；达成条件
+The Beastmaster	百兽之主	宝库／成就 19 百兽之主；sharedassets0.assets:68163；名称
+Pass 10 vault challenges	通过 10 项宝库挑战。	宝库／成就 19 百兽之主；sharedassets0.assets:68163；达成条件
+The Demontamer	驯魔者	宝库／成就 20 驯魔者；sharedassets0.assets:68164；名称
+Pass all the vault challenges	通过全部宝库挑战。	宝库／成就 20 驯魔者；sharedassets0.assets:68164；达成条件
+Stone Awoken	石像苏醒	宝库／成就 21 石像苏醒；sharedassets0.assets:68165；名称
+Pass the Gargoyle challenge	通过石像鬼挑战。	宝库／成就 21 石像苏醒；sharedassets0.assets:68165；达成条件
+Burrowing Terror	掘地恐惧	宝库／成就 22 掘地恐惧；sharedassets0.assets:68166；名称
+Pass the Spikewurm challenge	通过尖刺蠕虫挑战。	宝库／成就 22 掘地恐惧；sharedassets0.assets:68166；达成条件
+Reanimator	起死回生	宝库／成就 23 起死回生；sharedassets0.assets:68167；名称
+Pass the Necromancer challenge	通过死灵法师挑战。	宝库／成就 23 起死回生；sharedassets0.assets:68167；达成条件
+Pickpocket	扒手	宝库／成就 24 扒手；sharedassets0.assets:68174；名称
+As a gnome, mine a total of 10 gold from heroes	以侏儒形态累计从英雄身上挖出 10 枚金币。	宝库／成就 24 扒手；sharedassets0.assets:68174；达成条件
+A Duel of Archers	弓手决斗	宝库／成就 25 弓手决斗；sharedassets0.assets:68185；名称
+Win a 1 on 1 battle against the hero, while both wielding bows	在双方都使用弓的一对一战斗中击败英雄。	宝库／成就 25 弓手决斗；sharedassets0.assets:68185；达成条件
+Glub Blasphemed	亵渎格拉布	宝库／成就 26 亵渎格拉布；sharedassets0.assets:68172；名称
+Taunt Glub and win against 3 hard bots	挑衅格拉布，并在对抗 3 名困难电脑玩家时获胜。	宝库／成就 26 亵渎格拉布；sharedassets0.assets:68172；达成条件
+S'hrim Denied	拒绝施里姆	宝库／成就 27 拒绝施里姆；sharedassets0.assets:68169；名称
+Taunt S'hrim and win against 3 hard bots	挑衅施里姆，并在对抗 3 名困难电脑玩家时获胜。	宝库／成就 27 拒绝施里姆；sharedassets0.assets:68169；达成条件
+Qaahl Forgotten	遗忘卡尔	宝库／成就 28 遗忘卡尔；sharedassets0.assets:68173；名称
+Taunt Qaahl and win against 3 hard bots	挑衅卡尔，并在对抗 3 名困难电脑玩家时获胜。	宝库／成就 28 遗忘卡尔；sharedassets0.assets:68173；达成条件
+Gor Disavowed	背弃戈尔	宝库／成就 29 背弃戈尔；sharedassets0.assets:68171；名称
+Taunt Gor and win against 3 hard bots	挑衅戈尔，并在对抗 3 名困难电脑玩家时获胜。	宝库／成就 29 背弃戈尔；sharedassets0.assets:68171；达成条件
+Gholoth Shunned	疏远戈洛斯	宝库／成就 30 疏远戈洛斯；sharedassets0.assets:68170；名称
+Taunt Gholoth and win against 3 hard bots	挑衅戈洛斯，并在对抗 3 名困难电脑玩家时获胜。	宝库／成就 30 疏远戈洛斯；sharedassets0.assets:68170；达成条件
+Brain Haemorrhage	脑出血	宝库／成就 31 脑出血；sharedassets0.assets:68181；名称
+Damage Kourok's exposed brain with a bomb creature	用炸弹生物伤害库洛克暴露的大脑。	宝库／成就 31 脑出血；sharedassets0.assets:68181；达成条件
+Brute Force Alone	唯有蛮力	宝库／成就 32 唯有蛮力；sharedassets0.assets:68182；名称
+Defeat Kourok without hitting any bombs into him	不将任何炸弹打向库洛克，便将其击败。	宝库／成就 32 唯有蛮力；sharedassets0.assets:68182；达成条件
+The Tentacle Severed	断触须	宝库／成就 33 断触须；sharedassets0.assets:68178；名称
+Defeat Kourok, playing against 3 hard bots	对抗 3 名困难电脑玩家时，击败库洛克。	宝库／成就 33 断触须；sharedassets0.assets:68178；达成条件
+The Beast Beheaded	斩兽首	宝库／成就 34 斩兽首；sharedassets0.assets:68179；名称
+Defeat Ghidraak, playing against 3 hard bots	对抗 3 名困难电脑玩家时，击败吉德拉克。	宝库／成就 34 斩兽首；sharedassets0.assets:68179；达成条件
+The Stone Shattered	碎巨石	宝库／成就 35 碎巨石；sharedassets0.assets:68180；名称
+Defeat Tezekcal, playing against 3 hard bots	对抗 3 名困难电脑玩家时，击败特泽卡尔。	宝库／成就 35 碎巨石；sharedassets0.assets:68180；达成条件
+A Bloody Conquest	浴血征服	宝库／成就 36 浴血征服；sharedassets0.assets:68191；名称
+Defeat a boss while bleeding for the entire fight	在整场战斗始终流血的状态下击败首领。	宝库／成就 36 浴血征服；sharedassets0.assets:68191；达成条件
+True Escape	真正的逃脱	宝库／成就 37 真正的逃脱；sharedassets0.assets:68188；名称
+Win a game without ever dying	整局游戏一次也不死亡，并取得胜利。	宝库／成就 37 真正的逃脱；sharedassets0.assets:68188；达成条件
+The Sickly Champion	病弱冠军	宝库／成就 38 病弱冠军；sharedassets0.assets:68192；名称
+Defeat a boss while nauseated	在恶心状态下击败首领。	宝库／成就 38 病弱冠军；sharedassets0.assets:68192；达成条件
+A Piercing Bolt	贯穿之矢	宝库／成就 39 贯穿之矢；sharedassets0.assets:68168；名称
+Kill 3 monsters with a single crossbow bolt	用一支弩矢杀死 3 只怪物。	宝库／成就 39 贯穿之矢；sharedassets0.assets:68168；达成条件
+Altered Altered Beast	异兽再变	宝库／成就 40 异兽再变；sharedassets0.assets:68190；名称
+Get two tombstone powerups on one monster\t	让同一只怪物获得两种墓碑强化。	宝库／成就 40 异兽再变；sharedassets0.assets:68190；达成条件
+A Healthy Victory	健全的胜利	宝库／成就 41 健全的胜利；sharedassets0.assets:68175；名称
+Defeat Ghidraak with more health than when you started	击败吉德拉克时，剩余生命高于战斗开始时。	宝库／成就 41 健全的胜利；sharedassets0.assets:68175；达成条件
+Unceasing Lethargy	无尽迟滞	宝库／成就 42 无尽迟滞；sharedassets0.assets:68184；名称
+Min your hero's agility	将英雄的敏捷降至最低。	宝库／成就 42 无尽迟滞；sharedassets0.assets:68184；达成条件
+Unfettered Strength	无拘之力	宝库／成就 43 无拘之力；sharedassets0.assets:68183；名称
+Max out your hero's strength	将英雄的力量提升至最高。	宝库／成就 43 无拘之力；sharedassets0.assets:68183；达成条件
+Theatrical	戏剧性胜利	宝库／成就 44 戏剧性胜利；sharedassets0.assets:68176；名称
+Win an intro battle without ever moving	在开场混战中始终不移动，并取得胜利。	宝库／成就 44 戏剧性胜利；sharedassets0.assets:68176；达成条件
+Infinite Horror	无尽恐怖	宝库／成就 45 无尽恐怖；sharedassets0.assets:68160；名称
+Achieve the victory screen title "Infinite Horror"	在胜利画面中获得「无尽恐怖（Infinite Horror）」称号。	宝库／成就 45 无尽恐怖；sharedassets0.assets:68160；达成条件
+{0} / {1} entries found\n\n{2} challenges passed\n\nDiscover more entries by inhabiting monsters in-game	已发现 {0} / {1} 个条目\n\n已通过 {2} 项挑战\n\n在游戏中附身怪物，发现更多条目。	宝库／统计与怪物挑战记录；level2:1544/m_stringMonstersCategorySummary
+{0} / {1} entries found\n\nTotal Challenge Score: {2} LEVELS\n\nDiscover more entries by inhabiting monsters in-game	已发现 {0} / {1} 个条目\n\n挑战总成绩：{2} 级\n\n在游戏中附身怪物，发现更多条目。	宝库／统计与怪物挑战记录；level2:1544/m_stringMonstersCategorySummaryNoPass
+{0} / {1} entries found\n\nDiscover more entries by buying weapons in-game	已发现 {0} / {1} 个条目\n\n在游戏中购买武器，发现更多条目。	宝库／统计与怪物挑战记录；level2:1544/m_stringWeaponsCategorySummary
+{0} / {1} entries found\n\nDiscover more entries by buying items in-game	已发现 {0} / {1} 个条目\n\n在游戏中购买道具，发现更多条目。	宝库／统计与怪物挑战记录；level2:1544/m_stringItemsCategorySummary
+{0} / {1} entries found\n\nDiscover more entries by using objects in-game	已发现 {0} / {1} 个条目\n\n在游戏中使用物件，发现更多条目。	宝库／统计与怪物挑战记录；level2:1544/m_stringObjectsCategorySummary
+{0} / {1} completed	已完成 {0} / {1} 项成就	宝库／统计与怪物挑战记录；level2:1544/m_stringAchievementsCategorySummary
+Last attempt: LEVEL {0}\nBest attempt: LEVEL {1}	上次挑战：{0} 级\n最佳成绩：{1} 级	宝库／统计与怪物挑战记录；level2:1544/m_stringHeroChallenge
+Challenge not yet attempted	尚未尝试此挑战	宝库／统计与怪物挑战记录；level2:1544/m_stringHeroChallengeNotAttempted
+{0} Undiscovered	{0} 未发现	宝库／尚未发现的带编号条目；MenuLibrary.SetCategory
+Undiscovered	未发现	宝库／尚未发现的条目
