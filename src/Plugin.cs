@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 namespace CrawlLocalization
 {
-    [BepInPlugin(Id, "Crawl Localization", "0.7.2")]
+    [BepInPlugin(Id, "Crawl Localization", "0.8.0")]
     public sealed class Plugin : BaseUnityPlugin
     {
         public const string Id = "crawl.localization";

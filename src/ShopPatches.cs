@@ -141,19 +141,4 @@ namespace CrawlLocalization
         }
     }
 
-    [HarmonyPatch(typeof(GUIActionIndicator), "SetText")]
-    internal static class ShopActionPatch
-    {
-        private static void Postfix(string text, TextMesh ___m_textMesh)
-        {
-            if (___m_textMesh == null || Plugin.Instance == null) return;
-            bool shop = text == "BUY" || text == "BUY POTION" || text == "BUY ARTIFACT" || text == "BUY SPELL" || text == "BUY WEAPON" || text == "TRADE WEAPON";
-            LocalizedMenuLabel label = ___m_textMesh.GetComponent<LocalizedMenuLabel>();
-            if (label == null && !shop) return;
-            if (label == null) label = LocalizedMenuLabel.GetOrCreate(___m_textMesh.gameObject);
-            label.Skip = !shop;
-            label.ResetSource(text); // Pooled indicator may now show a non-shop action, including blank text.
-            label.Refresh();
-        }
-    }
 }

@@ -1,6 +1,6 @@
 # Crawl Localization
 
-BepInEx 5 中文本地化插件，版本 **0.7.2**，适配 Windows Crawl / Unity 5.4.2。当前只维护简体中文；保留恢复游戏原文的选项。包含菜单按钮及经过核对的独立 TextMesh 标题、提示文字，共 1179 条译文/数字模板、83 个 TextMesh 路径，覆盖宝库分类说明、图鉴、成就、邪神选择、开局全屏提示、章节标题、商店及常驻玩家装备面板。
+BepInEx 5 中文本地化插件，版本 **0.8.0**，适配 Windows Crawl / Unity 5.4.2。当前只维护简体中文；保留恢复游戏原文的选项。包含菜单按钮及经过核对的独立 TextMesh 标题、提示文字，共 1229 条译文/数字模板、102 个 TextMesh 路径，覆盖宝库分类说明、图鉴、成就、邪神选择、开局全屏提示、章节标题、商店、常驻玩家装备面板及本局交互提示。
 
 ## 构建与安装
 
@@ -14,7 +14,7 @@ pwsh -NoProfile -File .\build.ps1 -GamePath '你的 Crawl 目录'
 pwsh -NoProfile -File .\build.ps1 -Install
 ```
 
-输出 `artifacts/CrawlLocalization-0.7.2.zip`。关闭游戏，将 ZIP 内容解压至 `BepInEx/plugins/CrawlLocalization/`，然后重新启动。更新时覆盖 DLL、Languages 和 Fonts。新版不再分发繁体包，旧 `Languages/zh-Hant` 目录可删除；保留也不会被旧配置继续选中。不自动启动游戏。
+输出 `artifacts/CrawlLocalization-0.8.0.zip`。关闭游戏，将 ZIP 内容解压至 `BepInEx/plugins/CrawlLocalization/`，然后重新启动。更新时覆盖 DLL、Languages 和 Fonts。新版不再分发繁体包，旧 `Languages/zh-Hant` 目录可删除；保留也不会被旧配置继续选中。不自动启动游戏。
 
 ## 配置与重载
 
@@ -32,7 +32,7 @@ F8 重载配置、译文及路径清单，刷新已创建的文字。`ReloadKey 
 
 ## 译文表及位置注释
 
-`Languages/zh-Hans/translations.tsv` 存放通用菜单译文（211 条），`vault-translations.tsv` 存放宝库译文（595 条），`deity-translations.tsv` 存放邪神选择与试炼译文（71 条），`chapter-translations.tsv` 存放章节编号和随机楼层名（132 条），`shop-translations.tsv` 存放商店新增组件和提示（170 条）。五份表均为 UTF-8 TSV，有三列：
+`Languages/zh-Hans/translations.tsv` 存放通用菜单译文（211 条），`vault-translations.tsv` 存放宝库译文（595 条），`deity-translations.tsv` 存放邪神选择与试炼译文（71 条），`chapter-translations.tsv` 存放章节编号和随机楼层名（132 条），`shop-translations.tsv` 存放商店新增组件和提示（170 条）。`gameplay-translations.tsv` 存放本局交互、金币单位、传送阵和连杀提示（50 条）。六份表均为 UTF-8 TSV，有三列：
 
 ```text
 原文<TAB>中文<TAB>位置注释
@@ -54,7 +54,7 @@ Note: Many keyboards do not\nsupport multiple players<TAB>注意：许多键盘�
 
 增加独立文字时，在译文表添加原文和译文，再将核对过的对象路径添加到路径清单。不会自动翻译所有 MonoBehaviour 或所有 TextMesh；玩家名字、账号名、制作人员姓名、网址、编辑器占位文字和图标字符不作为通用替换目标。
 
-已增加：键盘提示、街机模式说明、菜单标题、操作重绑的静态和动态提示、玩家加入的电脑说明、加载/保存提示、宝库标题及操作提示、暂停菜单游戏提示、制作人员页面的职能标题。宝库内容覆盖见下节；非商店拾取提示、暂停中途加入与胜利画面的神祇相关文字、所有弹窗正文、CrawlOnline F1 IMGUI 和 ex2D 仍未全面覆盖。
+已增加：键盘提示、街机模式说明、菜单标题、操作重绑的静态和动态提示、玩家加入的电脑说明、加载/保存提示、宝库标题及操作提示、暂停菜单游戏提示、制作人员页面的职能标题。宝库内容覆盖见下节；未列入本次范围的拾取/剧情提示、暂停中途加入与胜利画面的神祇相关文字、所有弹窗正文、CrawlOnline F1 IMGUI 和 ex2D 仍未全面覆盖。
 
 ## 宝库汉化（0.4.0）
 
@@ -110,6 +110,18 @@ Note: Many keyboards do not\nsupport multiple players<TAB>注意：许多键盘�
 
 保留原前缀分行、属性数字、图标、布局、滚动和透明度。独立Unity检查覆盖12项换装/列表复用/缓存/重载行为，以及328个来自实际资源的名称显示案例；完整游戏里的位置和滚动效果仍需用户确认。
 
+## 本局交互与反馈（0.8.0）
+
+新增 `GAME TIPS`（游戏提示）、`DEFILE`（亵渎）、`WISH`（许愿）、`MAKE OFFERING`（献上祭品）等39种资源交互用语；补齐书籍、墓碑、献祭装置的静态提示。`GUIActionIndicator.SetText` 写入原文后仅翻译显示，未知mod交互保留原文，并更新重载来源，避免反复使用同一提示框时残留旧文本。
+
+金币奖励中的 `gold` 单独译为“金”，数字与“+”标签不动；`REWARD` 为“奖励”。此单位采用专用键 `@gameplay.reward-unit:gold`，其他位置的“金币”译文不受影响。首领传送阵显示“需要 10 级”与“激活”；`{0}x Streak` 显示为“{0}x 连杀”，保留数字、前导零和 x，另补“本局最佳”及战斗奖励提示。
+
+动态道具创建后在各自 Start 结束时绑定已核对路径，包含隐藏文字；连杀在游戏写入数字后即时刷新。字体、颜色、显示开关、交互状态、等级条件及回调由原游戏维护。没有全场景逐帧搜索。
+
+**尚未汉化的图片文字：** `LEVEL X`、`HEALTH UP`（以及速度/力量提升）、`+WRATH`、`HEAL`、墓碑效果 `Altered …` 属于 ex2D 精灵/图集动画，不能靠本次 TextMesh 译文替换。资源位置与后续方案见 [图片提示清单](docs/gameplay-image-text.md)。本次不修改这些图片。
+
+验证使用独立Unity5.4项目，覆盖118条非空交互资源、21个静态标签，以及提示框复用、原文恢复、金币单位、隐藏传送阵文字和连杀数字。实际游戏的位置、淡入淡出和操作反馈仍由用户确认；未安装或启动Crawl。
+
 ## 章节编号与楼层名（0.6.0）
 
 进局和换层时显示的 `- Chapter {0} -` 翻译为 `- 第 {0} 章 -`，并覆盖地牢、墓穴、矿区环境的全部131个不同随机楼层名。源资源是 sharedassets0.assets 中44824、44832、44876、44921、45936的Environment，以及55903的LevelTitle。重复环境共用译文，表格注释保留全部来源。
@@ -126,7 +138,7 @@ CrawlOnline 的 `Patch_SystemTutorial_GetShouldStartTutorial` 在 `Unlocks.Enabl
 
 ## 字体及排版
 
-`Fonts/crawl-fonts.bundle` 由 Unity 5.4.2f2 / Windows x86 构建，包含十个合并中文字体。内嵌 TTF 与根目录源文件逐字节相同，保留原游戏 Font 的 ascent、descent、line spacing；0.7.2 继续使用 0.2.2 修正后的字体包。
+`Fonts/crawl-fonts.bundle` 由 Unity 5.4.2f2 / Windows x86 构建，包含十个合并中文字体。内嵌 TTF 与根目录源文件逐字节相同，保留原游戏 Font 的 ascent、descent、line spacing；0.8.0 继续使用 0.2.2 修正后的字体包。
 
 `fonts.tsv` 五列：原字体名、类型、相对文件路径、资源/家族名、倍率。默认按完整资源路径 `LoadAsset<Font>`。支持 `bundle`、兼容入口 `ttf` 和 `system`；TTF 按家族创建不能保证实际文件来源，推荐 bundle。
 
@@ -156,6 +168,8 @@ Unity 5.4 独立渲染复现并确认：示例中文的总高度、垂直中心�
 pwsh -NoProfile -File .\tests\test.ps1
 python .\tests\check_fonts.py
 python .\tests\check_bundle.py --game-path 'D:\SteamLibrary\steamapps\common\Crawl'
+# 导出并验证本局交互、传送阵、奖励和连杀（不启动游戏）：
+pwsh -NoProfile -File .\tests\check-gameplay.ps1
 # 从实际资源导出宝库，并用运行时语言包检查显示案例：
 # 额外需要 Python 包 UnityPy、TypeTreeGeneratorAPI
 python .\tools\export_vault_texts.py --game-path '你的 Crawl 目录' --output artifacts/vault-catalog.json --cases-output artifacts/vault-cases.json

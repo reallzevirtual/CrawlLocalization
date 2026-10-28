@@ -89,3 +89,24 @@ MenuIntroAnimatic/Slide4/SpriteBullet1/Text1
 # Dynamically spawned chapter title; bound after LevelTitle.Start writes its text.
 GUILevelTitle/LevelNum
 GUILevelTitle/FloorName
+
+# Audited gameplay prompts, portal, rewards and streak labels.
+GUIGame/EndEncounterTally/Text
+GUIGame/KillStreak
+GUIGame/StreakTextBottom
+GUIGame/StreakTextTop
+GuiPlayer/Gold/GoldDamage
+PropActionable_Tombstone1/Select_Reticule/Text
+PropPortal/TextActionMessage
+PropPortal/TextInactiveMessage
+PropStoreTeleporterFavour/ActionIndicatorOff/Text
+PropStoreTeleporterFavourCrypt/ActionIndicatorOff/Text
+PropStoreTeleporterFavourMines/ActionIndicatorOff/Text
+SignsGameTips/TextContainer/ActionIndicator/Text
+SignsGameTips/TextContainer/Bubble/Text
+SignsGameTipsVariantTomeCrypt/TextContainer/ActionIndicator/Text
+SignsGameTipsVariantTomeCrypt/TextContainer/Bubble/Text
+SignsGameTipsVariantTomeDungeon/TextContainer/ActionIndicator/Text
+SignsGameTipsVariantTomeDungeon/TextContainer/Bubble/Text
+SignsGameTipsVariantTomeMines/TextContainer/ActionIndicator/Text
+SignsGameTipsVariantTomeMines/TextContainer/Bubble/Text

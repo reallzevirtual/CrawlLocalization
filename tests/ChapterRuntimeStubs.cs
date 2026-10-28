@@ -6,9 +6,14 @@ using System.Reflection;
 using UnityEngine;
 namespace HarmonyLib
 {
+    public static class AccessTools
+    {
+        public static MethodInfo Method(Type type, string name) { return type.GetMethod(name, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic); }
+    }
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
     public sealed class HarmonyPatch : Attribute
     {
+        public HarmonyPatch() { }
         public HarmonyPatch(Type type, string method) { }
         public HarmonyPatch(Type type, string method, Type[] args) { }
     }
