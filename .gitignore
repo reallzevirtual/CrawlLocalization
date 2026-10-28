@@ -1,0 +1,30 @@
+# Build outputs, release archives and diagnostic logs
+/artifacts/
+*.log
+*.dmp
+
+# Local editors and generated compiler/Python caches
+.vs/
+.idea/
+*.user
+*.suo
+**/bin/
+**/obj/
+__pycache__/
+*.py[cod]
+.venv/
+
+# Unity caches and IDE files
+/FontBundleProject/Library/
+/FontBundleProject/Temp/
+/FontBundleProject/Logs/
+/FontBundleProject/UserSettings/
+/FontBundleProject/*.csproj
+/FontBundleProject/*.sln
+
+# Recreated from /Fonts by build-fonts.ps1; keep their .meta files
+/FontBundleProject/Assets/Fonts/*.ttf
+
+# OS metadata
+Thumbs.db
+.DS_Store

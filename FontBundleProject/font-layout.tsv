@@ -1,0 +1,12 @@
+# Original Crawl 5.4.2 Font metadata. Columns: name, ascent, descent, line spacing.
+# These remain unchanged when replacing only m_FontData in the game assets.
+CrawlLarge	11	-4	16.4375
+04B_04-Black	150	-50	200
+CrawlTextBodyWide	10.65625	-2	14.09375
+04B_03-White	112.5	-37.5	150
+CrawlTextBodyTeensy	10.65625	-2	14.09375
+CrawlTextBodyThin	10.65625	-2	14.09375
+CrawlMedium	10.65625	-3	15.09375
+CrawlInvLarge	11	-4	16.4375
+CrawlSmall	10.65625	-2	14.09375
+CrawlTiny	10.65625	-1	13.09375

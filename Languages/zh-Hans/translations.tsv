@@ -1,0 +1,106 @@
+# UTF-8. source<TAB>translation. Case-insensitive exact match; {0} matches unsigned digits only.
+START GAME	开始游戏
+THE VAULT	宝库
+OPTIONS	设置
+CREDITS	制作人员
+QUIT	退出游戏
+ONLINE	联机游戏
+ONLINE LOBBY	联机大厅
+BACK	返回
+OK?	准备好了吗？
+OK	确定
+CANCEL	取消
+YES	是
+NO	否
+READY	准备就绪
+MONSTERS	怪物
+WEAPONS	武器
+ITEMS	道具
+OBJECTS	物件
+QUESTS	挑战
+RESUME	继续游戏
+GAMEPLAY TIPS	游戏提示
+DROP IN	加入游戏
+DROP OUT	离开游戏
+QUIT TO MENU	返回主菜单
+Reset	重置
+Redefine	重新绑定
+Controls	操作设置
+Aim:Analog	瞄准：模拟
+Aim:Normal	瞄准：普通
+Aim:Smooth	瞄准：平滑
+Bots: {0}	电脑玩家：{0}
+AI: Easy	难度：简单
+AI: Normal	难度：普通
+AI: Medium	难度：中等
+AI: Hard	难度：困难
+AI: Unfair	难度：不公平
+-NEW-	-新建-
+Reset Controls	重置操作设置
+Keyboard Setup	键盘设置
+Cabinet Setup	街机设置
+Resolution	分辨率
+Apply Resolution	应用分辨率
+Display	显示设置
+< SOUND: {0} >	< 音效：{0} >
+< MUSIC: {0} >	< 音乐：{0} >
+< 游戏音效: {0} >	< 音效：{0} >
+< 背景音乐: {0} >	< 音乐：{0} >
+< TV SAFE ZONE: {0} >	< 显示安全区：{0} >
+< SCREENSHAKE: {0} >	< 画面震动：{0} >
+< SAFE ZONE >	< 显示安全区 >
+< SCREENSHAKE >	< 画面震动 >
+Flicker	闪烁效果
+< Display: Primary >	< 主显示器 >
+< Display: Secondary {0} >	< 副显示器 {0} >
+< Monitor Id: {0} >	< 显示器：{0} >
+Reset All	全部重置
+- Set Keys -	- 按键设置 -
+Set Keys {0}	设置按键 {0}
+Remove Keys {0}	移除按键 {0}
+Add Keys {0}	添加按键 {0}
+Reset Keys {0}	重置按键 {0}
+Bind Keys {0}	绑定按键 {0}
+- Set Inputs -	- 输入设置 -
+Set Player {0}	设置玩家 {0}
+Sticks: Analog	摇杆：模拟
+Sticks: 8-way	摇杆：八方向
+Menu: Normal	菜单：普通
+Menu: Esc Only	菜单：仅 Esc 键
+Server list	服务器列表
+Host lobby	创建大厅
+Join a friend	加入好友
+Public	公开
+Friends only	仅限好友
+Invite only	仅限邀请
+Next page	下一页
+Refresh	刷新
+Invite friends	邀请好友
+Close lobby	关闭大厅
+Visibility: Public	可见性：公开
+Visibility: Friends	可见性：好友
+Visibility: Private	可见性：私人
+Visibility: Friends only	可见性：仅限好友
+Visibility: Invite only	可见性：仅限邀请
+Game Tips: ON	游戏提示：开
+Game Tips: OFF	游戏提示：关
+Tutorial: ON	教程：开
+Tutorial: OFF	教程：关
+Replay Tutorial: ON	重玩教程：开
+Replay Tutorial: OFF	重玩教程：关
+Run In Background: ON	后台运行：开
+Run In Background: OFF	后台运行：关
+Vibration: ON	震动：开
+Vibration: OFF	震动：关
+VSync: ON	垂直同步：开
+VSync: OFF	垂直同步：关
+Fullscreen: ON	全屏：开
+Fullscreen: OFF	全屏：关
+Reduced Flicker: ON	减少闪烁：开
+Reduced Flicker: OFF	减少闪烁：关
+Easter Eggs: ON	彩蛋：开
+Easter Eggs: OFF	彩蛋：关
+复活节彩蛋: ON	彩蛋：开
+复活节彩蛋: OFF	彩蛋：关
+Cabinet Mode: ON	街机模式：开
+Cabinet Mode: OFF	街机模式：关

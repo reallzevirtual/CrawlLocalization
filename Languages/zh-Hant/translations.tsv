@@ -1,0 +1,106 @@
+# UTF-8. source<TAB>translation. Case-insensitive exact match; {0} matches unsigned digits only.
+START GAME	開始遊戲
+THE VAULT	寶庫
+OPTIONS	設定
+CREDITS	製作人員
+QUIT	離開遊戲
+ONLINE	連線遊戲
+ONLINE LOBBY	連線大廳
+BACK	返回
+OK?	準備好了嗎？
+OK	確定
+CANCEL	取消
+YES	是
+NO	否
+READY	準備就緒
+MONSTERS	怪物
+WEAPONS	武器
+ITEMS	道具
+OBJECTS	物件
+QUESTS	挑戰
+RESUME	繼續遊戲
+GAMEPLAY TIPS	遊戲提示
+DROP IN	加入遊戲
+DROP OUT	離開遊戲
+QUIT TO MENU	返回主選單
+Reset	重設
+Redefine	重新綁定
+Controls	操作設定
+Aim:Analog	瞄準：類比
+Aim:Normal	瞄準：一般
+Aim:Smooth	瞄準：平滑
+Bots: {0}	電腦玩家：{0}
+AI: Easy	難度：簡單
+AI: Normal	難度：一般
+AI: Medium	難度：中等
+AI: Hard	難度：困難
+AI: Unfair	難度：不公平
+-NEW-	-新增-
+Reset Controls	重設操作設定
+Keyboard Setup	鍵盤設定
+Cabinet Setup	街機設定
+Resolution	解析度
+Apply Resolution	套用解析度
+Display	顯示設定
+< SOUND: {0} >	< 音效：{0} >
+< MUSIC: {0} >	< 音樂：{0} >
+< 游戏音效: {0} >	< 音效：{0} >
+< 背景音乐: {0} >	< 音樂：{0} >
+< TV SAFE ZONE: {0} >	< 顯示安全區：{0} >
+< SCREENSHAKE: {0} >	< 畫面震動：{0} >
+< SAFE ZONE >	< 顯示安全區 >
+< SCREENSHAKE >	< 畫面震動 >
+Flicker	閃爍效果
+< Display: Primary >	< 主顯示器 >
+< Display: Secondary {0} >	< 副顯示器 {0} >
+< Monitor Id: {0} >	< 顯示器：{0} >
+Reset All	全部重設
+- Set Keys -	- 按鍵設定 -
+Set Keys {0}	設定按鍵 {0}
+Remove Keys {0}	移除按鍵 {0}
+Add Keys {0}	新增按鍵 {0}
+Reset Keys {0}	重設按鍵 {0}
+Bind Keys {0}	綁定按鍵 {0}
+- Set Inputs -	- 輸入設定 -
+Set Player {0}	設定玩家 {0}
+Sticks: Analog	搖桿：類比
+Sticks: 8-way	搖桿：八方向
+Menu: Normal	選單：一般
+Menu: Esc Only	選單：僅 Esc 鍵
+Server list	伺服器清單
+Host lobby	建立大廳
+Join a friend	加入好友
+Public	公開
+Friends only	僅限好友
+Invite only	僅限邀請
+Next page	下一頁
+Refresh	重新整理
+Invite friends	邀請好友
+Close lobby	關閉大廳
+Visibility: Public	可見性：公開
+Visibility: Friends	可見性：好友
+Visibility: Private	可見性：私人
+Visibility: Friends only	可見性：僅限好友
+Visibility: Invite only	可見性：僅限邀請
+Game Tips: ON	遊戲提示：開
+Game Tips: OFF	遊戲提示：關
+Tutorial: ON	教學：開
+Tutorial: OFF	教學：關
+Replay Tutorial: ON	重玩教學：開
+Replay Tutorial: OFF	重玩教學：關
+Run In Background: ON	背景執行：開
+Run In Background: OFF	背景執行：關
+Vibration: ON	震動：開
+Vibration: OFF	震動：關
+VSync: ON	垂直同步：開
+VSync: OFF	垂直同步：關
+Fullscreen: ON	全螢幕：開
+Fullscreen: OFF	全螢幕：關
+Reduced Flicker: ON	減少閃爍：開
+Reduced Flicker: OFF	減少閃爍：關
+Easter Eggs: ON	彩蛋：開
+Easter Eggs: OFF	彩蛋：關
+复活节彩蛋: ON	彩蛋：開
+复活节彩蛋: OFF	彩蛋：關
+Cabinet Mode: ON	街機模式：開
+Cabinet Mode: OFF	街機模式：關

@@ -1,0 +1,145 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Text;
+using System.Text.RegularExpressions;
+
+namespace CrawlLocalization
+{
+    internal sealed class FontRule
+    {
+        internal string Kind, File, Name;
+        internal float Scale;
+    }
+
+    // No Unity dependency: language packs can be validated without starting Crawl.
+    internal sealed class LanguagePack
+    {
+        internal string Id;
+        internal string[] FallbackFonts = new string[0];
+        internal readonly Dictionary<string, FontRule> Fonts = new Dictionary<string, FontRule>(StringComparer.Ordinal);
+        private readonly Dictionary<string, string> exact = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        private readonly List<KeyValuePair<string, string>> numeric = new List<KeyValuePair<string, string>>();
+        internal int Count { get { return exact.Count + numeric.Count; } }
+
+        internal static string NormalizeId(string id)
+        {
+            id = (id ?? "").Trim();
+            if (string.Equals(id, "zh-CN", StringComparison.OrdinalIgnoreCase) || string.Equals(id, "zh-Hans", StringComparison.OrdinalIgnoreCase)) return "zh-Hans";
+            if (string.Equals(id, "zh-TW", StringComparison.OrdinalIgnoreCase) || string.Equals(id, "zh-Hant", StringComparison.OrdinalIgnoreCase)) return "zh-Hant";
+            if (string.Equals(id, "en", StringComparison.OrdinalIgnoreCase)) return "en";
+            return Regex.IsMatch(id, @"\A[A-Za-z0-9][A-Za-z0-9_-]*\z") ? id : "en";
+        }
+
+        internal static string ResolveFile(string root, string relative)
+        {
+            if (string.IsNullOrEmpty(relative) || Path.IsPathRooted(relative)) throw new FormatException("Expected a relative file path.");
+            string prefix = Path.GetFullPath(root).TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar) + Path.DirectorySeparatorChar;
+            string full = Path.GetFullPath(Path.Combine(prefix, relative));
+            if (!full.StartsWith(prefix, StringComparison.OrdinalIgnoreCase)) throw new FormatException("File must stay inside the plugin folder.");
+            return full;
+        }
+
+        internal static LanguagePack Load(string root, string id, Action<string> warn)
+        {
+            LanguagePack pack = new LanguagePack { Id = NormalizeId(id) };
+            if (pack.Id == "en") return pack;
+            string directory = Path.Combine(Path.Combine(root, "Languages"), pack.Id);
+            ReadLines(Path.Combine(directory, "translations.tsv"), warn, delegate(string line)
+            {
+                string[] cells = line.Split('\t');
+                if (cells.Length != 2 || cells[0].Length == 0 || cells[1].Length == 0) throw new FormatException("Expected source<TAB>translation.");
+                string source = Unescape(cells[0]), target = Unescape(cells[1]);
+                int token = source.IndexOf("{0}", StringComparison.Ordinal);
+                if (token >= 0)
+                {
+                    if (source.IndexOf("{0}", token + 3, StringComparison.Ordinal) >= 0 || target.IndexOf("{0}", StringComparison.Ordinal) < 0)
+                        throw new FormatException("Numeric templates require one {0} in the source and a preserved {0} in the translation.");
+                    foreach (KeyValuePair<string, string> entry in pack.numeric)
+                        if (string.Equals(entry.Key, source, StringComparison.OrdinalIgnoreCase)) throw new FormatException("Duplicate source: " + source);
+                    pack.numeric.Add(new KeyValuePair<string, string>(source, target));
+                }
+                else
+                {
+                    if (pack.exact.ContainsKey(source)) throw new FormatException("Duplicate source: " + source);
+                    pack.exact.Add(source, target);
+                }
+            });
+            ReadLines(Path.Combine(directory, "fonts.tsv"), warn, delegate(string line)
+            {
+                string[] c = line.Split('\t');
+                float scale;
+                if (c.Length != 5 || c[0].Length == 0 || c[3].Length == 0 || !float.TryParse(c[4], NumberStyles.Float, CultureInfo.InvariantCulture, out scale) || float.IsNaN(scale) || float.IsInfinity(scale) || scale <= 0 || scale > 10)
+                    throw new FormatException("Expected original<TAB>kind<TAB>file<TAB>family/asset<TAB>scale (0..10).");
+                if (c[1] != "ttf" && c[1] != "bundle" && c[1] != "system") throw new FormatException("Font kind must be ttf, bundle or system.");
+                string file = c[1] == "system" ? "" : ResolveFile(root, c[2]);
+                if (pack.Fonts.ContainsKey(c[0])) throw new FormatException("Duplicate font mapping: " + c[0]);
+                pack.Fonts.Add(c[0], new FontRule { Kind = c[1], File = file, Name = c[3], Scale = scale });
+            });
+            ReadLines(Path.Combine(directory, "language.ini"), warn, delegate(string line)
+            {
+                int separator = line.IndexOf('=');
+                if (separator <= 0) throw new FormatException("Expected key=value.");
+                string key = line.Substring(0, separator).Trim();
+                if (key == "FallbackFonts")
+                    pack.FallbackFonts = line.Substring(separator + 1).Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+                else if (key != "Name") throw new FormatException("Unknown setting: " + key);
+            });
+            return pack;
+        }
+
+        private static void ReadLines(string path, Action<string> warn, Action<string> read)
+        {
+            try
+            {
+                string[] lines = File.ReadAllLines(path, new UTF8Encoding(false, true));
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    if (lines[i].Trim().Length == 0 || lines[i].StartsWith("#", StringComparison.Ordinal)) continue;
+                    try { read(lines[i]); }
+                    catch (Exception ex) { warn(path + ":" + (i + 1) + ": " + ex.Message); }
+                }
+            }
+            catch (Exception ex) { warn("Cannot read " + path + ": " + ex.Message + "; keeping original text/font where needed."); }
+        }
+
+        internal bool TryTranslate(string source, out string translated)
+        {
+            translated = null;
+            if (source == null) return false;
+            if (exact.TryGetValue(source, out translated)) return true;
+            foreach (KeyValuePair<string, string> entry in numeric)
+            {
+                int at = entry.Key.IndexOf("{0}", StringComparison.Ordinal);
+                string prefix = entry.Key.Substring(0, at), suffix = entry.Key.Substring(at + 3);
+                if (source.Length <= prefix.Length + suffix.Length || !source.StartsWith(prefix, StringComparison.OrdinalIgnoreCase) || !source.EndsWith(suffix, StringComparison.OrdinalIgnoreCase)) continue;
+                string value = source.Substring(prefix.Length, source.Length - prefix.Length - suffix.Length);
+                bool digits = true;
+                foreach (char ch in value) if (ch < '0' || ch > '9') { digits = false; break; }
+                if (!digits) continue;
+                translated = entry.Value.Replace("{0}", value);
+                return true;
+            }
+            return false;
+        }
+
+        private static string Unescape(string value)
+        {
+            StringBuilder result = new StringBuilder();
+            for (int i = 0; i < value.Length; i++)
+            {
+                if (value[i] != '\\') { result.Append(value[i]); continue; }
+                if (++i == value.Length) throw new FormatException("Trailing backslash; escape literal backslashes.");
+                switch (value[i])
+                {
+                    case 'n': result.Append('\n'); break;
+                    case 't': result.Append('\t'); break;
+                    case '\\': result.Append('\\'); break;
+                    default: throw new FormatException("Unsupported escape sequence.");
+                }
+            }
+            return result.ToString();
+        }
+    }
+}
