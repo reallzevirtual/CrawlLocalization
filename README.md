@@ -72,44 +72,29 @@ ReloadKey = F8
 
 重玩教程开关可能显示“开（当前模式禁用）”：表示设置已保存，但当前模式限制了教程启动。本插件保留原游戏和 CrawlOnline 的教程限制。
 
-## 修改译文与制作其他语言
+## Create another language
 
-普通玩家包包含运行文件和简短的 README。需要制作语言包时，使用 `CrawlLocalization-<版本号>-Translator.zip`，其中额外包含 `crawl-language-pack/SKILL.md` 和创建、校验脚本。可直接让 AI 阅读该技能。
+Use `CrawlLocalization-<version>-Translator.zip`. It contains the DLL, an independent original-English catalog, `crawl-language-pack/SKILL.md`, and creation/checking scripts. It contains no Chinese translations, Chinese comments or font bundle. The player package separately includes Simplified Chinese.
 
-**编辑前备份原始文件，翻译完成后对照备份检查。** 备份放在不会随临时文件清理的位置，保留原始英文键和文件结构。
-
-在解压后的翻译制作包根目录运行以下命令，以西班牙语为例：
+Before editing, back up the English catalog and your generated language folder. Ask an AI to read the skill and specify the target language, or run this in the extracted translator package:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\crawl-language-pack\scripts\new-language.ps1 -PluginRoot . -Language es -DisplayName "Español"
 ```
 
-脚本生成 `Languages/es/`。新模板第二列为 `@TODO`，第三列的中文只是参考注释；默认不复制中文字体映射。修改第二列译文后，设置 `Language = es`，按 F8 或重启。无需重新编译插件。创建工具会拒绝覆盖已有语言目录。
+The script creates `Languages/es/` with 1,488 original-English entries. Translate column 2 from the English in column 1; column 3 provides English context. Unfinished targets remain `@TODO` and display original English. Four input aliases retained for old manually modified Chinese game assets are intentionally excluded from new templates.
 
-译文文件是 **UTF-8 原始 TSV**：
-
-```text
-原文或查找键<TAB>译文<TAB>位置注释
-START GAME<TAB>开始游戏<TAB>主菜单／入口按钮
-```
-
-`<TAB>` 指实际制表符。保持第一列不变，保留 `{0}` 等占位符、颜色标签、`[A]`／`[B]` 图标标记及 `\n` 等转义。`@TODO` 表示待译；只有 `@shop.il:` 允许空译文来主动省略片段。
-
-**不要按 CSV 引号规则保存。** 引号是文本的一部分，将 `"` 改为 `""`、添加外层引号或删掉原文引号都会影响匹配。表格软件中看起来正常，也应检查保存后的原始文件。
-
-完成后校验：
+Tables are UTF-8 raw TSV, not quote-aware CSV. Preserve source keys, placeholders, tags, `[A]`/`[B]` markers, escapes and significant spaces. Do not add wrapping quotes or double existing quotes. Compare saved files with the pre-edit backup and run:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\crawl-language-pack\scripts\check-language.ps1 -PluginRoot . -Language es
-# 要求全部翻译完成时加上：
-powershell -NoProfile -ExecutionPolicy Bypass -File .\crawl-language-pack\scripts\check-language.ps1 -PluginRoot . -Language es -RequireComplete
 ```
 
-源码目录下，脚本位于 `translator-kit/crawl-language-pack/scripts/`。校验检查结构、重复键、占位符、标签和字体配置；它使用当前 `zh-Hans` 目录作为参考，因此检查中文自身时仍须与编辑前备份或可信 Git 版本比对。脚本通过不代表译文质量、字形和游戏内布局已经验证。
+Add `-RequireComplete` when the language should be fully translated. The checker reads the independent `catalog/` next to its scripts, so it can detect edited source keys without consulting any translated pack. Keep that catalog unchanged during translation. In a source checkout the scripts are under `translator-kit/crawl-language-pack/scripts/`.
 
-语言目录中的 `language.ini` 配置备用字体，`fonts.tsv` 配置替换映射，`textmesh-paths.txt` 是显示对象绑定清单；这些都是运行数据，不应随意删除。各语言只使用自己的字体配置。中文专用换行和小字号采样不会在其他语言触发；特殊文字系统的排版能力需另外验证。
+Set `Language = es` in `BepInEx/config/crawl.localization.cfg`, then press F8 or restart. The template has no explicit font mappings; it tries original fonts and the configured fallback families. Configure `fonts.tsv` and `language.ini` as needed and retain `textmesh-paths.txt`. Chinese-specific layout rules do not apply to other languages; other scripts' layout and glyph coverage still need in-game validation.
 
-各表用途、字体格式、术语与拼接约束详见[语言包规范](translator-kit/crawl-language-pack/SKILL.md)。发给玩家时提供 `Languages/<语言>/` 和它引用的字体，并告知配置值。
+No DLL rebuild is needed. Share the language directory, required fonts and language setting. Detailed table semantics, font configuration and backup workflow are in the [language pack skill](translator-kit/crawl-language-pack/SKILL.md).
 
 ## 从源码构建与打包
 
@@ -131,9 +116,9 @@ pwsh -NoProfile -File .\build.ps1 -GamePath 'D:\SteamLibrary\steamapps\common\Cr
 | --- | --- |
 | `artifacts/CrawlLocalization-<版本号>/` | 运行文件暂存目录，每次构建会重建其内容 |
 | `artifacts/CrawlLocalization-<版本号>.zip` | 普通玩家包 |
-| `artifacts/CrawlLocalization-<版本号>-Translator.zip` | 运行文件 + 翻译技能与脚本 |
+| `artifacts/CrawlLocalization-<版本号>-Translator.zip` | DLL、英文原文词表、说明和翻译工具，不含现成译文或字体包 |
 
-两个发行包都会附带简短的 README，源文件为 [packaging/README.md](packaging/README.md)，构建时直接复制。玩家包除此之外只包含 DLL、所选语言包的运行数据和引用字体，不带项目长篇 README、CHANGELOG、docs、源码、测试或字体源 TTF。译者工具只进入 Translator 包。
+两个发行包分别复制简短说明：[玩家 README](packaging/README.md)、[制作包 README](packaging/translator/README.md)。玩家包除此之外只包含 DLL、所选语言包的运行数据和引用字体，不带项目长篇 README、CHANGELOG、docs、源码、测试或字体源 TTF。译者工具只进入 Translator 包。
 
 如果已经在源码的 `Languages/` 下准备了其他语言，在 **PowerShell 7 终端**中按数组选择：
 
@@ -141,7 +126,7 @@ pwsh -NoProfile -File .\build.ps1 -GamePath 'D:\SteamLibrary\steamapps\common\Cr
 .\build.ps1 -GamePath '你的 Crawl 目录' -Languages @('zh-Hans', 'es')
 ```
 
-默认只打包 `zh-Hans`。译者工具依赖该目录作原文参考，分发制作包时应保留它；新增语言运行时不依赖它。
+玩家包默认只打包 `zh-Hans`。制作包始终从独立英文 `catalog/` 打包，与所选玩家语言无关，不需要保留中文包。维护者新增适配词条时需同步更新英文目录；普通翻译只改目标语言，不改目录基线。
 
 需要构建后自动安装时，先关闭游戏：
 

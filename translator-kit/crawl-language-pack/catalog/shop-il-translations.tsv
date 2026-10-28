@@ -1,0 +1,36 @@
+# Original source/key<TAB>translation (@TODO means pending)<TAB>English context
+@shop.il:.	@TODO	Shop string fragments and templates
+@shop.il:\nHas 	@TODO	Shop string fragments and templates
+@shop.il: with 	@TODO	Shop string fragments and templates
+@shop.il:an unusually <color=#a19473>fast attack speed</color>	@TODO	Shop string fragments and templates
+@shop.il:abnormally <color=#a19473>high damage</color>	@TODO	Shop string fragments and templates
+@shop.il:an unusually <color=#a19473>low attack speed</color>	@TODO	Shop string fragments and templates
+@shop.il:abnormally <color=#a19473>poor damage</color>	@TODO	Shop string fragments and templates
+@shop.il: for a {0}	@TODO	Shop string fragments and templates
+@shop.il:\n<color=#774789>{0}.</color>	@TODO	Shop string fragments and templates
+@shop.il:\n<color=#b78f2d>{0}% chance of {1}.</color>	@TODO	Shop string fragments and templates
+@shop.il:\n\nTrade 	@TODO	Shop string fragments and templates
+@shop.il:\n\nReplaces 	@TODO	Shop string fragments and templates
+@shop.il:\n\nYou already own this artifact.	@TODO	Shop string fragments and templates
+@shop.il:(Value 	@TODO	Shop string fragments and templates
+@shop.il:)	@TODO	Shop string fragments and templates
+@shop.il:<color=#b6442e>--VALUE</color> 	@TODO	Shop string fragments and templates
+@shop.il:<color=#b6442e>-VALUE</color> 	@TODO	Shop string fragments and templates
+@shop.il:=VALUE 	@TODO	Shop string fragments and templates
+@shop.il:<color=#7fa135>+VALUE</color> 	@TODO	Shop string fragments and templates
+@shop.il:<color=#7fa135>++VALUE</color> 	@TODO	Shop string fragments and templates
+@shop.il:<color=#b6442e>--DAMAGE</color> 	@TODO	Shop string fragments and templates
+@shop.il:<color=#b6442e>-DAMAGE</color> 	@TODO	Shop string fragments and templates
+@shop.il:=DAMAGE 	@TODO	Shop string fragments and templates
+@shop.il:<color=#7fa135>+DAMAGE</color> 	@TODO	Shop string fragments and templates
+@shop.il:<color=#7fa135>++DAMAGE</color> 	@TODO	Shop string fragments and templates
+@shop.il:<color=#b6442e>--SPEED</color> 	@TODO	Shop string fragments and templates
+@shop.il:<color=#b6442e>-SPEED</color> 	@TODO	Shop string fragments and templates
+@shop.il:=SPEED 	@TODO	Shop string fragments and templates
+@shop.il:<color=#7fa135>+SPEED</color> 	@TODO	Shop string fragments and templates
+@shop.il:<color=#7fa135>++SPEED</color> 	@TODO	Shop string fragments and templates
+@shop.il:<color=#b6442e>--RANGE</color> 	@TODO	Shop string fragments and templates
+@shop.il:<color=#b6442e>-RANGE</color> 	@TODO	Shop string fragments and templates
+@shop.il:=RANGE 	@TODO	Shop string fragments and templates
+@shop.il:<color=#7fa135>+RANGE</color> 	@TODO	Shop string fragments and templates
+@shop.il:<color=#7fa135>++RANGE</color> 	@TODO	Shop string fragments and templates

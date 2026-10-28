@@ -23,6 +23,10 @@ $null = [CrawlLocalization.ShopTests]::Run($projectRoot)
 [CrawlLocalization.ProgressionTests]::Run($projectRoot)
 [CrawlLocalization.OnlineTests]::Run($projectRoot)
 
+# Keep the checked-in English catalog independent of the edited Chinese targets.
+& powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $projectRoot 'translator-kit\crawl-language-pack\scripts\check-language.ps1') -PluginRoot $projectRoot -Language zh-Hans -RequireComplete
+if ($LASTEXITCODE -ne 0) { throw 'Language catalog validation failed.' }
+
 if ($VaultCases) {
     [string[]]$sources = @(Get-Content -Raw -LiteralPath $VaultCases -Encoding utf8 | ConvertFrom-Json)
     [CrawlLocalization.Tests]::CheckCatalog($projectRoot, $sources)

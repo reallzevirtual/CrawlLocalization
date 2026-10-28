@@ -1,0 +1,136 @@
+# Original source/key<TAB>translation (@TODO means pending)<TAB>English context
+@online:ONLINE	@TODO	CrawlOnline UI
+@online:ONLINE LOBBY	@TODO	CrawlOnline UI
+@online:Server list	@TODO	CrawlOnline UI
+@online:Host lobby	@TODO	CrawlOnline UI
+@online:Join a friend	@TODO	CrawlOnline UI
+@online:Public	@TODO	CrawlOnline UI
+@online:Friends only	@TODO	CrawlOnline UI
+@online:Invite only	@TODO	CrawlOnline UI
+@online:Next page	@TODO	CrawlOnline UI
+@online:Refresh	@TODO	CrawlOnline UI
+@online:Invite friends	@TODO	CrawlOnline UI
+@online:Close lobby	@TODO	CrawlOnline UI
+@online:Visibility: Public	@TODO	CrawlOnline UI
+@online:Visibility: Friends	@TODO	CrawlOnline UI
+@online:Visibility: Private	@TODO	CrawlOnline UI
+@online:Visibility: Friends only	@TODO	CrawlOnline UI
+@online:Visibility: Invite only	@TODO	CrawlOnline UI
+@online:Play online	@TODO	CrawlOnline UI
+@online:Find a game or host your own.\nHost is P1, others join as P2-P4.	@TODO	CrawlOnline UI
+@online:Steam is not available. Use the F1 menu for a direct (IP) connection.	@TODO	CrawlOnline UI
+@online:Back	@TODO	CrawlOnline UI
+@online:Cancel	@TODO	CrawlOnline UI
+@online:OK	@TODO	CrawlOnline UI
+@online:Who can join "	@TODO	CrawlOnline UI
+@online:"?	@TODO	CrawlOnline UI
+@online:Searching for games...	@TODO	CrawlOnline UI
+@online:No games found.	@TODO	CrawlOnline UI
+@online: game	@TODO	CrawlOnline UI
+@online: games	@TODO	CrawlOnline UI
+@online:  -  page 	@TODO	CrawlOnline UI
+@online:\n* = friend	@TODO	CrawlOnline UI
+@online: OLD	@TODO	CrawlOnline UI
+@online: FULL	@TODO	CrawlOnline UI
+@online:This game runs Crawl Online 	@TODO	CrawlOnline UI
+@online:, you have 0.4.0. Everybody needs the same version.	@TODO	CrawlOnline UI
+@online:This lobby is full.	@TODO	CrawlOnline UI
+@online:Visibility: 	@TODO	CrawlOnline UI
+@online:Close the lobby?	@TODO	CrawlOnline UI
+@online:Everybody will be disconnected.	@TODO	CrawlOnline UI
+@online:you	@TODO	CrawlOnline UI
+@online:  (host)	@TODO	CrawlOnline UI
+@online:waiting...	@TODO	CrawlOnline UI
+@online:<color=#e8d8b0ff>ONLINE LOBBY</color>\n	@TODO	CrawlOnline UI
+@online:ONLINE HOST  |  	@TODO	CrawlOnline UI
+@online: connected  |  	@TODO	CrawlOnline UI
+@online: - menu	@TODO	CrawlOnline UI
+@online:Connecting...  |  	@TODO	CrawlOnline UI
+@online:ONLINE  |  host: 	@TODO	CrawlOnline UI
+@online: (Steam relay)	@TODO	CrawlOnline UI
+@online: Unlock everything (weapons, monsters, gods...; your save is not changed)	@TODO	CrawlOnline UI
+@online:Close menu	@TODO	CrawlOnline UI
+@online:The host runs the game; everyone else sees the host's screen and plays with their own controllers/keyboard.	@TODO	CrawlOnline UI
+@online:Host a Steam lobby	@TODO	CrawlOnline UI
+@online:Lobby name	@TODO	CrawlOnline UI
+@online:Searching...	@TODO	CrawlOnline UI
+@online:Join a friend (Steam)	@TODO	CrawlOnline UI
+@online:No games found. Host one or ask a friend to invite you.	@TODO	CrawlOnline UI
+@online:[friend] 	@TODO	CrawlOnline UI
+@online: (incompatible)	@TODO	CrawlOnline UI
+@online:   full	@TODO	CrawlOnline UI
+@online:Join	@TODO	CrawlOnline UI
+@online:Direct connection (LAN / port forwarding)	@TODO	CrawlOnline UI
+@online:Host on UDP port	@TODO	CrawlOnline UI
+@online:Host (UDP)	@TODO	CrawlOnline UI
+@online:Invalid port	@TODO	CrawlOnline UI
+@online:Join address	@TODO	CrawlOnline UI
+@online:Enter the host address	@TODO	CrawlOnline UI
+@online:Hosting	@TODO	CrawlOnline UI
+@online:Lobby "	@TODO	CrawlOnline UI
+@online:Invite friends (Steam overlay)	@TODO	CrawlOnline UI
+@online:Connected players: 	@TODO	CrawlOnline UI
+@online:spectator  	@TODO	CrawlOnline UI
+@online: relay	@TODO	CrawlOnline UI
+@online: KB/s   controllers: 	@TODO	CrawlOnline UI
+@online:Kick	@TODO	CrawlOnline UI
+@online:Remote players join like local ones: press a button on the character select screen.	@TODO	CrawlOnline UI
+@online:entities 	@TODO	CrawlOnline UI
+@online:, visible sprites 	@TODO	CrawlOnline UI
+@online:, meshes 	@TODO	CrawlOnline UI
+@online:, capture 	@TODO	CrawlOnline UI
+@online:Stop hosting	@TODO	CrawlOnline UI
+@online:Connecting...	@TODO	CrawlOnline UI
+@online:Connected to 	@TODO	CrawlOnline UI
+@online:You play as P	@TODO	CrawlOnline UI
+@online:All player slots are taken - you are spectating	@TODO	CrawlOnline UI
+@online:Ping 	@TODO	CrawlOnline UI
+@online: ms   download 	@TODO	CrawlOnline UI
+@online: KB/s   lost packets 	@TODO	CrawlOnline UI
+@online:Connection: 	@TODO	CrawlOnline UI
+@online: via Steam relay servers	@TODO	CrawlOnline UI
+@online: (direct)	@TODO	CrawlOnline UI
+@online:   max frame gap 	@TODO	CrawlOnline UI
+@online: ms   send queue 	@TODO	CrawlOnline UI
+@online: Move my character instantly (prediction: hides the ping for your own movement)	@TODO	CrawlOnline UI
+@online:Your controllers and keyboard are sent to the host. On the character select screen press Action (A / X / Space) to join. Enter = Start/Pause, Escape = Back.	@TODO	CrawlOnline UI
+@online:Disconnect	@TODO	CrawlOnline UI
+@online:In game	@TODO	CrawlOnline UI
+@online:In menu	@TODO	CrawlOnline UI
+@online:Steam is not available	@TODO	CrawlOnline UI
+@online:Steam lobby search failed	@TODO	CrawlOnline UI
+@online:Steam lobby search timed out	@TODO	CrawlOnline UI
+@online:Leave the current session first	@TODO	CrawlOnline UI
+@online:Already in a session - disconnect first to accept the invite	@TODO	CrawlOnline UI
+@online:you are the owner of this lobby	@TODO	CrawlOnline UI
+@online:Creating Steam lobby...	@TODO	CrawlOnline UI
+@online:Hosting (Steam, 	@TODO	CrawlOnline UI
+@online: lobby)	@TODO	CrawlOnline UI
+@online:Hosting (Steam, lobby failed - friends can still join via Steam profile)	@TODO	CrawlOnline UI
+@online:Hosting (UDP port 	@TODO	CrawlOnline UI
+@online:Leaving local game...	@TODO	CrawlOnline UI
+@online:Entering Steam lobby...	@TODO	CrawlOnline UI
+@online:Connecting to host...	@TODO	CrawlOnline UI
+@online:Joining 	@TODO	CrawlOnline UI
+@online:Host failed: 	@TODO	CrawlOnline UI
+@online:UDP host failed: 	@TODO	CrawlOnline UI
+@online:Connect failed: 	@TODO	CrawlOnline UI
+@online:lobby creation failed: 	@TODO	CrawlOnline UI
+@online:could not enter lobby (	@TODO	CrawlOnline UI
+@online:Rejected: 	@TODO	CrawlOnline UI
+@online:Host closed the session: 	@TODO	CrawlOnline UI
+@online:Could not reach the host (timeout)	@TODO	CrawlOnline UI
+@online:Host stopped responding	@TODO	CrawlOnline UI
+@online:Session is full	@TODO	CrawlOnline UI
+@online:the host closed the lobby	@TODO	CrawlOnline UI
+@online:host stopped the session	@TODO	CrawlOnline UI
+@online:kicked by host	@TODO	CrawlOnline UI
+@online:cancelled	@TODO	CrawlOnline UI
+@online:left	@TODO	CrawlOnline UI
+@online:timed out	@TODO	CrawlOnline UI
+@online:  |  	@TODO	CrawlOnline UI
+@online: controller	@TODO	CrawlOnline UI
+@online: controllers	@TODO	CrawlOnline UI
+@online:Crawl Online version mismatch: host has 	@TODO	CrawlOnline UI
+@online:, you have 	@TODO	CrawlOnline UI
+@online:. Use the same version.	@TODO	CrawlOnline UI

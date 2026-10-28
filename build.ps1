@@ -129,7 +129,9 @@ Compress-Archive -Path $packageFiles -DestinationPath $archive -Force
 # An optional authoring handoff is a separate ZIP; player packages stay minimal.
 $translatorArchive = Join-Path (Join-Path $projectRoot 'artifacts') ($packageName + '-Translator.zip')
 $skillFolder = Join-Path $projectRoot 'translator-kit\crawl-language-pack'
-Compress-Archive -Path ($packageFiles + @($skillFolder)) -DestinationPath $translatorArchive -Force
+$translatorReadme = Join-Path $projectRoot 'packaging\translator\README.md'
+$translatorFiles = @((Join-Path $output 'CrawlLocalization.dll'), $translatorReadme, $skillFolder)
+Compress-Archive -Path $translatorFiles -DestinationPath $translatorArchive -Force
 Write-Output "Translator package: $translatorArchive"
 Write-Output "Built: $output"
 Write-Output "Packaged: $archive (extract into BepInEx/plugins/CrawlLocalization)"

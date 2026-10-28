@@ -1,0 +1,171 @@
+# Original source/key<TAB>translation (@TODO means pending)<TAB>English context
+@shop.prefix:Slow	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Unwieldy	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Torpid	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Awkward	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Unbalanced	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Crooked	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Glutton's	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Quick	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Lithe	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Crystal	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Piscene	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Kuster's	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Rogue's	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Master's	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Keen	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Swift	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Nimble	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Weak	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Cracked	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Crude	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Broken	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Dull	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Blunt	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Training	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Strong	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Powerful	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Elite	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Cruel	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Flawless	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Violent	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Orbeth's	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Drogoth's	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Morgon's	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Barbed	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.magic:Glows with the magic of {0}.	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.magic:Blessed by the order of {0}.	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.magic:The symbol of {0} glows beneath your fingers.	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.magic:The power of {0} lies dormant within.	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.magic:Vibrates with essence of {0}.	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.magic:Once wielded by {0} monks.	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.magic:The glyph of {0} has been hastily scratched onto it's surface.	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.magic:Wrested from the grasp of {0} demon.	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.stat:Vitality	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.stat:Strength	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.stat:Agility	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.stat:Wisdom	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.stat:Luck	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.status:Critical hit	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:44597, sharedassets0.assets:45813, sharedassets0.assets:45870, sharedassets0.assets:45871, sharedassets0.assets:45876, sharedassets0.assets:45898, sharedassets0.assets:45899, sharedassets0.assets:45900
+@shop.status:Stun	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45814, sharedassets0.assets:45816, sharedassets0.assets:45817, sharedassets0.assets:45820, sharedassets0.assets:45823, sharedassets0.assets:45824, sharedassets0.assets:45833, sharedassets0.assets:45834, sharedassets0.assets:45835, sharedassets0.assets:45836, sharedassets0.assets:45839, sharedassets0.assets:45847, sharedassets0.assets:45853, sharedassets0.assets:45861, sharedassets0.assets:45862, sharedassets0.assets:45885, sharedassets0.assets:45886, sharedassets0.assets:45887, sharedassets0.assets:45888, sharedassets0.assets:45889, sharedassets0.assets:45895, sharedassets0.assets:45897, sharedassets0.assets:45901, sharedassets0.assets:45905
+@shop.status:Holding Beholder Eye	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45815
+@shop.prefix:Hemophiliac's	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45818
+@shop.status:Causes constant bleeding	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45818
+@shop.prefix:Holy	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45819
+@shop.prefix:Blessed	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45819
+@shop.status:Blessed: Gain more XP	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45819
+@shop.prefix:Witching	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45821, sharedassets0.assets:45822, sharedassets0.assets:45840, sharedassets0.assets:45841, sharedassets0.assets:45860
+@shop.status:Chicken Magic	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45821, sharedassets0.assets:45822
+@shop.prefix:Charmed	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45825
+@shop.status:Charmed: Store Discount	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45825
+@shop.prefix:Occult	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45826
+@shop.prefix:Veiled	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45826
+@shop.prefix:Mystic	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45826
+@shop.prefix:Orphic	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45826
+@shop.status:Cosmic Strikes	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45826
+@shop.prefix:Blasting	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45827
+@shop.prefix:Explosive	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45827
+@shop.prefix:Torpedo	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45827
+@shop.prefix:Bomber's	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45827
+@shop.prefix:Sapper's	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45827
+@shop.status:Explosive Strikes	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45827
+@shop.prefix:Vorpal	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45828
+@shop.prefix:Vampiric	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45828
+@shop.prefix:Drinker	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45828
+@shop.prefix:Draining	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45828
+@shop.prefix:Thirsting	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45828
+@shop.status:Life Steal Strikes	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45828
+@shop.prefix:Buff	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45829, sharedassets0.assets:45838, sharedassets0.assets:45849, sharedassets0.assets:45851, sharedassets0.assets:45896
+@shop.prefix:Poison	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45829, sharedassets0.assets:45838, sharedassets0.assets:45849, sharedassets0.assets:45851, sharedassets0.assets:45890, sharedassets0.assets:45896
+@shop.status:GhostGirlHeal	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45829, sharedassets0.assets:45849
+@shop.prefix:Cellular	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45830
+@shop.prefix:Plasmatic	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45830
+@shop.prefix:Biotic	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45830
+@shop.status:Plasm Strikes	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45830
+@shop.prefix:Liquid	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45831
+@shop.prefix:Oceanic	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45831
+@shop.prefix:Wet	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45831
+@shop.prefix:Dripping	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45831
+@shop.prefix:Deep Sea	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45831
+@shop.status:Water Strikes	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45831
+@shop.prefix:Dark	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45832, sharedassets0.assets:45863
+@shop.prefix:Corrupted	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45832, sharedassets0.assets:45863
+@shop.status:Corrupted: 1.5 X Damage, Wielder is Driven Insane	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45832
+@shop.status:GhoulGoo	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45838, sharedassets0.assets:45851
+@shop.status:Frog Magic	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45840, sharedassets0.assets:45841
+@shop.prefix:Glacial	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45842, sharedassets0.assets:45869
+@shop.prefix:Icey	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45842, sharedassets0.assets:45869
+@shop.prefix:Frozen	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45842, sharedassets0.assets:45869
+@shop.prefix:Frostbite	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45842, sharedassets0.assets:45869
+@shop.status:Ice Magic	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45842, sharedassets0.assets:45869
+@shop.status:Causes nice sparkles	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45859
+@shop.status:Mournful	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45860
+@shop.prefix:Mad	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45872, sharedassets0.assets:45875
+@shop.status:Insanity	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45872, sharedassets0.assets:45875
+@shop.prefix:Cursed	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45877
+@shop.status:Cursed: Causes Vomiting, but sold at a discount	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45877
+@shop.prefix:Burning	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45880
+@shop.prefix:Flaming	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45880
+@shop.prefix:Hellfire	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45880
+@shop.status:Fire Magic	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45880
+@shop.prefix:Venomous	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45890
+@shop.status:Poison	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45890
+@shop.prefix:Thieving	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45902, sharedassets0.assets:45903, sharedassets0.assets:45904
+@shop.status:Stealing Gold	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45902, sharedassets0.assets:45903, sharedassets0.assets:45904
+@shop.magic-name:eternal fire	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45958
+Sword	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45960, sharedassets0.assets:45961, sharedassets0.assets:45962, sharedassets0.assets:45963
+2 Handed Sword	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45964, sharedassets0.assets:45965, sharedassets0.assets:45966, sharedassets0.assets:45967
+Cracked Bow	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45971
+A low powered bow.	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45971
+Magic Knife	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45981
+A light knife imbued with powerful magic	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45981
+Magic Machete	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45981
+@shop.magic-name:the sun ray	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45982
+@shop.magic-name:the blasting orb	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45983
+@shop.magic-name:bloodstrike	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45984
+@shop.magic-name:the boulder	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45985
+@shop.magic-name:the cyclone	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45986
+@shop.magic-name:the purifying fire	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45987
+@shop.magic-name:greater ice shards	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45988
+@shop.magic-name:chain ice shards	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45989
+@shop.magic-name:the speartrap	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45990
+@shop.magic-name:the rat	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:45991
+Practice Knife	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:46001
+A dull knife, capable of stealing gold	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:46001
+Tutor's Blade	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:46006
+A spinning axe that comes alive when you attack. Use movement to fling it at your enemies\nattack to activate\r it	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:50916, sharedassets0.assets:50927
+Frog Enchantment	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:51521
+Terrified	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:51522
+Strength Up	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:51536, sharedassets0.assets:51537, sharedassets0.assets:51538, sharedassets0.assets:51570, sharedassets0.assets:51571, sharedassets0.assets:51572, sharedassets0.assets:51573, sharedassets0.assets:51574, sharedassets0.assets:51577
+A spinning axe that comes alive when you cast magic. Use movement to fling it at your enemies.	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:51539
+Speed Up	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:51540, sharedassets0.assets:51541, sharedassets0.assets:51543, sharedassets0.assets:51569
+Living Tome: Fireball	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:51542, sharedassets0.assets:51564
+Magic book follows you and periodically fires a spell	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:51542, sharedassets0.assets:51563, sharedassets0.assets:51564, sharedassets0.assets:51565
+Living Tome: Beam	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:51563
+Living Tome: Tears	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:51565
+Always Bleed	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:51566
+Magic Up	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:51568
+Floats around and damages enemies on contact	@TODO	Shop names, prefixes, effects and prompts; sharedassets0.assets:51575, sharedassets0.assets:51576
+@shop.trait:fast attack speed	@TODO	Shop names, prefixes, effects and prompts
+@shop.trait:high damage	@TODO	Shop names, prefixes, effects and prompts
+@shop.trait:low attack speed	@TODO	Shop names, prefixes, effects and prompts
+@shop.trait:poor damage	@TODO	Shop names, prefixes, effects and prompts
+@shop.compare:VALUE	@TODO	Shop names, prefixes, effects and prompts
+@shop.compare:DAMAGE	@TODO	Shop names, prefixes, effects and prompts
+@shop.compare:SPEED	@TODO	Shop names, prefixes, effects and prompts
+@shop.compare:RANGE	@TODO	Shop names, prefixes, effects and prompts
+@shop.traits:for a {0}: {1}	@TODO	Shop names, prefixes, effects and prompts
+@shop.chance:{0}% chance of {1}.	@TODO	Shop names, prefixes, effects and prompts
+(Value {0})	@TODO	Shop names, prefixes, effects and prompts
+Trade	@TODO	Shop names, prefixes, effects and prompts
+Replaces	@TODO	Shop names, prefixes, effects and prompts
+You already own this artifact.	@TODO	Shop names, prefixes, effects and prompts
+BUY	@TODO	Shop names, prefixes, effects and prompts
+BUY POTION	@TODO	Shop names, prefixes, effects and prompts
+BUY ARTIFACT	@TODO	Shop names, prefixes, effects and prompts
+BUY SPELL	@TODO	Shop names, prefixes, effects and prompts
+BUY WEAPON	@TODO	Shop names, prefixes, effects and prompts
+TRADE WEAPON	@TODO	Shop names, prefixes, effects and prompts
+FORBIDDEN	@TODO	Shop names, prefixes, effects and prompts
+ALREADY OWNED	@TODO	Shop names, prefixes, effects and prompts
+NOT ENOUGH GOLD	@TODO	Shop names, prefixes, effects and prompts

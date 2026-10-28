@@ -5,7 +5,7 @@ description: Create, edit, and validate a language pack for Crawl Localization 0
 
 # Create a Crawl language pack
 
-Work in an extracted Crawl Localization plugin folder containing `CrawlLocalization.dll`, `Languages/`, and any `Fonts/` assets. A source checkout is also supported. This skill and its PowerShell scripts can be used without Codex-specific tools, the source code, a .NET SDK, or Unity Editor. Use PowerShell 5.1+ or PowerShell 7. On Windows the examples below use `powershell`; `pwsh` also works.
+Work in an extracted Translator package containing `CrawlLocalization.dll`, `README.md`, and `crawl-language-pack/`. The kit includes an independent English `catalog/`; the initial package has no translated language folder or bundled fonts. The initializer creates `Languages/<tag>/`. A source checkout is also supported. This skill and its PowerShell scripts can be used without Codex-specific tools, the source code, a .NET SDK, or Unity Editor. Use PowerShell 5.1+ or PowerShell 7. On Windows the examples below use `powershell`; `pwsh` also works.
 
 The finished deliverable is an independent `Languages/<tag>/` folder, plus any additional font files it references. Ask for the target language/region if not specified. Use tags such as `es`, `ru`, `pt-BR`, `ja`, or `zh-Hant`; `en` is reserved for displaying the original game text. Do not invent or translate an entire language when the user only asks for a template.
 
@@ -17,9 +17,9 @@ From the plugin root, run the initializer, changing the language/name as request
 powershell -NoProfile -ExecutionPolicy Bypass -File .\crawl-language-pack\scripts\new-language.ps1 -PluginRoot . -Language es -DisplayName "Español"
 ```
 
-In a source checkout the script is under `translator-kit/crawl-language-pack/scripts/`. The script refuses to overwrite an existing folder, copies the audited source keys and object paths, and sets every translation cell to the reserved value `@TODO`. It keeps the existing Chinese wording only in the **comment column** as optional context; Chinese translations are never used as fallback. Default font mappings are empty, using the game's original fonts followed by `Arial;Segoe UI` if glyphs are missing. Use `-FallbackFonts 'Font One;Font Two'` to change these candidates. `-CopyFontMappings` is an explicit choice to reuse the reference pack's font configuration; it is not required for a new language.
+In a source checkout the script is under `translator-kit/crawl-language-pack/scripts/`. It reads only the `catalog/` beside the scripts, copies original English source keys and English context, and sets every target to `@TODO`. Translate from the original English, never from another language's translation. Default font mappings are empty; the original game fonts and then `Arial;Segoe UI` are tried. Use `-FallbackFonts 'Font One;Font Two'` for other candidates. The helper refuses to overwrite an existing language folder.
 
-Alternatively, copy `Languages/zh-Hans` to the target folder manually. Replace **all** second-column Chinese translations with the target language or `@TODO`; leaving Chinese in a translation cell will display it. Retain first-column keys, filenames and `textmesh-paths.txt`. Adjust fonts and `language.ini` for the target language.
+The catalog contains 1,488 original-English entries. Four legacy aliases for manually modified game assets belong only to the existing Simplified Chinese pack and are not translation sources for new languages. Do not add them to a new template. Treat `catalog/` as read-only while translating; new game source keys require a separate maintainer change to this version-controlled catalog and the relevant runtime adapter.
 
 After editing, set the active language in the existing game's `BepInEx/config/crawl.localization.cfg`:
 
@@ -33,7 +33,7 @@ Use the exact folder name. Preserve unrelated existing config sections. The plug
 
 ## Back up before translation
 
-Before the AI or user edits any existing language files, make a byte-for-byte backup of the entire target language folder and the reference catalog (`Languages/zh-Hans` when different). For a new language, back up the reference before initialization and the generated target immediately after initialization, before handing it to the translator. Keep filenames and relative paths intact.
+Before the AI or user edits any existing language files, make a byte-for-byte backup of the entire target language folder and the bundled English `catalog/`. For a new language, back up the reference before initialization and the generated target immediately after initialization, before handing it to the translator. Keep filenames and relative paths intact.
 
 Use a unique, dated backup directory in a durable project/authoring location outside the live `Languages/` tree; do not use Temp or put backups inside a release package. Never overwrite an earlier backup. Record its absolute path and the plugin/catalog version in the handoff so another AI can find it when the user finishes. Keep it unchanged until comparison and handoff are complete; do not delete it without the user's request. A Git revision can provide additional evidence but does not replace the requested file backup.
 
@@ -58,7 +58,7 @@ Rules that affect correctness:
 - Never fill a symbolic key into the translation cell as a placeholder. `@shop.*`, `@progression.*` and `@online:` are lookup identities, not text to show players.
 - Empty targets are only supported for `@shop.il:` rows, where they deliberately remove a fragment (for example an extra period). Use `@TODO` for unfinished fragments instead of empty strings. Do not trim whitespace-only translations.
 - Keep escape sequences `\n`, `\r`, `\t` and `\\` valid. Do not insert literal line breaks or tabs inside a field. Preserve explicit line breaks/blank lines used to leave room for illustrations, especially the tutorial's level-10 card.
-- Preserve every numbered placeholder and its syntax. Ordinary `{0}`–`{9}` patterns match nonnegative integer runs only. Scoped templates may receive player names or formatted values; see their existing source and reference translation. You may reorder existing placeholders, not remove or invent them.
+- Preserve every numbered placeholder and its syntax. Ordinary `{0}`–`{9}` patterns match nonnegative integer runs only. Scoped templates may receive player names or formatted values; use the original English source and the argument descriptions below. You may reorder existing placeholders, not remove or invent them.
 - Preserve rich-text tags and parameters, such as `<color=#e41944>`, `</color>` and `<size=240>`, and input markers `[A]` / `[B]`. The game chooses keyboard/controller pictures for these markers; do not translate them into literal keyboard letters.
 - Keep terminology consistent across vault, store, HUD and tutorial. Translate prefix/connector fragments so the original game's composition remains readable. The plugin does not implement target-language gender, inflection or automatic word-order changes.
 
@@ -74,6 +74,8 @@ Rules that affect correctness:
 | `progression-translations.tsv` | Pause prompts, evolution and boss/result text |
 | `crawlonline-translations.tsv` | Optional CrawlOnline UI only; dynamic player/lobby names stay untouched |
 | `tutorial-translations.tsv` | Prologue prompts, instruction and completion choices |
+
+For symbolic `@progression.*` keys, column 3 includes the original English sentence template and argument meanings; translate that English template rather than the lookup identity.
 
 Some CrawlOnline sentences are split at the original string concatenation boundaries. Translate those exact pieces while preserving needed surrounding spaces. Do not merge rows or create a new whole-sentence key unless the plugin already looks it up. For `@progression.join-body:{0}:{1}:{2}:{3}:{4}`, the arguments are player number, player name, level, deity, and deity effect respectively; `leave-body` uses player number and name. Join/leave titles use player number and name.
 
@@ -101,7 +103,7 @@ CrawlTextBodyWide<TAB>bundle<TAB>Fonts/es-fonts.bundle<TAB>assets/fonts/body.ttf
 
 Font paths are relative to the **plugin root**, not to the language folder, and must stay inside it. For portable custom fonts, use a Windows AssetBundle compatible with Unity 5.4.2; players do not need Unity. Raw TTF loading uses a family name and cannot guarantee file identity. A new font bundle is a separate font-authoring task, not necessary for ordinary translation when available fonts cover the target script. Verify font redistribution rights before adding third-party binaries.
 
-Selection order for normal text is selected-pack mapping, original game font, then selected-pack fallback families. If no font covers the translated label, the plugin restores its original text/font. None of these failures triggers a lookup in the Chinese table.
+Selection order for normal text is selected-pack mapping, original game font, then selected-pack fallback families. If no font covers the translated label, the plugin restores its original text/font. None of these failures triggers a lookup in another language table.
 
 Chinese-specific character wrapping, punctuation handling and small-size sampling enhancement apply only when the **selected language tag is Chinese** (`zh` or `zh-*` / `zh_*`) and the relevant text contains Han characters. Other locales do not trigger them, even if a proper name contains Chinese. Other locales use the game's normal wrapping. Japanese/Thai line breaking, Arabic shaping, RTL layout and other script-specific behavior have not been implemented or universally validated: distinguish missing font coverage from a layout/engine limitation rather than promising every language works by text edits alone. Use explicit `\n` for local layout adjustments where suitable.
 
@@ -115,17 +117,17 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\crawl-language-pack\script
 powershell -NoProfile -ExecutionPolicy Bypass -File .\crawl-language-pack\scripts\check-language.ps1 -PluginRoot . -Language es -RequireComplete
 ```
 
-The checker compares keys against the included reference catalog, checks raw TSV shape, duplicate keys, supported escapes, placeholders/tags/icons, config, font paths and binding paths. It reports translated/pending/missing counts. It does not judge translation quality, actual glyph coverage, or game geometry. The reference catalog is for authoring/validation only; the new pack can run without `zh-Hans` installed.
+The checker compares keys against the included reference catalog, checks raw TSV shape, duplicate keys, supported escapes, placeholders/tags/icons, config, font paths and binding paths. It reports translated/pending/missing counts. It does not judge translation quality, actual glyph coverage, or game geometry. The English catalog is for authoring/validation only; finished language packs do not require it at runtime or depend on any other language pack.
 
 When the user finishes translating, compare the saved files with the immutable pre-translation backup **before** declaring success or committing:
 
 - Read UTF-8 and split on literal tabs, without CSV quote decoding or trimming fields. Check table filenames, row counts, column counts and the exact source-key multiset per table. Report missing, added, duplicated or changed keys; do not mistake harmless row reordering for lost entries or silently align unrelated rows by position.
 - Review changes to target cells and comments separately. Preserve the user's wording. Check placeholders, input markers, rich-text tags, escape sequences and significant leading/trailing spaces, including deliberate empty `@shop.il:` values. Compare config and object-binding changes against what the task authorized.
 - Look for added outer quotes, doubled inner quotes and removed literal quotes in both source and target fields. Repair source keys only against the trusted baseline; undo target quoting only when the export damage is clear. Never strip or CSV-decode every quoted field: some keys intentionally contain literal quotes. Preserve an unrepaired copy and report ambiguous changes instead of guessing.
-- Run `check-language.ps1` as well as the backup comparison, then report the checks and any repairs. Its current reference is the **live** `Languages/zh-Hans` catalog. When checking Chinese itself, or when that reference was also edited, the script can compare damaged keys against themselves and still pass. It is not an independent source-integrity check and does not automatically read the backup.
+- Run `check-language.ps1` as well as the backup comparison, then report the checks and repairs. The checker uses the independent English `catalog/` beside the scripts, not the language being edited. It can therefore detect damaged source keys even when checking the maintained Chinese pack. Keep the catalog unchanged; if someone edits both the catalog and the target, compare them against the trusted baseline too. The checker does not automatically read your backups.
 
-Before delivery, review changed text and run the checker. Let the user verify the game unless they asked you to run it. Suggested coverage: main menu/settings, long vault descriptions, assembled shop weapons, live equipment panel, tutorial with keyboard/controller icons, end prompts, and optional CrawlOnline UI. Check F8, unknown/missing text, missing fonts, and accidental Chinese remnants in **translation cells** (Chinese reference comments are not rendered). Record unresolved items instead of marking the language complete.
+Before delivery, review changed text and run the checker. Let the user verify the game unless they asked you to run it. Suggested coverage: main menu/settings, long vault descriptions, assembled shop weapons, live equipment panel, tutorial with keyboard/controller icons, end prompts, and optional CrawlOnline UI. Check F8, unknown/missing text, missing fonts, and accidental leftover `@TODO` targets. Record unresolved items instead of marking the language complete.
 
 Image-only lettering such as PROLOGUE, some tutorial rule cards, upgrade/WRATH effects and boss banners is not changed by a language table or font mapping. Report it separately; do not add ineffective text rows or modify image assets as part of a text-only request.
 
-Share `Languages/<tag>/` and any newly referenced `Fonts/` files for users already on a compatible plugin, or include them in a copy of the player package. Do not ship editor caches, research notes or source code. Tell recipients the minimum plugin version and the `Language = <tag>` setting. There is no need to recompile the DLL for ordinary translation, font configuration or an added language directory.
+Share `Languages/<tag>/` and any newly referenced `Fonts/` files for users already on a compatible plugin, or package them with the supplied DLL. Do not ship editor caches, research notes or source code. Tell recipients the minimum plugin version and the `Language = <tag>` setting. There is no need to recompile the DLL for ordinary translation, font configuration or an added language directory.

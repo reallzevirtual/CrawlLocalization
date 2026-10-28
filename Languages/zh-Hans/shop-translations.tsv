@@ -36,11 +36,11 @@
 @shop.prefix:Barbed	棘刺	sharedassets0.assets:44080 Constants m_weaponNamesStrong
 @shop.magic:Glows with the magic of {0}.	闪耀着 {0} 的魔力。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
 @shop.magic:Blessed by the order of {0}.	被神所祝福, 注入了 {0} 的奥义.。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
-@shop.magic:The symbol of {0} glows beneath your fingers.	{0} 的刻印在你手握之处熠熠生辉。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
+@shop.magic:The symbol of {0} glows beneath your fingers.	{0} 的刻印在你手握之处闪耀着光芒。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
 @shop.magic:The power of {0} lies dormant within.	{0} 之力沉睡其中。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
 @shop.magic:Vibrates with essence of {0}.	{0} 的本源使其震颤不止。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
 @shop.magic:Once wielded by {0} monks.	曾被修习了 {0} 的僧侣挥舞。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
-@shop.magic:The glyph of {0} has been hastily scratched onto it's surface.	在它的表面上, 不知被谁匆忙地镌刻了 {0} 的铭文。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
+@shop.magic:The glyph of {0} has been hastily scratched onto it's surface.	在它的表面上, 不知被谁匆忙地刻印了 {0} 的铭文。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
 @shop.magic:Wrested from the grasp of {0} demon.	从一个恶魔手中夺来, 吸收了他所修习的 {0} 。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
 @shop.stat:Vitality	体质	sharedassets0.assets:44080 Constants m_heroStats；商店药水属性变化
 @shop.stat:Strength	力量	sharedassets0.assets:44080 Constants m_heroStats；商店药水属性变化
@@ -50,68 +50,68 @@
 @shop.status:Critical hit	暴击	sharedassets0.assets:44597 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45813 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45870 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45871 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45876 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45898 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45899 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45900 Status m_description；武器附加状态，包含内部预置
 @shop.status:Stun	眩晕	sharedassets0.assets:45814 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45816 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45817 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45820 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45823 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45824 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45833 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45834 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45835 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45836 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45839 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45847 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45853 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45861 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45862 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45885 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45886 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45887 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45888 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45889 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45895 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45897 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45901 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45905 Status m_description；武器附加状态，包含内部预置
 @shop.status:Holding Beholder Eye	持有眼魔之眼	sharedassets0.assets:45815 Status m_description；武器附加状态，包含内部预置
-@shop.prefix:Hemophiliac's	血病者的	sharedassets0.assets:45818 Status m_weaponNames
+@shop.prefix:Hemophiliac's	血友病的	sharedassets0.assets:45818 Status m_weaponNames
 @shop.status:Causes constant bleeding	导致持续流血	sharedassets0.assets:45818 Status m_description；武器附加状态，包含内部预置
 @shop.prefix:Holy	神圣	sharedassets0.assets:45819 Status m_weaponNames
 @shop.prefix:Blessed	受祝福的	sharedassets0.assets:45819 Status m_weaponNames
 @shop.status:Blessed: Gain more XP	祝福：获得更多经验	sharedassets0.assets:45819 Status m_description；武器附加状态，包含内部预置
-@shop.prefix:Witching	巫术	sharedassets0.assets:45821 Status m_weaponNames；sharedassets0.assets:45822 Status m_weaponNames；sharedassets0.assets:45840 Status m_weaponNames；sharedassets0.assets:45841 Status m_weaponNames；sharedassets0.assets:45860 Status m_weaponNames
+@shop.prefix:Witching	巫术的	sharedassets0.assets:45821 Status m_weaponNames；sharedassets0.assets:45822 Status m_weaponNames；sharedassets0.assets:45840 Status m_weaponNames；sharedassets0.assets:45841 Status m_weaponNames；sharedassets0.assets:45860 Status m_weaponNames
 @shop.status:Chicken Magic	小鸡魔法	sharedassets0.assets:45821 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45822 Status m_description；武器附加状态，包含内部预置
 @shop.prefix:Charmed	幸运	sharedassets0.assets:45825 Status m_weaponNames
 @shop.status:Charmed: Store Discount	幸运：商店折扣	sharedassets0.assets:45825 Status m_description；武器附加状态，包含内部预置
-@shop.prefix:Occult	秘术	sharedassets0.assets:45826 Status m_weaponNames
-@shop.prefix:Veiled	隐秘	sharedassets0.assets:45826 Status m_weaponNames
-@shop.prefix:Mystic	神秘	sharedassets0.assets:45826 Status m_weaponNames
-@shop.prefix:Orphic	灵秘	sharedassets0.assets:45826 Status m_weaponNames
-@shop.status:Cosmic Strikes	星界打击	sharedassets0.assets:45826 Status m_description；武器附加状态，包含内部预置
-@shop.prefix:Blasting	爆破	sharedassets0.assets:45827 Status m_weaponNames
-@shop.prefix:Explosive	爆炸	sharedassets0.assets:45827 Status m_weaponNames
-@shop.prefix:Torpedo	鱼雷	sharedassets0.assets:45827 Status m_weaponNames
-@shop.prefix:Bomber's	轰炸者的	sharedassets0.assets:45827 Status m_weaponNames
-@shop.prefix:Sapper's	工兵的	sharedassets0.assets:45827 Status m_weaponNames
-@shop.status:Explosive Strikes	爆炸打击	sharedassets0.assets:45827 Status m_description；武器附加状态，包含内部预置
+@shop.prefix:Occult	禁秘的	sharedassets0.assets:45826 Status m_weaponNames
+@shop.prefix:Veiled	隐者之	sharedassets0.assets:45826 Status m_weaponNames
+@shop.prefix:Mystic	奥术	sharedassets0.assets:45826 Status m_weaponNames
+@shop.prefix:Orphic	秘仪之	sharedassets0.assets:45826 Status m_weaponNames
+@shop.status:Cosmic Strikes	星界轰击	sharedassets0.assets:45826 Status m_description；武器附加状态，包含内部预置
+@shop.prefix:Blasting	震爆之	sharedassets0.assets:45827 Status m_weaponNames
+@shop.prefix:Explosive	爆裂	sharedassets0.assets:45827 Status m_weaponNames
+@shop.prefix:Torpedo	摧残的	sharedassets0.assets:45827 Status m_weaponNames
+@shop.prefix:Bomber's	轰炸的	sharedassets0.assets:45827 Status m_weaponNames
+@shop.prefix:Sapper's	破障之	sharedassets0.assets:45827 Status m_weaponNames
+@shop.status:Explosive Strikes	爆破打击	sharedassets0.assets:45827 Status m_description；武器附加状态，包含内部预置
 @shop.prefix:Vorpal	斩首	sharedassets0.assets:45828 Status m_weaponNames
-@shop.prefix:Vampiric	吸血	sharedassets0.assets:45828 Status m_weaponNames
+@shop.prefix:Vampiric	吸血鬼之	sharedassets0.assets:45828 Status m_weaponNames
 @shop.prefix:Drinker	饮血	sharedassets0.assets:45828 Status m_weaponNames
-@shop.prefix:Draining	汲血	sharedassets0.assets:45828 Status m_weaponNames
-@shop.prefix:Thirsting	嗜血	sharedassets0.assets:45828 Status m_weaponNames
-@shop.status:Life Steal Strikes	吸血打击	sharedassets0.assets:45828 Status m_description；武器附加状态，包含内部预置
+@shop.prefix:Draining	吸收的	sharedassets0.assets:45828 Status m_weaponNames
+@shop.prefix:Thirsting	渴血	sharedassets0.assets:45828 Status m_weaponNames
+@shop.status:Life Steal Strikes	生命汲取	sharedassets0.assets:45828 Status m_description；武器附加状态，包含内部预置
 @shop.prefix:Buff	强化	sharedassets0.assets:45829 Status m_weaponNames；sharedassets0.assets:45838 Status m_weaponNames；sharedassets0.assets:45849 Status m_weaponNames；sharedassets0.assets:45851 Status m_weaponNames；sharedassets0.assets:45896 Status m_weaponNames
-@shop.prefix:Poison	毒性	sharedassets0.assets:45829 Status m_weaponNames；sharedassets0.assets:45838 Status m_weaponNames；sharedassets0.assets:45849 Status m_weaponNames；sharedassets0.assets:45851 Status m_weaponNames；sharedassets0.assets:45890 Status m_weaponNames；sharedassets0.assets:45896 Status m_weaponNames
+@shop.prefix:Poison	涂毒的	sharedassets0.assets:45829 Status m_weaponNames；sharedassets0.assets:45838 Status m_weaponNames；sharedassets0.assets:45849 Status m_weaponNames；sharedassets0.assets:45851 Status m_weaponNames；sharedassets0.assets:45890 Status m_weaponNames；sharedassets0.assets:45896 Status m_weaponNames
 @shop.status:GhostGirlHeal	幽灵女孩治疗	sharedassets0.assets:45829 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45849 Status m_description；武器附加状态，包含内部预置
-@shop.prefix:Cellular	细胞	sharedassets0.assets:45830 Status m_weaponNames
-@shop.prefix:Plasmatic	灵质	sharedassets0.assets:45830 Status m_weaponNames
-@shop.prefix:Biotic	生体	sharedassets0.assets:45830 Status m_weaponNames
-@shop.status:Plasm Strikes	灵质打击	sharedassets0.assets:45830 Status m_description；武器附加状态，包含内部预置
-@shop.prefix:Liquid	流水	sharedassets0.assets:45831 Status m_weaponNames
-@shop.prefix:Oceanic	海洋	sharedassets0.assets:45831 Status m_weaponNames
-@shop.prefix:Wet	湿润	sharedassets0.assets:45831 Status m_weaponNames
-@shop.prefix:Dripping	滴水	sharedassets0.assets:45831 Status m_weaponNames
-@shop.prefix:Deep Sea	深海	sharedassets0.assets:45831 Status m_weaponNames
+@shop.prefix:Cellular	胞体	sharedassets0.assets:45830 Status m_weaponNames
+@shop.prefix:Plasmatic	等离子	sharedassets0.assets:45830 Status m_weaponNames
+@shop.prefix:Biotic	异能	sharedassets0.assets:45830 Status m_weaponNames
+@shop.status:Plasm Strikes	电浆冲击	sharedassets0.assets:45830 Status m_description；武器附加状态，包含内部预置
+@shop.prefix:Liquid	流水之	sharedassets0.assets:45831 Status m_weaponNames
+@shop.prefix:Oceanic	海洋的	sharedassets0.assets:45831 Status m_weaponNames
+@shop.prefix:Wet	浸湿	sharedassets0.assets:45831 Status m_weaponNames
+@shop.prefix:Dripping	滴水的	sharedassets0.assets:45831 Status m_weaponNames
+@shop.prefix:Deep Sea	深海之	sharedassets0.assets:45831 Status m_weaponNames
 @shop.status:Water Strikes	流水打击	sharedassets0.assets:45831 Status m_description；武器附加状态，包含内部预置
 @shop.prefix:Dark	黑暗	sharedassets0.assets:45832 Status m_weaponNames；sharedassets0.assets:45863 Status m_weaponNames
 @shop.prefix:Corrupted	腐化	sharedassets0.assets:45832 Status m_weaponNames；sharedassets0.assets:45863 Status m_weaponNames
 @shop.status:Corrupted: 1.5 X Damage, Wielder is Driven Insane	腐化：造成1.5倍伤害，持有者陷入疯狂	sharedassets0.assets:45832 Status m_description；武器附加状态，包含内部预置
 @shop.status:GhoulGoo	食尸鬼黏液	sharedassets0.assets:45838 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45851 Status m_description；武器附加状态，包含内部预置
 @shop.status:Frog Magic	青蛙魔法	sharedassets0.assets:45840 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45841 Status m_description；武器附加状态，包含内部预置
-@shop.prefix:Glacial	冰川	sharedassets0.assets:45842 Status m_weaponNames；sharedassets0.assets:45869 Status m_weaponNames
-@shop.prefix:Icey	寒冰	sharedassets0.assets:45842 Status m_weaponNames；sharedassets0.assets:45869 Status m_weaponNames
-@shop.prefix:Frozen	冰冻	sharedassets0.assets:45842 Status m_weaponNames；sharedassets0.assets:45869 Status m_weaponNames
-@shop.prefix:Frostbite	霜噬	sharedassets0.assets:45842 Status m_weaponNames；sharedassets0.assets:45869 Status m_weaponNames
-@shop.status:Ice Magic	寒冰魔法	sharedassets0.assets:45842 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45869 Status m_description；武器附加状态，包含内部预置
+@shop.prefix:Glacial	冰川之	sharedassets0.assets:45842 Status m_weaponNames；sharedassets0.assets:45869 Status m_weaponNames
+@shop.prefix:Icey	冰	sharedassets0.assets:45842 Status m_weaponNames；sharedassets0.assets:45869 Status m_weaponNames
+@shop.prefix:Frozen	冰冻的	sharedassets0.assets:45842 Status m_weaponNames；sharedassets0.assets:45869 Status m_weaponNames
+@shop.prefix:Frostbite	霜噬之	sharedassets0.assets:45842 Status m_weaponNames；sharedassets0.assets:45869 Status m_weaponNames
+@shop.status:Ice Magic	极寒冰冻	sharedassets0.assets:45842 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45869 Status m_description；武器附加状态，包含内部预置
 @shop.status:Causes nice sparkles	产生漂亮的火花	sharedassets0.assets:45859 Status m_description；武器附加状态，包含内部预置
 @shop.status:Mournful	悲伤	sharedassets0.assets:45860 Status m_description；武器附加状态，包含内部预置
-@shop.prefix:Mad	疯狂	sharedassets0.assets:45872 Status m_weaponNames；sharedassets0.assets:45875 Status m_weaponNames
+@shop.prefix:Mad	疯狂的	sharedassets0.assets:45872 Status m_weaponNames；sharedassets0.assets:45875 Status m_weaponNames
 @shop.status:Insanity	疯狂	sharedassets0.assets:45872 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45875 Status m_description；武器附加状态，包含内部预置
 @shop.prefix:Cursed	受诅咒的	sharedassets0.assets:45877 Status m_weaponNames
 @shop.status:Cursed: Causes Vomiting, but sold at a discount	诅咒：导致呕吐，但售价更低	sharedassets0.assets:45877 Status m_description；武器附加状态，包含内部预置
-@shop.prefix:Burning	燃烧	sharedassets0.assets:45880 Status m_weaponNames
+@shop.prefix:Burning	燃烧的	sharedassets0.assets:45880 Status m_weaponNames
 @shop.prefix:Flaming	烈焰	sharedassets0.assets:45880 Status m_weaponNames
-@shop.prefix:Hellfire	地狱火	sharedassets0.assets:45880 Status m_weaponNames
+@shop.prefix:Hellfire	狱火之	sharedassets0.assets:45880 Status m_weaponNames
 @shop.status:Fire Magic	火焰魔法	sharedassets0.assets:45880 Status m_description；武器附加状态，包含内部预置
-@shop.prefix:Venomous	剧毒	sharedassets0.assets:45890 Status m_weaponNames
-@shop.status:Poison	中毒	sharedassets0.assets:45890 Status m_description；武器附加状态，包含内部预置
-@shop.prefix:Thieving	窃贼	sharedassets0.assets:45902 StatusThieving m_weaponNames；sharedassets0.assets:45903 StatusThieving m_weaponNames；sharedassets0.assets:45904 StatusThieving m_weaponNames
+@shop.prefix:Venomous	剧毒之	sharedassets0.assets:45890 Status m_weaponNames
+@shop.status:Poison	腐蚀剧毒	sharedassets0.assets:45890 Status m_description；武器附加状态，包含内部预置
+@shop.prefix:Thieving	窃贼的	sharedassets0.assets:45902 StatusThieving m_weaponNames；sharedassets0.assets:45903 StatusThieving m_weaponNames；sharedassets0.assets:45904 StatusThieving m_weaponNames
 @shop.status:Stealing Gold	窃取金币	sharedassets0.assets:45902 StatusThieving m_description；武器附加状态，包含内部预置；sharedassets0.assets:45903 StatusThieving m_description；武器附加状态，包含内部预置；sharedassets0.assets:45904 StatusThieving m_description；武器附加状态，包含内部预置
 @shop.magic-name:eternal fire	永恒之火	sharedassets0.assets:45958 WeaponMagic m_displayName
 Sword	剑	sharedassets0.assets:45960 Weapon m_weaponName；sharedassets0.assets:45961 Weapon m_weaponName；sharedassets0.assets:45962 Weapon m_weaponName；sharedassets0.assets:45963 Weapon m_weaponName
