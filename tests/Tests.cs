@@ -78,6 +78,13 @@ namespace CrawlLocalization
             }
             Check(true, "Every shipped translation has a context comment");
             CheckVault(simplified);
+            Translation(simplified, "- Chapter 1 -", "- 第 1 章 -");
+            Translation(simplified, "- Chapter 10 -", "- 第 10 章 -");
+            Translation(simplified, "Cracked Mausoleum ", "破裂陵寝");
+            Translation(simplified, "Ashen Caves ", "灰烬洞窟");
+            Check(MenuTextPolicy.MatchesPath(simplified.TextMeshPaths, "Pool/GUILevelTitle(Clone)/LevelNum"), "Spawned chapter number binds under a pool root");
+            Check(MenuTextPolicy.MatchesPath(simplified.TextMeshPaths, "GUILevelTitle(Clone)/FloorName"), "Spawned floor name binds");
+            Check(!MenuTextPolicy.MatchesPath(simplified.TextMeshPaths, "OtherTitle/FloorName"), "Unrelated floor label is excluded");
             Translation(simplified, "Teok", "特奥克");
             Translation(simplified, "Enter with: 40 Gold and a Lucky Claw", "携带入场：\n40金币\n和幸运之爪");
             Translation(simplified, "From deep\r\nwithin the\r\nearth she\r\nrises", "她从\n大地深处\n缓缓升起");

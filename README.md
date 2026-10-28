@@ -1,6 +1,6 @@
 # Crawl Localization
 
-BepInEx 5 中文本地化插件，版本 **0.5.1**，适配 Windows Crawl / Unity 5.4.2。当前只维护简体中文；保留恢复游戏原文的选项。包含菜单按钮及经过核对的独立 TextMesh 标题、提示文字，共 877 条译文/数字模板、81 个 TextMesh 路径，覆盖宝库分类说明、图鉴、成就、邪神选择及开局全屏提示。
+BepInEx 5 中文本地化插件，版本 **0.6.0**，适配 Windows Crawl / Unity 5.4.2。当前只维护简体中文；保留恢复游戏原文的选项。包含菜单按钮及经过核对的独立 TextMesh 标题、提示文字，共 1009 条译文/数字模板、83 个 TextMesh 路径，覆盖宝库分类说明、图鉴、成就、邪神选择、开局全屏提示及章节标题。
 
 ## 构建与安装
 
@@ -14,7 +14,7 @@ pwsh -NoProfile -File .\build.ps1 -GamePath '你的 Crawl 目录'
 pwsh -NoProfile -File .\build.ps1 -Install
 ```
 
-输出 `artifacts/CrawlLocalization-0.5.1.zip`。关闭游戏，将 ZIP 内容解压至 `BepInEx/plugins/CrawlLocalization/`，然后重新启动。更新时覆盖 DLL、Languages 和 Fonts。新版不再分发繁体包，旧 `Languages/zh-Hant` 目录可删除；保留也不会被旧配置继续选中。不自动启动游戏。
+输出 `artifacts/CrawlLocalization-0.6.0.zip`。关闭游戏，将 ZIP 内容解压至 `BepInEx/plugins/CrawlLocalization/`，然后重新启动。更新时覆盖 DLL、Languages 和 Fonts。新版不再分发繁体包，旧 `Languages/zh-Hant` 目录可删除；保留也不会被旧配置继续选中。不自动启动游戏。
 
 ## 配置与重载
 
@@ -32,7 +32,7 @@ F8 重载配置、译文及路径清单，刷新已创建的文字。`ReloadKey 
 
 ## 译文表及位置注释
 
-`Languages/zh-Hans/translations.tsv` 存放通用菜单译文（211 条），`vault-translations.tsv` 存放宝库译文（595 条），`deity-translations.tsv` 存放邪神选择与试炼译文（71 条）。三份表均为 UTF-8 TSV，有三列：
+`Languages/zh-Hans/translations.tsv` 存放通用菜单译文（211 条），`vault-translations.tsv` 存放宝库译文（595 条），`deity-translations.tsv` 存放邪神选择与试炼译文（71 条），`chapter-translations.tsv` 存放章节编号和随机楼层名（132 条）。四份表均为 UTF-8 TSV，有三列：
 
 ```text
 原文<TAB>中文<TAB>位置注释
@@ -89,6 +89,14 @@ Note: Many keyboards do not\nsupport multiple players<TAB>注意：许多键盘�
 
 原版显示条件保持不变：启用提示，且真人玩家多于1名或尚未完成教程。开关开启不代表已完成教程的单人游戏每次都显示。运行 `export_menu_texts.py` 现在也会导出该场景。
 
+## 章节编号与楼层名（0.6.0）
+
+进局和换层时显示的 `- Chapter {0} -` 翻译为 `- 第 {0} 章 -`，并覆盖地牢、墓穴、矿区环境的全部131个不同随机楼层名。源资源是 sharedassets0.assets 中44824、44832、44876、44921、45936的Environment，以及55903的LevelTitle。重复环境共用译文，表格注释保留全部来源。
+
+标题由游戏动态生成，直接写入TextMesh。新增一个 `LevelTitle.Start` 后置补丁，在游戏选好名称后绑定 `GUILevelTitle/LevelNum` 和 `GUILevelTitle/FloorName`，复用原字体替换和恢复机制。只改屏幕文字，环境名称池、随机选名及已使用名称记录仍保留原文。
+
+编号使用CrawlTextBodyThin，楼层名使用CrawlLarge，均保留字号160、字符缩放1和居中锚点。220个资源显示案例与Unity5.4实际尺寸检查通过；中文标题维持单行，最宽楼层名94.5单位，小于原文集合最大宽度176。该检查不启动Crawl；标题生成、淡入淡出和换层仍由用户在游戏中验证。
+
 ## 重玩教程开关
 
 CrawlOnline 的 `Patch_SystemTutorial_GetShouldStartTutorial` 在 `Unlocks.Enabled` 时强制返回 false。原菜单用这个“当前是否允许启动教程”的结果显示开关，导致已保存的开关开启后仍显示关。
@@ -97,7 +105,7 @@ CrawlOnline 的 `Patch_SystemTutorial_GetShouldStartTutorial` 在 `Unlocks.Enabl
 
 ## 字体及排版
 
-`Fonts/crawl-fonts.bundle` 由 Unity 5.4.2f2 / Windows x86 构建，包含十个合并中文字体。内嵌 TTF 与根目录源文件逐字节相同，保留原游戏 Font 的 ascent、descent、line spacing；0.5.1 继续使用 0.2.2 修正后的字体包。
+`Fonts/crawl-fonts.bundle` 由 Unity 5.4.2f2 / Windows x86 构建，包含十个合并中文字体。内嵌 TTF 与根目录源文件逐字节相同，保留原游戏 Font 的 ascent、descent、line spacing；0.6.0 继续使用 0.2.2 修正后的字体包。
 
 `fonts.tsv` 五列：原字体名、类型、相对文件路径、资源/家族名、倍率。默认按完整资源路径 `LoadAsset<Font>`。支持 `bundle`、兼容入口 `ttf` 和 `system`；TTF 按家族创建不能保证实际文件来源，推荐 bundle。
 
@@ -137,6 +145,10 @@ pwsh -NoProfile -File .\tests\check-vault-layout.ps1
 python .\tools\export_deity_texts.py --game-path '你的 Crawl 目录' --output artifacts/deity-catalog.json --cases-output artifacts/deity-cases.json
 pwsh -NoProfile -File .\tests\test.ps1 -DeityCases artifacts/deity-cases.json
 pwsh -NoProfile -File .\tests\check-deity-layout.ps1 -GamePath '你的 Crawl 目录'
+# 导出章节编号、环境楼层名及其实际布局（只需Python + UnityPy）：
+python .\tools\export_chapter_texts.py --game-path '你的 Crawl 目录' --output artifacts/chapter-catalog.json --cases-output artifacts/chapter-cases.json
+pwsh -NoProfile -File .\tests\test.ps1 -ChapterCases artifacts/chapter-cases.json
+pwsh -NoProfile -File .\tests\check-chapter-layout.ps1 -GamePath '你的 Crawl 目录'
 # 导出主菜单、选项、暂停菜单及开局全屏提示的 TextMesh 线索；不启动游戏：
 python .\tools\export_menu_texts.py --game-path '你的 Crawl 目录' --output artifacts/menu-textmeshes.json
 ```

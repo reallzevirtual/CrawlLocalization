@@ -85,3 +85,7 @@ MenuIntroAnimatic/Slide2/SpriteBullet1/Text1
 MenuIntroAnimatic/Slide2/SpriteBullet2/Text2
 MenuIntroAnimatic/Slide3/SpriteBullet1/Text1
 MenuIntroAnimatic/Slide4/SpriteBullet1/Text1
+
+# Dynamically spawned chapter title; bound after LevelTitle.Start writes its text.
+GUILevelTitle/LevelNum
+GUILevelTitle/FloorName
