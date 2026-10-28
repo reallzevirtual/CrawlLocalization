@@ -1,0 +1,172 @@
+# 商店：原文或组件键	中文	位置注释
+# 与宝库共用名称和说明；@shop.* 仅用于显示组成部分，不写回游戏数据。
+@shop.prefix:Slow	迟缓	sharedassets0.assets:44080 Constants m_weaponNamesSlow
+@shop.prefix:Unwieldy	笨重	sharedassets0.assets:44080 Constants m_weaponNamesSlow
+@shop.prefix:Torpid	迟钝	sharedassets0.assets:44080 Constants m_weaponNamesSlow
+@shop.prefix:Awkward	难使的	sharedassets0.assets:44080 Constants m_weaponNamesSlow
+@shop.prefix:Unbalanced	失衡	sharedassets0.assets:44080 Constants m_weaponNamesSlow
+@shop.prefix:Crooked	歪斜	sharedassets0.assets:44080 Constants m_weaponNamesSlow
+@shop.prefix:Glutton's	暴食者的	sharedassets0.assets:44080 Constants m_weaponNamesSlow
+@shop.prefix:Quick	快速	sharedassets0.assets:44080 Constants m_weaponNamesFast
+@shop.prefix:Lithe	轻巧	sharedassets0.assets:44080 Constants m_weaponNamesFast
+@shop.prefix:Crystal	水晶	sharedassets0.assets:44080 Constants m_weaponNamesFast
+@shop.prefix:Piscene	鱼鳞	sharedassets0.assets:44080 Constants m_weaponNamesFast
+@shop.prefix:Kuster's	库斯特的	sharedassets0.assets:44080 Constants m_weaponNamesFast
+@shop.prefix:Rogue's	游荡者的	sharedassets0.assets:44080 Constants m_weaponNamesFast
+@shop.prefix:Master's	大师的	sharedassets0.assets:44080 Constants m_weaponNamesFast
+@shop.prefix:Keen	锋锐	sharedassets0.assets:44080 Constants m_weaponNamesFast
+@shop.prefix:Swift	迅捷	sharedassets0.assets:44080 Constants m_weaponNamesFast
+@shop.prefix:Nimble	灵巧	sharedassets0.assets:44080 Constants m_weaponNamesFast
+@shop.prefix:Weak	无力	sharedassets0.assets:44080 Constants m_weaponNamesWeak
+@shop.prefix:Cracked	开裂	sharedassets0.assets:44080 Constants m_weaponNamesWeak
+@shop.prefix:Crude	粗制	sharedassets0.assets:44080 Constants m_weaponNamesWeak
+@shop.prefix:Broken	破损	sharedassets0.assets:44080 Constants m_weaponNamesWeak
+@shop.prefix:Dull	钝刃	sharedassets0.assets:44080 Constants m_weaponNamesWeak
+@shop.prefix:Blunt	钝头	sharedassets0.assets:44080 Constants m_weaponNamesWeak
+@shop.prefix:Training	训练用	sharedassets0.assets:44080 Constants m_weaponNamesWeak
+@shop.prefix:Strong	强韧	sharedassets0.assets:44080 Constants m_weaponNamesStrong
+@shop.prefix:Powerful	强力	sharedassets0.assets:44080 Constants m_weaponNamesStrong
+@shop.prefix:Elite	精良	sharedassets0.assets:44080 Constants m_weaponNamesStrong
+@shop.prefix:Cruel	残忍	sharedassets0.assets:44080 Constants m_weaponNamesStrong
+@shop.prefix:Flawless	无瑕	sharedassets0.assets:44080 Constants m_weaponNamesStrong
+@shop.prefix:Violent	狂暴	sharedassets0.assets:44080 Constants m_weaponNamesStrong
+@shop.prefix:Orbeth's	奥贝斯的	sharedassets0.assets:44080 Constants m_weaponNamesStrong
+@shop.prefix:Drogoth's	德罗戈斯的	sharedassets0.assets:44080 Constants m_weaponNamesStrong
+@shop.prefix:Morgon's	摩根的	sharedassets0.assets:44080 Constants m_weaponNamesStrong
+@shop.prefix:Barbed	倒刺	sharedassets0.assets:44080 Constants m_weaponNamesStrong
+@shop.magic:Glows with the magic of {0}.	闪耀着{0}的魔力。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
+@shop.magic:Blessed by the order of {0}.	受到{0}教团的祝福。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
+@shop.magic:The symbol of {0} glows beneath your fingers.	{0}的符号在你指下发光。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
+@shop.magic:The power of {0} lies dormant within.	{0}之力沉睡其中。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
+@shop.magic:Vibrates with essence of {0}.	蕴含{0}的精华，微微震颤。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
+@shop.magic:Once wielded by {0} monks.	曾被{0}僧侣使用。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
+@shop.magic:The glyph of {0} has been hastily scratched onto it's surface.	表面仓促刻下了{0}的符文。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
+@shop.magic:Wrested from the grasp of {0} demon.	从{0}恶魔手中夺来。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
+@shop.stat:Vitality	体质	sharedassets0.assets:44080 Constants m_heroStats；商店药水属性变化
+@shop.stat:Strength	力量	sharedassets0.assets:44080 Constants m_heroStats；商店药水属性变化
+@shop.stat:Agility	敏捷	sharedassets0.assets:44080 Constants m_heroStats；商店药水属性变化
+@shop.stat:Wisdom	智慧	sharedassets0.assets:44080 Constants m_heroStats；商店药水属性变化
+@shop.stat:Luck	幸运	sharedassets0.assets:44080 Constants m_heroStats；商店药水属性变化
+@shop.status:Critical hit	暴击	sharedassets0.assets:44597 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45813 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45870 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45871 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45876 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45898 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45899 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45900 Status m_description；武器附加状态，包含内部预置
+@shop.status:Stun	眩晕	sharedassets0.assets:45814 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45816 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45817 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45820 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45823 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45824 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45833 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45834 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45835 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45836 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45839 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45847 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45853 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45861 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45862 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45885 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45886 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45887 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45888 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45889 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45895 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45897 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45901 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45905 Status m_description；武器附加状态，包含内部预置
+@shop.status:Holding Beholder Eye	持有眼魔之眼	sharedassets0.assets:45815 Status m_description；武器附加状态，包含内部预置
+@shop.prefix:Hemophiliac's	血病者的	sharedassets0.assets:45818 Status m_weaponNames
+@shop.status:Causes constant bleeding	导致持续流血	sharedassets0.assets:45818 Status m_description；武器附加状态，包含内部预置
+@shop.prefix:Holy	神圣	sharedassets0.assets:45819 Status m_weaponNames
+@shop.prefix:Blessed	受祝福的	sharedassets0.assets:45819 Status m_weaponNames
+@shop.status:Blessed: Gain more XP	祝福：获得更多经验	sharedassets0.assets:45819 Status m_description；武器附加状态，包含内部预置
+@shop.prefix:Witching	巫术	sharedassets0.assets:45821 Status m_weaponNames；sharedassets0.assets:45822 Status m_weaponNames；sharedassets0.assets:45840 Status m_weaponNames；sharedassets0.assets:45841 Status m_weaponNames；sharedassets0.assets:45860 Status m_weaponNames
+@shop.status:Chicken Magic	小鸡魔法	sharedassets0.assets:45821 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45822 Status m_description；武器附加状态，包含内部预置
+@shop.prefix:Charmed	幸运	sharedassets0.assets:45825 Status m_weaponNames
+@shop.status:Charmed: Store Discount	幸运：商店折扣	sharedassets0.assets:45825 Status m_description；武器附加状态，包含内部预置
+@shop.prefix:Occult	秘术	sharedassets0.assets:45826 Status m_weaponNames
+@shop.prefix:Veiled	隐秘	sharedassets0.assets:45826 Status m_weaponNames
+@shop.prefix:Mystic	神秘	sharedassets0.assets:45826 Status m_weaponNames
+@shop.prefix:Orphic	灵秘	sharedassets0.assets:45826 Status m_weaponNames
+@shop.status:Cosmic Strikes	星界打击	sharedassets0.assets:45826 Status m_description；武器附加状态，包含内部预置
+@shop.prefix:Blasting	爆破	sharedassets0.assets:45827 Status m_weaponNames
+@shop.prefix:Explosive	爆炸	sharedassets0.assets:45827 Status m_weaponNames
+@shop.prefix:Torpedo	鱼雷	sharedassets0.assets:45827 Status m_weaponNames
+@shop.prefix:Bomber's	轰炸者的	sharedassets0.assets:45827 Status m_weaponNames
+@shop.prefix:Sapper's	工兵的	sharedassets0.assets:45827 Status m_weaponNames
+@shop.status:Explosive Strikes	爆炸打击	sharedassets0.assets:45827 Status m_description；武器附加状态，包含内部预置
+@shop.prefix:Vorpal	斩首	sharedassets0.assets:45828 Status m_weaponNames
+@shop.prefix:Vampiric	吸血	sharedassets0.assets:45828 Status m_weaponNames
+@shop.prefix:Drinker	饮血	sharedassets0.assets:45828 Status m_weaponNames
+@shop.prefix:Draining	汲血	sharedassets0.assets:45828 Status m_weaponNames
+@shop.prefix:Thirsting	嗜血	sharedassets0.assets:45828 Status m_weaponNames
+@shop.status:Life Steal Strikes	吸血打击	sharedassets0.assets:45828 Status m_description；武器附加状态，包含内部预置
+@shop.prefix:Buff	强化	sharedassets0.assets:45829 Status m_weaponNames；sharedassets0.assets:45838 Status m_weaponNames；sharedassets0.assets:45849 Status m_weaponNames；sharedassets0.assets:45851 Status m_weaponNames；sharedassets0.assets:45896 Status m_weaponNames
+@shop.prefix:Poison	毒性	sharedassets0.assets:45829 Status m_weaponNames；sharedassets0.assets:45838 Status m_weaponNames；sharedassets0.assets:45849 Status m_weaponNames；sharedassets0.assets:45851 Status m_weaponNames；sharedassets0.assets:45890 Status m_weaponNames；sharedassets0.assets:45896 Status m_weaponNames
+@shop.status:GhostGirlHeal	幽灵女孩治疗	sharedassets0.assets:45829 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45849 Status m_description；武器附加状态，包含内部预置
+@shop.prefix:Cellular	细胞	sharedassets0.assets:45830 Status m_weaponNames
+@shop.prefix:Plasmatic	灵质	sharedassets0.assets:45830 Status m_weaponNames
+@shop.prefix:Biotic	生体	sharedassets0.assets:45830 Status m_weaponNames
+@shop.status:Plasm Strikes	灵质打击	sharedassets0.assets:45830 Status m_description；武器附加状态，包含内部预置
+@shop.prefix:Liquid	流水	sharedassets0.assets:45831 Status m_weaponNames
+@shop.prefix:Oceanic	海洋	sharedassets0.assets:45831 Status m_weaponNames
+@shop.prefix:Wet	湿润	sharedassets0.assets:45831 Status m_weaponNames
+@shop.prefix:Dripping	滴水	sharedassets0.assets:45831 Status m_weaponNames
+@shop.prefix:Deep Sea	深海	sharedassets0.assets:45831 Status m_weaponNames
+@shop.status:Water Strikes	流水打击	sharedassets0.assets:45831 Status m_description；武器附加状态，包含内部预置
+@shop.prefix:Dark	黑暗	sharedassets0.assets:45832 Status m_weaponNames；sharedassets0.assets:45863 Status m_weaponNames
+@shop.prefix:Corrupted	腐化	sharedassets0.assets:45832 Status m_weaponNames；sharedassets0.assets:45863 Status m_weaponNames
+@shop.status:Corrupted: 1.5 X Damage, Wielder is Driven Insane	腐化：造成1.5倍伤害，持有者陷入疯狂	sharedassets0.assets:45832 Status m_description；武器附加状态，包含内部预置
+@shop.status:GhoulGoo	食尸鬼黏液	sharedassets0.assets:45838 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45851 Status m_description；武器附加状态，包含内部预置
+@shop.status:Frog Magic	青蛙魔法	sharedassets0.assets:45840 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45841 Status m_description；武器附加状态，包含内部预置
+@shop.prefix:Glacial	冰川	sharedassets0.assets:45842 Status m_weaponNames；sharedassets0.assets:45869 Status m_weaponNames
+@shop.prefix:Icey	寒冰	sharedassets0.assets:45842 Status m_weaponNames；sharedassets0.assets:45869 Status m_weaponNames
+@shop.prefix:Frozen	冰冻	sharedassets0.assets:45842 Status m_weaponNames；sharedassets0.assets:45869 Status m_weaponNames
+@shop.prefix:Frostbite	霜噬	sharedassets0.assets:45842 Status m_weaponNames；sharedassets0.assets:45869 Status m_weaponNames
+@shop.status:Ice Magic	寒冰魔法	sharedassets0.assets:45842 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45869 Status m_description；武器附加状态，包含内部预置
+@shop.status:Causes nice sparkles	产生漂亮的火花	sharedassets0.assets:45859 Status m_description；武器附加状态，包含内部预置
+@shop.status:Mournful	悲伤	sharedassets0.assets:45860 Status m_description；武器附加状态，包含内部预置
+@shop.prefix:Mad	疯狂	sharedassets0.assets:45872 Status m_weaponNames；sharedassets0.assets:45875 Status m_weaponNames
+@shop.status:Insanity	疯狂	sharedassets0.assets:45872 Status m_description；武器附加状态，包含内部预置；sharedassets0.assets:45875 Status m_description；武器附加状态，包含内部预置
+@shop.prefix:Cursed	受诅咒的	sharedassets0.assets:45877 Status m_weaponNames
+@shop.status:Cursed: Causes Vomiting, but sold at a discount	诅咒：导致呕吐，但售价更低	sharedassets0.assets:45877 Status m_description；武器附加状态，包含内部预置
+@shop.prefix:Burning	燃烧	sharedassets0.assets:45880 Status m_weaponNames
+@shop.prefix:Flaming	烈焰	sharedassets0.assets:45880 Status m_weaponNames
+@shop.prefix:Hellfire	地狱火	sharedassets0.assets:45880 Status m_weaponNames
+@shop.status:Fire Magic	火焰魔法	sharedassets0.assets:45880 Status m_description；武器附加状态，包含内部预置
+@shop.prefix:Venomous	剧毒	sharedassets0.assets:45890 Status m_weaponNames
+@shop.status:Poison	中毒	sharedassets0.assets:45890 Status m_description；武器附加状态，包含内部预置
+@shop.prefix:Thieving	窃贼	sharedassets0.assets:45902 StatusThieving m_weaponNames；sharedassets0.assets:45903 StatusThieving m_weaponNames；sharedassets0.assets:45904 StatusThieving m_weaponNames
+@shop.status:Stealing Gold	窃取金币	sharedassets0.assets:45902 StatusThieving m_description；武器附加状态，包含内部预置；sharedassets0.assets:45903 StatusThieving m_description；武器附加状态，包含内部预置；sharedassets0.assets:45904 StatusThieving m_description；武器附加状态，包含内部预置
+@shop.magic-name:eternal fire	永恒之火	sharedassets0.assets:45958 WeaponMagic m_displayName
+Sword	剑	sharedassets0.assets:45960 Weapon m_weaponName；sharedassets0.assets:45961 Weapon m_weaponName；sharedassets0.assets:45962 Weapon m_weaponName；sharedassets0.assets:45963 Weapon m_weaponName
+2 Handed Sword	双手剑	sharedassets0.assets:45964 Weapon m_weaponName；sharedassets0.assets:45965 Weapon m_weaponName；sharedassets0.assets:45966 Weapon m_weaponName；sharedassets0.assets:45967 Weapon m_weaponName
+Cracked Bow	破裂短弓	sharedassets0.assets:45971 Weapon m_weaponName；sharedassets0.assets:45971 Weapon m_combos m_name
+A low powered bow.	一把威力较弱的弓。	sharedassets0.assets:45971 Weapon m_weaponDescription；sharedassets0.assets:45971 Weapon m_combos m_description
+Magic Knife	魔法小刀	sharedassets0.assets:45981 Weapon m_combos m_name
+A light knife imbued with powerful magic	一把灌注了强大魔力的轻巧小刀。	sharedassets0.assets:45981 Weapon m_combos m_description
+Magic Machete	魔法砍刀	sharedassets0.assets:45981 Weapon m_combos m_name
+@shop.magic-name:the sun ray	日光射线	sharedassets0.assets:45982 WeaponMagic m_displayName
+@shop.magic-name:the blasting orb	爆破法球	sharedassets0.assets:45983 WeaponMagic m_displayName
+@shop.magic-name:bloodstrike	血击	sharedassets0.assets:45984 WeaponMagic m_displayName
+@shop.magic-name:the boulder	巨石	sharedassets0.assets:45985 WeaponMagic m_displayName
+@shop.magic-name:the cyclone	旋风	sharedassets0.assets:45986 WeaponMagic m_displayName
+@shop.magic-name:the purifying fire	净化之火	sharedassets0.assets:45987 WeaponMagic m_displayName
+@shop.magic-name:greater ice shards	强化冰片	sharedassets0.assets:45988 WeaponMagic m_displayName
+@shop.magic-name:chain ice shards	连锁冰片	sharedassets0.assets:45989 WeaponMagic m_displayName
+@shop.magic-name:the speartrap	长矛陷阱	sharedassets0.assets:45990 WeaponMagic m_displayName
+@shop.magic-name:the rat	鼠群	sharedassets0.assets:45991 WeaponMagic m_displayName
+Practice Knife	练习小刀	sharedassets0.assets:46001 Weapon m_weaponName；sharedassets0.assets:46001 Weapon m_combos m_name
+A dull knife, capable of stealing gold	一把能窃取金币的钝刃小刀。	sharedassets0.assets:46001 Weapon m_combos m_description
+Tutor's Blade	导师之刃	sharedassets0.assets:46006 Weapon m_weaponName
+A spinning axe that comes alive when you attack. Use movement to fling it at your enemies\nattack to activate\r it	攻击时唤醒旋转的斧头，通过移动将它甩向敌人。	sharedassets0.assets:50916 Powerup m_description；sharedassets0.assets:50927 Powerup m_description
+Frog Enchantment	青蛙附魔	sharedassets0.assets:51521 Powerup m_displayName
+Terrified	惊恐	sharedassets0.assets:51522 Powerup m_displayName
+Strength Up	力量提升	sharedassets0.assets:51536 Powerup m_displayName；sharedassets0.assets:51537 Powerup m_displayName；sharedassets0.assets:51538 Powerup m_displayName；sharedassets0.assets:51570 Powerup m_displayName；sharedassets0.assets:51571 Powerup m_displayName；sharedassets0.assets:51572 Powerup m_displayName；sharedassets0.assets:51573 Powerup m_displayName；sharedassets0.assets:51574 Powerup m_displayName；sharedassets0.assets:51577 Powerup m_displayName
+A spinning axe that comes alive when you cast magic. Use movement to fling it at your enemies.	施法时唤醒旋转的斧头，通过移动将它甩向敌人。	sharedassets0.assets:51539 Powerup m_description
+Speed Up	速度提升	sharedassets0.assets:51540 Powerup m_displayName；sharedassets0.assets:51541 Powerup m_displayName；sharedassets0.assets:51543 Powerup m_displayName；sharedassets0.assets:51569 Powerup m_displayName
+Living Tome: Fireball	活体魔典：火球	sharedassets0.assets:51542 Powerup m_displayName；sharedassets0.assets:51564 Powerup m_displayName
+Magic book follows you and periodically fires a spell	魔法书跟随你，定期释放法术。	sharedassets0.assets:51542 Powerup m_description；sharedassets0.assets:51563 Powerup m_description；sharedassets0.assets:51564 Powerup m_description；sharedassets0.assets:51565 Powerup m_description
+Living Tome: Beam	活体魔典：光束	sharedassets0.assets:51563 Powerup m_displayName
+Living Tome: Tears	活体魔典：泪水	sharedassets0.assets:51565 Powerup m_displayName
+Always Bleed	持续流血	sharedassets0.assets:51566 Powerup m_displayName
+Magic Up	魔力提升	sharedassets0.assets:51568 Powerup m_displayName
+Floats around and damages enemies on contact	四处漂浮，接触敌人时造成伤害。	sharedassets0.assets:51575 Powerup m_description；sharedassets0.assets:51576 Powerup m_description
+@shop.trait:fast attack speed	较快攻速	Assembly-CSharp WeaponData.GetDescription；与同类基础武器比较
+@shop.trait:high damage	较高伤害	Assembly-CSharp WeaponData.GetDescription；与同类基础武器比较
+@shop.trait:low attack speed	较慢攻速	Assembly-CSharp WeaponData.GetDescription；与同类基础武器比较
+@shop.trait:poor damage	较低伤害	Assembly-CSharp WeaponData.GetDescription；与同类基础武器比较
+@shop.compare:VALUE	价值	Assembly-CSharp PropPurchasable.ShowInfoBox；保留比较符号与颜色
+@shop.compare:DAMAGE	伤害	Assembly-CSharp PropPurchasable.ShowInfoBox；保留比较符号与颜色
+@shop.compare:SPEED	速度	Assembly-CSharp PropPurchasable.ShowInfoBox；保留比较符号与颜色
+@shop.compare:RANGE	距离	Assembly-CSharp PropPurchasable.ShowInfoBox；保留比较符号与颜色
+@shop.traits:for a {0}: {1}	相较同类{0}，具有{1}。	Assembly-CSharp WeaponData/PropPurchasable/GUIStore；商店动态说明与交互提示
+@shop.chance:{0}% chance of {1}.	{0}％几率触发{1}。	Assembly-CSharp WeaponData/PropPurchasable/GUIStore；商店动态说明与交互提示
+(Value {0})	（价值 {0}）	Assembly-CSharp WeaponData/PropPurchasable/GUIStore；商店动态说明与交互提示
+Trade	换购	Assembly-CSharp WeaponData/PropPurchasable/GUIStore；商店动态说明与交互提示
+Replaces	替换	Assembly-CSharp WeaponData/PropPurchasable/GUIStore；商店动态说明与交互提示
+You already own this artifact.	你已经拥有这件遗物。	Assembly-CSharp WeaponData/PropPurchasable/GUIStore；商店动态说明与交互提示
+BUY	购买	Assembly-CSharp WeaponData/PropPurchasable/GUIStore；商店动态说明与交互提示
+BUY POTION	购买药水	Assembly-CSharp WeaponData/PropPurchasable/GUIStore；商店动态说明与交互提示
+BUY ARTIFACT	购买遗物	Assembly-CSharp WeaponData/PropPurchasable/GUIStore；商店动态说明与交互提示
+BUY SPELL	购买技能	Assembly-CSharp WeaponData/PropPurchasable/GUIStore；商店动态说明与交互提示
+BUY WEAPON	购买武器	Assembly-CSharp WeaponData/PropPurchasable/GUIStore；商店动态说明与交互提示
+TRADE WEAPON	换购武器	Assembly-CSharp WeaponData/PropPurchasable/GUIStore；商店动态说明与交互提示
+FORBIDDEN	禁止购买	Assembly-CSharp WeaponData/PropPurchasable/GUIStore；商店动态说明与交互提示
+ALREADY OWNED	已经拥有	Assembly-CSharp WeaponData/PropPurchasable/GUIStore；商店动态说明与交互提示
+NOT ENOUGH GOLD	金币不足	Assembly-CSharp WeaponData/PropPurchasable/GUIStore；商店动态说明与交互提示

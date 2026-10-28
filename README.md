@@ -1,6 +1,6 @@
 # Crawl Localization
 
-BepInEx 5 中文本地化插件，版本 **0.6.0**，适配 Windows Crawl / Unity 5.4.2。当前只维护简体中文；保留恢复游戏原文的选项。包含菜单按钮及经过核对的独立 TextMesh 标题、提示文字，共 1009 条译文/数字模板、83 个 TextMesh 路径，覆盖宝库分类说明、图鉴、成就、邪神选择、开局全屏提示及章节标题。
+BepInEx 5 中文本地化插件，版本 **0.7.0**，适配 Windows Crawl / Unity 5.4.2。当前只维护简体中文；保留恢复游戏原文的选项。包含菜单按钮及经过核对的独立 TextMesh 标题、提示文字，共 1179 条译文/数字模板、83 个 TextMesh 路径，覆盖宝库分类说明、图鉴、成就、邪神选择、开局全屏提示、章节标题及商店。
 
 ## 构建与安装
 
@@ -14,7 +14,7 @@ pwsh -NoProfile -File .\build.ps1 -GamePath '你的 Crawl 目录'
 pwsh -NoProfile -File .\build.ps1 -Install
 ```
 
-输出 `artifacts/CrawlLocalization-0.6.0.zip`。关闭游戏，将 ZIP 内容解压至 `BepInEx/plugins/CrawlLocalization/`，然后重新启动。更新时覆盖 DLL、Languages 和 Fonts。新版不再分发繁体包，旧 `Languages/zh-Hant` 目录可删除；保留也不会被旧配置继续选中。不自动启动游戏。
+输出 `artifacts/CrawlLocalization-0.7.0.zip`。关闭游戏，将 ZIP 内容解压至 `BepInEx/plugins/CrawlLocalization/`，然后重新启动。更新时覆盖 DLL、Languages 和 Fonts。新版不再分发繁体包，旧 `Languages/zh-Hant` 目录可删除；保留也不会被旧配置继续选中。不自动启动游戏。
 
 ## 配置与重载
 
@@ -32,7 +32,7 @@ F8 重载配置、译文及路径清单，刷新已创建的文字。`ReloadKey 
 
 ## 译文表及位置注释
 
-`Languages/zh-Hans/translations.tsv` 存放通用菜单译文（211 条），`vault-translations.tsv` 存放宝库译文（595 条），`deity-translations.tsv` 存放邪神选择与试炼译文（71 条），`chapter-translations.tsv` 存放章节编号和随机楼层名（132 条）。四份表均为 UTF-8 TSV，有三列：
+`Languages/zh-Hans/translations.tsv` 存放通用菜单译文（211 条），`vault-translations.tsv` 存放宝库译文（595 条），`deity-translations.tsv` 存放邪神选择与试炼译文（71 条），`chapter-translations.tsv` 存放章节编号和随机楼层名（132 条），`shop-translations.tsv` 存放商店新增组件和提示（170 条）。五份表均为 UTF-8 TSV，有三列：
 
 ```text
 原文<TAB>中文<TAB>位置注释
@@ -54,7 +54,7 @@ Note: Many keyboards do not\nsupport multiple players<TAB>注意：许多键盘�
 
 增加独立文字时，在译文表添加原文和译文，再将核对过的对象路径添加到路径清单。不会自动翻译所有 MonoBehaviour 或所有 TextMesh；玩家名字、账号名、制作人员姓名、网址、编辑器占位文字和图标字符不作为通用替换目标。
 
-已增加：键盘提示、街机模式说明、菜单标题、操作重绑的静态和动态提示、玩家加入的电脑说明、加载/保存提示、宝库标题及操作提示、暂停菜单游戏提示、制作人员页面的职能标题。宝库内容覆盖见下节；游戏内商店/拾取提示、暂停中途加入与胜利画面的神祇相关文字、所有弹窗正文、CrawlOnline F1 IMGUI 和 ex2D 仍未全面覆盖。
+已增加：键盘提示、街机模式说明、菜单标题、操作重绑的静态和动态提示、玩家加入的电脑说明、加载/保存提示、宝库标题及操作提示、暂停菜单游戏提示、制作人员页面的职能标题。宝库内容覆盖见下节；非商店拾取提示、暂停中途加入与胜利画面的神祇相关文字、所有弹窗正文、CrawlOnline F1 IMGUI 和 ex2D 仍未全面覆盖。
 
 ## 宝库汉化（0.4.0）
 
@@ -89,6 +89,19 @@ Note: Many keyboards do not\nsupport multiple players<TAB>注意：许多键盘�
 
 原版显示条件保持不变：启用提示，且真人玩家多于1名或尚未完成教程。开关开启不代表已完成教程的单人游戏每次都显示。运行 `export_menu_texts.py` 现在也会导出该场景。
 
+## 商店汉化（0.7.0）
+
+覆盖商店武器、技能、遗物、药水的名称与说明，武器随机前缀、魔法句式、持有/命中状态、攻速与伤害说明，以及换购、替换、金币不足、禁止购买、已拥有等提示。基础词条复用宝库译文；新增词条集中在 `shop-translations.tsv`，第三列保留资源及代码来源。
+
+从游戏已选定的组件生成中文显示，不拆解最终英文句子，也不修改资源里的名称、状态、价格或购买逻辑。随机魔法句式通过一个观察补丁记录原游戏已选中的模板，原返回字符串、随机调用和英文缓存继续保留。缺少任何必要词条时，该标签回退到游戏原文；缺少字体时沿用既有回退机制。其他 mod 的新增名称/前缀/状态需要补词条，特殊显示逻辑可能需要额外适配。
+
+`@shop.prefix:`、`@shop.status:` 等为组件键，不是要在屏幕上搜索的完整句子。`@shop.magic:`、`@shop.traits:` 和 `@shop.chance:` 中的 `{0}`、`{1}` 是源组件格式参数，译文需保留相同编号；不应用通用的“只匹配数字”规则。例如 `@shop.prefix:Swift` 对应“迅捷”，与宝库的 `Shortsword` →“短剑”拼为“迅捷短剑”。武器比较只替换属性名，保留 `++ / + / = / - / --` 及颜色；药水属性保留实际正负数值。
+
+商店正文使用资源中的115单位宽度自动换行，字体包及布局元数据不变。独立Unity检查覆盖4,052个文字案例（包括额外的极端组件组合），最长正文8行；只验证文字几何与内容完整性，完整面板和实际交互由用户在游戏内确认。没有安装或启动游戏。
+
+建议验证：连续切换武器/药水/技能/遗物；查看带前缀、魔法和状态的武器；对照属性符号、数值和价格；测试金币不足、禁止购买、已拥有及换购；离开商店后按F8，确认交互提示正确；切换 `en` 恢复原文。
+
+
 ## 章节编号与楼层名（0.6.0）
 
 进局和换层时显示的 `- Chapter {0} -` 翻译为 `- 第 {0} 章 -`，并覆盖地牢、墓穴、矿区环境的全部131个不同随机楼层名。源资源是 sharedassets0.assets 中44824、44832、44876、44921、45936的Environment，以及55903的LevelTitle。重复环境共用译文，表格注释保留全部来源。
@@ -105,7 +118,7 @@ CrawlOnline 的 `Patch_SystemTutorial_GetShouldStartTutorial` 在 `Unlocks.Enabl
 
 ## 字体及排版
 
-`Fonts/crawl-fonts.bundle` 由 Unity 5.4.2f2 / Windows x86 构建，包含十个合并中文字体。内嵌 TTF 与根目录源文件逐字节相同，保留原游戏 Font 的 ascent、descent、line spacing；0.6.0 继续使用 0.2.2 修正后的字体包。
+`Fonts/crawl-fonts.bundle` 由 Unity 5.4.2f2 / Windows x86 构建，包含十个合并中文字体。内嵌 TTF 与根目录源文件逐字节相同，保留原游戏 Font 的 ascent、descent、line spacing；0.7.0 继续使用 0.2.2 修正后的字体包。
 
 `fonts.tsv` 五列：原字体名、类型、相对文件路径、资源/家族名、倍率。默认按完整资源路径 `LoadAsset<Font>`。支持 `bundle`、兼容入口 `ttf` 和 `system`；TTF 按家族创建不能保证实际文件来源，推荐 bundle。
 
@@ -149,6 +162,11 @@ pwsh -NoProfile -File .\tests\check-deity-layout.ps1 -GamePath '你的 Crawl 目
 python .\tools\export_chapter_texts.py --game-path '你的 Crawl 目录' --output artifacts/chapter-catalog.json --cases-output artifacts/chapter-cases.json
 pwsh -NoProfile -File .\tests\test.ps1 -ChapterCases artifacts/chapter-cases.json
 pwsh -NoProfile -File .\tests\check-chapter-layout.ps1 -GamePath '你的 Crawl 目录'
+# 从实际资源核对商店组件，并验证随机观察补丁和Unity文字排版：
+python .\tools\export_shop_texts.py --game-path '你的 Crawl 目录' --output artifacts/shop-catalog.json
+pwsh -NoProfile -File .\tests\check-shop-catalog.ps1
+pwsh -NoProfile -File .\tests\check-shop-observer.ps1 -GamePath '你的 Crawl 目录'
+pwsh -NoProfile -File .\tests\check-shop-layout.ps1 -GamePath '你的 Crawl 目录'
 # 导出主菜单、选项、暂停菜单及开局全屏提示的 TextMesh 线索；不启动游戏：
 python .\tools\export_menu_texts.py --game-path '你的 Crawl 目录' --output artifacts/menu-textmeshes.json
 ```

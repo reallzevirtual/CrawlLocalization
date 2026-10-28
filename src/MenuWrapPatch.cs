@@ -11,7 +11,8 @@ namespace CrawlLocalization
             if (___textMesh == null || !ChineseTextWrapper.ContainsChinese(input) ||
                 ___textMesh.GetComponent<LocalizedMenuLabel>() == null ||
                 (___textMesh.GetComponentInParent<MenuLibrary>() == null &&
-                 ___textMesh.GetComponentInParent<MenuDeitySelectPlayer>() == null)) return true;
+                 ___textMesh.GetComponentInParent<MenuDeitySelectPlayer>() == null &&
+                 ___textMesh.GetComponentInParent<GUIStore>() == null)) return true;
             TextMesh mesh = ___textMesh;
             Font font = mesh.font;
             if (font == null) return true;

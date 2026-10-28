@@ -47,7 +47,7 @@ namespace CrawlLocalization
             LanguagePack pack = new LanguagePack { Id = NormalizeId(id) };
             if (pack.Id == "en") return pack;
             string directory = Path.Combine(Path.Combine(root, "Languages"), pack.Id);
-            foreach (string table in new string[] { "translations.tsv", "vault-translations.tsv", "deity-translations.tsv", "chapter-translations.tsv" })
+            foreach (string table in new string[] { "translations.tsv", "vault-translations.tsv", "deity-translations.tsv", "chapter-translations.tsv", "shop-translations.tsv" })
             {
                 string path = Path.Combine(directory, table);
                 if (table != "translations.tsv" && !File.Exists(path)) continue;
@@ -57,6 +57,7 @@ namespace CrawlLocalization
                     if ((cells.Length != 2 && cells.Length != 3) || cells[0].Length == 0 || cells[1].Length == 0) throw new FormatException("Expected source<TAB>translation[<TAB>comment].");
                     string source = NormalizeText(Unescape(cells[0])), target = Unescape(cells[1]);
                     NumericTranslation template = NumericTranslation.Create(source, target);
+                    if (source.StartsWith("@shop.", StringComparison.Ordinal)) template = null;
                     if (template != null)
                     {
                         foreach (NumericTranslation entry in pack.numeric)

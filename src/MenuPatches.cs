@@ -81,6 +81,7 @@ namespace CrawlLocalization
     public sealed class LocalizedMenuLabel : MonoBehaviour
     {
         internal bool Skip, Standalone;
+        internal Func<LanguagePack, string> TextProvider;
         internal float BaseScale, ScaleFactor = 1f;
         private TextMesh mesh;
         private Renderer textRenderer;
@@ -117,11 +118,17 @@ namespace CrawlLocalization
             if (display == null || text != display) source = text;
             try
             {
-                string translated;
+                string translated = null;
                 FontChoice choice;
                 Plugin plugin = Plugin.Instance;
                 int size = originalSize > 0 ? originalSize : (originalFont != null && originalFont.fontSize > 0 ? originalFont.fontSize : 16);
-                if (!Skip && plugin.Language.TryTranslate(source, out translated) && plugin.Fonts.TryChoose(plugin.Language, originalFont, size, originalStyle, translated, out choice))
+                bool found = false;
+                if (!Skip)
+                {
+                    translated = TextProvider == null ? null : TextProvider(plugin.Language);
+                    found = translated != null || plugin.Language.TryTranslate(source, out translated);
+                }
+                if (found && plugin.Fonts.TryChoose(plugin.Language, originalFont, size, originalStyle, translated, out choice))
                 {
                     Apply(choice);
                     display = translated;
