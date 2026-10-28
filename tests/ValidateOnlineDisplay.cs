@@ -1,0 +1,73 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
+using UnityEngine;
+using CrawlLocalization;
+public static class ValidateOnlineDisplay
+{
+    static int checks;
+    static readonly List<Font> fonts=new List<Font>();
+    static void Check(bool ok,string message) { checks++;if(!ok)throw new Exception(message); }
+    static TextMesh Mesh(GameObject root,string name)
+    {
+        GameObject obj=new GameObject(name);obj.transform.SetParent(root.transform,false);
+        TextMesh mesh=obj.AddComponent<TextMesh>();mesh.fontSize=160;mesh.characterSize=1;
+        Font font=Font.CreateDynamicFontFromOSFont("Arial",160);font.name="CrawlTextBodyThin";fonts.Add(font);
+        mesh.font=font;mesh.GetComponent<Renderer>().sharedMaterial=font.material;return mesh;
+    }
+    static object Invoke(Type type,string method,params object[] args) {return type.GetMethod(method,BindingFlags.Static|BindingFlags.NonPublic).Invoke(null,args);}
+    static void Reload(Plugin plugin,string root,string id)
+    {plugin.Language=LanguagePack.Load(root,id,plugin.Warn);foreach(LocalizedMenuLabel label in plugin.Labels)label.Refresh();}
+    public static void Run()
+    {
+        string root=Directory.GetParent(Directory.GetParent(Application.dataPath).FullName).FullName;
+        Plugin plugin=new Plugin();Plugin.Instance=plugin;plugin.Language=LanguagePack.Load(root,"zh-Hans",plugin.Warn);plugin.Fonts=new FontService(plugin.Warn,delegate(string s){});
+        LocalizedMenuLabel.ExternalProvider=delegate(string source) {OnlineRecipe r=OnlineText.Find(source);return r==null?null:(Func<LanguagePack,string>)delegate(LanguagePack p){return p.Id=="en"?null:r.Render(p);};};
+        GameObject stage=new GameObject("OnlineValidation");stage.AddComponent<MenuPrompt>();
+        try
+        {
+            TextMesh title=Mesh(stage,"Title"),body=Mesh(stage,"Text"),button=Mesh(stage,"Button"),panel=Mesh(stage,"Online Lobby Panel");
+            global::GUIText t=title.gameObject.AddComponent<global::GUIText>(),b=body.gameObject.AddComponent<global::GUIText>();button.gameObject.AddComponent<global::GUIText>();
+            Font originalTitle=title.font,originalBody=body.font;
+            string titleSource=OnlineText.Literal("Play online"),bodySource=OnlineText.Literal("Find a game or host your own.\nHost is P1, others join as P2-P4.");
+            Invoke(typeof(PausePromptPatch),"Prefix",titleSource,bodySource,t,b);t.SetText(titleSource);b.SetText(bodySource);
+            Check(title.text=="联机游戏" && body.text.Contains("房主为 P1"),"Online title/body use existing prompt before backdrop sizing");
+            Check(title.font!=originalTitle && body.font!=originalBody,"Native TextMesh mapped fonts");
+            object[] args={body.text,132f,body,null};Check(!(bool)Invoke(typeof(MenuChineseWrapPatch),"Prefix",args),"Online prompt uses existing Chinese wrap");
+            body.text=(string)args[3];Check(body.GetComponent<Renderer>().bounds.size.x<=132.01f,"Intro body fits original prompt width");
+            MenuTextMenuItem item=button.gameObject.AddComponent<MenuTextMenuItem>();MenuTextMenuItemData data=new MenuTextMenuItemData{m_text=OnlineText.Literal("Server list"),m_message="OnAction"};
+            Invoke(typeof(MenuInitialisePatch),"Prefix",item,data);button.GetComponent<global::GUIText>().SetText(data.m_text);
+            Check(button.text=="服务器列表" && data.m_text=="Server list" && data.m_message=="OnAction","Button display changes; source/action identifier retained");
+            Reload(plugin,root,"en");Check(title.text=="Play online" && body.text==bodySource && title.font==originalTitle,"English reload restores source and font");
+            Reload(plugin,root,"zh-Hans");Check(title.text=="联机游戏" && button.text=="服务器列表","Chinese reload without reconstructing prompt");
+            string roster=OnlineText.ConcatArray(new object[]{OnlineText.Literal("P"),1,OnlineText.Literal("  "),"Public",OnlineText.Literal("  (host)")});
+            b.SetText(roster);Check(body.text=="P1  Public  (房主)","Live lobby body keeps literal-like player name");
+            roster=OnlineText.ConcatArray(new object[]{OnlineText.Literal("P"),2,OnlineText.Literal("  "),"Back",OnlineText.Literal("  "),23,OnlineText.Literal("ms")});
+            b.SetText(roster);Check(body.text=="P2  Back  23ms","Live body swaps provenance and preserves ping/name");
+            OnlineOverlay.SetText(panel,OnlineText.ConcatTwo(OnlineText.Literal("<color=#e8d8b0ff>ONLINE LOBBY</color>\n"),roster));
+            Check(panel.text.Contains("联机大厅") && panel.text.Contains("Back") && panel.text.Contains("23ms"),"Standalone live panel binds captured recipe");
+            b.SetText("Custom mod message");Reload(plugin,root,"zh-Hans");Check(body.text=="Custom mod message","Reused prompt clears old online provider");
+            b.SetText(roster);
+            LocalizedMenuLabel bodyLabel=body.GetComponent<LocalizedMenuLabel>();bodyLabel.TextProvider=delegate(LanguagePack p){return p.Id=="en"?null:"独立弹窗";};
+            bodyLabel.ResetSource("New base prompt");b.SetText("New base prompt");Check(body.text=="独立弹窗","Reusing an online label cannot clear another adapter's new provider");
+            int terms=0;
+            foreach(string row in LanguagePack.ReadTextLines(Path.Combine(root,"Languages/zh-Hans/crawlonline-translations.tsv")))
+            {
+                if(row.Length==0 || row.StartsWith("#"))continue;
+                string[] cells=row.Split('\t');string key=(string)Invoke(typeof(LanguagePack),"Unescape",cells[0].Substring(8));string expected=(string)Invoke(typeof(LanguagePack),"Unescape",cells[1]);
+                OnlineOverlay.SetText(panel,OnlineText.Literal(key));Check(panel.text==expected,"Native term/font: "+key);terms++;
+            }
+            GUIStyle style=new GUIStyle();style.font=originalBody;style.fontSize=12;style.wordWrap=true;
+            object[] prepare={OnlineText.Literal("Play online"),style};string translated=(string)Invoke(typeof(OnlineOverlay),"Prepare",prepare);
+            GUIStyle localized=(GUIStyle)prepare[1];Check(translated=="联机游戏" && localized.font!=null && localized.fontSize==12,"IMGUI text uses screen-pixel font size");
+            Check(style.font==originalBody && style.fontSize==12 && !ReferenceEquals(style,localized),"IMGUI source style is not modified");
+            GUIStyle automatic=new GUIStyle(style);automatic.fontSize=0;prepare=new object[]{OnlineText.Literal("Play online"),automatic};Invoke(typeof(OnlineOverlay),"Prepare",prepare);
+            Check(((GUIStyle)prepare[1]).fontSize==12 && automatic.fontSize==0,"Default IMGUI size does not inherit system font's 32px creation size");
+            Reload(plugin,root,"en");prepare=new object[]{OnlineText.Literal("Play online"),style};Check((string)Invoke(typeof(OnlineOverlay),"Prepare",prepare)=="Play online" && ReferenceEquals(prepare[1],style),"IMGUI English retains original style");
+            string report="PASS: "+checks+" native CrawlOnline display/font/reload checks, including "+terms+" scoped table entries. Unity 5.4 components and fonts are real; game GUIText entry points are test doubles. No game or network session started.";
+            File.WriteAllText(Path.Combine(root,"artifacts/online-display/result.txt"),report);Debug.Log("CRAWL_ONLINE_DISPLAY_OK\n"+report);
+        }
+        finally {UnityEngine.Object.DestroyImmediate(stage);LocalizedMenuLabel.ExternalProvider=null;OnlineOverlay.Clear();plugin.Fonts.Dispose();Plugin.Instance=null;foreach(Font f in fonts)UnityEngine.Object.DestroyImmediate(f);fonts.Clear();}
+    }
+}

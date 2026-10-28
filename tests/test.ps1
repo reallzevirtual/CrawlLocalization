@@ -5,6 +5,8 @@ if (!('CrawlLocalization.Tests' -as [type])) {
     Add-Type -Path @(
         (Join-Path $projectRoot 'src\LanguagePack.cs'),
         (Join-Path $projectRoot 'src\ShopText.cs'),
+        (Join-Path $projectRoot 'src\OnlineText.cs'),
+        (Join-Path $PSScriptRoot 'OnlineTests.cs'),
         (Join-Path $projectRoot 'src\ProgressionText.cs'),
         (Join-Path $PSScriptRoot 'ProgressionTests.cs'),
         (Join-Path $PSScriptRoot 'ShopTests.cs'),
@@ -19,6 +21,7 @@ if (!('CrawlLocalization.Tests' -as [type])) {
 [CrawlLocalization.Tests]::Run($projectRoot)
 $null = [CrawlLocalization.ShopTests]::Run($projectRoot)
 [CrawlLocalization.ProgressionTests]::Run($projectRoot)
+[CrawlLocalization.OnlineTests]::Run($projectRoot)
 
 if ($VaultCases) {
     [string[]]$sources = @(Get-Content -Raw -LiteralPath $VaultCases -Encoding utf8 | ConvertFrom-Json)

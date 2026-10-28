@@ -4,8 +4,6 @@ THE VAULT	宝库	主菜单／入口按钮；level2:1227 MenuLibrary/Main/TextTit
 OPTIONS	设置	主菜单／入口按钮；level2:1221 MenuOptions/TitleOptions
 CREDITS	制作人员	主菜单／入口按钮
 QUIT	退出游戏	主菜单／入口按钮
-ONLINE	联机游戏	主菜单／入口按钮
-ONLINE LOBBY	联机大厅	主菜单／入口按钮
 BACK	返回	通用菜单／返回、确认与选择按钮；level2:1241 MenuLibrary/Main/TextButtonB
 OK?	准备好了吗？	通用菜单／返回、确认与选择按钮
 OK	确定	通用菜单／返回、确认与选择按钮
@@ -67,22 +65,7 @@ Sticks: Analog	摇杆：模拟	选项／显示、声音、键盘及街机设置
 Sticks: 8-way	摇杆：八方向	选项／显示、声音、键盘及街机设置
 Menu: Normal	菜单：普通	选项／显示、声音、键盘及街机设置
 Menu: Esc Only	菜单：仅 Esc 键	选项／显示、声音、键盘及街机设置
-Server list	服务器列表	选项／显示、声音、键盘及街机设置
-Host lobby	创建大厅	CrawlOnline／大厅菜单按钮
-Join a friend	加入好友	CrawlOnline／大厅菜单按钮
-Public	公开	CrawlOnline／大厅菜单按钮
-Friends only	仅限好友	CrawlOnline／大厅菜单按钮
-Invite only	仅限邀请	CrawlOnline／大厅菜单按钮
-Next page	下一页	CrawlOnline／大厅菜单按钮
-Refresh	刷新	CrawlOnline／大厅菜单按钮
-Invite friends	邀请好友	CrawlOnline／大厅菜单按钮
-Close lobby	关闭大厅	CrawlOnline／大厅菜单按钮
-Visibility: Public	可见性：公开	CrawlOnline／大厅菜单按钮
-Visibility: Friends	可见性：好友	CrawlOnline／大厅菜单按钮
-Visibility: Private	可见性：私人	CrawlOnline／大厅菜单按钮
-Visibility: Friends only	可见性：仅限好友	CrawlOnline／大厅菜单按钮
-Visibility: Invite only	可见性：仅限邀请	CrawlOnline／大厅菜单按钮
-Game Tips: ON	游戏提示：开	CrawlOnline／大厅菜单按钮
+Game Tips: ON	游戏提示：开	选项／游戏提示开关
 Game Tips: OFF	游戏提示：关	选项／动态开关；MenuOptions
 Tutorial: ON	教程：开	选项／动态开关；MenuOptions
 Tutorial: OFF	教程：关	选项／动态开关；MenuOptions

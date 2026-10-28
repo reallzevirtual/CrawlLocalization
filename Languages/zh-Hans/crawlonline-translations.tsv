@@ -1,0 +1,136 @@
+# CrawlOnline 0.4.0 UI only. Names, addresses and runtime values are opaque.
+@online:ONLINE	联机游戏	CrawlOnline 0.4.0 / OnlineMenu.ItemText；仅本地显示，动态参数保持原文
+@online:ONLINE LOBBY	联机大厅	CrawlOnline 0.4.0 / OnlineMenu.ItemText；仅本地显示，动态参数保持原文
+@online:Server list	服务器列表	CrawlOnline 0.4.0 / OnlineMenu.ShowPlayOnline、OnlineMenu.ShowServerList、OnlineMenu.ShowServerListResults、Overlay.DrawIdle；仅本地显示，动态参数保持原文
+@online:Host lobby	创建大厅	CrawlOnline 0.4.0 / OnlineMenu.ShowPlayOnline、OnlineMenu.ShowHostType、Overlay.DrawIdle；仅本地显示，动态参数保持原文
+@online:Join a friend	加入好友	CrawlOnline 0.4.0 / OnlineMenu.ShowPlayOnline；仅本地显示，动态参数保持原文
+@online:Public	公开	CrawlOnline 0.4.0 / OnlineMenu.ShowHostType、SteamLobby.TypeName；仅本地显示，动态参数保持原文
+@online:Friends only	仅限好友	CrawlOnline 0.4.0 / OnlineMenu.ShowHostType、SteamLobby.TypeName；仅本地显示，动态参数保持原文
+@online:Invite only	仅限邀请	CrawlOnline 0.4.0 / OnlineMenu.ShowHostType、SteamLobby.TypeName；仅本地显示，动态参数保持原文
+@online:Next page	下一页	CrawlOnline 0.4.0 / OnlineMenu.ShowServerListResults；仅本地显示，动态参数保持原文
+@online:Refresh	刷新	CrawlOnline 0.4.0 / OnlineMenu.ShowServerListResults、Overlay.DrawIdle；仅本地显示，动态参数保持原文
+@online:Invite friends	邀请好友	CrawlOnline 0.4.0 / OnlineMenu.ShowLobby；仅本地显示，动态参数保持原文
+@online:Close lobby	关闭大厅	CrawlOnline 0.4.0 / OnlineMenu.ShowLobby、OnlineMenu.ConfirmCloseLobby；仅本地显示，动态参数保持原文
+@online:Visibility: Public	可见性：公开	CrawlOnline 0.4.0 / OnlineMenu；从通用表迁移
+@online:Visibility: Friends	可见性：好友	CrawlOnline 0.4.0 / OnlineMenu；从通用表迁移
+@online:Visibility: Private	可见性：私人	CrawlOnline 0.4.0 / OnlineMenu；从通用表迁移
+@online:Visibility: Friends only	可见性：仅限好友	CrawlOnline 0.4.0 / OnlineMenu；从通用表迁移
+@online:Visibility: Invite only	可见性：仅限邀请	CrawlOnline 0.4.0 / OnlineMenu；从通用表迁移
+@online:Play online	联机游戏	CrawlOnline 0.4.0 / OnlineMenu.ShowPlayOnline、Overlay.DrawIdle；仅本地显示，动态参数保持原文
+@online:Find a game or host your own.\nHost is P1, others join as P2-P4.	寻找房间或创建自己的房间。\n房主为 P1，其他玩家以 P2-P4 加入。	CrawlOnline 0.4.0 / OnlineMenu.ShowPlayOnline；仅本地显示，动态参数保持原文
+@online:Steam is not available. Use the F1 menu for a direct (IP) connection.	Steam 不可用。请打开 F1 菜单，通过 IP 地址直连。	CrawlOnline 0.4.0 / OnlineMenu.ShowPlayOnline；仅本地显示，动态参数保持原文
+@online:Back	返回	CrawlOnline 0.4.0 / OnlineMenu.ShowPlayOnline、OnlineMenu.ShowHostType、OnlineMenu.ShowServerList、OnlineMenu.ShowServerListResults；仅本地显示，动态参数保持原文
+@online:Cancel	取消	CrawlOnline 0.4.0 / OnlineMenu.ConfirmCloseLobby、Overlay.DrawClient；仅本地显示，动态参数保持原文
+@online:OK	确定	CrawlOnline 0.4.0 / OnlineMenu.ShowError；仅本地显示，动态参数保持原文
+@online:Who can join "	谁可以加入 "	CrawlOnline 0.4.0 / OnlineMenu.ShowHostType；仅本地显示，动态参数保持原文
+@online:"?	"？	CrawlOnline 0.4.0 / OnlineMenu.ShowHostType；仅本地显示，动态参数保持原文
+@online:Searching for games...	正在搜索房间...	CrawlOnline 0.4.0 / OnlineMenu.ShowServerList；仅本地显示，动态参数保持原文
+@online:No games found.	未找到房间。	CrawlOnline 0.4.0 / OnlineMenu.ShowServerListResults；仅本地显示，动态参数保持原文
+@online: game	 个房间	CrawlOnline 0.4.0 / OnlineMenu.ShowServerListResults；仅本地显示，动态参数保持原文
+@online: games	 个房间	CrawlOnline 0.4.0 / OnlineMenu.ShowServerListResults；仅本地显示，动态参数保持原文
+@online:  -  page 	  -  页码 	CrawlOnline 0.4.0 / OnlineMenu.ShowServerListResults；仅本地显示，动态参数保持原文
+@online:\n* = friend	\n* 表示好友	CrawlOnline 0.4.0 / OnlineMenu.ShowServerListResults；仅本地显示，动态参数保持原文
+@online: OLD	 版本不符	CrawlOnline 0.4.0 / OnlineMenu.ShowServerListResults；仅本地显示，动态参数保持原文
+@online: FULL	 已满	CrawlOnline 0.4.0 / OnlineMenu.ShowServerListResults；仅本地显示，动态参数保持原文
+@online:This game runs Crawl Online 	此房间使用 Crawl Online 	CrawlOnline 0.4.0 / OnlineMenu.JoinEntry；仅本地显示，动态参数保持原文
+@online:, you have 0.4.0. Everybody needs the same version.	，你使用的是 0.4.0。所有玩家需要使用相同版本。	CrawlOnline 0.4.0 / OnlineMenu.JoinEntry；仅本地显示，动态参数保持原文
+@online:This lobby is full.	此大厅已满。	CrawlOnline 0.4.0 / OnlineMenu.JoinEntry；仅本地显示，动态参数保持原文
+@online:Visibility: 	可见性：	CrawlOnline 0.4.0 / OnlineMenu.ShowLobby；仅本地显示，动态参数保持原文
+@online:Close the lobby?	关闭大厅？	CrawlOnline 0.4.0 / OnlineMenu.ConfirmCloseLobby；仅本地显示，动态参数保持原文
+@online:Everybody will be disconnected.	所有玩家都将断开连接。	CrawlOnline 0.4.0 / OnlineMenu.ConfirmCloseLobby；仅本地显示，动态参数保持原文
+@online:you	你	CrawlOnline 0.4.0 / OnlineMenu.LobbyText；仅本地显示，动态参数保持原文
+@online:  (host)	  (房主)	CrawlOnline 0.4.0 / OnlineMenu.LobbyText；仅本地显示，动态参数保持原文
+@online:waiting...	等待加入...	CrawlOnline 0.4.0 / OnlineMenu.LobbyText；仅本地显示，动态参数保持原文
+@online:<color=#e8d8b0ff>ONLINE LOBBY</color>\n	<color=#e8d8b0ff>联机大厅</color>\n	CrawlOnline 0.4.0 / OnlineMenu.UpdatePanel；仅本地显示，动态参数保持原文
+@online:ONLINE HOST  |  	联机房主  /  	CrawlOnline 0.4.0 / Overlay.StatusLine；仅本地显示，动态参数保持原文
+@online: connected  |  	 人已连接  /  	CrawlOnline 0.4.0 / Overlay.StatusLine；仅本地显示，动态参数保持原文
+@online: - menu	 - 菜单	CrawlOnline 0.4.0 / Overlay.StatusLine；仅本地显示，动态参数保持原文
+@online:Connecting...  |  	正在连接...  /  	CrawlOnline 0.4.0 / Overlay.StatusLine；仅本地显示，动态参数保持原文
+@online:ONLINE  |  host: 	联机  /  房主：	CrawlOnline 0.4.0 / Overlay.StatusLine；仅本地显示，动态参数保持原文
+@online: (Steam relay)	 (Steam 中继)	CrawlOnline 0.4.0 / Overlay.StatusLine；仅本地显示，动态参数保持原文
+@online: Unlock everything (weapons, monsters, gods...; your save is not changed)	 解锁全部内容 (武器、怪物、邪神等；不修改存档)	CrawlOnline 0.4.0 / Overlay.DrawWindow；仅本地显示，动态参数保持原文
+@online:Close menu	关闭菜单	CrawlOnline 0.4.0 / Overlay.DrawWindow；仅本地显示，动态参数保持原文
+@online:The host runs the game; everyone else sees the host's screen and plays with their own controllers/keyboard.	房主运行游戏；其他玩家观看房主的画面，使用自己的手柄或键盘游玩。	CrawlOnline 0.4.0 / Overlay.DrawIdle；仅本地显示，动态参数保持原文
+@online:Host a Steam lobby	创建 Steam 大厅	CrawlOnline 0.4.0 / Overlay.DrawIdle；仅本地显示，动态参数保持原文
+@online:Lobby name	大厅名称	CrawlOnline 0.4.0 / Overlay.DrawIdle；仅本地显示，动态参数保持原文
+@online:Searching...	正在搜索...	CrawlOnline 0.4.0 / Overlay.DrawIdle；仅本地显示，动态参数保持原文
+@online:Join a friend (Steam)	加入好友 (Steam)	CrawlOnline 0.4.0 / Overlay.DrawIdle；仅本地显示，动态参数保持原文
+@online:No games found. Host one or ask a friend to invite you.	未找到房间。可以创建房间，或请好友邀请你。	CrawlOnline 0.4.0 / Overlay.DrawIdle；仅本地显示，动态参数保持原文
+@online:[friend] 	[好友] 	CrawlOnline 0.4.0 / Overlay.DrawIdle；仅本地显示，动态参数保持原文
+@online: (incompatible)	 (版本不兼容)	CrawlOnline 0.4.0 / Overlay.DrawIdle；仅本地显示，动态参数保持原文
+@online:   full	   已满	CrawlOnline 0.4.0 / Overlay.DrawIdle；仅本地显示，动态参数保持原文
+@online:Join	加入	CrawlOnline 0.4.0 / Overlay.DrawIdle；仅本地显示，动态参数保持原文
+@online:Direct connection (LAN / port forwarding)	直接连接 (局域网 / 端口转发)	CrawlOnline 0.4.0 / Overlay.DrawIdle；仅本地显示，动态参数保持原文
+@online:Host on UDP port	房主 UDP 端口	CrawlOnline 0.4.0 / Overlay.DrawIdle；仅本地显示，动态参数保持原文
+@online:Host (UDP)	创建房间 (UDP)	CrawlOnline 0.4.0 / Overlay.DrawIdle；仅本地显示，动态参数保持原文
+@online:Invalid port	端口无效	CrawlOnline 0.4.0 / Overlay.DrawIdle；仅本地显示，动态参数保持原文
+@online:Join address	房主地址	CrawlOnline 0.4.0 / Overlay.DrawIdle；仅本地显示，动态参数保持原文
+@online:Enter the host address	请输入房主地址	CrawlOnline 0.4.0 / Overlay.DrawIdle；仅本地显示，动态参数保持原文
+@online:Hosting	正在主持游戏	CrawlOnline 0.4.0 / Overlay.DrawHost；仅本地显示，动态参数保持原文
+@online:Lobby "	大厅 "	CrawlOnline 0.4.0 / Overlay.DrawHost；仅本地显示，动态参数保持原文
+@online:Invite friends (Steam overlay)	邀请好友 (Steam 界面)	CrawlOnline 0.4.0 / Overlay.DrawHost；仅本地显示，动态参数保持原文
+@online:Connected players: 	已连接玩家：	CrawlOnline 0.4.0 / Overlay.DrawHost；仅本地显示，动态参数保持原文
+@online:spectator  	观战者  	CrawlOnline 0.4.0 / Overlay.DrawHost；仅本地显示，动态参数保持原文
+@online: relay	 中继	CrawlOnline 0.4.0 / Overlay.DrawHost；仅本地显示，动态参数保持原文
+@online: KB/s   controllers: 	 KB/s   手柄数：	CrawlOnline 0.4.0 / Overlay.DrawHost；仅本地显示，动态参数保持原文
+@online:Kick	移出	CrawlOnline 0.4.0 / Overlay.DrawHost；仅本地显示，动态参数保持原文
+@online:Remote players join like local ones: press a button on the character select screen.	远程玩家与本地玩家一样，在角色选择界面按键加入。	CrawlOnline 0.4.0 / Overlay.DrawHost；仅本地显示，动态参数保持原文
+@online:entities 	实体数 	CrawlOnline 0.4.0 / Overlay.DrawHost；仅本地显示，动态参数保持原文
+@online:, visible sprites 	，可见精灵数 	CrawlOnline 0.4.0 / Overlay.DrawHost；仅本地显示，动态参数保持原文
+@online:, meshes 	，网格数 	CrawlOnline 0.4.0 / Overlay.DrawHost；仅本地显示，动态参数保持原文
+@online:, capture 	，画面采集 	CrawlOnline 0.4.0 / Overlay.DrawHost；仅本地显示，动态参数保持原文
+@online:Stop hosting	关闭房间	CrawlOnline 0.4.0 / Overlay.DrawHost；仅本地显示，动态参数保持原文
+@online:Connecting...	正在连接...	CrawlOnline 0.4.0 / Overlay.DrawClient；仅本地显示，动态参数保持原文
+@online:Connected to 	已连接至 	CrawlOnline 0.4.0 / Overlay.DrawClient；仅本地显示，动态参数保持原文
+@online:You play as P	你的玩家编号为 P	CrawlOnline 0.4.0 / Overlay.DrawClient；仅本地显示，动态参数保持原文
+@online:All player slots are taken - you are spectating	玩家位置已满，你正在观战	CrawlOnline 0.4.0 / Overlay.DrawClient；仅本地显示，动态参数保持原文
+@online:Ping 	延迟 	CrawlOnline 0.4.0 / Overlay.DrawClient；仅本地显示，动态参数保持原文
+@online: ms   download 	 ms   下载 	CrawlOnline 0.4.0 / Overlay.DrawClient；仅本地显示，动态参数保持原文
+@online: KB/s   lost packets 	 KB/s   丢包数 	CrawlOnline 0.4.0 / Overlay.DrawClient；仅本地显示，动态参数保持原文
+@online:Connection: 	连接：	CrawlOnline 0.4.0 / Overlay.DrawClient；仅本地显示，动态参数保持原文
+@online: via Steam relay servers	，通过 Steam 中继服务器	CrawlOnline 0.4.0 / Overlay.DrawClient；仅本地显示，动态参数保持原文
+@online: (direct)	 (直连)	CrawlOnline 0.4.0 / Overlay.DrawClient；仅本地显示，动态参数保持原文
+@online:   max frame gap 	   最大帧间隔 	CrawlOnline 0.4.0 / Overlay.DrawClient；仅本地显示，动态参数保持原文
+@online: ms   send queue 	 ms   发送队列 	CrawlOnline 0.4.0 / Overlay.DrawClient；仅本地显示，动态参数保持原文
+@online: Move my character instantly (prediction: hides the ping for your own movement)	 即时移动自己的角色 (移动预测：减少延迟感)	CrawlOnline 0.4.0 / Overlay.DrawClient；仅本地显示，动态参数保持原文
+@online:Your controllers and keyboard are sent to the host. On the character select screen press Action (A / X / Space) to join. Enter = Start/Pause, Escape = Back.	手柄和键盘输入会发送给房主。在角色选择界面按动作键 (A / X / 空格) 加入。回车 = 开始/暂停，Esc = 返回。	CrawlOnline 0.4.0 / Overlay.DrawClient；仅本地显示，动态参数保持原文
+@online:Disconnect	断开连接	CrawlOnline 0.4.0 / Overlay.DrawClient；仅本地显示，动态参数保持原文
+@online:In game	游戏中	CrawlOnline 0.4.0 / Online.Update；仅本地显示，动态参数保持原文
+@online:In menu	菜单中	CrawlOnline 0.4.0 / Online.Update；仅本地显示，动态参数保持原文
+@online:Steam is not available	Steam 不可用	CrawlOnline 0.4.0 / Online.StartHostSteam、Online.JoinSteamLobby、LobbyBrowser.Refresh；仅本地显示，动态参数保持原文
+@online:Steam lobby search failed	Steam 大厅搜索失败	CrawlOnline 0.4.0 / LobbyBrowser.OnLobbyList；仅本地显示，动态参数保持原文
+@online:Steam lobby search timed out	Steam 大厅搜索超时	CrawlOnline 0.4.0 / LobbyBrowser.Tick；仅本地显示，动态参数保持原文
+@online:Leave the current session first	请先离开当前联机游戏	CrawlOnline 0.4.0 / Online.QueueJoin；仅本地显示，动态参数保持原文
+@online:Already in a session - disconnect first to accept the invite	当前正在联机，请先断开连接再接受邀请	CrawlOnline 0.4.0 / Online.JoinSteamLobby；仅本地显示，动态参数保持原文
+@online:you are the owner of this lobby	你是此大厅的房主	CrawlOnline 0.4.0 / SteamLobby.Join；仅本地显示，动态参数保持原文
+@online:Creating Steam lobby...	正在创建 Steam 大厅...	CrawlOnline 0.4.0 / Online.StartHostSteam；仅本地显示，动态参数保持原文
+@online:Hosting (Steam, 	正在主持游戏 (Steam，	CrawlOnline 0.4.0 / Online.StartHostSteam；仅本地显示，动态参数保持原文
+@online: lobby)	大厅)	CrawlOnline 0.4.0 / Online.StartHostSteam；仅本地显示，动态参数保持原文
+@online:Hosting (Steam, lobby failed - friends can still join via Steam profile)	正在主持游戏 (Steam，大厅创建失败；好友仍可通过 Steam 个人资料加入)	CrawlOnline 0.4.0 / Online.StartHostSteam；仅本地显示，动态参数保持原文
+@online:Hosting (UDP port 	正在主持游戏 (UDP 端口 	CrawlOnline 0.4.0 / Online.StartHostUdp；仅本地显示，动态参数保持原文
+@online:Leaving local game...	正在离开本地游戏...	CrawlOnline 0.4.0 / Online.CanStartClientNow；仅本地显示，动态参数保持原文
+@online:Entering Steam lobby...	正在进入 Steam 大厅...	CrawlOnline 0.4.0 / Online.JoinSteamLobby；仅本地显示，动态参数保持原文
+@online:Connecting to host...	正在连接房主...	CrawlOnline 0.4.0 / Online.BeginClient；仅本地显示，动态参数保持原文
+@online:Joining 	正在加入 	CrawlOnline 0.4.0 / Online.QueueJoin；仅本地显示，动态参数保持原文
+@online:Host failed: 	创建房间失败：	CrawlOnline 0.4.0 / Online.StartHostSteam；仅本地显示，动态参数保持原文
+@online:UDP host failed: 	创建 UDP 房间失败：	CrawlOnline 0.4.0 / Online.StartHostUdp；仅本地显示，动态参数保持原文
+@online:Connect failed: 	连接失败：	CrawlOnline 0.4.0 / Online.JoinUdp、Online.JoinSteamUser；仅本地显示，动态参数保持原文
+@online:lobby creation failed: 	大厅创建失败：	CrawlOnline 0.4.0 / SteamLobby.Create；仅本地显示，动态参数保持原文
+@online:could not enter lobby (	无法进入大厅 (	CrawlOnline 0.4.0 / SteamLobby.Join；仅本地显示，动态参数保持原文
+@online:Rejected: 	连接被拒绝：	CrawlOnline 0.4.0 / ClientSession.OnReceive；仅本地显示，动态参数保持原文
+@online:Host closed the session: 	房主结束了联机：	CrawlOnline 0.4.0 / ClientSession.OnReceive；仅本地显示，动态参数保持原文
+@online:Could not reach the host (timeout)	无法连接房主 (超时)	CrawlOnline 0.4.0 / ClientSession.Update；仅本地显示，动态参数保持原文
+@online:Host stopped responding	房主停止响应	CrawlOnline 0.4.0 / ClientSession.Update；仅本地显示，动态参数保持原文
+@online:Session is full	联机人数已满	CrawlOnline 0.4.0 / HostSession.HandleHello；仅本地显示，动态参数保持原文
+@online:the host closed the lobby	房主关闭了大厅	CrawlOnline 0.4.0 / OnlineMenu.ConfirmCloseLobby；仅本地显示，动态参数保持原文
+@online:host stopped the session	房主结束了联机	CrawlOnline 0.4.0 / Overlay.DrawHost；仅本地显示，动态参数保持原文
+@online:kicked by host	被房主移出	CrawlOnline 0.4.0 / HostSession.Kick；仅本地显示，动态参数保持原文
+@online:cancelled	已取消	CrawlOnline 0.4.0 / Overlay.DrawClient；仅本地显示，动态参数保持原文
+@online:left	已离开	CrawlOnline 0.4.0 / Overlay.DrawClient、Online.EndClient、HostSession.OnReceive；仅本地显示，动态参数保持原文
+@online:timed out	已超时	CrawlOnline 0.4.0 / HostSession.Update；仅本地显示，动态参数保持原文
+@online:  |  	  /  	CrawlOnline 0.4.0 / Overlay.StatusLine；仅本地显示，动态参数保持原文
+@online: controller	 个手柄	CrawlOnline 0.4.0 / ClientSession.HandleRoster；仅本地显示，动态参数保持原文
+@online: controllers	 个手柄	CrawlOnline 客户端名单及版本错误；仅显示时处理固定后缀/前缀
+@online:Crawl Online version mismatch: host has 	Crawl Online 版本不一致：房主使用 	CrawlOnline 0.4.0 / ClientSession.HandleWelcome；仅本地显示，动态参数保持原文
+@online:, you have 	，你使用 	CrawlOnline 客户端名单及版本错误；仅显示时处理固定后缀/前缀
+@online:. Use the same version.	。请使用相同版本。	CrawlOnline 0.4.0 / HostSession.HandleHello；仅本地显示，动态参数保持原文

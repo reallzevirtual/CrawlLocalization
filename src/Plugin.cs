@@ -9,7 +9,8 @@ using UnityEngine.SceneManagement;
 
 namespace CrawlLocalization
 {
-    [BepInPlugin(Id, "Crawl Localization", "0.10.0")]
+    [BepInDependency("crawl.online", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInPlugin(Id, "Crawl Localization", "0.11.0")]
     public sealed class Plugin : BaseUnityPlugin
     {
         public const string Id = "crawl.localization";
@@ -33,6 +34,7 @@ namespace CrawlLocalization
             LoadLanguage();
             harmony = new Harmony(Id);
             harmony.PatchAll(typeof(Plugin).Assembly);
+            OnlineIntegration.Install(harmony, Warn);
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
@@ -72,6 +74,8 @@ namespace CrawlLocalization
             if (harmony != null) harmony.UnpatchSelf();
             foreach (LocalizedMenuLabel label in new List<LocalizedMenuLabel>(Labels))
                 if (label != null) { label.Restore(true); Destroy(label); }
+            LocalizedMenuLabel.ExternalProvider = null;
+            OnlineOverlay.Clear();
             if (Fonts != null) Fonts.Dispose();
             Instance = null;
         }

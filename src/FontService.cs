@@ -66,6 +66,25 @@ namespace CrawlLocalization
             return false;
         }
 
+        // IMGUI measures in screen pixels: it must not use TextMesh's sampling scale.
+        internal bool TryChooseGui(LanguagePack language, Font original, int size, FontStyle style, string text, out Font font)
+        {
+            font = original;
+            FontRule rule;
+            if (language.Fonts.TryGetValue("CrawlOnlineOverlay", out rule))
+            {
+                Font candidate = Load(rule);
+                if (Covers(candidate, text, size, style)) { font = candidate; return true; }
+            }
+            if (Covers(original, text, size, style)) return true;
+            foreach (string family in language.FallbackFonts)
+            {
+                Font candidate = Load(new FontRule { Kind = "system", File = "", Name = family.Trim(), Scale = 1f });
+                if (Covers(candidate, text, size, style)) { font = candidate; return true; }
+            }
+            return false;
+        }
+
         // Crawl's small labels use fontSize=16 and characterSize=10. A merged
         // CJK glyph is only about 5 pixels tall at 16, so enlarging that atlas
         // loses its strokes. Increase raster resolution, not world-space size.

@@ -1,6 +1,6 @@
 # Crawl Localization
 
-BepInEx 5 中文本地化插件，版本 **0.10.0**，适配 Windows Crawl / Unity 5.4.2。当前只维护简体中文；保留恢复游戏原文的选项。包含菜单按钮及经过核对的独立 TextMesh 标题、提示文字，共 1313 条译文/模板、140 个 TextMesh 路径，覆盖宝库分类说明、图鉴、成就、邪神选择、开局全屏提示、章节标题、商店、常驻玩家装备面板、本局交互提示、暂停弹窗、怪物升级和首领结算。
+BepInEx 5 中文本地化插件，版本 **0.11.0**，适配 Windows Crawl / Unity 5.4.2。当前只维护简体中文；保留恢复游戏原文的选项。包含菜单按钮及经过核对的独立 TextMesh 标题、提示文字，共 1431 条译文/模板、140 个 TextMesh 路径，覆盖宝库分类说明、图鉴、成就、邪神选择、开局全屏提示、章节标题、商店、常驻玩家装备面板、本局交互提示、暂停弹窗、怪物升级、首领结算，以及可选 CrawlOnline 0.4.0 的联机界面。
 
 ## 构建与安装
 
@@ -14,7 +14,7 @@ pwsh -NoProfile -File .\build.ps1 -GamePath '你的 Crawl 目录'
 pwsh -NoProfile -File .\build.ps1 -Install
 ```
 
-输出 `artifacts/CrawlLocalization-0.10.0.zip`。关闭游戏，将 ZIP 内容解压至 `BepInEx/plugins/CrawlLocalization/`，然后重新启动。更新时覆盖 DLL、Languages 和 Fonts。新版不再分发繁体包，旧 `Languages/zh-Hant` 目录可删除；保留也不会被旧配置继续选中。不自动启动游戏。
+输出 `artifacts/CrawlLocalization-0.11.0.zip`。关闭游戏，将 ZIP 内容解压至 `BepInEx/plugins/CrawlLocalization/`，然后重新启动。更新时覆盖 DLL、Languages 和 Fonts。新版不再分发繁体包，旧 `Languages/zh-Hant` 目录可删除；保留也不会被旧配置继续选中。不自动启动游戏。
 
 ## 配置与重载
 
@@ -32,7 +32,7 @@ F8 重载配置、译文及路径清单，刷新已创建的文字。`ReloadKey 
 
 ## 译文表及位置注释
 
-`Languages/zh-Hans/translations.tsv` 存放通用菜单译文（211 条），`vault-translations.tsv` 存放宝库译文（595 条），`deity-translations.tsv` 存放邪神选择与试炼译文（71 条），`chapter-translations.tsv` 存放章节编号和随机楼层名（132 条），`shop-translations.tsv` 存放商店新增组件和提示（170 条）。`gameplay-translations.tsv` 存放本局交互、金币单位、传送阵和连杀提示（50 条）。`progression-translations.tsv` 存放暂停弹窗、升级和首领结算新增文案（49 条）。`shop-il-translations.tsv` 存放原始字符串操作中的连接词、格式模板和属性比较片段（35 条）。八份表均为 UTF-8 TSV，有三列：
+`Languages/zh-Hans/translations.tsv` 存放通用菜单译文（194 条），`vault-translations.tsv` 存放宝库译文（595 条），`deity-translations.tsv` 存放邪神选择与试炼译文（71 条），`chapter-translations.tsv` 存放章节编号和随机楼层名（132 条），`shop-translations.tsv` 存放商店新增组件和提示（170 条）。`gameplay-translations.tsv` 存放本局交互、金币单位、传送阵和连杀提示（50 条）。`progression-translations.tsv` 存放暂停弹窗、升级和首领结算新增文案（49 条）。`shop-il-translations.tsv` 存放原始字符串操作中的连接词、格式模板和属性比较片段（35 条）。`crawlonline-translations.tsv` 单独维护 CrawlOnline 的135条界面词条（含从通用表迁出的17条）。九份表均为 UTF-8 TSV，有三列：
 
 ```text
 原文<TAB>中文<TAB>位置注释
@@ -148,6 +148,20 @@ Note: Many keyboards do not\nsupport multiple players<TAB>注意：许多键盘�
 
 编号使用CrawlTextBodyThin，楼层名使用CrawlLarge，均保留字号160、字符缩放1和居中锚点。220个资源显示案例与Unity5.4实际尺寸检查通过；中文标题维持单行，最宽楼层名94.5单位，小于原文集合最大宽度176。该检查不启动Crawl；标题生成、淡入淡出和换层仍由用户在游戏中验证。
 
+## CrawlOnline 界面（0.11.0）
+
+`crawlonline-translations.tsv` 使用 `@online:` 键，独立维护模组文案。原来混在通用表中的17条联机按钮译文已迁出；游戏本体也使用的返回、取消、游戏提示开关等仍保留通用词条。模组表的 Public、Back 等词不会作为普通全局词条去匹配玩家名字。
+
+覆盖主菜单联机入口、PLAY ONLINE/SERVER LIST标题、寻找或创建房间说明、创建大厅与可见性、搜索状态、服务器数量/分页、好友标记、满员/版本不符提示、关闭确认、动态大厅名单和角落面板。还适配F1面板的创建/加入/直连、地址/端口标签、邀请/移出/断开、连接状态、属性开关和常见错误。
+
+这是同一个本地化插件中的可选适配，不需要再安装第二个汉化插件。通过软依赖与反射检测CrawlOnline，无模组时不安装这些补丁，编译也不引用其DLL。当前核对版本为0.4.0；未来模组改动显示入口可能需要更新适配。
+
+只在OnlineMenu和Overlay的17个UI方法中标记固定字符串、记录原始拼接并替换显示调用。原始字符串值、按钮回调、输入框内容和模组状态保持原样；实际译文交给现有GUIText/TextMesh或F1的IMGUI显示。玩家名、房间名、地址、版本号、延迟与人数作为原样数据处理。已经组合好的客户端名单仅识别末尾带数字的手柄数量结构；错误只识别已知提示和前缀，底层异常详情、未识别诊断保留原文。
+
+F1采用屏幕像素字号，不套用TextMesh的字形采样缩放；优先使用可显示译文的原字体，再使用language.ini的FallbackFonts。可在fonts.tsv中增加原字体键 `CrawlOnlineOverlay` 指定专用字体。显示时复制GUIStyle，原样式和输入框字体不改；缺字回退原文。主游戏菜单继续使用现有字体bundle和中文换行。
+
+F8可刷新已打开的普通弹窗、名单和菜单；F1在下一次绘制读取当前语言。切换en恢复原文。请在游戏内检查：主菜单联机→服务器列表→创建大厅→可见性→关闭确认，以及F1直连面板、名单刷新和英文恢复。离线检查不会连接Steam、创建房间或启动Crawl。
+
 ## 重玩教程开关
 
 CrawlOnline 的 `Patch_SystemTutorial_GetShouldStartTutorial` 在 `Unlocks.Enabled` 时强制返回 false。原菜单用这个“当前是否允许启动教程”的结果显示开关，导致已保存的开关开启后仍显示关。
@@ -156,7 +170,7 @@ CrawlOnline 的 `Patch_SystemTutorial_GetShouldStartTutorial` 在 `Unlocks.Enabl
 
 ## 字体及排版
 
-`Fonts/crawl-fonts.bundle` 由 Unity 5.4.2f2 / Windows x86 构建，包含十个合并中文字体。内嵌 TTF 与根目录源文件逐字节相同，保留原游戏 Font 的 ascent、descent、line spacing；0.10.0 继续使用 0.2.2 修正后的字体包。
+`Fonts/crawl-fonts.bundle` 由 Unity 5.4.2f2 / Windows x86 构建，包含十个合并中文字体。内嵌 TTF 与根目录源文件逐字节相同，保留原游戏 Font 的 ascent、descent、line spacing；0.11.0 继续使用 0.2.2 修正后的字体包。
 
 `fonts.tsv` 五列：原字体名、类型、相对文件路径、资源/家族名、倍率。默认按完整资源路径 `LoadAsset<Font>`。支持 `bundle`、兼容入口 `ttf` 和 `system`；TTF 按家族创建不能保证实际文件来源，推荐 bundle。
 
@@ -184,6 +198,9 @@ Unity 5.4 独立渲染复现并确认：示例中文的总高度、垂直中心�
 
 ```powershell
 pwsh -NoProfile -File .\tests\test.ps1
+# 只读核对已安装CrawlOnline的UI IL，隔离Unity检查显示（不启动游戏）：
+pwsh -NoProfile -File .\tests\check-online-il.ps1
+pwsh -NoProfile -File .\tests\check-online-display.ps1
 python .\tests\check_fonts.py
 python .\tests\check_bundle.py --game-path 'D:\SteamLibrary\steamapps\common\Crawl'
 # 导出并验证暂停弹窗、升级及首领结算（不启动游戏）：

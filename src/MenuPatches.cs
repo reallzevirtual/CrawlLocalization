@@ -80,6 +80,8 @@ namespace CrawlLocalization
 
     public sealed class LocalizedMenuLabel : MonoBehaviour
     {
+        internal static Func<string, Func<LanguagePack, string>> ExternalProvider;
+        private Func<LanguagePack, string> boundExternalProvider;
         internal bool Skip, Standalone;
         internal Func<LanguagePack, string> TextProvider;
         internal float BaseScale, ScaleFactor = 1f;
@@ -112,7 +114,19 @@ namespace CrawlLocalization
             return label;
         }
 
-        internal void ResetSource(string text) { source = text; display = null; }
+        private void BindExternal(string text)
+        {
+            if (ExternalProvider == null) return;
+            Func<LanguagePack, string> provider = ExternalProvider(text);
+            if (provider != null) { TextProvider = provider; boundExternalProvider = provider; }
+            else if (boundExternalProvider != null && text != source && text != display)
+            {
+                // A different adapter may already have installed a fresh provider.
+                if (ReferenceEquals(TextProvider, boundExternalProvider)) TextProvider = null;
+                boundExternalProvider = null;
+            }
+        }
+        internal void ResetSource(string text) { BindExternal(text); source = text; display = null; }
 
         // Called only after a known UI method writes a fresh original string.
         // Reuse the latest rendered result (including F8 changes) on identical frames.
@@ -141,6 +155,7 @@ namespace CrawlLocalization
 
         internal string Translate(string text)
         {
+            BindExternal(text);
             // GUIText.OnEnable can replay its previously translated pending text.
             if (display == null || text != display) source = text;
             try
