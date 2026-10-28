@@ -44,7 +44,7 @@ GLUUUUUB!	咕噜噜噜！	邪神选择／选择时效果／装备；sharedassets
 Glub, glub- appease The Abyss!	咕噜，咕噜！\n平息深渊之怒！	邪神选择／确认后介绍；sharedassets0.assets:45915/m_deities[15] (Glub, trial)/m_textFlavour
 Random	随机	邪神选择／名称；level2:1330/m_textRandomName
 Follow a random deity	随机信奉\n一位邪神	邪神选择／选择时效果／装备；level2:1330/m_textRandomDescription
-No-one	不信奉	邪神选择／名称；level2:1330/m_textTrialName
+No-one	无神	邪神选择／名称；level2:1330/m_textTrialName
 Taunt the gods, suffer their wrath	挑衅诸神\n承受他们的怒火	邪神选择／选择时效果／装备；level2:1330/m_textTrialDescription
 Locked	未解锁	邪神选择／名称；MenuDeitySelectPlayer.SetLockedDeity
 Deity\nnot yet discovered	尚未发现\n这位邪神	邪神选择／选择时效果／装备；MenuDeitySelectPlayer.SetLockedDeity
@@ -52,8 +52,8 @@ Jed	杰德	邪神选择／名称；level2:1330/m_deityOverrides[0]/m_deityName
 seemingly\nbenevolent,\na secret\nevil lurks	看似仁慈\n暗藏邪恶	邪神选择／确认后介绍；level2:1330/m_deityOverrides[0]/m_deityText
 SPNKr	斯潘克	邪神选择／名称；level2:1330/m_deityOverrides[1]/m_deityName
 mad with\nburrito-lust,\nhis hunger\nnever ends	为墨西哥卷饼\n陷入疯狂\n饥饿永无止境	邪神选择／确认后介绍；level2:1330/m_deityOverrides[1]/m_deityText
-Ga'ben	加本	邪神选择／名称；level2:1330/m_deityOverrides[2]/m_deityName
-Lord of\nmachines\nhe wields\ngreat power	机械之主\n掌握无上力量	邪神选择／确认后介绍；level2:1330/m_deityOverrides[2]/m_deityText
+Ga'ben	G胖	邪神选择／名称；level2:1330/m_deityOverrides[2]/m_deityName
+Lord of\nmachines\nhe wields\ngreat power	蒸汽之主\n掌握无上力量	邪神选择／确认后介绍；level2:1330/m_deityOverrides[2]/m_deityText
 Dave	戴夫	邪神选择／名称；level2:1330/m_deityOverrides[3]/m_deityName
 Dark code corrodes his mind	黑暗代码\n侵蚀他的心智	邪神选择／确认后介绍；level2:1330/m_deityOverrides[3]/m_deityText
 Rufus	鲁弗斯	邪神选择／名称；level2:1330/m_deityOverrides[4]/m_deityName

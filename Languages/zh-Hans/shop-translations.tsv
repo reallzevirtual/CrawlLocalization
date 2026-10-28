@@ -1,47 +1,47 @@
 # 商店：原文或组件键	中文	位置注释
 # 与宝库共用名称和说明；@shop.* 仅用于显示组成部分，不写回游戏数据。
-@shop.prefix:Slow	迟缓	sharedassets0.assets:44080 Constants m_weaponNamesSlow
-@shop.prefix:Unwieldy	笨重	sharedassets0.assets:44080 Constants m_weaponNamesSlow
-@shop.prefix:Torpid	迟钝	sharedassets0.assets:44080 Constants m_weaponNamesSlow
+@shop.prefix:Slow	迟缓的	sharedassets0.assets:44080 Constants m_weaponNamesSlow
+@shop.prefix:Unwieldy	笨重的	sharedassets0.assets:44080 Constants m_weaponNamesSlow
+@shop.prefix:Torpid	迟钝的	sharedassets0.assets:44080 Constants m_weaponNamesSlow
 @shop.prefix:Awkward	难使的	sharedassets0.assets:44080 Constants m_weaponNamesSlow
-@shop.prefix:Unbalanced	失衡	sharedassets0.assets:44080 Constants m_weaponNamesSlow
-@shop.prefix:Crooked	歪斜	sharedassets0.assets:44080 Constants m_weaponNamesSlow
+@shop.prefix:Unbalanced	失衡的	sharedassets0.assets:44080 Constants m_weaponNamesSlow
+@shop.prefix:Crooked	歪斜的	sharedassets0.assets:44080 Constants m_weaponNamesSlow
 @shop.prefix:Glutton's	暴食者的	sharedassets0.assets:44080 Constants m_weaponNamesSlow
-@shop.prefix:Quick	快速	sharedassets0.assets:44080 Constants m_weaponNamesFast
-@shop.prefix:Lithe	轻巧	sharedassets0.assets:44080 Constants m_weaponNamesFast
-@shop.prefix:Crystal	水晶	sharedassets0.assets:44080 Constants m_weaponNamesFast
-@shop.prefix:Piscene	鱼鳞	sharedassets0.assets:44080 Constants m_weaponNamesFast
-@shop.prefix:Kuster's	库斯特的	sharedassets0.assets:44080 Constants m_weaponNamesFast
-@shop.prefix:Rogue's	游荡者的	sharedassets0.assets:44080 Constants m_weaponNamesFast
+@shop.prefix:Quick	迅捷的	sharedassets0.assets:44080 Constants m_weaponNamesFast
+@shop.prefix:Lithe	轻盈之	sharedassets0.assets:44080 Constants m_weaponNamesFast
+@shop.prefix:Crystal	水晶之	sharedassets0.assets:44080 Constants m_weaponNamesFast
+@shop.prefix:Piscene	游动之	sharedassets0.assets:44080 Constants m_weaponNamesFast
+@shop.prefix:Kuster's	凶恶的	sharedassets0.assets:44080 Constants m_weaponNamesFast
+@shop.prefix:Rogue's	游侠的	sharedassets0.assets:44080 Constants m_weaponNamesFast
 @shop.prefix:Master's	大师的	sharedassets0.assets:44080 Constants m_weaponNamesFast
-@shop.prefix:Keen	锋锐	sharedassets0.assets:44080 Constants m_weaponNamesFast
-@shop.prefix:Swift	迅捷	sharedassets0.assets:44080 Constants m_weaponNamesFast
-@shop.prefix:Nimble	灵巧	sharedassets0.assets:44080 Constants m_weaponNamesFast
-@shop.prefix:Weak	无力	sharedassets0.assets:44080 Constants m_weaponNamesWeak
-@shop.prefix:Cracked	开裂	sharedassets0.assets:44080 Constants m_weaponNamesWeak
-@shop.prefix:Crude	粗制	sharedassets0.assets:44080 Constants m_weaponNamesWeak
-@shop.prefix:Broken	破损	sharedassets0.assets:44080 Constants m_weaponNamesWeak
-@shop.prefix:Dull	钝刃	sharedassets0.assets:44080 Constants m_weaponNamesWeak
-@shop.prefix:Blunt	钝头	sharedassets0.assets:44080 Constants m_weaponNamesWeak
+@shop.prefix:Keen	狂热之	sharedassets0.assets:44080 Constants m_weaponNamesFast
+@shop.prefix:Swift	追风之	sharedassets0.assets:44080 Constants m_weaponNamesFast
+@shop.prefix:Nimble	急速的	sharedassets0.assets:44080 Constants m_weaponNamesFast
+@shop.prefix:Weak	虚弱之	sharedassets0.assets:44080 Constants m_weaponNamesWeak
+@shop.prefix:Cracked	破损的	sharedassets0.assets:44080 Constants m_weaponNamesWeak
+@shop.prefix:Crude	粗制的	sharedassets0.assets:44080 Constants m_weaponNamesWeak
+@shop.prefix:Broken	坏掉的	sharedassets0.assets:44080 Constants m_weaponNamesWeak
+@shop.prefix:Dull	次品的	sharedassets0.assets:44080 Constants m_weaponNamesWeak
+@shop.prefix:Blunt	磨损的	sharedassets0.assets:44080 Constants m_weaponNamesWeak
 @shop.prefix:Training	训练用	sharedassets0.assets:44080 Constants m_weaponNamesWeak
-@shop.prefix:Strong	强韧	sharedassets0.assets:44080 Constants m_weaponNamesStrong
-@shop.prefix:Powerful	强力	sharedassets0.assets:44080 Constants m_weaponNamesStrong
-@shop.prefix:Elite	精良	sharedassets0.assets:44080 Constants m_weaponNamesStrong
-@shop.prefix:Cruel	残忍	sharedassets0.assets:44080 Constants m_weaponNamesStrong
-@shop.prefix:Flawless	无瑕	sharedassets0.assets:44080 Constants m_weaponNamesStrong
+@shop.prefix:Strong	强劲的	sharedassets0.assets:44080 Constants m_weaponNamesStrong
+@shop.prefix:Powerful	强力之	sharedassets0.assets:44080 Constants m_weaponNamesStrong
+@shop.prefix:Elite	顶级的	sharedassets0.assets:44080 Constants m_weaponNamesStrong
+@shop.prefix:Cruel	杀戮之	sharedassets0.assets:44080 Constants m_weaponNamesStrong
+@shop.prefix:Flawless	无暇的	sharedassets0.assets:44080 Constants m_weaponNamesStrong
 @shop.prefix:Violent	狂暴	sharedassets0.assets:44080 Constants m_weaponNamesStrong
 @shop.prefix:Orbeth's	奥贝斯的	sharedassets0.assets:44080 Constants m_weaponNamesStrong
-@shop.prefix:Drogoth's	德罗戈斯的	sharedassets0.assets:44080 Constants m_weaponNamesStrong
+@shop.prefix:Drogoth's	龙之主的	sharedassets0.assets:44080 Constants m_weaponNamesStrong
 @shop.prefix:Morgon's	摩根的	sharedassets0.assets:44080 Constants m_weaponNamesStrong
-@shop.prefix:Barbed	倒刺	sharedassets0.assets:44080 Constants m_weaponNamesStrong
-@shop.magic:Glows with the magic of {0}.	闪耀着{0}的魔力。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
-@shop.magic:Blessed by the order of {0}.	受到{0}教团的祝福。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
-@shop.magic:The symbol of {0} glows beneath your fingers.	{0}的符号在你指下发光。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
-@shop.magic:The power of {0} lies dormant within.	{0}之力沉睡其中。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
-@shop.magic:Vibrates with essence of {0}.	蕴含{0}的精华，微微震颤。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
-@shop.magic:Once wielded by {0} monks.	曾被{0}僧侣使用。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
-@shop.magic:The glyph of {0} has been hastily scratched onto it's surface.	表面仓促刻下了{0}的符文。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
-@shop.magic:Wrested from the grasp of {0} demon.	从{0}恶魔手中夺来。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
+@shop.prefix:Barbed	棘刺	sharedassets0.assets:44080 Constants m_weaponNamesStrong
+@shop.magic:Glows with the magic of {0}.	闪耀着 {0} 的魔力。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
+@shop.magic:Blessed by the order of {0}.	被神所祝福, 注入了 {0} 的奥义.。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
+@shop.magic:The symbol of {0} glows beneath your fingers.	{0} 的刻印在你手握之处熠熠生辉。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
+@shop.magic:The power of {0} lies dormant within.	{0} 之力沉睡其中。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
+@shop.magic:Vibrates with essence of {0}.	{0} 的本源使其震颤不止。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
+@shop.magic:Once wielded by {0} monks.	曾被修习了 {0} 的僧侣挥舞。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
+@shop.magic:The glyph of {0} has been hastily scratched onto it's surface.	在它的表面上, 不知被谁匆忙地镌刻了 {0} 的铭文。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
+@shop.magic:Wrested from the grasp of {0} demon.	从一个恶魔手中夺来, 吸收了他所修习的 {0} 。	sharedassets0.assets:44080 Constants m_weaponMagicDescription
 @shop.stat:Vitality	体质	sharedassets0.assets:44080 Constants m_heroStats；商店药水属性变化
 @shop.stat:Strength	力量	sharedassets0.assets:44080 Constants m_heroStats；商店药水属性变化
 @shop.stat:Agility	敏捷	sharedassets0.assets:44080 Constants m_heroStats；商店药水属性变化
@@ -121,22 +121,22 @@ A low powered bow.	一把威力较弱的弓。	sharedassets0.assets:45971 Weapon
 Magic Knife	魔法小刀	sharedassets0.assets:45981 Weapon m_combos m_name
 A light knife imbued with powerful magic	一把灌注了强大魔力的轻巧小刀。	sharedassets0.assets:45981 Weapon m_combos m_description
 Magic Machete	魔法砍刀	sharedassets0.assets:45981 Weapon m_combos m_name
-@shop.magic-name:the sun ray	日光射线	sharedassets0.assets:45982 WeaponMagic m_displayName
-@shop.magic-name:the blasting orb	爆破法球	sharedassets0.assets:45983 WeaponMagic m_displayName
-@shop.magic-name:bloodstrike	血击	sharedassets0.assets:45984 WeaponMagic m_displayName
-@shop.magic-name:the boulder	巨石	sharedassets0.assets:45985 WeaponMagic m_displayName
-@shop.magic-name:the cyclone	旋风	sharedassets0.assets:45986 WeaponMagic m_displayName
+@shop.magic-name:the sun ray	阳炎光束	sharedassets0.assets:45982 WeaponMagic m_displayName
+@shop.magic-name:the blasting orb	爆炎火球	sharedassets0.assets:45983 WeaponMagic m_displayName
+@shop.magic-name:bloodstrike	血戮巨剑	sharedassets0.assets:45984 WeaponMagic m_displayName
+@shop.magic-name:the boulder	巨石猛击	sharedassets0.assets:45985 WeaponMagic m_displayName
+@shop.magic-name:the cyclone	风暴号令	sharedassets0.assets:45986 WeaponMagic m_displayName
 @shop.magic-name:the purifying fire	净化之火	sharedassets0.assets:45987 WeaponMagic m_displayName
-@shop.magic-name:greater ice shards	强化冰片	sharedassets0.assets:45988 WeaponMagic m_displayName
-@shop.magic-name:chain ice shards	连锁冰片	sharedassets0.assets:45989 WeaponMagic m_displayName
-@shop.magic-name:the speartrap	长矛陷阱	sharedassets0.assets:45990 WeaponMagic m_displayName
-@shop.magic-name:the rat	鼠群	sharedassets0.assets:45991 WeaponMagic m_displayName
+@shop.magic-name:greater ice shards	极冰之锥	sharedassets0.assets:45988 WeaponMagic m_displayName
+@shop.magic-name:chain ice shards	连锁冰锥	sharedassets0.assets:45989 WeaponMagic m_displayName
+@shop.magic-name:the speartrap	裂地锐矛	sharedassets0.assets:45990 WeaponMagic m_displayName
+@shop.magic-name:the rat	疫鼠之息	sharedassets0.assets:45991 WeaponMagic m_displayName
 Practice Knife	练习小刀	sharedassets0.assets:46001 Weapon m_weaponName；sharedassets0.assets:46001 Weapon m_combos m_name
-A dull knife, capable of stealing gold	一把能窃取金币的钝刃小刀。	sharedassets0.assets:46001 Weapon m_combos m_description
-Tutor's Blade	导师之刃	sharedassets0.assets:46006 Weapon m_weaponName
+A dull knife, capable of stealing gold	一把钝刀，但能偷取金子。	sharedassets0.assets:46001 Weapon m_combos m_description
+Tutor's Blade	新手之刃	sharedassets0.assets:46006 Weapon m_weaponName
 A spinning axe that comes alive when you attack. Use movement to fling it at your enemies\nattack to activate\r it	攻击时唤醒旋转的斧头，通过移动将它甩向敌人。	sharedassets0.assets:50916 Powerup m_description；sharedassets0.assets:50927 Powerup m_description
-Frog Enchantment	青蛙附魔	sharedassets0.assets:51521 Powerup m_displayName
-Terrified	惊恐	sharedassets0.assets:51522 Powerup m_displayName
+Frog Enchantment	青蛙魔咒	sharedassets0.assets:51521 Powerup m_displayName
+Terrified	恐慌	sharedassets0.assets:51522 Powerup m_displayName
 Strength Up	力量提升	sharedassets0.assets:51536 Powerup m_displayName；sharedassets0.assets:51537 Powerup m_displayName；sharedassets0.assets:51538 Powerup m_displayName；sharedassets0.assets:51570 Powerup m_displayName；sharedassets0.assets:51571 Powerup m_displayName；sharedassets0.assets:51572 Powerup m_displayName；sharedassets0.assets:51573 Powerup m_displayName；sharedassets0.assets:51574 Powerup m_displayName；sharedassets0.assets:51577 Powerup m_displayName
 A spinning axe that comes alive when you cast magic. Use movement to fling it at your enemies.	施法时唤醒旋转的斧头，通过移动将它甩向敌人。	sharedassets0.assets:51539 Powerup m_description
 Speed Up	速度提升	sharedassets0.assets:51540 Powerup m_displayName；sharedassets0.assets:51541 Powerup m_displayName；sharedassets0.assets:51543 Powerup m_displayName；sharedassets0.assets:51569 Powerup m_displayName
@@ -154,7 +154,7 @@ Floats around and damages enemies on contact	四处漂浮，接触敌人时造�
 @shop.compare:VALUE	价值	Assembly-CSharp PropPurchasable.ShowInfoBox；保留比较符号与颜色
 @shop.compare:DAMAGE	伤害	Assembly-CSharp PropPurchasable.ShowInfoBox；保留比较符号与颜色
 @shop.compare:SPEED	速度	Assembly-CSharp PropPurchasable.ShowInfoBox；保留比较符号与颜色
-@shop.compare:RANGE	距离	Assembly-CSharp PropPurchasable.ShowInfoBox；保留比较符号与颜色
+@shop.compare:RANGE	范围	Assembly-CSharp PropPurchasable.ShowInfoBox；保留比较符号与颜色
 @shop.traits:for a {0}: {1}	相较同类{0}，具有{1}。	Assembly-CSharp WeaponData/PropPurchasable/GUIStore；商店动态说明与交互提示
 @shop.chance:{0}% chance of {1}.	{0}％几率触发{1}。	Assembly-CSharp WeaponData/PropPurchasable/GUIStore；商店动态说明与交互提示
 (Value {0})	（价值 {0}）	Assembly-CSharp WeaponData/PropPurchasable/GUIStore；商店动态说明与交互提示

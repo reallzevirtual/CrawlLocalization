@@ -1,7 +1,7 @@
 # Pause prompts, evolution and boss results; original<TAB>Chinese<TAB>location
-_End the game?_	结束本局游戏？	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
+_End the game?_	_结束本局游戏?_	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
 All progress will be lost, are you sure you want to quit?	本局进度将全部丢失，确定要退出吗？	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
-_Exit the tutorial?_	退出教程？	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
+_Exit the tutorial?_	_退出教程?_	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
 To play the tutorial again, select 'Replay Tutorial' from the options menu. \n\n Are you sure you want to quit?	要再次游玩教程，请在设置菜单中开启「重玩教程」。\n\n确定要退出吗？	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
 @progression.join-title:{0}:{1}	P{0} 「{1}」 已加入	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
 @progression.leave-title:{0}:{1}	P{0} 「{1}」 已退出	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
@@ -32,7 +32,7 @@ Boss Killer	首领杀手	sharedassets0.assets:44080/m_bossKillerNames
 Chaos Bringer	混沌使者	sharedassets0.assets:44080/m_bossKillerNames
 Daemon Spawn	恶魔之裔	sharedassets0.assets:44080/m_bossKillerNames
 Near Immortal	近乎不朽	sharedassets0.assets:44080/m_bossKillerNames
-Gnashing Seraphin	咬牙切齿的炽天使	sharedassets0.assets:44080/m_bossKillerNames
+Gnashing Seraphin	暴怒的炽天使	sharedassets0.assets:44080/m_bossKillerNames
 God Slayer	弑神者	sharedassets0.assets:44080/m_bossKillerNames
 Angel of Death	死亡天使	sharedassets0.assets:44080/m_bossKillerNames
 Winged Annihilation	灭绝之翼	sharedassets0.assets:44080/m_bossKillerNames

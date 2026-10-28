@@ -2,24 +2,24 @@
 Rusted Blade	锈刃	宝库／武器 01 锈刃；sharedassets0.assets:64768/m_weapons[0]；名称
 An old rusted blade with a dull edge.	一把老旧的锈刃，刀锋早已钝化。	宝库／武器 01 锈刃；sharedassets0.assets:64768/m_weapons[0]；介绍
 {0} Rusted Blade	{0} 锈刃	宝库／武器 01 锈刃；sharedassets0.assets:64768/m_weapons[0]；带编号列表（匹配游戏截断后的原文）
-Shiv	尖刀	宝库／武器 02 尖刀；sharedassets0.assets:64768/m_weapons[1]；名称
-A quick and nasty stabbing blade.	出手迅速、狠辣的刺杀短刃。	宝库／武器 02 尖刀；sharedassets0.assets:64768/m_weapons[1]；介绍
-{0} Shiv	{0} 尖刀	宝库／武器 02 尖刀；sharedassets0.assets:64768/m_weapons[1]；带编号列表（匹配游戏截断后的原文）
+Shiv	刺剑	宝库／武器 02 尖刀；sharedassets0.assets:64768/m_weapons[1]；名称
+A quick and nasty stabbing blade.	一把迅捷的刺剑，十分危险。	宝库／武器 02 尖刀；sharedassets0.assets:64768/m_weapons[1]；介绍
+{0} Shiv	{0} 刺剑	宝库／武器 02 尖刀；sharedassets0.assets:64768/m_weapons[1]；带编号列表（匹配游戏截断后的原文）
 Dagger	匕首	宝库／武器 03 匕首；sharedassets0.assets:64768/m_weapons[2]；名称
-For those who favour speed and accuracy over range and power.	适合偏爱速度与精准，而非距离与力量的人。	宝库／武器 03 匕首；sharedassets0.assets:64768/m_weapons[2]；介绍
+For those who favour speed and accuracy over range and power.	是那些专精于敏捷和精准度，而非力量和距离的人的最爱。	宝库／武器 03 匕首；sharedassets0.assets:64768/m_weapons[2]；介绍
 {0} Dagger	{0} 匕首	宝库／武器 03 匕首；sharedassets0.assets:64768/m_weapons[2]；带编号列表（匹配游戏截断后的原文）
-Cutthroat	割喉刀	宝库／武器 04 割喉刀；sharedassets0.assets:64768/m_weapons[3]；名称
-The weapon of choice for the quick fingered thief.	手脚敏捷的盗贼最钟爱的武器。	宝库／武器 04 割喉刀；sharedassets0.assets:64768/m_weapons[3]；介绍
-{0} Cutthroat	{0} 割喉刀	宝库／武器 04 割喉刀；sharedassets0.assets:64768/m_weapons[3]；带编号列表（匹配游戏截断后的原文）
+Cutthroat	割喉者	宝库／武器 04 割喉刀；sharedassets0.assets:64768/m_weapons[3]；名称
+The weapon of choice for the quick fingered thief.	盗贼的首选武器。	宝库／武器 04 割喉刀；sharedassets0.assets:64768/m_weapons[3]；介绍
+{0} Cutthroat	{0} 割喉者	宝库／武器 04 割喉刀；sharedassets0.assets:64768/m_weapons[3]；带编号列表（匹配游戏截断后的原文）
 Magic Dagger	魔法匕首	宝库／武器 05 魔法匕首；sharedassets0.assets:64768/m_weapons[4]；名称
 A light dagger imbued with powerful magic.	一把灌注了强大魔力的轻巧匕首。	宝库／武器 05 魔法匕首；sharedassets0.assets:64768/m_weapons[4]；介绍
 {0} Magic Dagger	{0} 魔法匕首	宝库／武器 05 魔法匕首；sharedassets0.assets:64768/m_weapons[4]；带编号列表（匹配游戏截断后的原文）
-Club	木棒	宝库／武器 06 木棒；sharedassets0.assets:64768/m_weapons[5]；名称
+Club	棒槌	宝库／武器 06 木棒；sharedassets0.assets:64768/m_weapons[5]；名称
 A heavy club. Unwieldy, but effective.	沉重的木棒。笨拙，却很有效。	宝库／武器 06 木棒；sharedassets0.assets:64768/m_weapons[5]；介绍
-{0} Club	{0} 木棒	宝库／武器 06 木棒；sharedassets0.assets:64768/m_weapons[5]；带编号列表（匹配游戏截断后的原文）
-Magic Club	魔法木棒	宝库／武器 07 魔法木棒；sharedassets0.assets:64768/m_weapons[6]；名称
+{0} Club	{0} 棒槌	宝库／武器 06 木棒；sharedassets0.assets:64768/m_weapons[5]；带编号列表（匹配游戏截断后的原文）
+Magic Club	魔力棒槌	宝库／武器 07 魔法木棒；sharedassets0.assets:64768/m_weapons[6]；名称
 A heavy club imbued with powerful magic.	一根灌注了强大魔力的沉重木棒。	宝库／武器 07 魔法木棒；sharedassets0.assets:64768/m_weapons[6]；介绍
-{0} Magic Club	{0} 魔法木棒	宝库／武器 07 魔法木棒；sharedassets0.assets:64768/m_weapons[6]；带编号列表（匹配游戏截断后的原文）
+{0} Magic Club	{0} 魔力棒槌	宝库／武器 07 魔法木棒；sharedassets0.assets:64768/m_weapons[6]；带编号列表（匹配游戏截断后的原文）
 Battle Axe	战斧	宝库／武器 08 战斧；sharedassets0.assets:64768/m_weapons[7]；名称
 A rough tool of steel and wood, these axes strike with great power, though heavy and slow to swing in battle.	由钢铁与木材制成的粗犷兵器。威力巨大，但分量沉重，挥动缓慢。	宝库／武器 08 战斧；sharedassets0.assets:64768/m_weapons[7]；介绍
 {0} Battle Axe	{0} 战斧	宝库／武器 08 战斧；sharedassets0.assets:64768/m_weapons[7]；带编号列表（匹配游戏截断后的原文）
@@ -38,90 +38,90 @@ The needlefine blade will leave a million fine cuts on your enemies.	针一般�
 Warcleaver	斩马刀	宝库／武器 13 斩马刀；sharedassets0.assets:64768/m_weapons[12]；名称
 A carefully timed slash can cut a charging horse in two.	把握时机的一斩，足以将冲锋的战马劈成两半。	宝库／武器 13 斩马刀；sharedassets0.assets:64768/m_weapons[12]；介绍
 {0} Warcleaver	{0} 斩马刀	宝库／武器 13 斩马刀；sharedassets0.assets:64768/m_weapons[12]；带编号列表（匹配游戏截断后的原文）
-Heroblade	英雄之刃	宝库／武器 14 英雄之刃；sharedassets0.assets:64768/m_weapons[13]；名称
-Modeled on the blade carried by Banethel, hero of the marshes. Famed for leaping into the midst of battle, scattering foes in all directions.	仿照沼泽英雄班瑟尔的佩剑打造。他以跃入战阵、击散四方敌人而闻名。	宝库／武器 14 英雄之刃；sharedassets0.assets:64768/m_weapons[13]；介绍
-{0} Heroblade	{0} 英雄之刃	宝库／武器 14 英雄之刃；sharedassets0.assets:64768/m_weapons[13]；带编号列表（匹配游戏截断后的原文）
-Khopesh	镰形剑	宝库／武器 15 镰形剑；sharedassets0.assets:64768/m_weapons[14]；名称
-"Then the fanatic was upon us, shrieking and spinning that anchient curved blade like a whirlwind, naked but for the entheogenic warpaint".	「那狂信徒扑向我们，尖叫着将古老的弯刃舞成旋风。他赤身裸体，唯有致幻的战纹覆在身上。」	宝库／武器 15 镰形剑；sharedassets0.assets:64768/m_weapons[14]；介绍
-{0} Khopesh	{0} 镰形剑	宝库／武器 15 镰形剑；sharedassets0.assets:64768/m_weapons[14]；带编号列表（匹配游戏截断后的原文）
-Darkblade	暗黑之刃	宝库／武器 16 暗黑之刃；sharedassets0.assets:64768/m_weapons[15]；名称
-"The ground shook as if in pain as Ernos thrust his heavy blade downward".	「厄诺斯将沉重的剑刃猛刺入地，大地震颤，仿佛也感到了疼痛。」	宝库／武器 16 暗黑之刃；sharedassets0.assets:64768/m_weapons[15]；介绍
-{0} Darkblade	{0} 暗黑之刃	宝库／武器 16 暗黑之刃；sharedassets0.assets:64768/m_weapons[15]；带编号列表（匹配游戏截断后的原文）
-Magic Sword	魔法剑	宝库／武器 17 魔法剑；sharedassets0.assets:64768/m_weapons[16]；名称
+Heroblade	英雄剑	宝库／武器 14 英雄之刃；sharedassets0.assets:64768/m_weapons[13]；名称
+Modeled on the blade carried by Banethel, hero of the marshes. Famed for leaping into the midst of battle, scattering foes in all directions.	这把神剑，是以沼泽之地的英雄班瑟尔所使用的剑为蓝本打造的。他以瞬间跃入战场，击溃一片敌人的绝技而闻名。	宝库／武器 14 英雄之刃；sharedassets0.assets:64768/m_weapons[13]；介绍
+{0} Heroblade	{0} 英雄剑	宝库／武器 14 英雄之刃；sharedassets0.assets:64768/m_weapons[13]；带编号列表（匹配游戏截断后的原文）
+Khopesh	埃及镰刃	宝库／武器 15 镰形剑；sharedassets0.assets:64768/m_weapons[14]；名称
+"Then the fanatic was upon us, shrieking and spinning that anchient curved blade like a whirlwind, naked but for the entheogenic warpaint".	「接着，那个身上一丝不挂，只涂着奇怪的涂料的疯子，突然向我们扑来! 他尖叫着并像旋风一样，挥舞着那把奇怪的埃及镰状剑。」	宝库／武器 15 镰形剑；sharedassets0.assets:64768/m_weapons[14]；介绍
+{0} Khopesh	{0} 埃及镰刃	宝库／武器 15 镰形剑；sharedassets0.assets:64768/m_weapons[14]；带编号列表（匹配游戏截断后的原文）
+Darkblade	黑锋刃	宝库／武器 16 暗黑之刃；sharedassets0.assets:64768/m_weapons[15]；名称
+"The ground shook as if in pain as Ernos thrust his heavy blade downward".	「当厄诺斯向下猛刺这可怕的剑时，地面仿佛在痛苦地哀鸣。」	宝库／武器 16 暗黑之刃；sharedassets0.assets:64768/m_weapons[15]；介绍
+{0} Darkblade	{0} 黑锋刃	宝库／武器 16 暗黑之刃；sharedassets0.assets:64768/m_weapons[15]；带编号列表（匹配游戏截断后的原文）
+Magic Sword	魔剑	宝库／武器 17 魔法剑；sharedassets0.assets:64768/m_weapons[16]；名称
 A blade imbued with powerful magic.	一把灌注了强大魔力的剑。	宝库／武器 17 魔法剑；sharedassets0.assets:64768/m_weapons[16]；介绍
-{0} Magic Sword	{0} 魔法剑	宝库／武器 17 魔法剑；sharedassets0.assets:64768/m_weapons[16]；带编号列表（匹配游戏截断后的原文）
-Estoc	破甲剑	宝库／武器 18 破甲剑；sharedassets0.assets:64768/m_weapons[17]；名称
-Although dull edged, a thrust of this huge sword can puncture the heaviest armor.	虽无锋利的刃口，这柄巨剑的一刺却能穿透最厚重的铠甲。	宝库／武器 18 破甲剑；sharedassets0.assets:64768/m_weapons[17]；介绍
-{0} Estoc	{0} 破甲剑	宝库／武器 18 破甲剑；sharedassets0.assets:64768/m_weapons[17]；带编号列表（匹配游戏截断后的原文）
+{0} Magic Sword	{0} 魔剑	宝库／武器 17 魔法剑；sharedassets0.assets:64768/m_weapons[16]；带编号列表（匹配游戏截断后的原文）
+Estoc	穿甲锥	宝库／武器 18 破甲剑；sharedassets0.assets:64768/m_weapons[17]；名称
+Although dull edged, a thrust of this huge sword can puncture the heaviest armor.	尽管刀刃不算锋利，但是这把巨剑的一次猛戳，就可以轻易穿透最厚重的盔甲。	宝库／武器 18 破甲剑；sharedassets0.assets:64768/m_weapons[17]；介绍
+{0} Estoc	{0} 穿甲锥	宝库／武器 18 破甲剑；sharedassets0.assets:64768/m_weapons[17]；带编号列表（匹配游戏截断后的原文）
 Longsword	长剑	宝库／武器 19 长剑；sharedassets0.assets:64768/m_weapons[18]；名称
 A heavy two handed sword with a long reach.	沉重的双手剑，攻击距离很长。	宝库／武器 19 长剑；sharedassets0.assets:64768/m_weapons[18]；介绍
 {0} Longsword	{0} 长剑	宝库／武器 19 长剑；sharedassets0.assets:64768/m_weapons[18]；带编号列表（匹配游戏截断后的原文）
 Greatsword	巨剑	宝库／武器 20 巨剑；sharedassets0.assets:64768/m_weapons[19]；名称
-An upward thrust of the heavy greatsword will cleave your enemies in two.	沉重巨剑的上挑，能将敌人一分为二。	宝库／武器 20 巨剑；sharedassets0.assets:64768/m_weapons[19]；介绍
+An upward thrust of the heavy greatsword will cleave your enemies in two.	使用这把巨剑上劈，能将敌人一分为二。	宝库／武器 20 巨剑；sharedassets0.assets:64768/m_weapons[19]；介绍
 {0} Greatsword	{0} 巨剑	宝库／武器 20 巨剑；sharedassets0.assets:64768/m_weapons[19]；带编号列表（匹配游戏截断后的原文）
 Claymore	双手大剑	宝库／武器 21 双手大剑；sharedassets0.assets:64768/m_weapons[20]；名称
-This collosal blade strikes downward like thunder.	这柄庞大的剑刃如雷霆般劈落。	宝库／武器 21 双手大剑；sharedassets0.assets:64768/m_weapons[20]；介绍
+This collosal blade strikes downward like thunder.	这把剑的斩击，就像雷鸣一般从天而降。	宝库／武器 21 双手大剑；sharedassets0.assets:64768/m_weapons[20]；介绍
 {0} Claymore	{0} 双手大剑	宝库／武器 21 双手大剑；sharedassets0.assets:64768/m_weapons[20]；带编号列表（匹配游戏截断后的原文）
-Scimitar	弯刀	宝库／武器 22 弯刀；sharedassets0.assets:64768/m_weapons[21]；名称
-This heavy curved blade could cut a spinning arc through the toughest of enemies.	沉重的弯刃旋斩成弧，连最强悍的敌人也难以抵挡。	宝库／武器 22 弯刀；sharedassets0.assets:64768/m_weapons[21]；介绍
-{0} Scimitar	{0} 弯刀	宝库／武器 22 弯刀；sharedassets0.assets:64768/m_weapons[21]；带编号列表（匹配游戏截断后的原文）
-Magic Longsword	魔法长剑	宝库／武器 23 魔法长剑；sharedassets0.assets:64768/m_weapons[22]；名称
+Scimitar	半月弯刀	宝库／武器 22 弯刀；sharedassets0.assets:64768/m_weapons[21]；名称
+This heavy curved blade could cut a spinning arc through the toughest of enemies.	使用这种重型的弯刀，即使面对最顽固的敌人，也能以一道旋转的弧线切开他。	宝库／武器 22 弯刀；sharedassets0.assets:64768/m_weapons[21]；介绍
+{0} Scimitar	{0} 半月弯刀	宝库／武器 22 弯刀；sharedassets0.assets:64768/m_weapons[21]；带编号列表（匹配游戏截断后的原文）
+Magic Longsword	附魔大剑	宝库／武器 23 魔法长剑；sharedassets0.assets:64768/m_weapons[22]；名称
 A heavy blade imbued with powerful magic.	一把灌注了强大魔力的重剑。	宝库／武器 23 魔法长剑；sharedassets0.assets:64768/m_weapons[22]；介绍
-{0} Magic Longsword	{0} 魔法长剑	宝库／武器 23 魔法长剑；sharedassets0.assets:64768/m_weapons[22]；带编号列表（匹配游戏截断后的原文）
+{0} Magic Longsword	{0} 附魔大剑	宝库／武器 23 魔法长剑；sharedassets0.assets:64768/m_weapons[22]；带编号列表（匹配游戏截断后的原文）
 Spear	长矛	宝库／武器 24 长矛；sharedassets0.assets:64768/m_weapons[23]；名称
-Their long range is favoured by hunters and warriors alike.	凭借出色的攻击距离，深受猎人与战士喜爱。	宝库／武器 24 长矛；sharedassets0.assets:64768/m_weapons[23]；介绍
+Their long range is favoured by hunters and warriors alike.	这种攻击距离远的武器，深受猎人和斗士们的青睐。	宝库／武器 24 长矛；sharedassets0.assets:64768/m_weapons[23]；介绍
 {0} Spear	{0} 长矛	宝库／武器 24 长矛；sharedassets0.assets:64768/m_weapons[23]；带编号列表（匹配游戏截断后的原文）
-Javelin	标枪	宝库／武器 25 标枪；sharedassets0.assets:64768/m_weapons[24]；名称
+Javelin	投枪	宝库／武器 25 标枪；sharedassets0.assets:64768/m_weapons[24]；名称
 A spear light enough for throwing.	轻巧得足以投掷的长矛。	宝库／武器 25 标枪；sharedassets0.assets:64768/m_weapons[24]；介绍
-{0} Javelin	{0} 标枪	宝库／武器 25 标枪；sharedassets0.assets:64768/m_weapons[24]；带编号列表（匹配游戏截断后的原文）
+{0} Javelin	{0} 投枪	宝库／武器 25 标枪；sharedassets0.assets:64768/m_weapons[24]；带编号列表（匹配游戏截断后的原文）
 Halberd	长戟	宝库／武器 26 长戟；sharedassets0.assets:64768/m_weapons[25]；名称
-A long spear with a slashing blade.	带有劈砍刀刃的长柄武器。	宝库／武器 26 长戟；sharedassets0.assets:64768/m_weapons[25]；介绍
+A long spear with a slashing blade.	一支尖端带有劈砍刀刃的长柄武器。	宝库／武器 26 长戟；sharedassets0.assets:64768/m_weapons[25]；介绍
 {0} Halberd	{0} 长戟	宝库／武器 26 长戟；sharedassets0.assets:64768/m_weapons[25]；带编号列表（匹配游戏截断后的原文）
-Partisan	战矛	宝库／武器 27 战矛；sharedassets0.assets:64768/m_weapons[26]；名称
+Partisan	翼矛	宝库／武器 27 战矛；sharedassets0.assets:64768/m_weapons[26]；名称
 A battle spear capable of slashing and being thrown.	既能劈砍，也能投掷的战斗长矛。	宝库／武器 27 战矛；sharedassets0.assets:64768/m_weapons[26]；介绍
-{0} Partisan	{0} 战矛	宝库／武器 27 战矛；sharedassets0.assets:64768/m_weapons[26]；带编号列表（匹配游戏截断后的原文）
-Magic Spear	魔法长矛	宝库／武器 28 魔法长矛；sharedassets0.assets:64768/m_weapons[27]；名称
-A spear imbued with powerful magic.	一柄灌注了强大魔力的长矛。	宝库／武器 28 魔法长矛；sharedassets0.assets:64768/m_weapons[27]；介绍
-{0} Magic Spear	{0} 魔法长矛	宝库／武器 28 魔法长矛；sharedassets0.assets:64768/m_weapons[27]；带编号列表（匹配游戏截断后的原文）
+{0} Partisan	{0} 翼矛	宝库／武器 27 战矛；sharedassets0.assets:64768/m_weapons[26]；带编号列表（匹配游戏截断后的原文）
+Magic Spear	魔枪	宝库／武器 28 魔法长矛；sharedassets0.assets:64768/m_weapons[27]；名称
+A spear imbued with powerful magic.	充满强大魔力的长枪。	宝库／武器 28 魔法长矛；sharedassets0.assets:64768/m_weapons[27]；介绍
+{0} Magic Spear	{0} 魔枪	宝库／武器 28 魔法长矛；sharedassets0.assets:64768/m_weapons[27]；带编号列表（匹配游戏截断后的原文）
 Throwing Knives	飞刀	宝库／武器 29 飞刀；sharedassets0.assets:64768/m_weapons[28]；名称
 Good up close and at range. For the cutpurse that likes to keep their distance.	远近皆宜，适合喜欢与目标保持距离的扒手。	宝库／武器 29 飞刀；sharedassets0.assets:64768/m_weapons[28]；介绍
 {0} Throwing Knives	{0} 飞刀	宝库／武器 29 飞刀；sharedassets0.assets:64768/m_weapons[28]；带编号列表（匹配游戏截断后的原文）
 Kunai	苦无	宝库／武器 30 苦无；sharedassets0.assets:64768/m_weapons[29]；名称
 Dual throwable knives, favoured by the assassin's of Atur.	一对可投掷的短刃，深受阿图尔刺客喜爱。	宝库／武器 30 苦无；sharedassets0.assets:64768/m_weapons[29]；介绍
 {0} Kunai	{0} 苦无	宝库／武器 30 苦无；sharedassets0.assets:64768/m_weapons[29]；带编号列表（匹配游戏截断后的原文）
-Katar	拳刃	宝库／武器 31 拳刃；sharedassets0.assets:64768/m_weapons[30]；名称
+Katar	拳刺	宝库／武器 31 拳刃；sharedassets0.assets:64768/m_weapons[30]；名称
 Dual Hand blades for melee slashing.	一对用于近身劈砍的手持短刃。	宝库／武器 31 拳刃；sharedassets0.assets:64768/m_weapons[30]；介绍
-{0} Katar	{0} 拳刃	宝库／武器 31 拳刃；sharedassets0.assets:64768/m_weapons[30]；带编号列表（匹配游戏截断后的原文）
-Hooked Blades	钩刃	宝库／武器 32 钩刃；sharedassets0.assets:64768/m_weapons[31]；名称
+{0} Katar	{0} 拳刺	宝库／武器 31 拳刃；sharedassets0.assets:64768/m_weapons[30]；带编号列表（匹配游戏截断后的原文）
+Hooked Blades	飞钩	宝库／武器 32 钩刃；sharedassets0.assets:64768/m_weapons[31]；名称
 When thrown downwards these daggers are heavy enough to shake the ground.	向下掷出时，这些沉重的匕首足以震动地面。	宝库／武器 32 钩刃；sharedassets0.assets:64768/m_weapons[31]；介绍
-{0} Hooked Blades	{0} 钩刃	宝库／武器 32 钩刃；sharedassets0.assets:64768/m_weapons[31]；带编号列表（匹配游戏截断后的原文）
+{0} Hooked Blades	{0} 飞钩	宝库／武器 32 钩刃；sharedassets0.assets:64768/m_weapons[31]；带编号列表（匹配游戏截断后的原文）
 Magic Hand Knives	魔法飞刀	宝库／武器 33 魔法飞刀；sharedassets0.assets:64768/m_weapons[32]；名称
 Throwing knives imbued with powerful magic.	灌注了强大魔力的飞刀。	宝库／武器 33 魔法飞刀；sharedassets0.assets:64768/m_weapons[32]；介绍
 {0} Magic Hand Knives	{0} 魔法飞刀	宝库／武器 33 魔法飞刀；sharedassets0.assets:64768/m_weapons[32]；带编号列表（匹配游戏截断后的原文）
 Sling	投石索	宝库／武器 34 投石索；sharedassets0.assets:64768/m_weapons[33]；名称
 A makeshift ranged weapon.	一件简易的远程武器。	宝库／武器 34 投石索；sharedassets0.assets:64768/m_weapons[33]；介绍
 {0} Sling	{0} 投石索	宝库／武器 34 投石索；sharedassets0.assets:64768/m_weapons[33]；带编号列表（匹配游戏截断后的原文）
-Magic Sling	魔法投石索	宝库／武器 35 魔法投石索；sharedassets0.assets:64768/m_weapons[34]；名称
-An enchanted ranged weapon.	一件附魔的远程武器。	宝库／武器 35 魔法投石索；sharedassets0.assets:64768/m_weapons[34]；介绍
-{0} Magic Sling	{0} 魔法投石索	宝库／武器 35 魔法投石索；sharedassets0.assets:64768/m_weapons[34]；带编号列表（匹配游戏截断后的原文）
+Magic Sling	着魔投石索	宝库／武器 35 魔法投石索；sharedassets0.assets:64768/m_weapons[34]；名称
+An enchanted ranged weapon.	被施加了魔法的临时远程武器。	宝库／武器 35 魔法投石索；sharedassets0.assets:64768/m_weapons[34]；介绍
+{0} Magic Sling	{0} 着魔投石索	宝库／武器 35 魔法投石索；sharedassets0.assets:64768/m_weapons[34]；带编号列表（匹配游戏截断后的原文）
 Bow	弓	宝库／武器 36 弓；sharedassets0.assets:64768/m_weapons[35]；名称
 A flexible bow of yew and catgut. Fires arrows at moderate speed.	由紫杉木与肠弦制成的柔韧长弓，以适中的速度射出箭矢。	宝库／武器 36 弓；sharedassets0.assets:64768/m_weapons[35]；介绍
 {0} Bow	{0} 弓	宝库／武器 36 弓；sharedassets0.assets:64768/m_weapons[35]；带编号列表（匹配游戏截断后的原文）
 Magic Bow	魔法弓	宝库／武器 37 魔法弓；sharedassets0.assets:64768/m_weapons[36]；名称
 A bow etched with magic runes.	一张刻有魔法符文的弓。	宝库／武器 37 魔法弓；sharedassets0.assets:64768/m_weapons[36]；介绍
 {0} Magic Bow	{0} 魔法弓	宝库／武器 37 魔法弓；sharedassets0.assets:64768/m_weapons[36]；带编号列表（匹配游戏截断后的原文）
-Crossbow	弩	宝库／武器 38 弩；sharedassets0.assets:64768/m_weapons[37]；名称
+Crossbow	十字弩	宝库／武器 38 弩；sharedassets0.assets:64768/m_weapons[37]；名称
 Fires a powerful bolt, but takes time to reload.	射出的弩矢威力强大，但重新装填需要时间。	宝库／武器 38 弩；sharedassets0.assets:64768/m_weapons[37]；介绍
-{0} Crossbow	{0} 弩	宝库／武器 38 弩；sharedassets0.assets:64768/m_weapons[37]；带编号列表（匹配游戏截断后的原文）
+{0} Crossbow	{0} 十字弩	宝库／武器 38 弩；sharedassets0.assets:64768/m_weapons[37]；带编号列表（匹配游戏截断后的原文）
 Repeater	连弩	宝库／武器 39 连弩；sharedassets0.assets:64768/m_weapons[38]；名称
 Capable of firing three light bolts in quick succession.	能迅速连续射出三支轻型弩矢。	宝库／武器 39 连弩；sharedassets0.assets:64768/m_weapons[38]；介绍
 {0} Repeater	{0} 连弩	宝库／武器 39 连弩；sharedassets0.assets:64768/m_weapons[38]；带编号列表（匹配游戏截断后的原文）
-Magic Staff	魔法杖	宝库／武器 40 魔法杖；sharedassets0.assets:64768/m_weapons[39]；名称
-A staff imbued with powerful magic.	一根灌注了强大魔力的法杖。	宝库／武器 40 魔法杖；sharedassets0.assets:64768/m_weapons[39]；介绍
-{0} Magic Staff	{0} 魔法杖	宝库／武器 40 魔法杖；sharedassets0.assets:64768/m_weapons[39]；带编号列表（匹配游戏截断后的原文）
-Dodge Roll	闪避翻滚	宝库／道具 01 闪避翻滚；sharedassets0.assets:64768/m_items[0]；名称
+Magic Staff	魔杖	宝库／武器 40 魔法杖；sharedassets0.assets:64768/m_weapons[39]；名称
+A staff imbued with powerful magic.	这根魔杖充满着强大魔力。	宝库／武器 40 魔法杖；sharedassets0.assets:64768/m_weapons[39]；介绍
+{0} Magic Staff	{0} 魔杖	宝库／武器 40 魔法杖；sharedassets0.assets:64768/m_weapons[39]；带编号列表（匹配游戏截断后的原文）
+Dodge Roll	翻滚	宝库／道具 01 闪避翻滚；sharedassets0.assets:64768/m_items[0]；名称
 Roll out of danger, dodge enemy attacks	翻滚脱离险境，躲避敌人的攻击。	宝库／道具 01 闪避翻滚；sharedassets0.assets:64768/m_items[0]；介绍
-{0} Dodge Roll	{0} 闪避翻滚	宝库／道具 01 闪避翻滚；sharedassets0.assets:64768/m_items[0]；带编号列表（匹配游戏截断后的原文）
+{0} Dodge Roll	{0} 翻滚	宝库／道具 01 闪避翻滚；sharedassets0.assets:64768/m_items[0]；带编号列表（匹配游戏截断后的原文）
 Advanced Roll	进阶翻滚	宝库／道具 02 进阶翻滚；sharedassets0.assets:64768/m_items[1]；名称
 Roll further and more often with this advanced technique	精进的技巧让你翻滚得更远，使用得更频繁。	宝库／道具 02 进阶翻滚；sharedassets0.assets:64768/m_items[1]；介绍
 {0} Advanced Roll	{0} 进阶翻滚	宝库／道具 02 进阶翻滚；sharedassets0.assets:64768/m_items[1]；带编号列表（匹配游戏截断后的原文）
@@ -131,12 +131,12 @@ Dash forwards at super speed	以惊人的速度向前冲刺。	宝库／道具 0
 Berserker	狂战士	宝库／道具 04 狂战士；sharedassets0.assets:64768/m_items[3]；名称
 Trigger a wild frenzy: Deal double damage and move faster, but take extra damage until the frenzy is over	陷入狂暴：伤害翻倍，移动加快，但在狂暴结束前也会承受更多伤害。	宝库／道具 04 狂战士；sharedassets0.assets:64768/m_items[3]；介绍
 {0} Berserker	{0} 狂战士	宝库／道具 04 狂战士；sharedassets0.assets:64768/m_items[3]；带编号列表（匹配游戏截断后的原文）
-Raging Bull	狂牛	宝库／道具 05 狂牛；sharedassets0.assets:64768/m_items[4]；名称
+Raging Bull	蛮牛冲撞	宝库／道具 05 狂牛；sharedassets0.assets:64768/m_items[4]；名称
 Summon the spirit of the beast and charge your foes	召唤野兽之灵，向敌人发起冲锋。	宝库／道具 05 狂牛；sharedassets0.assets:64768/m_items[4]；介绍
-{0} Raging Bull	{0} 狂牛	宝库／道具 05 狂牛；sharedassets0.assets:64768/m_items[4]；带编号列表（匹配游戏截断后的原文）
-Cyclone Summon	旋风召唤	宝库／道具 06 旋风召唤；sharedassets0.assets:64768/m_items[5]；名称
-Throw cyclones that damage your enemies	掷出旋风，对敌人造成伤害。	宝库／道具 06 旋风召唤；sharedassets0.assets:64768/m_items[5]；介绍
-{0} Cyclone Summon	{0} 旋风召唤	宝库／道具 06 旋风召唤；sharedassets0.assets:64768/m_items[5]；带编号列表（匹配游戏截断后的原文）
+{0} Raging Bull	{0} 蛮牛冲撞	宝库／道具 05 狂牛；sharedassets0.assets:64768/m_items[4]；带编号列表（匹配游戏截断后的原文）
+Cyclone Summon	风暴号令	宝库／道具 06 旋风召唤；sharedassets0.assets:64768/m_items[5]；名称
+Throw cyclones that damage your enemies	唤出旋风，对敌人造成伤害。	宝库／道具 06 旋风召唤；sharedassets0.assets:64768/m_items[5]；介绍
+{0} Cyclone Summon	{0} 风暴号令	宝库／道具 06 旋风召唤；sharedassets0.assets:64768/m_items[5]；带编号列表（匹配游戏截断后的原文）
 Fetid Discharge	腐臭喷涌	宝库／道具 07 腐臭喷涌；sharedassets0.assets:64768/m_items[6]；名称
 Emit a dangerous putrid sludge	喷出危险而恶臭的污泥。	宝库／道具 07 腐臭喷涌；sharedassets0.assets:64768/m_items[6]；介绍
 {0} Fetid Discharge	{0} 腐臭喷涌	宝库／道具 07 腐臭喷涌；sharedassets0.assets:64768/m_items[6]；带编号列表（匹配游戏截断后的原文）
@@ -152,9 +152,9 @@ Summon a shield in front of you	在身前召唤一面盾牌。	宝库／道具 1
 Spider Venom	蜘蛛毒液	宝库／道具 11 蜘蛛毒液；sharedassets0.assets:64768/m_items[10]；名称
 Attack is the best defense for the fragile beasts that hide in the shadows.\n	对潜藏于阴影中的脆弱生灵而言，进攻就是最好的防守。	宝库／道具 11 蜘蛛毒液；sharedassets0.assets:64768/m_items[10]；介绍
 {0} Spider Venom	{0} 蜘蛛毒液	宝库／道具 11 蜘蛛毒液；sharedassets0.assets:64768/m_items[10]；带编号列表（匹配游戏截断后的原文）
-Ogre Sweat	食人魔汗液	宝库／道具 12 食人魔汗液；sharedassets0.assets:64768/m_items[11]；名称
+Ogre Sweat	巨魔汗液	宝库／道具 12 食人魔汗液；sharedassets0.assets:64768/m_items[11]；名称
 When a single blow can crush your enemy, you can afford to take your time.\n	只需一击便能碾碎敌人时，你自然可以慢慢来。	宝库／道具 12 食人魔汗液；sharedassets0.assets:64768/m_items[11]；介绍
-{0} Ogre Sweat	{0} 食人魔汗液	宝库／道具 12 食人魔汗液；sharedassets0.assets:64768/m_items[11]；带编号列表（匹配游戏截断后的原文）
+{0} Ogre Sweat	{0} 巨魔汗液	宝库／道具 12 食人魔汗液；sharedassets0.assets:64768/m_items[11]；带编号列表（匹配游戏截断后的原文）
 Undead Ichor	亡灵脓血	宝库／道具 13 亡灵脓血；sharedassets0.assets:64768/m_items[12]；名称
 Spongy flesh may tear away, but it's your bones that keep you standing.\n\n	松软的皮肉或许会被撕裂，但支撑你站立的是骨骼。	宝库／道具 13 亡灵脓血；sharedassets0.assets:64768/m_items[12]；介绍
 {0} Undead Ichor	{0} 亡灵脓血	宝库／道具 13 亡灵脓血；sharedassets0.assets:64768/m_items[12]；带编号列表（匹配游戏截断后的原文）
@@ -164,42 +164,42 @@ To those of stone, mortal lifetimes pass like leaves on the wind.\n	对石头之
 Gnome Brew	侏儒佳酿	宝库／道具 15 侏儒佳酿；sharedassets0.assets:64768/m_items[14]；名称
 Strike quick, strike light, then strike again.\n	出手要快，落手要轻，然后再来一击。	宝库／道具 15 侏儒佳酿；sharedassets0.assets:64768/m_items[14]；介绍
 {0} Gnome Brew	{0} 侏儒佳酿	宝库／道具 15 侏儒佳酿；sharedassets0.assets:64768/m_items[14]；带编号列表（匹配游戏截断后的原文）
-Rodent Blood	鼠血	宝库／道具 16 鼠血；sharedassets0.assets:64768/m_items[15]；名称
+Rodent Blood	疫鼠之血	宝库／道具 16 鼠血；sharedassets0.assets:64768/m_items[15]；名称
 They'll want to kill you, but first they'll have to catch you.\n	他们想杀你，但得先追上你。	宝库／道具 16 鼠血；sharedassets0.assets:64768/m_items[15]；介绍
-{0} Rodent Blood	{0} 鼠血	宝库／道具 16 鼠血；sharedassets0.assets:64768/m_items[15]；带编号列表（匹配游戏截断后的原文）
-Follower Cyclone	随行旋风	宝库／道具 17 随行旋风；sharedassets0.assets:64768/m_items[16]；名称
+{0} Rodent Blood	{0} 疫鼠之血	宝库／道具 16 鼠血；sharedassets0.assets:64768/m_items[15]；带编号列表（匹配游戏截断后的原文）
+Follower Cyclone	瓶中风暴	宝库／道具 17 随行旋风；sharedassets0.assets:64768/m_items[16]；名称
 A whirlwind of air-magic floats around and damages enemies it touches	一团风之魔法在周围盘旋，对触碰到的敌人造成伤害。	宝库／道具 17 随行旋风；sharedassets0.assets:64768/m_items[16]；介绍
-{0} Follower Cyclone	{0} 随行旋风	宝库／道具 17 随行旋风；sharedassets0.assets:64768/m_items[16]；带编号列表（匹配游戏截断后的原文）
-Haunted Axe	附魂之斧	宝库／道具 18 附魂之斧；sharedassets0.assets:64768/m_items[17]；名称
+{0} Follower Cyclone	{0} 瓶中风暴	宝库／道具 17 随行旋风；sharedassets0.assets:64768/m_items[16]；带编号列表（匹配游戏截断后的原文）
+Haunted Axe	闹鬼的斧子	宝库／道具 18 附魂之斧；sharedassets0.assets:64768/m_items[17]；名称
 An axe that comes alive when you use magic. Use movement to fling it at beasts.	使用魔法时会活过来的斧头。利用移动将它甩向怪物。	宝库／道具 18 附魂之斧；sharedassets0.assets:64768/m_items[17]；介绍
-{0} Haunted Axe	{0} 附魂之斧	宝库／道具 18 附魂之斧；sharedassets0.assets:64768/m_items[17]；带编号列表（匹配游戏截断后的原文）
-Book of The Sun	太阳之书	宝库／道具 19 太阳之书；sharedassets0.assets:64768/m_items[18]；名称；宝库／物件 38 太阳之书；sharedassets0.assets:64768/m_props[37]；名称
+{0} Haunted Axe	{0} 闹鬼的斧子	宝库／道具 18 附魂之斧；sharedassets0.assets:64768/m_items[17]；带编号列表（匹配游戏截断后的原文）
+Book of The Sun	阳炎之书	宝库／道具 19 太阳之书；sharedassets0.assets:64768/m_items[18]；名称；宝库／物件 38 太阳之书；sharedassets0.assets:64768/m_props[37]；名称
 The holy text of the Sun Ray cult. A holy book that follows you and periodically fires a spell	日光教派的圣典。它会跟随你，并定期发射法术。	宝库／道具 19 太阳之书；sharedassets0.assets:64768/m_items[18]；介绍
-{0} Book of The Sun	{0} 太阳之书	宝库／道具 19 太阳之书；sharedassets0.assets:64768/m_items[18]；带编号列表（匹配游戏截断后的原文）；宝库／物件 38 太阳之书；sharedassets0.assets:64768/m_props[37]；带编号列表（匹配游戏截断后的原文）
-Book of Flame	火焰之书	宝库／道具 20 火焰之书；sharedassets0.assets:64768/m_items[19]；名称；宝库／物件 39 火焰之书；sharedassets0.assets:64768/m_props[38]；名称
+{0} Book of The Sun	{0} 阳炎之书	宝库／道具 19 太阳之书；sharedassets0.assets:64768/m_items[18]；带编号列表（匹配游戏截断后的原文）；宝库／物件 38 太阳之书；sharedassets0.assets:64768/m_props[37]；带编号列表（匹配游戏截断后的原文）
+Book of Flame	燃焰之书	宝库／道具 20 火焰之书；sharedassets0.assets:64768/m_items[19]；名称；宝库／物件 39 火焰之书；sharedassets0.assets:64768/m_props[38]；名称
 A dusty volume that follows you and periodically fires a spell. The Flame monks abide by its words	满是尘埃的典籍，会跟随你并定期发射法术。火焰僧侣奉其文字为戒律。	宝库／道具 20 火焰之书；sharedassets0.assets:64768/m_items[19]；介绍
-{0} Book of Flame	{0} 火焰之书	宝库／道具 20 火焰之书；sharedassets0.assets:64768/m_items[19]；带编号列表（匹配游戏截断后的原文）；宝库／物件 39 火焰之书；sharedassets0.assets:64768/m_props[38]；带编号列表（匹配游戏截断后的原文）
+{0} Book of Flame	{0} 燃焰之书	宝库／道具 20 火焰之书；sharedassets0.assets:64768/m_items[19]；带编号列表（匹配游戏截断后的原文）；宝库／物件 39 火焰之书；sharedassets0.assets:64768/m_props[38]；带编号列表（匹配游戏截断后的原文）
 Book of Tears	泪水之书	宝库／道具 21 泪水之书；sharedassets0.assets:64768/m_items[20]；名称；宝库／物件 40 泪水之书；sharedassets0.assets:64768/m_props[39]；名称
 A living tome that follows you and periodically fires a spell. The pages are soaked with tears	浸透泪水的活体魔典，会跟随你并定期发射法术。	宝库／道具 21 泪水之书；sharedassets0.assets:64768/m_items[20]；介绍
 {0} Book of Tears	{0} 泪水之书	宝库／道具 21 泪水之书；sharedassets0.assets:64768/m_items[20]；带编号列表（匹配游戏截断后的原文）；宝库／物件 40 泪水之书；sharedassets0.assets:64768/m_props[39]；带编号列表（匹配游戏截断后的原文）
-Coward's Shield	懦夫之盾	宝库／道具 22 懦夫之盾；sharedassets0.assets:64768/m_items[21]；名称
+Coward's Shield	怯懦者之盾	宝库／道具 22 懦夫之盾；sharedassets0.assets:64768/m_items[21]；名称
 A protective shield which floats directly behind you	一面始终悬浮在你正后方的护盾。	宝库／道具 22 懦夫之盾；sharedassets0.assets:64768/m_items[21]；介绍
-{0} Coward's Shield	{0} 懦夫之盾	宝库／道具 22 懦夫之盾；sharedassets0.assets:64768/m_items[21]；带编号列表（匹配游戏截断后的原文）
-Bleeding Cross	流血十字架	宝库／道具 23 流血十字架；sharedassets0.assets:64768/m_items[22]；名称
+{0} Coward's Shield	{0} 怯懦者之盾	宝库／道具 22 懦夫之盾；sharedassets0.assets:64768/m_items[21]；带编号列表（匹配游戏截断后的原文）
+Bleeding Cross	染血逆十字架	宝库／道具 23 流血十字架；sharedassets0.assets:64768/m_items[22]；名称
 Stand on pentagrams to heal your wounds	站在五芒星法阵上，便能治愈伤口。	宝库／道具 23 流血十字架；sharedassets0.assets:64768/m_items[22]；介绍
-{0} Bleeding Cross	{0} 流血十字架	宝库／道具 23 流血十字架；sharedassets0.assets:64768/m_items[22]；带编号列表（匹配游戏截断后的原文）
-Vampiric Ring	吸血戒指	宝库／道具 24 吸血戒指；sharedassets0.assets:64768/m_items[23]；名称
+{0} Bleeding Cross	{0} 染血逆十字架	宝库／道具 23 流血十字架；sharedassets0.assets:64768/m_items[22]；带编号列表（匹配游戏截断后的原文）
+Vampiric Ring	吸血鬼之戒	宝库／道具 24 吸血戒指；sharedassets0.assets:64768/m_items[23]；名称
 Drink the life from your enemies and heal yourself every time you draw blood, however the curse reduces your health	每次令敌人流血，都能汲取其生命来治疗自己；但诅咒会降低你的生命值。	宝库／道具 24 吸血戒指；sharedassets0.assets:64768/m_items[23]；介绍
-{0} Vampiric Ring	{0} 吸血戒指	宝库／道具 24 吸血戒指；sharedassets0.assets:64768/m_items[23]；带编号列表（匹配游戏截断后的原文）
+{0} Vampiric Ring	{0} 吸血鬼之戒	宝库／道具 24 吸血戒指；sharedassets0.assets:64768/m_items[23]；带编号列表（匹配游戏截断后的原文）
 Vampire Fang	吸血鬼尖牙	宝库／道具 25 吸血鬼尖牙；sharedassets0.assets:64768/m_items[24]；名称
 The hollow tooth still thirsts. It heals you whenever you draw monster blood, but only while bleeding yourself	空心的尖牙依然饥渴难耐。自身流血时，每次令怪物流血都能治疗你。	宝库／道具 25 吸血鬼尖牙；sharedassets0.assets:64768/m_items[24]；介绍
 {0} Vampire Fang	{0} 吸血鬼尖牙	宝库／道具 25 吸血鬼尖牙；sharedassets0.assets:64768/m_items[24]；带编号列表（匹配游戏截断后的原文）
 Feather of The Squinting Shrimp	眯眼虾之羽	宝库／道具 26 眯眼虾之羽；sharedassets0.assets:64768/m_items[25]；名称
 When you are bleeding, you run like the wind	流血时，你会跑得像风一样快。	宝库／道具 26 眯眼虾之羽；sharedassets0.assets:64768/m_items[25]；介绍
 {0} Feather of The Squi...	{0} 眯眼虾之羽	宝库／道具 26 眯眼虾之羽；sharedassets0.assets:64768/m_items[25]；带编号列表（匹配游戏截断后的原文）
-Near Death Necklace	濒死项链	宝库／道具 27 濒死项链；sharedassets0.assets:64768/m_items[26]；名称
+Near Death Necklace	悬命骨链	宝库／道具 27 濒死项链；sharedassets0.assets:64768/m_items[26]；名称
 The bone charm activates when you are bleeding near death, and doubles the damage of your blows	当你濒死且流血时，骨制护符会被激活，使你的攻击伤害翻倍。	宝库／道具 27 濒死项链；sharedassets0.assets:64768/m_items[26]；介绍
-{0} Near Death Necklace	{0} 濒死项链	宝库／道具 27 濒死项链；sharedassets0.assets:64768/m_items[26]；带编号列表（匹配游戏截断后的原文）
+{0} Near Death Necklace	{0} 悬命骨链	宝库／道具 27 濒死项链；sharedassets0.assets:64768/m_items[26]；带编号列表（匹配游戏截断后的原文）
 Red Soul Gem	赤魂宝石	宝库／道具 28 赤魂宝石；sharedassets0.assets:64768/m_items[27]；名称
 When you are bleeding near death, the gem comes alive to hasten your attacks	当你濒死且流血时，宝石会苏醒，加快你的攻击。	宝库／道具 28 赤魂宝石；sharedassets0.assets:64768/m_items[27]；介绍
 {0} Red Soul Gem	{0} 赤魂宝石	宝库／道具 28 赤魂宝石；sharedassets0.assets:64768/m_items[27]；带编号列表（匹配游戏截断后的原文）
@@ -207,11 +207,11 @@ Ghoul Eye	食尸鬼之眼	宝库／道具 29 食尸鬼之眼；sharedassets0.ass
 When you're bleeding, the eye activates to reduce the damage you take	流血时，这只眼睛会被激活，减少你承受的伤害。	宝库／道具 29 食尸鬼之眼；sharedassets0.assets:64768/m_items[28]；介绍
 {0} Ghoul Eye	{0} 食尸鬼之眼	宝库／道具 29 食尸鬼之眼；sharedassets0.assets:64768/m_items[28]；带编号列表（匹配游戏截断后的原文）
 Murphy's Belt	墨菲腰带	宝库／道具 30 墨菲腰带；sharedassets0.assets:64768/m_items[29]；名称
-This mythical item grants you double XP and a significant store discount, but only while you are bleeding	这件传说中的物品能让你获得双倍经验和大幅商店折扣，但仅在流血时生效。	宝库／道具 30 墨菲腰带；sharedassets0.assets:64768/m_items[29]；介绍
+This mythical item grants you double XP and a significant store discount, but only while you are bleeding	这件传说中的物品可以使你得到双倍的经验值，以及大幅的商店折扣，但仅在流血时生效。	宝库／道具 30 墨菲腰带；sharedassets0.assets:64768/m_items[29]；介绍
 {0} Murphy's Belt	{0} 墨菲腰带	宝库／道具 30 墨菲腰带；sharedassets0.assets:64768/m_items[29]；带编号列表（匹配游戏截断后的原文）
-Bleeder Shield	血护之盾	宝库／道具 31 血护之盾；sharedassets0.assets:64768/m_items[30]；名称
+Bleeder Shield	饮血盾牌	宝库／道具 31 血护之盾；sharedassets0.assets:64768/m_items[30]；名称
 A protective shield which circles you when you are bleeding	流血时，一面护盾会在你周围环绕。	宝库／道具 31 血护之盾；sharedassets0.assets:64768/m_items[30]；介绍
-{0} Bleeder Shield	{0} 血护之盾	宝库／道具 31 血护之盾；sharedassets0.assets:64768/m_items[30]；带编号列表（匹配游戏截断后的原文）
+{0} Bleeder Shield	{0} 饮血盾牌	宝库／道具 31 血护之盾；sharedassets0.assets:64768/m_items[30]；带编号列表（匹配游戏截断后的原文）
 Haemophilia	血友病	宝库／道具 32 血友病；sharedassets0.assets:64768/m_items[31]；名称
 It takes less damage to get you bleeding	受到更少的伤害便会开始流血。	宝库／道具 32 血友病；sharedassets0.assets:64768/m_items[31]；介绍
 {0} Haemophilia	{0} 血友病	宝库／道具 32 血友病；sharedassets0.assets:64768/m_items[31]；带编号列表（匹配游戏截断后的原文）
@@ -227,9 +227,9 @@ Devour this heart and your monsters all get 1 extra health	吞食这颗心脏，
 Monster Toe	怪物脚趾	宝库／道具 36 怪物脚趾；sharedassets0.assets:64768/m_items[35]；名称
 Swallow this toe to increase the speed of all your monsters	吞下这根脚趾，提高你所有怪物的速度。	宝库／道具 36 怪物脚趾；sharedassets0.assets:64768/m_items[35]；介绍
 {0} Monster Toe	{0} 怪物脚趾	宝库／道具 36 怪物脚趾；sharedassets0.assets:64768/m_items[35]；带编号列表（匹配游戏截断后的原文）
-Monster Hand	怪物之手	宝库／道具 37 怪物之手；sharedassets0.assets:64768/m_items[36]；名称
+Monster Hand	怪物手掌	宝库／道具 37 怪物之手；sharedassets0.assets:64768/m_items[36]；名称
 Clutch this hand and your monsters' special attacks all recharge faster	紧握这只手，使你所有怪物的特殊攻击恢复得更快。	宝库／道具 37 怪物之手；sharedassets0.assets:64768/m_items[36]；介绍
-{0} Monster Hand	{0} 怪物之手	宝库／道具 37 怪物之手；sharedassets0.assets:64768/m_items[36]；带编号列表（匹配游戏截断后的原文）
+{0} Monster Hand	{0} 怪物手掌	宝库／道具 37 怪物之手；sharedassets0.assets:64768/m_items[36]；带编号列表（匹配游戏截断后的原文）
 Monster Fang	怪物尖牙	宝库／道具 38 怪物尖牙；sharedassets0.assets:64768/m_items[37]；名称
 Stab your palm with the point of this tooth, and all your monsters gain strength	用牙尖刺入掌心，使你所有的怪物获得更强的力量。	宝库／道具 38 怪物尖牙；sharedassets0.assets:64768/m_items[37]；介绍
 {0} Monster Fang	{0} 怪物尖牙	宝库／道具 38 怪物尖牙；sharedassets0.assets:64768/m_items[37]；带编号列表（匹配游戏截断后的原文）
@@ -239,45 +239,45 @@ Taken from a fallen solider. Comes to life and boosts your strength when on a ki
 Medal of Service	功勋勋章	宝库／道具 40 功勋勋章；sharedassets0.assets:64768/m_items[39]；名称
 Found on a dead courier. On a kill streak of 5 or more, it awakens and boosts your speed	从死去的信使身上找到。连杀达到 5 次或以上时，它会苏醒，提高你的速度。	宝库／道具 40 功勋勋章；sharedassets0.assets:64768/m_items[39]；介绍
 {0} Medal of Service	{0} 功勋勋章	宝库／道具 40 功勋勋章；sharedassets0.assets:64768/m_items[39]；带编号列表（匹配游戏截断后的原文）
-Medal of Honour	荣誉勋章	宝库／道具 41 荣誉勋章；sharedassets0.assets:64768/m_items[40]；名称
+Medal of Honour	荣耀勋章	宝库／道具 41 荣誉勋章；sharedassets0.assets:64768/m_items[40]；名称
 Stolen from an old magician. On a kill streak of 5 or more, your spells recharge faster	从年迈法师身上偷来。连杀达到 5 次或以上时，你的法术恢复得更快。	宝库／道具 41 荣誉勋章；sharedassets0.assets:64768/m_items[40]；介绍
-{0} Medal of Honour	{0} 荣誉勋章	宝库／道具 41 荣誉勋章；sharedassets0.assets:64768/m_items[40]；带编号列表（匹配游戏截断后的原文）
+{0} Medal of Honour	{0} 荣耀勋章	宝库／道具 41 荣誉勋章；sharedassets0.assets:64768/m_items[40]；带编号列表（匹配游戏截断后的原文）
 Medal of Experience	历练勋章	宝库／道具 42 历练勋章；sharedassets0.assets:64768/m_items[41]；名称
 Stripped from a disgraced general. Kills earn you more XP when on a kill streak of 5 or more	从蒙羞的将军身上剥下。连杀达到 5 次或以上时，击杀会获得更多经验。	宝库／道具 42 历练勋章；sharedassets0.assets:64768/m_items[41]；介绍
 {0} Medal of Experience	{0} 历练勋章	宝库／道具 42 历练勋章；sharedassets0.assets:64768/m_items[41]；带编号列表（匹配游戏截断后的原文）
-Enlightened Scripture	启迪经文	宝库／道具 43 启迪经文；sharedassets0.assets:64768/m_items[42]；名称
+Enlightened Scripture	启示圣典	宝库／道具 43 启迪经文；sharedassets0.assets:64768/m_items[42]；名称
 The doctrine speaks of increasing your magic efficiency, allowing your spells to recharge faster	经文传授提高魔法效率的方法，使你的法术恢复得更快。	宝库／道具 43 启迪经文；sharedassets0.assets:64768/m_items[42]；介绍
-{0} Enlightened Scripture	{0} 启迪经文	宝库／道具 43 启迪经文；sharedassets0.assets:64768/m_items[42]；带编号列表（匹配游戏截断后的原文）
-Heathen Scripture	异教经文	宝库／道具 44 异教经文；sharedassets0.assets:64768/m_items[43]；名称
+{0} Enlightened Scripture	{0} 启示圣典	宝库／道具 43 启迪经文；sharedassets0.assets:64768/m_items[42]；带编号列表（匹配游戏截断后的原文）
+Heathen Scripture	异教密卷	宝库／道具 44 异教经文；sharedassets0.assets:64768/m_items[43]；名称
 The forbidden writing explains a method of imbuing your spells with more damage	禁忌的文字记载了增强法术伤害的方法。	宝库／道具 44 异教经文；sharedassets0.assets:64768/m_items[43]；介绍
-{0} Heathen Scripture	{0} 异教经文	宝库／道具 44 异教经文；sharedassets0.assets:64768/m_items[43]；带编号列表（匹配游戏截断后的原文）
-Ruby Signet	红宝石印戒	宝库／道具 45 红宝石印戒；sharedassets0.assets:64768/m_items[44]；名称
-The ruby comes alive when you are on fire to heal your wounds	燃烧时，红宝石会苏醒，治愈你的伤口。	宝库／道具 45 红宝石印戒；sharedassets0.assets:64768/m_items[44]；介绍
-{0} Ruby Signet	{0} 红宝石印戒	宝库／道具 45 红宝石印戒；sharedassets0.assets:64768/m_items[44]；带编号列表（匹配游戏截断后的原文）
-Sapphire Signet	蓝宝石印戒	宝库／道具 46 蓝宝石印戒；sharedassets0.assets:64768/m_items[45]；名称
-The sapphire comes alive when you are frozen to heal your wounds	冻结时，蓝宝石会苏醒，治愈你的伤口。	宝库／道具 46 蓝宝石印戒；sharedassets0.assets:64768/m_items[45]；介绍
-{0} Sapphire Signet	{0} 蓝宝石印戒	宝库／道具 46 蓝宝石印戒；sharedassets0.assets:64768/m_items[45]；带编号列表（匹配游戏截断后的原文）
-Emerald Signet	绿宝石印戒	宝库／道具 47 绿宝石印戒；sharedassets0.assets:64768/m_items[46]；名称
-The emerald comes alive when you are poisoned to heal your wounds	中毒时，绿宝石会苏醒，治愈你的伤口。	宝库／道具 47 绿宝石印戒；sharedassets0.assets:64768/m_items[46]；介绍
-{0} Emerald Signet	{0} 绿宝石印戒	宝库／道具 47 绿宝石印戒；sharedassets0.assets:64768/m_items[46]；带编号列表（匹配游戏截断后的原文）
-Bloodstrike Amulet	血击护符	宝库／道具 48 血击护符；sharedassets0.assets:64768/m_items[47]；名称
+{0} Heathen Scripture	{0} 异教密卷	宝库／道具 44 异教经文；sharedassets0.assets:64768/m_items[43]；带编号列表（匹配游戏截断后的原文）
+Ruby Signet	红玉印戒	宝库／道具 45 红宝石印戒；sharedassets0.assets:64768/m_items[44]；名称
+The ruby comes alive when you are on fire to heal your wounds	当你身上着火时，这颗红玉将激活并为你治疗伤口。	宝库／道具 45 红宝石印戒；sharedassets0.assets:64768/m_items[44]；介绍
+{0} Ruby Signet	{0} 红玉印戒	宝库／道具 45 红宝石印戒；sharedassets0.assets:64768/m_items[44]；带编号列表（匹配游戏截断后的原文）
+Sapphire Signet	刚玉印戒	宝库／道具 46 蓝宝石印戒；sharedassets0.assets:64768/m_items[45]；名称
+The sapphire comes alive when you are frozen to heal your wounds	当你被霜冻时，这颗刚玉将激活并为你治疗伤口。	宝库／道具 46 蓝宝石印戒；sharedassets0.assets:64768/m_items[45]；介绍
+{0} Sapphire Signet	{0} 刚玉印戒	宝库／道具 46 蓝宝石印戒；sharedassets0.assets:64768/m_items[45]；带编号列表（匹配游戏截断后的原文）
+Emerald Signet	翡翠印戒	宝库／道具 47 绿宝石印戒；sharedassets0.assets:64768/m_items[46]；名称
+The emerald comes alive when you are poisoned to heal your wounds	当你中毒时，这颗翡翠将激活并为你治疗伤口。	宝库／道具 47 绿宝石印戒；sharedassets0.assets:64768/m_items[46]；介绍
+{0} Emerald Signet	{0} 翡翠印戒	宝库／道具 47 绿宝石印戒；sharedassets0.assets:64768/m_items[46]；带编号列表（匹配游戏截断后的原文）
+Bloodstrike Amulet	血战护符	宝库／道具 48 血击护符；sharedassets0.assets:64768/m_items[47]；名称
 Attack when standing in a pool of blood to summon a deadly strike from above!	站在血泊中攻击，召来从天而降的致命一击！	宝库／道具 48 血击护符；sharedassets0.assets:64768/m_items[47]；介绍
-{0} Bloodstrike Amulet	{0} 血击护符	宝库／道具 48 血击护符；sharedassets0.assets:64768/m_items[47]；带编号列表（匹配游戏截断后的原文）
-Sword Link Amulet	连剑护符	宝库／道具 49 连剑护符；sharedassets0.assets:64768/m_items[48]；名称
+{0} Bloodstrike Amulet	{0} 血战护符	宝库／道具 48 血击护符；sharedassets0.assets:64768/m_items[47]；带编号列表（匹配游戏截断后的原文）
+Sword Link Amulet	剑契护符	宝库／道具 49 连剑护符；sharedassets0.assets:64768/m_items[48]；名称
 While standing in blood, fire magic swords when you attack.	站在血泊中攻击时，会射出魔法飞剑。	宝库／道具 49 连剑护符；sharedassets0.assets:64768/m_items[48]；介绍
-{0} Sword Link Amulet	{0} 连剑护符	宝库／道具 49 连剑护符；sharedassets0.assets:64768/m_items[48]；带编号列表（匹配游戏截断后的原文）
-Ring of The Acid Curse	酸蚀诅咒之戒	宝库／道具 50 酸蚀诅咒之戒；sharedassets0.assets:64768/m_items[49]；名称
-Upon taking damage you drop pools of acid which may damage your enemies	受到伤害时，会留下可能伤害敌人的酸液池。	宝库／道具 50 酸蚀诅咒之戒；sharedassets0.assets:64768/m_items[49]；介绍
-{0} Ring of The Acid Curse	{0} 酸蚀诅咒之戒	宝库／道具 50 酸蚀诅咒之戒；sharedassets0.assets:64768/m_items[49]；带编号列表（匹配游戏截断后的原文）
-Cadaver Burst	尸爆	宝库／道具 51 尸爆；sharedassets0.assets:64768/m_items[50]；名称
+{0} Sword Link Amulet	{0} 剑契护符	宝库／道具 49 连剑护符；sharedassets0.assets:64768/m_items[48]；带编号列表（匹配游戏截断后的原文）
+Ring of The Acid Curse	酸咒指环	宝库／道具 50 酸蚀诅咒之戒；sharedassets0.assets:64768/m_items[49]；名称
+Upon taking damage you drop pools of acid which may damage your enemies	当你受到伤害，将流出大量的酸液，这可能会对你的敌人造成伤害。	宝库／道具 50 酸蚀诅咒之戒；sharedassets0.assets:64768/m_items[49]；介绍
+{0} Ring of The Acid Curse	{0} 酸咒指环	宝库／道具 50 酸蚀诅咒之戒；sharedassets0.assets:64768/m_items[49]；带编号列表（匹配游戏截断后的原文）
+Cadaver Burst	尸爆术	宝库／道具 51 尸爆；sharedassets0.assets:64768/m_items[50]；名称
 Vile magic infects your monsters. When killed their corpses will swell, then violently explode	邪恶魔法侵染了你的怪物。它们死后，尸体会膨胀并猛烈爆炸。	宝库／道具 51 尸爆；sharedassets0.assets:64768/m_items[50]；介绍
-{0} Cadaver Burst	{0} 尸爆	宝库／道具 51 尸爆；sharedassets0.assets:64768/m_items[50]；带编号列表（匹配游戏截断后的原文）
+{0} Cadaver Burst	{0} 尸爆术	宝库／道具 51 尸爆；sharedassets0.assets:64768/m_items[50]；带编号列表（匹配游戏截断后的原文）
 Lucky Claw	幸运之爪	宝库／道具 52 幸运之爪；sharedassets0.assets:64768/m_items[51]；名称
 The devil's luck in this vile object lets its owner wheedle a 20% store discount	这件邪物蕴含魔鬼的好运，使持有者获得商店八折优惠。	宝库／道具 52 幸运之爪；sharedassets0.assets:64768/m_items[51]；介绍
 {0} Lucky Claw	{0} 幸运之爪	宝库／道具 52 幸运之爪；sharedassets0.assets:64768/m_items[51]；带编号列表（匹配游戏截断后的原文）
-Thorn of Wrath	怒气之刺	宝库／道具 53 怒气之刺；sharedassets0.assets:64768/m_items[52]；名称
+Thorn of Wrath	狂怒棘刺	宝库／道具 53 怒气之刺；sharedassets0.assets:64768/m_items[52]；名称
 The thorn works its way into your flesh, and you gain 15% more wrath when enemy heroes level up	尖刺钻入血肉。敌方英雄升级时，你获得的怒气增加 15％。	宝库／道具 53 怒气之刺；sharedassets0.assets:64768/m_items[52]；介绍
-{0} Thorn of Wrath	{0} 怒气之刺	宝库／道具 53 怒气之刺；sharedassets0.assets:64768/m_items[52]；带编号列表（匹配游戏截断后的原文）
+{0} Thorn of Wrath	{0} 狂怒棘刺	宝库／道具 53 怒气之刺；sharedassets0.assets:64768/m_items[52]；带编号列表（匹配游戏截断后的原文）
 Toad Necklace	蟾蜍项链	宝库／道具 54 蟾蜍项链；sharedassets0.assets:64768/m_items[53]；名称
 Purchased from an old hag by a greedy merchant.  Cuts store prices to 35%, but intermittently transforms you into a toad	贪婪的商人从老巫婆处买来。商店售价降至原价的 35％，但你会不时变成蟾蜍。	宝库／道具 54 蟾蜍项链；sharedassets0.assets:64768/m_items[53]；介绍
 {0} Toad Necklace	{0} 蟾蜍项链	宝库／道具 54 蟾蜍项链；sharedassets0.assets:64768/m_items[53]；带编号列表（匹配游戏截断后的原文）
@@ -287,21 +287,21 @@ Increase the damage you deal with traps	提高你操控陷阱造成的伤害。	
 Magic Ectoplasm	魔法灵质	宝库／道具 56 魔法灵质；sharedassets0.assets:64768/m_items[55]；名称
 This mysterious ghostly substance increases the ectoplasmic storage capacity of a spirit	神秘的幽灵物质，能增加灵体储存灵质的上限。	宝库／道具 56 魔法灵质；sharedassets0.assets:64768/m_items[55]；介绍
 {0} Magic Ectoplasm	{0} 魔法灵质	宝库／道具 56 魔法灵质；sharedassets0.assets:64768/m_items[55]；带编号列表（匹配游戏截断后的原文）
-Ectothermic Slime	冷血黏液	宝库／道具 57 冷血黏液；sharedassets0.assets:64768/m_items[56]；名称
+Ectothermic Slime	幽魂黏液	宝库／道具 57 冷血黏液；sharedassets0.assets:64768/m_items[56]；名称
 This strange ghostly slime imbues your spirit with power, increasing the effectiveness of each ectoplasm collected	奇异的幽灵黏液赋予灵体力量，使每份收集到的灵质更加有效。	宝库／道具 57 冷血黏液；sharedassets0.assets:64768/m_items[56]；介绍
-{0} Ectothermic Slime	{0} 冷血黏液	宝库／道具 57 冷血黏液；sharedassets0.assets:64768/m_items[56]；带编号列表（匹配游戏截断后的原文）
-Hymn of Betrayal	背叛圣歌	宝库／道具 58 背叛圣歌；sharedassets0.assets:64768/m_items[57]；名称
-Chant this horrid tune to rob the leading hero of a random artifact	吟唱这首可怕的曲调，随机夺走领先英雄的一件宝物。	宝库／道具 58 背叛圣歌；sharedassets0.assets:64768/m_items[57]；介绍
-{0} Hymn of Betrayal	{0} 背叛圣歌	宝库／道具 58 背叛圣歌；sharedassets0.assets:64768/m_items[57]；带编号列表（匹配游戏截断后的原文）
-Hymn of Jealousy	嫉妒圣歌	宝库／道具 59 嫉妒圣歌；sharedassets0.assets:64768/m_items[58]；名称
-Sing these eerie tones to steal gold from the leading hero	唱出这些诡异的音调，偷走领先英雄的金币。	宝库／道具 59 嫉妒圣歌；sharedassets0.assets:64768/m_items[58]；介绍
-{0} Hymn of Jealousy	{0} 嫉妒圣歌	宝库／道具 59 嫉妒圣歌；sharedassets0.assets:64768/m_items[58]；带编号列表（匹配游戏截断后的原文）
-Hymn of Envy	妒羡圣歌	宝库／道具 60 妒羡圣歌；sharedassets0.assets:64768/m_items[59]；名称
-Shout this harsh melody to swap weapons with the leading hero	高喊这段刺耳的旋律，与领先英雄交换武器。	宝库／道具 60 妒羡圣歌；sharedassets0.assets:64768/m_items[59]；介绍
-{0} Hymn of Envy	{0} 妒羡圣歌	宝库／道具 60 妒羡圣歌；sharedassets0.assets:64768/m_items[59]；带编号列表（匹配游戏截断后的原文）
-Hymn of Trickery	诡计圣歌	宝库／道具 61 诡计圣歌；sharedassets0.assets:64768/m_items[60]；名称
-Hum this atonal strain to switch all gear with another hero at random	哼唱这段无调性的乐句，随机与另一位英雄交换全部装备。	宝库／道具 61 诡计圣歌；sharedassets0.assets:64768/m_items[60]；介绍
-{0} Hymn of Trickery	{0} 诡计圣歌	宝库／道具 61 诡计圣歌；sharedassets0.assets:64768/m_items[60]；带编号列表（匹配游戏截断后的原文）
+{0} Ectothermic Slime	{0} 幽魂黏液	宝库／道具 57 冷血黏液；sharedassets0.assets:64768/m_items[56]；带编号列表（匹配游戏截断后的原文）
+Hymn of Betrayal	背叛者的颂歌	宝库／道具 58 背叛圣歌；sharedassets0.assets:64768/m_items[57]；名称
+Chant this horrid tune to rob the leading hero of a random artifact	咏唱这首可怕的曲子，从当前等级最高的英雄那里，随机抢夺一件道具。	宝库／道具 58 背叛圣歌；sharedassets0.assets:64768/m_items[57]；介绍
+{0} Hymn of Betrayal	{0} 背叛者的颂歌	宝库／道具 58 背叛圣歌；sharedassets0.assets:64768/m_items[57]；带编号列表（匹配游戏截断后的原文）
+Hymn of Jealousy	嫉妒者的颂歌	宝库／道具 59 嫉妒圣歌；sharedassets0.assets:64768/m_items[58]；名称
+Sing these eerie tones to steal gold from the leading hero	吟唱这些诡异的音调，从当前等级最高的英雄那偷取金币。	宝库／道具 59 嫉妒圣歌；sharedassets0.assets:64768/m_items[58]；介绍
+{0} Hymn of Jealousy	{0} 嫉妒者的颂歌	宝库／道具 59 嫉妒圣歌；sharedassets0.assets:64768/m_items[58]；带编号列表（匹配游戏截断后的原文）
+Hymn of Envy	猜忌者的颂歌	宝库／道具 60 妒羡圣歌；sharedassets0.assets:64768/m_items[59]；名称
+Shout this harsh melody to swap weapons with the leading hero	高喊这刺耳的旋律，和当前等级最高的英雄偷换武器。	宝库／道具 60 妒羡圣歌；sharedassets0.assets:64768/m_items[59]；介绍
+{0} Hymn of Envy	{0} 猜忌者的颂歌	宝库／道具 60 妒羡圣歌；sharedassets0.assets:64768/m_items[59]；带编号列表（匹配游戏截断后的原文）
+Hymn of Trickery	欺诈者的颂歌	宝库／道具 61 诡计圣歌；sharedassets0.assets:64768/m_items[60]；名称
+Hum this atonal strain to switch all gear with another hero at random	哼唱这毫无音律的曲调，和随机另一名英雄调换所有物品。	宝库／道具 61 诡计圣歌；sharedassets0.assets:64768/m_items[60]；介绍
+{0} Hymn of Trickery	{0} 欺诈者的颂歌	宝库／道具 61 诡计圣歌；sharedassets0.assets:64768/m_items[60]；带编号列表（匹配游戏截断后的原文）
 Pentagram	五芒星法阵	宝库／物件 01 五芒星法阵；sharedassets0.assets:64768/m_props[0]；名称
 From ancient runes etched into rotten stone, the dead can bring forth monsters	腐朽石面上刻着古老符文，亡者能借此唤出怪物。	宝库／物件 01 五芒星法阵；sharedassets0.assets:64768/m_props[0]；介绍
 {0} Pentagram	{0} 五芒星法阵	宝库／物件 01 五芒星法阵；sharedassets0.assets:64768/m_props[0]；带编号列表（匹配游戏截断后的原文）
@@ -522,7 +522,7 @@ The Renowned Antiquarian	博古大家	宝库／成就 13 博古大家；sharedas
 Discover all entries in the vault	发现宝库中的全部条目。	宝库／成就 13 博古大家；sharedassets0.assets:69276；达成条件
 Lloyd and Goliath	劳埃德与巨人	宝库／成就 14 劳埃德与巨人；sharedassets0.assets:68187；名称
 Slay a giant monster with a pebble	用一颗小石子杀死一只巨型怪物。	宝库／成就 14 劳埃德与巨人；sharedassets0.assets:68187；达成条件
-Goliath and Goliath	巨人与巨人	宝库／成就 15 巨人与巨人；sharedassets0.assets:68186；名称
+Goliath and Goliath	巨巨	宝库／成就 15 巨人与巨人；sharedassets0.assets:68186；名称
 Slay a giant monster with a boulder	用一块巨石杀死一只巨型怪物。	宝库／成就 15 巨人与巨人；sharedassets0.assets:68186；达成条件
 Adequately Equipped	兵器齐备	宝库／成就 16 兵器齐备；sharedassets0.assets:70199；名称
 Discover all weapons in the vault	发现宝库中的全部武器。	宝库／成就 16 兵器齐备；sharedassets0.assets:70199；达成条件

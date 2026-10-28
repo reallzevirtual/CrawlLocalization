@@ -5,12 +5,12 @@ OPTIONS	设置	主菜单／入口按钮；level2:1221 MenuOptions/TitleOptions
 CREDITS	制作人员	主菜单／入口按钮
 QUIT	退出游戏	主菜单／入口按钮
 BACK	返回	通用菜单／返回、确认与选择按钮；level2:1241 MenuLibrary/Main/TextButtonB
-OK?	准备好了吗？	通用菜单／返回、确认与选择按钮
+OK?	准备？	通用菜单／返回、确认与选择按钮
 OK	确定	通用菜单／返回、确认与选择按钮
 CANCEL	取消	通用菜单／返回、确认与选择按钮
 YES	是	通用菜单／返回、确认与选择按钮
 NO	否	通用菜单／返回、确认与选择按钮
-READY	准备就绪	通用菜单／返回、确认与选择按钮；sharedassets0.assets:38118 MenuPause/MenuDropIn/Body/Text；level2:1200 MenuJoin/MenuJoinPlayer*/MenuDeitySelectPlayer/ContainerReady/ReadyText；其他同文位置
+READY	已准备	通用菜单／返回、确认与选择按钮；sharedassets0.assets:38118 MenuPause/MenuDropIn/Body/Text；level2:1200 MenuJoin/MenuJoinPlayer*/MenuDeitySelectPlayer/ContainerReady/ReadyText；其他同文位置
 MONSTERS	怪物	通用菜单／返回、确认与选择按钮；sharedassets2.assets:233 MenuItemLibraryCategory
 WEAPONS	武器	宝库／分类按钮
 ITEMS	道具	宝库／分类按钮
@@ -32,7 +32,7 @@ AI: Easy	难度：简单	玩家加入／操作设置、电脑数量及难度
 AI: Normal	难度：普通	玩家加入／操作设置、电脑数量及难度
 AI: Medium	难度：中等	玩家加入／操作设置、电脑数量及难度
 AI: Hard	难度：困难	玩家加入／操作设置、电脑数量及难度
-AI: Unfair	难度：不公平	玩家加入／操作设置、电脑数量及难度
+AI: Unfair	难度：不公	玩家加入／操作设置、电脑数量及难度
 -NEW-	-新建-	玩家加入／操作设置、电脑数量及难度
 Reset Controls	重置操作设置	玩家加入／操作设置、电脑数量及难度
 Keyboard Setup	键盘设置	玩家加入／操作设置、电脑数量及难度
@@ -96,7 +96,7 @@ The gods reward you\nwith <color=#ea9d1a>gold</color> for damaging \n<color=#d4b
 QUIT?	退出？	菜单独立 TextMesh／静态文字；sharedassets0.assets:38080 MenuPrompt/TextTitle
 Keyboards	键盘设置	菜单独立 TextMesh／静态文字；sharedassets0.assets:38089 MenuOptionsKeyboard/TextTitle
 FALLEN HERO	陨落的英雄	菜单独立 TextMesh／静态文字；sharedassets0.assets:38090 MenuPause/MenuTips/Tips/MenuTipStoreTeleporter/Text
-Are you sure?	确定吗？	菜单独立 TextMesh／静态文字；sharedassets0.assets:38091 MenuPrompt/Text
+Are you sure?	你确定吗？	菜单独立 TextMesh／静态文字；sharedassets0.assets:38091 MenuPrompt/Text
 Saving...	正在保存...	菜单独立 TextMesh／静态文字；sharedassets0.assets:38092 MenuAutoSave/SavingDialog/Text
 Signing in...	正在登录...	菜单独立 TextMesh／静态文字；sharedassets0.assets:38093 MenuSignIn/Text
 take control	操控	菜单独立 TextMesh／静态文字；sharedassets0.assets:38098 MenuPause/MenuTips/Tips/MenuTipBlobs/Text
@@ -161,7 +161,7 @@ PROGRAMMING	程序	菜单独立 TextMesh／静态文字；level2:1290 MenuCredit
 Additional	协力	菜单独立 TextMesh／静态文字；level2:1293 MenuCredits/ScrollContainer/6Additional Programming/Text；level2:1299 MenuCredits/ScrollContainer/5Additional Art/Text
 Developed with	本作开发获得	菜单独立 TextMesh／静态文字；level2:1294 MenuCredits/ScrollContainer/9FilmVic/Text
 powered by	技术支持	菜单独立 TextMesh／静态文字；level2:1297 MenuCredits/ScrollContainer/7Unity/Text
-Copyright (c) 2014-2017 Powerhoof Pty Ltd	版权所有 (c) 2014-2017 Powerhoof Pty Ltd	菜单独立 TextMesh／静态文字；level2:1302 MenuCredits/ScrollContainer/12copyright
+Copyright (c) 2014-2017 Powerhoof Pty Ltd	Copyright (c) 2014-2017 Powerhoof Pty Ltd	菜单独立 TextMesh／静态文字；level2:1302 MenuCredits/ScrollContainer/12copyright
 Music by	音乐	菜单独立 TextMesh／静态文字；level2:1303 MenuCredits/ScrollContainer/3Music
 Special Thanks	特别鸣谢	菜单独立 TextMesh／静态文字；level2:1306 MenuCredits/ScrollContainer/10Thanks
 Brought to you by	制作团队	菜单独立 TextMesh／静态文字；level2:1310 MenuCredits/ScrollContainer/2BroughtToYou
@@ -170,7 +170,7 @@ Replay Tutorial: ON (unavailable)	重玩教程：开（当前模式禁用）	设
 Easy	简单	玩家加入／电脑难度
 Normal	普通	玩家加入／电脑难度
 Medium	中等	玩家加入／电脑难度
-Unfair	不公平	玩家加入／电脑难度
+Unfair	不公	玩家加入／电脑难度
 A slower pace to learn the ropes	节奏较慢\n适合熟悉\n游戏玩法	玩家加入／两人局说明；MenuJoinPlayer.BOTINFO_DESC
 Moderate pace and mildy frantic	节奏适中\n略显紧张	玩家加入／三人局说明；保留原文 mildy 拼写
 Wildest pace and most chaotic	节奏最快\n战况最混乱	玩家加入／四人局说明
