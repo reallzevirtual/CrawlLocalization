@@ -90,6 +90,8 @@ namespace CrawlLocalization
         private int originalSize;
         private FontStyle originalStyle;
         private string source, display, rendered;
+        private string directLookup, directFallback;
+        private bool usesDirectLookup;
 
         internal static LocalizedMenuLabel GetOrCreate(GameObject obj)
         {
@@ -111,6 +113,31 @@ namespace CrawlLocalization
         }
 
         internal void ResetSource(string text) { source = text; display = null; }
+
+        // Called only after a known UI method writes a fresh original string.
+        // Reuse the latest rendered result (including F8 changes) on identical frames.
+        internal void RefreshDirect(string lookup, string fallback)
+        {
+            string text = mesh.text;
+            if (usesDirectLookup && source == text && directLookup == lookup && directFallback == fallback && rendered != null)
+            {
+                mesh.text = rendered;
+                return;
+            }
+            directLookup = lookup;
+            directFallback = fallback;
+            if (!usesDirectLookup) { TextProvider = TranslateDirect; usesDirectLookup = true; }
+            ResetSource(text);
+            Refresh();
+        }
+
+        private string TranslateDirect(LanguagePack pack)
+        {
+            string translated;
+            if (pack.TryTranslate(directLookup, out translated)) return translated;
+            return directFallback != null && pack.TryTranslate(directFallback, out translated) ? translated : null;
+        }
+
 
         internal string Translate(string text)
         {

@@ -1,6 +1,6 @@
 # Crawl Localization
 
-BepInEx 5 中文本地化插件，版本 **0.7.1**，适配 Windows Crawl / Unity 5.4.2。当前只维护简体中文；保留恢复游戏原文的选项。包含菜单按钮及经过核对的独立 TextMesh 标题、提示文字，共 1179 条译文/数字模板、83 个 TextMesh 路径，覆盖宝库分类说明、图鉴、成就、邪神选择、开局全屏提示、章节标题及商店。
+BepInEx 5 中文本地化插件，版本 **0.7.2**，适配 Windows Crawl / Unity 5.4.2。当前只维护简体中文；保留恢复游戏原文的选项。包含菜单按钮及经过核对的独立 TextMesh 标题、提示文字，共 1179 条译文/数字模板、83 个 TextMesh 路径，覆盖宝库分类说明、图鉴、成就、邪神选择、开局全屏提示、章节标题、商店及常驻玩家装备面板。
 
 ## 构建与安装
 
@@ -14,7 +14,7 @@ pwsh -NoProfile -File .\build.ps1 -GamePath '你的 Crawl 目录'
 pwsh -NoProfile -File .\build.ps1 -Install
 ```
 
-输出 `artifacts/CrawlLocalization-0.7.1.zip`。关闭游戏，将 ZIP 内容解压至 `BepInEx/plugins/CrawlLocalization/`，然后重新启动。更新时覆盖 DLL、Languages 和 Fonts。新版不再分发繁体包，旧 `Languages/zh-Hant` 目录可删除；保留也不会被旧配置继续选中。不自动启动游戏。
+输出 `artifacts/CrawlLocalization-0.7.2.zip`。关闭游戏，将 ZIP 内容解压至 `BepInEx/plugins/CrawlLocalization/`，然后重新启动。更新时覆盖 DLL、Languages 和 Fonts。新版不再分发繁体包，旧 `Languages/zh-Hant` 目录可删除；保留也不会被旧配置继续选中。不自动启动游戏。
 
 ## 配置与重载
 
@@ -102,6 +102,14 @@ Note: Many keyboards do not\nsupport multiple players<TAB>注意：许多键盘�
 建议验证：连续切换武器/药水/技能/遗物；查看带前缀、魔法和状态的武器；对照属性符号、数值和价格；测试金币不足、禁止购买、已拥有及换购；离开商店后按F8，确认交互提示正确；切换 `en` 恢复原文。
 
 
+## 常驻玩家装备面板（0.7.2）
+
+汉化 `GUIHeroStats` 面板上的武器名称、独立前缀、技能及遗物名称，直接复用宝库与商店词条，无需新增翻译。适配面板本身的刷新方法，不依赖进入商店；购买、换装及面板重新显示时会随原游戏更新。
+
+武器/技能在原 `UpdateText` 写入各个名称后翻译。相同输入复用已渲染文本，避免每帧重复查表和检查字体；F8刷新后缓存会使用新结果。遗物只在原 `UpdateArtifactIcons` 实际改写名称时处理，保持原列表次序，并提前翻译暂时隐藏的滚动项。HUD简称没有专用词条时复用物品全名译文，恢复英文时仍显示原简称。
+
+保留原前缀分行、属性数字、图标、布局、滚动和透明度。独立Unity检查覆盖12项换装/列表复用/缓存/重载行为，以及328个来自实际资源的名称显示案例；完整游戏里的位置和滚动效果仍需用户确认。
+
 ## 章节编号与楼层名（0.6.0）
 
 进局和换层时显示的 `- Chapter {0} -` 翻译为 `- 第 {0} 章 -`，并覆盖地牢、墓穴、矿区环境的全部131个不同随机楼层名。源资源是 sharedassets0.assets 中44824、44832、44876、44921、45936的Environment，以及55903的LevelTitle。重复环境共用译文，表格注释保留全部来源。
@@ -118,7 +126,7 @@ CrawlOnline 的 `Patch_SystemTutorial_GetShouldStartTutorial` 在 `Unlocks.Enabl
 
 ## 字体及排版
 
-`Fonts/crawl-fonts.bundle` 由 Unity 5.4.2f2 / Windows x86 构建，包含十个合并中文字体。内嵌 TTF 与根目录源文件逐字节相同，保留原游戏 Font 的 ascent、descent、line spacing；0.7.1 继续使用 0.2.2 修正后的字体包。
+`Fonts/crawl-fonts.bundle` 由 Unity 5.4.2f2 / Windows x86 构建，包含十个合并中文字体。内嵌 TTF 与根目录源文件逐字节相同，保留原游戏 Font 的 ascent、descent、line spacing；0.7.2 继续使用 0.2.2 修正后的字体包。
 
 `fonts.tsv` 五列：原字体名、类型、相对文件路径、资源/家族名、倍率。默认按完整资源路径 `LoadAsset<Font>`。支持 `bundle`、兼容入口 `ttf` 和 `system`；TTF 按家族创建不能保证实际文件来源，推荐 bundle。
 
@@ -169,6 +177,8 @@ python .\tools\export_shop_texts.py --game-path '你的 Crawl 目录' --output a
 pwsh -NoProfile -File .\tests\check-shop-catalog.ps1
 pwsh -NoProfile -File .\tests\check-shop-observer.ps1 -GamePath '你的 Crawl 目录'
 pwsh -NoProfile -File .\tests\check-shop-layout.ps1 -GamePath '你的 Crawl 目录'
+# 常驻装备面板：名称复用、每帧缓存、滚动遗物、语言恢复及实际字体测量：
+pwsh -NoProfile -File .\tests\check-hero-stats.ps1 -GamePath '你的 Crawl 目录'
 # 导出主菜单、选项、暂停菜单及开局全屏提示的 TextMesh 线索；不启动游戏：
 python .\tools\export_menu_texts.py --game-path '你的 Crawl 目录' --output artifacts/menu-textmeshes.json
 ```
