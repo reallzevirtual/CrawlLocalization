@@ -43,7 +43,9 @@ namespace CrawlLocalization
         internal bool TryTranslate(string source, out string translated)
         {
             Match match = pattern.Match(source);
-            translated = match.Success ? Tokens.Replace(target, delegate(Match token) { return match.Groups["n" + token.Groups[1].Value].Value; }) : null;
+            translated = null;
+            if (match.Success)
+                translated = Tokens.Replace(target, delegate(Match token) { return match.Groups["n" + token.Groups[1].Value].Value; });
             return match.Success;
         }
     }

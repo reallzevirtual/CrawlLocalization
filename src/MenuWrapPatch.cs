@@ -4,13 +4,14 @@ using UnityEngine;
 namespace CrawlLocalization
 {
     [HarmonyPatch(typeof(TextWrapper), "WrapText")]
-    internal static class VaultChineseWrapPatch
+    internal static class MenuChineseWrapPatch
     {
         private static bool Prefix(string input, float width, TextMesh ___textMesh, ref string __result)
         {
             if (___textMesh == null || !ChineseTextWrapper.ContainsChinese(input) ||
                 ___textMesh.GetComponent<LocalizedMenuLabel>() == null ||
-                ___textMesh.GetComponentInParent<MenuLibrary>() == null) return true;
+                (___textMesh.GetComponentInParent<MenuLibrary>() == null &&
+                 ___textMesh.GetComponentInParent<MenuDeitySelectPlayer>() == null)) return true;
             TextMesh mesh = ___textMesh;
             Font font = mesh.font;
             if (font == null) return true;

@@ -1,0 +1,72 @@
+# UTF-8: source<TAB>translation<TAB>comment. Deity selection and taunt trials.
+Teok	特奥克	邪神选择／名称；sharedassets0.assets:45915/m_deities[0] (Teok, deity)/m_name
+Monsters\nare\nStronger	怪物\n更加强大	邪神选择／选择时效果／装备；sharedassets0.assets:45915/m_deities[0] (Teok, deity)/m_text
+From deep\nwithin the\nearth she\nrises	她从\n大地深处\n缓缓升起	邪神选择／确认后介绍；sharedassets0.assets:45915/m_deities[0] (Teok, deity)/m_textFlavour
+Murkan	穆尔坎	邪神选择／名称；sharedassets0.assets:45915/m_deities[1] (Murkan, deity)/m_name
+Enter with: Thieving Knife	携带入场：\n窃贼匕首	邪神选择／选择时效果／装备；sharedassets0.assets:45915/m_deities[1] (Murkan, deity)/m_text
+He hides\nin wait,\nsharpening\nhis claws	潜伏暗处\n静候猎物\n磨砺利爪	邪神选择／确认后介绍；sharedassets0.assets:45915/m_deities[1] (Murkan, deity)/m_textFlavour
+Gholoth	戈洛斯	邪神选择／名称；sharedassets0.assets:45915/m_deities[2] (Gholoth, deity)/m_name
++25% Trap Damage	陷阱伤害\n提高25％	邪神选择／选择时效果／装备；sharedassets0.assets:45915/m_deities[2] (Gholoth, deity)/m_text
+The stench of death heralds his coming	死亡的恶臭\n预示他的降临	邪神选择／确认后介绍；sharedassets0.assets:45915/m_deities[2] (Gholoth, deity)/m_textFlavour
+S'hrim	施里姆	邪神选择／名称；sharedassets0.assets:45915/m_deities[3] (S'hrim, deity)/m_name
+Enter with: 40 Gold and a Lucky Claw	携带入场：\n40金币\n和幸运之爪	邪神选择／选择时效果／装备；sharedassets0.assets:45915/m_deities[3] (S'hrim, deity)/m_text
+A decaying\ngod, mostly\nforgotten\nby men	逐渐腐朽的神\n几乎已被世人\n遗忘	邪神选择／确认后介绍；sharedassets0.assets:45915/m_deities[3] (S'hrim, deity)/m_textFlavour
+Gor	戈尔	邪神选择／名称；sharedassets0.assets:45915/m_deities[4] (Gor, deity)/m_name
+Suffer from Haemophilia	患有血友病	邪神选择／选择时效果／装备；sharedassets0.assets:45915/m_deities[4] (Gor, deity)/m_text
+Father of corrosion	腐蚀之父	邪神选择／确认后介绍；sharedassets0.assets:45915/m_deities[4] (Gor, deity)/m_textFlavour
+Odshan	奥德珊	邪神选择／名称；sharedassets0.assets:45915/m_deities[5] (Odshan, deity)/m_name
+Stronger Ghostly Presence	幽灵之力增强	邪神选择／选择时效果／装备；sharedassets0.assets:45915/m_deities[5] (Odshan, deity)/m_text
+Last of\nthe great\nputrid\nserpents	伟大腐败蛇族\n最后的遗存	邪神选择／确认后介绍；sharedassets0.assets:45915/m_deities[5] (Odshan, deity)/m_textFlavour
+Xophant	佐凡特	邪神选择／名称；sharedassets0.assets:45915/m_deities[6] (Xophant, deity)/m_name
+Bearlike Strength	拥有熊般巨力	邪神选择／选择时效果／装备；sharedassets0.assets:45915/m_deities[6] (Xophant, deity)/m_text
+Ageless blight demon	不老的灾厄魔	邪神选择／确认后介绍；sharedassets0.assets:45915/m_deities[6] (Xophant, deity)/m_textFlavour
+Qaahl	卡尔	邪神选择／名称；sharedassets0.assets:45915/m_deities[7] (Qaahl, deity)/m_name
+Enter with: Cracked Bow	携带入场：\n破裂短弓	邪神选择／选择时效果／装备；sharedassets0.assets:45915/m_deities[7] (Qaahl, deity)/m_text
+The twisted eye beckons	扭曲的眼眸\n正向你召唤	邪神选择／确认后介绍；sharedassets0.assets:45915/m_deities[7] (Qaahl, deity)/m_textFlavour
+Momot	莫莫特	邪神选择／名称；sharedassets0.assets:45915/m_deities[8] (Momot, deity)/m_name
+Enhanced Magical Ability	魔法能力增强	邪神选择／选择时效果／装备；sharedassets0.assets:45915/m_deities[8] (Momot, deity)/m_text
+Ruthless leader of beasts	冷酷的\n群兽之主	邪神选择／确认后介绍；sharedassets0.assets:45915/m_deities[8] (Momot, deity)/m_textFlavour
+Chz	奇兹	邪神选择／名称；sharedassets0.assets:45915/m_deities[9] (Chz, deity)/m_name
+Enter with: Vampiric Ring	携带入场：\n吸血戒指	邪神选择／选择时效果／装备；sharedassets0.assets:45915/m_deities[9] (Chz, deity)/m_text
+The weak drink from the mighty	弱者饮尽\n强者之血	邪神选择／确认后介绍；sharedassets0.assets:45915/m_deities[9] (Chz, deity)/m_textFlavour
+Glub	格拉布	邪神选择／名称；sharedassets0.assets:45915/m_deities[10] (Glub, deity)/m_name
+Glub Glub\nGlub	咕噜咕噜\n咕噜	邪神选择／选择时效果／装备；sharedassets0.assets:45915/m_deities[10] (Glub, deity)/m_text
+Dank lord of fertility	湿腐的\n繁衍之主	邪神选择／确认后介绍；sharedassets0.assets:45915/m_deities[10] (Glub, deity)/m_textFlavour
+Low health hero and beasts	英雄与怪物\n生命值降低	邪神选择／选择时效果／装备；sharedassets0.assets:45915/m_deities[11] (Gholoth, trial)/m_text
+For your weakness, he blights you	因你的软弱\n他降下灾厄	邪神选择／确认后介绍；sharedassets0.assets:45915/m_deities[11] (Gholoth, trial)/m_textFlavour
+Permanent insanity and frog curse	永久陷入疯狂\n并受蛙形诅咒	邪神选择／选择时效果／装备；sharedassets0.assets:45915/m_deities[12] (S'hrim, trial)/m_text
+For your sacrilege he taints you	因你的亵渎\n他将你污化	邪神选择／确认后介绍；sharedassets0.assets:45915/m_deities[12] (S'hrim, trial)/m_textFlavour
+Basic sling only	仅可使用\n基础投石索	邪神选择／选择时效果／装备；sharedassets0.assets:45915/m_deities[13] (Gor, trial)/m_text
+For your pride, he curses you	因你的傲慢\n他将你诅咒	邪神选择／确认后介绍；sharedassets0.assets:45915/m_deities[13] (Gor, trial)/m_textFlavour
+Tiny health, weak bow, hyperdash	生命值极低\n短弓威力弱\n冲刺极快	邪神选择／选择时效果／装备；sharedassets0.assets:45915/m_deities[14] (Qaahl, trial)/m_text
+For your defiance he tests you	因你的忤逆\n他降下试炼	邪神选择／确认后介绍；sharedassets0.assets:45915/m_deities[14] (Qaahl, trial)/m_textFlavour
+GLUUUUUB!	咕噜噜噜！	邪神选择／选择时效果／装备；sharedassets0.assets:45915/m_deities[15] (Glub, trial)/m_text
+Glub, glub- appease The Abyss!	咕噜，咕噜！\n平息深渊之怒！	邪神选择／确认后介绍；sharedassets0.assets:45915/m_deities[15] (Glub, trial)/m_textFlavour
+Random	随机	邪神选择／名称；level2:1330/m_textRandomName
+Follow a random deity	随机信奉\n一位邪神	邪神选择／选择时效果／装备；level2:1330/m_textRandomDescription
+No-one	不信奉	邪神选择／名称；level2:1330/m_textTrialName
+Taunt the gods, suffer their wrath	挑衅诸神\n承受他们的怒火	邪神选择／选择时效果／装备；level2:1330/m_textTrialDescription
+Locked	未解锁	邪神选择／名称；MenuDeitySelectPlayer.SetLockedDeity
+Deity\nnot yet discovered	尚未发现\n这位邪神	邪神选择／选择时效果／装备；MenuDeitySelectPlayer.SetLockedDeity
+Jed	杰德	邪神选择／名称；level2:1330/m_deityOverrides[0]/m_deityName
+seemingly\nbenevolent,\na secret\nevil lurks	看似仁慈\n暗藏邪恶	邪神选择／确认后介绍；level2:1330/m_deityOverrides[0]/m_deityText
+SPNKr	斯潘克	邪神选择／名称；level2:1330/m_deityOverrides[1]/m_deityName
+mad with\nburrito-lust,\nhis hunger\nnever ends	为墨西哥卷饼\n陷入疯狂\n饥饿永无止境	邪神选择／确认后介绍；level2:1330/m_deityOverrides[1]/m_deityText
+Ga'ben	加本	邪神选择／名称；level2:1330/m_deityOverrides[2]/m_deityName
+Lord of\nmachines\nhe wields\ngreat power	机械之主\n掌握无上力量	邪神选择／确认后介绍；level2:1330/m_deityOverrides[2]/m_deityText
+Dave	戴夫	邪神选择／名称；level2:1330/m_deityOverrides[3]/m_deityName
+Dark code corrodes his mind	黑暗代码\n侵蚀他的心智	邪神选择／确认后介绍；level2:1330/m_deityOverrides[3]/m_deityText
+Rufus	鲁弗斯	邪神选择／名称；level2:1330/m_deityOverrides[4]/m_deityName
+Lord of all, possibly an orange	万物之主\n或许是个橙子	邪神选择／确认后介绍；level2:1330/m_deityOverrides[4]/m_deityText
+Bryan	布莱恩	邪神选择／名称；level2:1330/m_deityOverrides[5]/m_deityName
+God of gods, formidable tapper of cubes	众神之神\n敲击方块的能手	邪神选择／确认后介绍；level2:1330/m_deityOverrides[5]/m_deityText
+Tur'dlog	屎块	邪神选择／名称；level2:1330/m_deityOverrides[6]/m_deityName
+A little stinky	有点臭	邪神选择／确认后介绍；level2:1330/m_deityOverrides[6]/m_deityText
+Moonman	月亮人	邪神选择／名称；level2:1330/m_deityOverrides[7]/m_deityName
+He watches from above, thoughts unknowable	他自高处凝视\n心思无人知晓	邪神选择／确认后介绍；level2:1330/m_deityOverrides[7]/m_deityText
+Tone'	托恩	邪神选择／名称；level2:1330/m_deityOverrides[8]/m_deityName
+His mighty power is fuelled by raw onions	生洋葱赋予他\n强大的力量	邪神选择／确认后介绍；level2:1330/m_deityOverrides[8]/m_deityText
+The Pinky	小指	邪神选择／名称；level2:1330/m_deityOverrides[9]/m_deityName
+Cast off in haste, it dreams of vengeance	被匆忙抛弃\n梦中仍图复仇	邪神选择／确认后介绍；level2:1330/m_deityOverrides[9]/m_deityText
+GO'Gon	戈贡	邪神选择／名称；level2:1330/m_deityOverrides[10]/m_deityName
+The old is born anew, under his ancient gaze	在他古老的\n目光之下\n旧物重获新生	邪神选择／确认后介绍；level2:1330/m_deityOverrides[10]/m_deityText

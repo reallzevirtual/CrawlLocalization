@@ -73,3 +73,8 @@ MenuLibrary/ItemContents/TextDescriptionMonster
 MenuLibrary/ItemContents/TextDescriptionMonsterPassed
 MenuLibrary/ItemContents/TextTitleAchievement
 MenuLibrary/ItemContents/TextDescriptionAchievement
+
+# Deity display only; Deity.GetName and unlock/save identifiers remain original.
+MenuJoin/MenuJoinPlayer*/MenuDeitySelectPlayer/DeityName
+MenuJoin/MenuJoinPlayer*/MenuDeitySelectPlayer/ContainerInfo/DeityText
+MenuJoin/MenuJoinPlayer*/MenuDeitySelectPlayer/ContainerReady/ReadyDeityText

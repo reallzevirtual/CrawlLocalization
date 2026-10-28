@@ -28,7 +28,7 @@ namespace CrawlLocalization
                 string result;
                 Check(pack.TryTranslate(source, out result) && ChineseTextWrapper.ContainsChinese(result), "Catalog text translated: " + source);
             }
-            Console.WriteLine("PASS: " + sources.Length + " asset-derived Vault display cases");
+            Console.WriteLine("PASS: " + sources.Length + " asset-derived display cases");
         }
 
         private static void CheckVault(LanguagePack pack)
@@ -78,6 +78,20 @@ namespace CrawlLocalization
             }
             Check(true, "Every shipped translation has a context comment");
             CheckVault(simplified);
+            Translation(simplified, "Teok", "特奥克");
+            Translation(simplified, "Enter with: 40 Gold and a Lucky Claw", "携带入场：\n40金币\n和幸运之爪");
+            Translation(simplified, "From deep\r\nwithin the\r\nearth she\r\nrises", "她从\n大地深处\n缓缓升起");
+            Translation(simplified, "No-one", "不信奉");
+            Translation(simplified, "Tiny health, weak bow, hyperdash", "生命值极低\n短弓威力弱\n冲刺极快");
+            for (int player = 1; player <= 4; player++)
+            {
+                string parent = "MenuJoin/MenuJoinPlayer" + player + "/MenuDeitySelectPlayer(Clone)/";
+                Check(MenuTextPolicy.MatchesPath(simplified.TextMeshPaths, parent + "DeityName"), "Deity name display is included for player " + player);
+                Check(MenuTextPolicy.MatchesPath(simplified.TextMeshPaths, parent + "ContainerInfo/DeityText"), "Deity effect display is included for player " + player);
+                Check(MenuTextPolicy.MatchesPath(simplified.TextMeshPaths, parent + "ContainerReady/ReadyDeityText"), "Deity flavour display is included for player " + player);
+                Check(!MenuTextPolicy.MatchesPath(simplified.TextMeshPaths, parent + "PlayerName"), "Player name is not a deity translation target");
+            }
+
             Check(simplified.Id == "zh-Hans" && migrated.Id == "zh-Hans", "Language aliases");
             Translation(simplified, "START GAME", "开始游戏");
             Translation(migrated, "START GAME", "开始游戏");

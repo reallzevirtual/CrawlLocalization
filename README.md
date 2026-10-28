@@ -1,6 +1,6 @@
 # Crawl Localization
 
-BepInEx 5 中文本地化插件，版本 **0.4.0**，适配 Windows Crawl / Unity 5.4.2。当前只维护简体中文；保留恢复游戏原文的选项。包含菜单按钮及经过核对的独立 TextMesh 标题、提示文字，共 801 条译文/数字模板、73 个 TextMesh 路径，覆盖宝库分类说明、图鉴及成就。
+BepInEx 5 中文本地化插件，版本 **0.5.0**，适配 Windows Crawl / Unity 5.4.2。当前只维护简体中文；保留恢复游戏原文的选项。包含菜单按钮及经过核对的独立 TextMesh 标题、提示文字，共 872 条译文/数字模板、76 个 TextMesh 路径，覆盖宝库分类说明、图鉴、成就及邪神选择。
 
 ## 构建与安装
 
@@ -14,7 +14,7 @@ pwsh -NoProfile -File .\build.ps1 -GamePath '你的 Crawl 目录'
 pwsh -NoProfile -File .\build.ps1 -Install
 ```
 
-输出 `artifacts/CrawlLocalization-0.4.0.zip`。关闭游戏，将 ZIP 内容解压至 `BepInEx/plugins/CrawlLocalization/`，然后重新启动。更新时覆盖 DLL、Languages 和 Fonts。新版不再分发繁体包，旧 `Languages/zh-Hant` 目录可删除；保留也不会被旧配置继续选中。不自动启动游戏。
+输出 `artifacts/CrawlLocalization-0.5.0.zip`。关闭游戏，将 ZIP 内容解压至 `BepInEx/plugins/CrawlLocalization/`，然后重新启动。更新时覆盖 DLL、Languages 和 Fonts。新版不再分发繁体包，旧 `Languages/zh-Hant` 目录可删除；保留也不会被旧配置继续选中。不自动启动游戏。
 
 ## 配置与重载
 
@@ -32,7 +32,7 @@ F8 重载配置、译文及路径清单，刷新已创建的文字。`ReloadKey 
 
 ## 译文表及位置注释
 
-`Languages/zh-Hans/translations.tsv` 存放通用菜单译文（206 条），`vault-translations.tsv` 存放宝库译文（595 条）。两者均为 UTF-8 TSV，有三列：
+`Languages/zh-Hans/translations.tsv` 存放通用菜单译文（206 条），`vault-translations.tsv` 存放宝库译文（595 条），`deity-translations.tsv` 存放邪神选择与试炼译文（71 条）。三份表均为 UTF-8 TSV，有三列：
 
 ```text
 原文<TAB>中文<TAB>位置注释
@@ -54,7 +54,7 @@ Note: Many keyboards do not\nsupport multiple players<TAB>注意：许多键盘�
 
 增加独立文字时，在译文表添加原文和译文，再将核对过的对象路径添加到路径清单。不会自动翻译所有 MonoBehaviour 或所有 TextMesh；玩家名字、账号名、制作人员姓名、网址、编辑器占位文字和图标字符不作为通用替换目标。
 
-已增加：键盘提示、街机模式说明、菜单标题、操作重绑的静态和动态提示、玩家加入的电脑说明、加载/保存提示、宝库标题及操作提示、暂停菜单游戏提示、制作人员页面的职能标题。宝库内容覆盖见下节；游戏内商店/拾取提示、神祇完整描述、所有弹窗正文、CrawlOnline F1 IMGUI 和 ex2D 仍未全面覆盖。
+已增加：键盘提示、街机模式说明、菜单标题、操作重绑的静态和动态提示、玩家加入的电脑说明、加载/保存提示、宝库标题及操作提示、暂停菜单游戏提示、制作人员页面的职能标题。宝库内容覆盖见下节；游戏内商店/拾取提示、暂停中途加入与胜利画面的神祇相关文字、所有弹窗正文、CrawlOnline F1 IMGUI 和 ex2D 仍未全面覆盖。
 
 ## 宝库汉化（0.4.0）
 
@@ -69,6 +69,18 @@ Note: Many keyboards do not\nsupport multiple players<TAB>注意：许多键盘�
 
 已从实际资源生成并核对 616 个显示案例。独立 Unity 5.4 检查覆盖 220 条正文/统计模板，使用包内 CrawlTextBodyThin 和原菜单宽度 80/82/100/105，所有行均未超宽，最长 5 行。该检查不加载 Crawl，面板高度、切换和鼠标交互仍需游戏内验证。
 
+## 邪神选择与挑衅试炼（0.5.0）
+
+覆盖四名玩家准备后的邪神界面：11 位邪神的名称、能力与初始装备说明、确认后的背景介绍，随机、不信奉、尚未发现提示，以及“不信奉”下 5 项挑衅试炼的名称、限制和确认介绍。另外包含 11 组玩家名彩蛋触发后的神名与介绍，触发用的玩家名保持原样。
+
+例如 Teok 显示为“特奥克”，Murkan 显示为“穆尔坎”；戈洛斯、施里姆、戈尔、卡尔和格拉布沿用宝库成就中的译名。名称译法可在 `deity-translations.tsv` 中调整。
+
+`Deity.GetName()` 和 `m_name` 仍返回英文，供解锁、成就和存档使用。插件只翻译选择页的 `DeityName` TextMesh，以及 `GUIText.SetText` 接收到的效果和背景介绍。三个路径按 MenuJoinPlayer1..4 绑定，不替换玩家账号名或玩家输入。
+
+介绍沿用原字号160、字符缩放0.8、行距0.45及35单位栏宽，增加中文换行。名称保留原 CrawlMedium 字体映射和0.8缩放，正文仍使用 CrawlTextBodyThin。原字体包无需重做。
+
+离线覆盖检查读取真实资源的160个显示案例，包括四份玩家面板和隐藏内容；可通过下方命令重复导出与验证。游戏内重点检查四位玩家切换选择、确认/返回、随机、不信奉试炼，以及 F8 切换原文后的恢复。
+
 ## 重玩教程开关
 
 CrawlOnline 的 `Patch_SystemTutorial_GetShouldStartTutorial` 在 `Unlocks.Enabled` 时强制返回 false。原菜单用这个“当前是否允许启动教程”的结果显示开关，导致已保存的开关开启后仍显示关。
@@ -77,7 +89,7 @@ CrawlOnline 的 `Patch_SystemTutorial_GetShouldStartTutorial` 在 `Unlocks.Enabl
 
 ## 字体及排版
 
-`Fonts/crawl-fonts.bundle` 由 Unity 5.4.2f2 / Windows x86 构建，包含十个合并中文字体。内嵌 TTF 与根目录源文件逐字节相同，保留原游戏 Font 的 ascent、descent、line spacing；0.4.0 继续使用 0.2.2 修正后的字体包。
+`Fonts/crawl-fonts.bundle` 由 Unity 5.4.2f2 / Windows x86 构建，包含十个合并中文字体。内嵌 TTF 与根目录源文件逐字节相同，保留原游戏 Font 的 ascent、descent、line spacing；0.5.0 继续使用 0.2.2 修正后的字体包。
 
 `fonts.tsv` 五列：原字体名、类型、相对文件路径、资源/家族名、倍率。默认按完整资源路径 `LoadAsset<Font>`。支持 `bundle`、兼容入口 `ttf` 和 `system`；TTF 按家族创建不能保证实际文件来源，推荐 bundle。
 
@@ -113,6 +125,10 @@ python .\tools\export_vault_texts.py --game-path '你的 Crawl 目录' --output 
 pwsh -NoProfile -File .\tests\test.ps1 -VaultCases artifacts/vault-cases.json
 # 使用 Unity 5.4 实际 TextMesh 测量中文长段落，不启动 Crawl：
 pwsh -NoProfile -File .\tests\check-vault-layout.ps1
+# 导出邪神选择与试炼（包括四份玩家面板及彩蛋），验证译文和实际布局：
+python .\tools\export_deity_texts.py --game-path '你的 Crawl 目录' --output artifacts/deity-catalog.json --cases-output artifacts/deity-cases.json
+pwsh -NoProfile -File .\tests\test.ps1 -DeityCases artifacts/deity-cases.json
+pwsh -NoProfile -File .\tests\check-deity-layout.ps1 -GamePath '你的 Crawl 目录'
 # 导出主菜单、选项、暂停菜单所用资源的 TextMesh 线索；不启动游戏：
 python .\tools\export_menu_texts.py --game-path '你的 Crawl 目录' --output artifacts/menu-textmeshes.json
 ```

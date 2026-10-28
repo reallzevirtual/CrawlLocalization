@@ -1,4 +1,4 @@
-param([string]$VaultCases)
+param([string]$VaultCases, [string]$DeityCases)
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path $PSScriptRoot -Parent
 if (!('CrawlLocalization.Tests' -as [type])) {
@@ -16,5 +16,10 @@ if (!('CrawlLocalization.Tests' -as [type])) {
 
 if ($VaultCases) {
     [string[]]$sources = @(Get-Content -Raw -LiteralPath $VaultCases -Encoding utf8 | ConvertFrom-Json)
+    [CrawlLocalization.Tests]::CheckCatalog($projectRoot, $sources)
+}
+
+if ($DeityCases) {
+    [string[]]$sources = @(Get-Content -Raw -LiteralPath $DeityCases -Encoding utf8 | ConvertFrom-Json)
     [CrawlLocalization.Tests]::CheckCatalog($projectRoot, $sources)
 }
