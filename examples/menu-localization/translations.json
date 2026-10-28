@@ -1,0 +1,24 @@
+{
+  "ru": {
+    "Name": "Русский",
+    "Translations": {
+      "START GAME": "НАЧАТЬ ИГРУ",
+      "THE VAULT": "ХРАНИЛИЩЕ",
+      "OPTIONS": "НАСТРОЙКИ",
+      "CREDITS": "АВТОРЫ",
+      "QUIT": "ВЫХОД",
+      "BACK": "НАЗАД"
+    }
+  },
+  "es": {
+    "Name": "Español",
+    "Translations": {
+      "START GAME": "JUGAR",
+      "THE VAULT": "LA BÓVEDA",
+      "OPTIONS": "OPCIONES",
+      "CREDITS": "CRÉDITOS",
+      "QUIT": "SALIR",
+      "BACK": "VOLVER"
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "CrawlLarge": {
+    "weight": "Bold",
+    "added": 475,
+    "original_sha256": "b823132c85ece78eadcce63848f7b93bdfcbf9c0b23511a4f412e423aa2edf19",
+    "scale_x": 1.0644490644490645,
+    "scale_y_caps": 0.9861325115562404,
+    "scale_y_lower": 1.0711297071129706,
+    "sha256": "60c5fdcb10585132b8e2e4032d2b12efc4abf05cd63e78e6211ff1a5d85f10b1"
+  },
+  "CrawlInvLarge": {
+    "weight": "Bold",
+    "added": 488,
+    "original_sha256": "9f07ec83f623b317f65bebbf11092082604444f2dc21941fcf9851c10daf0584",
+    "scale_x": 1.0644490644490645,
+    "scale_y_caps": 0.9861325115562404,
+    "scale_y_lower": 1.0711297071129706,
+    "sha256": "1910fe2aa2f6a58a92ab3d06cf41a27c214c04cb6812e951816838e1a2157edf"
+  },
+  "CrawlMedium": {
+    "weight": "Bold",
+    "added": 485,
+    "original_sha256": "2b7e923360a9e8ece8e454d75b54f9273dd78eec269eacd14d7077315b50624c",
+    "scale_x": 0.7983367983367984,
+    "scale_y_caps": 0.6902927580893683,
+    "scale_y_lower": 0.803347280334728,
+    "sha256": "19290d262f0b74037a8b489342c22697f8b69bd71b7ae9b51cd639d4f360d52e"
+  },
+  "CrawlSmall": {
+    "weight": "Bold",
+    "added": 485,
+    "original_sha256": "e51186ca5a9a80b554a50b89145df467b8d3f018dc92227218d0c8fd18b10644",
+    "scale_x": 0.6652806652806653,
+    "scale_y_caps": 0.5916795069337443,
+    "scale_y_lower": 0.803347280334728,
+    "sha256": "f6c34714081d9843fd49d4e40ace2f5e565398dfb379024252e51521650481c4"
+  },
+  "CrawlTiny": {
+    "weight": "Bold",
+    "added": 487,
+    "original_sha256": "60e16967550992a8075eb6b0531273d375591a70b1ef3f633bb74bd360a781fa",
+    "scale_x": 0.5322245322245323,
+    "scale_y_caps": 0.4930662557781202,
+    "scale_y_lower": 0.6694560669456067,
+    "sha256": "58ca1dcdcdc7aaf81354553aba481eb8d4f7d9f82dda9b689bbe3d7a96bf7f75"
+  },
+  "CrawlTextBodyTeensy": {
+    "weight": "SemiBold",
+    "added": 479,
+    "original_sha256": "90bb717b65bf105bf9d95feab6ad3df62d257055a40db603884662547ea070bb",
+    "scale_x": 0.40421052631578946,
+    "scale_y_caps": 0.3956723338485317,
+    "scale_y_lower": 0.4067796610169492,
+    "sha256": "a0f2fc7539b7b824b668e16348cd871e0e1e077732625866d88be06ad87f9f69"
+  },
+  "CrawlTextBodyThin": {
+    "weight": "Medium",
+    "added": 479,
+    "original_sha256": "0e0d2e327170fc93aba3e3534c9791f2da30baba1e506dbc91ccc7706d78ec31",
+    "scale_x": 0.40764331210191085,
+    "scale_y_caps": 0.49612403100775193,
+    "scale_y_lower": 0.5470085470085471,
+    "sha256": "f2e98a4f841e4edd85dbde488448d12ef53f2598b73b5b1b1af4a94dbdf327b0"
+  },
+  "CrawlTextBodyWide": {
+    "weight": "Medium",
+    "added": 478,
+    "original_sha256": "506eff22fdc6399cbbcf8b2f18b8bf5fadddb8dc3a49f5c2a4ed070bf426ceb6",
+    "scale_x": 0.5435244161358811,
+    "scale_y_caps": 0.49612403100775193,
+    "scale_y_lower": 0.5470085470085471,
+    "sha256": "78002df2f268970c3fc1a7e51d1b431d1332c36796f4e063d15ef43128ae208b"
+  },
+  "04B_04-Black": {
+    "weight": "Medium",
+    "added": 481,
+    "original_sha256": "81126eb33bfeef91afd0b099cc75e6b25257e5eecf1f97f5b5335ff5c2fbf5e1",
+    "scale_x": 1.0615711252653928,
+    "scale_y_caps": 0.9689922480620154,
+    "scale_y_lower": 1.0683760683760684,
+    "sha256": "33d08b10535c2f6c2412c83fc03b6d20b81df988cb778699bc0cb7d718c4acc2"
+  },
+  "04B_03-White": {
+    "weight": "Medium",
+    "added": 481,
+    "original_sha256": "81126eb33bfeef91afd0b099cc75e6b25257e5eecf1f97f5b5335ff5c2fbf5e1",
+    "scale_x": 1.0615711252653928,
+    "scale_y_caps": 0.9689922480620154,
+    "scale_y_lower": 1.0683760683760684,
+    "sha256": "1c22b88ab454f4163ce2cd3cfef1a0d36375a3a0141da790f8c0815e1919857b"
+  }
+}

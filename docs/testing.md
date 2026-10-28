@@ -49,3 +49,10 @@ python .\tools\export_menu_texts.py --game-path '你的 Crawl 目录' --output a
 ```
 
 离线检查覆盖三列/两列译文、换行兼容、数字模板、教程保存状态与模式限制、对象路径范围、字体映射和回退；字体检查确认新增译文的字形及原游戏布局。它们不能代替游戏内视觉与交互验证。
+
+
+## 通用字体与最小语言包
+
+`pwsh -NoProfile -File build-multilingual-fonts.ps1` 重建通用字体并在独立 Unity 5.4.2 进程验证实际 glyph；`python tests/check_multilingual_fonts.py` 检查已生成 bundle 的原始字形、字宽、原游戏标量排版参数和俄西字符覆盖。
+
+先运行 `build.ps1`，再运行 `pwsh -NoProfile -File tools/build-menu-examples.ps1`。示例生成器直接解压 Translator ZIP，使用包内脚本创建 ru/es；在 docs/my/backups 保存不可覆盖的翻译前基线，填入六个菜单译文并比对。最终用发行 DLL 本身测试查表、待译项回退和非中文规则，输出两份带字体和说明的 MenuDemo ZIP。测试不启动游戏。

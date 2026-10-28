@@ -1,0 +1,22 @@
+Crawl multilingual font extension
+
+Original fonts extracted from Crawl (Unity 5.4.2f2):
+CrawlLarge, CrawlTextBodyWide, CrawlTextBodyThin, CrawlSmall,
+CrawlTextBodyTeensy, CrawlMedium, CrawlInvLarge, CrawlTiny: Powerhoof.
+04B_04-Black and 04B_03-White: 1999-2003 / yuji oshimoto /
+04@dsg4.com / www.04.jp.org.
+Original glyphs, advances and layout metrics retained. Original notices are
+retained in the font metadata; no ownership of original Crawl fonts is claimed.
+
+Additional glyphs adapted from Pixelify Sans:
+Copyright 2021 The Pixelify Sans Project Authors
+https://github.com/eifetx/Pixelify-Sans
+SIL Open Font License 1.1; included as crawl-multilingual.OFL.txt.
+Weights and outlines adjusted per Crawl font, including accents and inverse
+style. Missing Cyrillic O/Pe/I mappings supplied using existing O/Pi/I glyphs.
+Modified internal font family names: Crawl Multi <original font name>.
+
+This bundle targets Windows / Unity 5.4.2f2. Russian alphabet and Spanish
+accented letters are checked. Other scripts are limited to donor coverage;
+this is not an all-Unicode font. Existing game-specific symbol slots are kept.
+Distribute this notice and the OFL file with the bundle.

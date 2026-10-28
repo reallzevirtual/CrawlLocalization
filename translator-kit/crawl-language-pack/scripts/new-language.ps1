@@ -36,7 +36,7 @@ foreach ($table in $tables) {
     $files[$table.Name]=($lines -join "`n")+"`n"
 }
 $files['language.ini']="Name=$DisplayName`nFallbackFonts=$FallbackFonts`n"
-$files['fonts.tsv']="# Empty mappings: try each original game font, then language.ini fallback fonts.`n# original<TAB>kind<TAB>file<TAB>family-or-asset<TAB>scale`n"
+$files['fonts.tsv']=[IO.File]::ReadAllText((Join-Path $source 'fonts.tsv'),$utf8)
 $files['textmesh-paths.txt']=[IO.File]::ReadAllText((Join-Path $source 'textmesh-paths.txt'),$utf8)
 $languageRoot=Join-Path $PluginRoot 'Languages'
 New-Item -ItemType Directory -Path $languageRoot -Force | Out-Null

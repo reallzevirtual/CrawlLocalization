@@ -1,0 +1,192 @@
+{
+  "CrawlLarge": {
+    "asset": "sharedassets0.assets",
+    "path_id": 1076,
+    "fields": {
+      "m_Name": "CrawlLarge",
+      "m_AsciiStartOffset": 0,
+      "m_Tracking": 1.0,
+      "m_LineSpacing": 16.4375,
+      "m_CharacterSpacing": 0,
+      "m_CharacterPadding": 1,
+      "m_ConvertCase": -2,
+      "m_PixelScale": 0.10000000149011612,
+      "m_FontSize": 16.0,
+      "m_Ascent": 11.0,
+      "m_Descent": -4.0,
+      "m_DefaultStyle": 0,
+      "m_FontRenderingMode": 0
+    }
+  },
+  "04B_04-Black": {
+    "asset": "sharedassets0.assets",
+    "path_id": 1077,
+    "fields": {
+      "m_Name": "04B_04-Black",
+      "m_AsciiStartOffset": 0,
+      "m_Tracking": 1.0,
+      "m_LineSpacing": 200.0,
+      "m_CharacterSpacing": 0,
+      "m_CharacterPadding": 1,
+      "m_ConvertCase": -2,
+      "m_PixelScale": 0.10000000149011612,
+      "m_FontSize": 200.0,
+      "m_Ascent": 150.0,
+      "m_Descent": -50.0,
+      "m_DefaultStyle": 0,
+      "m_FontRenderingMode": 2
+    }
+  },
+  "CrawlTextBodyWide": {
+    "asset": "sharedassets0.assets",
+    "path_id": 1078,
+    "fields": {
+      "m_Name": "CrawlTextBodyWide",
+      "m_AsciiStartOffset": 0,
+      "m_Tracking": 1.0,
+      "m_LineSpacing": 14.09375,
+      "m_CharacterSpacing": 0,
+      "m_CharacterPadding": 1,
+      "m_ConvertCase": -2,
+      "m_PixelScale": 0.10000000149011612,
+      "m_FontSize": 16.0,
+      "m_Ascent": 10.65625,
+      "m_Descent": -2.0,
+      "m_DefaultStyle": 0,
+      "m_FontRenderingMode": 0
+    }
+  },
+  "04B_03-White": {
+    "asset": "sharedassets0.assets",
+    "path_id": 1079,
+    "fields": {
+      "m_Name": "04B_03-White",
+      "m_AsciiStartOffset": 0,
+      "m_Tracking": 1.0,
+      "m_LineSpacing": 150.0,
+      "m_CharacterSpacing": 0,
+      "m_CharacterPadding": 1,
+      "m_ConvertCase": -2,
+      "m_PixelScale": 0.10000000149011612,
+      "m_FontSize": 150.0,
+      "m_Ascent": 112.5,
+      "m_Descent": -37.5,
+      "m_DefaultStyle": 0,
+      "m_FontRenderingMode": 0
+    }
+  },
+  "CrawlTextBodyTeensy": {
+    "asset": "sharedassets0.assets",
+    "path_id": 1080,
+    "fields": {
+      "m_Name": "CrawlTextBodyTeensy",
+      "m_AsciiStartOffset": 0,
+      "m_Tracking": 1.0,
+      "m_LineSpacing": 14.09375,
+      "m_CharacterSpacing": 0,
+      "m_CharacterPadding": 1,
+      "m_ConvertCase": -2,
+      "m_PixelScale": 0.10000000149011612,
+      "m_FontSize": 16.0,
+      "m_Ascent": 10.65625,
+      "m_Descent": -2.0,
+      "m_DefaultStyle": 0,
+      "m_FontRenderingMode": 0
+    }
+  },
+  "CrawlTextBodyThin": {
+    "asset": "sharedassets0.assets",
+    "path_id": 1081,
+    "fields": {
+      "m_Name": "CrawlTextBodyThin",
+      "m_AsciiStartOffset": 0,
+      "m_Tracking": 1.0,
+      "m_LineSpacing": 14.09375,
+      "m_CharacterSpacing": 0,
+      "m_CharacterPadding": 1,
+      "m_ConvertCase": -2,
+      "m_PixelScale": 0.10000000149011612,
+      "m_FontSize": 16.0,
+      "m_Ascent": 10.65625,
+      "m_Descent": -2.0,
+      "m_DefaultStyle": 0,
+      "m_FontRenderingMode": 0
+    }
+  },
+  "CrawlMedium": {
+    "asset": "sharedassets0.assets",
+    "path_id": 1082,
+    "fields": {
+      "m_Name": "CrawlMedium",
+      "m_AsciiStartOffset": 0,
+      "m_Tracking": 1.0,
+      "m_LineSpacing": 15.09375,
+      "m_CharacterSpacing": 0,
+      "m_CharacterPadding": 1,
+      "m_ConvertCase": -2,
+      "m_PixelScale": 0.10000000149011612,
+      "m_FontSize": 16.0,
+      "m_Ascent": 10.65625,
+      "m_Descent": -3.0,
+      "m_DefaultStyle": 0,
+      "m_FontRenderingMode": 0
+    }
+  },
+  "CrawlInvLarge": {
+    "asset": "sharedassets0.assets",
+    "path_id": 1083,
+    "fields": {
+      "m_Name": "CrawlInvLarge",
+      "m_AsciiStartOffset": 0,
+      "m_Tracking": 1.0,
+      "m_LineSpacing": 16.4375,
+      "m_CharacterSpacing": 0,
+      "m_CharacterPadding": 1,
+      "m_ConvertCase": -2,
+      "m_PixelScale": 0.10000000149011612,
+      "m_FontSize": 16.0,
+      "m_Ascent": 11.0,
+      "m_Descent": -4.0,
+      "m_DefaultStyle": 0,
+      "m_FontRenderingMode": 0
+    }
+  },
+  "CrawlSmall": {
+    "asset": "sharedassets0.assets",
+    "path_id": 1085,
+    "fields": {
+      "m_Name": "CrawlSmall",
+      "m_AsciiStartOffset": 0,
+      "m_Tracking": 1.0,
+      "m_LineSpacing": 14.09375,
+      "m_CharacterSpacing": 0,
+      "m_CharacterPadding": 1,
+      "m_ConvertCase": -2,
+      "m_PixelScale": 0.10000000149011612,
+      "m_FontSize": 16.0,
+      "m_Ascent": 10.65625,
+      "m_Descent": -2.0,
+      "m_DefaultStyle": 0,
+      "m_FontRenderingMode": 0
+    }
+  },
+  "CrawlTiny": {
+    "asset": "sharedassets2.assets",
+    "path_id": 18,
+    "fields": {
+      "m_Name": "CrawlTiny",
+      "m_AsciiStartOffset": 0,
+      "m_Tracking": 1.0,
+      "m_LineSpacing": 13.09375,
+      "m_CharacterSpacing": 0,
+      "m_CharacterPadding": 1,
+      "m_ConvertCase": -2,
+      "m_PixelScale": 0.10000000149011612,
+      "m_FontSize": 16.0,
+      "m_Ascent": 10.65625,
+      "m_Descent": -1.0,
+      "m_DefaultStyle": 0,
+      "m_FontRenderingMode": 2
+    }
+  }
+}

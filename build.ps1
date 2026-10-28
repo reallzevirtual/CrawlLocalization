@@ -121,6 +121,13 @@ foreach ($relative in $fontFiles.Keys) {
     $fontDestination = Join-Path $output $relative
     New-Item -ItemType Directory -Force -Path (Split-Path $fontDestination -Parent) | Out-Null
     Copy-Item -LiteralPath $fontFiles[$relative] -Destination $fontDestination -Force
+    # Carry notices with font binaries into custom player packages too.
+    foreach ($suffix in @('.OFL.txt', '.NOTICE.txt')) {
+        $notice = [IO.Path]::ChangeExtension($fontFiles[$relative], $suffix)
+        if (Test-Path -LiteralPath $notice) {
+            Copy-Item -LiteralPath $notice -Destination ([IO.Path]::ChangeExtension($fontDestination, $suffix)) -Force
+        }
+    }
 }
 Copy-Item -LiteralPath (Join-Path $projectRoot 'packaging\README.md') -Destination (Join-Path $output 'README.md') -Force
 $archive = Join-Path (Join-Path $projectRoot 'artifacts') ($packageName + '.zip')
@@ -132,6 +139,17 @@ $skillFolder = Join-Path $projectRoot 'translator-kit\crawl-language-pack'
 $translatorReadme = Join-Path $projectRoot 'packaging\translator\README.md'
 $translatorFiles = @((Join-Path $output 'CrawlLocalization.dll'), $translatorReadme, $skillFolder)
 Compress-Archive -Path $translatorFiles -DestinationPath $translatorArchive -Force
+# Use an explicit allowlist: no Chinese bundle or source TTFs in the kit.
+$translatorFonts = @('crawl-multilingual.bundle', 'crawl-multilingual.OFL.txt', 'crawl-multilingual.NOTICE.txt')
+$zip = [IO.Compression.ZipFile]::Open($translatorArchive, [IO.Compression.ZipArchiveMode]::Update)
+try {
+    foreach ($file in $translatorFonts) {
+        $font = Join-Path $projectRoot ('Fonts/' + $file)
+        if (!(Test-Path -LiteralPath $font)) { throw "Build multilingual fonts first; missing $font" }
+        $null = [IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zip, $font, 'Fonts/' + $file)
+    }
+} finally { $zip.Dispose() }
+
 Write-Output "Translator package: $translatorArchive"
 Write-Output "Built: $output"
 Write-Output "Packaged: $archive (extract into BepInEx/plugins/CrawlLocalization)"
