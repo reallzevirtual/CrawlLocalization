@@ -76,6 +76,15 @@ public static class ValidateTutorial
             Check(large>normal*1.3f && Mathf.Abs(metrics.Advance('英')-normal)<0.001f,"Size tags change advance then restore the base size");
             string quad="<quad material=0 size=80 x=0 y=0 width=1 height=1 />";
             Check(Mathf.Abs(metrics.TagWidth(quad)-4.8f)<0.01f,"Inline quad uses its physical size, not zero width or atlas UV width");
+            LanguagePack savedPack=p.Language;
+            GameObject menuRoot=new GameObject("LanguageScopeMenu");menuRoot.AddComponent<MenuPrompt>();TextMesh menuMesh=Mesh(menuRoot,bodyLayout,fonts);TutorialMessagePatch.Bind(menuMesh.GetComponent<global::GUIText>());
+            foreach(string id in new string[]{"es","ru","ja","ko","en","zh-Hans","zh-Hant"})
+            {
+                p.Language=new LanguagePack{Id=id};bool chinese=id.StartsWith("zh-");
+                object[] tutorialScope={"姓名中文",80f,body,null};Check((bool)Invoke(typeof(TutorialWrapPatch),"Prefix",tutorialScope)==!chinese,"Tutorial Chinese rules scoped to language: "+id);
+                object[] menuScope={"姓名中文",80f,menuMesh,null};Check((bool)Invoke(typeof(MenuChineseWrapPatch),"Prefix",menuScope)==!chinese,"Menu Chinese rules scoped to language: "+id);
+            }
+            p.Language=savedPack;UnityEngine.Object.DestroyImmediate(menuRoot);
             object[] fallback={"Original English",80f,body,null};Check((bool)Invoke(typeof(TutorialWrapPatch),"Prefix",fallback),"Non-Chinese wrapping remains original");
             GameObject outside=new GameObject("OutsideTutorial");TextMesh other=Mesh(outside,bodyLayout,fonts);TutorialMessagePatch.Bind(other.GetComponent<global::GUIText>());
             fallback=new object[]{"中文",80f,other,null};Check((bool)Invoke(typeof(TutorialWrapPatch),"Prefix",fallback),"Unrelated UI is outside the tutorial wrap scope");UnityEngine.Object.DestroyImmediate(outside);

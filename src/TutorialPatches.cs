@@ -39,7 +39,8 @@ namespace CrawlLocalization
         private static bool Prefix(string input, float width, TextMesh ___textMesh, ref string __result)
         {
             TextMesh mesh = ___textMesh;
-            if (mesh == null || mesh.font == null || !ChineseTextWrapper.ContainsChinese(input) ||
+            if (Plugin.Instance == null || !Plugin.Instance.Language.UsesChineseTextRules ||
+                mesh == null || mesh.font == null || !ChineseTextWrapper.ContainsChinese(input) ||
                 mesh.GetComponent<LocalizedMenuLabel>() == null ||
                 mesh.GetComponentInParent<GuiTutorialMessageBox>() == null) return true;
             TutorialTextMetrics metrics = new TutorialTextMetrics(mesh);

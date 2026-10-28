@@ -1,5 +1,12 @@
 # 更新记录
 
+## 0.13.0
+
+- Restrict Chinese wrapping and small-font sampling to the selected Chinese language pack; other languages never trigger them merely by containing Han characters.
+- Keep language packs independent: missing translations/fonts use original game/mod text, never another language. Honor zh-Hant independently and remove the old Simplified Chinese fallback.
+- Support @TODO translation cells with original-text fallback; preserve intentional empty shop fragments.
+- Add a standalone language-authoring skill, creation/validation scripts and a separate translator ZIP. Player ZIPs remain runtime-only; source builds can select language folders.
+
 ## 0.12.0
 
 - Trim player packages to the plugin DLL, required language data and referenced fonts; exclude developer documentation and prevent stale staging files from entering ZIPs.

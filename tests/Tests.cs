@@ -67,7 +67,6 @@ namespace CrawlLocalization
             checks = 0;
             List<string> warnings = new List<string>();
             LanguagePack simplified = LanguagePack.Load(root, "zh-CN", warnings.Add);
-            LanguagePack migrated = LanguagePack.Load(root, "zh-TW", warnings.Add);
             Check(warnings.Count == 0, "Shipped packs load without warnings: " + string.Join("; ", warnings.ToArray()));
             foreach (string table in Directory.GetFiles(Path.Combine(root, "Languages/zh-Hans"), "*translations.tsv"))
             foreach (string row in LanguagePack.ReadTextLines(table))
@@ -99,9 +98,8 @@ namespace CrawlLocalization
                 Check(!MenuTextPolicy.MatchesPath(simplified.TextMeshPaths, parent + "PlayerName"), "Player name is not a deity translation target");
             }
 
-            Check(simplified.Id == "zh-Hans" && migrated.Id == "zh-Hans", "Language aliases");
+            Check(simplified.Id == "zh-Hans" && LanguagePack.NormalizeId("zh-TW") == "zh-Hant", "Aliases select independent language packs");
             Translation(simplified, "START GAME", "开始游戏");
-            Translation(migrated, "START GAME", "开始游戏");
             Translation(simplified, "Back", "返回");
             Translation(simplified, "< SOUND: 75 >", "< 音效：75 >");
             Translation(simplified, "< 背景音乐: 45 >", "< 音乐：45 >");
@@ -163,6 +161,10 @@ namespace CrawlLocalization
                 Check(warnings[0].Contains("translations.tsv:3"), "Diagnostics include file and line number");
             }
             finally { if (Directory.Exists(temp)) Directory.Delete(temp, true); }
+            CheckLanguageAuthoring();
+            List<string> missingWarnings = new List<string>();
+            LanguagePack absent = LanguagePack.Load(root, "es-missing", missingWarnings.Add);
+            Check(absent.Count == 0 && !absent.TryTranslate("START GAME", out value), "Missing locale never reads installed Chinese translations");
             CheckFontFallbacks();
             CheckBundleFallbacks();
             Console.WriteLine("PASS: " + checks + " offline language/configuration/font-selection checks.");
@@ -199,6 +201,31 @@ namespace CrawlLocalization
             UnityEngine.Font.Installed.Clear();
         }
 
+        private static void CheckLanguageAuthoring()
+        {
+            string temp = Path.Combine(Path.GetTempPath(), "Crawl-language-authoring-" + Guid.NewGuid().ToString("N"));
+            try
+            {
+                foreach (string locale in new string[] { "es", "ru", "zh-Hant" })
+                {
+                    string dir = Path.Combine(Path.Combine(temp, "Languages"), locale); Directory.CreateDirectory(dir);
+                    File.WriteAllText(Path.Combine(dir, "translations.tsv"), "START GAME\t" + (locale == "es" ? "INICIAR PARTIDA" : locale == "ru" ? "НАЧАТЬ ИГРУ" : "開始遊戲") + "\tMenu\nPending\t@TODO\tNot translated yet\n", Encoding.UTF8);
+                    File.WriteAllText(Path.Combine(dir, "shop-il-translations.tsv"), "@shop.il:Has \t@TODO\tPending fragment\n@shop.il:.\t\tIntentional omission\n", Encoding.UTF8);
+                    File.WriteAllText(Path.Combine(dir, "fonts.tsv"), "# Use original font\n", Encoding.UTF8);
+                    File.WriteAllText(Path.Combine(dir, "language.ini"), "Name=Test\nFallbackFonts=Arial;Segoe UI\n", Encoding.UTF8);
+                    File.WriteAllText(Path.Combine(dir, "textmesh-paths.txt"), "MenuOptionsKeyboard/TextInfo\n", Encoding.UTF8);
+                    List<string> warnings = new List<string>(); LanguagePack pack = LanguagePack.Load(temp, locale == "zh-Hant" ? "zh-TW" : locale, warnings.Add); string value;
+                    Check(warnings.Count == 0 && pack.Id == locale, "Custom locale loads without warnings: " + locale);
+                    Check(pack.TryTranslate("START GAME", out value) && value != "START GAME", "Custom locale translation used");
+                    Check(!pack.TryTranslate("Pending", out value) && !pack.TryTranslate("@shop.il:Has ", out value), "TODO falls back, including fragments");
+                    Check(pack.TryTranslate("@shop.il:.", out value) && value == "", "Deliberate empty shop fragment is preserved");
+                    Check(pack.UsesChineseTextRules == (locale == "zh-Hant"), "Chinese behavior is gated by selected locale");
+                    Check(pack.TextMeshPaths.Count == 1 && pack.FallbackFonts.Length == 2, "Custom pack binding/font data loaded");
+                }
+            }
+            finally { if (Directory.Exists(temp)) Directory.Delete(temp, true); }
+        }
+
         private static void CheckBundleFallbacks()
         {
             string path = Path.GetTempFileName();
@@ -209,7 +236,7 @@ namespace CrawlLocalization
             bundle.Assets.Add("assets/fonts/crawllarge.ttf", large);
             UnityEngine.AssetBundle.Files.Add(path, bundle);
             UnityEngine.AssetBundle.LoadCount = 0;
-            LanguagePack pack = new LanguagePack { Id = "bundle-test" };
+            LanguagePack pack = new LanguagePack { Id = "zh-Hans" };
             FontRule rule = new FontRule { Kind = "bundle", File = path, Name = "assets/fonts/crawlsmall.ttf", Scale = 1f };
             pack.Fonts.Add("CrawlSmall", rule);
             UnityEngine.Font original = new UnityEngine.Font("CrawlSmall", "中文A");
@@ -223,6 +250,12 @@ namespace CrawlLocalization
                     Check(service.TryChoose(pack, original, 16, UnityEngine.FontStyle.Normal, "中文", out choice) && choice.Font == small && choice.Size == 160 && Math.Abs(choice.Scale - 0.1f) < 0.0001f, "Small CJK labels use detailed glyphs with reciprocal scale");
                     Check(Math.Abs(choice.Size * choice.Scale - 16f) < 0.0001f, "Sampling change preserves nominal text geometry");
                     Check(service.TryChoose(pack, original, 16, UnityEngine.FontStyle.Normal, "A", out choice) && choice.Size == 16 && choice.Scale == 1f, "Small Latin text keeps the original pixel raster");
+                    foreach (string locale in new string[] { "es", "ru", "ja", "ko", "en" })
+                    {
+                        pack.Id = locale;
+                        Check(service.TryChoose(pack, original, 16, UnityEngine.FontStyle.Normal, "中文A", out choice) && choice.Size == 16 && choice.Scale == 1f, "Non-Chinese locale does not use Chinese sampling: " + locale);
+                    }
+                    pack.Id = "zh-Hans";
                     rule.Name = "assets/fonts/crawllarge.ttf";
                     Check(service.TryChoose(pack, original, 160, UnityEngine.FontStyle.Normal, "中文", out choice) && choice.Font == large, "Second font resolved from the same bundle");
                     Check(UnityEngine.AssetBundle.LoadCount == 1, "One bundle load shared across its font assets");

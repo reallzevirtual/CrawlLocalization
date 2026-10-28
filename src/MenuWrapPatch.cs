@@ -8,7 +8,8 @@ namespace CrawlLocalization
     {
         private static bool Prefix(string input, float width, TextMesh ___textMesh, ref string __result)
         {
-            if (___textMesh == null || !ChineseTextWrapper.ContainsChinese(input) ||
+            if (Plugin.Instance == null || !Plugin.Instance.Language.UsesChineseTextRules ||
+                ___textMesh == null || !ChineseTextWrapper.ContainsChinese(input) ||
                 ___textMesh.GetComponent<LocalizedMenuLabel>() == null ||
                 (___textMesh.GetComponentInParent<MenuLibrary>() == null &&
                  ___textMesh.GetComponentInParent<MenuDeitySelectPlayer>() == null &&

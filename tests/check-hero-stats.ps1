@@ -2,6 +2,8 @@ param([string]$GamePath = 'D:\SteamLibrary\steamapps\common\Crawl', [string]$Uni
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path $PSScriptRoot -Parent
 $project = Join-Path $projectRoot 'FontBundleProject'
+# Restore ignored font inputs before Unity imports tracked font metadata.
+Copy-Item -Path (Join-Path $projectRoot 'Fonts\*.ttf') -Destination (Join-Path $project 'Assets\Fonts') -Force
 $output = Join-Path $projectRoot 'artifacts\hero-stats'
 $generated = Join-Path $project 'Assets\Editor\ValidationGenerated'
 New-Item -ItemType Directory -Force -Path $output,$generated | Out-Null

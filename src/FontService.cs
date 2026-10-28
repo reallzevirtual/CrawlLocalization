@@ -40,7 +40,7 @@ namespace CrawlLocalization
             if (language.Fonts.TryGetValue(original == null ? "" : original.name, out rule) || language.Fonts.TryGetValue("*", out rule))
             {
                 Font candidate = Load(rule);
-                int requestedSize = rule.Kind == "system" ? 32 : SamplingSize(size, text);
+                int requestedSize = rule.Kind == "system" ? 32 : SamplingSize(language, size, text);
                 if (Covers(candidate, text, requestedSize, style))
                 {
                     choice = new FontChoice { Font = candidate, Size = requestedSize, Style = style,
@@ -49,7 +49,7 @@ namespace CrawlLocalization
                 }
                 warn("Mapped font unavailable or missing glyphs: " + rule.Name + "; trying original/system fonts.");
             }
-            int originalRenderSize = SamplingSize(size, text);
+            int originalRenderSize = SamplingSize(language, size, text);
             if (Covers(original, text, originalRenderSize, style))
             {
                 choice = new FontChoice { Font = original, Size = originalRenderSize, Style = style, Scale = (float)size / originalRenderSize };
@@ -88,9 +88,9 @@ namespace CrawlLocalization
         // Crawl's small labels use fontSize=16 and characterSize=10. A merged
         // CJK glyph is only about 5 pixels tall at 16, so enlarging that atlas
         // loses its strokes. Increase raster resolution, not world-space size.
-        internal static int SamplingSize(int size, string text)
+        internal static int SamplingSize(LanguagePack language, int size, string text)
         {
-            if (size <= 0 || size >= 64 || text == null) return size;
+            if (!language.UsesChineseTextRules || size <= 0 || size >= 64 || text == null) return size;
             foreach (char ch in text)
                 if (ch >= '\u3400' && ch <= '\u9fff') return size * ((160 + size - 1) / size);
             return size;

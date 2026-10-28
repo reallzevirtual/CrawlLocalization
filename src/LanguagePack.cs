@@ -17,6 +17,10 @@ namespace CrawlLocalization
     internal sealed class LanguagePack
     {
         internal string Id;
+        internal bool UsesChineseTextRules
+        {
+            get { return Id != null && (string.Equals(Id, "zh", StringComparison.OrdinalIgnoreCase) || Id.StartsWith("zh-", StringComparison.OrdinalIgnoreCase) || Id.StartsWith("zh_", StringComparison.OrdinalIgnoreCase)); }
+        }
         internal string[] FallbackFonts = new string[0];
         internal readonly Dictionary<string, FontRule> Fonts = new Dictionary<string, FontRule>(StringComparer.Ordinal);
         private readonly Dictionary<string, string> exact = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
@@ -28,7 +32,7 @@ namespace CrawlLocalization
         {
             id = (id ?? "").Trim();
             if (string.Equals(id, "zh-CN", StringComparison.OrdinalIgnoreCase) || string.Equals(id, "zh-Hans", StringComparison.OrdinalIgnoreCase)) return "zh-Hans";
-            if (string.Equals(id, "zh-TW", StringComparison.OrdinalIgnoreCase) || string.Equals(id, "zh-Hant", StringComparison.OrdinalIgnoreCase)) return "zh-Hans"; // Migrate the retired Traditional Chinese setting.
+            if (string.Equals(id, "zh-TW", StringComparison.OrdinalIgnoreCase) || string.Equals(id, "zh-Hant", StringComparison.OrdinalIgnoreCase)) return "zh-Hant";
             if (string.Equals(id, "en", StringComparison.OrdinalIgnoreCase)) return "en";
             return Regex.IsMatch(id, @"\A[A-Za-z0-9][A-Za-z0-9_-]*\z") ? id : "en";
         }
@@ -55,6 +59,9 @@ namespace CrawlLocalization
                 {
                     string[] cells = line.Split('\t');
                     if ((cells.Length != 2 && cells.Length != 3) || cells[0].Length == 0 || (cells[1].Length == 0 && !cells[0].StartsWith("@shop.il:", StringComparison.Ordinal))) throw new FormatException("Expected source<TAB>translation[<TAB>comment].");
+                    // A translator can leave a row pending without exposing Chinese or
+                    // internal lookup keys. Blank @shop.il values still mean intentional omission.
+                    if (cells[1] == "@TODO") return;
                     string source = NormalizeText(Unescape(cells[0])), target = Unescape(cells[1]);
                     NumericTranslation template = NumericTranslation.Create(source, target);
                     if (source.StartsWith("@shop.", StringComparison.Ordinal) || source.StartsWith("@progression.", StringComparison.Ordinal) || source.StartsWith("@online:", StringComparison.Ordinal)) template = null;

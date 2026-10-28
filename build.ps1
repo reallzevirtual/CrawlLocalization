@@ -1,5 +1,6 @@
 param(
     [string]$GamePath = 'D:\SteamLibrary\steamapps\common\Crawl',
+    [string[]]$Languages = @('zh-Hans'),
     [switch]$Install,
     [switch]$SkipTests
 )
@@ -11,7 +12,7 @@ if (!$SkipTests) {
 }
 $managed = Join-Path $GamePath 'Crawl_Data\Managed'
 $core = Join-Path $GamePath 'BepInEx\core'
-$output = Join-Path $projectRoot 'artifacts\CrawlLocalization-0.12.0'
+$output = Join-Path $projectRoot 'artifacts\CrawlLocalization-0.13.0'
 # Rebuild the generated staging contents so old docs or extra files cannot leak
 # into a later ZIP. Keep the staging directory itself (Explorer may hold it open).
 $stagingRoot = [IO.Path]::GetFullPath($output).TrimEnd('\')
@@ -62,7 +63,8 @@ $languageFiles = @(
     'progression-translations.tsv', 'shop-il-translations.tsv',
     'crawlonline-translations.tsv', 'tutorial-translations.tsv'
 )
-foreach ($locale in @('zh-Hans')) {
+foreach ($locale in $Languages) {
+    if ($locale -notmatch '^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$' -or $locale -ieq 'en') { throw 'Use an actual language folder tag, not en.' }
     $target = Join-Path $output ('Languages\' + $locale)
     New-Item -ItemType Directory -Force -Path $target | Out-Null
     foreach ($file in $languageFiles) {
@@ -90,9 +92,14 @@ foreach ($relative in $fontFiles.Keys) {
     New-Item -ItemType Directory -Force -Path (Split-Path $fontDestination -Parent) | Out-Null
     Copy-Item -LiteralPath $fontFiles[$relative] -Destination $fontDestination -Force
 }
-$archive = Join-Path $projectRoot 'artifacts\CrawlLocalization-0.12.0.zip'
-$packageFiles = @('CrawlLocalization.dll', 'Languages', 'Fonts' | ForEach-Object { Join-Path $output $_ })
+$archive = Join-Path $projectRoot 'artifacts\CrawlLocalization-0.13.0.zip'
+$packageFiles = @('CrawlLocalization.dll', 'Languages', 'Fonts' | ForEach-Object { Join-Path $output $_ } | Where-Object { Test-Path -LiteralPath $_ })
 Compress-Archive -Path $packageFiles -DestinationPath $archive -Force
+# An optional authoring handoff is a separate ZIP; player packages stay minimal.
+$translatorArchive = Join-Path $projectRoot 'artifacts\CrawlLocalization-0.13.0-Translator.zip'
+$skillFolder = Join-Path $projectRoot 'translator-kit\crawl-language-pack'
+Compress-Archive -Path ($packageFiles + @($skillFolder)) -DestinationPath $translatorArchive -Force
+Write-Output "Translator package: $translatorArchive"
 Write-Output "Built: $output"
 Write-Output "Packaged: $archive (extract into BepInEx/plugins/CrawlLocalization)"
 if ($Install) {

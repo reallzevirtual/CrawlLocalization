@@ -1,6 +1,6 @@
 # Crawl Localization
 
-BepInEx 5 中文本地化插件，版本 **0.12.0**，适配 Windows Crawl / Unity 5.4.2。当前只维护简体中文；保留恢复游戏原文的选项。包含菜单按钮及经过核对的独立 TextMesh 标题、提示文字，共 1492 条译文/模板、140 个 TextMesh 路径，覆盖宝库分类说明、图鉴、成就、邪神选择、开局全屏提示、章节标题、商店、常驻玩家装备面板、本局交互提示、暂停弹窗、怪物升级、首领结算、序章教程流程，以及可选 CrawlOnline 0.4.0 的联机界面。
+BepInEx 5 中文本地化插件，版本 **0.13.0**，适配 Windows Crawl / Unity 5.4.2。项目当前只维护简体中文译文；支持独立安装其他语言包和恢复游戏原文。包含菜单按钮及经过核对的独立 TextMesh 标题、提示文字，共 1492 条译文/模板、140 个 TextMesh 路径，覆盖宝库分类说明、图鉴、成就、邪神选择、开局全屏提示、章节标题、商店、常驻玩家装备面板、本局交互提示、暂停弹窗、怪物升级、首领结算、序章教程流程，以及可选 CrawlOnline 0.4.0 的联机界面。
 
 ## 构建与安装
 
@@ -14,7 +14,7 @@ pwsh -NoProfile -File .\build.ps1 -GamePath '你的 Crawl 目录'
 pwsh -NoProfile -File .\build.ps1 -Install
 ```
 
-输出 `artifacts/CrawlLocalization-0.12.0.zip`。关闭游戏，将 ZIP 内容解压至 `BepInEx/plugins/CrawlLocalization/`，然后重新启动。更新时覆盖 DLL、Languages 和 Fonts。新版不再分发繁体包，旧 `Languages/zh-Hant` 目录可删除；保留也不会被旧配置继续选中。不自动启动游戏。
+输出 `artifacts/CrawlLocalization-0.13.0.zip`。关闭游戏，将 ZIP 内容解压至 `BepInEx/plugins/CrawlLocalization/`，然后重新启动。更新时覆盖 DLL、Languages 和 Fonts。新版不再分发繁体包，已有 `Languages/zh-Hant` 可作为独立繁体包使用。不自动启动游戏。
 
 普通构建会先运行离线检查，再编译 DLL，最后自动生成 ZIP；不会启动游戏。字体包已存在时无需启动 Unity，只有重新制作字体才运行 `build-fonts.ps1`。
 
@@ -32,7 +32,7 @@ Language = zh-Hans
 ReloadKey = F8
 ```
 
-`zh-Hans` 或 `zh-CN` 使用简体中文；旧 `zh-Hant`、`zh-TW` 设置自动按简体中文处理。`en` 恢复游戏提供的原文与原字体，不撤销此前手动改过的游戏资源或 DLL。
+`zh-Hans` 或 `zh-CN` 使用简体中文；`zh-Hant` 或 `zh-TW` 使用独立繁体包，未安装则保留英文。`es`、`ru` 等加载 `Languages/` 下的同名目录，各语言不互相补译。`en` 恢复游戏提供的原文与原字体，不撤销此前手动改过的游戏资源或 DLL。
 
 F8 重载配置、译文及路径清单，刷新已创建的文字。`ReloadKey = None` 关闭快捷键。修改同路径字体二进制或恢复缺失字体后必须重启，F8 不清空字体缓存。
 
@@ -176,7 +176,7 @@ CrawlOnline 的 `Patch_SystemTutorial_GetShouldStartTutorial` 在 `Unlocks.Enabl
 
 ## 字体及排版
 
-`Fonts/crawl-fonts.bundle` 由 Unity 5.4.2f2 / Windows x86 构建，包含十个合并中文字体。内嵌 TTF 与根目录源文件逐字节相同，保留原游戏 Font 的 ascent、descent、line spacing；0.12.0 继续使用 0.2.2 修正后的字体包。
+`Fonts/crawl-fonts.bundle` 由 Unity 5.4.2f2 / Windows x86 构建，包含十个合并中文字体。内嵌 TTF 与根目录源文件逐字节相同，保留原游戏 Font 的 ascent、descent、line spacing；0.13.0 继续使用 0.2.2 修正后的字体包。
 
 `fonts.tsv` 五列：原字体名、类型、相对文件路径、资源/家族名、倍率。默认按完整资源路径 `LoadAsset<Font>`。支持 `bundle`、兼容入口 `ttf` 和 `system`；TTF 按家族创建不能保证实际文件来源，推荐 bundle。
 
@@ -259,3 +259,22 @@ python .\tools\export_menu_texts.py --game-path '你的 Crawl 目录' --output a
 `[A]` / `[B]` 保留给游戏按当前输入设备生成图标。仅教程中文提示启用富文本换行，计入局部字号和内嵌图片占宽，保留高亮、原有插图留白和显式换行。F8 可刷新当前提示，英文或缺失词条回退原文。
 
 开头 `PROLOGUE`、后段规则动画及升级/怒气小字中的图片文字尚未替换，索引见 `docs/tutorial-image-text.md`。正文不会把图片当作漏译词条。
+
+## 创建其他语言（0.13.0）
+
+给译者使用 `artifacts/CrawlLocalization-0.13.0-Translator.zip`：它包含普通插件运行文件，以及 `crawl-language-pack/SKILL.md` 和两个 PowerShell 脚本。给普通玩家的 ZIP 仍只有运行必需文件。可以让另一个 AI 读取该 SKILL.md，按指定语言创建和维护译文。
+
+解压翻译制作包，在其目录运行（系统 PowerShell 或 pwsh 均可）：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\crawl-language-pack\scripts\new-language.ps1 -PluginRoot . -Language es -DisplayName "Español"
+powershell -NoProfile -ExecutionPolicy Bypass -File .\crawl-language-pack\scripts\check-language.ps1 -PluginRoot . -Language es
+```
+
+脚本生成 `Languages/es/`，只需把各译文表第二列的 `@TODO` 换成西班牙语，再在游戏的 `BepInEx/config/crawl.localization.cfg` 设置 `Language = es`，按 F8 或重新启动。无需修改 DLL 或安装 Unity。`@TODO`、缺译和字体失败均回退游戏／模组英文原文，不查中文或其他语言表；有意省略商店连接片段时仍可使用空的 `@shop.il:` 译文。
+
+新建包默认尝试原游戏字体和所选系统备用字体，未自动继承中文字体。需要时在 `fonts.tsv` 配置适合目标语言的字体。中文按字换行、中文标点规则和小字号采样增强只在当前中文语言包中触发；其他语言不触发这些规则。特殊文字系统的排版支持需要单独验证，不能仅凭有字体就承诺完全支持。
+
+也可手动复制语言目录，仅修改第二列与字体配置；未译项目设为 `@TODO`，不要把中文留作待译占位。首次生成的第三列包含中文参考，仅供译者阅读，不参与显示或回退。创建后，目标语言的运行不依赖中文语言包。新增语言由其维护者负责，项目没有附带完整西班牙语或俄语译文。
+
+维护者从源码选择发行语言可运行 `build.ps1 -Languages zh-Hans,es`（在 PowerShell 中），按指定目录打包；无需改构建脚本。默认仍只发布已有简体中文。完整规范见 [翻译技能](translator-kit/crawl-language-pack/SKILL.md)。
