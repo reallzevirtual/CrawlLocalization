@@ -78,3 +78,10 @@ MenuLibrary/ItemContents/TextDescriptionAchievement
 MenuJoin/MenuJoinPlayer*/MenuDeitySelectPlayer/DeityName
 MenuJoin/MenuJoinPlayer*/MenuDeitySelectPlayer/ContainerInfo/DeityText
 MenuJoin/MenuJoinPlayer*/MenuDeitySelectPlayer/ContainerReady/ReadyDeityText
+
+# Full-screen match introduction; discovered on scene load, including hidden slides.
+MenuIntroAnimatic/Slide1/SpriteBullet1/Text1
+MenuIntroAnimatic/Slide2/SpriteBullet1/Text1
+MenuIntroAnimatic/Slide2/SpriteBullet2/Text2
+MenuIntroAnimatic/Slide3/SpriteBullet1/Text1
+MenuIntroAnimatic/Slide4/SpriteBullet1/Text1

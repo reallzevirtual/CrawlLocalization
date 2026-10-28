@@ -205,3 +205,10 @@ Hold\ndown	按住\n下	按键重绑／动态指令；SystemInput.UpdateBinding
 Hold\nbutton A\n(attack\n/accept)	按住\nA 键\n（攻击／\n确认）	按键重绑／动态指令；SystemInput.UpdateBinding
 Hold\nbutton B\n(special\n/back)	按住\nB 键\n（特殊技／\n返回）	按键重绑／动态指令；SystemInput.UpdateBinding
 Hold\nbutton C\n(start\n/pause)	按住\nC 键\n（开始／\n暂停）	按键重绑／动态指令；SystemInput.UpdateBinding
+
+# Full-screen match introduction (level3, four slides).
+Flee your <color="#c8b9b0">dead companions</color>\nLest they steal your life	逃离<color="#c8b9b0">死去的同伴</color>\n以免他们夺走你的生命	开局全屏提示／level3:182 MenuIntroAnimatic/Slide1/SpriteBullet1/Text1
+<color="#b02829">Kill</color> beasts\n	<color="#b02829">消灭</color>野兽\n	开局全屏提示／level3:181 MenuIntroAnimatic/Slide2/SpriteBullet1/Text1
+Collect their <color="#56a3df">life force</color>\nto level up	收集它们的<color="#56a3df">生命精华</color>\n来提升等级	开局全屏提示／level3:185 MenuIntroAnimatic/Slide2/SpriteBullet2/Text2
+Reach <color="#23b2b8">level 10</color> to\nactivate the portal	升至<color="#23b2b8">10级</color>\n即可激活传送门	开局全屏提示／level3:183 MenuIntroAnimatic/Slide3/SpriteBullet1/Text1
+Defeat the boss\nto <color="#fb8408">ESCAPE</color> the pit	击败首领\n<color="#fb8408">逃离</color>这座深渊	开局全屏提示／level3:184 MenuIntroAnimatic/Slide4/SpriteBullet1/Text1

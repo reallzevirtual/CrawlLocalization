@@ -7,7 +7,7 @@ import UnityPy
 
 def collect(game):
     rows = []
-    for filename in ('sharedassets0.assets', 'sharedassets2.assets', 'level2'):
+    for filename in ('sharedassets0.assets', 'sharedassets2.assets', 'level2', 'level3'):
         env = UnityPy.load((game / 'Crawl_Data' / filename).read_bytes())
         objects = {o.path_id: o for o in env.objects}
         games = {i: o.read_typetree() for i, o in objects.items() if o.type.name == 'GameObject'}
