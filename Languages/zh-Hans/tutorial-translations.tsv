@@ -1,0 +1,62 @@
+# Source	简体中文	位置注释
+Follow <color=#e41944>QUESTION MARKS</color> to find your way	跟随<color=#e41944>问号</color>的指引前进	序章教程／英雄操作；Assembly-CSharp TutorialSequence.cs:323；GuiTutorialMessageBox.SetContent
+<color=#e41944>ATTACK</color> by pressing [A]	按 [A] <color=#e41944>攻击</color>	序章教程／英雄操作；Assembly-CSharp TutorialSequence.cs:414；GuiTutorialMessageBox.SetContent
+You can't ATTACK\nwhen your shadow is <color=#e41944>RED</color>	影子变<color=#e41944>红</color>时\n无法攻击	序章教程／英雄操作；Assembly-CSharp TutorialSequence.cs:432；GuiTutorialMessageBox.SetContent
+It means your ATTACK\nis on <color=#e41944>COOLDOWN</color>	这表示你的攻击\n正在<color=#e41944>冷却</color>	序章教程／英雄操作；Assembly-CSharp TutorialSequence.cs:433；GuiTutorialMessageBox.SetContent
+You can't ATTACK when your shadow is <color=#e41944>RED</color>	影子变<color=#e41944>红</color>时无法攻击	序章教程／英雄操作；Assembly-CSharp TutorialSequence.cs:436；GuiTutorialMessageBox.SetContent
+Doors stay LOCKED until all monsters are <color=#e41944>DEAD</color>	<color=#e41944>消灭</color>所有怪物，门才会打开	序章教程／英雄操作；Assembly-CSharp TutorialSequence.cs:443；GuiTutorialMessageBox.SetContent
+<color=#e41944>CRYSTALS</color> can also block doors	<color=#e41944>水晶</color>也会挡住门	序章教程／英雄操作；Assembly-CSharp TutorialSequence.cs:475；GuiTutorialMessageBox.SetContent
+Press [B] for\n<color=#e41944>SPECIAL MOVE</color>	按 [B] 施展\n<color=#e41944>特殊技</color>	序章教程／英雄操作；Assembly-CSharp TutorialSequence.cs:492；GuiTutorialMessageBox.SetContent
+The <color=#e41944>SWIRL</color> means\nSPECIAL MOVE has recharged	出现<color=#e41944>漩涡</color>时\n表示特殊技已就绪	序章教程／英雄操作；Assembly-CSharp TutorialSequence.cs:503；GuiTutorialMessageBox.SetContent
+<color=#e41944>SPECIAL MOVE</color> with [B]         Requires SWIRL	按 [B] 施展<color=#e41944>特殊技</color>         需要漩涡	序章教程／英雄操作；Assembly-CSharp TutorialSequence.cs:506；GuiTutorialMessageBox.SetContent
+With those skills learned...	掌握了这些本领...	序章教程／英雄操作；Assembly-CSharp TutorialSequence.cs:549；GuiTutorialMessageBox.SetContent
+...it's time...	...是时候...	序章教程／英雄操作；Assembly-CSharp TutorialSequence.cs:554；GuiTutorialMessageBox.SetContent
+...to <color=#e41944>CRAWL</color>	...踏入<color=#e41944>深渊</color>了	序章教程／英雄操作；Assembly-CSharp TutorialSequence.cs:560；GuiTutorialMessageBox.SetContent
+But even DEATH is no escape <color=#e41944>DOWN HERE</color>	但在<color=#e41944>这里</color>，死亡也无法让你解脱	序章教程／英雄操作；Assembly-CSharp TutorialSequence.cs:631；GuiTutorialMessageBox.SetContent
+Another hero disturbs your slumber!	又一名英雄惊扰了你的长眠！	序章教程／幽灵与怪物；Assembly-CSharp TutorialSequence.cs:678；GuiTutorialMessageBox.SetContent
+SPIRITS can not touch the <color=#e41944>LIVING</color>	幽灵无法触碰<color=#e41944>活人</color>	序章教程／幽灵与怪物；Assembly-CSharp TutorialSequence.cs:680；GuiTutorialMessageBox.SetContent
+But SPIRITS can\npossess <color=#e41944>TRAPS</color>	但幽灵可以\n附身<color=#e41944>陷阱</color>	序章教程／幽灵与怪物；Assembly-CSharp TutorialSequence.cs:705；GuiTutorialMessageBox.SetContent
+And <color=#e41944>SCENERY</color>	也能附身<color=#e41944>场景物件</color>	序章教程／幽灵与怪物；Assembly-CSharp TutorialSequence.cs:706；GuiTutorialMessageBox.SetContent
+Hover over the <color=#e41944>TRAP</color> and press [A]	飘到<color=#e41944>陷阱</color>上方，按 [A] 附身	序章教程／幽灵与怪物；Assembly-CSharp TutorialSequence.cs:710；GuiTutorialMessageBox.SetContent
+<color=#e41944>[A] to ATTACK</color>        [B] to EXIT	<color=#e41944>[A] 攻击</color>        [B] 离开	序章教程／幽灵与怪物；Assembly-CSharp TutorialSequence.cs:712；GuiTutorialMessageBox.SetContent
+[A] to ATTACK        <color=#e41944>[B] to EXIT</color>	[A] 攻击        <color=#e41944>[B] 离开</color>	序章教程／幽灵与怪物；Assembly-CSharp TutorialSequence.cs:715；GuiTutorialMessageBox.SetContent
+Smashed scenery leaves <color=#e41944>ECTOPLASM</color>	打碎场景物件会留下<color=#e41944>灵质</color>	序章教程／幽灵与怪物；Assembly-CSharp TutorialSequence.cs:756；GuiTutorialMessageBox.SetContent
+ECTOPLASM is fuel for SPIRITS to <color=#e41944>COLLECT</color>	<color=#e41944>收集</color>灵质，为幽灵积蓄力量	序章教程／幽灵与怪物；Assembly-CSharp TutorialSequence.cs:757；GuiTutorialMessageBox.SetContent
+Collecting ectoplasm\ngives you <color=#e41944>FOLLOWERS</color>	收集灵质\n就能获得<color=#e41944>随从</color>	序章教程／幽灵与怪物；Assembly-CSharp TutorialSequence.cs:773；GuiTutorialMessageBox.SetContent
+Press [B] to grow a\nFOLLOWER into a <color=#e41944>SLIME</color>	按 [B] 将随从\n变成<color=#e41944>黏液怪</color>	序章教程／幽灵与怪物；Assembly-CSharp TutorialSequence.cs:777；GuiTutorialMessageBox.SetContent
+The hero must defeat your <color=#e41944>SLIMES</color> to continue	英雄必须消灭你的<color=#e41944>黏液怪</color>才能前进	序章教程／幽灵与怪物；Assembly-CSharp TutorialSequence.cs:786；GuiTutorialMessageBox.SetContent
+Use <color=#e41944>PENTAGRAMS</color> to summon MONSTERS	利用<color=#e41944>五芒星法阵</color>召唤怪物	序章教程／幽灵与怪物；Assembly-CSharp TutorialSequence.cs:844；GuiTutorialMessageBox.SetContent
+Hover over a <color=#e41944>PENTAGRAM</color> and press [A]	飘到<color=#e41944>五芒星法阵</color>上方，按 [A] 附身	序章教程／幽灵与怪物；Assembly-CSharp TutorialSequence.cs:861；GuiTutorialMessageBox.SetContent
+<color=#e41944>ATTACK</color> with [A]                <color=#e41944>SPECIAL MOVE</color> with [B]	[A] <color=#e41944>攻击</color>                [B] <color=#e41944>特殊技</color>	序章教程／幽灵与怪物；Assembly-CSharp TutorialSequence.cs:867；GuiTutorialMessageBox.SetContent
+MONSTERS can't attack\nwith <color=#e41944>RED SHADOW</color> either	怪物的影子变<color=#e41944>红</color>时\n也无法攻击	序章教程／幽灵与怪物；Assembly-CSharp TutorialSequence.cs:885；GuiTutorialMessageBox.SetContent
+Aim BOWS by <color=#e41944>HOLDING DOWN</color> the [A] button	<color=#e41944>按住</color> [A] 即可用弓瞄准	序章教程／幽灵与怪物；Assembly-CSharp TutorialSequence.cs:890；GuiTutorialMessageBox.SetContent
+DAMAGE you do to enemy heroes is tallied <color=#e41944>DOWN HERE</color>	对敌方英雄造成的伤害会记在<color=#e41944>这里</color>	序章教程／幽灵与怪物；Assembly-CSharp TutorialSequence.cs:923；GuiTutorialMessageBox.SetContent
+After a fight, the GODS reward you with <color=#e41944>GOLD</color> for that DAMAGE	战斗结束后，诸神会根据伤害赐予你<color=#e41944>金币</color>	序章教程／幽灵与怪物；Assembly-CSharp TutorialSequence.cs:941；GuiTutorialMessageBox.SetContent
+<color=#e41944>GOLD</color> to upgrade your own HERO	用<color=#e41944>金币</color>强化自己的英雄	序章教程／幽灵与怪物；Assembly-CSharp TutorialSequence.cs:948；GuiTutorialMessageBox.SetContent
+So each hit your MONSTERS land\nwins your HERO <color=#e41944>GOLD</color>	怪物每次击中敌人\n都在为你的英雄赚取<color=#e41944>金币</color>	序章教程／幽灵与怪物；Assembly-CSharp TutorialSequence.cs:949；GuiTutorialMessageBox.SetContent
+When you kill a hero\n<color=#e41944>YOU TAKE THEIR HUMANITY</color>	杀死英雄后\n<color=#e41944>你就夺走了他的人性</color>	序章教程／复活与升级；Assembly-CSharp TutorialSequence.cs:994；GuiTutorialMessageBox.SetContent
+Bringing your own hero\n<color=#e41944>BACK TO LIFE</color>	让自己的英雄\n<color=#e41944>重获生命</color>	序章教程／复活与升级；Assembly-CSharp TutorialSequence.cs:995；GuiTutorialMessageBox.SetContent
+Monsters drop\n<color=#e41944>XP</color>\nwhen KILLED	怪物被杀死时\n会掉落\n<color=#e41944>经验</color>	序章教程／复活与升级；Assembly-CSharp TutorialSequence.cs:1037；GuiTutorialMessageBox.SetContent
+HEROES collect XP\nto <color=#e41944>LEVEL UP</color>	英雄收集经验\n即可<color=#e41944>升级</color>	序章教程／复活与升级；Assembly-CSharp TutorialSequence.cs:1049；GuiTutorialMessageBox.SetContent
+When heroes     \nlevel up, SPIRITS     \n<color=#e41944>GAIN WRATH</color>     	英雄升级时     \n幽灵会     \n<color=#e41944>获得怒气</color>     	序章教程／复活与升级；Assembly-CSharp TutorialSequence.cs:1063；GuiTutorialMessageBox.SetContent
+WRATH is spent later, to <color=#e41944>UPGRADE</color> MONSTERS	之后可以消耗怒气，<color=#e41944>升级</color>怪物	序章教程／复活与升级；Assembly-CSharp TutorialSequence.cs:1064；GuiTutorialMessageBox.SetContent
+Now you've taken...	如今，你已夺得...	序章教程／逃离与多人规则；Assembly-CSharp TutorialSequence.cs:1090；GuiTutorialMessageBox.SetContent
+...the HUMANITY...	...人性...	序章教程／逃离与多人规则；Assembly-CSharp TutorialSequence.cs:1093；GuiTutorialMessageBox.SetContent
+...it's your chance...	...终于有机会...	序章教程／逃离与多人规则；Assembly-CSharp TutorialSequence.cs:1096；GuiTutorialMessageBox.SetContent
+...to <color=#e41944>ESCAPE</color>	...<color=#e41944>逃离</color>这里	序章教程／逃离与多人规则；Assembly-CSharp TutorialSequence.cs:1129；GuiTutorialMessageBox.SetContent
+And these <color=#e41944>PORTAL ROOMS</color> are your way out	这些<color=#e41944>传送阵房间</color>就是你的出路	序章教程／逃离与多人规则；Assembly-CSharp TutorialSequence.cs:1141；GuiTutorialMessageBox.SetContent
+But you must be\n\n\n\nto open THE PORTAL	但你必须达到\n\n\n\n才能开启传送阵	序章教程／逃离与多人规则；Assembly-CSharp TutorialSequence.cs:1151；GuiTutorialMessageBox.SetContent
+And you need    \n<color=#e41944>XP</color> to LEVEL UP    	而升级需要    \n收集<color=#e41944>经验</color>    	序章教程／逃离与多人规则；Assembly-CSharp TutorialSequence.cs:1161；GuiTutorialMessageBox.SetContent
+But beware, there are more lost souls down here	但要小心，这里还有更多迷失的灵魂	序章教程／逃离与多人规则；Assembly-CSharp TutorialSequence.cs:1198；GuiTutorialMessageBox.SetContent
+<color=#e41944>FRIENDS</color> may be brought to control those spectres	你可以让<color=#e41944>朋友</color>来操控这些幽灵	序章教程／逃离与多人规则；Assembly-CSharp TutorialSequence.cs:1234；GuiTutorialMessageBox.SetContent
+but only one soul\n<color=#e41944>CAN ESCAPE</color>	但只有一个灵魂\n<color=#e41944>能够逃脱</color>	序章教程／逃离与多人规则；Assembly-CSharp TutorialSequence.cs:1241；GuiTutorialMessageBox.SetContent
+<size=240>HERO LEVELS gained on the\n<color=#e41944>PREVIOUS FLOOR</color> are tallied here</size>	<size=240>这里会统计英雄在\n<color=#e41944>上一层</color>提升的等级</size>	序章教程／下层怪物升级；Assembly-CSharp TutorialSequenceEvolveMenu.cs:65；GuiTutorialMessageBox.SetContent
+<size=240>When one HERO levels up...</size>	<size=240>一名英雄升级时...</size>	序章教程／下层怪物升级；Assembly-CSharp TutorialSequenceEvolveMenu.cs:72；GuiTutorialMessageBox.SetContent
+<size=240>   ...the OTHERS all gain <color=#e41944>WRATH</color>   </size>	<size=240>   ...其他人都会获得<color=#e41944>怒气</color>   </size>	序章教程／下层怪物升级；Assembly-CSharp TutorialSequenceEvolveMenu.cs:89；GuiTutorialMessageBox.SetContent
+<size=240>Spend\nthat\n<color=#e41944>WRATH</color>\nto upgrade\nyour\nMONSTERS</size>	<size=240>消耗\n这些\n<color=#e41944>怒气</color>\n来升级\n你的\n怪物</size>	序章教程／下层怪物升级；Assembly-CSharp TutorialSequenceEvolveMenu.cs:120；GuiTutorialMessageBox.SetContent
+<size=200>As you DESCEND,\nas heroes LEVEL UP,\nthe MONSTERS grow\n<color=#e41944>EVER MORE POWERFUL</color></size>	<size=200>随着你深入地牢，\n英雄不断升级，\n怪物也会变得\n<color=#e41944>越来越强大</color></size>	序章教程／下层怪物升级；Assembly-CSharp TutorialSequenceEvolveMenu.cs:130；GuiTutorialMessageBox.SetContent
+<size=200>Now your instruction is\n<color=#e41944>ALMOST COMPLETE</color></size>	<size=200>现在，你的教程\n<color=#e41944>即将结束</color></size>	序章教程／下层怪物升级；Assembly-CSharp TutorialSequenceEvolveMenu.cs:132；GuiTutorialMessageBox.SetContent
+<size=200>...remember...</size>	<size=200>...记住...</size>	序章教程／下层怪物升级；Assembly-CSharp TutorialSequenceEvolveMenu.cs:136；GuiTutorialMessageBox.SetContent
+Your instruction is complete	教程已完成	序章结束／TutorialSequenceLevel2.CoroutineSequence；GuiMessageBoxChoice/Text；sharedassets0.assets:38152
+CONTINUE THIS MATCH	继续本局游戏	序章结束／TutorialSequenceLevel2.CoroutineSequence；继续按钮，回调保持原样
+EXIT TO MENU	返回主菜单	序章结束／TutorialSequenceLevel2.CoroutineSequence；退出按钮，回调保持原样

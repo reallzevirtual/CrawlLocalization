@@ -1,5 +1,12 @@
 # 更新记录
 
+## 0.12.0
+
+- Localize the prologue tutorial from movement and combat through spirit possession, progression, and completion (61 new table entries).
+- Bind tutorial message/button renderers before the original UI layout runs; retain tutorial control flow and input icons.
+- Measure tutorial Chinese wrapping with rich-text sizes and inline image widths; retain existing wrapping elsewhere.
+- Document image-only prologue and rule cards; leave original sprite artwork intact.
+
 ## 0.11.0
 
 - 将17条CrawlOnline专属译文从通用表迁入独立crawlonline-translations.tsv，使用@online命名空间；模组表共135条，全部译文累计1431条，路径仍为140条。

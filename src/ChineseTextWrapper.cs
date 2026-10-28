@@ -21,7 +21,7 @@ namespace CrawlLocalization
             return false;
         }
 
-        internal static string Wrap(string text, float width, Func<char, float> advance)
+        internal static string Wrap(string text, float width, Func<char, float> advance, Func<string, float> tagWidth = null)
         {
             if (string.IsNullOrEmpty(text) || width <= 0) return text;
             List<string> units = new List<string>();
@@ -39,7 +39,12 @@ namespace CrawlLocalization
             foreach (string unit in units)
             {
                 if (unit == "\r\n" || unit == "\r" || unit == "\n") { result.Append('\n'); used = 0; continue; }
-                if (IsTag(unit)) { result.Append(unit); continue; }
+                if (IsTag(unit))
+                {
+                    float tagLength = tagWidth == null ? 0 : tagWidth(unit);
+                    if (tagLength > 0 && used > 0 && used + tagLength > width) { result.Append('\n'); used = 0; }
+                    result.Append(unit); used += tagLength; continue;
+                }
                 float length = 0;
                 foreach (char ch in unit) length += advance(ch);
                 if (used > 0 && used + length > width) { result.Append('\n'); used = 0; }

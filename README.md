@@ -1,6 +1,6 @@
 # Crawl Localization
 
-BepInEx 5 中文本地化插件，版本 **0.11.0**，适配 Windows Crawl / Unity 5.4.2。当前只维护简体中文；保留恢复游戏原文的选项。包含菜单按钮及经过核对的独立 TextMesh 标题、提示文字，共 1431 条译文/模板、140 个 TextMesh 路径，覆盖宝库分类说明、图鉴、成就、邪神选择、开局全屏提示、章节标题、商店、常驻玩家装备面板、本局交互提示、暂停弹窗、怪物升级、首领结算，以及可选 CrawlOnline 0.4.0 的联机界面。
+BepInEx 5 中文本地化插件，版本 **0.12.0**，适配 Windows Crawl / Unity 5.4.2。当前只维护简体中文；保留恢复游戏原文的选项。包含菜单按钮及经过核对的独立 TextMesh 标题、提示文字，共 1492 条译文/模板、140 个 TextMesh 路径，覆盖宝库分类说明、图鉴、成就、邪神选择、开局全屏提示、章节标题、商店、常驻玩家装备面板、本局交互提示、暂停弹窗、怪物升级、首领结算、序章教程流程，以及可选 CrawlOnline 0.4.0 的联机界面。
 
 ## 构建与安装
 
@@ -14,7 +14,7 @@ pwsh -NoProfile -File .\build.ps1 -GamePath '你的 Crawl 目录'
 pwsh -NoProfile -File .\build.ps1 -Install
 ```
 
-输出 `artifacts/CrawlLocalization-0.11.0.zip`。关闭游戏，将 ZIP 内容解压至 `BepInEx/plugins/CrawlLocalization/`，然后重新启动。更新时覆盖 DLL、Languages 和 Fonts。新版不再分发繁体包，旧 `Languages/zh-Hant` 目录可删除；保留也不会被旧配置继续选中。不自动启动游戏。
+输出 `artifacts/CrawlLocalization-0.12.0.zip`。关闭游戏，将 ZIP 内容解压至 `BepInEx/plugins/CrawlLocalization/`，然后重新启动。更新时覆盖 DLL、Languages 和 Fonts。新版不再分发繁体包，旧 `Languages/zh-Hant` 目录可删除；保留也不会被旧配置继续选中。不自动启动游戏。
 
 ## 配置与重载
 
@@ -32,7 +32,7 @@ F8 重载配置、译文及路径清单，刷新已创建的文字。`ReloadKey 
 
 ## 译文表及位置注释
 
-`Languages/zh-Hans/translations.tsv` 存放通用菜单译文（194 条），`vault-translations.tsv` 存放宝库译文（595 条），`deity-translations.tsv` 存放邪神选择与试炼译文（71 条），`chapter-translations.tsv` 存放章节编号和随机楼层名（132 条），`shop-translations.tsv` 存放商店新增组件和提示（170 条）。`gameplay-translations.tsv` 存放本局交互、金币单位、传送阵和连杀提示（50 条）。`progression-translations.tsv` 存放暂停弹窗、升级和首领结算新增文案（49 条）。`shop-il-translations.tsv` 存放原始字符串操作中的连接词、格式模板和属性比较片段（35 条）。`crawlonline-translations.tsv` 单独维护 CrawlOnline 的135条界面词条（含从通用表迁出的17条）。九份表均为 UTF-8 TSV，有三列：
+`Languages/zh-Hans/translations.tsv` 存放通用菜单译文（194 条），`vault-translations.tsv` 存放宝库译文（595 条），`deity-translations.tsv` 存放邪神选择与试炼译文（71 条），`chapter-translations.tsv` 存放章节编号和随机楼层名（132 条），`shop-translations.tsv` 存放商店新增组件和提示（170 条）。`gameplay-translations.tsv` 存放本局交互、金币单位、传送阵和连杀提示（50 条）。`progression-translations.tsv` 存放暂停弹窗、升级和首领结算新增文案（49 条）。`shop-il-translations.tsv` 存放原始字符串操作中的连接词、格式模板和属性比较片段（35 条）。`crawlonline-translations.tsv` 单独维护 CrawlOnline 的135条界面词条（含从通用表迁出的17条）。`tutorial-translations.tsv` 单独维护序章流程的61条新增词条，复用确认、暂停退出、传送阵和怪物升级已有译文。十份表均为 UTF-8 TSV，有三列：
 
 ```text
 原文<TAB>中文<TAB>位置注释
@@ -170,7 +170,7 @@ CrawlOnline 的 `Patch_SystemTutorial_GetShouldStartTutorial` 在 `Unlocks.Enabl
 
 ## 字体及排版
 
-`Fonts/crawl-fonts.bundle` 由 Unity 5.4.2f2 / Windows x86 构建，包含十个合并中文字体。内嵌 TTF 与根目录源文件逐字节相同，保留原游戏 Font 的 ascent、descent、line spacing；0.11.0 继续使用 0.2.2 修正后的字体包。
+`Fonts/crawl-fonts.bundle` 由 Unity 5.4.2f2 / Windows x86 构建，包含十个合并中文字体。内嵌 TTF 与根目录源文件逐字节相同，保留原游戏 Font 的 ascent、descent、line spacing；0.12.0 继续使用 0.2.2 修正后的字体包。
 
 `fonts.tsv` 五列：原字体名、类型、相对文件路径、资源/家族名、倍率。默认按完整资源路径 `LoadAsset<Font>`。支持 `bundle`、兼容入口 `ttf` 和 `system`；TTF 按家族创建不能保证实际文件来源，推荐 bundle。
 
@@ -201,6 +201,9 @@ pwsh -NoProfile -File .\tests\test.ps1
 # 只读核对已安装CrawlOnline的UI IL，隔离Unity检查显示（不启动游戏）：
 pwsh -NoProfile -File .\tests\check-online-il.ps1
 pwsh -NoProfile -File .\tests\check-online-display.ps1
+# 序章教程：只读核对原DLL词条，以及独立Unity显示/换行/回退检查：
+pwsh -NoProfile -File .\tests\check-tutorial-il.ps1
+pwsh -NoProfile -File .\tests\check-tutorial.ps1
 python .\tests\check_fonts.py
 python .\tests\check_bundle.py --game-path 'D:\SteamLibrary\steamapps\common\Crawl'
 # 导出并验证暂停弹窗、升级及首领结算（不启动游戏）：
@@ -240,3 +243,13 @@ python .\tools\export_menu_texts.py --game-path '你的 Crawl 目录' --output a
 用户验证建议：悬停宝库五个分类；查看未尝试/有记录的怪物挑战；浏览武器、道具、物件的长介绍与未发现条目；检查成就名称、条件和进度；连续切换重玩教程；打开键盘/街机设置；走完全部按键重绑提示；打开暂停菜单提示及制作人员页；F8 切换中文/原文；检查字体位置和鼠标选项对应关系。
 
 日志在 `BepInEx/LogOutput.log`。`Loaded embedded font` 是包内字体；`Created font by family (file identity unverified)` 是按家族创建；缺字会触发回退。关闭游戏后移走插件目录可卸载。
+
+## 序章教程（0.12.0）
+
+覆盖问号引路、攻击与冷却、门与水晶、特殊技、死亡与幽灵、附身陷阱、灵质与黏液怪、五芒星法阵、弓箭、伤害与金币、人性与复活、经验与怒气、传送阵、多名玩家、下层怪物升级和教程结束选项。
+
+在 `GuiTutorialMessageBox.SetContent` / `ShowButton` 执行前绑定其文字组件，再由现有 `GUIText.SetText` 显示入口查表和换字体。原方法继续完成显示、图标解析、背景尺寸和位置计算；不修改教程协程、等待条件、伤害、输入、关卡或存档，也不改变 CrawlOnline 的教程禁用规则。
+
+`[A]` / `[B]` 保留给游戏按当前输入设备生成图标。仅教程中文提示启用富文本换行，计入局部字号和内嵌图片占宽，保留高亮、原有插图留白和显式换行。F8 可刷新当前提示，英文或缺失词条回退原文。
+
+开头 `PROLOGUE`、后段规则动画及升级/怒气小字中的图片文字尚未替换，索引见 `docs/tutorial-image-text.md`。正文不会把图片当作漏译词条。
