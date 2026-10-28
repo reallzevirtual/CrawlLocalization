@@ -74,7 +74,7 @@ ReloadKey = F8
 
 ## 修改译文与制作其他语言
 
-普通玩家包只含运行文件。需要制作语言包时，使用 `CrawlLocalization-<版本号>-Translator.zip`，其中额外包含 `crawl-language-pack/SKILL.md` 和创建、校验脚本。可直接让 AI 阅读该技能。
+普通玩家包包含运行文件和简短的 README。需要制作语言包时，使用 `CrawlLocalization-<版本号>-Translator.zip`，其中额外包含 `crawl-language-pack/SKILL.md` 和创建、校验脚本。可直接让 AI 阅读该技能。
 
 **编辑前备份原始文件，翻译完成后对照备份检查。** 备份放在不会随临时文件清理的位置，保留原始英文键和文件结构。
 
@@ -133,7 +133,7 @@ pwsh -NoProfile -File .\build.ps1 -GamePath 'D:\SteamLibrary\steamapps\common\Cr
 | `artifacts/CrawlLocalization-<版本号>.zip` | 普通玩家包 |
 | `artifacts/CrawlLocalization-<版本号>-Translator.zip` | 运行文件 + 翻译技能与脚本 |
 
-玩家包只包含 DLL、所选语言包的运行数据和引用字体，不带 README、CHANGELOG、docs、源码、测试或字体源 TTF。译者工具只进入 Translator 包。
+两个发行包都会附带简短的 README，源文件为 [packaging/README.md](packaging/README.md)，构建时直接复制。玩家包除此之外只包含 DLL、所选语言包的运行数据和引用字体，不带项目长篇 README、CHANGELOG、docs、源码、测试或字体源 TTF。译者工具只进入 Translator 包。
 
 如果已经在源码的 `Languages/` 下准备了其他语言，在 **PowerShell 7 终端**中按数组选择：
 
@@ -177,6 +177,7 @@ pwsh -NoProfile -File .\build-fonts.ps1 -UnityPath '你的 Unity 5.4.2f2\Editor\
 | `Languages/` | 各语言的译文和运行配置 |
 | `Fonts/`、`FontBundleProject/` | 字体源、已构建 bundle 和字体工程 |
 | `translator-kit/` | 翻译技能、模板生成和校验脚本 |
+| `packaging/` | 随发行包复制的简短说明 |
 | `tests/`、`tools/` | 离线检查、独立 Unity 验证和资源导出 |
 | `docs/` | 图片文字清单与维护检查指南 |
 | `artifacts/` | 构建结果、检查日志和生成文件，不提交 Git |

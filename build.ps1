@@ -84,7 +84,7 @@ $arguments += @(Get-ChildItem -LiteralPath (Join-Path $projectRoot 'src') -Filte
 $arguments += $versionSource
 & dotnet $compiler @arguments
 if ($LASTEXITCODE -ne 0) { throw "Compilation failed: $LASTEXITCODE" }
-# Player packages contain only files read by the plugin. Development notes,
+# Player packages contain runtime files and a short packaged README. Development notes,
 # unrelated files and retired language packs stay in the source project.
 $languageFiles = @(
     'language.ini', 'fonts.tsv', 'textmesh-paths.txt',
@@ -122,8 +122,9 @@ foreach ($relative in $fontFiles.Keys) {
     New-Item -ItemType Directory -Force -Path (Split-Path $fontDestination -Parent) | Out-Null
     Copy-Item -LiteralPath $fontFiles[$relative] -Destination $fontDestination -Force
 }
+Copy-Item -LiteralPath (Join-Path $projectRoot 'packaging\README.md') -Destination (Join-Path $output 'README.md') -Force
 $archive = Join-Path (Join-Path $projectRoot 'artifacts') ($packageName + '.zip')
-$packageFiles = @('CrawlLocalization.dll', 'Languages', 'Fonts' | ForEach-Object { Join-Path $output $_ } | Where-Object { Test-Path -LiteralPath $_ })
+$packageFiles = @('CrawlLocalization.dll', 'README.md', 'Languages', 'Fonts' | ForEach-Object { Join-Path $output $_ } | Where-Object { Test-Path -LiteralPath $_ })
 Compress-Archive -Path $packageFiles -DestinationPath $archive -Force
 # An optional authoring handoff is a separate ZIP; player packages stay minimal.
 $translatorArchive = Join-Path (Join-Path $projectRoot 'artifacts') ($packageName + '-Translator.zip')
