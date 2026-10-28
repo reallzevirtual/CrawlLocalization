@@ -31,6 +31,14 @@ ReloadKey = F8
 
 Use the exact folder name. Preserve unrelated existing config sections. The plugin creates this config on its first normal launch. F8 reloads the config/tables and existing labels; restarting also works. Replacing a font binary or restoring a font at a previously missing path requires a restart because fonts are cached. The helper does not change the active game config or launch the game.
 
+## Back up before translation
+
+Before the AI or user edits any existing language files, make a byte-for-byte backup of the entire target language folder and the reference catalog (`Languages/zh-Hans` when different). For a new language, back up the reference before initialization and the generated target immediately after initialization, before handing it to the translator. Keep filenames and relative paths intact.
+
+Use a unique, dated backup directory in a durable project/authoring location outside the live `Languages/` tree; do not use Temp or put backups inside a release package. Never overwrite an earlier backup. Record its absolute path and the plugin/catalog version in the handoff so another AI can find it when the user finishes. Keep it unchanged until comparison and handoff are complete; do not delete it without the user's request. A Git revision can provide additional evidence but does not replace the requested file backup.
+
+If the user returns files that were already edited and no prior backup exists, preserve those received files before repairs, then obtain the original keys from a known matching release or Git revision. Do not describe a post-edit copy as a pre-translation baseline. If no trustworthy baseline is available, report that source-key integrity could not be verified.
+
 ## Translate the tables
 
 Files are **UTF-8, raw tab-separated text**, not quote-aware CSV. Each non-comment row has:
@@ -40,6 +48,8 @@ original-source-or-key<TAB>target-translation<TAB>context-comment
 ```
 
 `<TAB>` above means a real tab. Change column 2 only; column 3 can be improved for translators. Lines beginning with `#` are comments. Use a plain-text editor or script that splits on literal tabs. Do not run these files through CSV quoting: ASCII quotes in sources/targets are literal characters, and rows such as `@online:"?` are valid. There is no CSV header row to translate.
+
+Spreadsheet software can silently apply CSV quoting to these raw TSV files. For example, `<color="#b02829">Kill</color> beasts\n` must not become `"<color=""#b02829"">Kill</color> beasts\n"`. It may also remove literal quotation marks from a weapon description. Both change the source key and break lookup; doubled quotes in a translated color tag may break rendering. Inspect the saved raw file, not just the spreadsheet application's cell display.
 
 Rules that affect correctness:
 
@@ -106,6 +116,13 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\crawl-language-pack\script
 ```
 
 The checker compares keys against the included reference catalog, checks raw TSV shape, duplicate keys, supported escapes, placeholders/tags/icons, config, font paths and binding paths. It reports translated/pending/missing counts. It does not judge translation quality, actual glyph coverage, or game geometry. The reference catalog is for authoring/validation only; the new pack can run without `zh-Hans` installed.
+
+When the user finishes translating, compare the saved files with the immutable pre-translation backup **before** declaring success or committing:
+
+- Read UTF-8 and split on literal tabs, without CSV quote decoding or trimming fields. Check table filenames, row counts, column counts and the exact source-key multiset per table. Report missing, added, duplicated or changed keys; do not mistake harmless row reordering for lost entries or silently align unrelated rows by position.
+- Review changes to target cells and comments separately. Preserve the user's wording. Check placeholders, input markers, rich-text tags, escape sequences and significant leading/trailing spaces, including deliberate empty `@shop.il:` values. Compare config and object-binding changes against what the task authorized.
+- Look for added outer quotes, doubled inner quotes and removed literal quotes in both source and target fields. Repair source keys only against the trusted baseline; undo target quoting only when the export damage is clear. Never strip or CSV-decode every quoted field: some keys intentionally contain literal quotes. Preserve an unrepaired copy and report ambiguous changes instead of guessing.
+- Run `check-language.ps1` as well as the backup comparison, then report the checks and any repairs. Its current reference is the **live** `Languages/zh-Hans` catalog. When checking Chinese itself, or when that reference was also edited, the script can compare damaged keys against themselves and still pass. It is not an independent source-integrity check and does not automatically read the backup.
 
 Before delivery, review changed text and run the checker. Let the user verify the game unless they asked you to run it. Suggested coverage: main menu/settings, long vault descriptions, assembled shop weapons, live equipment panel, tutorial with keyboard/controller icons, end prompts, and optional CrawlOnline UI. Check F8, unknown/missing text, missing fonts, and accidental Chinese remnants in **translation cells** (Chinese reference comments are not rendered). Record unresolved items instead of marking the language complete.
 
