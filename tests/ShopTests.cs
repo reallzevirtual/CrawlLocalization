@@ -41,9 +41,9 @@ namespace CrawlLocalization
             string prefix=ShopText.Finish(traced);original.Append(' ');ShopText.AppendChar(traced,' ');
             original.Append("Shortsword");ShopText.Append(traced,"Shortsword");string name=ShopText.Finish(traced);
             Check(name==original.ToString() && prefix=="Swift","Name/prefix original cache values unchanged");
-            ShopTextRecipe saved=ShopText.Capture(name);Check(saved.Translate(pack)=="迅捷 短剑","Original append order preserved");
-            Check(ShopText.Capture(prefix).Translate(pack)=="迅捷","Intermediate ToString snapshot is immutable");
-            Check(saved.Translate(en)==null && saved.Translate(pack)=="迅捷 短剑","Reload replays trace without generating weapon again");
+            ShopTextRecipe saved=ShopText.Capture(name);Check(saved.Translate(pack)=="追风之 短剑","Original append order preserved");
+            Check(ShopText.Capture(prefix).Translate(pack)=="追风之","Intermediate ToString snapshot is immutable");
+            Check(saved.Translate(en)==null && saved.Translate(pack)=="追风之 短剑","Reload replays trace without generating weapon again");
             StringBuilder body=ShopText.Create();ShopText.AppendFormatTwo(body,"\n<color=#b78f2d>{0}% chance of {1}.</color>",25,"Stealing Gold");
             string source=ShopText.Finish(body);Check(source=="\n<color=#b78f2d>25% chance of Stealing Gold.</color>","Format leaves original cache exactly intact");
             Check(ShopText.Capture(source).Translate(pack).Contains("25％"),"Numbers/colors/format arguments survive");

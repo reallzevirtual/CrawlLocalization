@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 namespace CrawlLocalization
 {
     [BepInDependency("crawl.online", BepInDependency.DependencyFlags.SoftDependency)]
-    [BepInPlugin(Id, "Crawl Localization", "0.13.0")]
+    [BepInPlugin(Id, "Crawl Localization", BuildVersion.Plugin)]
     public sealed class Plugin : BaseUnityPlugin
     {
         public const string Id = "crawl.localization";

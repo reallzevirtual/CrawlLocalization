@@ -1,6 +1,6 @@
 # Crawl Localization
 
-用于 **Windows 版 Crawl（Unity 5.4.2）** 的 BepInEx 5 本地化插件。当前维护简体中文，支持通过独立语言包添加其他语言，并为 **CrawlOnline 0.4.0** 提供可选界面翻译。当前插件版本为 **0.13.0**。
+用于 **Windows 版 Crawl（Unity 5.4.2）** 的 BepInEx 5 本地化插件。当前维护简体中文，支持通过独立语言包添加其他语言，并为 **CrawlOnline 0.4.0** 提供可选界面翻译。当前插件版本由根目录 [VERSION](VERSION) 统一管理。
 
 本地化在本机显示层生效。插件使用外置译文表和字体资源，在内存中适配显示入口；保留游戏的原始标识、存档数据、随机选择及交互回调，不需要手动修改游戏 assets 或磁盘上的 DLL。
 
@@ -24,7 +24,7 @@
 玩家需要 Windows 版 Crawl，以及与游戏匹配的 **BepInEx 5（32 位）**。使用发行包不需要 .NET SDK、Python 或 Unity Editor。
 
 1. 安装并确认 BepInEx 能正常加载。
-2. 关闭游戏，将普通玩家包 `CrawlLocalization-0.13.0.zip` 的内容解压到 `Crawl/BepInEx/plugins/CrawlLocalization/`。
+2. 关闭游戏，将普通玩家包 `CrawlLocalization-<版本号>.zip` 的内容解压到 `Crawl/BepInEx/plugins/CrawlLocalization/`。
 3. 启动游戏。默认使用简体中文，插件生成配置文件。
 
 安装后的结构应为：
@@ -74,7 +74,7 @@ ReloadKey = F8
 
 ## 修改译文与制作其他语言
 
-普通玩家包只含运行文件。需要制作语言包时，使用 `CrawlLocalization-0.13.0-Translator.zip`，其中额外包含 `crawl-language-pack/SKILL.md` 和创建、校验脚本。可直接让 AI 阅读该技能。
+普通玩家包只含运行文件。需要制作语言包时，使用 `CrawlLocalization-<版本号>-Translator.zip`，其中额外包含 `crawl-language-pack/SKILL.md` 和创建、校验脚本。可直接让 AI 阅读该技能。
 
 **编辑前备份原始文件，翻译完成后对照备份检查。** 备份放在不会随临时文件清理的位置，保留原始英文键和文件结构。
 
@@ -129,9 +129,9 @@ pwsh -NoProfile -File .\build.ps1 -GamePath 'D:\SteamLibrary\steamapps\common\Cr
 
 | 输出 | 用途 |
 | --- | --- |
-| `artifacts/CrawlLocalization-0.13.0/` | 运行文件暂存目录，每次构建会重建其内容 |
-| `artifacts/CrawlLocalization-0.13.0.zip` | 普通玩家包 |
-| `artifacts/CrawlLocalization-0.13.0-Translator.zip` | 运行文件 + 翻译技能与脚本 |
+| `artifacts/CrawlLocalization-<版本号>/` | 运行文件暂存目录，每次构建会重建其内容 |
+| `artifacts/CrawlLocalization-<版本号>.zip` | 普通玩家包 |
+| `artifacts/CrawlLocalization-<版本号>-Translator.zip` | 运行文件 + 翻译技能与脚本 |
 
 玩家包只包含 DLL、所选语言包的运行数据和引用字体，不带 README、CHANGELOG、docs、源码、测试或字体源 TTF。译者工具只进入 Translator 包。
 
@@ -150,6 +150,14 @@ pwsh -NoProfile -File .\build.ps1 -GamePath '你的 Crawl 目录' -Install
 ```
 
 `-Install` 会先把现有插件目录备份到 `artifacts/backups/`，然后复制构建结果，不启动游戏。`-SkipTests` 可跳过离线检查，常规构建建议保持默认检查。
+
+## 发布新版本
+
+只需修改根目录 `VERSION` 的一行版本号，例如将 `0.13.0` 改为 `0.13.1`，再正常运行 `build.ps1`。格式固定为 `主版本.次版本.修订号`，不带 `v` 前缀或预发布后缀，每段范围为 0–65534。
+
+构建会自动使用同一版本生成 BepInEx 插件版本、四段程序集／文件版本（如 `0.13.1.0`）、暂存目录和两个 ZIP 名称。版本源码生成在 `artifacts/build/`，不修改 `src/`，也不会进入发行包。删除 `artifacts/` 后可重新生成。
+
+修改翻译通常递增修订号，例如 `0.13.0 → 0.13.1`。版本由维护者决定，普通构建不会自动加一；同一版本重复构建会覆盖对应暂存目录和 ZIP。发布时还需在 [CHANGELOG](CHANGELOG.md) 记录变更，并提交 `VERSION` 与相关修改。技能中的“0.13.0 或更新版本”是最低兼容要求，不随当前版本同步修改。
 
 ## 字体、检查与项目结构
 

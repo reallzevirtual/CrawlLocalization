@@ -87,7 +87,7 @@ namespace CrawlLocalization
             Translation(simplified, "Teok", "特奥克");
             Translation(simplified, "Enter with: 40 Gold and a Lucky Claw", "携带入场：\n40金币\n和幸运之爪");
             Translation(simplified, "From deep\r\nwithin the\r\nearth she\r\nrises", "她从\n大地深处\n缓缓升起");
-            Translation(simplified, "No-one", "不信奉");
+            Translation(simplified, "No-one", "无神");
             Translation(simplified, "Tiny health, weak bow, hyperdash", "生命值极低\n短弓威力弱\n冲刺极快");
             for (int player = 1; player <= 4; player++)
             {
