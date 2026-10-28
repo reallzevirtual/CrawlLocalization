@@ -216,7 +216,9 @@ namespace CrawlLocalization
 
         internal void CaptureRendered() { if (mesh != null) rendered = mesh.text; }
 
-        private void LateUpdate()
+        private void LateUpdate() { RefreshChangedText(); }
+
+        internal void RefreshChangedText()
         {
             // Only watch audited standalone labels, never scan the scene per frame.
             // Capture GUIText's final wrapped/image-expanded output to avoid translating it again.

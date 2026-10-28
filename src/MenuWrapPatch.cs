@@ -12,7 +12,8 @@ namespace CrawlLocalization
                 ___textMesh.GetComponent<LocalizedMenuLabel>() == null ||
                 (___textMesh.GetComponentInParent<MenuLibrary>() == null &&
                  ___textMesh.GetComponentInParent<MenuDeitySelectPlayer>() == null &&
-                 ___textMesh.GetComponentInParent<GUIStore>() == null)) return true;
+                 ___textMesh.GetComponentInParent<GUIStore>() == null &&
+                 ___textMesh.GetComponentInParent<MenuPrompt>() == null)) return true;
             TextMesh mesh = ___textMesh;
             Font font = mesh.font;
             if (font == null) return true;

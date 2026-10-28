@@ -1,6 +1,6 @@
 # Crawl Localization
 
-BepInEx 5 中文本地化插件，版本 **0.8.0**，适配 Windows Crawl / Unity 5.4.2。当前只维护简体中文；保留恢复游戏原文的选项。包含菜单按钮及经过核对的独立 TextMesh 标题、提示文字，共 1229 条译文/数字模板、102 个 TextMesh 路径，覆盖宝库分类说明、图鉴、成就、邪神选择、开局全屏提示、章节标题、商店、常驻玩家装备面板及本局交互提示。
+BepInEx 5 中文本地化插件，版本 **0.9.0**，适配 Windows Crawl / Unity 5.4.2。当前只维护简体中文；保留恢复游戏原文的选项。包含菜单按钮及经过核对的独立 TextMesh 标题、提示文字，共 1278 条译文/模板、140 个 TextMesh 路径，覆盖宝库分类说明、图鉴、成就、邪神选择、开局全屏提示、章节标题、商店、常驻玩家装备面板、本局交互提示、暂停弹窗、怪物升级和首领结算。
 
 ## 构建与安装
 
@@ -14,7 +14,7 @@ pwsh -NoProfile -File .\build.ps1 -GamePath '你的 Crawl 目录'
 pwsh -NoProfile -File .\build.ps1 -Install
 ```
 
-输出 `artifacts/CrawlLocalization-0.8.0.zip`。关闭游戏，将 ZIP 内容解压至 `BepInEx/plugins/CrawlLocalization/`，然后重新启动。更新时覆盖 DLL、Languages 和 Fonts。新版不再分发繁体包，旧 `Languages/zh-Hant` 目录可删除；保留也不会被旧配置继续选中。不自动启动游戏。
+输出 `artifacts/CrawlLocalization-0.9.0.zip`。关闭游戏，将 ZIP 内容解压至 `BepInEx/plugins/CrawlLocalization/`，然后重新启动。更新时覆盖 DLL、Languages 和 Fonts。新版不再分发繁体包，旧 `Languages/zh-Hant` 目录可删除；保留也不会被旧配置继续选中。不自动启动游戏。
 
 ## 配置与重载
 
@@ -32,7 +32,7 @@ F8 重载配置、译文及路径清单，刷新已创建的文字。`ReloadKey 
 
 ## 译文表及位置注释
 
-`Languages/zh-Hans/translations.tsv` 存放通用菜单译文（211 条），`vault-translations.tsv` 存放宝库译文（595 条），`deity-translations.tsv` 存放邪神选择与试炼译文（71 条），`chapter-translations.tsv` 存放章节编号和随机楼层名（132 条），`shop-translations.tsv` 存放商店新增组件和提示（170 条）。`gameplay-translations.tsv` 存放本局交互、金币单位、传送阵和连杀提示（50 条）。六份表均为 UTF-8 TSV，有三列：
+`Languages/zh-Hans/translations.tsv` 存放通用菜单译文（211 条），`vault-translations.tsv` 存放宝库译文（595 条），`deity-translations.tsv` 存放邪神选择与试炼译文（71 条），`chapter-translations.tsv` 存放章节编号和随机楼层名（132 条），`shop-translations.tsv` 存放商店新增组件和提示（170 条）。`gameplay-translations.tsv` 存放本局交互、金币单位、传送阵和连杀提示（50 条）。`progression-translations.tsv` 存放暂停弹窗、升级和首领结算新增文案（49 条）。七份表均为 UTF-8 TSV，有三列：
 
 ```text
 原文<TAB>中文<TAB>位置注释
@@ -54,7 +54,7 @@ Note: Many keyboards do not\nsupport multiple players<TAB>注意：许多键盘�
 
 增加独立文字时，在译文表添加原文和译文，再将核对过的对象路径添加到路径清单。不会自动翻译所有 MonoBehaviour 或所有 TextMesh；玩家名字、账号名、制作人员姓名、网址、编辑器占位文字和图标字符不作为通用替换目标。
 
-已增加：键盘提示、街机模式说明、菜单标题、操作重绑的静态和动态提示、玩家加入的电脑说明、加载/保存提示、宝库标题及操作提示、暂停菜单游戏提示、制作人员页面的职能标题。宝库内容覆盖见下节；未列入本次范围的拾取/剧情提示、暂停中途加入与胜利画面的神祇相关文字、所有弹窗正文、CrawlOnline F1 IMGUI 和 ex2D 仍未全面覆盖。
+已增加：键盘提示、街机模式说明、菜单标题、操作重绑的静态和动态提示、玩家加入的电脑说明、加载/保存提示、宝库标题及操作提示、暂停菜单游戏提示、制作人员页面的职能标题。宝库内容覆盖见下节；未列入本次范围的拾取/剧情提示、其他弹窗正文、CrawlOnline F1 IMGUI 和 ex2D 图片文字仍未全面覆盖。
 
 ## 宝库汉化（0.4.0）
 
@@ -122,6 +122,20 @@ Note: Many keyboards do not\nsupport multiple players<TAB>注意：许多键盘�
 
 验证使用独立Unity5.4项目，覆盖118条非空交互资源、21个静态标签，以及提示框复用、原文恢复、金币单位、隐藏传送阵文字和连杀数字。实际游戏的位置、淡入淡出和操作反馈仍由用户确认；未安装或启动Crawl。
 
+## 暂停、升级与首领结算（0.9.0）
+
+暂停弹窗覆盖退出本局、退出教程，以及中途加入/退出通知。玩家编号、名字和等级从原游戏数据读取并保存快照；只有与原游戏组合结果完全一致的通知才套用中文模板，不通过宽泛正则拆解玩家名。邪神名称与能力复用已有词条，未知mod内容保留原文。弹窗先翻译再按原宽132换行和计算背景高度，退出、取消、电脑接管等回调不变。
+
+四名玩家的下层界面覆盖怒气标签、升级怪物、强化灵质、查看英雄装备、游戏提示、返回地牢、返回、怒气不足、未解锁和“已达顶峰”悬停说明。怒气、等级和升级费用数字、购买条件与闪烁逻辑保持原游戏行为。
+
+首领登场的KOUROK、GHIDRAAK、Tezekcal分别显示为库洛克、吉德拉克、特泽卡尔，末次机会提示为“最后的挣扎”。只绑定两个登场文字对象，不修改Boss.GetDisplayName，避免干扰成就比较。胜负结算补齐逃出生天、永远迷失、被吞噬、21种称号、经验单位与排名后缀；玩家名和所有数值保持原样。称号查表处理原列表残留的回车，英文模式恢复游戏原始文本。
+
+动态玩家通知使用 `@progression.*` 模板，参数由显示代码提供，不参与全局数字匹配。维护译文时保留所有占位符；缺词或无效格式回退原文。F8使用通知创建时的数据快照，不会因玩家随后改名而改变已打开的通知。
+
+**图片暂未汉化：** SALVATION、HUMANITY STOLEN、READY按钮/横幅及中央PEAK REACHED动画。详情见 [升级与结算图片清单](docs/progression-image-text.md)。其中“已达顶峰”的文字悬停说明已经翻译。
+
+验证：544项既有离线检查、234项新组合检查和245项独立Unity5.4检查通过；后者包含40个资源文字布局、72个源组件显示案例、四玩家弹窗、玩家名保护、原文恢复、胜负初始化顺序及首领文字绑定。十字体字形覆盖通过。未安装或启动Crawl；实际按钮操作、视觉位置与动画仍由用户验证。
+
 ## 章节编号与楼层名（0.6.0）
 
 进局和换层时显示的 `- Chapter {0} -` 翻译为 `- 第 {0} 章 -`，并覆盖地牢、墓穴、矿区环境的全部131个不同随机楼层名。源资源是 sharedassets0.assets 中44824、44832、44876、44921、45936的Environment，以及55903的LevelTitle。重复环境共用译文，表格注释保留全部来源。
@@ -138,7 +152,7 @@ CrawlOnline 的 `Patch_SystemTutorial_GetShouldStartTutorial` 在 `Unlocks.Enabl
 
 ## 字体及排版
 
-`Fonts/crawl-fonts.bundle` 由 Unity 5.4.2f2 / Windows x86 构建，包含十个合并中文字体。内嵌 TTF 与根目录源文件逐字节相同，保留原游戏 Font 的 ascent、descent、line spacing；0.8.0 继续使用 0.2.2 修正后的字体包。
+`Fonts/crawl-fonts.bundle` 由 Unity 5.4.2f2 / Windows x86 构建，包含十个合并中文字体。内嵌 TTF 与根目录源文件逐字节相同，保留原游戏 Font 的 ascent、descent、line spacing；0.9.0 继续使用 0.2.2 修正后的字体包。
 
 `fonts.tsv` 五列：原字体名、类型、相对文件路径、资源/家族名、倍率。默认按完整资源路径 `LoadAsset<Font>`。支持 `bundle`、兼容入口 `ttf` 和 `system`；TTF 按家族创建不能保证实际文件来源，推荐 bundle。
 
@@ -168,6 +182,8 @@ Unity 5.4 独立渲染复现并确认：示例中文的总高度、垂直中心�
 pwsh -NoProfile -File .\tests\test.ps1
 python .\tests\check_fonts.py
 python .\tests\check_bundle.py --game-path 'D:\SteamLibrary\steamapps\common\Crawl'
+# 导出并验证暂停弹窗、升级及首领结算（不启动游戏）：
+pwsh -NoProfile -File .\tests\check-progression.ps1
 # 导出并验证本局交互、传送阵、奖励和连杀（不启动游戏）：
 pwsh -NoProfile -File .\tests\check-gameplay.ps1
 # 从实际资源导出宝库，并用运行时语言包检查显示案例：

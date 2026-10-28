@@ -1,0 +1,50 @@
+# Pause prompts, evolution and boss results; original<TAB>Chinese<TAB>location
+_End the game?_	结束本局游戏？	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
+All progress will be lost, are you sure you want to quit?	本局进度将全部丢失，确定要退出吗？	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
+_Exit the tutorial?_	退出教程？	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
+To play the tutorial again, select 'Replay Tutorial' from the options menu. \n\n Are you sure you want to quit?	要再次游玩教程，请在设置菜单中开启「重玩教程」。\n\n确定要退出吗？	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
+@progression.join-title:{0}:{1}	P{0} 「{1}」 已加入	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
+@progression.leave-title:{0}:{1}	P{0} 「{1}」 已退出	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
+@progression.join-body:{0}:{1}:{2}:{3}:{4}	已作为玩家 {0} 加入，名字为「{1}」\n\n英雄等级：{2}\n信奉：{3}\n（{4}）	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
+@progression.leave-body:{0}:{1}	玩家 {0}（{1}）将由电脑接管。	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
+None	无	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
+UPGRADE\nMONSTER	升级\n怪物	level5:1361 MenuEvolvePlayer/Menu/TextButtonDescription；level5:1372 OtherPlayers-DoNotApply/P2/Menu/TextButtonDescription；level5:1383 OtherPlayers-DoNotApply/P3/Menu/TextButtonDescription；level5:1394 OtherPlayers-DoNotApply/P4/Menu/TextButtonDescription；level5:1399/m_displayText；level5:1401/m_displayText；level5:1410/m_displayText；level5:1465/m_displayText；level5:1490/m_displayText；level5:1501/m_displayText；level5:1546/m_displayText；level5:1554/m_displayText；level5:1557/m_displayText；level5:1564/m_displayText；level5:1576/m_displayText；level5:1584/m_displayText；level5:1596/m_displayText；level5:1602/m_displayText；level5:1628/m_displayText；level5:1632/m_displayText；level5:1653/m_displayText；level5:1676/m_displayText；level5:1681/m_displayText；level5:1702/m_displayText；level5:1725/m_displayText；level5:1738/m_displayText；level5:1740/m_displayText；level5:1752/m_displayText
+UPGRADE\nECTOPLASM	强化\n灵质	level5:1460/m_displayText；level5:1470/m_displayText；level5:1480/m_displayText；level5:1517/m_displayText
+GAMEPLAY\nTIPS	游戏\n提示	level5:1403/m_displayText；level5:1416/m_displayText；level5:1492/m_displayText；level5:1711/m_displayText
+RETURN TO\nDUNGEON	返回\n地牢	level5:1504/m_displayText；level5:1669/m_displayText；level5:1695/m_displayText；level5:1748/m_displayText
+VIEW\nHERO GEAR	查看\n英雄装备	level5:1522/m_displayText；level5:1570/m_displayText；level5:1624/m_displayText；level5:1704/m_displayText
+PEAK LEVEL\nREACHED	已达\n顶峰	MenuButtonEvolveMonster.GetDisplayText；升级面板动态提示
+NOT ENOUGH\nWRATH	怒气\n不足	MenuButtonEvolveMonster.GetDisplayText；升级面板动态提示
+not enough	不足	level5:1356 MenuEvolvePlayer/Evolve/Wrath/TextCantBuy；level5:1367 OtherPlayers-DoNotApply/P2/Evolve/Wrath/TextCantBuy；level5:1378 OtherPlayers-DoNotApply/P3/Evolve/Wrath/TextCantBuy；level5:1389 OtherPlayers-DoNotApply/P4/Evolve/Wrath/TextCantBuy；level5:1542/m_stringCantAfford；level5:1607/m_stringCantAfford；level5:1648/m_stringCantAfford；level5:1659/m_stringCantAfford
+ESCAPED\nALIVE!	成功\n逃出生天！	level10:160 MenuWin/ContainerGameOver/MenuWinTextGameOver
+LOST\nFOREVER	永远\n迷失	level9:146 MenuLose/ContainerGameOver/MenuWinTextGameOver
+CONSUMED	被吞噬	level9:159 MenuLose/ContainerScores/P1/Title
+xp	经验	level9:142 MenuLose/ContainerScores/P4/XPExt；level9:143 MenuLose/ContainerScores/P2/XPExt；level9:145 MenuLose/ContainerScores/P3/XPExt；level10:156 MenuWin/ContainerScores/P2/XPExt；level10:157 MenuWin/ContainerScores/P3/XPExt；level10:158 MenuWin/ContainerScores/P4/XPExt
+ST	名	level9:156 MenuLose/ContainerScores/P2/NumberExt；level10:174 MenuWin/ContainerScores/P1/NumberExt
+ND	名	level9:152 MenuLose/ContainerScores/P3/NumberExt；level10:170 MenuWin/ContainerScores/P2/NumberExt
+RD	名	level9:148 MenuLose/ContainerScores/P4/NumberExt；level10:166 MenuWin/ContainerScores/P3/NumberExt
+TH	名	level9:160 MenuLose/ContainerScores/P1/NumberExt；level10:162 MenuWin/ContainerScores/P4/NumberExt
+- Challenge GHIDRAAK -	- 挑战 吉德拉克 -	sharedassets0.assets:56950/m_displayName
+- Challenge KOUROK -	- 挑战 库洛克 -	sharedassets0.assets:61646/m_displayName
+- Challenge Tezekcal -	- 挑战 特泽卡尔 -	sharedassets0.assets:65498/m_displayName
+- final struggle -	- 最后的挣扎 -	sharedassets0.assets:38018 EffectBossAttemptText
+Boss Killer	首领杀手	sharedassets0.assets:44080/m_bossKillerNames
+Chaos Bringer	混沌使者	sharedassets0.assets:44080/m_bossKillerNames
+Daemon Spawn	恶魔之裔	sharedassets0.assets:44080/m_bossKillerNames
+Near Immortal	近乎不朽	sharedassets0.assets:44080/m_bossKillerNames
+Gnashing Seraphin	咬牙切齿的炽天使	sharedassets0.assets:44080/m_bossKillerNames
+God Slayer	弑神者	sharedassets0.assets:44080/m_bossKillerNames
+Angel of Death	死亡天使	sharedassets0.assets:44080/m_bossKillerNames
+Winged Annihilation	灭绝之翼	sharedassets0.assets:44080/m_bossKillerNames
+Divine Butcher	神圣屠夫	sharedassets0.assets:44080/m_bossKillerNames
+Cosmic Beast	宇宙巨兽	sharedassets0.assets:44080/m_bossKillerNames
+Cronus	克洛诺斯	sharedassets0.assets:44080/m_bossKillerNames
+Yama	阎摩	sharedassets0.assets:44080/m_bossKillerNames
+Yanluo	阎罗	sharedassets0.assets:44080/m_bossKillerNames
+L'Ankou	安库	sharedassets0.assets:44080/m_bossKillerNames
+Agent of Dagon	达贡使徒	sharedassets0.assets:44080/m_bossKillerNames
+Cthulhu Kin	克苏鲁之裔	sharedassets0.assets:44080/m_bossKillerNames
+Of Nyarlathotep	奈亚拉托提普之裔	sharedassets0.assets:44080/m_bossKillerNames
+Of Yog-Sothoth	犹格索托斯之裔	sharedassets0.assets:44080/m_bossKillerNames
+Of Azathoth	阿撒托斯之裔	sharedassets0.assets:44080/m_bossKillerNames
+Omega	欧米伽	sharedassets0.assets:44080/m_bossKillerNames
