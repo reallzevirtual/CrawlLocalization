@@ -1,114 +1,78 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text.RegularExpressions;
+using System.Text;
 namespace CrawlLocalization
 {
     public static class ShopTests
     {
-        static int checks;
-        static void Check(bool ok, string message) { checks++; if (!ok) throw new Exception(message); }
-        static readonly Dictionary<string, LanguagePack> packs = new Dictionary<string, LanguagePack>();
-        static LanguagePack Load(string root, string id)
+        private static int checks;
+        private static void Check(bool ok,string message) { checks++;if(!ok) throw new Exception(message); }
+        private static LanguagePack cachedPack;
+        private static string cachedRoot;
+        private static LanguagePack Load(string root)
         {
-            string key = root + "|" + id; LanguagePack pack;
-            if (!packs.TryGetValue(key, out pack)) { pack = LanguagePack.Load(root, id, delegate(string s) { throw new Exception(s); }); packs.Add(key, pack); }
-            return pack;
+            if(cachedPack==null || cachedRoot!=root) { cachedPack=LanguagePack.Load(root,"zh-Hans",delegate(string s) { throw new Exception(s); });cachedRoot=root; }
+            return cachedPack;
         }
-        static List<string> Keys(string root, string prefix)
+        private static string Render(string root,string source) { return ShopText.Capture(source).Translate(Load(root)); }
+        public static string Name(string root,string name,string prefix)
         {
-            List<string> result = new List<string>();
-            foreach (string line in File.ReadAllLines(Path.Combine(root, "Languages/zh-Hans/shop-translations.tsv")))
-                if (line.StartsWith(prefix, StringComparison.Ordinal)) result.Add(line.Split('\t')[0].Substring(prefix.Length));
-            return result;
+            StringBuilder b=ShopText.Create();if(!string.IsNullOrEmpty(prefix)) { ShopText.Append(b,prefix);ShopText.AppendChar(b,' '); }
+            ShopText.Append(b,name);return Render(root,ShopText.Finish(b));
         }
-        public static string Name(string root, string name, string prefix)
+        public static string Description(string root,string source) { return Render(root,source); }
+        public static string StressBody(string root,string name,string description)
         {
-            string result = ShopText.WeaponName(Load(root, "zh-Hans"), new ShopWeaponText { Name = name, Prefix = prefix });
-            Check(result != null && ChineseTextWrapper.ContainsChinese(result), "Untranslated name: " + prefix + " " + name);
-            return result;
+            StringBuilder b=ShopText.Create();ShopText.Append(b,description);ShopText.AppendChar(b,'.');
+            string magic=ShopText.FormatOne("<color=#28bbcc>{0}</color>","the purifying fire");
+            ShopText.AppendChar(b,'\n');ShopText.AppendFormatOne(b,"The glyph of {0} has been hastily scratched onto it's surface.",magic);
+            ShopText.Append(b,"\nHas ");ShopText.Append(b,"an unusually <color=#a19473>low attack speed</color>");ShopText.Append(b," with ");ShopText.Append(b,"abnormally <color=#a19473>high damage</color>");
+            ShopText.AppendFormatOne(b," for a {0}",name);ShopText.Append(b,".");
+            ShopText.AppendFormatTwo(b,"\n<color=#b78f2d>{0}% chance of {1}.</color>",100,"Stealing Gold");
+            return Render(root,ShopText.Finish(b));
         }
-        public static string Description(string root, string source)
-        {
-            string result = ShopText.Description(Load(root, "zh-Hans"), source);
-            Check(result != null && (result.Length == 0 || ChineseTextWrapper.ContainsChinese(result)), "Untranslated description: " + source);
-            return result;
-        }
-        public static string StressBody(string root, string name, string description)
-        {
-            LanguagePack pack = Load(root, "zh-Hans");
-            string result = ShopText.WeaponDescription(pack, new ShopWeaponText {
-                Name = name, Description = description, Magic = "the purifying fire",
-                MagicTemplate = "The glyph of {0} has been hastily scratched onto it's surface.",
-                OwnerStatus = "Corrupted: 1.5 X Damage, Wielder is Driven Insane",
-                HitStatus = "Stealing Gold", Chance = 100, Speed = -1, Damage = 1
-            });
-            Check(result != null, "Untranslated weapon composition: " + name);
-            return result + "\n\n换购 受诅咒的双手剑 " + ShopText.Comparison(pack, -2, "VALUE") + " " + ShopText.Comparison(pack, 2, "DAMAGE") + " " + ShopText.Comparison(pack, 0, "SPEED") + " " + ShopText.Comparison(pack, 1, "RANGE");
-        }
+        private sealed class SideEffect { internal int Calls; public override string ToString() { Calls++;return "MOD"; } }
         public static string[] Run(string root)
         {
-            checks = 0;
-            LanguagePack pack = Load(root, "zh-Hans");
-            LanguagePack english = Load(root, "en");
-            List<string> bodies = new List<string>();
-            Check(Name(root, "Shortsword", "Swift") == "迅捷短剑", "Prefix/base composition");
-            Check(Name(root, "Shortsword", null) == "短剑", "No prefix");
-            Check(ShopText.WeaponName(pack, new ShopWeaponText { Name = "Shortsword", Prefix = "unknown mod prefix" }) == null, "Unknown prefix must fall back");
-            Check(ShopText.WeaponName(english, new ShopWeaponText { Name = "Shortsword" }) == null, "English must use original name");
-            foreach (string prefix in Keys(root, "@shop.prefix:")) Name(root, "Shortsword", prefix);
-            foreach (string format in Keys(root, "@shop.magic:"))
-            foreach (string magic in Keys(root, "@shop.magic-name:"))
+            checks=0;LanguagePack pack=Load(root),en=LanguagePack.Load(root,"en",delegate(string s) { throw new Exception(s); });
+            StringBuilder original=new StringBuilder(),traced=ShopText.Create();
+            original.Append("Swift");ShopText.Append(traced,"Swift");
+            string prefix=ShopText.Finish(traced);original.Append(' ');ShopText.AppendChar(traced,' ');
+            original.Append("Shortsword");ShopText.Append(traced,"Shortsword");string name=ShopText.Finish(traced);
+            Check(name==original.ToString() && prefix=="Swift","Name/prefix original cache values unchanged");
+            ShopTextRecipe saved=ShopText.Capture(name);Check(saved.Translate(pack)=="迅捷 短剑","Original append order preserved");
+            Check(ShopText.Capture(prefix).Translate(pack)=="迅捷","Intermediate ToString snapshot is immutable");
+            Check(saved.Translate(en)==null && saved.Translate(pack)=="迅捷 短剑","Reload replays trace without generating weapon again");
+            StringBuilder body=ShopText.Create();ShopText.AppendFormatTwo(body,"\n<color=#b78f2d>{0}% chance of {1}.</color>",25,"Stealing Gold");
+            string source=ShopText.Finish(body);Check(source=="\n<color=#b78f2d>25% chance of Stealing Gold.</color>","Format leaves original cache exactly intact");
+            Check(ShopText.Capture(source).Translate(pack).Contains("25％"),"Numbers/colors/format arguments survive");
+            string modded=ShopText.ConcatTwo(source,"\nMOD BONUS: kills explode");Check(ShopText.Capture(modded).Translate(pack)==null && modded.EndsWith("MOD BONUS: kills explode"),"Untranslated mod addition falls back as a whole, never disappears");
+            StringBuilder unknown=ShopText.Create();ShopText.Append(unknown,"Shortsword");unknown.Append(" + UNOBSERVED");
+            Check(ShopText.Capture(ShopText.Finish(unknown)).Translate(pack)==null,"Uninstrumented builder edit invalidates trace");
+            StringBuilder replaced=ShopText.Create();ShopText.Append(replaced,"Shortsword");replaced.Replace("Short","UnknownMod");
+            Check(ShopText.Capture(ShopText.Finish(replaced)).Translate(pack)==null,"Replace is not mistaken for the old source");
+            string equalCopy=new string(name.ToCharArray());Check(ShopText.Capture(equalCopy).Translate(pack)==null,"Equal unrelated string does not inherit provenance");
+            Check(Name(root,"Unknown mod sword","Swift")==null,"Unknown component preserves original full name");
+            Check(ShopText.Capture("Previously cached untraced description").Translate(pack)==null,"Pre-existing unknown cache is not regenerated");
+            string trade=ShopText.ConcatThree("Shortsword","\n\nReplaces ","Bow");Check(ShopText.Capture(trade).Translate(pack)=="短剑\n\n替换 弓","Concat preserves operation order");
+            string stat=ShopText.ConcatArray(new object[] { "+",15," ","Strength" });Check(stat=="+15 Strength" && ShopText.Capture(stat).Translate(pack)=="+15 力量","Stat values use original numeric conversion");
+            SideEffect effect=new SideEffect();string side=ShopText.ConcatArray(new object[] {"",effect});Check(effect.Calls==1 && side=="MOD" && ShopText.Capture(side).Translate(pack)==null,"Mod object ToString runs once only");
+            effect=new SideEffect();body=ShopText.Create();ShopText.AppendFormatOne(body,"{0}",effect);Check(effect.Calls==1 && ShopText.Capture(ShopText.Finish(body)).Translate(pack)==null,"Unsupported format argument is not evaluated twice");
+            StringBuilder empty=ShopText.Create();ShopText.Append(empty,null);ShopText.AppendChar(empty,'\n');Check(ShopText.Finish(empty)=="\n","Null/empty fragments unchanged");
+            List<string> examples=new List<string>();
+            foreach(string row in File.ReadAllLines(Path.Combine(root,"Languages/zh-Hans/shop-translations.tsv")))
             {
-                ShopWeaponText parts = new ShopWeaponText { Name = "Shortsword", Description = "", MagicTemplate = format, Magic = magic };
-                string body = ShopText.WeaponDescription(pack, parts);
-                Check(body != null && body.Contains("<color=#28bbcc>") && !body.Contains("{0}"), "Magic substitution: " + format + magic);
-                bodies.Add(body);
-                Check(ShopText.WeaponDescription(english, parts) == null, "English magic fallback");
+                if(row.StartsWith("@shop.prefix:")) { string value=Name(root,"Shortsword",row.Split('\t')[0].Substring(13));Check(value!=null,"Prefix coverage"); }
+                if(row.StartsWith("@shop.magic:"))
+                {
+                    string format=row.Split('\t')[0].Substring(12);StringBuilder b=ShopText.Create();
+                    ShopText.AppendFormatOne(b,format,ShopText.FormatOne("<color=#28bbcc>{0}</color>","the purifying fire"));
+                    string value=ShopText.Capture(ShopText.Finish(b)).Translate(pack);Check(value!=null && !value.Contains("{0}"),"Selected magic format coverage");examples.Add(value);
+                }
             }
-            foreach (string status in Keys(root, "@shop.status:"))
-            foreach (int chance in new int[] { 0, 25, 100 })
-            {
-                string body = ShopText.WeaponDescription(pack, new ShopWeaponText { Description = "", Name = "Shortsword", OwnerStatus = status, HitStatus = status, Chance = chance });
-                Check(body != null && body.Contains(chance + "％") && body.Contains("<color=#774789>") && body.Contains("<color=#b78f2d>"), "Status probability/colors: " + status);
-                bodies.Add(body);
-            }
-            for (int speed = -1; speed <= 1; speed++)
-            for (int damage = -1; damage <= 1; damage++)
-            {
-                string body = ShopText.WeaponDescription(pack, new ShopWeaponText { Description = "", Name = "Shortsword", Speed = speed, Damage = damage });
-                Check(body != null && body.Contains("较快攻速") == (speed > 0) && body.Contains("较慢攻速") == (speed < 0) && body.Contains("较高伤害") == (damage > 0) && body.Contains("较低伤害") == (damage < 0), "Trait combinations");
-                if (body.Length > 0) bodies.Add(body);
-            }
-            foreach (string key in new string[] { "VALUE", "DAMAGE", "SPEED", "RANGE" })
-            for (int value = -3; value <= 3; value++)
-            {
-                string body = ShopText.Comparison(pack, value, key);
-                string visible = Regex.Replace(body, "<[^>]+>", "");
-                string signs = value < -1 ? "--" : value == -1 ? "-" : value == 0 ? "=" : value == 1 ? "+" : "++";
-                Check(visible.StartsWith(signs, StringComparison.Ordinal) && ChineseTextWrapper.ContainsChinese(visible), "Comparison signs");
-                Check(value == 0 ? !body.Contains("<color") : body.Contains(value < 0 ? "#b6442e" : "#7fa135"), "Comparison colors");
-            }
-            foreach (string key in new string[] { "Vitality", "Strength", "Agility", "Wisdom", "Luck" })
-            foreach (int value in new int[] { -20, -1, 0, 1, 20 })
-                Check(ShopText.HeroStat(pack, value, key).StartsWith((value > 0 ? "+" : "") + value + " ", StringComparison.Ordinal), "Stat amount preserved");
-            Check(ShopText.WeaponDescription(pack, new ShopWeaponText { Description = "", Magic = "the rat" }) == null, "Unobserved magic choice falls back");
-            Check(ShopText.WeaponDescription(pack, new ShopWeaponText { Description = "", OwnerStatus = "mod status" }) == null, "Unknown status falls back");
-            Check(ShopText.Description(pack, "untranslated mod description") == null, "Unknown item falls back");
-            string badRoot = Path.Combine(Path.GetTempPath(), "crawl-shop-test-" + Guid.NewGuid().ToString("N"));
-            try
-            {
-                string directory = Path.Combine(badRoot, "Languages/zh-Hans");
-                Directory.CreateDirectory(directory);
-                foreach (string file in new string[] { "translations.tsv", "fonts.tsv", "language.ini" }) File.WriteAllText(Path.Combine(directory, file), "");
-                File.WriteAllText(Path.Combine(directory, "shop-translations.tsv"), "@shop.magic:with {0}\t丢失参数\tinvalid\n");
-                List<string> warnings = new List<string>();
-                LanguagePack bad = LanguagePack.Load(badRoot, "zh-Hans", warnings.Add);
-                Check(warnings.Count == 1 && ShopText.Term(bad, "@shop.magic:with {0}") == null, "Bad format rejected at load");
-            }
-            finally { Directory.Delete(badRoot, true); }
-            Console.WriteLine("PASS: " + checks + " shop composition/fallback checks");
-            return bodies.ToArray();
+            string stress=StressBody(root,"Shortsword","");Check(stress!=null,"Original-operation description case");examples.Add(stress);
+            Console.WriteLine("PASS: "+checks+" shop trace/cache/fallback checks");return examples.ToArray();
         }
     }
 }

@@ -70,7 +70,7 @@ namespace CrawlLocalization
             LanguagePack migrated = LanguagePack.Load(root, "zh-TW", warnings.Add);
             Check(warnings.Count == 0, "Shipped packs load without warnings: " + string.Join("; ", warnings.ToArray()));
             foreach (string table in Directory.GetFiles(Path.Combine(root, "Languages/zh-Hans"), "*translations.tsv"))
-            foreach (string row in File.ReadAllLines(table))
+            foreach (string row in LanguagePack.ReadTextLines(table))
             {
                 if (row.Length == 0 || row.StartsWith("#")) continue;
                 string[] columns = row.Split('\t');

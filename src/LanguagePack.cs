@@ -47,14 +47,14 @@ namespace CrawlLocalization
             LanguagePack pack = new LanguagePack { Id = NormalizeId(id) };
             if (pack.Id == "en") return pack;
             string directory = Path.Combine(Path.Combine(root, "Languages"), pack.Id);
-            foreach (string table in new string[] { "translations.tsv", "vault-translations.tsv", "deity-translations.tsv", "chapter-translations.tsv", "shop-translations.tsv", "gameplay-translations.tsv", "progression-translations.tsv" })
+            foreach (string table in new string[] { "translations.tsv", "vault-translations.tsv", "deity-translations.tsv", "chapter-translations.tsv", "shop-translations.tsv", "gameplay-translations.tsv", "progression-translations.tsv", "shop-il-translations.tsv" })
             {
                 string path = Path.Combine(directory, table);
                 if (table != "translations.tsv" && !File.Exists(path)) continue;
                 ReadLines(path, warn, delegate(string line)
                 {
                     string[] cells = line.Split('\t');
-                    if ((cells.Length != 2 && cells.Length != 3) || cells[0].Length == 0 || cells[1].Length == 0) throw new FormatException("Expected source<TAB>translation[<TAB>comment].");
+                    if ((cells.Length != 2 && cells.Length != 3) || cells[0].Length == 0 || (cells[1].Length == 0 && !cells[0].StartsWith("@shop.il:", StringComparison.Ordinal))) throw new FormatException("Expected source<TAB>translation[<TAB>comment].");
                     string source = NormalizeText(Unescape(cells[0])), target = Unescape(cells[1]);
                     NumericTranslation template = NumericTranslation.Create(source, target);
                     if (source.StartsWith("@shop.", StringComparison.Ordinal) || source.StartsWith("@progression.", StringComparison.Ordinal)) template = null;
@@ -96,11 +96,23 @@ namespace CrawlLocalization
             return pack;
         }
 
+        internal static string[] ReadTextLines(string path)
+        {
+            // Editors can hold a write handle while the user adjusts a language pack.
+            using (FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite | FileShare.Delete))
+            using (StreamReader reader = new StreamReader(stream, new UTF8Encoding(false, true)))
+            {
+                List<string> lines = new List<string>(); string line;
+                while ((line = reader.ReadLine()) != null) lines.Add(line);
+                return lines.ToArray();
+            }
+        }
+
         private static void ReadLines(string path, Action<string> warn, Action<string> read)
         {
             try
             {
-                string[] lines = File.ReadAllLines(path, new UTF8Encoding(false, true));
+                string[] lines = ReadTextLines(path);
                 for (int i = 0; i < lines.Length; i++)
                 {
                     if (lines[i].Trim().Length == 0 || lines[i].StartsWith("#", StringComparison.Ordinal)) continue;

@@ -1,4 +1,4 @@
-param([string]$Catalog = 'artifacts/shop-catalog.json')
+﻿param([string]$Catalog = 'artifacts/shop-catalog.json')
 $ErrorActionPreference = 'Stop'
 $root = Split-Path $PSScriptRoot -Parent
 if (!('CrawlLocalization.ShopTests' -as [type])) {
@@ -18,8 +18,8 @@ foreach ($record in $catalogData.records) {
    $name = $variant.m_name
    $description = if ($variant.m_description) { $variant.m_description } else { $d.m_weaponDescription }
    $null = $names.Add($name)
-   $null = [CrawlLocalization.ShopTests]::Name($root,$name,'')
-   $null = [CrawlLocalization.ShopTests]::Description($root,$description)
+   if ($null -eq [CrawlLocalization.ShopTests]::Name($root,$name,'')) { throw "Missing weapon name: $name" }
+   if ($null -eq [CrawlLocalization.ShopTests]::Description($root,$description)) { throw "Missing weapon description: $description" }
    $entries.Add(@{ kind='body'; text=[CrawlLocalization.ShopTests]::StressBody($root,$name,$description); source=$record.source + ' ' + $name })
    $sourceCount++
   }
@@ -33,6 +33,7 @@ $prefixes = @('') + @(Get-Content (Join-Path $root 'Languages/zh-Hans/shop-trans
 foreach ($name in $names) {
  foreach ($prefix in $prefixes) { $entries.Add(@{ kind='title'; text=[CrawlLocalization.ShopTests]::Name($root,$name,$prefix); source=$prefix + ' ' + $name }) }
 }
+foreach ($entry in $entries) { if ([string]::IsNullOrWhiteSpace($entry.text)) { throw "Missing translation: $($entry.source)" } }
 $out = Join-Path $root 'artifacts/shop-layout'
 New-Item -ItemType Directory -Force $out | Out-Null
 @{ entries=$entries.ToArray(); layouts=$catalogData.layouts } | ConvertTo-Json -Depth 8 | Set-Content (Join-Path $out 'cases.json') -Encoding utf8

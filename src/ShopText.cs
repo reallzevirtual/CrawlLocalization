@@ -1,103 +1,197 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace CrawlLocalization
 {
-    internal sealed class ShopWeaponText
+    // Object identity matters: an unrelated mod string with equal text must not inherit a recipe.
+    internal sealed class WeakIdentityMap<T> where T : class
     {
-        internal string Prefix, Name, Description, MagicTemplate, Magic, OwnerStatus, HitStatus;
-        internal int Chance, Speed, Damage;
+        private sealed class Entry { internal WeakReference Key; internal T Value; }
+        private readonly Dictionary<int,List<Entry>> buckets=new Dictionary<int,List<Entry>>();
+        private int writes;
+        internal T Get(object key)
+        {
+            if (key==null) return null;
+            lock(buckets)
+            {
+                List<Entry> entries;
+                if (!buckets.TryGetValue(RuntimeHelpers.GetHashCode(key),out entries)) return null;
+                foreach(Entry entry in entries) if (ReferenceEquals(entry.Key.Target,key)) return entry.Value;
+                return null;
+            }
+        }
+        internal void Set(object key,T value)
+        {
+            if (key==null) return;
+            lock(buckets)
+            {
+                if (++writes%128==0)
+                {
+                    foreach(int hash in new List<int>(buckets.Keys))
+                    {
+                        buckets[hash].RemoveAll(delegate(Entry e) { return !e.Key.IsAlive; });
+                        if(buckets[hash].Count==0) buckets.Remove(hash);
+                    }
+                }
+                int id=RuntimeHelpers.GetHashCode(key);List<Entry> entries;
+                if(!buckets.TryGetValue(id,out entries)) { entries=new List<Entry>();buckets.Add(id,entries); }
+                foreach(Entry entry in entries) if(ReferenceEquals(entry.Key.Target,key)) { entry.Value=value;return; }
+                entries.Add(new Entry { Key=new WeakReference(key),Value=value });
+            }
+        }
     }
 
-    // Pure display composition from selected source parts. Never parses the final English sentence.
+    // Immutable trace of actual string operations, not a second implementation of weapon rules.
+    internal sealed class ShopTextRecipe
+    {
+        internal readonly string Source;
+        private readonly ShopTextRecipe[] parts;
+        private readonly string format;
+        private readonly object[] arguments;
+        private readonly CultureInfo culture;
+        private static readonly Regex Structural=new Regex(@"</?(?:b|i|size|color|material)(?:=[^>]*)?>|\{[0-9]+(?:[^}]*)?\}");
+        internal ShopTextRecipe(string source,ShopTextRecipe[] parts,string format,object[] arguments)
+        {
+            // Never retain the weak-map key through its value (including identity Concat results).
+            Source=new string((source ?? "").ToCharArray());this.parts=parts;this.format=format==null ? null : new string(format.ToCharArray());this.arguments=arguments;
+            culture=CultureInfo.CurrentCulture;
+        }
+        private static string Term(LanguagePack pack,string source,bool format)
+        {
+            string value;
+            if(pack.TryTranslate("@shop.il:"+source,out value) || pack.TryTranslate(source,out value)) return value;
+            foreach(string prefix in new string[] { "@shop.prefix:","@shop.magic-name:","@shop.status:","@shop.magic:","@shop.stat:" })
+                if(pack.TryTranslate(prefix+source,out value)) return value;
+            if(!format && !source.EndsWith(".",StringComparison.Ordinal) && pack.TryTranslate(source+".",out value)) return value;
+            string plain=Structural.Replace(source,"");
+            foreach(char ch in plain) if(char.IsLetter(ch)) return null;
+            return source;
+        }
+        internal string Translate(LanguagePack pack)
+        {
+            if(pack.Id=="en") return null;
+            try { return Render(pack); } catch(FormatException) { return null; }
+        }
+        private string Render(LanguagePack pack)
+        {
+            string exact;
+            if(pack.TryTranslate(Source,out exact)) return exact;
+            if(parts!=null)
+            {
+                StringBuilder result=new StringBuilder();
+                foreach(ShopTextRecipe part in parts) { string text=part.Render(pack);if(text==null) return null;result.Append(text); }
+                return result.ToString();
+            }
+            if(format!=null)
+            {
+                string translated=Term(pack,format,true);if(translated==null) return null;
+                object[] values=new object[arguments.Length];
+                for(int i=0;i<values.Length;i++)
+                {
+                    ShopTextRecipe node=arguments[i] as ShopTextRecipe;
+                    values[i]=node==null ? arguments[i] : node.Render(pack);
+                    if(node!=null && values[i]==null) return null;
+                }
+                return string.Format(culture,translated,values);
+            }
+            return Term(pack,Source,false);
+        }
+    }
+
     internal static class ShopText
     {
-        internal static string Term(LanguagePack pack, string source)
+        private sealed class BuilderTrace { internal readonly List<ShopTextRecipe> Parts=new List<ShopTextRecipe>(); internal bool Invalid; }
+        private static readonly WeakIdentityMap<BuilderTrace> builders=new WeakIdentityMap<BuilderTrace>();
+        private static readonly WeakIdentityMap<ShopTextRecipe> strings=new WeakIdentityMap<ShopTextRecipe>();
+        internal static ShopTextRecipe Capture(string source)
+        { return strings.Get(source) ?? new ShopTextRecipe(source,null,null,null); }
+        private static ShopTextRecipe Sequence(string source,ShopTextRecipe[] parts)
         {
-            if (string.IsNullOrEmpty(source)) return source;
-            string value;
-            return pack.TryTranslate(source, out value) ? value : null;
+            StringBuilder original=new StringBuilder();foreach(ShopTextRecipe part in parts) original.Append(part.Source);
+            // Missing/unsupported operations from another patch invalidate the whole trace.
+            return original.ToString()==source ? new ShopTextRecipe(source,parts,null,null) : null;
         }
-
-        internal static string Description(LanguagePack pack, string source)
+        private static void Remember(string source,ShopTextRecipe recipe)
+        { if(!string.IsNullOrEmpty(source) && recipe!=null) strings.Set(source,recipe); }
+        private static ShopTextRecipe FormatRecipe(string source,string format,object[] args)
         {
-            if (string.IsNullOrEmpty(source)) return "";
-            string translated = Term(pack, source);
-            if (translated == null && !source.EndsWith(".", StringComparison.Ordinal)) translated = Term(pack, source + ".");
-            return translated;
+            object[] snapshot=new object[args.Length];
+            for(int i=0;i<args.Length;i++)
+            {
+                object arg=args[i];
+                if(arg is string) snapshot[i]=Capture((string)arg);
+                else if(arg==null || arg.GetType().IsPrimitive || arg is decimal) snapshot[i]=arg;
+                else return null; // Never invoke an arbitrary mod object's ToString again.
+            }
+            return new ShopTextRecipe(source,null,format,snapshot);
         }
-
-        internal static string WeaponName(LanguagePack pack, ShopWeaponText data)
+        private static void Add(StringBuilder builder,ShopTextRecipe node)
         {
-            string name = Term(pack, data.Name);
-            if (name == null) return null;
-            if (string.IsNullOrEmpty(data.Prefix)) return name;
-            string prefix = Term(pack, "@shop.prefix:" + data.Prefix);
-            return prefix == null ? null : prefix + name;
+            BuilderTrace trace=builders.Get(builder);
+            if(trace==null) return;
+            if(node==null) trace.Invalid=true;else trace.Parts.Add(node);
         }
-
-        internal static string WeaponDescription(LanguagePack pack, ShopWeaponText data)
+        internal static StringBuilder Create()
+        { StringBuilder builder=new StringBuilder();builders.Set(builder,new BuilderTrace());return builder; }
+        internal static StringBuilder Append(StringBuilder builder,string value)
+        { builder.Append(value);try { Add(builder,Capture(value)); } catch(Exception) { Invalidate(builder); } return builder; }
+        internal static StringBuilder AppendChar(StringBuilder builder,char value)
+        { builder.Append(value);try { Add(builder,Capture(value.ToString())); } catch(Exception) { Invalidate(builder); } return builder; }
+        private static void Invalidate(StringBuilder builder) { BuilderTrace trace=builders.Get(builder);if(trace!=null) trace.Invalid=true; }
+        internal static StringBuilder AppendFormatOne(StringBuilder builder,string format,object arg)
+        { return AppendFormatMany(builder,format,new object[] { arg }); }
+        internal static StringBuilder AppendFormatTwo(StringBuilder builder,string format,object a,object b)
+        { return AppendFormatMany(builder,format,new object[] { a,b }); }
+        internal static StringBuilder AppendFormatMany(StringBuilder builder,string format,object[] args)
         {
-            string body = Description(pack, data.Description);
-            if (body == null) return null;
-            List<string> lines = new List<string>();
-            if (body.Length > 0) lines.Add(body);
-            if (!string.IsNullOrEmpty(data.Magic))
-            {
-                if (string.IsNullOrEmpty(data.MagicTemplate)) return null;
-                string format = Term(pack, "@shop.magic:" + data.MagicTemplate);
-                string magic = Term(pack, "@shop.magic-name:" + data.Magic);
-                if (format == null || magic == null) return null;
-                lines.Add(string.Format(format, "<color=#28bbcc>" + magic + "</color>"));
-            }
-            if (!string.IsNullOrEmpty(data.OwnerStatus))
-            {
-                string status = Term(pack, "@shop.status:" + data.OwnerStatus);
-                if (status == null) return null;
-                lines.Add("<color=#774789>" + status + "。</color>");
-            }
-            List<string> traits = new List<string>();
-            foreach (string key in new string[] {
-                data.Speed > 0 ? "fast attack speed" : null,
-                data.Damage > 0 ? "high damage" : null,
-                data.Speed < 0 ? "low attack speed" : null,
-                data.Damage < 0 ? "poor damage" : null })
-            {
-                if (key == null) continue;
-                string value = Term(pack, "@shop.trait:" + key);
-                if (value == null) return null;
-                traits.Add("<color=#a19473>" + value + "</color>");
-            }
-            if (traits.Count > 0)
-            {
-                string format = Term(pack, "@shop.traits:for a {0}: {1}");
-                string name = Term(pack, data.Name);
-                if (format == null || name == null) return null;
-                lines.Add(string.Format(format, name, string.Join("、", traits.ToArray())));
-            }
-            if (!string.IsNullOrEmpty(data.HitStatus))
-            {
-                string status = Term(pack, "@shop.status:" + data.HitStatus);
-                string format = Term(pack, "@shop.chance:{0}% chance of {1}.");
-                if (status == null || format == null) return null;
-                lines.Add("<color=#b78f2d>" + string.Format(format, data.Chance, status) + "</color>");
-            }
-            return string.Join("\n", lines.ToArray());
+            int start=builder.Length;builder.AppendFormat(format,args);
+            try { Add(builder,FormatRecipe(builder.ToString(start,builder.Length-start),format,args)); } catch(Exception) { Invalidate(builder); }
+            return builder;
         }
-
-        internal static string Comparison(LanguagePack pack, int value, string name)
+        internal static string Finish(StringBuilder builder)
         {
-            string label = Term(pack, "@shop.compare:" + name);
-            if (label == null) return null;
-            string signs = value < -1 ? "--" : value == -1 ? "-" : value == 0 ? "=" : value == 1 ? "+" : "++";
-            string text = signs + label;
-            return value == 0 ? text : "<color=" + (value < 0 ? "#b6442e" : "#7fa135") + ">" + text + "</color>";
+            string source=builder.ToString();
+            RecordFinished(builder,source);
+            return source;
         }
-
-        internal static string HeroStat(LanguagePack pack, int amount, string name)
+        internal static string ObjectString(object value)
         {
-            string translated = Term(pack, "@shop.stat:" + name);
-            return translated == null ? null : (amount > 0 ? "+" : "") + amount + " " + translated;
+            string source=value.ToString();
+            StringBuilder builder=value as StringBuilder;
+            if(builder!=null) RecordFinished(builder,source);
+            return source;
+        }
+        private static void RecordFinished(StringBuilder builder,string source)
+        { try { BuilderTrace trace=builders.Get(builder);if(trace!=null && !trace.Invalid) Remember(source,Sequence(source,trace.Parts.ToArray())); } catch(Exception) { } }
+        internal static string FormatOne(string format,object arg)
+        {
+            string source=string.Format(format,arg);
+            try { Remember(source,FormatRecipe(source,format,new object[] { arg })); } catch(Exception) { }
+            return source;
+        }
+        internal static string ConcatTwo(string a,string b) { return Join(string.Concat(a,b),new object[] { a,b }); }
+        internal static string ConcatThree(string a,string b,string c) { return Join(string.Concat(a,b,c),new object[] { a,b,c }); }
+        internal static string ConcatObjects(object a,object b,object c) { return Join(string.Concat(a,b,c),new object[] { a,b,c }); }
+        internal static string ConcatArray(object[] args) { return Join(string.Concat(args),args); }
+        private static string Join(string source,object[] args)
+        {
+            try
+            {
+                ShopTextRecipe[] nodes=new ShopTextRecipe[args.Length];
+                for(int i=0;i<args.Length;i++)
+                {
+                    object arg=args[i];
+                    if(arg!=null && !(arg is string) && !arg.GetType().IsPrimitive && !(arg is decimal)) return source;
+                    nodes[i]=Capture(arg==null ? "" : Convert.ToString(arg,CultureInfo.CurrentCulture));
+                }
+                Remember(source,Sequence(source,nodes));
+            }
+            catch(Exception) { }
+            return source;
         }
     }
 }

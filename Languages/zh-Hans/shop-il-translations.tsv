@@ -1,0 +1,36 @@
+# Literal fragments consumed by original IL; empty target is allowed only for @shop.il keys.
+@shop.il:.		Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:\nHas 	\n具有	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il: with 	、	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:an unusually <color=#a19473>fast attack speed</color>	<color=#a19473>较快攻速</color>	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:abnormally <color=#a19473>high damage</color>	<color=#a19473>较高伤害</color>	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:an unusually <color=#a19473>low attack speed</color>	<color=#a19473>较慢攻速</color>	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:abnormally <color=#a19473>poor damage</color>	<color=#a19473>较低伤害</color>	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il: for a {0}	（与同类{0}相比）	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:\n<color=#774789>{0}.</color>	\n<color=#774789>{0}。</color>	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:\n<color=#b78f2d>{0}% chance of {1}.</color>	\n<color=#b78f2d>{0}％几率触发{1}。</color>	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:\n\nTrade 	\n\n换购 	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:\n\nReplaces 	\n\n替换 	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:\n\nYou already own this artifact.	\n\n你已拥有此遗物。	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:(Value 	（价值 	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:)	）	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:<color=#b6442e>--VALUE</color> 	<color=#b6442e>--价值</color> 	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:<color=#b6442e>-VALUE</color> 	<color=#b6442e>-价值</color> 	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:=VALUE 	=价值 	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:<color=#7fa135>+VALUE</color> 	<color=#7fa135>+价值</color> 	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:<color=#7fa135>++VALUE</color> 	<color=#7fa135>++价值</color> 	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:<color=#b6442e>--DAMAGE</color> 	<color=#b6442e>--伤害</color> 	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:<color=#b6442e>-DAMAGE</color> 	<color=#b6442e>-伤害</color> 	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:=DAMAGE 	=伤害 	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:<color=#7fa135>+DAMAGE</color> 	<color=#7fa135>+伤害</color> 	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:<color=#7fa135>++DAMAGE</color> 	<color=#7fa135>++伤害</color> 	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:<color=#b6442e>--SPEED</color> 	<color=#b6442e>--速度</color> 	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:<color=#b6442e>-SPEED</color> 	<color=#b6442e>-速度</color> 	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:=SPEED 	=速度 	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:<color=#7fa135>+SPEED</color> 	<color=#7fa135>+速度</color> 	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:<color=#7fa135>++SPEED</color> 	<color=#7fa135>++速度</color> 	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:<color=#b6442e>--RANGE</color> 	<color=#b6442e>--范围</color> 	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:<color=#b6442e>-RANGE</color> 	<color=#b6442e>-范围</color> 	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:=RANGE 	=范围 	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:<color=#7fa135>+RANGE</color> 	<color=#7fa135>+范围</color> 	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段
+@shop.il:<color=#7fa135>++RANGE</color> 	<color=#7fa135>++范围</color> 	Assembly-CSharp WeaponData.GetDescription / PropPurchasable.ShowInfoBox / GUIStore.Show；原代码拼接片段

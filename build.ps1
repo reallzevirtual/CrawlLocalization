@@ -11,7 +11,7 @@ if (!$SkipTests) {
 }
 $managed = Join-Path $GamePath 'Crawl_Data\Managed'
 $core = Join-Path $GamePath 'BepInEx\core'
-$output = Join-Path $projectRoot 'artifacts\CrawlLocalization-0.9.0'
+$output = Join-Path $projectRoot 'artifacts\CrawlLocalization-0.10.0'
 New-Item -ItemType Directory -Force -Path $output | Out-Null
 
 # Compile against the game's own Mono 3.5 reference assemblies, not a modern .NET runtime.
@@ -69,7 +69,7 @@ Copy-Item -LiteralPath (Join-Path $projectRoot 'CHANGELOG.md') -Destination $out
 New-Item -ItemType Directory -Force -Path (Join-Path $output 'docs') | Out-Null
 Copy-Item -LiteralPath (Join-Path $projectRoot 'docs\gameplay-image-text.md') -Destination (Join-Path $output 'docs') -Force
 Copy-Item -LiteralPath (Join-Path $projectRoot 'docs\progression-image-text.md') -Destination (Join-Path $output 'docs') -Force
-$archive = Join-Path $projectRoot 'artifacts\CrawlLocalization-0.9.0.zip'
+$archive = Join-Path $projectRoot 'artifacts\CrawlLocalization-0.10.0.zip'
 $packageFiles = @(Get-ChildItem -LiteralPath $output | ForEach-Object FullName)
 Compress-Archive -Path $packageFiles -DestinationPath $archive -Force
 Write-Output "Built: $output"
