@@ -1,6 +1,6 @@
 # Crawl Localization
 
-BepInEx 5 中文本地化插件，版本 **0.3.0**，适配 Windows Crawl / Unity 5.4.2。当前只维护简体中文；保留恢复游戏原文的选项。包含菜单按钮及经过核对的独立 TextMesh 标题、提示文字，共 206 条译文/数字模板、67 个 TextMesh 路径。
+BepInEx 5 中文本地化插件，版本 **0.3.1**，适配 Windows Crawl / Unity 5.4.2。当前只维护简体中文；保留恢复游戏原文的选项。包含菜单按钮及经过核对的独立 TextMesh 标题、提示文字，共 206 条译文/数字模板、67 个 TextMesh 路径。
 
 ## 构建与安装
 
@@ -14,7 +14,7 @@ pwsh -NoProfile -File .\build.ps1 -GamePath '你的 Crawl 目录'
 pwsh -NoProfile -File .\build.ps1 -Install
 ```
 
-输出 `artifacts/CrawlLocalization-0.3.0.zip`。关闭游戏，将 ZIP 内容解压至 `BepInEx/plugins/CrawlLocalization/`，然后重新启动。更新时覆盖 DLL、Languages 和 Fonts。新版不再分发繁体包，旧 `Languages/zh-Hant` 目录可删除；保留也不会被旧配置继续选中。不自动启动游戏。
+输出 `artifacts/CrawlLocalization-0.3.1.zip`。关闭游戏，将 ZIP 内容解压至 `BepInEx/plugins/CrawlLocalization/`，然后重新启动。更新时覆盖 DLL、Languages 和 Fonts。新版不再分发繁体包，旧 `Languages/zh-Hant` 目录可删除；保留也不会被旧配置继续选中。不自动启动游戏。
 
 ## 配置与重载
 
@@ -64,7 +64,7 @@ CrawlOnline 的 `Patch_SystemTutorial_GetShouldStartTutorial` 在 `Unlocks.Enabl
 
 ## 字体及排版
 
-`Fonts/crawl-fonts.bundle` 由 Unity 5.4.2f2 / Windows x86 构建，包含十个合并中文字体。内嵌 TTF 与根目录源文件逐字节相同，保留原游戏 Font 的 ascent、descent、line spacing；0.3.0 继续使用 0.2.2 修正后的字体包。
+`Fonts/crawl-fonts.bundle` 由 Unity 5.4.2f2 / Windows x86 构建，包含十个合并中文字体。内嵌 TTF 与根目录源文件逐字节相同，保留原游戏 Font 的 ascent、descent、line spacing；0.3.1 继续使用 0.2.2 修正后的字体包。
 
 `fonts.tsv` 五列：原字体名、类型、相对文件路径、资源/家族名、倍率。默认按完整资源路径 `LoadAsset<Font>`。支持 `bundle`、兼容入口 `ttf` 和 `system`；TTF 按家族创建不能保证实际文件来源，推荐 bundle。
 
@@ -79,6 +79,14 @@ pwsh -NoProfile -File .\build.ps1
 ```
 
 需要已激活的 Unity 5.4.2f2、Python + UnityPy。构建先完成独立导入/编译，再打包、恢复 Font 布局，最后由新的编辑器进程加载验证。详见 `FontBundleProject/README.md`。脚本为旧 OpenSSL 闪退设置进程级 `OPENSSL_ia32cap=0:0`；手工打开工程用 `open-unity54.cmd`。不要用新 Unity 升级此字体工程。
+
+## 小字号中文模糊修复（0.3.1）
+
+电脑玩家说明原本使用 `fontSize=16`、`characterSize=10`。合并字体中的汉字在这个字号只有约 5 像素高，先丢失笔画再放大，导致中文模糊；英文像素字形仍能显示清楚。
+
+包含汉字的低字号（小于 64）标签现在以整数倍率提高字形生成字号到至少 160，同时按反比调整字符缩放。例如 16/10 改为 160/1；已有 160 字号的菜单项和纯英文字体采样保持原值，恢复原文时恢复原字号与缩放。映射字体和已有中文的原字体回退都使用此处理，不改源 TTF 或字体 bundle。
+
+Unity 5.4 独立渲染复现并确认：示例中文的总高度、垂直中心不变，字形清晰；文字宽度会因字形取整精度改善略有变化。运行 `pwsh -NoProfile -File .\tests\check-text-sampling.ps1` 可生成对比图和尺寸记录，位于 `artifacts/text-sampling/`。这项检查不启动 Crawl。
 
 ## 检查和调查
 

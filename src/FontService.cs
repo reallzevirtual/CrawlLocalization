@@ -40,18 +40,19 @@ namespace CrawlLocalization
             if (language.Fonts.TryGetValue(original == null ? "" : original.name, out rule) || language.Fonts.TryGetValue("*", out rule))
             {
                 Font candidate = Load(rule);
-                int requestedSize = rule.Kind == "system" ? 32 : size;
+                int requestedSize = rule.Kind == "system" ? 32 : SamplingSize(size, text);
                 if (Covers(candidate, text, requestedSize, style))
                 {
                     choice = new FontChoice { Font = candidate, Size = requestedSize, Style = style,
-                        Scale = rule.Scale * (rule.Kind == "system" ? HeightRatio(original, size, style, candidate, requestedSize, text) : 1f) };
+                        Scale = rule.Scale * (rule.Kind == "system" ? HeightRatio(original, size, style, candidate, requestedSize, text) : (float)size / requestedSize) };
                     return true;
                 }
                 warn("Mapped font unavailable or missing glyphs: " + rule.Name + "; trying original/system fonts.");
             }
-            if (Covers(original, text, size, style))
+            int originalRenderSize = SamplingSize(size, text);
+            if (Covers(original, text, originalRenderSize, style))
             {
-                choice = new FontChoice { Font = original, Size = size, Style = style };
+                choice = new FontChoice { Font = original, Size = originalRenderSize, Style = style, Scale = (float)size / originalRenderSize };
                 return true;
             }
             foreach (string family in language.FallbackFonts)
@@ -63,6 +64,17 @@ namespace CrawlLocalization
             }
             warn("No font covers translation: " + text + "; retaining original menu text.");
             return false;
+        }
+
+        // Crawl's small labels use fontSize=16 and characterSize=10. A merged
+        // CJK glyph is only about 5 pixels tall at 16, so enlarging that atlas
+        // loses its strokes. Increase raster resolution, not world-space size.
+        internal static int SamplingSize(int size, string text)
+        {
+            if (size <= 0 || size >= 64 || text == null) return size;
+            foreach (char ch in text)
+                if (ch >= '\u3400' && ch <= '\u9fff') return size * ((160 + size - 1) / size);
+            return size;
         }
 
         private Font Load(FontRule rule)

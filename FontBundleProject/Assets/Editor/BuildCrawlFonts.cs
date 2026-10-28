@@ -114,12 +114,11 @@ public static class BuildCrawlFonts
                 string[] columns = line.Split('\t');
                 if (columns.Length != 2 && columns.Length != 3) throw new InvalidOperationException("Invalid translation row: " + line);
                 string visible = Regex.Replace(columns[1], @"\\([nrt\\])", delegate(Match match) {
-                    switch (match.Groups[1].Value) {
-                        case "n": return "\n";
-                        case "r": return "\r";
-                        case "t": return "\t";
-                        default: return "\\";
-                    }
+                    string code = match.Groups[1].Value;
+                    if (code == "n") return "\n";
+                    if (code == "r") return "\r";
+                    if (code == "t") return "\t";
+                    return "\\";
                 });
                 visible = Regex.Replace(visible, @"</?(?:b|i|size|color|material)(?:=[^>]*)?>|<quad\s[^>]*>", "", RegexOptions.IgnoreCase);
                 foreach (char ch in visible.Replace("{0}", "0123456789"))

@@ -153,11 +153,16 @@ namespace CrawlLocalization
                 using (FontService service = new FontService(messages.Add, messages.Add))
                 {
                     Check(service.TryChoose(pack, original, 160, UnityEngine.FontStyle.Normal, "中文", out choice) && choice.Font == small && choice.Size == 160, "Bundle asset selected by full path with original size");
+                    Check(service.TryChoose(pack, original, 16, UnityEngine.FontStyle.Normal, "中文", out choice) && choice.Font == small && choice.Size == 160 && Math.Abs(choice.Scale - 0.1f) < 0.0001f, "Small CJK labels use detailed glyphs with reciprocal scale");
+                    Check(Math.Abs(choice.Size * choice.Scale - 16f) < 0.0001f, "Sampling change preserves nominal text geometry");
+                    Check(service.TryChoose(pack, original, 16, UnityEngine.FontStyle.Normal, "A", out choice) && choice.Size == 16 && choice.Scale == 1f, "Small Latin text keeps the original pixel raster");
                     rule.Name = "assets/fonts/crawllarge.ttf";
                     Check(service.TryChoose(pack, original, 160, UnityEngine.FontStyle.Normal, "中文", out choice) && choice.Font == large, "Second font resolved from the same bundle");
                     Check(UnityEngine.AssetBundle.LoadCount == 1, "One bundle load shared across its font assets");
                     rule.Name = "assets/fonts/does-not-exist.ttf";
                     Check(service.TryChoose(pack, original, 160, UnityEngine.FontStyle.Normal, "中文", out choice) && choice.Font == original, "Missing bundle asset falls back to original");
+                    Check(choice.Size == 160, "Existing high-resolution label is unchanged");
+                    Check(service.TryChoose(pack, original, 16, UnityEngine.FontStyle.Normal, "中文", out choice) && choice.Font == original && choice.Size == 160 && Math.Abs(choice.Scale - 0.1f) < 0.0001f, "Original merged font fallback receives the same sampling correction");
                     rule.File = path + ".missing";
                     Check(service.TryChoose(pack, original, 160, UnityEngine.FontStyle.Normal, "中文", out choice) && choice.Font == original, "Missing bundle file falls back to original");
                 }
