@@ -12,6 +12,21 @@ if (!$SkipTests) {
 $managed = Join-Path $GamePath 'Crawl_Data\Managed'
 $core = Join-Path $GamePath 'BepInEx\core'
 $output = Join-Path $projectRoot 'artifacts\CrawlLocalization-0.12.0'
+# Rebuild the generated staging contents so old docs or extra files cannot leak
+# into a later ZIP. Keep the staging directory itself (Explorer may hold it open).
+$stagingRoot = [IO.Path]::GetFullPath($output).TrimEnd('\')
+$artifactsRoot = [IO.Path]::GetFullPath((Join-Path $projectRoot 'artifacts')).TrimEnd('\')
+if ([IO.Directory]::GetParent($stagingRoot).FullName -ne $artifactsRoot) { throw 'Unexpected staging directory.' }
+if (Test-Path -LiteralPath $output) {
+    if ((Get-Item -LiteralPath $output -Force).Attributes -band [IO.FileAttributes]::ReparsePoint) { throw 'Staging directory must not be a link.' }
+    $entries = @(Get-ChildItem -LiteralPath $output -Force)
+    $links = @(Get-ChildItem -LiteralPath $output -Recurse -Force | Where-Object { $_.Attributes -band [IO.FileAttributes]::ReparsePoint })
+    if ($links.Count) { throw 'Staging contents must not contain links.' }
+    foreach ($entry in $entries) {
+        if (![IO.Path]::GetFullPath($entry.FullName).StartsWith($stagingRoot + '\', [StringComparison]::OrdinalIgnoreCase)) { throw 'Invalid staging entry.' }
+        Remove-Item -LiteralPath $entry.FullName -Recurse -Force
+    }
+}
 New-Item -ItemType Directory -Force -Path $output | Out-Null
 
 # Compile against the game's own Mono 3.5 reference assemblies, not a modern .NET runtime.
@@ -38,16 +53,27 @@ foreach ($reference in $references) {
 $arguments += @(Get-ChildItem -LiteralPath (Join-Path $projectRoot 'src') -Filter '*.cs' | ForEach-Object FullName)
 & dotnet $compiler @arguments
 if ($LASTEXITCODE -ne 0) { throw "Compilation failed: $LASTEXITCODE" }
-foreach ($folder in @('Languages')) {
-    $target = Join-Path $output $folder
+# Player packages contain only files read by the plugin. Development notes,
+# unrelated files and retired language packs stay in the source project.
+$languageFiles = @(
+    'language.ini', 'fonts.tsv', 'textmesh-paths.txt',
+    'translations.tsv', 'vault-translations.tsv', 'deity-translations.tsv',
+    'chapter-translations.tsv', 'shop-translations.tsv', 'gameplay-translations.tsv',
+    'progression-translations.tsv', 'shop-il-translations.tsv',
+    'crawlonline-translations.tsv', 'tutorial-translations.tsv'
+)
+foreach ($locale in @('zh-Hans')) {
+    $target = Join-Path $output ('Languages\' + $locale)
     New-Item -ItemType Directory -Force -Path $target | Out-Null
-    Copy-Item -Path (Join-Path $projectRoot "$folder\*") -Destination $target -Recurse -Force
+    foreach ($file in $languageFiles) {
+        Copy-Item -LiteralPath (Join-Path $projectRoot ('Languages\' + $locale + '\' + $file)) -Destination $target -Force
+    }
 }
 # Ship only font files referenced by the language packs. Source TTFs remain in
 # the project for rebuilding, but are unnecessary when the packs use a bundle.
 $fontFiles = @{}
 $rootPrefix = [IO.Path]::GetFullPath($projectRoot).TrimEnd('\') + '\'
-foreach ($table in Get-ChildItem -Path (Join-Path $projectRoot 'Languages\*\fonts.tsv')) {
+foreach ($table in Get-ChildItem -Path (Join-Path $output 'Languages\*\fonts.tsv')) {
     foreach ($line in Get-Content -LiteralPath $table.FullName -Encoding utf8) {
         if ([string]::IsNullOrWhiteSpace($line) -or $line.StartsWith('#')) { continue }
         $columns = $line.Split("`t")
@@ -64,14 +90,8 @@ foreach ($relative in $fontFiles.Keys) {
     New-Item -ItemType Directory -Force -Path (Split-Path $fontDestination -Parent) | Out-Null
     Copy-Item -LiteralPath $fontFiles[$relative] -Destination $fontDestination -Force
 }
-Copy-Item -LiteralPath (Join-Path $projectRoot 'README.md') -Destination $output -Force
-Copy-Item -LiteralPath (Join-Path $projectRoot 'CHANGELOG.md') -Destination $output -Force
-New-Item -ItemType Directory -Force -Path (Join-Path $output 'docs') | Out-Null
-Copy-Item -LiteralPath (Join-Path $projectRoot 'docs\gameplay-image-text.md') -Destination (Join-Path $output 'docs') -Force
-Copy-Item -LiteralPath (Join-Path $projectRoot 'docs\progression-image-text.md') -Destination (Join-Path $output 'docs') -Force
-Copy-Item -LiteralPath (Join-Path $projectRoot 'docs\tutorial-image-text.md') -Destination (Join-Path $output 'docs') -Force
 $archive = Join-Path $projectRoot 'artifacts\CrawlLocalization-0.12.0.zip'
-$packageFiles = @(Get-ChildItem -LiteralPath $output | ForEach-Object FullName)
+$packageFiles = @('CrawlLocalization.dll', 'Languages', 'Fonts' | ForEach-Object { Join-Path $output $_ })
 Compress-Archive -Path $packageFiles -DestinationPath $archive -Force
 Write-Output "Built: $output"
 Write-Output "Packaged: $archive (extract into BepInEx/plugins/CrawlLocalization)"

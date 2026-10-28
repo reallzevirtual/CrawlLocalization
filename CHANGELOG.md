@@ -2,6 +2,8 @@
 
 ## 0.12.0
 
+- Trim player packages to the plugin DLL, required language data and referenced fonts; exclude developer documentation and prevent stale staging files from entering ZIPs.
+
 - Localize the prologue tutorial from movement and combat through spirit possession, progression, and completion (61 new table entries).
 - Bind tutorial message/button renderers before the original UI layout runs; retain tutorial control flow and input icons.
 - Measure tutorial Chinese wrapping with rich-text sizes and inline image widths; retain existing wrapping elsewhere.

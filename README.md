@@ -16,6 +16,12 @@ pwsh -NoProfile -File .\build.ps1 -Install
 
 输出 `artifacts/CrawlLocalization-0.12.0.zip`。关闭游戏，将 ZIP 内容解压至 `BepInEx/plugins/CrawlLocalization/`，然后重新启动。更新时覆盖 DLL、Languages 和 Fonts。新版不再分发繁体包，旧 `Languages/zh-Hant` 目录可删除；保留也不会被旧配置继续选中。不自动启动游戏。
 
+普通构建会先运行离线检查，再编译 DLL，最后自动生成 ZIP；不会启动游戏。字体包已存在时无需启动 Unity，只有重新制作字体才运行 `build-fonts.ps1`。
+
+给玩家的 ZIP 仅含 `CrawlLocalization.dll`、`Languages/zh-Hans/` 的运行数据，以及引用的 `Fonts/crawl-fonts.bundle`。不包含项目 README、CHANGELOG、docs、源码、测试文件或字体源 TTF。构建前清空版本对应的暂存目录内容，并按明确清单复制语言文件，避免旧文件残留或误带开发文件。
+
+语言目录的 `textmesh-paths.txt` 是独立文字对象的绑定清单，删除会漏译；`language.ini` 配置备用字体，缺失会产生读取警告并失去这层字体回退；`fonts.tsv` 是游戏字体到替换字体的映射。这些是程序数据，玩家无需编辑。
+
 ## 配置与重载
 
 配置文件：`BepInEx/config/crawl.localization.cfg`。
