@@ -21,13 +21,14 @@ namespace CrawlLocalization
         internal readonly Dictionary<string, FontRule> Fonts = new Dictionary<string, FontRule>(StringComparer.Ordinal);
         private readonly Dictionary<string, string> exact = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
         private readonly List<KeyValuePair<string, string>> numeric = new List<KeyValuePair<string, string>>();
+        internal readonly HashSet<string> TextMeshPaths = new HashSet<string>(StringComparer.Ordinal);
         internal int Count { get { return exact.Count + numeric.Count; } }
 
         internal static string NormalizeId(string id)
         {
             id = (id ?? "").Trim();
             if (string.Equals(id, "zh-CN", StringComparison.OrdinalIgnoreCase) || string.Equals(id, "zh-Hans", StringComparison.OrdinalIgnoreCase)) return "zh-Hans";
-            if (string.Equals(id, "zh-TW", StringComparison.OrdinalIgnoreCase) || string.Equals(id, "zh-Hant", StringComparison.OrdinalIgnoreCase)) return "zh-Hant";
+            if (string.Equals(id, "zh-TW", StringComparison.OrdinalIgnoreCase) || string.Equals(id, "zh-Hant", StringComparison.OrdinalIgnoreCase)) return "zh-Hans"; // Migrate the retired Traditional Chinese setting.
             if (string.Equals(id, "en", StringComparison.OrdinalIgnoreCase)) return "en";
             return Regex.IsMatch(id, @"\A[A-Za-z0-9][A-Za-z0-9_-]*\z") ? id : "en";
         }
@@ -49,8 +50,8 @@ namespace CrawlLocalization
             ReadLines(Path.Combine(directory, "translations.tsv"), warn, delegate(string line)
             {
                 string[] cells = line.Split('\t');
-                if (cells.Length != 2 || cells[0].Length == 0 || cells[1].Length == 0) throw new FormatException("Expected source<TAB>translation.");
-                string source = Unescape(cells[0]), target = Unescape(cells[1]);
+                if ((cells.Length != 2 && cells.Length != 3) || cells[0].Length == 0 || cells[1].Length == 0) throw new FormatException("Expected source<TAB>translation[<TAB>comment].");
+                string source = NormalizeText(Unescape(cells[0])), target = Unescape(cells[1]);
                 int token = source.IndexOf("{0}", StringComparison.Ordinal);
                 if (token >= 0)
                 {
@@ -86,6 +87,8 @@ namespace CrawlLocalization
                     pack.FallbackFonts = line.Substring(separator + 1).Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
                 else if (key != "Name") throw new FormatException("Unknown setting: " + key);
             });
+            string paths = Path.Combine(directory, "textmesh-paths.txt");
+            if (File.Exists(paths)) ReadLines(paths, warn, delegate(string line) { pack.TextMeshPaths.Add(line.Trim()); });
             return pack;
         }
 
@@ -108,6 +111,7 @@ namespace CrawlLocalization
         {
             translated = null;
             if (source == null) return false;
+            source = NormalizeText(source);
             if (exact.TryGetValue(source, out translated)) return true;
             foreach (KeyValuePair<string, string> entry in numeric)
             {
@@ -124,6 +128,8 @@ namespace CrawlLocalization
             return false;
         }
 
+        internal static string NormalizeText(string text) { return text.Replace("\r\n", "\n").Replace('\r', '\n'); }
+
         private static string Unescape(string value)
         {
             StringBuilder result = new StringBuilder();
@@ -134,6 +140,7 @@ namespace CrawlLocalization
                 switch (value[i])
                 {
                     case 'n': result.Append('\n'); break;
+                    case 'r': result.Append('\r'); break;
                     case 't': result.Append('\t'); break;
                     case '\\': result.Append('\\'); break;
                     default: throw new FormatException("Unsupported escape sequence.");

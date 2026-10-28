@@ -23,22 +23,40 @@ namespace CrawlLocalization
             checks = 0;
             List<string> warnings = new List<string>();
             LanguagePack simplified = LanguagePack.Load(root, "zh-CN", warnings.Add);
-            LanguagePack traditional = LanguagePack.Load(root, "zh-TW", warnings.Add);
+            LanguagePack migrated = LanguagePack.Load(root, "zh-TW", warnings.Add);
             Check(warnings.Count == 0, "Shipped packs load without warnings: " + string.Join("; ", warnings.ToArray()));
-            Check(simplified.Id == "zh-Hans" && traditional.Id == "zh-Hant", "Language aliases");
+            foreach (string row in File.ReadAllLines(Path.Combine(root, "Languages/zh-Hans/translations.tsv")))
+            {
+                if (row.Length == 0 || row.StartsWith("#")) continue;
+                string[] columns = row.Split('\t');
+                if (columns.Length != 3 || string.IsNullOrEmpty(columns[2])) throw new Exception("Shipped translation lacks its context comment: " + row);
+            }
+            Check(true, "Every shipped translation has a context comment");
+            Check(simplified.Id == "zh-Hans" && migrated.Id == "zh-Hans", "Language aliases");
             Translation(simplified, "START GAME", "开始游戏");
-            Translation(traditional, "START GAME", "開始遊戲");
-            Translation(traditional, "Back", "返回");
+            Translation(migrated, "START GAME", "开始游戏");
+            Translation(simplified, "Back", "返回");
             Translation(simplified, "< SOUND: 75 >", "< 音效：75 >");
-            Translation(traditional, "< 背景音乐: 45 >", "< 音樂：45 >");
-            Translation(traditional, "Run In Background: OFF", "背景執行：關");
+            Translation(simplified, "< 背景音乐: 45 >", "< 音乐：45 >");
+            Translation(simplified, "Run In Background: OFF", "后台运行：关");
             Translation(simplified, "Bots: 3", "电脑玩家：3");
+            Translation(simplified, "Note: Many keyboards do not\r\nsupport multiple players", "注意：许多键盘不支持\n多名玩家同时操作");
+            Translation(simplified, "Note: Many keyboards do not\nsupport multiple players", "注意：许多键盘不支持\n多名玩家同时操作");
+            Translation(simplified, "Hold\nbutton B\n(special\n/back)", "按住\nB 键\n（特殊技／\n返回）");
+            Translation(simplified, MenuTextPolicy.ReplayTutorialText(false, false), "重玩教程：关");
+            Translation(simplified, MenuTextPolicy.ReplayTutorialText(true, true), "重玩教程：开");
+            Translation(simplified, MenuTextPolicy.ReplayTutorialText(true, false), "重玩教程：开（当前模式禁用）");
+            Check(MenuTextPolicy.MatchesPath(simplified.TextMeshPaths, "MenuMain/MenuOptionsKeyboard(Clone)/TextInfo"), "Instantiated keyboard note is included");
+            Check(MenuTextPolicy.MatchesPath(simplified.TextMeshPaths, "MenuJoin/MenuJoinPlayer4/MenuJoinOptions/ContainerBind/TextHold"), "Fourth player binding prompt is included");
+            Check(!MenuTextPolicy.MatchesPath(simplified.TextMeshPaths, "MenuJoin/MenuJoinPlayer4/PlayerPlatformName"), "Player name is not a localization target");
+            Check(!MenuTextPolicy.MatchesPath(simplified.TextMeshPaths, "NotMenuOptionsKeyboard/TextInfo"), "Path suffix must start at a hierarchy boundary");
+            Check(!MenuTextPolicy.MatchesPath(simplified.TextMeshPaths, "MenuLibrary/MockText/MockTextItems"), "Editor mock content is not a localization target");
             string value;
             Check(!simplified.TryTranslate("Bots: Alice", out value), "Numeric templates do not match player names");
             Check(!simplified.TryTranslate("Bots: -1", out value), "Numeric templates reject unexpected formats");
             Check(!simplified.TryTranslate("Unknown mod label", out value), "Missing translations leave source alone");
             Check(!simplified.TryTranslate(null, out value), "Null source");
-            foreach (LanguagePack pack in new LanguagePack[] { simplified, traditional })
+            foreach (LanguagePack pack in new LanguagePack[] { simplified })
             {
                 Check(pack.Fonts.Count == 10, "All ten font mappings: " + pack.Id);
                 foreach (FontRule rule in pack.Fonts.Values) Check(File.Exists(rule.File), "Packaged font: " + rule.File);
@@ -61,7 +79,7 @@ namespace CrawlLocalization
             {
                 string dir = Path.Combine(Path.Combine(temp, "Languages"), "test");
                 Directory.CreateDirectory(dir);
-                File.WriteAllText(Path.Combine(dir, "translations.tsv"), "# comment\nHello\t你好\nhello\t不应覆盖\nBad row\nCounter: {0}\t计数\nLine\\nTwo\t两行\\n文本\nLiteral\\\\n\t字面\\\\n\nBroken\\q\t错误\nAfter\t后续\n", Encoding.UTF8);
+                File.WriteAllText(Path.Combine(dir, "translations.tsv"), "# comment\nHello\t你好\t位置注释含任意 \\q 转义不参与解析\nhello\t不应覆盖\nBad row\nCounter: {0}\t计数\nLine\\nTwo\t两行\\n文本\nLiteral\\\\n\t字面\\\\n\nBroken\\q\t错误\nAfter\t后续\n", Encoding.UTF8);
                 File.WriteAllText(Path.Combine(dir, "fonts.tsv"), "Bad\tttf\t../outside.ttf\tBad\t1\nInvalid\tttf\tFonts/test.ttf\tName\tNaN\nValid\tsystem\t-\tFamily\t1.25\n", Encoding.UTF8);
                 File.WriteAllText(Path.Combine(dir, "language.ini"), "Name=Test\nFallbackFonts=First;Second\n", Encoding.UTF8);
                 warnings.Clear();
@@ -69,6 +87,8 @@ namespace CrawlLocalization
                 Translation(pack, "HELLO", "你好");
                 Translation(pack, "After", "后续");
                 Translation(pack, "Line\nTwo", "两行\n文本");
+                Translation(pack, "Line\r\nTwo", "两行\n文本");
+                Translation(pack, "Line\rTwo", "两行\n文本");
                 Translation(pack, "Literal\\n", "字面\\n");
                 Check(!pack.TryTranslate("Counter: 12", out value), "Reject templates that discard their numeric value");
                 Check(pack.Fonts.Count == 1 && pack.Fonts["Valid"].Scale == 1.25f, "Skip invalid font rows and retain valid settings");
@@ -97,6 +117,7 @@ namespace CrawlLocalization
             using (FontService service = new FontService(warnings.Add, delegate(string message) { }))
             {
                 Check(service.TryChoose(pack, original, 16, UnityEngine.FontStyle.Normal, "中文", out choice) && choice.Font == mapped && choice.Scale == 1.5f, "Mapped font takes precedence and uses configured scale");
+                Check(service.TryChoose(pack, original, 16, UnityEngine.FontStyle.Normal, "<color=#ea9d1a>中文</color>", out choice) && choice.Font == mapped, "Rich text tag syntax does not require glyphs or trigger fallback");
                 mapped.Characters = "中A";
                 Check(service.TryChoose(pack, original, 16, UnityEngine.FontStyle.Normal, "中文", out choice) && choice.Font == original, "Missing mapped glyph falls back to original");
                 original.Characters = "A";

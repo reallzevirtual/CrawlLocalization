@@ -1,6 +1,7 @@
 """Optional offline cmap validation; requires fontTools, never starts the game."""
 from pathlib import Path
 from fontTools.ttLib import TTFont
+from translation_text import visible_text
 
 root = Path(__file__).resolve().parents[1]
 failed = False
@@ -8,7 +9,7 @@ for language in sorted((root / "Languages").iterdir()):
     characters = set()
     for line in (language / "translations.tsv").read_text(encoding="utf-8-sig").splitlines():
         if line and not line.startswith("#"):
-            characters.update(line.split("\t")[1].replace("{0}", "0123456789"))
+            characters.update(visible_text(line.split("\t")[1]))
     for line in (language / "fonts.tsv").read_text(encoding="utf-8-sig").splitlines():
         if not line or line.startswith("#"):
             continue

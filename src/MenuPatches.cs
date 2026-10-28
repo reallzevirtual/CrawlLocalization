@@ -16,6 +16,12 @@ namespace CrawlLocalization
             label.Skip = data.m_message == "MsgCharSelect" || data.m_message == "MsgNameSelect";
             label.ResetSource(data.m_text);
         }
+
+        private static void Postfix(MenuTextMenuItem __instance)
+        {
+            // Newly created library buttons can carry standalone child badges.
+            MenuTextMeshes.Scan(__instance.gameObject);
+        }
     }
 
     // This override writes TextMesh.text again after base.Initialise; restore the localized display.
@@ -34,9 +40,18 @@ namespace CrawlLocalization
     {
         private static void Prefix(global::GUIText __instance, ref string text)
         {
-            if (Plugin.Instance == null || __instance.GetComponent<MenuTextMenuItem>() == null) return;
-            LocalizedMenuLabel label = LocalizedMenuLabel.GetOrCreate(__instance.gameObject);
+            if (Plugin.Instance == null) return;
+            LocalizedMenuLabel label = __instance.GetComponent<LocalizedMenuLabel>();
+            if (label == null && __instance.GetComponent<MenuTextMenuItem>() != null)
+                label = LocalizedMenuLabel.GetOrCreate(__instance.gameObject);
+            if (label == null) label = MenuTextMeshes.Bind(__instance.gameObject, false);
             if (label != null) text = label.Translate(text);
+        }
+
+        private static void Postfix(global::GUIText __instance)
+        {
+            LocalizedMenuLabel label = __instance.GetComponent<LocalizedMenuLabel>();
+            if (label != null) label.CaptureRendered();
         }
     }
 
@@ -65,7 +80,7 @@ namespace CrawlLocalization
 
     public sealed class LocalizedMenuLabel : MonoBehaviour
     {
-        internal bool Skip;
+        internal bool Skip, Standalone;
         internal float BaseScale, ScaleFactor = 1f;
         private TextMesh mesh;
         private Renderer textRenderer;
@@ -73,7 +88,7 @@ namespace CrawlLocalization
         private Material originalMaterial, localMaterial;
         private int originalSize;
         private FontStyle originalStyle;
-        private string source, display;
+        private string source, display, rendered;
 
         internal static LocalizedMenuLabel GetOrCreate(GameObject obj)
         {
@@ -159,8 +174,21 @@ namespace CrawlLocalization
             if (source == null || mesh == null) return;
             global::GUIText gui = GetComponent<global::GUIText>();
             if (gui != null) gui.SetText(source);
+            else mesh.text = Translate(source);
             // Also update inactive labels immediately; GUIText will replay its pending text later.
             if (!gameObject.activeInHierarchy) mesh.text = display ?? source;
+            CaptureRendered();
+        }
+
+        internal void CaptureRendered() { if (mesh != null) rendered = mesh.text; }
+
+        private void LateUpdate()
+        {
+            // Only watch audited standalone labels, never scan the scene per frame.
+            // Capture GUIText's final wrapped/image-expanded output to avoid translating it again.
+            if (!Standalone || mesh == null || mesh.text == rendered) return;
+            mesh.text = Translate(mesh.text);
+            CaptureRendered();
         }
 
         internal void Restore(bool restoreText)

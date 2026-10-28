@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Globalization;
 using System.Text;
+using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 
@@ -104,15 +105,24 @@ public static class BuildCrawlFonts
     {
         Dictionary<string, float[]> layout = ReadLayout(root);
         HashSet<char> glyphs = new HashSet<char>();
-        foreach (string language in new string[] { "zh-Hans", "zh-Hant" })
+        foreach (string language in new string[] { "zh-Hans" })
         {
             string table = Path.Combine(root, "Languages/" + language + "/translations.tsv");
             foreach (string line in File.ReadAllLines(table, Encoding.UTF8))
             {
                 if (line.Length == 0 || line[0] == '#') continue;
                 string[] columns = line.Split('\t');
-                if (columns.Length != 2) throw new InvalidOperationException("Invalid translation row: " + line);
-                foreach (char ch in columns[1].Replace("{0}", "0123456789"))
+                if (columns.Length != 2 && columns.Length != 3) throw new InvalidOperationException("Invalid translation row: " + line);
+                string visible = Regex.Replace(columns[1], @"\\([nrt\\])", delegate(Match match) {
+                    switch (match.Groups[1].Value) {
+                        case "n": return "\n";
+                        case "r": return "\r";
+                        case "t": return "\t";
+                        default: return "\\";
+                    }
+                });
+                visible = Regex.Replace(visible, @"</?(?:b|i|size|color|material)(?:=[^>]*)?>|<quad\s[^>]*>", "", RegexOptions.IgnoreCase);
+                foreach (char ch in visible.Replace("{0}", "0123456789"))
                     if (!char.IsWhiteSpace(ch)) glyphs.Add(ch);
             }
         }

@@ -1,106 +1,207 @@
-# UTF-8. source<TAB>translation. Case-insensitive exact match; {0} matches unsigned digits only.
-START GAME	开始游戏
-THE VAULT	宝库
-OPTIONS	设置
-CREDITS	制作人员
-QUIT	退出游戏
-ONLINE	联机游戏
-ONLINE LOBBY	联机大厅
-BACK	返回
-OK?	准备好了吗？
-OK	确定
-CANCEL	取消
-YES	是
-NO	否
-READY	准备就绪
-MONSTERS	怪物
-WEAPONS	武器
-ITEMS	道具
-OBJECTS	物件
-QUESTS	挑战
-RESUME	继续游戏
-GAMEPLAY TIPS	游戏提示
-DROP IN	加入游戏
-DROP OUT	离开游戏
-QUIT TO MENU	返回主菜单
-Reset	重置
-Redefine	重新绑定
-Controls	操作设置
-Aim:Analog	瞄准：模拟
-Aim:Normal	瞄准：普通
-Aim:Smooth	瞄准：平滑
-Bots: {0}	电脑玩家：{0}
-AI: Easy	难度：简单
-AI: Normal	难度：普通
-AI: Medium	难度：中等
-AI: Hard	难度：困难
-AI: Unfair	难度：不公平
--NEW-	-新建-
-Reset Controls	重置操作设置
-Keyboard Setup	键盘设置
-Cabinet Setup	街机设置
-Resolution	分辨率
-Apply Resolution	应用分辨率
-Display	显示设置
-< SOUND: {0} >	< 音效：{0} >
-< MUSIC: {0} >	< 音乐：{0} >
-< 游戏音效: {0} >	< 音效：{0} >
-< 背景音乐: {0} >	< 音乐：{0} >
-< TV SAFE ZONE: {0} >	< 显示安全区：{0} >
-< SCREENSHAKE: {0} >	< 画面震动：{0} >
-< SAFE ZONE >	< 显示安全区 >
-< SCREENSHAKE >	< 画面震动 >
-Flicker	闪烁效果
-< Display: Primary >	< 主显示器 >
-< Display: Secondary {0} >	< 副显示器 {0} >
-< Monitor Id: {0} >	< 显示器：{0} >
-Reset All	全部重置
-- Set Keys -	- 按键设置 -
-Set Keys {0}	设置按键 {0}
-Remove Keys {0}	移除按键 {0}
-Add Keys {0}	添加按键 {0}
-Reset Keys {0}	重置按键 {0}
-Bind Keys {0}	绑定按键 {0}
-- Set Inputs -	- 输入设置 -
-Set Player {0}	设置玩家 {0}
-Sticks: Analog	摇杆：模拟
-Sticks: 8-way	摇杆：八方向
-Menu: Normal	菜单：普通
-Menu: Esc Only	菜单：仅 Esc 键
-Server list	服务器列表
-Host lobby	创建大厅
-Join a friend	加入好友
-Public	公开
-Friends only	仅限好友
-Invite only	仅限邀请
-Next page	下一页
-Refresh	刷新
-Invite friends	邀请好友
-Close lobby	关闭大厅
-Visibility: Public	可见性：公开
-Visibility: Friends	可见性：好友
-Visibility: Private	可见性：私人
-Visibility: Friends only	可见性：仅限好友
-Visibility: Invite only	可见性：仅限邀请
-Game Tips: ON	游戏提示：开
-Game Tips: OFF	游戏提示：关
-Tutorial: ON	教程：开
-Tutorial: OFF	教程：关
-Replay Tutorial: ON	重玩教程：开
-Replay Tutorial: OFF	重玩教程：关
-Run In Background: ON	后台运行：开
-Run In Background: OFF	后台运行：关
-Vibration: ON	震动：开
-Vibration: OFF	震动：关
-VSync: ON	垂直同步：开
-VSync: OFF	垂直同步：关
-Fullscreen: ON	全屏：开
-Fullscreen: OFF	全屏：关
-Reduced Flicker: ON	减少闪烁：开
-Reduced Flicker: OFF	减少闪烁：关
-Easter Eggs: ON	彩蛋：开
-Easter Eggs: OFF	彩蛋：关
-复活节彩蛋: ON	彩蛋：开
-复活节彩蛋: OFF	彩蛋：关
-Cabinet Mode: ON	街机模式：开
-Cabinet Mode: OFF	街机模式：关
+# UTF-8: source<TAB>translation<TAB>comment. Comments do not affect matching. \n = line break.
+START GAME	开始游戏	主菜单／入口按钮
+THE VAULT	宝库	主菜单／入口按钮；level2:1227 MenuLibrary/Main/TextTitle/TextTitle；level2:1230 MenuLibrary/Main/TextTitle
+OPTIONS	设置	主菜单／入口按钮；level2:1221 MenuOptions/TitleOptions
+CREDITS	制作人员	主菜单／入口按钮
+QUIT	退出游戏	主菜单／入口按钮
+ONLINE	联机游戏	主菜单／入口按钮
+ONLINE LOBBY	联机大厅	主菜单／入口按钮
+BACK	返回	通用菜单／返回、确认与选择按钮；level2:1241 MenuLibrary/Main/TextButtonB
+OK?	准备好了吗？	通用菜单／返回、确认与选择按钮
+OK	确定	通用菜单／返回、确认与选择按钮
+CANCEL	取消	通用菜单／返回、确认与选择按钮
+YES	是	通用菜单／返回、确认与选择按钮
+NO	否	通用菜单／返回、确认与选择按钮
+READY	准备就绪	通用菜单／返回、确认与选择按钮；sharedassets0.assets:38118 MenuPause/MenuDropIn/Body/Text；level2:1200 MenuJoin/MenuJoinPlayer*/MenuDeitySelectPlayer/ContainerReady/ReadyText；其他同文位置
+MONSTERS	怪物	通用菜单／返回、确认与选择按钮；sharedassets2.assets:233 MenuItemLibraryCategory
+WEAPONS	武器	宝库／分类按钮
+ITEMS	道具	宝库／分类按钮
+OBJECTS	物件	宝库／分类按钮
+QUESTS	挑战	宝库／分类按钮
+RESUME	继续游戏	宝库／分类按钮
+GAMEPLAY TIPS	游戏提示	暂停菜单／操作按钮
+DROP IN	加入游戏	暂停菜单／操作按钮
+DROP OUT	离开游戏	暂停菜单／操作按钮；sharedassets0.assets:38088 MenuControllerDisconnect/CancelButton/Label
+QUIT TO MENU	返回主菜单	暂停菜单／操作按钮
+Reset	重置	暂停菜单／操作按钮
+Redefine	重新绑定	玩家加入／操作设置、电脑数量及难度；sharedassets0.assets:38066 MenuOptionsKeyboard/ContainerBind/TextTitle；sharedassets2.assets:239 MenuOptionsCabinet/ContainerBind/TextTitle；其他同文位置
+Controls	操作设置	玩家加入／操作设置、电脑数量及难度；level2:1187 MenuJoin/MenuJoinPlayer*/MenuJoinOptions/MenuControls/TextControls；level2:1205 MenuJoin/MenuJoinPlayer*/MenuJoinOptions/MenuControls/TextControls；其他同文位置
+Aim:Analog	瞄准：模拟	玩家加入／操作设置、电脑数量及难度
+Aim:Normal	瞄准：普通	玩家加入／操作设置、电脑数量及难度
+Aim:Smooth	瞄准：平滑	玩家加入／操作设置、电脑数量及难度
+Bots: {0}	电脑玩家：{0}	玩家加入／操作设置、电脑数量及难度
+AI: Easy	难度：简单	玩家加入／操作设置、电脑数量及难度
+AI: Normal	难度：普通	玩家加入／操作设置、电脑数量及难度
+AI: Medium	难度：中等	玩家加入／操作设置、电脑数量及难度
+AI: Hard	难度：困难	玩家加入／操作设置、电脑数量及难度
+AI: Unfair	难度：不公平	玩家加入／操作设置、电脑数量及难度
+-NEW-	-新建-	玩家加入／操作设置、电脑数量及难度
+Reset Controls	重置操作设置	玩家加入／操作设置、电脑数量及难度
+Keyboard Setup	键盘设置	玩家加入／操作设置、电脑数量及难度
+Cabinet Setup	街机设置	选项／显示、声音、键盘及街机设置
+Resolution	分辨率	选项／显示、声音、键盘及街机设置
+Apply Resolution	应用分辨率	选项／显示、声音、键盘及街机设置
+Display	显示设置	选项／显示、声音、键盘及街机设置
+< SOUND: {0} >	< 音效：{0} >	选项／显示、声音、键盘及街机设置
+< MUSIC: {0} >	< 音乐：{0} >	选项／显示、声音、键盘及街机设置
+< 游戏音效: {0} >	< 音效：{0} >	选项／显示、声音、键盘及街机设置
+< 背景音乐: {0} >	< 音乐：{0} >	选项／显示、声音、键盘及街机设置
+< TV SAFE ZONE: {0} >	< 显示安全区：{0} >	选项／显示、声音、键盘及街机设置
+< SCREENSHAKE: {0} >	< 画面震动：{0} >	选项／显示、声音、键盘及街机设置
+< SAFE ZONE >	< 显示安全区 >	选项／显示、声音、键盘及街机设置
+< SCREENSHAKE >	< 画面震动 >	选项／显示、声音、键盘及街机设置
+Flicker	闪烁效果	选项／显示、声音、键盘及街机设置
+< Display: Primary >	< 主显示器 >	选项／显示、声音、键盘及街机设置
+< Display: Secondary {0} >	< 副显示器 {0} >	选项／显示、声音、键盘及街机设置
+< Monitor Id: {0} >	< 显示器：{0} >	选项／显示、声音、键盘及街机设置
+Reset All	全部重置	选项／显示、声音、键盘及街机设置
+- Set Keys -	- 按键设置 -	选项／显示、声音、键盘及街机设置
+Set Keys {0}	设置按键 {0}	选项／显示、声音、键盘及街机设置
+Remove Keys {0}	移除按键 {0}	选项／显示、声音、键盘及街机设置
+Add Keys {0}	添加按键 {0}	选项／显示、声音、键盘及街机设置
+Reset Keys {0}	重置按键 {0}	选项／显示、声音、键盘及街机设置
+Bind Keys {0}	绑定按键 {0}	选项／显示、声音、键盘及街机设置
+- Set Inputs -	- 输入设置 -	选项／显示、声音、键盘及街机设置
+Set Player {0}	设置玩家 {0}	选项／显示、声音、键盘及街机设置
+Sticks: Analog	摇杆：模拟	选项／显示、声音、键盘及街机设置
+Sticks: 8-way	摇杆：八方向	选项／显示、声音、键盘及街机设置
+Menu: Normal	菜单：普通	选项／显示、声音、键盘及街机设置
+Menu: Esc Only	菜单：仅 Esc 键	选项／显示、声音、键盘及街机设置
+Server list	服务器列表	选项／显示、声音、键盘及街机设置
+Host lobby	创建大厅	CrawlOnline／大厅菜单按钮
+Join a friend	加入好友	CrawlOnline／大厅菜单按钮
+Public	公开	CrawlOnline／大厅菜单按钮
+Friends only	仅限好友	CrawlOnline／大厅菜单按钮
+Invite only	仅限邀请	CrawlOnline／大厅菜单按钮
+Next page	下一页	CrawlOnline／大厅菜单按钮
+Refresh	刷新	CrawlOnline／大厅菜单按钮
+Invite friends	邀请好友	CrawlOnline／大厅菜单按钮
+Close lobby	关闭大厅	CrawlOnline／大厅菜单按钮
+Visibility: Public	可见性：公开	CrawlOnline／大厅菜单按钮
+Visibility: Friends	可见性：好友	CrawlOnline／大厅菜单按钮
+Visibility: Private	可见性：私人	CrawlOnline／大厅菜单按钮
+Visibility: Friends only	可见性：仅限好友	CrawlOnline／大厅菜单按钮
+Visibility: Invite only	可见性：仅限邀请	CrawlOnline／大厅菜单按钮
+Game Tips: ON	游戏提示：开	CrawlOnline／大厅菜单按钮
+Game Tips: OFF	游戏提示：关	选项／动态开关；MenuOptions
+Tutorial: ON	教程：开	选项／动态开关；MenuOptions
+Tutorial: OFF	教程：关	选项／动态开关；MenuOptions
+Replay Tutorial: ON	重玩教程：开	选项／动态开关；MenuOptions
+Replay Tutorial: OFF	重玩教程：关	选项／动态开关；MenuOptions
+Run In Background: ON	后台运行：开	选项／动态开关；MenuOptions
+Run In Background: OFF	后台运行：关	选项／动态开关；MenuOptions
+Vibration: ON	震动：开	选项／动态开关；MenuOptions
+Vibration: OFF	震动：关	选项／动态开关；MenuOptions
+VSync: ON	垂直同步：开	选项／动态开关；MenuOptions
+VSync: OFF	垂直同步：关	选项／动态开关；MenuOptions
+Fullscreen: ON	全屏：开	选项／动态开关；MenuOptions
+Fullscreen: OFF	全屏：关	选项／动态开关；MenuOptions
+Reduced Flicker: ON	减少闪烁：开	选项／动态开关；MenuOptions
+Reduced Flicker: OFF	减少闪烁：关	选项／动态开关；MenuOptions
+Easter Eggs: ON	彩蛋：开	选项／动态开关；MenuOptions
+Easter Eggs: OFF	彩蛋：关	选项／动态开关；MenuOptions
+复活节彩蛋: ON	彩蛋：开	选项／动态开关；MenuOptions
+复活节彩蛋: OFF	彩蛋：关	选项／动态开关；MenuOptions
+Cabinet Mode: ON	街机模式：开	选项／动态开关；MenuOptions
+Cabinet Mode: OFF	街机模式：关	选项／动态开关；MenuOptions
+Note: Many keyboards do not\nsupport multiple players	注意：许多键盘不支持\n多名玩家同时操作	菜单独立 TextMesh／静态文字；sharedassets0.assets:38034 MenuOptionsKeyboard/TextInfo
+_DROP_IN_	-加入游戏-	菜单独立 TextMesh／静态文字；sharedassets0.assets:38035 MenuPause/MenuDropIn/Title
+_OPTIONS_	-设置-	菜单独立 TextMesh／静态文字；sharedassets0.assets:38067 MenuPause/MenuOptionsPaused/TitleOptions
+CONTROLLER_DISCONNECT	手柄连接已断开	菜单独立 TextMesh／静态文字；sharedassets0.assets:38077 MenuControllerDisconnect/TextTitle
+Hold\n button B\n(back\n/special)	按住\nB 键\n（返回／特殊技）	菜单独立 TextMesh／静态文字；sharedassets0.assets:38078 MenuOptionsKeyboard/ContainerBind/TextHold；sharedassets2.assets:240 MenuOptionsCabinet/ContainerBind/TextHold
+The gods reward you\nwith <color=#ea9d1a>gold</color> for damaging \n<color=#d4be9c>opposing heroes</color>.	伤害<color=#d4be9c>其他英雄</color>，\n即可获得诸神赐予的\n<color=#ea9d1a>金币</color>。	菜单独立 TextMesh／静态文字；sharedassets0.assets:38079 MenuPause/MenuTips/Tips/MenuTipGold/Text
+QUIT?	退出？	菜单独立 TextMesh／静态文字；sharedassets0.assets:38080 MenuPrompt/TextTitle
+Keyboards	键盘设置	菜单独立 TextMesh／静态文字；sharedassets0.assets:38089 MenuOptionsKeyboard/TextTitle
+FALLEN HERO	陨落的英雄	菜单独立 TextMesh／静态文字；sharedassets0.assets:38090 MenuPause/MenuTips/Tips/MenuTipStoreTeleporter/Text
+Are you sure?	确定吗？	菜单独立 TextMesh／静态文字；sharedassets0.assets:38091 MenuPrompt/Text
+Saving...	正在保存...	菜单独立 TextMesh／静态文字；sharedassets0.assets:38092 MenuAutoSave/SavingDialog/Text
+Signing in...	正在登录...	菜单独立 TextMesh／静态文字；sharedassets0.assets:38093 MenuSignIn/Text
+take control	操控	菜单独立 TextMesh／静态文字；sharedassets0.assets:38098 MenuPause/MenuTips/Tips/MenuTipBlobs/Text
+followers	随从	菜单独立 TextMesh／静态文字；sharedassets0.assets:38099 MenuPause/MenuTips/Tips/MenuTipEctoplasm/Text
+ectoplasm	灵质	菜单独立 TextMesh／静态文字；sharedassets0.assets:38100 MenuPause/MenuTips/Tips/MenuTipEctoplasm/Text
+blobs	黏液怪	菜单独立 TextMesh／静态文字；sharedassets0.assets:38101 MenuPause/MenuTips/Tips/MenuTipBlobs/Text；sharedassets0.assets:38130 MenuPause/MenuTips/Tips/MenuTipEctoplasm/Text
+Your <color=#d5344d>WRATH</color> increases when\n<color=#d4be9c>opposing heroes</color> level up.\n	<color=#d4be9c>其他英雄</color>升级时，\n你的<color=#d5344d>怒气</color>会增加。\n	菜单独立 TextMesh／静态文字；sharedassets0.assets:38102 MenuPause/MenuTips/Tips/MenuTipVitae/Text
+WRATH	怒气	菜单独立 TextMesh／静态文字；sharedassets0.assets:38103 MenuPause/MenuTips/Tips/MenuTipVitae/Text
+Portal to the Boss	首领传送门	菜单独立 TextMesh／静态文字；sharedassets0.assets:38104 MenuPause/MenuTips/Tips/MenuTipRooms/Text
+Blacksmith	铁匠铺	菜单独立 TextMesh／静态文字；sharedassets0.assets:38105 MenuPause/MenuTips/Tips/MenuTipRooms/Text
+Stairs to the next floor	通往下一层的楼梯	菜单独立 TextMesh／静态文字；sharedassets0.assets:38106 MenuPause/MenuTips/Tips/MenuTipRooms/Text
+Unexplored room	未探索的房间	菜单独立 TextMesh／静态文字；sharedassets0.assets:38107 MenuPause/MenuTips/Tips/MenuTipRooms/Text
+MAP	地图	菜单独立 TextMesh／静态文字；sharedassets0.assets:38108 MenuPause/MenuTips/Tips/MenuTipRooms/Text
+must not\nhave\nred shadow	不能有\n红色\n残影	菜单独立 TextMesh／静态文字；sharedassets0.assets:38110 MenuPause/MenuTips/Tips/MenuTipCombat/Text
+Special Move	特殊技	菜单独立 TextMesh／静态文字；sharedassets0.assets:38111 MenuPause/MenuTips/Tips/MenuTipCombat/Text
+_GAME_PAUSED_	-游戏暂停-	菜单独立 TextMesh／静态文字；sharedassets0.assets:38114 MenuPause/MenuPause/Text
+Offer 5 <color=#ea9d1a>gold</color> to pay passage \nfor the dead and be \nteleported to the blacksmith.\n	献上 5 枚<color=#ea9d1a>金币</color>，\n为亡者支付路费，\n即可传送到铁匠铺。\n	菜单独立 TextMesh／静态文字；sharedassets0.assets:38115 MenuPause/MenuTips/Tips/MenuTipStoreTeleporter/Text
+Earn hero blood (  ) by \ndamaging <color=#d4be9c>opposing heroes</color>.\n	伤害<color=#d4be9c>其他英雄</color>，\n获得英雄之血（  ）。\n	菜单独立 TextMesh／静态文字；sharedassets0.assets:38116 MenuPause/MenuTips/Tips/MenuTipGold/Text
+gold	金币	菜单独立 TextMesh／静态文字；sharedassets0.assets:38117 MenuPause/MenuTips/Tips/MenuTipGold/Text
+change name	更改名字	菜单独立 TextMesh／静态文字；sharedassets0.assets:38119 MenuPause/MenuDropIn/Body/Text
+must have\nthe swirl	必须有\n旋涡标记	菜单独立 TextMesh／静态文字；sharedassets0.assets:38121 MenuPause/MenuTips/Tips/MenuTipCombat/Text
+Attack	攻击	菜单独立 TextMesh／静态文字；sharedassets0.assets:38122 MenuPause/MenuTips/Tips/MenuTipCombat/Text
+_GAMEPLAY_TIPS_	-游戏提示-	菜单独立 TextMesh／静态文字；sharedassets0.assets:38124 MenuPause/MenuTips/Text
+or press	或按	菜单独立 TextMesh／静态文字；sharedassets0.assets:38125 MenuPause/MenuTips/Tips/MenuTipBlobs/Text
+BLOB	黏液怪	菜单独立 TextMesh／静态文字；sharedassets0.assets:38126 MenuPause/MenuTips/Tips/MenuTipEctoplasm/Text
+into a	变为	菜单独立 TextMesh／静态文字；sharedassets0.assets:38127 MenuPause/MenuTips/Tips/MenuTipEctoplasm/Text
+to	以	菜单独立 TextMesh／静态文字；sharedassets0.assets:38128 MenuPause/MenuTips/Tips/MenuTipBlobs/Text
+Blobs fight\nalongside\nyou	黏液怪会\n与你\n并肩作战	菜单独立 TextMesh／静态文字；sharedassets0.assets:38129 MenuPause/MenuTips/Tips/MenuTipBlobs/Text
+Ghosts\ncollect	幽灵\n收集	菜单独立 TextMesh／静态文字；sharedassets0.assets:38131 MenuPause/MenuTips/Tips/MenuTipEctoplasm/Text
+to gain	以获得	菜单独立 TextMesh／静态文字；sharedassets0.assets:38132 MenuPause/MenuTips/Tips/MenuTipEctoplasm/Text
+turns a\nfollower	使一个\n随从	菜单独立 TextMesh／静态文字；sharedassets0.assets:38133 MenuPause/MenuTips/Tips/MenuTipEctoplasm/Text
+Exit	离开	菜单独立 TextMesh／静态文字；sharedassets0.assets:38134 MenuPause/MenuTips/Tips/MenuTipTraps/Text
+Shoot	射击	菜单独立 TextMesh／静态文字；sharedassets0.assets:38135 MenuPause/MenuTips/Tips/MenuTipTraps/Text
+Enter	进入	菜单独立 TextMesh／静态文字；sharedassets0.assets:38136 MenuPause/MenuTips/Tips/MenuTipTraps/Text
+traps	陷阱	菜单独立 TextMesh／静态文字；sharedassets0.assets:38137 MenuPause/MenuTips/Tips/MenuTipTraps/Text
+continue	继续	菜单独立 TextMesh／静态文字；sharedassets0.assets:38146 MenuControllerDisconnect/ContinueButton/Label
+combat	战斗	菜单独立 TextMesh／静态文字；sharedassets0.assets:38173 MenuPause/MenuTips/Tips/MenuTipCombat/Text
+For playing on arcade cabinets!\nNote: Toggling this mode \nresets all controls.	用于街机游玩！\n注意：切换此模式\n会重置所有操作设置。	菜单独立 TextMesh／静态文字；sharedassets2.assets:238 MenuOptionsCabinet/TextInfo
+CABINET MODE	街机模式	菜单独立 TextMesh／静态文字；sharedassets2.assets:241 MenuOptionsCabinet/TextTitle
+new	新	菜单独立 TextMesh／静态文字；sharedassets2.assets:242 MenuItemLibraryCategory/New(text)；sharedassets2.assets:243 MenuItemLibraryItem/New(text)
+hold\nbutton B\n(back\n/special)	按住\nB 键\n（返回／特殊技）	菜单独立 TextMesh／静态文字；level2:1186 MenuJoin/MenuJoinPlayer*/MenuJoinOptions/ContainerBind/TextHold；level2:1204 MenuJoin/MenuJoinPlayer*/MenuJoinOptions/ContainerBind/TextHold；其他同文位置
+A slower\npace to\nlearn the\nropes	节奏较慢\n适合熟悉\n游戏玩法	菜单独立 TextMesh／静态文字；level2:1189 MenuJoin/MenuJoinPlayer*/BotInfoContainer/TextDescription；level2:1207 MenuJoin/MenuJoinPlayer*/BotInfoContainer/TextDescription；其他同文位置
+Loading...	正在加载...	菜单独立 TextMesh／静态文字；level2:1190 MenuJoin/MenuJoinPlayer*/LoadingDialog/Text；level2:1208 MenuJoin/MenuJoinPlayer*/LoadingDialog/Text；其他同文位置
+CPU	电脑	菜单独立 TextMesh／静态文字；level2:1192 MenuJoin/MenuJoinPlayer*/BotInfoContainer/TextCPU；level2:1210 MenuJoin/MenuJoinPlayer*/BotInfoContainer/TextCPU；其他同文位置
+worships	信奉	菜单独立 TextMesh／静态文字；level2:1193 MenuJoin/MenuJoinPlayer*/MenuDeitySelectPlayer/TextWorships；level2:1211 MenuJoin/MenuJoinPlayer*/MenuDeitySelectPlayer/TextWorships；其他同文位置
+Hard	困难	菜单独立 TextMesh／静态文字；level2:1194 MenuJoin/MenuJoinPlayer*/BotInfoContainer/TextDifficulty；level2:1212 MenuJoin/MenuJoinPlayer*/BotInfoContainer/TextDifficulty；其他同文位置
+taunts	挑衅	菜单独立 TextMesh／静态文字；level2:1196 MenuJoin/MenuJoinPlayer*/MenuDeitySelectPlayer/TextTrials；level2:1214 MenuJoin/MenuJoinPlayer*/MenuDeitySelectPlayer/TextTrials；其他同文位置
+insert\ncoin	请\n投币	菜单独立 TextMesh／静态文字；level2:1198 MenuJoin/MenuJoinPlayer*/TextPressStart；level2:1216 MenuJoin/MenuJoinPlayer*/TextPressStart；其他同文位置
+Setup	设置	菜单独立 TextMesh／静态文字；level2:1202 MenuJoin/MenuJoinPlayer*/MenuJoinOptions/MenuOptions/TextOptions；level2:1220 MenuJoin/MenuJoinPlayer*/MenuJoinOptions/MenuOptions/TextOptions；其他同文位置
+change	更换	菜单独立 TextMesh／静态文字；level2:1223 MenuMain/MenuPrimaryUser/Panel/ChangeProfile
+-PASSED-	-已通过-	菜单独立 TextMesh／静态文字；level2:1226 MenuLibrary/ItemContents/TextDescriptionMonsterPassed/TextPassed
+CHALLENGE	挑战	菜单独立 TextMesh／静态文字；level2:1228 MenuLibrary/ItemContents/TextDescriptionMonster/TextTitleMonster；level2:1229 MenuLibrary/ItemContents/TextDescriptionMonsterPassed/TextTitleMonster；其他同文位置
+Code	程序	菜单独立 TextMesh／静态文字；level2:1279 MenuCredits/ScrollContainer/2BroughtToYou/dAve/Text
+Art	美术	菜单独立 TextMesh／静态文字；level2:1280 MenuCredits/ScrollContainer/2BroughtToYou/Barney/Text；level2:1296 MenuCredits/ScrollContainer/5Additional Art/Text
+Consulting and	咨询与	菜单独立 TextMesh／静态文字；level2:1282 MenuCredits/ScrollContainer/8SupriseAttack/Text
+the assistance of	的支持	菜单独立 TextMesh／静态文字；level2:1283 MenuCredits/ScrollContainer/9FilmVic/Text
+THANK YOU FOR PLAYING!	感谢游玩！	菜单独立 TextMesh／静态文字；level2:1284 MenuCredits/ScrollContainer/11Support/Text
+Voice Over	配音	菜单独立 TextMesh／静态文字；level2:1285 MenuCredits/ScrollContainer/4Voice Over/Text
+distribution support	发行支持	菜单独立 TextMesh／静态文字；level2:1287 MenuCredits/ScrollContainer/8SupriseAttack/Text
+SUPPORTED US THROUGH DEVELOPMENT	在开发期间给予我们支持	菜单独立 TextMesh／静态文字；level2:1288 MenuCredits/ScrollContainer/11Support/Text
+PROGRAMMING	程序	菜单独立 TextMesh／静态文字；level2:1290 MenuCredits/ScrollContainer/6Additional Programming/Text
+Additional	协力	菜单独立 TextMesh／静态文字；level2:1293 MenuCredits/ScrollContainer/6Additional Programming/Text；level2:1299 MenuCredits/ScrollContainer/5Additional Art/Text
+Developed with	本作开发获得	菜单独立 TextMesh／静态文字；level2:1294 MenuCredits/ScrollContainer/9FilmVic/Text
+powered by	技术支持	菜单独立 TextMesh／静态文字；level2:1297 MenuCredits/ScrollContainer/7Unity/Text
+Copyright (c) 2014-2017 Powerhoof Pty Ltd	版权所有 (c) 2014-2017 Powerhoof Pty Ltd	菜单独立 TextMesh／静态文字；level2:1302 MenuCredits/ScrollContainer/12copyright
+Music by	音乐	菜单独立 TextMesh／静态文字；level2:1303 MenuCredits/ScrollContainer/3Music
+Special Thanks	特别鸣谢	菜单独立 TextMesh／静态文字；level2:1306 MenuCredits/ScrollContainer/10Thanks
+Brought to you by	制作团队	菜单独立 TextMesh／静态文字；level2:1310 MenuCredits/ScrollContainer/2BroughtToYou
+AND FINALLY, TO EVERYONE THAT	最后，感谢所有	菜单独立 TextMesh／静态文字；level2:1311 MenuCredits/ScrollContainer/11Support
+Replay Tutorial: ON (unavailable)	重玩教程：开（当前模式禁用）	设置／重玩教程：保存的开关为开，但 CrawlOnline 或当前模式禁止启动教程
+Easy	简单	玩家加入／电脑难度
+Normal	普通	玩家加入／电脑难度
+Medium	中等	玩家加入／电脑难度
+Unfair	不公平	玩家加入／电脑难度
+A slower pace to learn the ropes	节奏较慢\n适合熟悉\n游戏玩法	玩家加入／两人局说明；MenuJoinPlayer.BOTINFO_DESC
+Moderate pace and mildy frantic	节奏适中\n略显紧张	玩家加入／三人局说明；保留原文 mildy 拼写
+Wildest pace and most chaotic	节奏最快\n战况最混乱	玩家加入／四人局说明
+Hold left	按住\n左	按键重绑／动态指令；SystemInput.UpdateBinding
+Hold right	按住\n右	按键重绑／动态指令；SystemInput.UpdateBinding
+Hold up	按住\n上	按键重绑／动态指令；SystemInput.UpdateBinding
+Hold down	按住\n下	按键重绑／动态指令；SystemInput.UpdateBinding
+Hold button A\n(attack/accept)	按住\nA 键\n（攻击／确认）	按键重绑／动态指令；SystemInput.UpdateBinding
+Hold button B\n(special/back)	按住\nB 键\n（特殊技／返回）	按键重绑／动态指令；SystemInput.UpdateBinding
+Hold button C\n(start/pause)	按住\nC 键\n（开始／暂停）	按键重绑／动态指令；SystemInput.UpdateBinding
+Hold\nleft	按住\n左	按键重绑／动态指令；SystemInput.UpdateBinding
+Hold\nright	按住\n右	按键重绑／动态指令；SystemInput.UpdateBinding
+Hold\nup	按住\n上	按键重绑／动态指令；SystemInput.UpdateBinding
+Hold\ndown	按住\n下	按键重绑／动态指令；SystemInput.UpdateBinding
+Hold\nbutton A\n(attack\n/accept)	按住\nA 键\n（攻击／\n确认）	按键重绑／动态指令；SystemInput.UpdateBinding
+Hold\nbutton B\n(special\n/back)	按住\nB 键\n（特殊技／\n返回）	按键重绑／动态指令；SystemInput.UpdateBinding
+Hold\nbutton C\n(start\n/pause)	按住\nC 键\n（开始／\n暂停）	按键重绑／动态指令；SystemInput.UpdateBinding

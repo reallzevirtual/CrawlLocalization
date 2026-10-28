@@ -5,6 +5,7 @@ import argparse
 from pathlib import Path
 import UnityPy
 from fontTools.ttLib import TTFont
+from translation_text import visible_text
 
 root = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
@@ -40,11 +41,11 @@ for name, obj in sorted(fonts.items()):
     print(f"PASS embedded {name}: {len(embedded)} bytes, SHA256 {hashlib.sha256(embedded).hexdigest()}")
 
 checks = 0
-for locale in ("zh-Hans", "zh-Hant"):
+for locale in ("zh-Hans",):
     chars = set()
     for line in (root / "Languages" / locale / "translations.tsv").read_text(encoding="utf-8-sig").splitlines():
         if line and not line.startswith("#"):
-            chars.update(line.split("\t")[1].replace("{0}", "0123456789"))
+            chars.update(visible_text(line.split("\t")[1]))
     for line in (root / "Languages" / locale / "fonts.tsv").read_text(encoding="utf-8-sig").splitlines():
         if not line or line.startswith("#"):
             continue

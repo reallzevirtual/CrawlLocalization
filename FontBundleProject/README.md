@@ -20,10 +20,10 @@ pwsh -NoProfile -File .\build-fonts.ps1 -UnityPath '其它目录\Editor\Unity.ex
 
 合并字体的 TTF 中含有更大的上升高度和行距；Unity 默认重新计算这些字段会导致文字下移。手动替换游戏内 `m_FontData` 时通常保留原 Font 的这些字段。0.2.2 使用 `font-layout.tsv` 保存十个原字体的 `m_Ascent`、`m_Descent`、`m_LineSpacing`，由 `preserve_layout.py` 在生成的 bundle 中恢复这三项；内嵌 TTF、引用及其它 Font 字段逐项验证不变。
 
-构建流程先在一个编辑器进程中完成脚本编译，然后生成原始包、恢复布局，最后在全新的 Unity 进程中重新打开最终文件。验证十个 Font 的排版参数、动态字体属性，以及简繁译文所需字形。只有这些步骤都成功，脚本才会：
+构建流程先在一个编辑器进程中完成脚本编译，然后生成原始包、恢复布局，最后在全新的 Unity 进程中重新打开最终文件。验证十个 Font 的排版参数、动态字体属性，以及中文译文所需字形。只有这些步骤都成功，脚本才会：
 
 1. 将生成的 bundle 复制到根目录 `Fonts/crawl-fonts.bundle`。
-2. 将 `fonts.bundle.tsv` 复制为简繁两种语言的 `fonts.tsv`，切换为 bundle 加载。
+2. 将 `fonts.bundle.tsv` 复制为中文语言包的 `fonts.tsv`，切换为 bundle 加载。
 
 如果构建失败，已有字体映射不变；旧文件不视为本次成功产物。
 

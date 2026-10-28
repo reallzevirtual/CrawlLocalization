@@ -55,7 +55,7 @@ if ($LASTEXITCODE -ne 0) { throw 'Failed to preserve Crawl font layout.' }
 Invoke-FontEditor 'validate' 'BuildCrawlFonts.ValidateBuiltBundle' 'CRAWL_FONT_BUNDLE_OK'
 Copy-Item -LiteralPath $bundle -Destination (Join-Path $source 'crawl-fonts.bundle') -Force
 $mapping = Join-Path $project 'fonts.bundle.tsv'
-foreach ($locale in @('zh-Hans', 'zh-Hant')) {
+foreach ($locale in @('zh-Hans')) {
     Copy-Item -LiteralPath $mapping -Destination (Join-Path $PSScriptRoot "Languages\$locale\fonts.tsv") -Force
 }
 Write-Output "Font bundle ready: $(Join-Path $source 'crawl-fonts.bundle')"

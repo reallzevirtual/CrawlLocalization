@@ -5,10 +5,11 @@ using BepInEx;
 using BepInEx.Configuration;
 using HarmonyLib;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace CrawlLocalization
 {
-    [BepInPlugin(Id, "Crawl Localization", "0.2.2")]
+    [BepInPlugin(Id, "Crawl Localization", "0.3.0")]
     public sealed class Plugin : BaseUnityPlugin
     {
         public const string Id = "crawl.localization";
@@ -26,13 +27,18 @@ namespace CrawlLocalization
         {
             Instance = this;
             folder = Path.GetDirectoryName(Info.Location);
-            language = Config.Bind("General", "Language", "zh-Hans", "Language folder: zh-Hans, zh-Hant, en. Aliases: zh-CN, zh-TW.");
+            language = Config.Bind("General", "Language", "zh-Hans", "Chinese: zh-Hans (zh-CN). Use en for original text. Legacy zh-Hant/zh-TW settings migrate to Chinese.");
             reloadKey = Config.Bind("General", "ReloadKey", KeyCode.F8, "Reload configuration and language tables. Restart to replace font files.");
             Fonts = new FontService(Warn, delegate(string message) { Logger.LogInfo(message); });
             LoadLanguage();
             harmony = new Harmony(Id);
             harmony.PatchAll(typeof(Plugin).Assembly);
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
+
+        private void Start() { MenuTextMeshes.ScanLoadedScenes(); }
+
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode) { MenuTextMeshes.ScanLoadedScenes(); }
 
         private void Update()
         {
@@ -41,6 +47,7 @@ namespace CrawlLocalization
             {
                 Config.Reload();
                 LoadLanguage();
+                MenuTextMeshes.ScanLoadedScenes();
                 foreach (LocalizedMenuLabel label in new List<LocalizedMenuLabel>(Labels))
                     if (label != null) label.Refresh();
             }
@@ -61,6 +68,7 @@ namespace CrawlLocalization
 
         private void OnDestroy()
         {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
             if (harmony != null) harmony.UnpatchSelf();
             foreach (LocalizedMenuLabel label in new List<LocalizedMenuLabel>(Labels))
                 if (label != null) { label.Restore(true); Destroy(label); }
