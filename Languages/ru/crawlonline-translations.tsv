@@ -1,0 +1,136 @@
+# Original source/key<TAB>translation (@TODO means pending)<TAB>English context
+@online:ONLINE	СЕТЕВАЯ ИГРА	CrawlOnline UI
+@online:ONLINE LOBBY	СЕТЕВОЕ ЛОББИ	CrawlOnline UI
+@online:Server list	Список серверов	CrawlOnline UI
+@online:Host lobby	Создать лобби	CrawlOnline UI
+@online:Join a friend	Присоединиться к другу	CrawlOnline UI
+@online:Public	Открытое	CrawlOnline UI
+@online:Friends only	Только друзья	CrawlOnline UI
+@online:Invite only	Только по приглашению	CrawlOnline UI
+@online:Next page	След. страница	CrawlOnline UI
+@online:Refresh	Обновить	CrawlOnline UI
+@online:Invite friends	Пригласить друзей	CrawlOnline UI
+@online:Close lobby	Закрыть лобби	CrawlOnline UI
+@online:Visibility: Public	Доступ: Открытый	CrawlOnline UI
+@online:Visibility: Friends	Доступ: Друзья	CrawlOnline UI
+@online:Visibility: Private	Доступ: Приватный	CrawlOnline UI
+@online:Visibility: Friends only	Доступ: Только друзья	CrawlOnline UI
+@online:Visibility: Invite only	Доступ: По приглашению	CrawlOnline UI
+@online:Play online	Играть по сети	CrawlOnline UI
+@online:Find a game or host your own.\nHost is P1, others join as P2-P4.	Найдите игру или создайте свою.\nХост — Игрок 1, остальные присоединяются как И2-И4.	CrawlOnline UI
+@online:Steam is not available. Use the F1 menu for a direct (IP) connection.	Steam недоступен. Используйте меню F1 для прямого подключения (по IP).	CrawlOnline UI
+@online:Back	Назад	CrawlOnline UI
+@online:Cancel	Отмена	CrawlOnline UI
+@online:OK	ОК	CrawlOnline UI
+@online:Who can join "	Кто может войти в «	CrawlOnline UI
+@online:"?	»?	CrawlOnline UI
+@online:Searching for games...	Поиск игр...	CrawlOnline UI
+@online:No games found.	Игры не найдены.	CrawlOnline UI
+@online: game	 игра	CrawlOnline UI
+@online: games	 игр	CrawlOnline UI
+@online:  -  page 	  -  стр. 	CrawlOnline UI
+@online:\n* = friend	\n* = друг	CrawlOnline UI
+@online: OLD	 СТАРАЯ	CrawlOnline UI
+@online: FULL	 ПОЛНАЯ	CrawlOnline UI
+@online:This game runs Crawl Online 	Эта игра запущена на Crawl Online 	CrawlOnline UI
+@online:, you have 0.4.0. Everybody needs the same version.	, а у вас 0.4.0. У всех должна быть одинаковая версия.	CrawlOnline UI
+@online:This lobby is full.	Лобби заполнено.	CrawlOnline UI
+@online:Visibility: 	Доступ: 	CrawlOnline UI
+@online:Close the lobby?	Закрыть лобби?	CrawlOnline UI
+@online:Everybody will be disconnected.	Все игроки будут отключены.	CrawlOnline UI
+@online:you	вы	CrawlOnline UI
+@online:  (host)	  (хост)	CrawlOnline UI
+@online:waiting...	ожидание...	CrawlOnline UI
+@online:<color=#e8d8b0ff>ONLINE LOBBY</color>\n	<color=#e8d8b0ff>СЕТЕВОЕ ЛОББИ</color>\n	CrawlOnline UI
+@online:ONLINE HOST  |  	ХОСТ  |  	CrawlOnline UI
+@online: connected  |  	 подключено  |  	CrawlOnline UI
+@online: - menu	 - меню	CrawlOnline UI
+@online:Connecting...  |  	Подключение...  |  	CrawlOnline UI
+@online:ONLINE  |  host: 	СЕТЬ  |  хост: 	CrawlOnline UI
+@online: (Steam relay)	 (ретрансляция Steam)	CrawlOnline UI
+@online: Unlock everything (weapons, monsters, gods...; your save is not changed)	 Разблокировать всё (оружие, монстров, богов... сохранение не изменится)	CrawlOnline UI
+@online:Close menu	Закрыть меню	CrawlOnline UI
+@online:The host runs the game; everyone else sees the host's screen and plays with their own controllers/keyboard.	Хост запускает игру; все остальные видят экран хоста и играют со своих геймпадов/клавиатур.	CrawlOnline UI
+@online:Host a Steam lobby	Создать лобби в Steam	CrawlOnline UI
+@online:Lobby name	Название лобби	CrawlOnline UI
+@online:Searching...	Поиск...	CrawlOnline UI
+@online:Join a friend (Steam)	Присоединиться к другу (Steam)	CrawlOnline UI
+@online:No games found. Host one or ask a friend to invite you.	Игры не найдены. Создайте свою или попросите друга пригласить вас.	CrawlOnline UI
+@online:[friend] 	[друг] 	CrawlOnline UI
+@online: (incompatible)	 (несовместимо)	CrawlOnline UI
+@online:   full	   заполнено	CrawlOnline UI
+@online:Join	Войти	CrawlOnline UI
+@online:Direct connection (LAN / port forwarding)	Прямое подключение (LAN / проброс портов)	CrawlOnline UI
+@online:Host on UDP port	Хост на UDP-порту	CrawlOnline UI
+@online:Host (UDP)	Хост (UDP)	CrawlOnline UI
+@online:Invalid port	Недопустимый порт	CrawlOnline UI
+@online:Join address	Адрес подключения	CrawlOnline UI
+@online:Enter the host address	Введите адрес хоста	CrawlOnline UI
+@online:Hosting	Хост	CrawlOnline UI
+@online:Lobby "	Лобби «	CrawlOnline UI
+@online:Invite friends (Steam overlay)	Пригласить друзей (оверлей Steam)	CrawlOnline UI
+@online:Connected players: 	Подключённые игроки: 	CrawlOnline UI
+@online:spectator  	зритель  	CrawlOnline UI
+@online: relay	 ретранслятор	CrawlOnline UI
+@online: KB/s   controllers: 	 КБ/с   контроллеры: 	CrawlOnline UI
+@online:Kick	Исключить	CrawlOnline UI
+@online:Remote players join like local ones: press a button on the character select screen.	Удалённые игроки подключаются как локальные: нажмите кнопку на экране выбора героя.	CrawlOnline UI
+@online:entities 	сущности 	CrawlOnline UI
+@online:, visible sprites 	, видимые спрайты 	CrawlOnline UI
+@online:, meshes 	, меши 	CrawlOnline UI
+@online:, capture 	, захват 	CrawlOnline UI
+@online:Stop hosting	Остановить сервер	CrawlOnline UI
+@online:Connecting...	Подключение...	CrawlOnline UI
+@online:Connected to 	Подключено к 	CrawlOnline UI
+@online:You play as P	Вы играете как И	CrawlOnline UI
+@online:All player slots are taken - you are spectating	Все места игроков заняты — вы наблюдаете	CrawlOnline UI
+@online:Ping 	Пинг 	CrawlOnline UI
+@online: ms   download 	 мс   загрузка 	CrawlOnline UI
+@online: KB/s   lost packets 	 КБ/с   потеряно пакетов 	CrawlOnline UI
+@online:Connection: 	Соединение: 	CrawlOnline UI
+@online: via Steam relay servers	 через ретрансляционные серверы Steam	CrawlOnline UI
+@online: (direct)	 (прямое)	CrawlOnline UI
+@online:   max frame gap 	   макс. пропуск кадров 	CrawlOnline UI
+@online: ms   send queue 	 мс   очередь отправки 	CrawlOnline UI
+@online: Move my character instantly (prediction: hides the ping for your own movement)	 Мгновенное перемещение героя (прогнозирование: скрывает пинг при ходьбе)	CrawlOnline UI
+@online:Your controllers and keyboard are sent to the host. On the character select screen press Action (A / X / Space) to join. Enter = Start/Pause, Escape = Back.	Ваш ввод передаётся хосту. На экране выбора персонажа нажмите Действие (A / X / Пробел), чтобы войти. Enter = Старт/Пауза, Escape = Назад.	CrawlOnline UI
+@online:Disconnect	Отключиться	CrawlOnline UI
+@online:In game	В игре	CrawlOnline UI
+@online:In menu	В меню	CrawlOnline UI
+@online:Steam is not available	Steam недоступен	CrawlOnline UI
+@online:Steam lobby search failed	Ошибка поиска лобби Steam	CrawlOnline UI
+@online:Steam lobby search timed out	Время поиска лобби Steam истекло	CrawlOnline UI
+@online:Leave the current session first	Сначала покиньте текущую сессию	CrawlOnline UI
+@online:Already in a session - disconnect first to accept the invite	Уже в сессии — сначала отключитесь, чтобы принять приглашение	CrawlOnline UI
+@online:you are the owner of this lobby	вы владелец этого лобби	CrawlOnline UI
+@online:Creating Steam lobby...	Создание лобби Steam...	CrawlOnline UI
+@online:Hosting (Steam, 	Хост (Steam, 	CrawlOnline UI
+@online: lobby)	 лобби)	CrawlOnline UI
+@online:Hosting (Steam, lobby failed - friends can still join via Steam profile)	Хост (Steam, ошибка лобби — друзья могут войти через профиль Steam)	CrawlOnline UI
+@online:Hosting (UDP port 	Хост (порт UDP 	CrawlOnline UI
+@online:Leaving local game...	Выход из локальной игры...	CrawlOnline UI
+@online:Entering Steam lobby...	Вход в лобби Steam...	CrawlOnline UI
+@online:Connecting to host...	Подключение к хосту...	CrawlOnline UI
+@online:Joining 	Подключение к 	CrawlOnline UI
+@online:Host failed: 	Ошибка хоста: 	CrawlOnline UI
+@online:UDP host failed: 	Ошибка хоста UDP: 	CrawlOnline UI
+@online:Connect failed: 	Ошибка подключения: 	CrawlOnline UI
+@online:lobby creation failed: 	Ошибка создания лобби: 	CrawlOnline UI
+@online:could not enter lobby (	не удалось войти в лобби (	CrawlOnline UI
+@online:Rejected: 	Отклонено: 	CrawlOnline UI
+@online:Host closed the session: 	Хост закрыл сессию: 	CrawlOnline UI
+@online:Could not reach the host (timeout)	Не удалось связаться с хостом (таймаут)	CrawlOnline UI
+@online:Host stopped responding	Хост перестал отвечать	CrawlOnline UI
+@online:Session is full	Сессия заполнена	CrawlOnline UI
+@online:the host closed the lobby	хост закрыл лобби	CrawlOnline UI
+@online:host stopped the session	хост остановил сессию	CrawlOnline UI
+@online:kicked by host	исключён хостом	CrawlOnline UI
+@online:cancelled	отменено	CrawlOnline UI
+@online:left	вышел	CrawlOnline UI
+@online:timed out	таймаут	CrawlOnline UI
+@online:  |  	  |  	CrawlOnline UI
+@online: controller	 контроллер	CrawlOnline UI
+@online: controllers	 контроллера	CrawlOnline UI
+@online:Crawl Online version mismatch: host has 	Несовпадение версий Crawl Online: у хоста 	CrawlOnline UI
+@online:, you have 	, у вас 	CrawlOnline UI
+@online:. Use the same version.	. Используйте одинаковую версию.	CrawlOnline UI

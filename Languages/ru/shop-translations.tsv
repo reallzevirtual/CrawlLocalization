@@ -1,0 +1,171 @@
+# Original source/key<TAB>translation (@TODO means pending)<TAB>English context
+@shop.prefix:Slow	Медленный	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Unwieldy	Громоздкий	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Torpid	Оцепенелый	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Awkward	Неуклюжий	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Unbalanced	Несбалансированный	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Crooked	Кривой	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Glutton's	Обжоры	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Quick	Быстрый	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Lithe	Гибкий	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Crystal	Кристальный	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Piscene	Рыбий	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Kuster's	Кюстера	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Rogue's	Разбойника	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Master's	Мастера	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Keen	Острый	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Swift	Стремительный	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Nimble	Проворный	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Weak	Слабый	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Cracked	Треснувший	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Crude	Грубый	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Broken	Сломанный	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Dull	Тупой	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Blunt	Тупоконечный	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Training	Тренировочный	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Strong	Крепкий	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Powerful	Мощный	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Elite	Элитный	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Cruel	Жестокий	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Flawless	Безупречный	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Violent	Яростный	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Orbeth's	Орбета	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Drogoth's	Дрогота	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Morgon's	Моргона	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Barbed	Шипастый	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.magic:Glows with the magic of {0}.	Светится магией: {0}.	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.magic:Blessed by the order of {0}.	Благословлено орденом: {0}.	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.magic:The symbol of {0} glows beneath your fingers.	Символ «{0}» сияет под вашими пальцами.	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.magic:The power of {0} lies dormant within.	Сила «{0}» дремлет внутри.	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.magic:Vibrates with essence of {0}.	Вибрирует эссенцией: {0}.	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.magic:Once wielded by {0} monks.	Некогда принадлежало монахам: {0}.	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.magic:The glyph of {0} has been hastily scratched onto it's surface.	Глиф «{0}» наспех выцарапан на поверхности.	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.magic:Wrested from the grasp of {0} demon.	Вырвано из лап демона: {0}.	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.stat:Vitality	Живучесть	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.stat:Strength	Сила	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.stat:Agility	Ловкость	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.stat:Wisdom	Мудрость	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.stat:Luck	Удача	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.status:Critical hit	Критический удар	Shop names, prefixes, effects and prompts; sharedassets0.assets:44597, sharedassets0.assets:45813, sharedassets0.assets:45870, sharedassets0.assets:45871, sharedassets0.assets:45876, sharedassets0.assets:45898, sharedassets0.assets:45899, sharedassets0.assets:45900
+@shop.status:Stun	Оглушение	Shop names, prefixes, effects and prompts; sharedassets0.assets:45814, sharedassets0.assets:45816, sharedassets0.assets:45817, sharedassets0.assets:45820, sharedassets0.assets:45823, sharedassets0.assets:45824, sharedassets0.assets:45833, sharedassets0.assets:45834, sharedassets0.assets:45835, sharedassets0.assets:45836, sharedassets0.assets:45839, sharedassets0.assets:45847, sharedassets0.assets:45853, sharedassets0.assets:45861, sharedassets0.assets:45862, sharedassets0.assets:45885, sharedassets0.assets:45886, sharedassets0.assets:45887, sharedassets0.assets:45888, sharedassets0.assets:45889, sharedassets0.assets:45895, sharedassets0.assets:45897, sharedassets0.assets:45901, sharedassets0.assets:45905
+@shop.status:Holding Beholder Eye	Держит Око бехолдера	Shop names, prefixes, effects and prompts; sharedassets0.assets:45815
+@shop.prefix:Hemophiliac's	Гемофилика	Shop names, prefixes, effects and prompts; sharedassets0.assets:45818
+@shop.status:Causes constant bleeding	Вызывает постоянное кровотечение	Shop names, prefixes, effects and prompts; sharedassets0.assets:45818
+@shop.prefix:Holy	Святой	Shop names, prefixes, effects and prompts; sharedassets0.assets:45819
+@shop.prefix:Blessed	Благословенный	Shop names, prefixes, effects and prompts; sharedassets0.assets:45819
+@shop.status:Blessed: Gain more XP	Благословение: больше опыта	Shop names, prefixes, effects and prompts; sharedassets0.assets:45819
+@shop.prefix:Witching	Ведьминский	Shop names, prefixes, effects and prompts; sharedassets0.assets:45821, sharedassets0.assets:45822, sharedassets0.assets:45840, sharedassets0.assets:45841, sharedassets0.assets:45860
+@shop.status:Chicken Magic	Куриная магия	Shop names, prefixes, effects and prompts; sharedassets0.assets:45821, sharedassets0.assets:45822
+@shop.prefix:Charmed	Очарованный	Shop names, prefixes, effects and prompts; sharedassets0.assets:45825
+@shop.status:Charmed: Store Discount	Очарование: скидка в магазине	Shop names, prefixes, effects and prompts; sharedassets0.assets:45825
+@shop.prefix:Occult	Оккультный	Shop names, prefixes, effects and prompts; sharedassets0.assets:45826
+@shop.prefix:Veiled	Сокрытый	Shop names, prefixes, effects and prompts; sharedassets0.assets:45826
+@shop.prefix:Mystic	Мистический	Shop names, prefixes, effects and prompts; sharedassets0.assets:45826
+@shop.prefix:Orphic	Орфический	Shop names, prefixes, effects and prompts; sharedassets0.assets:45826
+@shop.status:Cosmic Strikes	Космические удары	Shop names, prefixes, effects and prompts; sharedassets0.assets:45826
+@shop.prefix:Blasting	Взрывной	Shop names, prefixes, effects and prompts; sharedassets0.assets:45827
+@shop.prefix:Explosive	Подрывной	Shop names, prefixes, effects and prompts; sharedassets0.assets:45827
+@shop.prefix:Torpedo	Торпедный	Shop names, prefixes, effects and prompts; sharedassets0.assets:45827
+@shop.prefix:Bomber's	Бомбардира	Shop names, prefixes, effects and prompts; sharedassets0.assets:45827
+@shop.prefix:Sapper's	Сапёра	Shop names, prefixes, effects and prompts; sharedassets0.assets:45827
+@shop.status:Explosive Strikes	Взрывные удары	Shop names, prefixes, effects and prompts; sharedassets0.assets:45827
+@shop.prefix:Vorpal	Стригущий	Shop names, prefixes, effects and prompts; sharedassets0.assets:45828
+@shop.prefix:Vampiric	Вампирический	Shop names, prefixes, effects and prompts; sharedassets0.assets:45828
+@shop.prefix:Drinker	Пьющий	Shop names, prefixes, effects and prompts; sharedassets0.assets:45828
+@shop.prefix:Draining	Осушающий	Shop names, prefixes, effects and prompts; sharedassets0.assets:45828
+@shop.prefix:Thirsting	Жаждущий	Shop names, prefixes, effects and prompts; sharedassets0.assets:45828
+@shop.status:Life Steal Strikes	Удары с похищением жизни	Shop names, prefixes, effects and prompts; sharedassets0.assets:45828
+@shop.prefix:Buff	Усиливающий	Shop names, prefixes, effects and prompts; sharedassets0.assets:45829, sharedassets0.assets:45838, sharedassets0.assets:45849, sharedassets0.assets:45851, sharedassets0.assets:45896
+@shop.prefix:Poison	Ядовитый	Shop names, prefixes, effects and prompts; sharedassets0.assets:45829, sharedassets0.assets:45838, sharedassets0.assets:45849, sharedassets0.assets:45851, sharedassets0.assets:45890, sharedassets0.assets:45896
+@shop.status:GhostGirlHeal	Исцеление девочки-призрака	Shop names, prefixes, effects and prompts; sharedassets0.assets:45829, sharedassets0.assets:45849
+@shop.prefix:Cellular	Клеточный	Shop names, prefixes, effects and prompts; sharedassets0.assets:45830
+@shop.prefix:Plasmatic	Плазматический	Shop names, prefixes, effects and prompts; sharedassets0.assets:45830
+@shop.prefix:Biotic	Биотический	Shop names, prefixes, effects and prompts; sharedassets0.assets:45830
+@shop.status:Plasm Strikes	Плазменные удары	Shop names, prefixes, effects and prompts; sharedassets0.assets:45830
+@shop.prefix:Liquid	Жидкий	Shop names, prefixes, effects and prompts; sharedassets0.assets:45831
+@shop.prefix:Oceanic	Океанический	Shop names, prefixes, effects and prompts; sharedassets0.assets:45831
+@shop.prefix:Wet	Мокрый	Shop names, prefixes, effects and prompts; sharedassets0.assets:45831
+@shop.prefix:Dripping	Капающий	Shop names, prefixes, effects and prompts; sharedassets0.assets:45831
+@shop.prefix:Deep Sea	Глубоководный	Shop names, prefixes, effects and prompts; sharedassets0.assets:45831
+@shop.status:Water Strikes	Водяные удары	Shop names, prefixes, effects and prompts; sharedassets0.assets:45831
+@shop.prefix:Dark	Тёмный	Shop names, prefixes, effects and prompts; sharedassets0.assets:45832, sharedassets0.assets:45863
+@shop.prefix:Corrupted	Осквернённый	Shop names, prefixes, effects and prompts; sharedassets0.assets:45832, sharedassets0.assets:45863
+@shop.status:Corrupted: 1.5 X Damage, Wielder is Driven Insane	Осквернение: x1,5 к урону, сводит владельца с ума	Shop names, prefixes, effects and prompts; sharedassets0.assets:45832
+@shop.status:GhoulGoo	Слизь упыря	Shop names, prefixes, effects and prompts; sharedassets0.assets:45838, sharedassets0.assets:45851
+@shop.status:Frog Magic	Лягушачья магия	Shop names, prefixes, effects and prompts; sharedassets0.assets:45840, sharedassets0.assets:45841
+@shop.prefix:Glacial	Ледниковый	Shop names, prefixes, effects and prompts; sharedassets0.assets:45842, sharedassets0.assets:45869
+@shop.prefix:Icey	Ледяной	Shop names, prefixes, effects and prompts; sharedassets0.assets:45842, sharedassets0.assets:45869
+@shop.prefix:Frozen	Мёрзлый	Shop names, prefixes, effects and prompts; sharedassets0.assets:45842, sharedassets0.assets:45869
+@shop.prefix:Frostbite	Морозный	Shop names, prefixes, effects and prompts; sharedassets0.assets:45842, sharedassets0.assets:45869
+@shop.status:Ice Magic	Магия льда	Shop names, prefixes, effects and prompts; sharedassets0.assets:45842, sharedassets0.assets:45869
+@shop.status:Causes nice sparkles	Создаёт красивые искры	Shop names, prefixes, effects and prompts; sharedassets0.assets:45859
+@shop.status:Mournful	Скорбный	Shop names, prefixes, effects and prompts; sharedassets0.assets:45860
+@shop.prefix:Mad	Безумный	Shop names, prefixes, effects and prompts; sharedassets0.assets:45872, sharedassets0.assets:45875
+@shop.status:Insanity	Безумие	Shop names, prefixes, effects and prompts; sharedassets0.assets:45872, sharedassets0.assets:45875
+@shop.prefix:Cursed	Проклятый	Shop names, prefixes, effects and prompts; sharedassets0.assets:45877
+@shop.status:Cursed: Causes Vomiting, but sold at a discount	Проклятие: вызывает рвоту, но продаётся со скидкой	Shop names, prefixes, effects and prompts; sharedassets0.assets:45877
+@shop.prefix:Burning	Горящий	Shop names, prefixes, effects and prompts; sharedassets0.assets:45880
+@shop.prefix:Flaming	Пламенный	Shop names, prefixes, effects and prompts; sharedassets0.assets:45880
+@shop.prefix:Hellfire	Адского пламени	Shop names, prefixes, effects and prompts; sharedassets0.assets:45880
+@shop.status:Fire Magic	Магия огня	Shop names, prefixes, effects and prompts; sharedassets0.assets:45880
+@shop.prefix:Venomous	Отравленный	Shop names, prefixes, effects and prompts; sharedassets0.assets:45890
+@shop.status:Poison	Яд	Shop names, prefixes, effects and prompts; sharedassets0.assets:45890
+@shop.prefix:Thieving	Воровской	Shop names, prefixes, effects and prompts; sharedassets0.assets:45902, sharedassets0.assets:45903, sharedassets0.assets:45904
+@shop.status:Stealing Gold	Кража золота	Shop names, prefixes, effects and prompts; sharedassets0.assets:45902, sharedassets0.assets:45903, sharedassets0.assets:45904
+@shop.magic-name:eternal fire	вечного огня	Shop names, prefixes, effects and prompts; sharedassets0.assets:45958
+Sword	Меч	Shop names, prefixes, effects and prompts; sharedassets0.assets:45960, sharedassets0.assets:45961, sharedassets0.assets:45962, sharedassets0.assets:45963
+2 Handed Sword	Двуручный меч	Shop names, prefixes, effects and prompts; sharedassets0.assets:45964, sharedassets0.assets:45965, sharedassets0.assets:45966, sharedassets0.assets:45967
+Cracked Bow	Треснувший лук	Shop names, prefixes, effects and prompts; sharedassets0.assets:45971
+A low powered bow.	Слабый лук.	Shop names, prefixes, effects and prompts; sharedassets0.assets:45971
+Magic Knife	Магический нож	Shop names, prefixes, effects and prompts; sharedassets0.assets:45981
+A light knife imbued with powerful magic	Лёгкий нож, наделённый могущественной магией	Shop names, prefixes, effects and prompts; sharedassets0.assets:45981
+Magic Machete	Магическое мачете	Shop names, prefixes, effects and prompts; sharedassets0.assets:45981
+@shop.magic-name:the sun ray	солнечного луча	Shop names, prefixes, effects and prompts; sharedassets0.assets:45982
+@shop.magic-name:the blasting orb	взрывной сферы	Shop names, prefixes, effects and prompts; sharedassets0.assets:45983
+@shop.magic-name:bloodstrike	кровавого удара	Shop names, prefixes, effects and prompts; sharedassets0.assets:45984
+@shop.magic-name:the boulder	валуна	Shop names, prefixes, effects and prompts; sharedassets0.assets:45985
+@shop.magic-name:the cyclone	циклона	Shop names, prefixes, effects and prompts; sharedassets0.assets:45986
+@shop.magic-name:the purifying fire	очищающего огня	Shop names, prefixes, effects and prompts; sharedassets0.assets:45987
+@shop.magic-name:greater ice shards	великих ледяных осколков	Shop names, prefixes, effects and prompts; sharedassets0.assets:45988
+@shop.magic-name:chain ice shards	цепных ледяных осколков	Shop names, prefixes, effects and prompts; sharedassets0.assets:45989
+@shop.magic-name:the speartrap	копейной ловушки	Shop names, prefixes, effects and prompts; sharedassets0.assets:45990
+@shop.magic-name:the rat	крысы	Shop names, prefixes, effects and prompts; sharedassets0.assets:45991
+Practice Knife	Тренировочный нож	Shop names, prefixes, effects and prompts; sharedassets0.assets:46001
+A dull knife, capable of stealing gold	Тупой нож, способный красть золото	Shop names, prefixes, effects and prompts; sharedassets0.assets:46001
+Tutor's Blade	Клинок наставника	Shop names, prefixes, effects and prompts; sharedassets0.assets:46006
+A spinning axe that comes alive when you attack. Use movement to fling it at your enemies\nattack to activate\r it	Вращающийся топор, оживающий при атаке. Двигайтесь, чтобы метнуть его во врагов,\nатакуйте, чтобы активировать\r его	Shop names, prefixes, effects and prompts; sharedassets0.assets:50916, sharedassets0.assets:50927
+Frog Enchantment	Лягушачьи чары	Shop names, prefixes, effects and prompts; sharedassets0.assets:51521
+Terrified	В ужасе	Shop names, prefixes, effects and prompts; sharedassets0.assets:51522
+Strength Up	Сила +	Shop names, prefixes, effects and prompts; sharedassets0.assets:51536, sharedassets0.assets:51537, sharedassets0.assets:51538, sharedassets0.assets:51570, sharedassets0.assets:51571, sharedassets0.assets:51572, sharedassets0.assets:51573, sharedassets0.assets:51574, sharedassets0.assets:51577
+A spinning axe that comes alive when you cast magic. Use movement to fling it at your enemies.	Вращающийся топор, оживающий при сотворении магии. Двигайтесь, чтобы метнуть его во врагов.	Shop names, prefixes, effects and prompts; sharedassets0.assets:51539
+Speed Up	Скорость +	Shop names, prefixes, effects and prompts; sharedassets0.assets:51540, sharedassets0.assets:51541, sharedassets0.assets:51543, sharedassets0.assets:51569
+Living Tome: Fireball	Живой фолиант: Огненный шар	Shop names, prefixes, effects and prompts; sharedassets0.assets:51542, sharedassets0.assets:51564
+Magic book follows you and periodically fires a spell	Магическая книга следует за вами и периодически применяет заклинание	Shop names, prefixes, effects and prompts; sharedassets0.assets:51542, sharedassets0.assets:51563, sharedassets0.assets:51564, sharedassets0.assets:51565
+Living Tome: Beam	Живой фолиант: Луч	Shop names, prefixes, effects and prompts; sharedassets0.assets:51563
+Living Tome: Tears	Живой фолиант: Слёзы	Shop names, prefixes, effects and prompts; sharedassets0.assets:51565
+Always Bleed	Постоянное кровотечение	Shop names, prefixes, effects and prompts; sharedassets0.assets:51566
+Magic Up	Магия +	Shop names, prefixes, effects and prompts; sharedassets0.assets:51568
+Floats around and damages enemies on contact	Парит рядом и наносит урон врагам при контакте	Shop names, prefixes, effects and prompts; sharedassets0.assets:51575, sharedassets0.assets:51576
+@shop.trait:fast attack speed	высокая скорость атаки	Shop names, prefixes, effects and prompts
+@shop.trait:high damage	высокий урон	Shop names, prefixes, effects and prompts
+@shop.trait:low attack speed	низкая скорость атаки	Shop names, prefixes, effects and prompts
+@shop.trait:poor damage	низкий урон	Shop names, prefixes, effects and prompts
+@shop.compare:VALUE	ЦЕНА	Shop names, prefixes, effects and prompts
+@shop.compare:DAMAGE	УРОН	Shop names, prefixes, effects and prompts
+@shop.compare:SPEED	СКОРОСТЬ	Shop names, prefixes, effects and prompts
+@shop.compare:RANGE	ДАЛЬНОСТЬ	Shop names, prefixes, effects and prompts
+@shop.traits:for a {0}: {1}	для {0}: {1}	Shop names, prefixes, effects and prompts
+@shop.chance:{0}% chance of {1}.	{0}% шанс: {1}.	Shop names, prefixes, effects and prompts
+(Value {0})	(Цена {0})	Shop names, prefixes, effects and prompts
+Trade	Обменять	Shop names, prefixes, effects and prompts
+Replaces	Заменяет	Shop names, prefixes, effects and prompts
+You already own this artifact.	Этот артефакт у вас уже есть.	Shop names, prefixes, effects and prompts
+BUY	КУПИТЬ	Shop names, prefixes, effects and prompts
+BUY POTION	КУПИТЬ ЗЕЛЬЕ	Shop names, prefixes, effects and prompts
+BUY ARTIFACT	КУПИТЬ АРТЕФАКТ	Shop names, prefixes, effects and prompts
+BUY SPELL	КУПИТЬ ЗАКЛИНАНИЕ	Shop names, prefixes, effects and prompts
+BUY WEAPON	КУПИТЬ ОРУЖИЕ	Shop names, prefixes, effects and prompts
+TRADE WEAPON	ОБМЕНЯТЬ ОРУЖИЕ	Shop names, prefixes, effects and prompts
+FORBIDDEN	ЗАПРЕЩЕНО	Shop names, prefixes, effects and prompts
+ALREADY OWNED	УЖЕ ЕСТЬ	Shop names, prefixes, effects and prompts
+NOT ENOUGH GOLD	НЕ ХВАТАЕТ ЗОЛОТА	Shop names, prefixes, effects and prompts

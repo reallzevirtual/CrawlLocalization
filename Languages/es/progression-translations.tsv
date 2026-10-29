@@ -1,0 +1,50 @@
+# Original source/key<TAB>translation (@TODO means pending)<TAB>English context
+_End the game?_	¿Terminar la partida?	Pause, evolution and results
+All progress will be lost, are you sure you want to quit?	Se perderá todo el progreso, ¿seguro que quieres salir?	Pause, evolution and results
+_Exit the tutorial?_	¿Salir del tutorial?	Pause, evolution and results
+To play the tutorial again, select 'Replay Tutorial' from the options menu. \n\n Are you sure you want to quit?	Para volver a jugar el tutorial, selecciona 'Repetir tutorial' en el menú de opciones. \n\n ¿Seguro que quieres salir?	Pause, evolution and results
+@progression.join-title:{0}:{1}	_J{0}_'{1}'_SE_HA_UNIDO_	Pause notification; original English template: _P{0}_'{1}'_DROPPED_IN_; {0}=player number, {1}=player name (uppercased by the game)
+@progression.leave-title:{0}:{1}	_J{0}_'{1}'_HA_SALIDO_	Pause notification; original English template: _P{0}_'{1}'_DROPPED_OUT_; {0}=player number, {1}=player name (uppercased by the game)
+@progression.join-body:{0}:{1}:{2}:{3}:{4}	Unido como Jugador {0} con alias: '{1}'\n\nNivel de héroe: {2}\nAdora a: {3}\n({4})	Pause notification; original English template: Joined as Player {0} with alias: '{1}'\n\nHero level: {2}\nWorships: {3}\n({4}); {0}=player number, {1}=player name, {2}=hero level, {3}=deity name, {4}=deity effect
+@progression.leave-body:{0}:{1}	El Jugador {0} ({1}) será reemplazado por un bot.	Pause notification; original English template: Player {0} ({1}) will be replaced with a bot.; {0}=player number, {1}=player name
+None	Ninguno	Pause, evolution and results
+UPGRADE\nMONSTER	MEJORAR\nMONSTRUO	Pause, evolution and results; level5:1361, level5:1372, level5:1383, level5:1394, level5:1399/m_displayText, level5:1401/m_displayText, level5:1410/m_displayText, level5:1465/m_displayText, level5:1490/m_displayText, level5:1501/m_displayText, level5:1546/m_displayText, level5:1554/m_displayText, level5:1557/m_displayText, level5:1564/m_displayText, level5:1576/m_displayText, level5:1584/m_displayText, level5:1596/m_displayText, level5:1602/m_displayText, level5:1628/m_displayText, level5:1632/m_displayText, level5:1653/m_displayText, level5:1676/m_displayText, level5:1681/m_displayText, level5:1702/m_displayText, level5:1725/m_displayText, level5:1738/m_displayText, level5:1740/m_displayText, level5:1752/m_displayText
+UPGRADE\nECTOPLASM	MEJORAR\nECTOPLASMA	Pause, evolution and results; level5:1460/m_displayText, level5:1470/m_displayText, level5:1480/m_displayText, level5:1517/m_displayText
+GAMEPLAY\nTIPS	CONSEJOS\nDE JUEGO	Pause, evolution and results; level5:1403/m_displayText, level5:1416/m_displayText, level5:1492/m_displayText, level5:1711/m_displayText
+RETURN TO\nDUNGEON	VOLVER A LA\nMAZMORRA	Pause, evolution and results; level5:1504/m_displayText, level5:1669/m_displayText, level5:1695/m_displayText, level5:1748/m_displayText
+VIEW\nHERO GEAR	EQUIPO\nDEL HÉROE	Pause, evolution and results; level5:1522/m_displayText, level5:1570/m_displayText, level5:1624/m_displayText, level5:1704/m_displayText
+PEAK LEVEL\nREACHED	NIVEL MÁXIMO\nALCANZADO	Pause, evolution and results
+NOT ENOUGH\nWRATH	IRA\nINSUFICIENTE	Pause, evolution and results
+not enough	insuficiente	Pause, evolution and results; level5:1356, level5:1367, level5:1378, level5:1389, level5:1542/m_stringCantAfford, level5:1607/m_stringCantAfford, level5:1648/m_stringCantAfford, level5:1659/m_stringCantAfford
+ESCAPED\nALIVE!	¡ESCAPÓ\nCON VIDA!	Pause, evolution and results; level10:160
+LOST\nFOREVER	PERDIDO\nPARA SIEMPRE	Pause, evolution and results; level9:146
+CONSUMED	DEVORADO	Pause, evolution and results; level9:159
+xp	exp	Pause, evolution and results; level9:142, level9:143, level9:145, level10:156, level10:157, level10:158
+ST	ER	Pause, evolution and results; level9:156, level10:174
+ND	DO	Pause, evolution and results; level9:152, level10:170
+RD	RO	Pause, evolution and results; level9:148, level10:166
+TH	TO	Pause, evolution and results; level9:160, level10:162
+- Challenge GHIDRAAK -	- Desafío de GHIDRAAK -	Pause, evolution and results; sharedassets0.assets:56950/m_displayName
+- Challenge KOUROK -	- Desafío de KOUROK -	Pause, evolution and results; sharedassets0.assets:61646/m_displayName
+- Challenge Tezekcal -	- Desafío de Tezekcal -	Pause, evolution and results; sharedassets0.assets:65498/m_displayName
+- final struggle -	- combate final -	Pause, evolution and results; sharedassets0.assets:38018
+Boss Killer	Matarreyes	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Chaos Bringer	Heraldo del caos	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Daemon Spawn	Engendro demoníaco	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Near Immortal	Casi inmortal	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Gnashing Seraphin	Serafín rechinante	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+God Slayer	Matadioses	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Angel of Death	Ángel de la muerte	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Winged Annihilation	Aniquilación alada	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Divine Butcher	Carnicero divino	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Cosmic Beast	Bestia cósmica	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Cronus	Crono	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Yama	Yama	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Yanluo	Yanluo	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+L'Ankou	L'Ankou	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Agent of Dagon	Agente de Dagón	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Cthulhu Kin	Pariente de Cthulhu	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Of Nyarlathotep	De Nyarlathotep	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Of Yog-Sothoth	De Yog-Sothoth	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Of Azathoth	De Azathoth	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Omega	Omega	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames

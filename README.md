@@ -1,6 +1,6 @@
 # Crawl Localization
 
-用于 **Windows 版 Crawl（Unity 5.4.2）** 的 BepInEx 5 本地化插件。当前维护简体中文，支持通过独立语言包添加其他语言，并为 **CrawlOnline 0.4.0** 提供可选界面翻译。当前插件版本由根目录 [VERSION](VERSION) 统一管理。
+用于 **Windows 版 Crawl（Unity 5.4.2）** 的 BepInEx 5 本地化插件。当前提供简体中文、西班牙语和俄语，支持通过独立语言包添加其他语言，并为 **CrawlOnline 0.4.0** 提供可选界面翻译。当前插件版本由根目录 [VERSION](VERSION) 统一管理。
 
 本地化在本机显示层生效。插件使用外置译文表和字体资源，在内存中适配显示入口；保留游戏的原始标识、存档数据、随机选择及交互回调，不需要手动修改游戏 assets 或磁盘上的 DLL。
 
@@ -24,10 +24,10 @@
 玩家需要 Windows 版 Crawl，以及与游戏匹配的 **BepInEx 5（32 位）**。使用发行包不需要 .NET SDK、Python 或 Unity Editor。
 
 1. 安装并确认 BepInEx 能正常加载。
-2. 关闭游戏，将普通玩家包 `CrawlLocalization-<版本号>.zip` 的内容解压到 `Crawl/BepInEx/plugins/CrawlLocalization/`。
-3. 启动游戏。默认使用简体中文，插件生成配置文件。
+2. 选择多语言包 `CrawlLocalization-<版本号>.zip`（全部非中文语言），或中文包 `CrawlLocalization-<版本号>-zh-Hans.zip`。关闭游戏，将所选包解压到 `Crawl/BepInEx/plugins/CrawlLocalization/`。
+3. 启动游戏生成配置；多语言包需将 `Language` 设置为 `es`、`ru` 或所需语言目录名。中文包使用 `zh-Hans`。旧配置不会自动改变。
 
-安装后的结构应为：
+以中文包为例，安装后的结构应为：
 
 ```text
 Crawl/
@@ -42,7 +42,9 @@ Crawl/
          │     ├─ textmesh-paths.txt
          │     └─ …translations.tsv
          └─ Fonts/
-            └─ crawl-fonts.bundle
+            ├─ crawl-fonts.bundle
+            ├─ crawl-multilingual.bundle
+            └─ …字体许可与来源说明
 ```
 
 更新前备份自己改过的语言包，再覆盖 DLL、语言数据和字体文件，重启游戏。避免多放一份旧 DLL，或多套一层解压目录。CrawlOnline 是可选模组；本地化包不包含它，也不要求安装它。
@@ -74,7 +76,7 @@ ReloadKey = F8
 
 ## Create another language
 
-Use `CrawlLocalization-<version>-Translator.zip`. It contains the DLL, an independent original-English catalog, `crawl-language-pack/SKILL.md`, and creation/checking scripts. It includes a shared Latin/Cyrillic font bundle, with no Chinese translations or Chinese comments. The player package separately includes Simplified Chinese.
+Use `CrawlLocalization-<version>-Translator.zip`. It contains the DLL, an independent original-English catalog, `crawl-language-pack/SKILL.md`, and creation/checking scripts. It includes a shared Latin/Cyrillic font bundle, with no Chinese translations or Chinese comments. The default player package includes non-Chinese language packs; Simplified Chinese has its own separate player package.
 
 Before editing, back up the English catalog and your generated language folder. Ask an AI to read the skill and specify the target language, or run this in the extracted translator package:
 
@@ -102,7 +104,7 @@ No DLL rebuild is needed. Share the language directory, required fonts and langu
 
 - **PowerShell 7** 与 **.NET SDK**（提供 C# 编译器）。
 - 本机 Crawl 游戏文件，以及其 `BepInEx/core/` 中的 BepInEx 5 和 Harmony 程序集。
-- 仓库自带的 `Fonts/crawl-fonts.bundle`。使用现成字体包构建 DLL 不需要 Unity Editor。
+- 仓库自带的 `Fonts/crawl-multilingual.bundle` 及许可说明；中文包还使用 `Fonts/crawl-fonts.bundle`。使用现成字体包不需要 Unity Editor。
 
 构建使用游戏自己的 Mono / Unity 引用程序集，无需 NuGet。在项目根目录运行：
 
@@ -110,23 +112,33 @@ No DLL rebuild is needed. Share the language directory, required fonts and langu
 pwsh -NoProfile -File .\build.ps1 -GamePath 'D:\SteamLibrary\steamapps\common\Crawl'
 ```
 
-默认流程为：**离线检查 → 编译 DLL → 整理运行文件 → 生成两个 ZIP**。不会自动安装或启动游戏。
+默认流程为：**离线检查 → 编译 DLL → 打包全部非中文语言和通用字体 → 生成玩家 ZIP 与制作包 ZIP**。不会自动安装或启动游戏。
+
+```powershell
+# 全部非中文语言，目前为 es、ru；新增非中文语言目录会自动纳入
+pwsh -NoProfile -File .\build.ps1
+
+# 只收录中文语言；同时附带中文字体和通用多语言字体
+pwsh -NoProfile -File .\build.ps1 -Languages zh-Hans
+
+# 显式选择非中文语言子集
+pwsh -NoProfile -File .\build.ps1 -Languages ru
+```
 
 | 输出 | 用途 |
 | --- | --- |
-| `artifacts/CrawlLocalization-<版本号>/` | 运行文件暂存目录，每次构建会重建其内容 |
-| `artifacts/CrawlLocalization-<版本号>.zip` | 普通玩家包 |
-| `artifacts/CrawlLocalization-<版本号>-Translator.zip` | DLL、英文原文词表、通用拉丁／西里尔字体包、说明和翻译工具，不含现成译文 |
+| `artifacts/CrawlLocalization-<版本号>.zip` | 默认玩家包：全部非中文语言、通用字体、全英文 README |
+| `artifacts/CrawlLocalization-<版本号>-zh-Hans.zip` | 中文玩家包：仅中文语言，附带中文字体和通用多语言字体；全中文 README，无制作其他语言的说明 |
+| `artifacts/CrawlLocalization-<版本号>-ru.zip` | 显式选择单个非中文语言时的独立玩家包 |
+| `artifacts/CrawlLocalization-<版本号>-Translator.zip` | 非中文构建另行生成的英文制作包：原文目录、通用字体和工具，无现成译文 |
 
-两个发行包分别复制简短说明：[玩家 README](packaging/README.md)、[制作包 README](packaging/translator/README.md)。玩家包除此之外只包含 DLL、所选语言包的运行数据和引用字体，不带项目长篇 README、CHANGELOG、docs、源码、测试或字体源 TTF。译者工具只进入 Translator 包。
+暂存目录与对应玩家 ZIP 同名（不含 `.zip`），每次构建只重建所选包的暂存内容。默认包和中文包可以同时保留，不互相覆盖。中文构建不会生成或改写 Translator 包。
 
-如果已经在源码的 `Languages/` 下准备了其他语言，在 **PowerShell 7 终端**中按数组选择：
+README 源文件分别为[英文玩家说明](packaging/README.md)、[中文玩家说明](packaging/zh-Hans/README.md)、[英文制作说明](packaging/translator/README.md)，打包时直接复制。玩家包只带运行所需的 DLL、语言文件、字体及相关许可，不带源码、docs、测试或源 TTF。
 
-```powershell
-.\build.ps1 -GamePath '你的 Crawl 目录' -Languages @('zh-Hans', 'es')
-```
+`-Languages` 支持在 PowerShell 7 终端传入数组，例如 `.\build.ps1 -Languages @('es', 'ru')`。中文与非中文混合选择会报错，应分开构建。所有玩家包均附带通用字体，中文包额外附带中文字体；其他语言专用字体按其映射附加。
 
-玩家包默认只打包 `zh-Hans`。制作包始终从独立英文 `catalog/` 打包，与所选玩家语言无关，不需要保留中文包。维护者新增适配词条时需同步更新英文目录；普通翻译只改目标语言，不改目录基线。
+制作包始终从独立英文 `catalog/` 打包，与玩家包的译文无关。维护者新增适配词条时需同步更新英文目录；普通翻译只改目标语言，不改目录基线。
 
 需要构建后自动安装时，先关闭游戏：
 
@@ -140,7 +152,7 @@ pwsh -NoProfile -File .\build.ps1 -GamePath '你的 Crawl 目录' -Install
 
 只需修改根目录 `VERSION` 的一行版本号，例如将 `0.13.0` 改为 `0.13.1`，再正常运行 `build.ps1`。格式固定为 `主版本.次版本.修订号`，不带 `v` 前缀或预发布后缀，每段范围为 0–65534。
 
-构建会自动使用同一版本生成 BepInEx 插件版本、四段程序集／文件版本（如 `0.13.1.0`）、暂存目录和两个 ZIP 名称。版本源码生成在 `artifacts/build/`，不修改 `src/`，也不会进入发行包。删除 `artifacts/` 后可重新生成。
+构建会自动使用同一版本生成 BepInEx 插件版本、四段程序集／文件版本（如 `0.13.1.0`）、暂存目录和各发行 ZIP 名称。版本源码生成在 `artifacts/build/`，不修改 `src/`，也不会进入发行包。删除 `artifacts/` 后可重新生成。
 
 修改翻译通常递增修订号，例如 `0.13.0 → 0.13.1`。版本由维护者决定，普通构建不会自动加一；同一版本重复构建会覆盖对应暂存目录和 ZIP。发布时还需在 [CHANGELOG](CHANGELOG.md) 记录变更，并提交 `VERSION` 与相关修改。技能中的“0.13.0 或更新版本”是最低兼容要求，不随当前版本同步修改。
 

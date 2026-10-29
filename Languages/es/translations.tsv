@@ -1,0 +1,191 @@
+# Original source/key<TAB>translation (@TODO means pending)<TAB>English context
+START GAME	JUGAR	Menus and settings
+THE VAULT	LA BÓVEDA	Menus and settings; level2:1227, level2:1230
+OPTIONS	OPCIONES	Menus and settings; level2:1221
+CREDITS	CRÉDITOS	Menus and settings
+QUIT	SALIR	Menus and settings
+BACK	VOLVER	Menus and settings; level2:1241
+OK?	¿ACEPTAR?	Menus and settings
+OK	ACEPTAR	Menus and settings
+CANCEL	CANCELAR	Menus and settings
+YES	SÍ	Menus and settings
+NO	NO	Menus and settings
+READY	LISTO	Menus and settings; sharedassets0.assets:38118, level2:1200
+MONSTERS	MONSTRUOS	Menus and settings; sharedassets2.assets:233
+WEAPONS	ARMAS	Menus and settings
+ITEMS	OBJETOS	Menus and settings
+OBJECTS	ELEMENTOS	Menus and settings
+QUESTS	MISIONES	Menus and settings
+RESUME	REANUDAR	Menus and settings
+GAMEPLAY TIPS	CONSEJOS DE JUEGO	Menus and settings
+DROP IN	UNIRSE	Menus and settings
+DROP OUT	SALIR	Menus and settings; sharedassets0.assets:38088
+QUIT TO MENU	SALIR AL MENÚ	Menus and settings
+Reset	Restablecer	Menus and settings
+Redefine	Reasignar	Menus and settings; sharedassets0.assets:38066, sharedassets2.assets:239
+Controls	Controles	Menus and settings; level2:1187, level2:1205
+Aim:Analog	Apuntado: Analógico	Menus and settings
+Aim:Normal	Apuntado: Normal	Menus and settings
+Aim:Smooth	Apuntado: Suave	Menus and settings
+Bots: {0}	Bots: {0}	Menus and settings
+AI: Easy	IA: Fácil	Menus and settings
+AI: Normal	IA: Normal	Menus and settings
+AI: Medium	IA: Media	Menus and settings
+AI: Hard	IA: Difícil	Menus and settings
+AI: Unfair	IA: Injusta	Menus and settings
+-NEW-	-NUEVO-	Menus and settings
+Reset Controls	Restablecer controles	Menus and settings
+Keyboard Setup	Configurar teclado	Menus and settings
+Cabinet Setup	Configurar recreativa	Menus and settings
+Resolution	Resolución	Menus and settings
+Apply Resolution	Aplicar resolución	Menus and settings
+Display	Pantalla	Menus and settings
+< SOUND: {0} >	< SONIDO: {0} >	Menus and settings
+< MUSIC: {0} >	< MÚSICA: {0} >	Menus and settings
+< TV SAFE ZONE: {0} >	< ZONA SEGURA TV: {0} >	Menus and settings
+< SCREENSHAKE: {0} >	< TEMBLOR DE PANTALLA: {0} >	Menus and settings
+< SAFE ZONE >	< ZONA SEGURA >	Menus and settings
+< SCREENSHAKE >	< TEMBLOR DE PANTALLA >	Menus and settings
+Flicker	Parpadeo	Menus and settings
+< Display: Primary >	< Pantalla: Principal >	Menus and settings
+< Display: Secondary {0} >	< Pantalla: Secundaria {0} >	Menus and settings
+< Monitor Id: {0} >	< Id. del monitor: {0} >	Menus and settings
+Reset All	Restablecer todo	Menus and settings
+- Set Keys -	- Asignar teclas -	Menus and settings
+Set Keys {0}	Asignar teclas {0}	Menus and settings
+Remove Keys {0}	Quitar teclas {0}	Menus and settings
+Add Keys {0}	Añadir teclas {0}	Menus and settings
+Reset Keys {0}	Restablecer teclas {0}	Menus and settings
+Bind Keys {0}	Vincular teclas {0}	Menus and settings
+- Set Inputs -	- Configurar controles -	Menus and settings
+Set Player {0}	Configurar J{0}	Menus and settings
+Sticks: Analog	Palancas: Analógicas	Menus and settings
+Sticks: 8-way	Palancas: 8 direcciones	Menus and settings
+Menu: Normal	Menú: Normal	Menus and settings
+Menu: Esc Only	Menú: Solo Esc	Menus and settings
+Game Tips: ON	Consejos de juego: SÍ	Menus and settings
+Game Tips: OFF	Consejos de juego: NO	Menus and settings
+Tutorial: ON	Tutorial: SÍ	Menus and settings
+Tutorial: OFF	Tutorial: NO	Menus and settings
+Replay Tutorial: ON	Repetir tutorial: SÍ	Menus and settings
+Replay Tutorial: OFF	Repetir tutorial: NO	Menus and settings
+Run In Background: ON	Ejecutar en segundo plano: SÍ	Menus and settings
+Run In Background: OFF	Ejecutar en segundo plano: NO	Menus and settings
+Vibration: ON	Vibración: SÍ	Menus and settings
+Vibration: OFF	Vibración: NO	Menus and settings
+VSync: ON	Sincronización vertical: SÍ	Menus and settings
+VSync: OFF	Sincronización vertical: NO	Menus and settings
+Fullscreen: ON	Pantalla completa: SÍ	Menus and settings
+Fullscreen: OFF	Pantalla completa: NO	Menus and settings
+Reduced Flicker: ON	Parpadeo reducido: SÍ	Menus and settings
+Reduced Flicker: OFF	Parpadeo reducido: NO	Menus and settings
+Easter Eggs: ON	Huevos de pascua: SÍ	Menus and settings
+Easter Eggs: OFF	Huevos de pascua: NO	Menus and settings
+Cabinet Mode: ON	Modo recreativa: SÍ	Menus and settings
+Cabinet Mode: OFF	Modo recreativa: NO	Menus and settings
+Note: Many keyboards do not\nsupport multiple players	Nota: Muchos teclados no\nadmiten varios jugadores	Menus and settings; sharedassets0.assets:38034
+_DROP_IN_	_UNIRSE_	Menus and settings; sharedassets0.assets:38035
+_OPTIONS_	_OPCIONES_	Menus and settings; sharedassets0.assets:38067
+CONTROLLER_DISCONNECT	MANDO_DESCONECTADO	Menus and settings; sharedassets0.assets:38077
+Hold\n button B\n(back\n/special)	Mantén\n botón B\n(volver\n/especial)	Menus and settings; sharedassets0.assets:38078, sharedassets2.assets:240
+The gods reward you\nwith <color=#ea9d1a>gold</color> for damaging \n<color=#d4be9c>opposing heroes</color>.	Los dioses te recompensan\ncon <color=#ea9d1a>oro</color> por herir a los\n<color=#d4be9c>héroes rivales</color>.	Menus and settings; sharedassets0.assets:38079
+QUIT?	¿SALIR?	Menus and settings; sharedassets0.assets:38080
+Keyboards	Teclados	Menus and settings; sharedassets0.assets:38089
+FALLEN HERO	HÉROE CAÍDO	Menus and settings; sharedassets0.assets:38090
+Are you sure?	¿Estás seguro?	Menus and settings; sharedassets0.assets:38091
+Saving...	Guardando...	Menus and settings; sharedassets0.assets:38092
+Signing in...	Iniciando sesión...	Menus and settings; sharedassets0.assets:38093
+take control	tomar control	Menus and settings; sharedassets0.assets:38098
+followers	seguidores	Menus and settings; sharedassets0.assets:38099
+ectoplasm	ectoplasma	Menus and settings; sharedassets0.assets:38100
+blobs	gotas	Menus and settings; sharedassets0.assets:38101, sharedassets0.assets:38130
+Your <color=#d5344d>WRATH</color> increases when\n<color=#d4be9c>opposing heroes</color> level up.\n	Tu <color=#d5344d>IRA</color> aumenta cuando los\n<color=#d4be9c>héroes rivales</color> suben de nivel.\n	Menus and settings; sharedassets0.assets:38102
+WRATH	IRA	Menus and settings; sharedassets0.assets:38103
+Portal to the Boss	Portal al jefe	Menus and settings; sharedassets0.assets:38104
+Blacksmith	Herrero	Menus and settings; sharedassets0.assets:38105
+Stairs to the next floor	Escaleras al sig. piso	Menus and settings; sharedassets0.assets:38106
+Unexplored room	Sala inexplorada	Menus and settings; sharedassets0.assets:38107
+MAP	MAPA	Menus and settings; sharedassets0.assets:38108
+must not\nhave\nred shadow	no debe\ntener\nsombra roja	Menus and settings; sharedassets0.assets:38110
+Special Move	Movimiento especial	Menus and settings; sharedassets0.assets:38111
+_GAME_PAUSED_	_JUEGO_EN_PAUSA_	Menus and settings; sharedassets0.assets:38114
+Offer 5 <color=#ea9d1a>gold</color> to pay passage \nfor the dead and be \nteleported to the blacksmith.\n	Ofrece 5 de <color=#ea9d1a>oro</color> para pagar el pasaje \nde los muertos y ser \nteletransportado al herrero.\n	Menus and settings; sharedassets0.assets:38115
+Earn hero blood (  ) by \ndamaging <color=#d4be9c>opposing heroes</color>.\n	Gana sangre de héroe (  ) al \nherir a los <color=#d4be9c>héroes rivales</color>.\n	Menus and settings; sharedassets0.assets:38116
+gold	oro	Menus and settings; sharedassets0.assets:38117
+change name	cambiar nombre	Menus and settings; sharedassets0.assets:38119
+must have\nthe swirl	debe tener\nel remolino	Menus and settings; sharedassets0.assets:38121
+Attack	Ataque	Menus and settings; sharedassets0.assets:38122
+_GAMEPLAY_TIPS_	_CONSEJOS_DE_JUEGO_	Menus and settings; sharedassets0.assets:38124
+or press	o pulsa	Menus and settings; sharedassets0.assets:38125
+BLOB	GOTA	Menus and settings; sharedassets0.assets:38126
+into a	en una	Menus and settings; sharedassets0.assets:38127
+to	para	Menus and settings; sharedassets0.assets:38128
+Blobs fight\nalongside\nyou	Las gotas luchan\njunto a\nti	Menus and settings; sharedassets0.assets:38129
+Ghosts\ncollect	Los fantasmas\nrecogen	Menus and settings; sharedassets0.assets:38131
+to gain	para ganar	Menus and settings; sharedassets0.assets:38132
+turns a\nfollower	convierte a un\nseguidor	Menus and settings; sharedassets0.assets:38133
+Exit	Salir	Menus and settings; sharedassets0.assets:38134
+Shoot	Disparar	Menus and settings; sharedassets0.assets:38135
+Enter	Entrar	Menus and settings; sharedassets0.assets:38136
+traps	trampas	Menus and settings; sharedassets0.assets:38137
+continue	continuar	Menus and settings; sharedassets0.assets:38146
+combat	combate	Menus and settings; sharedassets0.assets:38173
+For playing on arcade cabinets!\nNote: Toggling this mode \nresets all controls.	¡Para jugar en recreativas arcade!\nNota: Cambiar este modo \nrestablece todos los controles.	Menus and settings; sharedassets2.assets:238
+CABINET MODE	MODO RECREATIVA	Menus and settings; sharedassets2.assets:241
+new	nuevo	Menus and settings; sharedassets2.assets:242, sharedassets2.assets:243
+hold\nbutton B\n(back\n/special)	mantén\nbotón B\n(volver\n/especial)	Menus and settings; level2:1186, level2:1204
+A slower\npace to\nlearn the\nropes	Un ritmo más\ntranquilo para\naprender lo\nbásico	Menus and settings; level2:1189, level2:1207
+Loading...	Cargando...	Menus and settings; level2:1190, level2:1208
+CPU	BOT	Menus and settings; level2:1192, level2:1210
+worships	adora a	Menus and settings; level2:1193, level2:1211
+Hard	Difícil	Menus and settings; level2:1194, level2:1212
+taunts	burlas	Menus and settings; level2:1196, level2:1214
+insert\ncoin	inserta\nmoneda	Menus and settings; level2:1198, level2:1216
+Setup	Configuración	Menus and settings; level2:1202, level2:1220
+change	cambiar	Menus and settings; level2:1223
+-PASSED-	-SUPERADO-	Menus and settings; level2:1226
+CHALLENGE	DESAFÍO	Menus and settings; level2:1228, level2:1229
+Code	Código	Menus and settings; level2:1279
+Art	Arte	Menus and settings; level2:1280, level2:1296
+Consulting and	Consultoría y	Menus and settings; level2:1282
+the assistance of	asistencia de	Menus and settings; level2:1283
+THANK YOU FOR PLAYING!	¡GRACIAS POR JUGAR!	Menus and settings; level2:1284
+Voice Over	Voces	Menus and settings; level2:1285
+distribution support	soporte de distribución	Menus and settings; level2:1287
+SUPPORTED US THROUGH DEVELOPMENT	NOS APOYARON DURANTE EL DESARROLLO	Menus and settings; level2:1288
+PROGRAMMING	PROGRAMACIÓN	Menus and settings; level2:1290
+Additional	Adicional	Menus and settings; level2:1293, level2:1299
+Developed with	Desarrollado con	Menus and settings; level2:1294
+powered by	con tecnología de	Menus and settings; level2:1297
+Copyright (c) 2014-2017 Powerhoof Pty Ltd	Copyright (c) 2014-2017 Powerhoof Pty Ltd	Menus and settings; level2:1302
+Music by	Música de	Menus and settings; level2:1303
+Special Thanks	Agradecimientos especiales	Menus and settings; level2:1306
+Brought to you by	Presentado por	Menus and settings; level2:1310
+AND FINALLY, TO EVERYONE THAT	Y FINALMENTE, A TODOS LOS QUE	Menus and settings; level2:1311
+Replay Tutorial: ON (unavailable)	Repetir tutorial: SÍ (no disponible)	Menus and settings
+Easy	Fácil	Menus and settings
+Normal	Normal	Menus and settings
+Medium	Medio	Menus and settings
+Unfair	Injusto	Menus and settings
+A slower pace to learn the ropes	Un ritmo más tranquilo para aprender lo básico	Menus and settings
+Moderate pace and mildy frantic	Ritmo moderado y ligeramente frenético	Menus and settings
+Wildest pace and most chaotic	El ritmo más salvaje y caótico	Menus and settings
+Hold left	Mantén izquierda	Menus and settings
+Hold right	Mantén derecha	Menus and settings
+Hold up	Mantén arriba	Menus and settings
+Hold down	Mantén abajo	Menus and settings
+Hold button A\n(attack/accept)	Mantén el botón A\n(atacar/aceptar)	Menus and settings
+Hold button B\n(special/back)	Mantén el botón B\n(especial/volver)	Menus and settings
+Hold button C\n(start/pause)	Mantén el botón C\n(iniciar/pausa)	Menus and settings
+Hold\nleft	Mantén\nizquierda	Menus and settings
+Hold\nright	Mantén\nderecha	Menus and settings
+Hold\nup	Mantén\narriba	Menus and settings
+Hold\ndown	Mantén\nabajo	Menus and settings
+Hold\nbutton A\n(attack\n/accept)	Mantén\nel botón A\n(atacar\n/aceptar)	Menus and settings
+Hold\nbutton B\n(special\n/back)	Mantén\nel botón B\n(especial\n/volver)	Menus and settings
+Hold\nbutton C\n(start\n/pause)	Mantén\nel botón C\n(iniciar\n/pausa)	Menus and settings
+Flee your <color="#c8b9b0">dead companions</color>\nLest they steal your life	Huye de tus <color="#c8b9b0">compañeros muertos</color>\nantes de que roben tu vida	Menus and settings; level3:182
+<color="#b02829">Kill</color> beasts\n	<color="#b02829">Mata</color> bestias\n	Menus and settings; level3:181
+Collect their <color="#56a3df">life force</color>\nto level up	Recoge su <color="#56a3df">fuerza vital</color>\npara subir de nivel	Menus and settings; level3:185
+Reach <color="#23b2b8">level 10</color> to\nactivate the portal	Alcanza el <color="#23b2b8">nivel 10</color> para\nactivar el portal	Menus and settings; level3:183
+Defeat the boss\nto <color="#fb8408">ESCAPE</color> the pit	Derrota al jefe\npara <color="#fb8408">ESCAPAR</color> de la fosa	Menus and settings; level3:184

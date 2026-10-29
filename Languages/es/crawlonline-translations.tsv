@@ -1,0 +1,136 @@
+# Original source/key<TAB>translation (@TODO means pending)<TAB>English context
+@online:ONLINE	EN LÍNEA	CrawlOnline UI
+@online:ONLINE LOBBY	SALA EN LÍNEA	CrawlOnline UI
+@online:Server list	Lista de servidores	CrawlOnline UI
+@online:Host lobby	Crear sala	CrawlOnline UI
+@online:Join a friend	Unirse a un amigo	CrawlOnline UI
+@online:Public	Pública	CrawlOnline UI
+@online:Friends only	Solo amigos	CrawlOnline UI
+@online:Invite only	Solo invitación	CrawlOnline UI
+@online:Next page	Página siguiente	CrawlOnline UI
+@online:Refresh	Actualizar	CrawlOnline UI
+@online:Invite friends	Invitar amigos	CrawlOnline UI
+@online:Close lobby	Cerrar sala	CrawlOnline UI
+@online:Visibility: Public	Visibilidad: Pública	CrawlOnline UI
+@online:Visibility: Friends	Visibilidad: Amigos	CrawlOnline UI
+@online:Visibility: Private	Visibilidad: Privada	CrawlOnline UI
+@online:Visibility: Friends only	Visibilidad: Solo amigos	CrawlOnline UI
+@online:Visibility: Invite only	Visibilidad: Solo invitación	CrawlOnline UI
+@online:Play online	Jugar en línea	CrawlOnline UI
+@online:Find a game or host your own.\nHost is P1, others join as P2-P4.	Busca una partida o crea la tuya.\nEl anfitrión es J1, otros se unen como J2-J4.	CrawlOnline UI
+@online:Steam is not available. Use the F1 menu for a direct (IP) connection.	Steam no está disponible. Usa el menú F1 para conexión directa (IP).	CrawlOnline UI
+@online:Back	Volver	CrawlOnline UI
+@online:Cancel	Cancelar	CrawlOnline UI
+@online:OK	Aceptar	CrawlOnline UI
+@online:Who can join "	Quién puede unirse a "	CrawlOnline UI
+@online:"?	"	CrawlOnline UI
+@online:Searching for games...	Buscando partidas...	CrawlOnline UI
+@online:No games found.	No se encontraron partidas.	CrawlOnline UI
+@online: game	 partida	CrawlOnline UI
+@online: games	 partidas	CrawlOnline UI
+@online:  -  page 	  -  pág. 	CrawlOnline UI
+@online:\n* = friend	\n* = amigo	CrawlOnline UI
+@online: OLD	 ANTIGUA	CrawlOnline UI
+@online: FULL	 LLENA	CrawlOnline UI
+@online:This game runs Crawl Online 	Esta partida usa Crawl Online 	CrawlOnline UI
+@online:, you have 0.4.0. Everybody needs the same version.	, tú tienes 0.4.0. Todos deben tener la misma versión.	CrawlOnline UI
+@online:This lobby is full.	Esta sala está llena.	CrawlOnline UI
+@online:Visibility: 	Visibilidad: 	CrawlOnline UI
+@online:Close the lobby?	¿Cerrar la sala?	CrawlOnline UI
+@online:Everybody will be disconnected.	Todos los jugadores serán desconectados.	CrawlOnline UI
+@online:you	tú	CrawlOnline UI
+@online:  (host)	  (anfitrión)	CrawlOnline UI
+@online:waiting...	esperando...	CrawlOnline UI
+@online:<color=#e8d8b0ff>ONLINE LOBBY</color>\n	<color=#e8d8b0ff>SALA EN LÍNEA</color>\n	CrawlOnline UI
+@online:ONLINE HOST  |  	ANFITRIÓN  |  	CrawlOnline UI
+@online: connected  |  	 conectado  |  	CrawlOnline UI
+@online: - menu	 - menú	CrawlOnline UI
+@online:Connecting...  |  	Conectando...  |  	CrawlOnline UI
+@online:ONLINE  |  host: 	EN LÍNEA  |  anfitrión: 	CrawlOnline UI
+@online: (Steam relay)	 (retransmisión de Steam)	CrawlOnline UI
+@online: Unlock everything (weapons, monsters, gods...; your save is not changed)	 Desbloquear todo (armas, monstruos, dioses... tu guardado no cambiará)	CrawlOnline UI
+@online:Close menu	Cerrar menú	CrawlOnline UI
+@online:The host runs the game; everyone else sees the host's screen and plays with their own controllers/keyboard.	El anfitrión ejecuta el juego; los demás ven su pantalla y juegan con sus propios mandos/teclado.	CrawlOnline UI
+@online:Host a Steam lobby	Crear sala de Steam	CrawlOnline UI
+@online:Lobby name	Nombre de sala	CrawlOnline UI
+@online:Searching...	Buscando...	CrawlOnline UI
+@online:Join a friend (Steam)	Unirse a un amigo (Steam)	CrawlOnline UI
+@online:No games found. Host one or ask a friend to invite you.	No hay partidas. Crea una o pide a un amigo que te invite.	CrawlOnline UI
+@online:[friend] 	[amigo] 	CrawlOnline UI
+@online: (incompatible)	 (incompatible)	CrawlOnline UI
+@online:   full	   llena	CrawlOnline UI
+@online:Join	Unirse	CrawlOnline UI
+@online:Direct connection (LAN / port forwarding)	Conexión directa (LAN / puertos redirigidos)	CrawlOnline UI
+@online:Host on UDP port	Crear en puerto UDP	CrawlOnline UI
+@online:Host (UDP)	Crear (UDP)	CrawlOnline UI
+@online:Invalid port	Puerto no válido	CrawlOnline UI
+@online:Join address	Dirección para unirse	CrawlOnline UI
+@online:Enter the host address	Introduce la dirección del anfitrión	CrawlOnline UI
+@online:Hosting	Hospedando	CrawlOnline UI
+@online:Lobby "	Sala "	CrawlOnline UI
+@online:Invite friends (Steam overlay)	Invitar amigos (interfaz de Steam)	CrawlOnline UI
+@online:Connected players: 	Jugadores conectados: 	CrawlOnline UI
+@online:spectator  	espectador  	CrawlOnline UI
+@online: relay	 retransmisión	CrawlOnline UI
+@online: KB/s   controllers: 	 KB/s   mandos: 	CrawlOnline UI
+@online:Kick	Expulsar	CrawlOnline UI
+@online:Remote players join like local ones: press a button on the character select screen.	Los jugadores remotos se unen igual que en local: pulsa un botón en la selección de héroe.	CrawlOnline UI
+@online:entities 	entidades 	CrawlOnline UI
+@online:, visible sprites 	, sprites visibles 	CrawlOnline UI
+@online:, meshes 	, mallas 	CrawlOnline UI
+@online:, capture 	, captura 	CrawlOnline UI
+@online:Stop hosting	Dejar de hospedar	CrawlOnline UI
+@online:Connecting...	Conectando...	CrawlOnline UI
+@online:Connected to 	Conectado a 	CrawlOnline UI
+@online:You play as P	Juegas como J	CrawlOnline UI
+@online:All player slots are taken - you are spectating	Todos los puestos están ocupados: estás como espectador	CrawlOnline UI
+@online:Ping 	Ping 	CrawlOnline UI
+@online: ms   download 	 ms   descarga 	CrawlOnline UI
+@online: KB/s   lost packets 	 KB/s   paquetes perdidos 	CrawlOnline UI
+@online:Connection: 	Conexión: 	CrawlOnline UI
+@online: via Steam relay servers	 mediante servidores de retransmisión de Steam	CrawlOnline UI
+@online: (direct)	 (directa)	CrawlOnline UI
+@online:   max frame gap 	   diferencia máx. de fotogramas 	CrawlOnline UI
+@online: ms   send queue 	 ms   cola de envío 	CrawlOnline UI
+@online: Move my character instantly (prediction: hides the ping for your own movement)	 Mover a mi héroe al instante (predicción: oculta el ping al moverte)	CrawlOnline UI
+@online:Your controllers and keyboard are sent to the host. On the character select screen press Action (A / X / Space) to join. Enter = Start/Pause, Escape = Back.	Tus mandos y teclado se envían al anfitrión. En la selección de personaje pulsa Acción (A / X / Espacio) para unirte. Enter = Inicio/Pausa, Escape = Volver.	CrawlOnline UI
+@online:Disconnect	Desconectar	CrawlOnline UI
+@online:In game	En partida	CrawlOnline UI
+@online:In menu	En menú	CrawlOnline UI
+@online:Steam is not available	Steam no está disponible	CrawlOnline UI
+@online:Steam lobby search failed	Fallo al buscar salas de Steam	CrawlOnline UI
+@online:Steam lobby search timed out	Tiempo agotado al buscar salas de Steam	CrawlOnline UI
+@online:Leave the current session first	Sal primero de la sesión actual	CrawlOnline UI
+@online:Already in a session - disconnect first to accept the invite	Ya estás en una sesión: desconéctate antes de aceptar la invitación	CrawlOnline UI
+@online:you are the owner of this lobby	eres el anfitrión de esta sala	CrawlOnline UI
+@online:Creating Steam lobby...	Creando sala de Steam...	CrawlOnline UI
+@online:Hosting (Steam, 	Hospedando (Steam, 	CrawlOnline UI
+@online: lobby)	 sala)	CrawlOnline UI
+@online:Hosting (Steam, lobby failed - friends can still join via Steam profile)	Hospedando (Steam, fallo de sala: amigos pueden unirse desde perfil Steam)	CrawlOnline UI
+@online:Hosting (UDP port 	Hospedando (puerto UDP 	CrawlOnline UI
+@online:Leaving local game...	Saliendo de la partida local...	CrawlOnline UI
+@online:Entering Steam lobby...	Entrando a la sala de Steam...	CrawlOnline UI
+@online:Connecting to host...	Conectando con el anfitrión...	CrawlOnline UI
+@online:Joining 	Uniéndose a 	CrawlOnline UI
+@online:Host failed: 	Fallo del anfitrión: 	CrawlOnline UI
+@online:UDP host failed: 	Fallo del anfitrión UDP: 	CrawlOnline UI
+@online:Connect failed: 	Fallo de conexión: 	CrawlOnline UI
+@online:lobby creation failed: 	Fallo al crear la sala: 	CrawlOnline UI
+@online:could not enter lobby (	no se pudo entrar a la sala (	CrawlOnline UI
+@online:Rejected: 	Rechazado: 	CrawlOnline UI
+@online:Host closed the session: 	El anfitrión cerró la sesión: 	CrawlOnline UI
+@online:Could not reach the host (timeout)	No se pudo conectar con el anfitrión (tiempo agotado)	CrawlOnline UI
+@online:Host stopped responding	El anfitrión no responde	CrawlOnline UI
+@online:Session is full	La sesión está llena	CrawlOnline UI
+@online:the host closed the lobby	el anfitrión cerró la sala	CrawlOnline UI
+@online:host stopped the session	el anfitrión detuvo la sesión	CrawlOnline UI
+@online:kicked by host	expulsado por el anfitrión	CrawlOnline UI
+@online:cancelled	cancelado	CrawlOnline UI
+@online:left	salió	CrawlOnline UI
+@online:timed out	tiempo agotado	CrawlOnline UI
+@online:  |  	  |  	CrawlOnline UI
+@online: controller	 mando	CrawlOnline UI
+@online: controllers	 mandos	CrawlOnline UI
+@online:Crawl Online version mismatch: host has 	Versión incompatible de Crawl Online: el anfitrión tiene 	CrawlOnline UI
+@online:, you have 	, tú tienes 	CrawlOnline UI
+@online:. Use the same version.	. Usad la misma versión.	CrawlOnline UI

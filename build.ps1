@@ -1,11 +1,29 @@
 param(
     [string]$GamePath = 'D:\SteamLibrary\steamapps\common\Crawl',
-    [string[]]$Languages = @('zh-Hans'),
+    [string[]]$Languages = @(),
     [switch]$Install,
     [switch]$SkipTests
 )
 $ErrorActionPreference = 'Stop'
 $projectRoot = $PSScriptRoot
+# No selection means all installed non-Chinese packs; Chinese is opt-in only.
+$explicitLanguages = $PSBoundParameters.ContainsKey('Languages')
+if (!$explicitLanguages) {
+    $Languages = @(Get-ChildItem -LiteralPath (Join-Path $projectRoot 'Languages') -Directory |
+        Where-Object { $_.Name -notmatch '^zh(?:-|$)' -and $_.Name -ine 'en' -and (Test-Path -LiteralPath (Join-Path $_.FullName 'language.ini')) } |
+        Sort-Object Name | ForEach-Object Name)
+}
+if (!$Languages.Count) { throw 'No languages selected. Add a non-Chinese pack or use -Languages zh-Hans.' }
+$Languages = @($Languages | Sort-Object -Unique)
+foreach ($locale in $Languages) {
+    if ($locale -notmatch '^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$' -or $locale -ieq 'en') { throw 'Use an actual language folder tag, not en.' }
+    if (!(Test-Path -LiteralPath (Join-Path $projectRoot "Languages/$locale/language.ini"))) { throw "Language pack not found: $locale" }
+}
+$chineseLanguages = @($Languages | Where-Object { $_ -match '^zh(?:-|$)' })
+if ($chineseLanguages.Count -and $chineseLanguages.Count -ne $Languages.Count) {
+    throw 'Build Chinese separately: -Languages zh-Hans. Do not mix Chinese with other languages in one package.'
+}
+$isChinesePackage = $chineseLanguages.Count -gt 0
 # One release version controls plugin metadata, assembly metadata and package names.
 $releaseVersion = (Get-Content -LiteralPath (Join-Path $projectRoot 'VERSION') -Raw -Encoding utf8).Trim()
 if ($releaseVersion -cnotmatch '^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$') {
@@ -18,7 +36,12 @@ foreach ($component in $releaseVersion.Split('.')) {
     }
 }
 $assemblyVersion = $releaseVersion + '.0'
-$packageName = 'CrawlLocalization-' + $releaseVersion
+$basePackageName = 'CrawlLocalization-' + $releaseVersion
+$packageName = $basePackageName
+if ($explicitLanguages) { $packageName += '-' + ($Languages -join '+') }
+$readmeSource = if ($isChinesePackage) { 'packaging/zh-Hans/README.md' } else { 'packaging/README.md' }
+$defaultFont = if ($isChinesePackage) { 'Fonts/crawl-fonts.bundle' } else { 'Fonts/crawl-multilingual.bundle' }
+Write-Output ("Package languages: " + ($Languages -join ', ') + "; default font: " + $defaultFont)
 if (!$SkipTests) {
     & pwsh -NoProfile -File (Join-Path $projectRoot 'tests\test.ps1')
     if ($LASTEXITCODE -ne 0) { throw 'Offline tests failed.' }
@@ -103,7 +126,10 @@ foreach ($locale in $Languages) {
 }
 # Ship only font files referenced by the language packs. Source TTFs remain in
 # the project for rebuilding, but are unnecessary when the packs use a bundle.
-$fontFiles = @{}
+# Every player package includes the universal font, including Chinese builds.
+# Chinese packs additionally retain their own mapped Chinese font.
+$fontFiles = @{ 'Fonts/crawl-multilingual.bundle' = (Join-Path $projectRoot 'Fonts/crawl-multilingual.bundle') }
+$fontFiles[$defaultFont] = Join-Path $projectRoot $defaultFont
 $rootPrefix = [IO.Path]::GetFullPath($projectRoot).TrimEnd('\') + '\'
 foreach ($table in Get-ChildItem -Path (Join-Path $output 'Languages\*\fonts.tsv')) {
     foreach ($line in Get-Content -LiteralPath $table.FullName -Encoding utf8) {
@@ -111,7 +137,9 @@ foreach ($table in Get-ChildItem -Path (Join-Path $output 'Languages\*\fonts.tsv
         $columns = $line.Split("`t")
         if ($columns.Length -ne 5) { throw "Malformed font mapping: $($table.FullName)" }
         if ($columns[1] -eq 'system') { continue }
-        $relative = $columns[2]
+        $relative = $columns[2].Replace('\', '/')
+        if ($isChinesePackage -and $relative -ine 'Fonts/crawl-fonts.bundle') { throw "Chinese language mappings should use Fonts/crawl-fonts.bundle (both bundles are shipped): $relative" }
+        if (!$isChinesePackage -and $relative -ieq 'Fonts/crawl-fonts.bundle') { throw "Non-Chinese pack references the Chinese font bundle: $($table.FullName)" }
         $sourceFont = [IO.Path]::GetFullPath((Join-Path $projectRoot $relative))
         if ([IO.Path]::IsPathRooted($relative) -or !$sourceFont.StartsWith($rootPrefix, [StringComparison]::OrdinalIgnoreCase)) { throw "Invalid font path: $relative" }
         $fontFiles[$relative] = $sourceFont
@@ -129,28 +157,31 @@ foreach ($relative in $fontFiles.Keys) {
         }
     }
 }
-Copy-Item -LiteralPath (Join-Path $projectRoot 'packaging\README.md') -Destination (Join-Path $output 'README.md') -Force
+Copy-Item -LiteralPath (Join-Path $projectRoot $readmeSource) -Destination (Join-Path $output 'README.md') -Force
 $archive = Join-Path (Join-Path $projectRoot 'artifacts') ($packageName + '.zip')
 $packageFiles = @('CrawlLocalization.dll', 'README.md', 'Languages', 'Fonts' | ForEach-Object { Join-Path $output $_ } | Where-Object { Test-Path -LiteralPath $_ })
 Compress-Archive -Path $packageFiles -DestinationPath $archive -Force
-# An optional authoring handoff is a separate ZIP; player packages stay minimal.
-$translatorArchive = Join-Path (Join-Path $projectRoot 'artifacts') ($packageName + '-Translator.zip')
-$skillFolder = Join-Path $projectRoot 'translator-kit\crawl-language-pack'
-$translatorReadme = Join-Path $projectRoot 'packaging\translator\README.md'
-$translatorFiles = @((Join-Path $output 'CrawlLocalization.dll'), $translatorReadme, $skillFolder)
-Compress-Archive -Path $translatorFiles -DestinationPath $translatorArchive -Force
-# Use an explicit allowlist: no Chinese bundle or source TTFs in the kit.
-$translatorFonts = @('crawl-multilingual.bundle', 'crawl-multilingual.OFL.txt', 'crawl-multilingual.NOTICE.txt')
-$zip = [IO.Compression.ZipFile]::Open($translatorArchive, [IO.Compression.ZipArchiveMode]::Update)
-try {
-    foreach ($file in $translatorFonts) {
-        $font = Join-Path $projectRoot ('Fonts/' + $file)
-        if (!(Test-Path -LiteralPath $font)) { throw "Build multilingual fonts first; missing $font" }
-        $null = [IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zip, $font, 'Fonts/' + $file)
-    }
-} finally { $zip.Dispose() }
+# Chinese builds produce only the Chinese player package.
+if (!$isChinesePackage) {
+    # An optional authoring handoff is a separate ZIP; player packages stay minimal.
+    $translatorArchive = Join-Path (Join-Path $projectRoot 'artifacts') ($basePackageName + '-Translator.zip')
+    $skillFolder = Join-Path $projectRoot 'translator-kit\crawl-language-pack'
+    $translatorReadme = Join-Path $projectRoot 'packaging\translator\README.md'
+    $translatorFiles = @((Join-Path $output 'CrawlLocalization.dll'), $translatorReadme, $skillFolder)
+    Compress-Archive -Path $translatorFiles -DestinationPath $translatorArchive -Force
+    # Use an explicit allowlist: no Chinese bundle or source TTFs in the kit.
+    $translatorFonts = @('crawl-multilingual.bundle', 'crawl-multilingual.OFL.txt', 'crawl-multilingual.NOTICE.txt')
+    $zip = [IO.Compression.ZipFile]::Open($translatorArchive, [IO.Compression.ZipArchiveMode]::Update)
+    try {
+        foreach ($file in $translatorFonts) {
+            $font = Join-Path $projectRoot ('Fonts/' + $file)
+            if (!(Test-Path -LiteralPath $font)) { throw "Build multilingual fonts first; missing $font" }
+            $null = [IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zip, $font, 'Fonts/' + $file)
+        }
+    } finally { $zip.Dispose() }
 
-Write-Output "Translator package: $translatorArchive"
+    Write-Output "Translator package: $translatorArchive"
+}
 Write-Output "Built: $output"
 Write-Output "Packaged: $archive (extract into BepInEx/plugins/CrawlLocalization)"
 if ($Install) {

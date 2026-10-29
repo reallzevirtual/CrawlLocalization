@@ -13,12 +13,12 @@
 | LEVEL X / 升级 | LevelUpFeedback 1444；LevelUpL10 1445；LevelUpL11andUp 1446；LevelUpL2–L9 1447–1454 | 40735–40745 | level_up_* |
 | HEALTH UP | StatUpHealth 1455 | 40746 | health_stat_up_feedback_* |
 | 速度 / 力量提升 | StatUpSpeed 1456；StatUpStrength 1457 | 40747、40748 | 见下方完整索引 |
-| HEAL | HealFeedback 2413 | 42380、42381 | heal_feedback_*、heal_feedback_flipped_* |
+| 治疗粒子（非 HEAL 文字本体） | HealFeedback 2413 | 42380、42381 | heal_feedback_*、heal_feedback_flipped_* |
 | Altered … 墓碑效果 | FX_Collect_AlteredBeastAxe/Flame/Skill/Speed/Strength/Sword 2494–2499 | 共用 42421 | alter_beast_* |
 | +WRATH | PlusWrathSmall 9640 | 40843 | plusWrath_* |
 | 教程版本升级 / 怒气 | LevelUpL2Pause/Tut/TutEnd 3171–3173；PlusWrathSmallTut/TutP2/TutP3 9641–9643 | 43861–43866 | 见下方完整索引 |
 
-以上位置均在 `Crawl_Data/sharedassets0.assets`，使用图集 `exAtlas` PathID **39923**。PathID 用于调查，不是新增运行时替换条件。动画会改写精灵帧，所以不能只替换 exSprite 的初始帧；例如 HealFeedback 的初始帧是 orb_particle_02，实际治疗动画才使用 heal_feedback_*。同理，Altered各变体的初始精灵并不代表动画中文字。
+以上位置均在 `Crawl_Data/sharedassets0.assets`，使用图集 `exAtlas` PathID **39923**。PathID 用于调查，不是新增运行时替换条件。动画会改写精灵帧，所以不能只替换 exSprite 的初始帧；例如 HealFeedback 的初始帧是 orb_particle_02，实际治疗粒子动画才使用 heal_feedback_*；2026-10-29 逐帧确认这两个 clip 只有粒子，没有 HEAL 字形，HEAL 文字本体仍需另外追踪。同理，Altered各变体的初始精灵并不代表动画中文字。
 
 ### 完整对象索引
 
@@ -139,3 +139,8 @@ python .\tools\export_progression_texts.py --game-path 'D:\SteamLibrary\steamapp
 `GuiMessageBox/Text` 和 `GuiMessageBoxTop/Text` 的资源初始文字是编辑器占位文字，实际显示前由 `SetContent` 改写，故没有把测试文案作为教程词条收录。
 
 此清单来自资源引用和教程代码调查。没有启动游戏；动画帧的视觉效果、真实输入设备图标和完整游玩流程仍由用户验证。
+
+
+## ex2D 帧图调查（2026-10-29）
+
+可运行 `python tools/inspect_ex2d_frames.py --game-path <Crawl目录> --output artifacts/ex2d-audit`，导出六个代表动画的逐帧原画布 PNG、帧时长/事件及对照图。已确认序章标题为“空白帧＋标题图”，Follow ?为两帧问号闪烁，+WRATH为12帧、SALVATION为30个时间帧且含音效事件。字体生成图片可作为素材来源；保留原播放器及事件，仅替换显示资源的方案可行，但当前尚未实现图片本地化适配。

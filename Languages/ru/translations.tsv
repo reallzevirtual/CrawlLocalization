@@ -1,0 +1,191 @@
+# Original source/key<TAB>translation (@TODO means pending)<TAB>English context
+START GAME	НАЧАТЬ ИГРУ	Menus and settings
+THE VAULT	ХРАНИЛИЩЕ	Menus and settings; level2:1227, level2:1230
+OPTIONS	НАСТРОЙКИ	Menus and settings; level2:1221
+CREDITS	АВТОРЫ	Menus and settings
+QUIT	ВЫХОД	Menus and settings
+BACK	НАЗАД	Menus and settings; level2:1241
+OK?	ОК?	Menus and settings
+OK	ОК	Menus and settings
+CANCEL	ОТМЕНА	Menus and settings
+YES	ДА	Menus and settings
+NO	НЕТ	Menus and settings
+READY	ГОТОВ	Menus and settings; sharedassets0.assets:38118, level2:1200
+MONSTERS	МОНСТРЫ	Menus and settings; sharedassets2.assets:233
+WEAPONS	ОРУЖИЕ	Menus and settings
+ITEMS	ПРЕДМЕТЫ	Menus and settings
+OBJECTS	ОБЪЕКТЫ	Menus and settings
+QUESTS	ЗАДАНИЯ	Menus and settings
+RESUME	ПРОДОЛЖИТЬ	Menus and settings
+GAMEPLAY TIPS	СОВЕТЫ ПО ИГРЕ	Menus and settings
+DROP IN	ВОЙТИ	Menus and settings
+DROP OUT	ВЫЙТИ	Menus and settings; sharedassets0.assets:38088
+QUIT TO MENU	ВЫЙТИ В МЕНЮ	Menus and settings
+Reset	Сброс	Menus and settings
+Redefine	Переназначить	Menus and settings; sharedassets0.assets:38066, sharedassets2.assets:239
+Controls	Управление	Menus and settings; level2:1187, level2:1205
+Aim:Analog	Прицел: Аналог	Menus and settings
+Aim:Normal	Прицел: Обычный	Menus and settings
+Aim:Smooth	Прицел: Плавный	Menus and settings
+Bots: {0}	Боты: {0}	Menus and settings
+AI: Easy	ИИ: Легкий	Menus and settings
+AI: Normal	ИИ: Обычный	Menus and settings
+AI: Medium	ИИ: Средний	Menus and settings
+AI: Hard	ИИ: Сложный	Menus and settings
+AI: Unfair	ИИ: Беспощадный	Menus and settings
+-NEW-	-НОВОЕ-	Menus and settings
+Reset Controls	Сбросить управление	Menus and settings
+Keyboard Setup	Настройка клавиатуры	Menus and settings
+Cabinet Setup	Настройка автомата	Menus and settings
+Resolution	Разрешение	Menus and settings
+Apply Resolution	Применить разрешение	Menus and settings
+Display	Дисплей	Menus and settings
+< SOUND: {0} >	< ЗВУК: {0} >	Menus and settings
+< MUSIC: {0} >	< МУЗЫКА: {0} >	Menus and settings
+< TV SAFE ZONE: {0} >	< БЕЗОПАСНАЯ ЗОНА: {0} >	Menus and settings
+< SCREENSHAKE: {0} >	< ТРЯСКА ЭКРАНА: {0} >	Menus and settings
+< SAFE ZONE >	< БЕЗОПАСНАЯ ЗОНА >	Menus and settings
+< SCREENSHAKE >	< ТРЯСКА ЭКРАНА >	Menus and settings
+Flicker	Мерцание	Menus and settings
+< Display: Primary >	< Дисплей: Основной >	Menus and settings
+< Display: Secondary {0} >	< Дисплей: Дополнительный {0} >	Menus and settings
+< Monitor Id: {0} >	< Монитор: {0} >	Menus and settings
+Reset All	Сбросить всё	Menus and settings
+- Set Keys -	- Назначить клавиши -	Menus and settings
+Set Keys {0}	Назначить клавиши {0}	Menus and settings
+Remove Keys {0}	Удалить клавиши {0}	Menus and settings
+Add Keys {0}	Добавить клавиши {0}	Menus and settings
+Reset Keys {0}	Сбросить клавиши {0}	Menus and settings
+Bind Keys {0}	Привязать клавиши {0}	Menus and settings
+- Set Inputs -	- Настройка ввода -	Menus and settings
+Set Player {0}	Игрок {0}	Menus and settings
+Sticks: Analog	Стики: Аналог	Menus and settings
+Sticks: 8-way	Стики: 8 направлений	Menus and settings
+Menu: Normal	Меню: Обычное	Menus and settings
+Menu: Esc Only	Меню: Только Esc	Menus and settings
+Game Tips: ON	Подсказки: ВКЛ	Menus and settings
+Game Tips: OFF	Подсказки: ВЫКЛ	Menus and settings
+Tutorial: ON	Обучение: ВКЛ	Menus and settings
+Tutorial: OFF	Обучение: ВЫКЛ	Menus and settings
+Replay Tutorial: ON	Повторить обучение: ВКЛ	Menus and settings
+Replay Tutorial: OFF	Повторить обучение: ВЫКЛ	Menus and settings
+Run In Background: ON	Работа в фоне: ВКЛ	Menus and settings
+Run In Background: OFF	Работа в фоне: ВЫКЛ	Menus and settings
+Vibration: ON	Вибрация: ВКЛ	Menus and settings
+Vibration: OFF	Вибрация: ВЫКЛ	Menus and settings
+VSync: ON	Верт. синхронизация: ВКЛ	Menus and settings
+VSync: OFF	Верт. синхронизация: ВЫКЛ	Menus and settings
+Fullscreen: ON	Полноэкранный режим: ВКЛ	Menus and settings
+Fullscreen: OFF	Полноэкранный режим: ВЫКЛ	Menus and settings
+Reduced Flicker: ON	Уменьшение мерцания: ВКЛ	Menus and settings
+Reduced Flicker: OFF	Уменьшение мерцания: ВЫКЛ	Menus and settings
+Easter Eggs: ON	Пасхалки: ВКЛ	Menus and settings
+Easter Eggs: OFF	Пасхалки: ВЫКЛ	Menus and settings
+Cabinet Mode: ON	Режим автомата: ВКЛ	Menus and settings
+Cabinet Mode: OFF	Режим автомата: ВЫКЛ	Menus and settings
+Note: Many keyboards do not\nsupport multiple players	Примечание: многие клавиатуры\nне поддерживают ввод для нескольких игроков	Menus and settings; sharedassets0.assets:38034
+_DROP_IN_	_ВОЙТИ_В_ИГРУ_	Menus and settings; sharedassets0.assets:38035
+_OPTIONS_	_НАСТРОЙКИ_	Menus and settings; sharedassets0.assets:38067
+CONTROLLER_DISCONNECT	ГЕЙМПАД_ОТКЛЮЧЁН	Menus and settings; sharedassets0.assets:38077
+Hold\n button B\n(back\n/special)	Удерживайте\n кнопку B\n(назад\n/особое)	Menus and settings; sharedassets0.assets:38078, sharedassets2.assets:240
+The gods reward you\nwith <color=#ea9d1a>gold</color> for damaging \n<color=#d4be9c>opposing heroes</color>.	Боги награждают вас\n<color=#ea9d1a>золотом</color> за урон по \n<color=#d4be9c>вражеским героям</color>.	Menus and settings; sharedassets0.assets:38079
+QUIT?	ВЫЙТИ?	Menus and settings; sharedassets0.assets:38080
+Keyboards	Клавиатуры	Menus and settings; sharedassets0.assets:38089
+FALLEN HERO	ПАВШИЙ ГЕРОЙ	Menus and settings; sharedassets0.assets:38090
+Are you sure?	Вы уверены?	Menus and settings; sharedassets0.assets:38091
+Saving...	Сохранение...	Menus and settings; sharedassets0.assets:38092
+Signing in...	Вход в систему...	Menus and settings; sharedassets0.assets:38093
+take control	захватить	Menus and settings; sharedassets0.assets:38098
+followers	приспешники	Menus and settings; sharedassets0.assets:38099
+ectoplasm	эктоплазма	Menus and settings; sharedassets0.assets:38100
+blobs	слизни	Menus and settings; sharedassets0.assets:38101, sharedassets0.assets:38130
+Your <color=#d5344d>WRATH</color> increases when\n<color=#d4be9c>opposing heroes</color> level up.\n	Ваш <color=#d5344d>ГНЕВ</color> растёт, когда\n<color=#d4be9c>вражеские герои</color> повышают уровень.\n	Menus and settings; sharedassets0.assets:38102
+WRATH	ГНЕВ	Menus and settings; sharedassets0.assets:38103
+Portal to the Boss	Портал к боссу	Menus and settings; sharedassets0.assets:38104
+Blacksmith	Кузнец	Menus and settings; sharedassets0.assets:38105
+Stairs to the next floor	Лестница на след. этаж	Menus and settings; sharedassets0.assets:38106
+Unexplored room	Неисследованная комната	Menus and settings; sharedassets0.assets:38107
+MAP	КАРТА	Menus and settings; sharedassets0.assets:38108
+must not\nhave\nred shadow	не должно\nбыть\nкрасной тени	Menus and settings; sharedassets0.assets:38110
+Special Move	Особый приём	Menus and settings; sharedassets0.assets:38111
+_GAME_PAUSED_	_ИГРА_НА_ПАУЗЕ_	Menus and settings; sharedassets0.assets:38114
+Offer 5 <color=#ea9d1a>gold</color> to pay passage \nfor the dead and be \nteleported to the blacksmith.\n	Пожертвуйте 5 <color=#ea9d1a>золота</color>, чтобы оплатить \nпроход для мёртвых и \nпереместиться к кузнецу.\n	Menus and settings; sharedassets0.assets:38115
+Earn hero blood (  ) by \ndamaging <color=#d4be9c>opposing heroes</color>.\n	Добывайте кровь героя (  ), \nнанося урон <color=#d4be9c>вражеским героям</color>.\n	Menus and settings; sharedassets0.assets:38116
+gold	золото	Menus and settings; sharedassets0.assets:38117
+change name	изменить имя	Menus and settings; sharedassets0.assets:38119
+must have\nthe swirl	должен быть\nвихрь	Menus and settings; sharedassets0.assets:38121
+Attack	Атака	Menus and settings; sharedassets0.assets:38122
+_GAMEPLAY_TIPS_	_СОВЕТЫ_ПО_ИГРЕ_	Menus and settings; sharedassets0.assets:38124
+or press	или нажмите	Menus and settings; sharedassets0.assets:38125
+BLOB	СЛИЗЕНЬ	Menus and settings; sharedassets0.assets:38126
+into a	в	Menus and settings; sharedassets0.assets:38127
+to	чтобы	Menus and settings; sharedassets0.assets:38128
+Blobs fight\nalongside\nyou	Слизни\nсражаются\nс вами	Menus and settings; sharedassets0.assets:38129
+Ghosts\ncollect	Призраки\nсобирают	Menus and settings; sharedassets0.assets:38131
+to gain	чтобы получить	Menus and settings; sharedassets0.assets:38132
+turns a\nfollower	превращает\nприспешника	Menus and settings; sharedassets0.assets:38133
+Exit	Выход	Menus and settings; sharedassets0.assets:38134
+Shoot	Выстрел	Menus and settings; sharedassets0.assets:38135
+Enter	Войти	Menus and settings; sharedassets0.assets:38136
+traps	ловушки	Menus and settings; sharedassets0.assets:38137
+continue	продолжить	Menus and settings; sharedassets0.assets:38146
+combat	бой	Menus and settings; sharedassets0.assets:38173
+For playing on arcade cabinets!\nNote: Toggling this mode \nresets all controls.	Для игры на аркадных автоматах!\nВнимание: переключение этого режима \nсбрасывает настройки управления.	Menus and settings; sharedassets2.assets:238
+CABINET MODE	РЕЖИМ АВТОМАТА	Menus and settings; sharedassets2.assets:241
+new	новое	Menus and settings; sharedassets2.assets:242, sharedassets2.assets:243
+hold\nbutton B\n(back\n/special)	удерживайте\nкнопку B\n(назад\n/особое)	Menus and settings; level2:1186, level2:1204
+A slower\npace to\nlearn the\nropes	Неспешный\nтемп для\nосвоения\nазов	Menus and settings; level2:1189, level2:1207
+Loading...	Загрузка...	Menus and settings; level2:1190, level2:1208
+CPU	БОТ	Menus and settings; level2:1192, level2:1210
+worships	поклоняется	Menus and settings; level2:1193, level2:1211
+Hard	Сложный	Menus and settings; level2:1194, level2:1212
+taunts	дразнит	Menus and settings; level2:1196, level2:1214
+insert\ncoin	вставьте\nмонету	Menus and settings; level2:1198, level2:1216
+Setup	Настройка	Menus and settings; level2:1202, level2:1220
+change	изменить	Menus and settings; level2:1223
+-PASSED-	-ПРОЙДЕНО-	Menus and settings; level2:1226
+CHALLENGE	ИСПЫТАНИЕ	Menus and settings; level2:1228, level2:1229
+Code	Код	Menus and settings; level2:1279
+Art	Арт	Menus and settings; level2:1280, level2:1296
+Consulting and	Консультации и	Menus and settings; level2:1282
+the assistance of	содействие	Menus and settings; level2:1283
+THANK YOU FOR PLAYING!	СПАСИБО ЗА ИГРУ!	Menus and settings; level2:1284
+Voice Over	Озвучка	Menus and settings; level2:1285
+distribution support	поддержка распространения	Menus and settings; level2:1287
+SUPPORTED US THROUGH DEVELOPMENT	ПОДДЕРЖИВАЛИ НАС В ХОДЕ РАЗРАБОТКИ	Menus and settings; level2:1288
+PROGRAMMING	ПРОГРАММИРОВАНИЕ	Menus and settings; level2:1290
+Additional	Дополнительно	Menus and settings; level2:1293, level2:1299
+Developed with	Разработано с помощью	Menus and settings; level2:1294
+powered by	на базе	Menus and settings; level2:1297
+Copyright (c) 2014-2017 Powerhoof Pty Ltd	Copyright (c) 2014-2017 Powerhoof Pty Ltd	Menus and settings; level2:1302
+Music by	Музыка	Menus and settings; level2:1303
+Special Thanks	Особая благодарность	Menus and settings; level2:1306
+Brought to you by	Создатели игры	Menus and settings; level2:1310
+AND FINALLY, TO EVERYONE THAT	И НАКОНЕЦ, ВСЕМ, КТО	Menus and settings; level2:1311
+Replay Tutorial: ON (unavailable)	Повторить обучение: ВКЛ (недоступно)	Menus and settings
+Easy	Легкий	Menus and settings
+Normal	Обычный	Menus and settings
+Medium	Средний	Menus and settings
+Unfair	Беспощадный	Menus and settings
+A slower pace to learn the ropes	Неспешный темп для освоения азов	Menus and settings
+Moderate pace and mildy frantic	Умеренный темп и легкий азарт	Menus and settings
+Wildest pace and most chaotic	Бешеный темп и полнейший хаос	Menus and settings
+Hold left	Удерживайте влево	Menus and settings
+Hold right	Удерживайте вправо	Menus and settings
+Hold up	Удерживайте вверх	Menus and settings
+Hold down	Удерживайте вниз	Menus and settings
+Hold button A\n(attack/accept)	Удерживайте кнопку A\n(атака/выбор)	Menus and settings
+Hold button B\n(special/back)	Удерживайте кнопку B\n(особое/назад)	Menus and settings
+Hold button C\n(start/pause)	Удерживайте кнопку C\n(старт/пауза)	Menus and settings
+Hold\nleft	Удерживайте\nвлево	Menus and settings
+Hold\nright	Удерживайте\nвправо	Menus and settings
+Hold\nup	Удерживайте\nвверх	Menus and settings
+Hold\ndown	Удерживайте\nвниз	Menus and settings
+Hold\nbutton A\n(attack\n/accept)	Удерживайте\nкнопку A\n(атака\n/выбор)	Menus and settings
+Hold\nbutton B\n(special\n/back)	Удерживайте\nкнопку B\n(особое\n/назад)	Menus and settings
+Hold\nbutton C\n(start\n/pause)	Удерживайте\nкнопку C\n(старт\n/пауза)	Menus and settings
+Flee your <color="#c8b9b0">dead companions</color>\nLest they steal your life	Спасайтесь от <color="#c8b9b0">павших спутников</color>,\nпока они не украли вашу жизнь	Menus and settings; level3:182
+<color="#b02829">Kill</color> beasts\n	<color="#b02829">Убивайте</color> чудищ\n	Menus and settings; level3:181
+Collect their <color="#56a3df">life force</color>\nto level up	Собирайте их <color="#56a3df">жизненную силу</color>,\nчтобы повысить уровень	Menus and settings; level3:185
+Reach <color="#23b2b8">level 10</color> to\nactivate the portal	Достигните <color="#23b2b8">уровня 10</color>,\nчтобы открыть портал	Menus and settings; level3:183
+Defeat the boss\nto <color="#fb8408">ESCAPE</color> the pit	Победите босса,\nчтобы <color="#fb8408">ВЫРВАТЬСЯ</color> из ямы	Menus and settings; level3:184

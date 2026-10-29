@@ -1,0 +1,171 @@
+# Original source/key<TAB>translation (@TODO means pending)<TAB>English context
+@shop.prefix:Slow	Inerte	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Unwieldy	Pesado	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Torpid	Torpe	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Awkward	Tosco	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Unbalanced	Inestable	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Crooked	Curvo	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Glutton's	Voraz	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Quick	Veloz	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Lithe	Ágil	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Crystal	De Cristal	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Piscene	Marino	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Kuster's	De Kuster	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Rogue's	Furtivo	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Master's	De Maestro	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Keen	Penetrante	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Swift	Fugaz	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Nimble	Presto	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Weak	Frágil	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Cracked	Agrietado	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Crude	Rudo	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Broken	Quebrado	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Dull	Romo	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Blunt	Mellado	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Training	De Práctica	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Strong	Fuerte	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Powerful	Potente	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Elite	Élite	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Cruel	Cruel	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Flawless	Impecable	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Violent	Feroz	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Orbeth's	De Orbeth	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Drogoth's	De Drogoth	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Morgon's	De Morgon	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.prefix:Barbed	Punzante	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.magic:Glows with the magic of {0}.	Brilla con la magia de {0}.	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.magic:Blessed by the order of {0}.	Bendecido por la orden de {0}.	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.magic:The symbol of {0} glows beneath your fingers.	El símbolo de {0} brilla bajo tus dedos.	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.magic:The power of {0} lies dormant within.	El poder de {0} yace dormido en su interior.	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.magic:Vibrates with essence of {0}.	Vibra con la esencia de {0}.	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.magic:Once wielded by {0} monks.	Portado en su día por monjes de {0}.	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.magic:The glyph of {0} has been hastily scratched onto it's surface.	El glifo de {0} fue grabado apresuradamente en su superficie.	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.magic:Wrested from the grasp of {0} demon.	Arrancado de las garras de un demonio de {0}.	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.stat:Vitality	Vitalidad	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.stat:Strength	Fuerza	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.stat:Agility	Agilidad	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.stat:Wisdom	Sabiduría	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.stat:Luck	Suerte	Shop names, prefixes, effects and prompts; sharedassets0.assets:44080
+@shop.status:Critical hit	Golpe crítico	Shop names, prefixes, effects and prompts; sharedassets0.assets:44597, sharedassets0.assets:45813, sharedassets0.assets:45870, sharedassets0.assets:45871, sharedassets0.assets:45876, sharedassets0.assets:45898, sharedassets0.assets:45899, sharedassets0.assets:45900
+@shop.status:Stun	Aturdimiento	Shop names, prefixes, effects and prompts; sharedassets0.assets:45814, sharedassets0.assets:45816, sharedassets0.assets:45817, sharedassets0.assets:45820, sharedassets0.assets:45823, sharedassets0.assets:45824, sharedassets0.assets:45833, sharedassets0.assets:45834, sharedassets0.assets:45835, sharedassets0.assets:45836, sharedassets0.assets:45839, sharedassets0.assets:45847, sharedassets0.assets:45853, sharedassets0.assets:45861, sharedassets0.assets:45862, sharedassets0.assets:45885, sharedassets0.assets:45886, sharedassets0.assets:45887, sharedassets0.assets:45888, sharedassets0.assets:45889, sharedassets0.assets:45895, sharedassets0.assets:45897, sharedassets0.assets:45901, sharedassets0.assets:45905
+@shop.status:Holding Beholder Eye	Portando Ojo de contemplador	Shop names, prefixes, effects and prompts; sharedassets0.assets:45815
+@shop.prefix:Hemophiliac's	Sangrante	Shop names, prefixes, effects and prompts; sharedassets0.assets:45818
+@shop.status:Causes constant bleeding	Provoca sangrado constante	Shop names, prefixes, effects and prompts; sharedassets0.assets:45818
+@shop.prefix:Holy	Sacro	Shop names, prefixes, effects and prompts; sharedassets0.assets:45819
+@shop.prefix:Blessed	Venerable	Shop names, prefixes, effects and prompts; sharedassets0.assets:45819
+@shop.status:Blessed: Gain more XP	Bendición: Gana más EXP	Shop names, prefixes, effects and prompts; sharedassets0.assets:45819
+@shop.prefix:Witching	Brujo	Shop names, prefixes, effects and prompts; sharedassets0.assets:45821, sharedassets0.assets:45822, sharedassets0.assets:45840, sharedassets0.assets:45841, sharedassets0.assets:45860
+@shop.status:Chicken Magic	Magia de gallina	Shop names, prefixes, effects and prompts; sharedassets0.assets:45821, sharedassets0.assets:45822
+@shop.prefix:Charmed	Fascinante	Shop names, prefixes, effects and prompts; sharedassets0.assets:45825
+@shop.status:Charmed: Store Discount	Encanto: Descuento en tienda	Shop names, prefixes, effects and prompts; sharedassets0.assets:45825
+@shop.prefix:Occult	Arcano	Shop names, prefixes, effects and prompts; sharedassets0.assets:45826
+@shop.prefix:Veiled	Velado	Shop names, prefixes, effects and prompts; sharedassets0.assets:45826
+@shop.prefix:Mystic	Místico	Shop names, prefixes, effects and prompts; sharedassets0.assets:45826
+@shop.prefix:Orphic	Órfico	Shop names, prefixes, effects and prompts; sharedassets0.assets:45826
+@shop.status:Cosmic Strikes	Golpes cósmicos	Shop names, prefixes, effects and prompts; sharedassets0.assets:45826
+@shop.prefix:Blasting	Detonante	Shop names, prefixes, effects and prompts; sharedassets0.assets:45827
+@shop.prefix:Explosive	Explosivo	Shop names, prefixes, effects and prompts; sharedassets0.assets:45827
+@shop.prefix:Torpedo	Torpedo	Shop names, prefixes, effects and prompts; sharedassets0.assets:45827
+@shop.prefix:Bomber's	Del bombardero	Shop names, prefixes, effects and prompts; sharedassets0.assets:45827
+@shop.prefix:Sapper's	Del zapador	Shop names, prefixes, effects and prompts; sharedassets0.assets:45827
+@shop.status:Explosive Strikes	Golpes explosivos	Shop names, prefixes, effects and prompts; sharedassets0.assets:45827
+@shop.prefix:Vorpal	Vorpal	Shop names, prefixes, effects and prompts; sharedassets0.assets:45828
+@shop.prefix:Vampiric	Drenante	Shop names, prefixes, effects and prompts; sharedassets0.assets:45828
+@shop.prefix:Drinker	Bebedor	Shop names, prefixes, effects and prompts; sharedassets0.assets:45828
+@shop.prefix:Draining	Drenante	Shop names, prefixes, effects and prompts; sharedassets0.assets:45828
+@shop.prefix:Thirsting	Voraz	Shop names, prefixes, effects and prompts; sharedassets0.assets:45828
+@shop.status:Life Steal Strikes	Golpes con robo de vida	Shop names, prefixes, effects and prompts; sharedassets0.assets:45828
+@shop.prefix:Buff	Pujante	Shop names, prefixes, effects and prompts; sharedassets0.assets:45829, sharedassets0.assets:45838, sharedassets0.assets:45849, sharedassets0.assets:45851, sharedassets0.assets:45896
+@shop.prefix:Poison	Letal	Shop names, prefixes, effects and prompts; sharedassets0.assets:45829, sharedassets0.assets:45838, sharedassets0.assets:45849, sharedassets0.assets:45851, sharedassets0.assets:45890, sharedassets0.assets:45896
+@shop.status:GhostGirlHeal	Cura de niña fantasma	Shop names, prefixes, effects and prompts; sharedassets0.assets:45829, sharedassets0.assets:45849
+@shop.prefix:Cellular	Celular	Shop names, prefixes, effects and prompts; sharedassets0.assets:45830
+@shop.prefix:Plasmatic	Plasmático	Shop names, prefixes, effects and prompts; sharedassets0.assets:45830
+@shop.prefix:Biotic	Viviente	Shop names, prefixes, effects and prompts; sharedassets0.assets:45830
+@shop.status:Plasm Strikes	Golpes de plasma	Shop names, prefixes, effects and prompts; sharedassets0.assets:45830
+@shop.prefix:Liquid	Fluido	Shop names, prefixes, effects and prompts; sharedassets0.assets:45831
+@shop.prefix:Oceanic	Abisal	Shop names, prefixes, effects and prompts; sharedassets0.assets:45831
+@shop.prefix:Wet	Húmedo	Shop names, prefixes, effects and prompts; sharedassets0.assets:45831
+@shop.prefix:Dripping	Goteante	Shop names, prefixes, effects and prompts; sharedassets0.assets:45831
+@shop.prefix:Deep Sea	Abisal	Shop names, prefixes, effects and prompts; sharedassets0.assets:45831
+@shop.status:Water Strikes	Golpes de agua	Shop names, prefixes, effects and prompts; sharedassets0.assets:45831
+@shop.prefix:Dark	Fúnebre	Shop names, prefixes, effects and prompts; sharedassets0.assets:45832, sharedassets0.assets:45863
+@shop.prefix:Corrupted	Vil	Shop names, prefixes, effects and prompts; sharedassets0.assets:45832, sharedassets0.assets:45863
+@shop.status:Corrupted: 1.5 X Damage, Wielder is Driven Insane	Corrupción: Daño x1.5, vuelve loco a su portador	Shop names, prefixes, effects and prompts; sharedassets0.assets:45832
+@shop.status:GhoulGoo	Baba de necrófago	Shop names, prefixes, effects and prompts; sharedassets0.assets:45838, sharedassets0.assets:45851
+@shop.status:Frog Magic	Magia de rana	Shop names, prefixes, effects and prompts; sharedassets0.assets:45840, sharedassets0.assets:45841
+@shop.prefix:Glacial	Glacial	Shop names, prefixes, effects and prompts; sharedassets0.assets:45842, sharedassets0.assets:45869
+@shop.prefix:Icey	Gélido	Shop names, prefixes, effects and prompts; sharedassets0.assets:45842, sharedassets0.assets:45869
+@shop.prefix:Frozen	Invernal	Shop names, prefixes, effects and prompts; sharedassets0.assets:45842, sharedassets0.assets:45869
+@shop.prefix:Frostbite	Escarchado	Shop names, prefixes, effects and prompts; sharedassets0.assets:45842, sharedassets0.assets:45869
+@shop.status:Ice Magic	Magia de hielo	Shop names, prefixes, effects and prompts; sharedassets0.assets:45842, sharedassets0.assets:45869
+@shop.status:Causes nice sparkles	Genera hermosos destellos	Shop names, prefixes, effects and prompts; sharedassets0.assets:45859
+@shop.status:Mournful	Lúgubre	Shop names, prefixes, effects and prompts; sharedassets0.assets:45860
+@shop.prefix:Mad	Demente	Shop names, prefixes, effects and prompts; sharedassets0.assets:45872, sharedassets0.assets:45875
+@shop.status:Insanity	Locura	Shop names, prefixes, effects and prompts; sharedassets0.assets:45872, sharedassets0.assets:45875
+@shop.prefix:Cursed	Infame	Shop names, prefixes, effects and prompts; sharedassets0.assets:45877
+@shop.status:Cursed: Causes Vomiting, but sold at a discount	Maldición: Provoca vómitos, pero se vende con descuento	Shop names, prefixes, effects and prompts; sharedassets0.assets:45877
+@shop.prefix:Burning	Ardiente	Shop names, prefixes, effects and prompts; sharedassets0.assets:45880
+@shop.prefix:Flaming	Ígneo	Shop names, prefixes, effects and prompts; sharedassets0.assets:45880
+@shop.prefix:Hellfire	Infernal	Shop names, prefixes, effects and prompts; sharedassets0.assets:45880
+@shop.status:Fire Magic	Magia de fuego	Shop names, prefixes, effects and prompts; sharedassets0.assets:45880
+@shop.prefix:Venomous	Venenoso	Shop names, prefixes, effects and prompts; sharedassets0.assets:45890
+@shop.status:Poison	Veneno	Shop names, prefixes, effects and prompts; sharedassets0.assets:45890
+@shop.prefix:Thieving	Ladrón	Shop names, prefixes, effects and prompts; sharedassets0.assets:45902, sharedassets0.assets:45903, sharedassets0.assets:45904
+@shop.status:Stealing Gold	Robo de oro	Shop names, prefixes, effects and prompts; sharedassets0.assets:45902, sharedassets0.assets:45903, sharedassets0.assets:45904
+@shop.magic-name:eternal fire	fuego eterno	Shop names, prefixes, effects and prompts; sharedassets0.assets:45958
+Sword	Espada	Shop names, prefixes, effects and prompts; sharedassets0.assets:45960, sharedassets0.assets:45961, sharedassets0.assets:45962, sharedassets0.assets:45963
+2 Handed Sword	Mandoble	Shop names, prefixes, effects and prompts; sharedassets0.assets:45964, sharedassets0.assets:45965, sharedassets0.assets:45966, sharedassets0.assets:45967
+Cracked Bow	Arco agrietado	Shop names, prefixes, effects and prompts; sharedassets0.assets:45971
+A low powered bow.	Un arco de baja potencia.	Shop names, prefixes, effects and prompts; sharedassets0.assets:45971
+Magic Knife	Cuchillo mágico	Shop names, prefixes, effects and prompts; sharedassets0.assets:45981
+A light knife imbued with powerful magic	Un cuchillo ligero imbuido de poderosa magia.	Shop names, prefixes, effects and prompts; sharedassets0.assets:45981
+Magic Machete	Machete mágico	Shop names, prefixes, effects and prompts; sharedassets0.assets:45981
+@shop.magic-name:the sun ray	rayo solar	Shop names, prefixes, effects and prompts; sharedassets0.assets:45982
+@shop.magic-name:the blasting orb	orbe detonante	Shop names, prefixes, effects and prompts; sharedassets0.assets:45983
+@shop.magic-name:bloodstrike	golpe de sangre	Shop names, prefixes, effects and prompts; sharedassets0.assets:45984
+@shop.magic-name:the boulder	peñasco	Shop names, prefixes, effects and prompts; sharedassets0.assets:45985
+@shop.magic-name:the cyclone	ciclón	Shop names, prefixes, effects and prompts; sharedassets0.assets:45986
+@shop.magic-name:the purifying fire	fuego purificador	Shop names, prefixes, effects and prompts; sharedassets0.assets:45987
+@shop.magic-name:greater ice shards	esquirlas de hielo mayores	Shop names, prefixes, effects and prompts; sharedassets0.assets:45988
+@shop.magic-name:chain ice shards	esquirlas de hielo en cadena	Shop names, prefixes, effects and prompts; sharedassets0.assets:45989
+@shop.magic-name:the speartrap	trampa de lanzas	Shop names, prefixes, effects and prompts; sharedassets0.assets:45990
+@shop.magic-name:the rat	rata	Shop names, prefixes, effects and prompts; sharedassets0.assets:45991
+Practice Knife	Cuchillo de práctica	Shop names, prefixes, effects and prompts; sharedassets0.assets:46001
+A dull knife, capable of stealing gold	Un cuchillo sin filo, capaz de robar oro.	Shop names, prefixes, effects and prompts; sharedassets0.assets:46001
+Tutor's Blade	Hoja del tutor	Shop names, prefixes, effects and prompts; sharedassets0.assets:46006
+A spinning axe that comes alive when you attack. Use movement to fling it at your enemies\nattack to activate\r it	Un hacha giratoria que cobra vida al atacar. Muévete para lanzarla a tus enemigos\nataca para activarla\r	Shop names, prefixes, effects and prompts; sharedassets0.assets:50916, sharedassets0.assets:50927
+Frog Enchantment	Encantamiento de rana	Shop names, prefixes, effects and prompts; sharedassets0.assets:51521
+Terrified	Aterrorizado	Shop names, prefixes, effects and prompts; sharedassets0.assets:51522
+Strength Up	Fuerza +	Shop names, prefixes, effects and prompts; sharedassets0.assets:51536, sharedassets0.assets:51537, sharedassets0.assets:51538, sharedassets0.assets:51570, sharedassets0.assets:51571, sharedassets0.assets:51572, sharedassets0.assets:51573, sharedassets0.assets:51574, sharedassets0.assets:51577
+A spinning axe that comes alive when you cast magic. Use movement to fling it at your enemies.	Un hacha giratoria que cobra vida al lanzar magia. Muévete para lanzarla a tus enemigos.	Shop names, prefixes, effects and prompts; sharedassets0.assets:51539
+Speed Up	Velocidad +	Shop names, prefixes, effects and prompts; sharedassets0.assets:51540, sharedassets0.assets:51541, sharedassets0.assets:51543, sharedassets0.assets:51569
+Living Tome: Fireball	Tomo viviente: Bola de fuego	Shop names, prefixes, effects and prompts; sharedassets0.assets:51542, sharedassets0.assets:51564
+Magic book follows you and periodically fires a spell	Un libro mágico te sigue y lanza periódicamente un hechizo	Shop names, prefixes, effects and prompts; sharedassets0.assets:51542, sharedassets0.assets:51563, sharedassets0.assets:51564, sharedassets0.assets:51565
+Living Tome: Beam	Tomo viviente: Rayo	Shop names, prefixes, effects and prompts; sharedassets0.assets:51563
+Living Tome: Tears	Tomo viviente: Lágrimas	Shop names, prefixes, effects and prompts; sharedassets0.assets:51565
+Always Bleed	Sangrado constante	Shop names, prefixes, effects and prompts; sharedassets0.assets:51566
+Magic Up	Magia +	Shop names, prefixes, effects and prompts; sharedassets0.assets:51568
+Floats around and damages enemies on contact	Flota alrededor y daña a los enemigos al contacto	Shop names, prefixes, effects and prompts; sharedassets0.assets:51575, sharedassets0.assets:51576
+@shop.trait:fast attack speed	alta velocidad de ataque	Shop names, prefixes, effects and prompts
+@shop.trait:high damage	alto daño	Shop names, prefixes, effects and prompts
+@shop.trait:low attack speed	baja velocidad de ataque	Shop names, prefixes, effects and prompts
+@shop.trait:poor damage	bajo daño	Shop names, prefixes, effects and prompts
+@shop.compare:VALUE	VALOR	Shop names, prefixes, effects and prompts
+@shop.compare:DAMAGE	DAÑO	Shop names, prefixes, effects and prompts
+@shop.compare:SPEED	VELOCIDAD	Shop names, prefixes, effects and prompts
+@shop.compare:RANGE	ALCANCE	Shop names, prefixes, effects and prompts
+@shop.traits:for a {0}: {1}	tratándose de {0}: {1}	Shop names, prefixes, effects and prompts
+@shop.chance:{0}% chance of {1}.	{0}% de probabilidad de {1}.	Shop names, prefixes, effects and prompts
+(Value {0})	(Valor {0})	Shop names, prefixes, effects and prompts
+Trade	Intercambiar	Shop names, prefixes, effects and prompts
+Replaces	Reemplaza	Shop names, prefixes, effects and prompts
+You already own this artifact.	Ya posees este artefacto.	Shop names, prefixes, effects and prompts
+BUY	COMPRAR	Shop names, prefixes, effects and prompts
+BUY POTION	COMPRAR POCIÓN	Shop names, prefixes, effects and prompts
+BUY ARTIFACT	COMPRAR ARTEFACTO	Shop names, prefixes, effects and prompts
+BUY SPELL	COMPRAR HECHIZO	Shop names, prefixes, effects and prompts
+BUY WEAPON	COMPRAR ARMA	Shop names, prefixes, effects and prompts
+TRADE WEAPON	INTERCAMBIAR ARMA	Shop names, prefixes, effects and prompts
+FORBIDDEN	PROHIBIDO	Shop names, prefixes, effects and prompts
+ALREADY OWNED	YA EN POSESIÓN	Shop names, prefixes, effects and prompts
+NOT ENOUGH GOLD	ORO INSUFICIENTE	Shop names, prefixes, effects and prompts

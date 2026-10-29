@@ -1,0 +1,36 @@
+# Original source/key<TAB>translation (@TODO means pending)<TAB>English context
+@shop.il:.	.	Shop string fragments and templates
+@shop.il:\nHas 	\nTiene 	Shop string fragments and templates
+@shop.il: with 	 y 	Shop string fragments and templates
+@shop.il:an unusually <color=#a19473>fast attack speed</color>	una <color=#a19473>velocidad de ataque inusualmente alta</color>	Shop string fragments and templates
+@shop.il:abnormally <color=#a19473>high damage</color>	un <color=#a19473>daño anormalmente alto</color>	Shop string fragments and templates
+@shop.il:an unusually <color=#a19473>low attack speed</color>	una <color=#a19473>velocidad de ataque inusualmente baja</color>	Shop string fragments and templates
+@shop.il:abnormally <color=#a19473>poor damage</color>	un <color=#a19473>daño anormalmente bajo</color>	Shop string fragments and templates
+@shop.il: for a {0}	 tratándose de {0}	Shop string fragments and templates
+@shop.il:\n<color=#774789>{0}.</color>	\n<color=#774789>{0}.</color>	Shop string fragments and templates
+@shop.il:\n<color=#b78f2d>{0}% chance of {1}.</color>	\n<color=#b78f2d>{0}% de probabilidad de {1}.</color>	Shop string fragments and templates
+@shop.il:\n\nTrade 	\n\nIntercambia 	Shop string fragments and templates
+@shop.il:\n\nReplaces 	\n\nReemplaza 	Shop string fragments and templates
+@shop.il:\n\nYou already own this artifact.	\n\nYa posees este artefacto.	Shop string fragments and templates
+@shop.il:(Value 	(Valor 	Shop string fragments and templates
+@shop.il:)	)	Shop string fragments and templates
+@shop.il:<color=#b6442e>--VALUE</color> 	<color=#b6442e>--VALOR</color> 	Shop string fragments and templates
+@shop.il:<color=#b6442e>-VALUE</color> 	<color=#b6442e>-VALOR</color> 	Shop string fragments and templates
+@shop.il:=VALUE 	=VALOR 	Shop string fragments and templates
+@shop.il:<color=#7fa135>+VALUE</color> 	<color=#7fa135>+VALOR</color> 	Shop string fragments and templates
+@shop.il:<color=#7fa135>++VALUE</color> 	<color=#7fa135>++VALOR</color> 	Shop string fragments and templates
+@shop.il:<color=#b6442e>--DAMAGE</color> 	<color=#b6442e>--DAÑO</color> 	Shop string fragments and templates
+@shop.il:<color=#b6442e>-DAMAGE</color> 	<color=#b6442e>-DAÑO</color> 	Shop string fragments and templates
+@shop.il:=DAMAGE 	=DAÑO 	Shop string fragments and templates
+@shop.il:<color=#7fa135>+DAMAGE</color> 	<color=#7fa135>+DAÑO</color> 	Shop string fragments and templates
+@shop.il:<color=#7fa135>++DAMAGE</color> 	<color=#7fa135>++DAÑO</color> 	Shop string fragments and templates
+@shop.il:<color=#b6442e>--SPEED</color> 	<color=#b6442e>--VELOCIDAD</color> 	Shop string fragments and templates
+@shop.il:<color=#b6442e>-SPEED</color> 	<color=#b6442e>-VELOCIDAD</color> 	Shop string fragments and templates
+@shop.il:=SPEED 	=VELOCIDAD 	Shop string fragments and templates
+@shop.il:<color=#7fa135>+SPEED</color> 	<color=#7fa135>+VELOCIDAD</color> 	Shop string fragments and templates
+@shop.il:<color=#7fa135>++SPEED</color> 	<color=#7fa135>++VELOCIDAD</color> 	Shop string fragments and templates
+@shop.il:<color=#b6442e>--RANGE</color> 	<color=#b6442e>--ALCANCE</color> 	Shop string fragments and templates
+@shop.il:<color=#b6442e>-RANGE</color> 	<color=#b6442e>-ALCANCE</color> 	Shop string fragments and templates
+@shop.il:=RANGE 	=ALCANCE 	Shop string fragments and templates
+@shop.il:<color=#7fa135>+RANGE</color> 	<color=#7fa135>+ALCANCE</color> 	Shop string fragments and templates
+@shop.il:<color=#7fa135>++RANGE</color> 	<color=#7fa135>++ALCANCE</color> 	Shop string fragments and templates

@@ -1,0 +1,50 @@
+# Original source/key<TAB>translation (@TODO means pending)<TAB>English context
+_End the game?_	_Завершить игру?_	Pause, evolution and results
+All progress will be lost, are you sure you want to quit?	Весь прогресс будет потерян, вы уверены, что хотите выйти?	Pause, evolution and results
+_Exit the tutorial?_	_Выйти из обучения?_	Pause, evolution and results
+To play the tutorial again, select 'Replay Tutorial' from the options menu. \n\n Are you sure you want to quit?	Чтобы пройти обучение снова, выберите «Повторить обучение» в меню настроек. \n\n Вы уверены, что хотите выйти?	Pause, evolution and results
+@progression.join-title:{0}:{1}	_И{0}_'{1}'_ВОШЁЛ_В_ИГРУ_	Pause notification; original English template: _P{0}_'{1}'_DROPPED_IN_; {0}=player number, {1}=player name (uppercased by the game)
+@progression.leave-title:{0}:{1}	_И{0}_'{1}'_ПОКИНУЛ_ИГРУ_	Pause notification; original English template: _P{0}_'{1}'_DROPPED_OUT_; {0}=player number, {1}=player name (uppercased by the game)
+@progression.join-body:{0}:{1}:{2}:{3}:{4}	Присоединился как Игрок {0} с именем: '{1}'\n\nУровень героя: {2}\nПоклоняется: {3}\n({4})	Pause notification; original English template: Joined as Player {0} with alias: '{1}'\n\nHero level: {2}\nWorships: {3}\n({4}); {0}=player number, {1}=player name, {2}=hero level, {3}=deity name, {4}=deity effect
+@progression.leave-body:{0}:{1}	Игрок {0} ({1}) будет заменен ботом.	Pause notification; original English template: Player {0} ({1}) will be replaced with a bot.; {0}=player number, {1}=player name
+None	Нет	Pause, evolution and results
+UPGRADE\nMONSTER	УЛУЧШИТЬ\nМОНСТРА	Pause, evolution and results; level5:1361, level5:1372, level5:1383, level5:1394, level5:1399/m_displayText, level5:1401/m_displayText, level5:1410/m_displayText, level5:1465/m_displayText, level5:1490/m_displayText, level5:1501/m_displayText, level5:1546/m_displayText, level5:1554/m_displayText, level5:1557/m_displayText, level5:1564/m_displayText, level5:1576/m_displayText, level5:1584/m_displayText, level5:1596/m_displayText, level5:1602/m_displayText, level5:1628/m_displayText, level5:1632/m_displayText, level5:1653/m_displayText, level5:1676/m_displayText, level5:1681/m_displayText, level5:1702/m_displayText, level5:1725/m_displayText, level5:1738/m_displayText, level5:1740/m_displayText, level5:1752/m_displayText
+UPGRADE\nECTOPLASM	УЛУЧШИТЬ\nЭКТОПЛАЗМУ	Pause, evolution and results; level5:1460/m_displayText, level5:1470/m_displayText, level5:1480/m_displayText, level5:1517/m_displayText
+GAMEPLAY\nTIPS	СОВЕТЫ ПО\nИГРЕ	Pause, evolution and results; level5:1403/m_displayText, level5:1416/m_displayText, level5:1492/m_displayText, level5:1711/m_displayText
+RETURN TO\nDUNGEON	ВЕРНУТЬСЯ\nВ ПОДЗЕМЕЛЬЕ	Pause, evolution and results; level5:1504/m_displayText, level5:1669/m_displayText, level5:1695/m_displayText, level5:1748/m_displayText
+VIEW\nHERO GEAR	СНАРЯЖЕНИЕ\nГЕРОЯ	Pause, evolution and results; level5:1522/m_displayText, level5:1570/m_displayText, level5:1624/m_displayText, level5:1704/m_displayText
+PEAK LEVEL\nREACHED	ДОСТИГНУТ\nМАКС. УРОВЕНЬ	Pause, evolution and results
+NOT ENOUGH\nWRATH	НЕ ХВАТАЕТ\nГНЕВА	Pause, evolution and results
+not enough	не хватает	Pause, evolution and results; level5:1356, level5:1367, level5:1378, level5:1389, level5:1542/m_stringCantAfford, level5:1607/m_stringCantAfford, level5:1648/m_stringCantAfford, level5:1659/m_stringCantAfford
+ESCAPED\nALIVE!	СПАССЯ\nЖИВЫМ!	Pause, evolution and results; level10:160
+LOST\nFOREVER	СГИНУЛ\nНАВЕКИ	Pause, evolution and results; level9:146
+CONSUMED	ПОГЛОЩЁН	Pause, evolution and results; level9:159
+xp	опыт	Pause, evolution and results; level9:142, level9:143, level9:145, level10:156, level10:157, level10:158
+ST	-Й	Pause, evolution and results; level9:156, level10:174
+ND	-Й	Pause, evolution and results; level9:152, level10:170
+RD	-Й	Pause, evolution and results; level9:148, level10:166
+TH	-Й	Pause, evolution and results; level9:160, level10:162
+- Challenge GHIDRAAK -	- Испытание: ГИДРААК -	Pause, evolution and results; sharedassets0.assets:56950/m_displayName
+- Challenge KOUROK -	- Испытание: КОУРОК -	Pause, evolution and results; sharedassets0.assets:61646/m_displayName
+- Challenge Tezekcal -	- Испытание: ТЕЗЕККАЛЬ -	Pause, evolution and results; sharedassets0.assets:65498/m_displayName
+- final struggle -	- финальная битва -	Pause, evolution and results; sharedassets0.assets:38018
+Boss Killer	Убийца боссов	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Chaos Bringer	Несущий хаос	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Daemon Spawn	Порождение демона	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Near Immortal	Почти бессмертный	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Gnashing Seraphin	Скрежещущий серафим	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+God Slayer	Богоубийца	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Angel of Death	Ангел смерти	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Winged Annihilation	Крылатое уничтожение	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Divine Butcher	Божественный мясник	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Cosmic Beast	Космический зверь	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Cronus	Кронос	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Yama	Яма	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Yanluo	Яньло	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+L'Ankou	Анку	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Agent of Dagon	Агент Дагона	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Cthulhu Kin	Отродье Ктулху	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Of Nyarlathotep	От Ньярлатхотепа	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Of Yog-Sothoth	От Йог-Сотота	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Of Azathoth	От Азатота	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+Omega	Омега	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
