@@ -124,12 +124,9 @@ foreach ($locale in $Languages) {
         Copy-Item -LiteralPath (Join-Path $projectRoot ('Languages\' + $locale + '\' + $file)) -Destination $target -Force
     }
 }
-# Every edition ships both fonts. Language mappings select which one to use.
-# Font sources stay in the repository and do not enter release archives.
-$fontFiles = @{
-    'Fonts/crawl-multilingual.bundle' = (Join-Path $projectRoot 'Fonts/crawl-multilingual.bundle')
-    'Fonts/crawl-chinese-fonts.bundle' = (Join-Path $projectRoot 'Fonts/crawl-chinese-fonts.bundle')
-}
+# Include only files referenced by the selected languages. The combined font is
+# distributed separately and never enters a normal player or translator package.
+$fontFiles = @{}
 $rootPrefix = [IO.Path]::GetFullPath($projectRoot).TrimEnd('\') + '\'
 foreach ($table in Get-ChildItem -Path (Join-Path $output 'Languages\*\fonts.tsv')) {
     foreach ($line in Get-Content -LiteralPath $table.FullName -Encoding utf8) {
@@ -148,7 +145,7 @@ foreach ($relative in $fontFiles.Keys) {
     New-Item -ItemType Directory -Force -Path (Split-Path $fontDestination -Parent) | Out-Null
     Copy-Item -LiteralPath $fontFiles[$relative] -Destination $fontDestination -Force
     # Carry notices with font binaries into custom player packages too.
-    foreach ($suffix in @('.OFL.txt', '.NOTICE.txt', '.coverage.tsv')) {
+    foreach ($suffix in @('.OFL.txt', '.NOTICE.txt')) {
         $notice = [IO.Path]::ChangeExtension($fontFiles[$relative], $suffix)
         if (Test-Path -LiteralPath $notice) {
             Copy-Item -LiteralPath $notice -Destination ([IO.Path]::ChangeExtension($fontDestination, $suffix)) -Force
@@ -167,8 +164,8 @@ if (!$isChinesePackage) {
     $translatorReadme = Join-Path $projectRoot 'packaging\translator\README.md'
     $translatorFiles = @((Join-Path $output 'CrawlLocalization.dll'), $translatorReadme, $skillFolder)
     Compress-Archive -Path $translatorFiles -DestinationPath $translatorArchive -Force
-    # Both font bundles are included, without source TTFs or translated catalogs.
-    $translatorFonts = @('crawl-chinese-fonts.bundle', 'crawl-multilingual.bundle', 'crawl-multilingual.OFL.txt', 'crawl-multilingual.NOTICE.txt', 'crawl-chinese-fonts.OFL.txt', 'crawl-chinese-fonts.NOTICE.txt', 'crawl-chinese-fonts.coverage.tsv', 'crawl-multilingual.coverage.tsv')
+    # Authoring starts with only the multilingual font; no Chinese pack or font.
+    $translatorFonts = @('crawl-multilingual.bundle', 'crawl-multilingual.OFL.txt', 'crawl-multilingual.NOTICE.txt')
     $zip = [IO.Compression.ZipFile]::Open($translatorArchive, [IO.Compression.ZipArchiveMode]::Update)
     try {
         foreach ($file in $translatorFonts) {

@@ -1,4 +1,4 @@
-﻿param([string]$GamePath = 'D:\SteamLibrary\steamapps\common\Crawl', [string]$UnityPath = 'C:\Program Files\Unity\Hub\Editor\5.4.2f2\Editor\Unity.exe')
+param([string]$GamePath = 'D:\SteamLibrary\steamapps\common\Crawl', [string]$UnityPath = 'C:\Program Files\Unity\Hub\Editor\5.4.2f2\Editor\Unity.exe')
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path $PSScriptRoot -Parent
 $project = Join-Path $projectRoot 'FontBundleProject'
@@ -10,7 +10,7 @@ New-Item -ItemType Directory -Force -Path $output,$generated | Out-Null
 foreach ($source in @('ChineseTextWrapper.cs', 'LanguagePack.cs', 'NumericTranslation.cs', 'FontService.cs', 'MenuTextPolicy.cs', 'MenuTextMeshes.cs', 'MenuPatches.cs', 'ChapterTitlePatch.cs', 'HeroStatsPatches.cs', 'GameplayPatches.cs', 'ProgressionPatches.cs', 'ProgressionText.cs', 'MenuWrapPatch.cs', 'ShopText.cs', 'ShopPatches.cs', 'OnlineText.cs', 'OnlineOverlay.cs', 'OnlineMirrorFonts.cs')) {
     Copy-Item -LiteralPath (Join-Path $projectRoot ('src\' + $source)) -Destination $generated -Force
 }
-Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'ValidateFontFallback.cs') -Destination $generated -Force
+Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'ValidateCombinedFont.cs') -Destination $generated -Force
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'ValidateOnlineDisplay.cs') -Destination $generated -Force
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'ChapterRuntimeStubs.cs') -Destination $generated -Force
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'HeroStatsRuntimeStubs.cs') -Destination $generated -Force

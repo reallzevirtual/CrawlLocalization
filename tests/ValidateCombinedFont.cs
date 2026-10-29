@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
@@ -7,7 +7,7 @@ using CrawlLocalization;
 
 // Real Unity 5.4 TextMeshes/fonts; a small puppet fixture models the renderer's
 // assignment order. No game, Steam or network session is launched.
-public static class ValidateFontFallback
+public static class ValidateCombinedFont
 {
     private sealed class Puppet { public TextMesh TM; }
     private sealed class Entity { public object Puppet; public readonly string State = "unchanged network text"; public uint Dirty = 512; }
@@ -19,13 +19,14 @@ public static class ValidateFontFallback
     {
         FontService previous = plugin.Fonts;
         LanguagePack previousLanguage = plugin.Language;
-        GameObject stage = new GameObject("FontFallbackValidation");
+        GameObject stage = new GameObject("CombinedFontValidation");
         using (FontService service = new FontService(delegate(string s) { Debug.LogWarning(s); }, delegate(string s) { }, root))
         {
             plugin.Fonts = service;
             // Reuse the previously loaded Chinese bundle through the existing service:
             // unload it first to avoid Unity loading two copies of the same bundle.
             previous.Dispose();
+            Check(service.HasCombinedFont, "Optional addon detected at startup");
             string[] names = { "CrawlLarge", "CrawlSmall", "CrawlMedium", "CrawlTiny", "CrawlInvLarge", "CrawlTextBodyThin", "CrawlTextBodyWide", "CrawlTextBodyTeensy", "04B_03-White", "04B_04-Black" };
             foreach (string locale in new string[] { "ru", "es" })
             {
@@ -41,8 +42,7 @@ public static class ValidateFontFallback
                     string mixed = "Jugador Ñandú Игрок Ёж 中文张三";
                     Check(service.TryChoose(plugin.Language, reference, 16, FontStyle.Normal, latin, out primary), "Primary native coverage: " + name);
                     Check(service.TryChoose(plugin.Language, reference, 16, FontStyle.Normal, mixed, out fallback), "Mixed native coverage: " + name);
-                    Debug.Log("FALLBACK_FONT " + name + " primary=" + primary.Font.GetInstanceID() + " Han=" + primary.Font.HasCharacter('中') + " fallback=" + fallback.Font.GetInstanceID());
-                    Check(primary.Font != fallback.Font, "Fallback changes font only when Han is needed: " + name);
+                    Check(primary.Font == fallback.Font && primary.Font != reference, "One combined font directly handles both strings: " + name);
                     Check(primary.Size == 16 && fallback.Size == 160 && Math.Abs(fallback.Size * fallback.Scale - 16) < .001f, "Sampling scale preserves geometry: " + name);
                     mesh.font = fallback.Font; mesh.fontSize = fallback.Size; mesh.characterSize = 10 * fallback.Scale; mesh.text = mixed;
                     mesh.GetComponent<Renderer>().sharedMaterial = fallback.Font.material;
@@ -61,7 +61,7 @@ public static class ValidateFontFallback
             plugin.Language = LanguagePack.Load(root,"ru",plugin.Warn);
             FontChoice ascii;
             Font original = UnityEditor.AssetDatabase.LoadAssetAtPath<Font>("Assets/Fonts/CrawlSmall.ttf");
-            service.TryChoose(plugin.Language,original,16,FontStyle.Normal,"READY",out ascii);
+            ascii = new FontChoice { Font = original, Size = 16, Style = FontStyle.Normal };
             GameObject obj = new GameObject("PlayerPlatformName");obj.transform.SetParent(stage.transform);
             TextMesh player = obj.AddComponent<TextMesh>();player.font=ascii.Font;player.fontSize=16;player.characterSize=10;
             Renderer renderer=player.GetComponent<Renderer>();renderer.sharedMaterial=ascii.Font.material;
@@ -109,7 +109,7 @@ public static class ValidateFontFallback
             UnityEngine.Object.DestroyImmediate(stage);
         }
         plugin.Fonts=previous;plugin.Language=previousLanguage;
-        File.WriteAllText(Path.Combine(root,"artifacts/online-display/font-fallback.txt"),"PASS: "+checks+" native fallback checks (10 styles, ru/es mixed names, language reload, original glyph sizes, mirror material/order/state, IMGUI). Mirror calls use a fixture; no network session was started.");
-        Debug.Log("CRAWL_FONT_FALLBACK_OK: "+checks);
+        File.WriteAllText(Path.Combine(root,"artifacts/online-display/combined-font.txt"),"PASS: "+checks+" native optional combined-font checks (10 styles, ru/es mixed names, language reload, original glyph sizes, mirror material/order/state, IMGUI). Mirror calls use a fixture; no network session was started.");
+        Debug.Log("CRAWL_COMBINED_FONT_OK: "+checks);
     }
 }

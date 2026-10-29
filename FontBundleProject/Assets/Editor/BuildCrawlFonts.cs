@@ -10,7 +10,9 @@ using UnityEngine;
 // Compiled by Unity 5.4's C# compiler, independently of the BepInEx plugin.
 public static class BuildCrawlFonts
 {
-    private const string BundleName = "crawl-chinese-fonts.bundle";
+    private static bool Combined { get { return Environment.GetEnvironmentVariable("CRAWL_COMBINED_FONTS") == "1"; } }
+    private static string BundleName { get { return Combined ? "crawl-combined.bundle" : "crawl-chinese-fonts.bundle"; } }
+    private static string OutputFolder { get { return Combined ? "artifacts/font-bundle-combined" : "artifacts/font-bundle"; } }
     private static bool BatchMode { get { return Array.IndexOf(Environment.GetCommandLineArgs(), "-batchmode") >= 0; } }
     private static readonly string[] Names = {
         "CrawlLarge", "CrawlTextBodyWide", "CrawlTextBodyThin", "CrawlSmall",
@@ -26,7 +28,7 @@ public static class BuildCrawlFonts
             if (Application.unityVersion != "5.4.2f2")
                 throw new InvalidOperationException("Use Unity 5.4.2f2; found " + Application.unityVersion);
             string root = Directory.GetParent(Directory.GetParent(Application.dataPath).FullName).FullName;
-            string output = Path.Combine(root, "artifacts/font-bundle");
+            string output = Path.Combine(root, OutputFolder);
             Directory.CreateDirectory(output);
             AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
             string[] assets = new string[Names.Length];
@@ -94,7 +96,7 @@ public static class BuildCrawlFonts
     public static void ValidateBuiltBundle()
     {
         string root = Directory.GetParent(Directory.GetParent(Application.dataPath).FullName).FullName;
-        string path = Path.Combine(root, "artifacts/font-bundle/" + BundleName);
+        string path = Path.Combine(Path.Combine(root, OutputFolder), BundleName);
         string[] assets = new string[Names.Length];
         for (int i = 0; i < Names.Length; i++) assets[i] = "Assets/Fonts/" + Names[i] + ".ttf";
         Validate(path, root, assets, true);
@@ -125,8 +127,11 @@ public static class BuildCrawlFonts
                     if (!char.IsWhiteSpace(ch)) glyphs.Add(ch);
             }
         }
-        foreach (char ch in "中文张三你好_ЁёÁÉÍÓÚÜÑáéíóúüñ¿¡") glyphs.Add(ch);
-        for (char ch = '\u0410'; ch <= '\u044f'; ch++) glyphs.Add(ch);
+        if (Combined)
+        {
+            foreach (char ch in "中文张三你好_ЁёÁÉÍÓÚÜÑáéíóúüñ¿¡") glyphs.Add(ch);
+            for (char ch = '\u0410'; ch <= '\u044f'; ch++) glyphs.Add(ch);
+        }
         AssetBundle bundle = AssetBundle.LoadFromFile(path);
         if (bundle == null) throw new InvalidOperationException("Cannot reopen the generated bundle.");
         try

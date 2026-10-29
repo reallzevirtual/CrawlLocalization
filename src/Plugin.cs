@@ -35,6 +35,7 @@ namespace CrawlLocalization
             harmony = new Harmony(Id);
             harmony.PatchAll(typeof(Plugin).Assembly);
             OnlineIntegration.Install(harmony, Warn);
+            if (Fonts.HasCombinedFont) OnlineMirrorFonts.Install(harmony, Warn);
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
 

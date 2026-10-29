@@ -15,6 +15,7 @@ namespace CrawlLocalization
             List<string> names = new List<string>();
             for (Transform t = obj.transform; t != null; t = t.parent) names.Insert(0, t.name);
             bool translate = MenuTextPolicy.MatchesPath(plugin.Language.TextMeshPaths, string.Join("/", names.ToArray()));
+            if (!translate && !plugin.Fonts.HasCombinedFont) return existing;
             if (existing != null && (!existing.FontOnly || !translate)) return existing;
             TextMesh mesh = obj.GetComponent<TextMesh>();
             if (mesh == null) return null;

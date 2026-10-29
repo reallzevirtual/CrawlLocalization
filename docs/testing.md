@@ -57,8 +57,12 @@ python .\tools\export_menu_texts.py --game-path '你的 Crawl 目录' --output a
 
 先运行 `build.ps1`，再运行 `pwsh -NoProfile -File tools/build-menu-examples.ps1`。示例生成器直接解压 Translator ZIP，使用包内脚本创建 ru/es；在 docs/my/backups 保存不可覆盖的翻译前基线，填入六个菜单译文并比对。最终用发行 DLL 本身测试查表、待译项回退和非中文规则，输出两份带字体和说明的 MenuDemo ZIP。测试不启动游戏。
 
-## 昵称字体回退
+## 可选合并字体
 
-`build-fonts.ps1` 先执行 `tools/extend_chinese_fonts.py`，将原始中文 TTF 与同款通用字形合并到可重建的 `Fonts/ChineseFallback/`，再打包；不会覆盖原始 `Fonts/*.ttf`。脚本核对所有既有字形、字宽及排版度量。`tests/check_bundle.py` 检查最终内嵌字体及 Unity 原始布局参数。
+普通 `build-fonts.ps1` 使用原始 `Fonts/*.ttf` 重建中文字体；加 `-Combined` 才将同款通用字形补入生成目录 `Fonts/ChineseFallback/`，打包为 `Fonts/crawl-combined.bundle`。原始中文输入不改。`package-combined-fonts.ps1` 只打包这一份可选字体及说明、许可。
 
-`tests/check-online-display.ps1` 增加真实 Unity 字体／TextMesh 检查，覆盖十种字型的中俄西混排、昵称保持原文、语言切换、采样补偿、图集更新和原材质恢复。客户端镜像调用使用按实际字段结构建立的夹具；实际模组接口由 `check-online-il.ps1` 只读核对。这里不启动游戏或网络会话，仍需玩家实际验证联机显示。
+`tests/check_bundle.py --game-path <游戏目录>` 验证标准中文字体；加 `--combined` 验证合并字体的内嵌 TTF、混合字符覆盖及原始布局参数。`tests/check-online-display.ps1` 验证可选字体真实 Unity TextMesh 显示、原始字形尺寸、名字保持原文、语言切换和镜像材质处理。镜像调用使用夹具，实际模组接口由 `check-online-il.ps1` 只读检查；不启动游戏或网络会话。
+
+`tests/test.ps1` 检查 addon 缺席时原行为、存在时直接选用合并字体、删除后恢复以及损坏时返回默认字体。`tests/check-packages.py` 同时检查普通、中文、制作、可选字体四个 ZIP 的精确内容。
+
+标准中文字体按用户要求恢复原文件，CrawlTiny 原有的 `_` 字形缺口作为明确历史例外报告，不补字。合并字体包含该字形，不允许此例外。

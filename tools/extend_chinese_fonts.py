@@ -1,12 +1,22 @@
-"""Add missing multilingual glyphs to Chinese fallback fonts; preserve all inputs."""
+"""Build optional combined fonts by adding missing multilingual glyphs; preserve all inputs."""
 import copy
 from pathlib import Path
 from fontTools.ttLib import TTFont
 from fontTools.pens.ttGlyphPen import TTGlyphPen
-from merge_multilingual_fonts import outline, transformed
+from merge_multilingual_fonts import transformed
+from fontTools.pens.recordingPen import DecomposingRecordingPen
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'Fonts/ChineseFallback'
+
+def outline(font, name):
+    # Reuse the glyph set while verifying thousands of unchanged outlines.
+    glyph_set = getattr(font, '_crawl_glyph_set', None)
+    if glyph_set is None:
+        glyph_set = font._crawl_glyph_set = font.getGlyphSet()
+    pen = DecomposingRecordingPen(glyph_set)
+    glyph_set[name].draw(pen)
+    return pen
 
 def main():
     OUT.mkdir(exist_ok=True)
@@ -32,7 +42,7 @@ def main():
                     table.cmap[cp] = name
             added += 1
         result['OS/2'].recalcUnicodeRanges(result)
-        result['name'].setName('Additional glyphs: Pixelify Sans, SIL Open Font License 1.1; see crawl-chinese-fonts.OFL.txt. Original font notices retained.', 13, 3, 1, 0x409)
+        result['name'].setName('Additional glyphs: Pixelify Sans, SIL Open Font License 1.1; see crawl-combined.OFL.txt. Original font notices retained.', 13, 3, 1, 0x409)
         result.recalcTimestamp = False
         result.save(OUT / source.name)
         check = TTFont(OUT / source.name)

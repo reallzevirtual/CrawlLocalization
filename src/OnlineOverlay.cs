@@ -14,6 +14,7 @@ namespace CrawlLocalization
             OnlineRecipe recipe = OnlineText.Find(source);
             if (plugin == null) return source;
             string translated = recipe == null || plugin.Language.Id == "en" ? source : recipe.Render(plugin.Language);
+            if (translated == source && !plugin.Fonts.HasCombinedFont) return source;
             Font font;
             int size = style.fontSize > 0 ? style.fontSize : 12;
             if (!plugin.Fonts.TryChooseGui(plugin.Language, style.font ?? GUI.skin.font, size, style.fontStyle, translated, out font)) return source;

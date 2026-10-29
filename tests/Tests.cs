@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using System.Security.Cryptography;
 
 namespace CrawlLocalization
 {
@@ -168,7 +167,7 @@ namespace CrawlLocalization
             Check(absent.Count == 0 && !absent.TryTranslate("START GAME", out value), "Missing locale never reads installed Chinese translations");
             CheckFontFallbacks();
             CheckBundleFallbacks();
-            CheckSharedFontFallbacks();
+            CheckOptionalCombinedFont();
             Console.WriteLine("PASS: " + checks + " offline language/configuration/font-selection checks.");
         }
 
@@ -228,50 +227,44 @@ namespace CrawlLocalization
             finally { if (Directory.Exists(temp)) Directory.Delete(temp, true); }
         }
 
-        private static void CheckSharedFontFallbacks()
+        private static void CheckOptionalCombinedFont()
         {
-            string root = Path.Combine(Path.GetTempPath(), "crawl-fonts-" + Guid.NewGuid().ToString("N"));
+            string root = Path.Combine(Path.GetTempPath(), "crawl-combined-" + Guid.NewGuid().ToString("N"));
             Directory.CreateDirectory(Path.Combine(root, "Fonts"));
-            string multiPath = Path.Combine(Path.Combine(root, "Fonts"), "crawl-multilingual.bundle");
-            string chinesePath = Path.Combine(Path.Combine(root, "Fonts"), "crawl-chinese-fonts.bundle");
-            File.WriteAllText(multiPath, "test"); File.WriteAllText(chinesePath, "test");
-            UnityEngine.Font original = new UnityEngine.Font("CrawlSmall", "ABC");
-            UnityEngine.Font multi = new UnityEngine.Font("CrawlSmall", "ABCЯñ中文"); // Native probing can report OS fallback glyphs.
-            UnityEngine.Font chinese = new UnityEngine.Font("CrawlSmall", "ABCЯñ中文");
+            string mappedPath = Path.Combine(Path.Combine(root, "Fonts"), "crawl-multilingual.bundle");
+            string combinedPath = Path.Combine(Path.Combine(root, "Fonts"), "crawl-combined.bundle");
+            File.WriteAllText(mappedPath, "test");
+            UnityEngine.Font mapped = new UnityEngine.Font("CrawlSmall", "READYЯñ");
+            UnityEngine.Font combined = new UnityEngine.Font("CrawlSmall", "READYЯñ中文");
+            UnityEngine.Font original = new UnityEngine.Font("CrawlSmall", "READY");
             UnityEngine.AssetBundle mb = new UnityEngine.AssetBundle(), cb = new UnityEngine.AssetBundle();
-            mb.Assets.Add("assets/fonts/crawlsmall.ttf", multi); cb.Assets.Add("assets/fonts/crawlsmall.ttf", chinese);
-            UnityEngine.AssetBundle.Files.Add(multiPath, mb); UnityEngine.AssetBundle.Files.Add(chinesePath, cb);
-            string hash;
-            using (SHA256 sha = SHA256.Create()) hash = BitConverter.ToString(sha.ComputeHash(File.ReadAllBytes(multiPath))).Replace("-", "").ToLowerInvariant();
-            string metadata = Path.ChangeExtension(multiPath, ".coverage.tsv");
-            File.WriteAllText(metadata, "sha256\t" + hash + "\nassets/fonts/crawlsmall.ttf\t0041-0043,00F1-00F1,042F-042F\n");
+            mb.Assets.Add("assets/fonts/crawlsmall.ttf", mapped); cb.Assets.Add("assets/fonts/crawlsmall.ttf", combined);
+            UnityEngine.AssetBundle.Files.Add(mappedPath, mb); UnityEngine.AssetBundle.Files.Add(combinedPath, cb);
             LanguagePack pack = new LanguagePack { Id = "ru", FallbackFonts = new string[0] };
-            pack.Fonts.Add("CrawlSmall", new FontRule { Kind = "bundle", File = multiPath, Name = "assets/fonts/crawlsmall.ttf", Scale = 1f });
-            List<string> warnings = new List<string>(); FontChoice choice;
+            pack.Fonts.Add("CrawlSmall", new FontRule { Kind = "bundle", File = mappedPath, Name = "assets/fonts/crawlsmall.ttf", Scale = 1f });
+            FontChoice choice; List<string> messages = new List<string>();
             try
             {
-                using (FontService service = new FontService(warnings.Add, warnings.Add, root))
+                using (FontService service = new FontService(messages.Add, messages.Add, root))
                 {
-                    Check(service.TryChoose(pack, original, 16, UnityEngine.FontStyle.Normal, "Яñ", out choice) && choice.Font == multi && choice.Size == 16, "Multilingual mapped font stays first");
-                    Check(service.TryChoose(pack, original, 16, UnityEngine.FontStyle.Normal, "Я中文ñ", out choice) && choice.Font == chinese, "Mixed Cyrillic Spanish and Han uses complete Chinese fallback");
-                    Check(choice.Size == 160 && Math.Abs(choice.Scale * choice.Size - 16) < .001f && !pack.UsesChineseTextRules, "Fallback Han sampling keeps geometry without enabling Chinese language rules");
-                    Check(!service.TryChooseUntranslated(pack, original, 16, UnityEngine.FontStyle.Normal, "ABC", out choice), "Untranslated supported names retain original font");
-                    pack.Id = "en"; pack.Fonts.Clear();
-                    Check(service.TryChooseUntranslated(pack, original, 16, UnityEngine.FontStyle.Normal, "Я中文ñ", out choice) && choice.Font == chinese, "English mode supports mixed player names without translations");
-                    Check(!service.TryChooseUntranslated(pack, original, 16, UnityEngine.FontStyle.Normal, "界", out choice), "Unsupported character safely retains original display");
+                    Check(!service.HasCombinedFont, "No optional addon is enabled in normal packages");
+                    Check(service.TryChoose(pack, original, 16, UnityEngine.FontStyle.Normal, "Яñ", out choice) && choice.Font == mapped, "Normal language mapping remains unchanged");
+                    Check(!service.TryChooseUntranslated(pack, original, 16, UnityEngine.FontStyle.Normal, "中文Я", out choice), "Normal packages do not intercept unlocalized names");
                 }
-                File.WriteAllText(metadata, "sha256\tstale\nassets/fonts/crawlsmall.ttf\t0041-0043\n");
-                using (FontService service = new FontService(warnings.Add, warnings.Add, root))
-                    Check(service.TryChooseUntranslated(pack, original, 16, UnityEngine.FontStyle.Normal, "中文", out choice) && choice.Font == multi && warnings.Exists(delegate(string s) { return s.Contains("Font coverage ignored"); }), "Stale coverage is rejected after font replacement; native probing remains available");
-                multi.Characters = "ABCЯñ";
-                File.Delete(metadata);
-                File.Delete(chinesePath);
-                using (FontService service = new FontService(warnings.Add, warnings.Add, root))
+                File.WriteAllText(combinedPath, "test");
+                using (FontService service = new FontService(messages.Add, messages.Add, root))
                 {
-                    Check(!service.TryChooseUntranslated(pack, original, 16, UnityEngine.FontStyle.Normal, "中文", out choice), "Missing Chinese bundle safely falls through");
-                    Check(service.TryChooseUntranslated(pack, original, 16, UnityEngine.FontStyle.Normal, "Я", out choice) && choice.Font == multi, "Missing Chinese bundle does not break Cyrillic");
+                    Check(service.HasCombinedFont, "Presence of the combined addon enables direct selection");
+                    Check(service.TryChoose(pack, original, 16, UnityEngine.FontStyle.Normal, "Яñ", out choice) && choice.Font == combined && choice.Size == 16, "Combined font directly replaces the mapped font");
+                    Check(service.TryChooseUntranslated(pack, original, 16, UnityEngine.FontStyle.Normal, "中文Яñ", out choice) && choice.Font == combined && choice.Size == 160 && Math.Abs(choice.Scale - .1f) < .001f, "Mixed names use the same combined font with compensated sampling");
+                    Check(!service.TryChooseUntranslated(pack, original, 16, UnityEngine.FontStyle.Normal, "READY", out choice), "ASCII names keep original display");
                 }
-                Check(!original.Destroyed, "Shared font fallback never owns original game fonts");
+                File.Delete(combinedPath);
+                using (FontService service = new FontService(messages.Add, messages.Add, root))
+                    Check(!service.HasCombinedFont && service.TryChoose(pack, original, 16, UnityEngine.FontStyle.Normal, "Яñ", out choice) && choice.Font == mapped, "Removing addon and restarting restores normal mapping");
+                File.WriteAllText(combinedPath, "invalid");UnityEngine.AssetBundle.Files.Remove(combinedPath);
+                using (FontService service = new FontService(messages.Add, messages.Add, root))
+                    Check(service.TryChoose(pack, original, 16, UnityEngine.FontStyle.Normal, "Яñ", out choice) && choice.Font == mapped, "Broken optional font safely returns to normal language mapping");
             }
             finally { UnityEngine.AssetBundle.Files.Clear(); Directory.Delete(root, true); }
         }

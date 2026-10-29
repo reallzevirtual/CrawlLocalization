@@ -1,6 +1,6 @@
 # Crawl Localization — language authoring kit
 
-Create a language pack for Crawl and the optional CrawlOnline UI. This kit contains the plugin DLL, original English source tables, an AI skill and PowerShell tools. Both `Fonts/crawl-multilingual.bundle` (Latin/Cyrillic) and `Fonts/crawl-chinese-fonts.bundle` are included; no translated language pack is included. No compilation or Unity installation is needed for text/config edits.
+Create a language pack for Crawl and the optional CrawlOnline UI. This kit contains the plugin DLL, original English source tables, an AI skill and PowerShell tools. Only `Fonts/crawl-multilingual.bundle` (Latin/Cyrillic) is included; no translated language pack is included. No compilation or Unity installation is needed for text/config edits.
 
 ## Create another language
 
@@ -37,8 +37,8 @@ ReloadKey = F8
 
 Select your language explicitly; the plugin's default setting does not automatically select a newly created folder. Press F8 to reload config/tables, or restart. `Language = en` displays original game text.
 
-Templates map all ten game font styles to `Fonts/crawl-multilingual.bundle`, retaining original English glyphs and adding Pixelify Sans glyphs sized for each style. Russian letters (including Ё/ё) and Spanish accents are checked. This is not an all-Unicode font; unsupported scripts still need their own fonts. If the bundle is unavailable or lacks a character, the plugin tries shared multilingual/Chinese bundles, the original font, then installed Arial/Segoe UI; if those also fail, it keeps the original English label. Adjust `fonts.tsv` and `language.ini` if needed. The included Chinese bundle also contains Latin/Cyrillic additions and acts as an automatic display fallback for mixed-script player names. Names remain unchanged; no Chinese translation table is consulted. Each TextMesh uses one font that covers the whole label. Restart after replacing font files. Check font coverage, layout and controls in-game; text baked into images requires separate artwork changes.
+Templates map all ten game font styles to `Fonts/crawl-multilingual.bundle`, preserving original English glyphs and adding style-matched Latin/Cyrillic glyphs. Russian letters and Spanish accents are checked. Missing glyphs try the original font and configured system families, then retain the original English label if no font covers it. Other scripts may require their own fonts. Restart after replacing fonts and verify layout in-game.
+
+The separate optional `-CombinedFonts.zip` addon (plugin 0.14.3+) includes original, Chinese and multilingual glyphs in one bundle. Extract it into the plugin folder and restart to enable mixed-script names without editing mappings. Remove `Fonts/crawl-combined.bundle` and restart to disable it. No coverage tables or Chinese translations are included in this authoring kit.
 
 For players with a compatible plugin, distribute your language folder and any referenced fonts; otherwise include the DLL too. Tell recipients the required plugin version and language setting. Diagnostic log: `Crawl/BepInEx/LogOutput.log`.
-
-Keep each bundle's `.coverage.tsv` file: it records actual embedded glyph coverage and prevents Unity 5.4 from silently substituting OS fonts. Metadata is tied to the bundle SHA-256; stale metadata is ignored after replacement. Source maintainers can regenerate it with `python tools/write_font_coverage.py <bundle>`. Custom bundles without metadata use native glyph probing.
