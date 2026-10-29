@@ -7,9 +7,10 @@ Copy-Item -Path (Join-Path $projectRoot 'Fonts\*.ttf') -Destination (Join-Path $
 $output = Join-Path $projectRoot 'artifacts\online-display'
 $generated = Join-Path $project 'Assets\Editor\ValidationGenerated'
 New-Item -ItemType Directory -Force -Path $output,$generated | Out-Null
-foreach ($source in @('ChineseTextWrapper.cs', 'LanguagePack.cs', 'NumericTranslation.cs', 'FontService.cs', 'MenuTextPolicy.cs', 'MenuTextMeshes.cs', 'MenuPatches.cs', 'ChapterTitlePatch.cs', 'HeroStatsPatches.cs', 'GameplayPatches.cs', 'ProgressionPatches.cs', 'ProgressionText.cs', 'MenuWrapPatch.cs', 'ShopText.cs', 'ShopPatches.cs', 'OnlineText.cs', 'OnlineOverlay.cs')) {
+foreach ($source in @('ChineseTextWrapper.cs', 'LanguagePack.cs', 'NumericTranslation.cs', 'FontService.cs', 'MenuTextPolicy.cs', 'MenuTextMeshes.cs', 'MenuPatches.cs', 'ChapterTitlePatch.cs', 'HeroStatsPatches.cs', 'GameplayPatches.cs', 'ProgressionPatches.cs', 'ProgressionText.cs', 'MenuWrapPatch.cs', 'ShopText.cs', 'ShopPatches.cs', 'OnlineText.cs', 'OnlineOverlay.cs', 'OnlineMirrorFonts.cs')) {
     Copy-Item -LiteralPath (Join-Path $projectRoot ('src\' + $source)) -Destination $generated -Force
 }
+Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'ValidateFontFallback.cs') -Destination $generated -Force
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'ValidateOnlineDisplay.cs') -Destination $generated -Force
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'ChapterRuntimeStubs.cs') -Destination $generated -Force
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'HeroStatsRuntimeStubs.cs') -Destination $generated -Force

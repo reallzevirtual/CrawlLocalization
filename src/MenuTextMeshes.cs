@@ -12,13 +12,13 @@ namespace CrawlLocalization
             Plugin plugin = Plugin.Instance;
             if (plugin == null || obj.GetComponent<MenuTextMenuItem>() != null) return null;
             LocalizedMenuLabel existing = obj.GetComponent<LocalizedMenuLabel>();
-            if (existing != null) return existing;
             List<string> names = new List<string>();
             for (Transform t = obj.transform; t != null; t = t.parent) names.Insert(0, t.name);
-            if (!MenuTextPolicy.MatchesPath(plugin.Language.TextMeshPaths, string.Join("/", names.ToArray()))) return null;
+            bool translate = MenuTextPolicy.MatchesPath(plugin.Language.TextMeshPaths, string.Join("/", names.ToArray()));
+            if (existing != null && (!existing.FontOnly || !translate)) return existing;
             TextMesh mesh = obj.GetComponent<TextMesh>();
             if (mesh == null) return null;
-            LocalizedMenuLabel label = LocalizedMenuLabel.GetOrCreate(obj);
+            LocalizedMenuLabel label = LocalizedMenuLabel.GetOrCreate(obj, !translate);
             label.Standalone = true;
             label.ResetSource(mesh.text);
             if (refresh) label.Refresh();

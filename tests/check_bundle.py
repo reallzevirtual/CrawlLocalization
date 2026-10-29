@@ -30,7 +30,7 @@ for name, obj in sorted(fonts.items()):
     assert int(obj.assets_file.target_platform) == 5, "Expected StandaloneWindows (x86)"
     data = obj.read_typetree()
     embedded = bytes(data["m_FontData"])
-    original = (root / "Fonts" / (name + ".ttf")).read_bytes()
+    original = (root / "Fonts" / "ChineseFallback" / (name + ".ttf")).read_bytes()
     assert embedded == original, f"Font data differs from source: {name}"
     expected_size = 200 if name == "04B_04-Black" else 150 if name == "04B_03-White" else 16
     assert data["m_FontSize"] == expected_size, f"Unexpected default font size: {name}"

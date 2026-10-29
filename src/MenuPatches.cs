@@ -82,7 +82,7 @@ namespace CrawlLocalization
     {
         internal static Func<string, Func<LanguagePack, string>> ExternalProvider;
         private Func<LanguagePack, string> boundExternalProvider;
-        internal bool Skip, Standalone;
+        internal bool Skip, Standalone, FontOnly;
         internal Func<LanguagePack, string> TextProvider;
         internal float BaseScale, ScaleFactor = 1f;
         private TextMesh mesh;
@@ -93,16 +93,21 @@ namespace CrawlLocalization
         private FontStyle originalStyle;
         private string source, display, rendered;
         private string directLookup, directFallback;
-        private bool usesDirectLookup;
+        private bool usesDirectLookup, mirrored;
 
-        internal static LocalizedMenuLabel GetOrCreate(GameObject obj)
+        internal static LocalizedMenuLabel GetOrCreate(GameObject obj, bool fontOnly = false)
         {
             LocalizedMenuLabel label = obj.GetComponent<LocalizedMenuLabel>();
-            if (label != null) return label;
+            if (label != null)
+            {
+                if (label.FontOnly && !fontOnly) { label.FontOnly = false; label.Skip = false; }
+                return label;
+            }
             TextMesh mesh = obj.GetComponent<TextMesh>();
             if (mesh == null) return null;
             label = obj.AddComponent<LocalizedMenuLabel>();
             label.mesh = mesh;
+            label.FontOnly = fontOnly;
             label.textRenderer = mesh.GetComponent<Renderer>();
             label.originalFont = mesh.font;
             label.originalMaterial = label.textRenderer == null ? null : label.textRenderer.sharedMaterial;
@@ -116,7 +121,7 @@ namespace CrawlLocalization
 
         private void BindExternal(string text)
         {
-            if (ExternalProvider == null) return;
+            if (FontOnly || Skip || ExternalProvider == null) return;
             Func<LanguagePack, string> provider = ExternalProvider(text);
             if (provider != null) { TextProvider = provider; boundExternalProvider = provider; }
             else if (boundExternalProvider != null && text != source && text != display)
@@ -132,6 +137,7 @@ namespace CrawlLocalization
         // Reuse the latest rendered result (including F8 changes) on identical frames.
         internal void RefreshDirect(string lookup, string fallback)
         {
+            FontOnly = false;
             string text = mesh.text;
             if (usesDirectLookup && source == text && directLookup == lookup && directFallback == fallback && rendered != null)
             {
@@ -165,7 +171,7 @@ namespace CrawlLocalization
                 Plugin plugin = Plugin.Instance;
                 int size = originalSize > 0 ? originalSize : (originalFont != null && originalFont.fontSize > 0 ? originalFont.fontSize : 16);
                 bool found = false;
-                if (!Skip)
+                if (!Skip && !FontOnly)
                 {
                     translated = TextProvider == null ? null : TextProvider(plugin.Language);
                     found = translated != null || plugin.Language.TryTranslate(source, out translated);
@@ -176,11 +182,45 @@ namespace CrawlLocalization
                     display = translated;
                     return display;
                 }
+                if (plugin.Fonts.TryChooseUntranslated(plugin.Language, originalFont, size, originalStyle, source, out choice))
+                {
+                    Apply(choice);
+                    display = source;
+                    return source;
+                }
             }
             catch (Exception ex) { Plugin.Instance.Warn("Menu localization failed for " + source + ": " + ex.Message); }
             Restore(false);
             display = source;
             return source;
+        }
+
+        internal void CaptureMirrorSource()
+        {
+            mirrored = true;
+            originalFont = mesh.font;
+            originalSize = mesh.fontSize;
+            originalStyle = mesh.fontStyle;
+            BaseScale = mesh.characterSize;
+            originalMaterial = textRenderer == null ? null : textRenderer.sharedMaterial;
+            // The mirror can change material shader/properties on an existing puppet.
+            if (localMaterial != null && originalMaterial != null)
+            {
+                localMaterial.shader = originalMaterial.shader;
+                localMaterial.CopyPropertiesFromMaterial(originalMaterial);
+            }
+            FontOnly = true;
+            Standalone = false;
+            ResetSource(mesh.text);
+            Refresh();
+            EnsureMirrorAtlas();
+        }
+
+        private void EnsureMirrorAtlas()
+        {
+            if (!mirrored || mesh == null || mesh.font == null || mesh.font.material == null || textRenderer == null) return;
+            if (textRenderer.sharedMaterial == null || textRenderer.sharedMaterial.mainTexture != mesh.font.material.mainTexture)
+                Apply(new FontChoice { Font = mesh.font, Size = mesh.fontSize, Style = mesh.fontStyle, Scale = ScaleFactor });
         }
 
         private void Apply(FontChoice choice)
@@ -191,7 +231,7 @@ namespace CrawlLocalization
             mesh.fontStyle = choice.Style;
             mesh.characterSize = BaseScale * ScaleFactor;
             if (textRenderer == null) return;
-            if (choice.Font == originalFont)
+            if (choice.Font == originalFont && (!mirrored || (originalMaterial != null && originalMaterial.mainTexture == choice.Font.material.mainTexture)))
             {
                 textRenderer.sharedMaterial = originalMaterial;
                 return;
@@ -204,7 +244,9 @@ namespace CrawlLocalization
 
         private void OnTextureRebuilt(Font font)
         {
-            if (mesh != null && font == mesh.font && font != originalFont) UpdateAtlas();
+            if (mesh == null || font != mesh.font) return;
+            if (mirrored) EnsureMirrorAtlas();
+            if (font != originalFont || mirrored) UpdateAtlas();
         }
 
         private void UpdateAtlas()
@@ -235,7 +277,7 @@ namespace CrawlLocalization
 
         internal void RefreshChangedText()
         {
-            // Only watch audited standalone labels, never scan the scene per frame.
+            // Watch bound objects only; font-only objects never consult translation tables.
             // Capture GUIText's final wrapped/image-expanded output to avoid translating it again.
             if (!Standalone || mesh == null || mesh.text == rendered) return;
             mesh.text = Translate(mesh.text);

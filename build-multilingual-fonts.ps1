@@ -66,4 +66,6 @@ if ($LASTEXITCODE -ne 0) { throw 'Failed to preserve Crawl font layout.' }
 Invoke-FontEditor 'validate' 'BuildMultilingualFonts.ValidateBuiltBundle' 'CRAWL_FONT_BUNDLE_OK'
 $destination = Join-Path $PSScriptRoot 'Fonts/crawl-multilingual.bundle'
 Copy-Item -LiteralPath $bundle -Destination $destination -Force
+& $PythonPath (Join-Path $PSScriptRoot 'tools/write_font_coverage.py') $destination
+if ($LASTEXITCODE -ne 0) { throw 'Font coverage generation failed.' }
 Write-Output "Font bundle ready: $destination"

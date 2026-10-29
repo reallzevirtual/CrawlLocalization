@@ -30,7 +30,7 @@ namespace CrawlLocalization
             folder = Path.GetDirectoryName(Info.Location);
             language = Config.Bind("General", "Language", "zh-Hans", "Language folder under Languages, e.g. zh-Hans, es or ru. Use en for original text. zh-TW selects zh-Hant. Missing entries or packs keep original game text.");
             reloadKey = Config.Bind("General", "ReloadKey", KeyCode.F8, "Reload configuration and language tables. Restart to replace font files.");
-            Fonts = new FontService(Warn, delegate(string message) { Logger.LogInfo(message); });
+            Fonts = new FontService(Warn, delegate(string message) { Logger.LogInfo(message); }, folder);
             LoadLanguage();
             harmony = new Harmony(Id);
             harmony.PatchAll(typeof(Plugin).Assembly);

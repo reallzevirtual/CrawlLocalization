@@ -6,8 +6,12 @@ using System.Reflection;
 using UnityEngine;
 namespace HarmonyLib
 {
+    public sealed class Harmony { public void Patch(MethodInfo method, HarmonyMethod prefix = null, HarmonyMethod postfix = null) { } }
+    public sealed class HarmonyMethod { public HarmonyMethod(Type type, string name) { } }
     public static class AccessTools
     {
+        public static Type TypeByName(string name) { return Type.GetType(name); }
+        public static FieldInfo Field(Type type, string name) { return type.GetField(name, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic); }
         public static MethodInfo Method(Type type, string name) { return type.GetMethod(name, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic); }
     }
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]

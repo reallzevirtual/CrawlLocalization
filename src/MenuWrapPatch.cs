@@ -11,6 +11,7 @@ namespace CrawlLocalization
             if (Plugin.Instance == null || !Plugin.Instance.Language.UsesChineseTextRules ||
                 ___textMesh == null || !ChineseTextWrapper.ContainsChinese(input) ||
                 ___textMesh.GetComponent<LocalizedMenuLabel>() == null ||
+                ___textMesh.GetComponent<LocalizedMenuLabel>().FontOnly || ___textMesh.GetComponent<LocalizedMenuLabel>().Skip ||
                 (___textMesh.GetComponentInParent<MenuLibrary>() == null &&
                  ___textMesh.GetComponentInParent<MenuDeitySelectPlayer>() == null &&
                  ___textMesh.GetComponentInParent<GUIStore>() == null &&

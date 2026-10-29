@@ -12,12 +12,12 @@ namespace CrawlLocalization
         {
             Plugin plugin = Plugin.Instance;
             OnlineRecipe recipe = OnlineText.Find(source);
-            if (plugin == null || recipe == null || plugin.Language.Id == "en") return source;
-            string translated = recipe.Render(plugin.Language);
-            if (translated == source) return source;
+            if (plugin == null) return source;
+            string translated = recipe == null || plugin.Language.Id == "en" ? source : recipe.Render(plugin.Language);
             Font font;
             int size = style.fontSize > 0 ? style.fontSize : 12;
             if (!plugin.Fonts.TryChooseGui(plugin.Language, style.font ?? GUI.skin.font, size, style.fontStyle, translated, out font)) return source;
+            if (translated == source && font == (style.font ?? GUI.skin.font)) return translated;
             foreach (StyleEntry entry in styles)
                 if (ReferenceEquals(entry.Original,style) && entry.Font == font) { style = entry.Display; return translated; }
             GUIStyle copy = new GUIStyle(style); copy.font = font; copy.fontSize = size;
@@ -40,9 +40,11 @@ namespace CrawlLocalization
         { GUIStyle style=GUI.skin.window;text=Prepare(text,ref style);return GUILayout.Window(id,rect,function,text,style,options); }
         internal static void SetText(TextMesh mesh, string source)
         {
+            if (mesh==null) return;
             mesh.text=source;
-            if (mesh==null || Plugin.Instance==null) return;
+            if (Plugin.Instance==null) return;
             LocalizedMenuLabel label=LocalizedMenuLabel.GetOrCreate(mesh.gameObject);
+            label.FontOnly=OnlineText.Find(source)==null;
             label.ResetSource(source);label.Refresh();
         }
     }

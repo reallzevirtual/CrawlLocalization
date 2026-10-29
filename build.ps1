@@ -148,7 +148,7 @@ foreach ($relative in $fontFiles.Keys) {
     New-Item -ItemType Directory -Force -Path (Split-Path $fontDestination -Parent) | Out-Null
     Copy-Item -LiteralPath $fontFiles[$relative] -Destination $fontDestination -Force
     # Carry notices with font binaries into custom player packages too.
-    foreach ($suffix in @('.OFL.txt', '.NOTICE.txt')) {
+    foreach ($suffix in @('.OFL.txt', '.NOTICE.txt', '.coverage.tsv')) {
         $notice = [IO.Path]::ChangeExtension($fontFiles[$relative], $suffix)
         if (Test-Path -LiteralPath $notice) {
             Copy-Item -LiteralPath $notice -Destination ([IO.Path]::ChangeExtension($fontDestination, $suffix)) -Force
@@ -168,7 +168,7 @@ if (!$isChinesePackage) {
     $translatorFiles = @((Join-Path $output 'CrawlLocalization.dll'), $translatorReadme, $skillFolder)
     Compress-Archive -Path $translatorFiles -DestinationPath $translatorArchive -Force
     # Both font bundles are included, without source TTFs or translated catalogs.
-    $translatorFonts = @('crawl-chinese-fonts.bundle', 'crawl-multilingual.bundle', 'crawl-multilingual.OFL.txt', 'crawl-multilingual.NOTICE.txt')
+    $translatorFonts = @('crawl-chinese-fonts.bundle', 'crawl-multilingual.bundle', 'crawl-multilingual.OFL.txt', 'crawl-multilingual.NOTICE.txt', 'crawl-chinese-fonts.OFL.txt', 'crawl-chinese-fonts.NOTICE.txt', 'crawl-chinese-fonts.coverage.tsv', 'crawl-multilingual.coverage.tsv')
     $zip = [IO.Compression.ZipFile]::Open($translatorArchive, [IO.Compression.ZipArchiveMode]::Update)
     try {
         foreach ($file in $translatorFonts) {

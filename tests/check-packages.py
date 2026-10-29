@@ -25,7 +25,7 @@ for suffix,locales,readme in [('',non_chinese,'packaging/README.md'),
             if cells[1]!='system':fonts.add(cells[2].replace('\\','/'))
     for relative in fonts:
         expected[relative]=root/relative
-        for ext in ('.OFL.txt','.NOTICE.txt'):
+        for ext in ('.OFL.txt','.NOTICE.txt','.coverage.tsv'):
             notice=Path(relative).with_suffix(ext)
             if (root/notice).is_file():expected[notice.as_posix()]=root/notice
     with ZipFile(root/'artifacts'/(base+suffix+'.zip')) as z:
@@ -50,7 +50,7 @@ with ZipFile(root/'artifacts'/(base+'-Translator.zip')) as z:
               'README.md':root/'packaging/translator/README.md'}
     for p in (root/'translator-kit/crawl-language-pack').rglob('*'):
         if p.is_file():expected[p.relative_to(root/'translator-kit').as_posix()]=p
-    for name in ('crawl-chinese-fonts.bundle','crawl-multilingual.bundle','crawl-multilingual.OFL.txt','crawl-multilingual.NOTICE.txt'):
+    for name in ('crawl-chinese-fonts.bundle','crawl-multilingual.bundle','crawl-multilingual.OFL.txt','crawl-multilingual.NOTICE.txt','crawl-chinese-fonts.OFL.txt','crawl-chinese-fonts.NOTICE.txt','crawl-chinese-fonts.coverage.tsv','crawl-multilingual.coverage.tsv'):
         expected['Fonts/'+name]=root/'Fonts'/name
     assert set(actual)==set(expected)
     for name,p in expected.items():assert z.read(actual[name])==p.read_bytes(),name

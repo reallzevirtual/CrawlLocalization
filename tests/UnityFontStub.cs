@@ -30,6 +30,7 @@ namespace UnityEngine
         {
             if (FailRequests) throw new InvalidOperationException("Simulated native glyph failure");
         }
+        public bool HasCharacter(char ch) { return Characters.IndexOf(ch) >= 0; }
         public bool GetCharacterInfo(char ch, out CharacterInfo glyph, int size, FontStyle style)
         {
             glyph = new CharacterInfo { glyphWidth = 8, glyphHeight = 8, minY = 0, maxY = 8 };

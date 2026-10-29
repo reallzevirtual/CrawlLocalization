@@ -65,6 +65,7 @@ public static class ValidateOnlineDisplay
             GUIStyle automatic=new GUIStyle(style);automatic.fontSize=0;prepare=new object[]{OnlineText.Literal("Play online"),automatic};Invoke(typeof(OnlineOverlay),"Prepare",prepare);
             Check(((GUIStyle)prepare[1]).fontSize==12 && automatic.fontSize==0,"Default IMGUI size does not inherit system font's 32px creation size");
             Reload(plugin,root,"en");prepare=new object[]{OnlineText.Literal("Play online"),style};Check((string)Invoke(typeof(OnlineOverlay),"Prepare",prepare)=="Play online" && ReferenceEquals(prepare[1],style),"IMGUI English retains original style");
+            ValidateFontFallback.Run(root, plugin);
             string report="PASS: "+checks+" native CrawlOnline display/font/reload checks, including "+terms+" scoped table entries. Unity 5.4 components and fonts are real; game GUIText entry points are test doubles. No game or network session started.";
             File.WriteAllText(Path.Combine(root,"artifacts/online-display/result.txt"),report);Debug.Log("CRAWL_ONLINE_DISPLAY_OK\n"+report);
         }

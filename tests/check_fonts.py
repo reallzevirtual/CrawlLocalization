@@ -1,10 +1,13 @@
 """Optional offline cmap validation; requires fontTools, never starts the game."""
 from pathlib import Path
+import io
+import UnityPy
 from fontTools.ttLib import TTFont
 from translation_text import visible_text
 
 root = Path(__file__).resolve().parents[1]
 failed = False
+bundles = {}
 for language in sorted((root / "Languages").iterdir()):
     characters = set()
     for line in (line for table in language.glob("*translations.tsv") for line in table.read_text(encoding="utf-8-sig").splitlines()):
@@ -16,7 +19,13 @@ for language in sorted((root / "Languages").iterdir()):
         original, kind, relative, family, scale = line.split("\t")
         if kind not in ("ttf", "bundle"):
             continue
-        font_path = root / relative if kind == "ttf" else root / "Fonts" / (original + ".ttf")
+        if kind == "bundle":
+            if relative not in bundles:
+                env = UnityPy.load(str(root / relative))
+                bundles[relative] = {path: bytes(obj.read_typetree()["m_FontData"]) for path, obj in env.container.items() if obj.type.name == "Font"}
+            font_path = io.BytesIO(bundles[relative][family])
+        else:
+            font_path = root / relative
         with TTFont(font_path) as font:
             families = {name.toUnicode() for name in font["name"].names if name.nameID in (1, 16)}
             missing = "".join(sorted(c for c in characters if not c.isspace() and ord(c) not in font.getBestCmap()))

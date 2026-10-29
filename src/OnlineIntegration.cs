@@ -17,6 +17,7 @@ namespace CrawlLocalization
             Type menu = AccessTools.TypeByName("CrawlOnline.UI.OnlineMenu");
             if (menu == null) return;
             LocalizedMenuLabel.ExternalProvider = Provider;
+            OnlineMirrorFonts.Install(harmony, warn);
             Type overlay = AccessTools.TypeByName("CrawlOnline.UI.Overlay");
             foreach (Type type in new Type[] { menu, overlay })
             {

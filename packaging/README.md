@@ -13,7 +13,7 @@ Close the game and extract this package into:
 `Crawl/BepInEx/plugins/CrawlLocalization/`
 
 Keep `CrawlLocalization.dll`, `Languages/` and `Fonts/` together, including the
-font license and notice files. Back up your edited language files before updating.
+font coverage, license and notice files. Back up your edited language files before updating.
 
 ## Select a language
 
@@ -33,8 +33,9 @@ existing configuration. Missing packs or translations keep the original English.
 Press F8 after editing the configuration or translations. Restart after installing
 or replacing font files. No system font installation or Unity Editor is needed.
 Text baked into images is not translated by these language tables.
-Fonts are selected by language mappings; bundling both files alone does not
-enable automatic font switching for online player names.
+Fonts follow language mappings, with automatic fallback for missing glyphs.
+Online names can mix Chinese, Latin and Cyrillic without translating the names.
+Keep both bundles; unusual characters and emoji may still be unsupported.
 
 ## Create another language
 

@@ -14,6 +14,7 @@ namespace CrawlLocalization
             if(source!=null) foreach(char ch in source) if(char.IsLetter(ch)) { hasLetters=true;break; }
             if(label==null && !hasLetters) return null;
             if(label==null) label=LocalizedMenuLabel.GetOrCreate(mesh.gameObject);
+            label.FontOnly=false;
             label.TextProvider=delegate(LanguagePack pack) { return recipe.Translate(pack); };
             label.ResetSource(source);
             return label;

@@ -56,3 +56,9 @@ python .\tools\export_menu_texts.py --game-path '你的 Crawl 目录' --output a
 `pwsh -NoProfile -File build-multilingual-fonts.ps1` 重建通用字体并在独立 Unity 5.4.2 进程验证实际 glyph；`python tests/check_multilingual_fonts.py` 检查已生成 bundle 的原始字形、字宽、原游戏标量排版参数和俄西字符覆盖。
 
 先运行 `build.ps1`，再运行 `pwsh -NoProfile -File tools/build-menu-examples.ps1`。示例生成器直接解压 Translator ZIP，使用包内脚本创建 ru/es；在 docs/my/backups 保存不可覆盖的翻译前基线，填入六个菜单译文并比对。最终用发行 DLL 本身测试查表、待译项回退和非中文规则，输出两份带字体和说明的 MenuDemo ZIP。测试不启动游戏。
+
+## 昵称字体回退
+
+`build-fonts.ps1` 先执行 `tools/extend_chinese_fonts.py`，将原始中文 TTF 与同款通用字形合并到可重建的 `Fonts/ChineseFallback/`，再打包；不会覆盖原始 `Fonts/*.ttf`。脚本核对所有既有字形、字宽及排版度量。`tests/check_bundle.py` 检查最终内嵌字体及 Unity 原始布局参数。
+
+`tests/check-online-display.ps1` 增加真实 Unity 字体／TextMesh 检查，覆盖十种字型的中俄西混排、昵称保持原文、语言切换、采样补偿、图集更新和原材质恢复。客户端镜像调用使用按实际字段结构建立的夹具；实际模组接口由 `check-online-il.ps1` 只读核对。这里不启动游戏或网络会话，仍需玩家实际验证联机显示。

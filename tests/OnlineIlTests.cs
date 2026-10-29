@@ -8,6 +8,7 @@ using HarmonyLib;
 using UnityEngine;
 namespace CrawlLocalization
 {
+    internal static class OnlineMirrorFonts { internal static void Install(Harmony h, Action<string> w) { } }
     internal static class LocalizedMenuLabel { internal static Func<string,Func<LanguagePack,string>> ExternalProvider; }
     internal static class OnlineOverlay
     {

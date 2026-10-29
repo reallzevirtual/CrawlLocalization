@@ -125,6 +125,8 @@ public static class BuildCrawlFonts
                     if (!char.IsWhiteSpace(ch)) glyphs.Add(ch);
             }
         }
+        foreach (char ch in "中文张三你好_ЁёÁÉÍÓÚÜÑáéíóúüñ¿¡") glyphs.Add(ch);
+        for (char ch = '\u0410'; ch <= '\u044f'; ch++) glyphs.Add(ch);
         AssetBundle bundle = AssetBundle.LoadFromFile(path);
         if (bundle == null) throw new InvalidOperationException("Cannot reopen the generated bundle.");
         try

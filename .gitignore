@@ -32,3 +32,6 @@ Thumbs.db
 # Copies of runtime source used by the offline Unity layout check
 /FontBundleProject/Assets/Editor/ValidationGenerated/
 /FontBundleProject/Assets/Editor/ValidationGenerated.meta
+
+# Reproducible Chinese fallback TTFs; original inputs and final bundle are tracked
+/Fonts/ChineseFallback/

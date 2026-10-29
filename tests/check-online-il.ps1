@@ -24,6 +24,12 @@ $localMod=Join-Path $refs 'CrawlOnline.dll'
 $mod=[Reflection.Assembly]::LoadFrom($localMod)
 $cecil=[Mono.Cecil.AssemblyDefinition]::ReadAssembly($modPath)
 try {
+ $mirror=$mod.GetType('CrawlOnline.Client.SceneMirror',$true)
+ $entity=$mirror.GetNestedType('Entity',[Reflection.BindingFlags]'Public,NonPublic')
+ $puppet=$mirror.GetNestedType('RendererPuppet',[Reflection.BindingFlags]'Public,NonPublic')
+ $apply=$mirror.GetMethod('ApplyRenderer',[Reflection.BindingFlags]'Instance,NonPublic')
+ if(!$entity -or !$puppet -or !$apply -or $apply.GetParameters().Count -ne 1 -or $apply.GetParameters()[0].ParameterType -ne $entity -or !$entity.GetField('Puppet') -or $puppet.GetField('TM').FieldType -ne [UnityEngine.TextMesh]) { throw 'Unsupported CrawlOnline mirror font adapter shape.' }
+ Write-Output 'PASS actual CrawlOnline SceneMirror.ApplyRenderer(Entity), Entity.Puppet and RendererPuppet.TM adapter bindings.'
  $opcodes=@{};foreach($f in [Reflection.Emit.OpCodes].GetFields([Reflection.BindingFlags]'Public,Static')){$op=$f.GetValue($null);$opcodes[$op.Name]=$op}
  foreach($class in @('OnlineMenu','Overlay')) {
   $methods=if($class -eq 'OnlineMenu'){[CrawlLocalization.OnlineIlTests]::MenuMethods}else{[CrawlLocalization.OnlineIlTests]::OverlayMethods}

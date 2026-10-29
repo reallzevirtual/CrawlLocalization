@@ -8,10 +8,12 @@ if (!(Test-Path -LiteralPath $UnityPath)) { throw "Unity 5.4.2f2 editor not foun
 if ($LASTEXITCODE -ne 0) { throw 'Font bundle building requires Python with UnityPy.' }
 $project = Join-Path $PSScriptRoot 'FontBundleProject'
 $source = Join-Path $PSScriptRoot 'Fonts'
+& $PythonPath (Join-Path $PSScriptRoot 'tools/extend_chinese_fonts.py')
+if ($LASTEXITCODE -ne 0) { throw 'Chinese fallback font extension failed.' }
 $import = Join-Path $project 'Assets\Fonts'
 $output = Join-Path $PSScriptRoot 'artifacts\font-bundle'
 New-Item -ItemType Directory -Force -Path $import,$output | Out-Null
-Copy-Item -Path (Join-Path $source '*.ttf') -Destination $import -Force
+Copy-Item -Path (Join-Path $source 'ChineseFallback/*.ttf') -Destination $import -Force
 
 function Invoke-FontEditor([string]$Phase, [string]$Method, [string]$Marker) {
     $log = Join-Path $output "$Phase.log"
@@ -54,6 +56,8 @@ if ($LASTEXITCODE -ne 0) { throw 'Failed to preserve Crawl font layout.' }
 # A new editor must read the final bytes, without using the build pipeline cache.
 Invoke-FontEditor 'validate' 'BuildCrawlFonts.ValidateBuiltBundle' 'CRAWL_FONT_BUNDLE_OK'
 Copy-Item -LiteralPath $bundle -Destination (Join-Path $source 'crawl-chinese-fonts.bundle') -Force
+& $PythonPath (Join-Path $PSScriptRoot 'tools/write_font_coverage.py') (Join-Path $source 'crawl-chinese-fonts.bundle')
+if ($LASTEXITCODE -ne 0) { throw 'Font coverage generation failed.' }
 $mapping = Join-Path $project 'fonts.bundle.tsv'
 foreach ($locale in @('zh-Hans')) {
     Copy-Item -LiteralPath $mapping -Destination (Join-Path $PSScriptRoot "Languages\$locale\fonts.tsv") -Force
