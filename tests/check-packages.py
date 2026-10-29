@@ -16,9 +16,8 @@ for suffix,locales,readme in [('',non_chinese,'packaging/README.md'),
     for locale in locales:
         for name in language_files:
             relative=f'Languages/{locale}/{name}';expected[relative]=root/relative
-    # Universal fonts ship with BOTH editions; Chinese also includes its own font.
-    fonts={'Fonts/crawl-multilingual.bundle'}
-    if suffix:fonts.add('Fonts/crawl-fonts.bundle')
+    # Both player editions include both font bundles.
+    fonts={'Fonts/crawl-multilingual.bundle','Fonts/crawl-chinese-fonts.bundle'}
     for locale in locales:
         for line in (root/'Languages'/locale/'fonts.tsv').read_text(encoding='utf-8-sig').splitlines():
             if not line.strip() or line.startswith('#'):continue
@@ -38,8 +37,22 @@ for suffix,locales,readme in [('',non_chinese,'packaging/README.md'),
         text=z.read(actual['README.md']).decode('utf-8-sig')
         if suffix:
             assert '制作' not in text and 'Translator' not in text and 'Create another language' not in text
-            assert fonts=={'Fonts/crawl-fonts.bundle','Fonts/crawl-multilingual.bundle'}
+            assert fonts=={'Fonts/crawl-chinese-fonts.bundle','Fonts/crawl-multilingual.bundle'}
         else:
             assert not re.search('[\u3400-\u9fff]',text)
-            assert 'Fonts/crawl-fonts.bundle' not in actual
+            assert 'Fonts/crawl-chinese-fonts.bundle' in actual
     print('PASS',base+suffix+'.zip',locales,': exact runtime files, unchanged translations, expected fonts/notices and README.')
+
+with ZipFile(root/'artifacts'/(base+'-Translator.zip')) as z:
+    assert z.testzip() is None
+    actual={n.replace('\\','/'):n for n in z.namelist() if not n.endswith('/')}
+    expected={'CrawlLocalization.dll':root/'artifacts'/base/'CrawlLocalization.dll',
+              'README.md':root/'packaging/translator/README.md'}
+    for p in (root/'translator-kit/crawl-language-pack').rglob('*'):
+        if p.is_file():expected[p.relative_to(root/'translator-kit').as_posix()]=p
+    for name in ('crawl-chinese-fonts.bundle','crawl-multilingual.bundle','crawl-multilingual.OFL.txt','crawl-multilingual.NOTICE.txt'):
+        expected['Fonts/'+name]=root/'Fonts'/name
+    assert set(actual)==set(expected)
+    for name,p in expected.items():assert z.read(actual[name])==p.read_bytes(),name
+    assert not re.search('[\u3400-\u9fff]',z.read(actual['README.md']).decode('utf-8-sig'))
+print('PASS',base+'-Translator.zip: both fonts, English catalog/README and tools; no translated language packs.')

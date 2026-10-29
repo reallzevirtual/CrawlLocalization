@@ -21,7 +21,7 @@ public static class ValidateChapterLayout
         Catalog catalog = JsonUtility.FromJson<Catalog>(File.ReadAllText(Path.Combine(output, "catalog.json")));
         if (catalog.entries.Length == 0 || catalog.layouts.Length != 2) throw new Exception("Incomplete chapter extraction");
         LanguagePack pack = LanguagePack.Load(root, "zh-Hans", delegate(string warning) { throw new Exception(warning); });
-        AssetBundle bundle = AssetBundle.LoadFromFile(Path.Combine(root, "Fonts/crawl-fonts.bundle"));
+        AssetBundle bundle = AssetBundle.LoadFromFile(Path.Combine(root, "Fonts/crawl-chinese-fonts.bundle"));
         if (bundle == null) throw new Exception("Font bundle not loaded");
         GameObject obj = new GameObject("ChapterTextValidation");
         int count = 0;

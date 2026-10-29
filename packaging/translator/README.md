@@ -1,6 +1,6 @@
 # Crawl Localization — language authoring kit
 
-Create a language pack for Crawl and the optional CrawlOnline UI. This kit contains the plugin DLL, original English source tables, an AI skill and PowerShell tools. A shared Latin/Cyrillic font bundle is included; no translated language pack is included. No compilation or Unity installation is needed for text/config edits.
+Create a language pack for Crawl and the optional CrawlOnline UI. This kit contains the plugin DLL, original English source tables, an AI skill and PowerShell tools. Both `Fonts/crawl-multilingual.bundle` (Latin/Cyrillic) and `Fonts/crawl-chinese-fonts.bundle` are included; no translated language pack is included. No compilation or Unity installation is needed for text/config edits.
 
 ## Create another language
 
@@ -25,7 +25,7 @@ Add `-RequireComplete` when all entries should be translated. The checker uses t
 
 ## Try and share your language
 
-Crawl for Windows requires BepInEx 5 (32-bit). With the game closed, copy `CrawlLocalization.dll` and your `Languages/es/` folder to `Crawl/BepInEx/plugins/CrawlLocalization/`. Copy the included `Fonts/` directory too (bundle and license/notice files). Authoring tools and the catalog are not runtime files.
+Crawl for Windows requires BepInEx 5 (32-bit). With the game closed, copy `CrawlLocalization.dll` and your `Languages/es/` folder to `Crawl/BepInEx/plugins/CrawlLocalization/`. Copy the included `Fonts/` directory too (both bundles and license/notice files). Authoring tools and the catalog are not runtime files.
 
 Set the following in the existing `Crawl/BepInEx/config/crawl.localization.cfg` (created on the plugin's first normal launch), preserving unrelated settings:
 
@@ -37,6 +37,6 @@ ReloadKey = F8
 
 Select your language explicitly; the plugin's default setting does not automatically select a newly created folder. Press F8 to reload config/tables, or restart. `Language = en` displays original game text.
 
-Templates map all ten game font styles to `Fonts/crawl-multilingual.bundle`, retaining original English glyphs and adding Pixelify Sans glyphs sized for each style. Russian letters (including Ё/ё) and Spanish accents are checked. This is not an all-Unicode font; unsupported scripts still need their own fonts. If the bundle is unavailable or lacks a character, the plugin tries the original font and then installed Arial/Segoe UI; if those also fail, it keeps the original English label. Adjust `fonts.tsv` and `language.ini` if needed. Restart after replacing font files. Check font coverage, layout and controls in-game; text baked into images requires separate artwork changes.
+Templates map all ten game font styles to `Fonts/crawl-multilingual.bundle`, retaining original English glyphs and adding Pixelify Sans glyphs sized for each style. Russian letters (including Ё/ё) and Spanish accents are checked. This is not an all-Unicode font; unsupported scripts still need their own fonts. If the bundle is unavailable or lacks a character, the plugin tries the original font and then installed Arial/Segoe UI; if those also fail, it keeps the original English label. Adjust `fonts.tsv` and `language.ini` if needed. The included Chinese font is an additional resource, not an automatic fallback for player names. Restart after replacing font files. Check font coverage, layout and controls in-game; text baked into images requires separate artwork changes.
 
 For players with a compatible plugin, distribute your language folder and any referenced fonts; otherwise include the DLL too. Tell recipients the required plugin version and language setting. Diagnostic log: `Crawl/BepInEx/LogOutput.log`.

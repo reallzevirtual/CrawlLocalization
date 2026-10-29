@@ -20,7 +20,7 @@ public static class ValidateShopLayout
         string root = Directory.GetParent(Directory.GetParent(Application.dataPath).FullName).FullName;
         string output = Path.Combine(root, "artifacts/shop-layout");
         Catalog catalog = JsonUtility.FromJson<Catalog>(File.ReadAllText(Path.Combine(output, "cases.json")));
-        AssetBundle bundle = AssetBundle.LoadFromFile(Path.Combine(root, "Fonts/crawl-fonts.bundle"));
+        AssetBundle bundle = AssetBundle.LoadFromFile(Path.Combine(root, "Fonts/crawl-chinese-fonts.bundle"));
         if (bundle == null) throw new Exception("Missing font bundle");
         GameObject obj = new GameObject("ShopTextValidation");
         int count = 0, maxLines = 0; float maxHeight = 0, maxTitleWidth = 0;

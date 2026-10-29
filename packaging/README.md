@@ -1,8 +1,9 @@
 # Crawl Localization
 
 Local display translation for Crawl, with optional CrawlOnline UI support.
-This package includes the available non-Chinese language packs and a shared
-Latin/Cyrillic font bundle. Chinese is distributed separately.
+This package includes the available non-Chinese language packs and both
+`crawl-multilingual.bundle` (Latin/Cyrillic) and `crawl-chinese-fonts.bundle`.
+The Chinese translation pack is distributed separately.
 
 ## Install
 
@@ -32,11 +33,13 @@ existing configuration. Missing packs or translations keep the original English.
 Press F8 after editing the configuration or translations. Restart after installing
 or replacing font files. No system font installation or Unity Editor is needed.
 Text baked into images is not translated by these language tables.
+Fonts are selected by language mappings; bundling both files alone does not
+enable automatic font switching for online player names.
 
 ## Create another language
 
 Use the separate `-Translator.zip` package. It contains an original-English
-catalog, template/checking scripts, a shared font bundle and an AI skill.
+catalog, template/checking scripts, both font bundles and an AI skill.
 Read its README or ask your AI to read `crawl-language-pack/SKILL.md`.
 
 Diagnostic log: `Crawl/BepInEx/LogOutput.log`.

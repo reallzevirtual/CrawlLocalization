@@ -19,7 +19,7 @@ Language = __LANGUAGE__
 Restart after installing the font bundle. Both language folders can coexist;
 change Language to ru or es and press F8 to switch tables. Language = en restores
 original English. No Unity installation or system font installation is needed.
-Keep all three files in Fonts/ (bundle, OFL and notice).
+Keep all files in Fonts/ (both bundles, OFL and notice).
 
 The bundle and tables were checked offline, including rendering in Unity 5.4.2.
 Please verify menu positioning, accented letters and mouse selection in-game.

@@ -13,7 +13,7 @@ public static class ValidateVaultLayout
     {
         string root = Directory.GetParent(Directory.GetParent(Application.dataPath).FullName).FullName;
         string output = Path.Combine(root, "artifacts/vault-layout");
-        AssetBundle bundle = AssetBundle.LoadFromFile(Path.Combine(root, "Fonts/crawl-fonts.bundle"));
+        AssetBundle bundle = AssetBundle.LoadFromFile(Path.Combine(root, "Fonts/crawl-chinese-fonts.bundle"));
         if (bundle == null) throw new Exception("Font bundle not loaded");
         GameObject obj = new GameObject("VaultTextValidation");
         try

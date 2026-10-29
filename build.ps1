@@ -40,7 +40,7 @@ $basePackageName = 'CrawlLocalization-' + $releaseVersion
 $packageName = $basePackageName
 if ($explicitLanguages) { $packageName += '-' + ($Languages -join '+') }
 $readmeSource = if ($isChinesePackage) { 'packaging/zh-Hans/README.md' } else { 'packaging/README.md' }
-$defaultFont = if ($isChinesePackage) { 'Fonts/crawl-fonts.bundle' } else { 'Fonts/crawl-multilingual.bundle' }
+$defaultFont = if ($isChinesePackage) { 'Fonts/crawl-chinese-fonts.bundle' } else { 'Fonts/crawl-multilingual.bundle' }
 Write-Output ("Package languages: " + ($Languages -join ', ') + "; default font: " + $defaultFont)
 if (!$SkipTests) {
     & pwsh -NoProfile -File (Join-Path $projectRoot 'tests\test.ps1')
@@ -124,12 +124,12 @@ foreach ($locale in $Languages) {
         Copy-Item -LiteralPath (Join-Path $projectRoot ('Languages\' + $locale + '\' + $file)) -Destination $target -Force
     }
 }
-# Ship only font files referenced by the language packs. Source TTFs remain in
-# the project for rebuilding, but are unnecessary when the packs use a bundle.
-# Every player package includes the universal font, including Chinese builds.
-# Chinese packs additionally retain their own mapped Chinese font.
-$fontFiles = @{ 'Fonts/crawl-multilingual.bundle' = (Join-Path $projectRoot 'Fonts/crawl-multilingual.bundle') }
-$fontFiles[$defaultFont] = Join-Path $projectRoot $defaultFont
+# Every edition ships both fonts. Language mappings select which one to use.
+# Font sources stay in the repository and do not enter release archives.
+$fontFiles = @{
+    'Fonts/crawl-multilingual.bundle' = (Join-Path $projectRoot 'Fonts/crawl-multilingual.bundle')
+    'Fonts/crawl-chinese-fonts.bundle' = (Join-Path $projectRoot 'Fonts/crawl-chinese-fonts.bundle')
+}
 $rootPrefix = [IO.Path]::GetFullPath($projectRoot).TrimEnd('\') + '\'
 foreach ($table in Get-ChildItem -Path (Join-Path $output 'Languages\*\fonts.tsv')) {
     foreach ($line in Get-Content -LiteralPath $table.FullName -Encoding utf8) {
@@ -138,8 +138,6 @@ foreach ($table in Get-ChildItem -Path (Join-Path $output 'Languages\*\fonts.tsv
         if ($columns.Length -ne 5) { throw "Malformed font mapping: $($table.FullName)" }
         if ($columns[1] -eq 'system') { continue }
         $relative = $columns[2].Replace('\', '/')
-        if ($isChinesePackage -and $relative -ine 'Fonts/crawl-fonts.bundle') { throw "Chinese language mappings should use Fonts/crawl-fonts.bundle (both bundles are shipped): $relative" }
-        if (!$isChinesePackage -and $relative -ieq 'Fonts/crawl-fonts.bundle') { throw "Non-Chinese pack references the Chinese font bundle: $($table.FullName)" }
         $sourceFont = [IO.Path]::GetFullPath((Join-Path $projectRoot $relative))
         if ([IO.Path]::IsPathRooted($relative) -or !$sourceFont.StartsWith($rootPrefix, [StringComparison]::OrdinalIgnoreCase)) { throw "Invalid font path: $relative" }
         $fontFiles[$relative] = $sourceFont
@@ -169,8 +167,8 @@ if (!$isChinesePackage) {
     $translatorReadme = Join-Path $projectRoot 'packaging\translator\README.md'
     $translatorFiles = @((Join-Path $output 'CrawlLocalization.dll'), $translatorReadme, $skillFolder)
     Compress-Archive -Path $translatorFiles -DestinationPath $translatorArchive -Force
-    # Use an explicit allowlist: no Chinese bundle or source TTFs in the kit.
-    $translatorFonts = @('crawl-multilingual.bundle', 'crawl-multilingual.OFL.txt', 'crawl-multilingual.NOTICE.txt')
+    # Both font bundles are included, without source TTFs or translated catalogs.
+    $translatorFonts = @('crawl-chinese-fonts.bundle', 'crawl-multilingual.bundle', 'crawl-multilingual.OFL.txt', 'crawl-multilingual.NOTICE.txt')
     $zip = [IO.Compression.ZipFile]::Open($translatorArchive, [IO.Compression.ZipArchiveMode]::Update)
     try {
         foreach ($file in $translatorFonts) {

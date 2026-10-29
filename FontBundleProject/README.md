@@ -1,6 +1,6 @@
 # Crawl 字体 AssetBundle 构建
 
-使用 Unity **5.4.2f2** 和 Python + UnityPy，为 Crawl 的 Windows 32 位版本生成 `crawl-fonts.bundle`。工程只包含字体与原游戏的排版参数快照，不修改游戏资源。
+使用 Unity **5.4.2f2** 和 Python + UnityPy，为 Crawl 的 Windows 32 位版本生成 `crawl-chinese-fonts.bundle`。工程只包含字体与原游戏的排版参数快照，不修改游戏资源。
 
 ## 执行
 
@@ -22,7 +22,7 @@ pwsh -NoProfile -File .\build-fonts.ps1 -UnityPath '其它目录\Editor\Unity.ex
 
 构建流程先在一个编辑器进程中完成脚本编译，然后生成原始包、恢复布局，最后在全新的 Unity 进程中重新打开最终文件。验证十个 Font 的排版参数、动态字体属性，以及中文译文所需字形。只有这些步骤都成功，脚本才会：
 
-1. 将生成的 bundle 复制到根目录 `Fonts/crawl-fonts.bundle`。
+1. 将生成的 bundle 复制到根目录 `Fonts/crawl-chinese-fonts.bundle`。
 2. 将 `fonts.bundle.tsv` 复制为中文语言包的 `fonts.tsv`，切换为 bundle 加载。
 
 如果构建失败，已有字体映射不变；旧文件不视为本次成功产物。

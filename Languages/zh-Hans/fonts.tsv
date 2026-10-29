@@ -1,11 +1,11 @@
 # original Unity font name<TAB>kind<TAB>file relative to plugin<TAB>bundle asset path<TAB>scale
-CrawlLarge	bundle	Fonts/crawl-fonts.bundle	assets/fonts/crawllarge.ttf	1
-CrawlTextBodyWide	bundle	Fonts/crawl-fonts.bundle	assets/fonts/crawltextbodywide.ttf	1
-CrawlTextBodyThin	bundle	Fonts/crawl-fonts.bundle	assets/fonts/crawltextbodythin.ttf	1
-CrawlSmall	bundle	Fonts/crawl-fonts.bundle	assets/fonts/crawlsmall.ttf	1
-04B_04-Black	bundle	Fonts/crawl-fonts.bundle	assets/fonts/04b_04-black.ttf	1
-04B_03-White	bundle	Fonts/crawl-fonts.bundle	assets/fonts/04b_03-white.ttf	1
-CrawlTextBodyTeensy	bundle	Fonts/crawl-fonts.bundle	assets/fonts/crawltextbodyteensy.ttf	1
-CrawlMedium	bundle	Fonts/crawl-fonts.bundle	assets/fonts/crawlmedium.ttf	1
-CrawlInvLarge	bundle	Fonts/crawl-fonts.bundle	assets/fonts/crawlinvlarge.ttf	1
-CrawlTiny	bundle	Fonts/crawl-fonts.bundle	assets/fonts/crawltiny.ttf	1
+CrawlLarge	bundle	Fonts/crawl-chinese-fonts.bundle	assets/fonts/crawllarge.ttf	1
+CrawlTextBodyWide	bundle	Fonts/crawl-chinese-fonts.bundle	assets/fonts/crawltextbodywide.ttf	1
+CrawlTextBodyThin	bundle	Fonts/crawl-chinese-fonts.bundle	assets/fonts/crawltextbodythin.ttf	1
+CrawlSmall	bundle	Fonts/crawl-chinese-fonts.bundle	assets/fonts/crawlsmall.ttf	1
+04B_04-Black	bundle	Fonts/crawl-chinese-fonts.bundle	assets/fonts/04b_04-black.ttf	1
+04B_03-White	bundle	Fonts/crawl-chinese-fonts.bundle	assets/fonts/04b_03-white.ttf	1
+CrawlTextBodyTeensy	bundle	Fonts/crawl-chinese-fonts.bundle	assets/fonts/crawltextbodyteensy.ttf	1
+CrawlMedium	bundle	Fonts/crawl-chinese-fonts.bundle	assets/fonts/crawlmedium.ttf	1
+CrawlInvLarge	bundle	Fonts/crawl-chinese-fonts.bundle	assets/fonts/crawlinvlarge.ttf	1
+CrawlTiny	bundle	Fonts/crawl-chinese-fonts.bundle	assets/fonts/crawltiny.ttf	1

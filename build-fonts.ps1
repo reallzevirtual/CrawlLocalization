@@ -47,15 +47,15 @@ function Invoke-FontEditor([string]$Phase, [string]$Method, [string]$Marker) {
 # editor scripts. Finish import/compilation in its own process first.
 Invoke-FontEditor 'prepare' '' ''
 Invoke-FontEditor 'build' 'BuildCrawlFonts.Build' 'CRAWL_FONT_BUNDLE_RAW_OK'
-$bundle = Join-Path $output 'crawl-fonts.bundle'
+$bundle = Join-Path $output 'crawl-chinese-fonts.bundle'
 if (!(Test-Path -LiteralPath $bundle)) { throw 'Unity did not create the font bundle.' }
 & $PythonPath (Join-Path $project 'preserve_layout.py') $bundle
 if ($LASTEXITCODE -ne 0) { throw 'Failed to preserve Crawl font layout.' }
 # A new editor must read the final bytes, without using the build pipeline cache.
 Invoke-FontEditor 'validate' 'BuildCrawlFonts.ValidateBuiltBundle' 'CRAWL_FONT_BUNDLE_OK'
-Copy-Item -LiteralPath $bundle -Destination (Join-Path $source 'crawl-fonts.bundle') -Force
+Copy-Item -LiteralPath $bundle -Destination (Join-Path $source 'crawl-chinese-fonts.bundle') -Force
 $mapping = Join-Path $project 'fonts.bundle.tsv'
 foreach ($locale in @('zh-Hans')) {
     Copy-Item -LiteralPath $mapping -Destination (Join-Path $PSScriptRoot "Languages\$locale\fonts.tsv") -Force
 }
-Write-Output "Font bundle ready: $(Join-Path $source 'crawl-fonts.bundle')"
+Write-Output "Font bundle ready: $(Join-Path $source 'crawl-chinese-fonts.bundle')"

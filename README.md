@@ -42,7 +42,7 @@ Crawl/
          │     ├─ textmesh-paths.txt
          │     └─ …translations.tsv
          └─ Fonts/
-            ├─ crawl-fonts.bundle
+            ├─ crawl-chinese-fonts.bundle
             ├─ crawl-multilingual.bundle
             └─ …字体许可与来源说明
 ```
@@ -76,7 +76,7 @@ ReloadKey = F8
 
 ## Create another language
 
-Use `CrawlLocalization-<version>-Translator.zip`. It contains the DLL, an independent original-English catalog, `crawl-language-pack/SKILL.md`, and creation/checking scripts. It includes a shared Latin/Cyrillic font bundle, with no Chinese translations or Chinese comments. The default player package includes non-Chinese language packs; Simplified Chinese has its own separate player package.
+Use `CrawlLocalization-<version>-Translator.zip`. It contains the DLL, an independent original-English catalog, `crawl-language-pack/SKILL.md`, and creation/checking scripts. It includes both Latin/Cyrillic and Chinese font bundles, with no Chinese translations or Chinese comments. The default player package includes non-Chinese language packs; Simplified Chinese has its own separate player package.
 
 Before editing, back up the English catalog and your generated language folder. Ask an AI to read the skill and specify the target language, or run this in the extracted translator package:
 
@@ -94,7 +94,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\crawl-language-pack\script
 
 Add `-RequireComplete` when the language should be fully translated. The checker reads the independent `catalog/` next to its scripts, so it can detect edited source keys without consulting any translated pack. Keep that catalog unchanged during translation. In a source checkout the scripts are under `translator-kit/crawl-language-pack/scripts/`.
 
-Set `Language = es` in `BepInEx/config/crawl.localization.cfg`, then press F8 or restart. The template maps the ten game font styles to `Fonts/crawl-multilingual.bundle`; distribute the bundle and its license/notice files. Russian letters and Spanish accents are checked. Missing glyphs fall back to original fonts, configured fallback families, then original English text. Configure `fonts.tsv` and `language.ini` as needed and retain `textmesh-paths.txt`. Chinese-specific layout rules do not apply to other languages; other scripts' layout and glyph coverage still need in-game validation.
+Set `Language = es` in `BepInEx/config/crawl.localization.cfg`, then press F8 or restart. The template maps the ten game font styles to `Fonts/crawl-multilingual.bundle`; distribute both font bundles and the license/notice files. Bundled resources alone do not enable automatic font switching for online player names. Russian letters and Spanish accents are checked. Missing glyphs fall back to original fonts, configured fallback families, then original English text. Configure `fonts.tsv` and `language.ini` as needed and retain `textmesh-paths.txt`. Chinese-specific layout rules do not apply to other languages; other scripts' layout and glyph coverage still need in-game validation.
 
 No DLL rebuild is needed. Share the language directory, required fonts and language setting. Detailed table semantics, font configuration and backup workflow are in the [language pack skill](translator-kit/crawl-language-pack/SKILL.md).
 
@@ -104,7 +104,7 @@ No DLL rebuild is needed. Share the language directory, required fonts and langu
 
 - **PowerShell 7** 与 **.NET SDK**（提供 C# 编译器）。
 - 本机 Crawl 游戏文件，以及其 `BepInEx/core/` 中的 BepInEx 5 和 Harmony 程序集。
-- 仓库自带的 `Fonts/crawl-multilingual.bundle` 及许可说明；中文包还使用 `Fonts/crawl-fonts.bundle`。使用现成字体包不需要 Unity Editor。
+- 仓库自带的 `Fonts/crawl-multilingual.bundle` 及许可说明和 `Fonts/crawl-chinese-fonts.bundle`。使用现成字体包不需要 Unity Editor。
 
 构建使用游戏自己的 Mono / Unity 引用程序集，无需 NuGet。在项目根目录运行：
 
@@ -112,7 +112,7 @@ No DLL rebuild is needed. Share the language directory, required fonts and langu
 pwsh -NoProfile -File .\build.ps1 -GamePath 'D:\SteamLibrary\steamapps\common\Crawl'
 ```
 
-默认流程为：**离线检查 → 编译 DLL → 打包全部非中文语言和通用字体 → 生成玩家 ZIP 与制作包 ZIP**。不会自动安装或启动游戏。
+默认流程为：**离线检查 → 编译 DLL → 打包全部非中文语言和两种字体 → 生成玩家 ZIP 与制作包 ZIP**。不会自动安装或启动游戏。
 
 ```powershell
 # 全部非中文语言，目前为 es、ru；新增非中文语言目录会自动纳入
@@ -127,16 +127,16 @@ pwsh -NoProfile -File .\build.ps1 -Languages ru
 
 | 输出 | 用途 |
 | --- | --- |
-| `artifacts/CrawlLocalization-<版本号>.zip` | 默认玩家包：全部非中文语言、通用字体、全英文 README |
+| `artifacts/CrawlLocalization-<版本号>.zip` | 默认玩家包：全部非中文语言、中文与通用两种字体、全英文 README |
 | `artifacts/CrawlLocalization-<版本号>-zh-Hans.zip` | 中文玩家包：仅中文语言，附带中文字体和通用多语言字体；全中文 README，无制作其他语言的说明 |
 | `artifacts/CrawlLocalization-<版本号>-ru.zip` | 显式选择单个非中文语言时的独立玩家包 |
-| `artifacts/CrawlLocalization-<版本号>-Translator.zip` | 非中文构建另行生成的英文制作包：原文目录、通用字体和工具，无现成译文 |
+| `artifacts/CrawlLocalization-<版本号>-Translator.zip` | 非中文构建另行生成的英文制作包：原文目录、中文与通用两种字体和工具，无现成译文 |
 
 暂存目录与对应玩家 ZIP 同名（不含 `.zip`），每次构建只重建所选包的暂存内容。默认包和中文包可以同时保留，不互相覆盖。中文构建不会生成或改写 Translator 包。
 
 README 源文件分别为[英文玩家说明](packaging/README.md)、[中文玩家说明](packaging/zh-Hans/README.md)、[英文制作说明](packaging/translator/README.md)，打包时直接复制。玩家包只带运行所需的 DLL、语言文件、字体及相关许可，不带源码、docs、测试或源 TTF。
 
-`-Languages` 支持在 PowerShell 7 终端传入数组，例如 `.\build.ps1 -Languages @('es', 'ru')`。中文与非中文混合选择会报错，应分开构建。所有玩家包均附带通用字体，中文包额外附带中文字体；其他语言专用字体按其映射附加。
+`-Languages` 支持在 PowerShell 7 终端传入数组，例如 `.\build.ps1 -Languages @('es', 'ru')`。中文与非中文混合选择会报错，应分开构建。三种发行包均附带 `crawl-chinese-fonts.bundle` 和 `crawl-multilingual.bundle`；其他语言专用字体按其映射附加。
 
 制作包始终从独立英文 `catalog/` 打包，与玩家包的译文无关。维护者新增适配词条时需同步更新英文目录；普通翻译只改目标语言，不改目录基线。
 
@@ -158,7 +158,7 @@ pwsh -NoProfile -File .\build.ps1 -GamePath '你的 Crawl 目录' -Install
 
 ## 字体、检查与项目结构
 
-随包字体保留 Crawl 的风格及原 Font 排版参数。字体选择顺序为：本语言映射字体 → 可显示译文的游戏原字体 → 本语言备用字体；均不可用时恢复原文和原字体。
+随包字体保留 Crawl 的风格及原 Font 排版参数。三种包都包含中文和通用字体，但仍由语言映射选择；仅附带字体不会自动让联机昵称启用中文字体回退。字体选择顺序为：本语言映射字体 → 可显示译文的游戏原字体 → 本语言备用字体；均不可用时恢复原文和原字体。
 
 仅在替换字体源文件或重做 bundle 时，才需要已激活的 **Unity 5.4.2f2**、Python 和 UnityPy：
 

@@ -17,7 +17,7 @@ for line in (root / "FontBundleProject" / "font-layout.tsv").read_text(encoding=
     if line and not line.startswith("#"):
         name, ascent, descent, spacing = line.split("\t")
         layout[name] = dict(zip(("m_Ascent", "m_Descent", "m_LineSpacing"), map(float, (ascent, descent, spacing))))
-bundle_path = options.bundle or root / "Fonts" / "crawl-fonts.bundle"
+bundle_path = options.bundle or root / "Fonts" / "crawl-chinese-fonts.bundle"
 env = UnityPy.load(str(bundle_path))
 # Font, Material and Texture subassets share the same container key. Mirror
 # LoadAsset<Font> by filtering by type rather than using the untyped key lookup.
@@ -50,7 +50,7 @@ for locale in ("zh-Hans",):
         if not line or line.startswith("#"):
             continue
         original, kind, path, asset, scale = line.split("\t")
-        assert kind == "bundle" and path == "Fonts/crawl-fonts.bundle", f"Non-bundle mapping: {original}"
+        assert kind == "bundle" and path == "Fonts/crawl-chinese-fonts.bundle", f"Non-bundle mapping: {original}"
         assert asset in font_assets, f"Unresolvable Font asset path: {asset}"
         tree = font_assets[asset].read_typetree()
         assert tree["m_Name"] == original, f"Wrong mapped asset: {original}"

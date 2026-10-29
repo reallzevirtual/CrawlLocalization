@@ -10,7 +10,7 @@ using UnityEngine;
 // Compiled by Unity 5.4's C# compiler, independently of the BepInEx plugin.
 public static class BuildCrawlFonts
 {
-    private const string BundleName = "crawl-fonts.bundle";
+    private const string BundleName = "crawl-chinese-fonts.bundle";
     private static bool BatchMode { get { return Array.IndexOf(Environment.GetCommandLineArgs(), "-batchmode") >= 0; } }
     private static readonly string[] Names = {
         "CrawlLarge", "CrawlTextBodyWide", "CrawlTextBodyThin", "CrawlSmall",
