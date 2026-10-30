@@ -19,7 +19,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\crawl-language-pack\script
 
 In a source checkout the script is under `translator-kit/crawl-language-pack/scripts/`. It reads only the `catalog/` beside the scripts, copies original English source keys and English context, and sets every target to `@TODO`. Translate from the original English, never from another language's translation. Default font mappings use `Fonts/crawl-multilingual.bundle` for the ten original styles. Keep the mapped font bundle and its license/notice files when sharing a pack. The optional CombinedFonts addon (plugin 0.14.3+) supplies Chinese, Latin and Cyrillic glyphs in one separate bundle. Installing `Fonts/crawl-combined.bundle` and restarting selects it directly for the ten original styles, including raw player names and optional CrawlOnline displays. Removing it and restarting restores the default language fonts. Names are never translated. Normal packages and this authoring kit do not include the addon or coverage tables. Russian letters and Spanish accents are checked; other scripts may need other fonts. Use precomposed (NFC) accented letters; complex shaping/combining-mark positioning is not added by this bundle. Existing game-specific symbol slots are preserved. Use `-FallbackFonts 'Font One;Font Two'` for other candidates. The helper refuses to overwrite an existing language folder.
 
-The catalog contains 1,488 original-English entries. Four legacy aliases for manually modified game assets belong only to the existing Simplified Chinese pack and are not translation sources for new languages. Do not add them to a new template. Treat `catalog/` as read-only while translating; new game source keys require a separate maintainer change to this version-controlled catalog and the relevant runtime adapter.
+The independent English catalog is the single source of supported keys; every target cell must be `@TODO`. Four legacy aliases for manually modified game assets belong only to the existing Simplified Chinese pack and are not translation sources for new languages. Do not add them to a new template. Treat `catalog/` as read-only while translating; new game source keys require a separate maintainer change to this version-controlled catalog and the relevant runtime adapter.
 
 After editing, set the active language in the existing game's `BepInEx/config/crawl.localization.cfg`:
 
@@ -30,6 +30,21 @@ ReloadKey = F8
 ```
 
 Use the exact folder name. Preserve unrelated existing config sections. The plugin creates this config on its first normal launch. F8 reloads the config/tables and existing labels; restarting also works. Replacing a font binary or restoring a font at a previously missing path requires a restart because fonts are cached. The helper does not change the active game config or launch the game.
+
+## Update an existing language to a newer catalog
+
+Use the canonical catalog and scripts from the same updated kit/plugin release. Preview changes before synchronizing:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\crawl-language-pack\scripts\sync-languages.ps1 -PluginRoot . -Languages es
+powershell -NoProfile -ExecutionPolicy Bypass -File .\crawl-language-pack\scripts\sync-languages.ps1 -PluginRoot . -Languages es -Apply
+```
+
+Omit `-Languages` to check/update all initialized language folders. `-Apply` automatically backs up the catalog and affected complete language folders to a unique `authoring-backups/sync-.../` directory (or `-BackupRoot`), then appends only missing rows with `@TODO`. Existing target cells, comments, spacing, quotes and deliberate empty translations are preserved. Missing tables are created. Repeating a completed sync changes nothing.
+
+Extra, duplicate or misplaced keys block all planned additions. Do not fix an unknown key by automatically adding it to the master: it may be a damaged source or a typo. A maintainer must confirm new runtime-supported sources, add them to the canonical table with English context and `@TODO`, then synchronize. Do not delete removed keys or infer renames; flag them for a reviewed migration. The four Simplified Chinese legacy aliases remain local exceptions and are never propagated.
+
+`sync-languages.ps1 -Check` is a read-only alignment check; missing keys/conflicts fail, pending rows are allowed. Follow synchronization with `check-language.ps1` for translation syntax, placeholders, padding, config and fonts. The standard checker also validates that all catalog targets remain `@TODO`. Sync does not translate text, install files, or change game configuration. When comparing against the backup, distinguish the reported newly added keys from accidental source edits.
 
 ## Back up before translation
 
@@ -53,6 +68,7 @@ Spreadsheet software can silently apply CSV quoting to these raw TSV files. For 
 
 Rules that affect correctness:
 
+- Inverse-font titles use `_` as black masking/padding. Preserve outer underscores; do not replace them with hyphens. Use underscores for spaces within such titles. `@online:title:` and `@progression.prompt-title:` keys affect titles only.
 - Preserve source keys exactly, including case, spaces and punctuation. Runtime matching ignores case and normalizes CRLF/CR to LF, but does not trim other spaces. Avoid duplicate keys, including duplicates across tables.
 - `@TODO` in column 2 means unfinished: the row is ignored, and the UI retains the original English game/mod text. Missing rows/files behave the same way. The runtime never fills gaps from a different language pack. A partially translated shop recipe may fall back as a whole label to avoid broken sentences.
 - Never fill a symbolic key into the translation cell as a placeholder. `@shop.*`, `@progression.*` and `@online:` are lookup identities, not text to show players.

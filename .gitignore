@@ -35,3 +35,6 @@ Thumbs.db
 
 # Reproducible Chinese fallback TTFs; original inputs and final bundle are tracked
 /Fonts/ChineseFallback/
+
+# Durable backups made by language authoring tools
+/authoring-backups/

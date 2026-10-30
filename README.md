@@ -106,7 +106,7 @@ Back up the English catalog and your generated language folder before editing. A
 powershell -NoProfile -ExecutionPolicy Bypass -File .\crawl-language-pack\scripts\new-language.ps1 -PluginRoot . -Language es -DisplayName "Español"
 ```
 
-The script creates `Languages/es/` with 1,488 original-English entries. Translate column 2 from the English in column 1; column 3 provides English context. Leave unfinished targets as `@TODO`. Four legacy input aliases for manually modified Chinese assets are intentionally excluded from new templates.
+The script creates `Languages/es/` with all entries from the canonical English catalog. Translate column 2 from the English in column 1; column 3 provides English context. Leave unfinished targets as `@TODO`. Four legacy input aliases for manually modified Chinese assets are intentionally excluded from new templates.
 
 Tables are **UTF-8 raw TSV**, not quote-aware CSV. Preserve source keys, placeholders, tags, `[A]`/`[B]` markers, escapes, and significant spaces. Do not add wrapping quotes or double existing quotes. Compare the result with your backup and validate it:
 
@@ -168,7 +168,22 @@ Edit the single version line in [VERSION](VERSION), then build normally. Use `ma
 
 The build derives the BepInEx plugin version, four-part assembly/file version, staging directory names, and ZIP names from that value. Generated version source stays under `artifacts/build/`. Builds do not increment the version automatically; rebuilding a version overwrites its corresponding outputs. Record release changes in [CHANGELOG.md](CHANGELOG.md) and commit them with `VERSION` and the related changes.
 
-Maintainers adding supported strings must update the independent English catalog as well as the relevant adapters. Translators edit their target pack, not the catalog baseline. `artifacts/` contains reproducible outputs and is excluded from Git.
+Maintainers add supported source keys and English context to `translator-kit/crawl-language-pack/catalog/*translations.tsv`, keeping **every target cell `@TODO`**, and update runtime adapters where necessary. This is the single source catalog; do not regenerate it from Chinese or another translation. Translators edit their target pack, not this baseline.
+
+Synchronize existing languages from the repository root:
+
+```powershell
+# Preview missing keys and report extra/duplicate/misplaced keys across all languages.
+powershell -NoProfile -ExecutionPolicy Bypass -File .\translator-kit\crawl-language-pack\scripts\sync-languages.ps1 -PluginRoot .
+# Back up affected language folders and the catalog, then append missing @TODO rows.
+powershell -NoProfile -ExecutionPolicy Bypass -File .\translator-kit\crawl-language-pack\scripts\sync-languages.ps1 -PluginRoot . -Apply
+# Read-only check; fails on missing keys or conflicts. Pending @TODO rows are allowed.
+powershell -NoProfile -ExecutionPolicy Bypass -File .\translator-kit\crawl-language-pack\scripts\sync-languages.ps1 -PluginRoot . -Check
+```
+
+Use `-Languages es` to select one language; omit it for all initialized languages. Existing translations, comments, literal quotes, whitespace and deliberate empty targets remain untouched. Missing tables are created; obsolete or unknown rows are reported, never deleted or automatically promoted into the catalog. Resolve conflicting keys before applying any additions. A key rename/removal requires a reviewed migration, not automatic matching by row position.
+
+Backups go to `authoring-backups/sync-<timestamp>-<id>/` by default; `-BackupRoot` can select another durable location outside the catalog and `Languages/`. They contain the pre-sync catalog and affected language folders. No-change runs create no backup. After synchronization, use `check-language.ps1` for translation/placeholder/font validation, and `-RequireComplete` when no `@TODO` is acceptable. Standard tests check catalog alignment for all languages; builds check selected languages even with `-SkipTests`. Neither check modifies files. `artifacts/` contains reproducible outputs and is excluded from Git.
 
 ## Fonts
 
@@ -200,7 +215,7 @@ See the [multilingual font notes](Fonts/Multilingual/README.md) and [font projec
 | `src/` | Plugin, display adapters, translation and font services |
 | `Languages/` | Language tables and runtime configuration |
 | `Fonts/`, `FontBundleProject/` | Font sources, bundles, and Unity font project |
-| `translator-kit/` | English catalog, AI skill, creation and validation scripts |
+| `translator-kit/` | English catalog, AI skill, creation, synchronization and validation scripts |
 | `packaging/` | Instructions copied into release packages |
 | `tests/`, `tools/` | Offline checks, isolated Unity validation, and asset extraction |
 | `docs/` | Image-text inventory and maintenance/testing notes |

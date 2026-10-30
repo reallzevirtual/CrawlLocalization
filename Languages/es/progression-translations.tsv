@@ -1,7 +1,7 @@
 # Original source/key<TAB>translation (@TODO means pending)<TAB>English context
-_End the game?_	¿Terminar la partida?	Pause, evolution and results
+_End the game?_	_¿Terminar la partida?_	Pause, evolution and results
 All progress will be lost, are you sure you want to quit?	Se perderá todo el progreso, ¿seguro que quieres salir?	Pause, evolution and results
-_Exit the tutorial?_	¿Salir del tutorial?	Pause, evolution and results
+_Exit the tutorial?_	_¿Salir del tutorial?_	Pause, evolution and results
 To play the tutorial again, select 'Replay Tutorial' from the options menu. \n\n Are you sure you want to quit?	Para volver a jugar el tutorial, selecciona 'Repetir tutorial' en el menú de opciones. \n\n ¿Seguro que quieres salir?	Pause, evolution and results
 @progression.join-title:{0}:{1}	_J{0}_'{1}'_SE_HA_UNIDO_	Pause notification; original English template: _P{0}_'{1}'_DROPPED_IN_; {0}=player number, {1}=player name (uppercased by the game)
 @progression.leave-title:{0}:{1}	_J{0}_'{1}'_HA_SALIDO_	Pause notification; original English template: _P{0}_'{1}'_DROPPED_OUT_; {0}=player number, {1}=player name (uppercased by the game)
@@ -48,3 +48,6 @@ Of Nyarlathotep	De Nyarlathotep	Pause, evolution and results; sharedassets0.asse
 Of Yog-Sothoth	De Yog-Sothoth	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
 Of Azathoth	De Azathoth	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
 Omega	Omega	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+@progression.prompt-title:Error	@TODO	Original game dialog title; inverse font: keep underscore padding and use underscores for word spaces
+@progression.prompt-title:Sign Out	@TODO	Original game dialog title; inverse font: keep underscore padding and use underscores for word spaces
+@progression.prompt-title:Achievement Unlocked	@TODO	Original game dialog title; inverse font: keep underscore padding and use underscores for word spaces

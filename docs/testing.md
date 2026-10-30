@@ -8,6 +8,10 @@
 
 ```powershell
 pwsh -NoProfile -File .\tests\test.ps1
+# 待译基准表与各语言键集合校验（只读；允许 @TODO，不允许缺键）：
+powershell -NoProfile -File .\translator-kit\crawl-language-pack\scripts\sync-languages.ps1 -PluginRoot . -Check
+# 同步工具的备份、保留译文、重复运行和冲突回归：
+powershell -NoProfile -File .\tests\check-language-sync.ps1
 # 只读核对已安装CrawlOnline的UI IL，隔离Unity检查显示（不启动游戏）：
 pwsh -NoProfile -File .\tests\check-online-il.ps1
 pwsh -NoProfile -File .\tests\check-online-display.ps1

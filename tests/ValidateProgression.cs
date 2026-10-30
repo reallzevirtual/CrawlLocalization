@@ -26,7 +26,14 @@ public static class ValidateProgression
     static void Prompt(TextMesh title,TextMesh body,string sourceTitle,string sourceBody)
     {
         global::GUIText t=title.GetComponent<global::GUIText>(), b=body.GetComponent<global::GUIText>();
-        Invoke(typeof(PausePromptPatch),"Prefix",sourceTitle,sourceBody,t,b); t.SetText(sourceTitle);b.SetText(sourceBody);
+        object[] scope = { sourceTitle, sourceBody, null };
+        Invoke(typeof(PromptSourcePatch), "Prefix", scope);
+        try
+        {
+            string formatted = sourceTitle.ToUpper().Replace(' ', '_');
+            Invoke(typeof(PausePromptPatch),"Prefix",formatted,sourceBody,t,b); t.SetText(formatted);b.SetText(sourceBody);
+        }
+        finally { Invoke(typeof(PromptSourcePatch), "Finalizer", null, scope[2]); }
     }
     public static void Run()
     {
@@ -42,19 +49,35 @@ public static class ValidateProgression
             title.gameObject.AddComponent<global::GUIText>();body.gameObject.AddComponent<global::GUIText>();
             foreach(Layout layout in catalog.layouts) if(layout.path=="MenuPrompt/Text") { body.fontSize=layout.size;body.characterSize=layout.character_size;body.lineSpacing=layout.line_spacing; }
             Prompt(title,body,"_End the game?_","All progress will be lost, are you sure you want to quit?");
-            Check(title.text=="结束本局游戏？" && body.text.Contains("本局进度"),"Quit text translated before original backdrop sizing");
+            Check(title.text=="_结束本局游戏?_" && body.text.Contains("本局进度"),"Quit text translated before original backdrop sizing");
+            Prompt(title,body,"_Exit the tutorial?_","Exit body");
+            Check(title.text=="_退出教程?_", "Tutorial title uses raw source");
+            foreach(string native in new string[] { "Error", "Sign Out", "Achievement Unlocked" })
+            {
+                Prompt(title,body,native,native);
+                Check(title.text.StartsWith("_") && title.text.EndsWith("_") && ChineseTextWrapper.ContainsChinese(title.text), "Native inverse title: " + native);
+                Check(body.text==native, "Title-only padding does not affect ordinary body text");
+            }
+            object[] outer = { "_End the game?_", "outer", null }, inner = { "Sign Out", "inner", null };
+            Invoke(typeof(PromptSourcePatch), "Prefix", outer); Invoke(typeof(PromptSourcePatch), "Prefix", inner);
+            Exception failure = new Exception("fixture");
+            Check(ReferenceEquals(Invoke(typeof(PromptSourcePatch), "Finalizer", failure, inner[2]), failure) && ReferenceEquals(PromptSourcePatch.Current, outer[2]), "Nested exception preserves exception and outer scope");
+            Invoke(typeof(PromptSourcePatch), "Finalizer", null, outer[2]);
+            Check(PromptSourcePatch.Current==null,"No prompt context leaks");
+            Prompt(title,body,"Unknown mod title", "Unchanged body");
+            Check(title.text=="UNKNOWN_MOD_TITLE" && body.text=="Unchanged body", "Unknown title retains game's formatting");
             for(int i=0;i<4;i++)
             {
-                SystemPlayers.Players[i]=new PlayerData { Name=i==1 ? "READY" : "P"+i };
+                SystemPlayers.Players[i]=new PlayerData { Name=i==1 ? "READY" : i==2 ? "A B_玩家" : "P"+i };
                 SystemPlayers.Players[i].GameData.Deity.Text="Monsters\nare\nStronger";
                 PausePlayerText data=new PausePlayerText(i+1,SystemPlayers.Players[i].Name,"10","Teok","Monsters\nare\nStronger");
                 foreach(bool joined in new bool[] { true,false })
                 {
                     Prompt(title,body,data.OriginalTitle(joined),data.OriginalBody(joined));
-                    Check(title.text.Contains(joined ? "已加入" : "已退出") && body.text.Contains(data.Name),"Player prompt/source snapshot");
+                    Check(title.text.StartsWith("_") && title.text.EndsWith("_") && title.text.Contains(data.Name.ToUpper().Replace(' ','_')) && title.text.Contains(joined ? "已加入" : "已退出") && body.text.Contains(data.Name),"Player prompt/source snapshot");
                     if(joined) Check(body.text.Contains("特奥克") && body.text.Contains("怪物\n更加强大") && body.text.Contains("10"),"Reuse deity terms and level");
                     SystemPlayers.Players[i].Name="CHANGED";
-                    Reload(plugin,root,"en");Check(title.text==data.OriginalTitle(joined) && body.text==data.OriginalBody(joined),"English restores original snapshot, not changed player data");
+                    Reload(plugin,root,"en");Check(title.text==data.OriginalTitle(joined).ToUpper().Replace(' ', '_') && body.text==data.OriginalBody(joined),"English restores original snapshot, not changed player data");
                     Reload(plugin,root,"zh-Hans");Check(body.text.Contains(data.Name),"Chinese reload keeps snapshot");SystemPlayers.Players[i].Name=data.Name;
                 }
             }

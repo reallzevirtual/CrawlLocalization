@@ -42,6 +42,8 @@ if ($explicitLanguages) { $packageName += '-' + ($Languages -join '+') }
 $readmeSource = if ($isChinesePackage) { 'packaging/zh-Hans/README.md' } else { 'packaging/README.md' }
 $defaultFont = if ($isChinesePackage) { 'Fonts/crawl-chinese-fonts.bundle' } else { 'Fonts/crawl-multilingual.bundle' }
 Write-Output ("Package languages: " + ($Languages -join ', ') + "; default font: " + $defaultFont)
+# Catalog drift is a packaging error even when the broader test suite is skipped.
+& (Join-Path $projectRoot 'translator-kit/crawl-language-pack/scripts/sync-languages.ps1') -PluginRoot $projectRoot -Languages $Languages -Check
 if (!$SkipTests) {
     & pwsh -NoProfile -File (Join-Path $projectRoot 'tests\test.ps1')
     if ($LASTEXITCODE -ne 0) { throw 'Offline tests failed.' }

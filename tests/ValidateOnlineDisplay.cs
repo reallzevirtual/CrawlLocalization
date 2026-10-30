@@ -79,6 +79,18 @@ public static class ValidateOnlineDisplay
             plugin.Language = LanguagePack.Load(root, "zh-Hans", plugin.Warn);
         }
     }
+    static void Prompt(global::GUIText title, global::GUIText body, string source, string text)
+    {
+        object[] scope = { source, text, null };
+        Invoke(typeof(PromptSourcePatch), "Prefix", scope);
+        try
+        {
+            string formatted = source.ToUpper().Replace(' ', '_');
+            Invoke(typeof(PausePromptPatch), "Prefix", formatted, text, title, body);
+            title.SetText(formatted); body.SetText(text);
+        }
+        finally { Invoke(typeof(PromptSourcePatch), "Finalizer", null, scope[2]); }
+    }
     public static void Run()
     {
         string root=Directory.GetParent(Directory.GetParent(Application.dataPath).FullName).FullName;
@@ -89,18 +101,35 @@ public static class ValidateOnlineDisplay
         {
             TextMesh title=Mesh(stage,"Title"),body=Mesh(stage,"Text"),button=Mesh(stage,"Button"),panel=Mesh(stage,"Online Lobby Panel");
             global::GUIText t=title.gameObject.AddComponent<global::GUIText>(),b=body.gameObject.AddComponent<global::GUIText>();button.gameObject.AddComponent<global::GUIText>();
+            title.font.name="CrawlInvLarge";
             Font originalTitle=title.font,originalBody=body.font;
             string titleSource=OnlineText.Literal("Play online"),bodySource=OnlineText.Literal("Find a game or host your own.\nHost is P1, others join as P2-P4.");
-            Invoke(typeof(PausePromptPatch),"Prefix",titleSource,bodySource,t,b);t.SetText(titleSource);b.SetText(bodySource);
-            Check(title.text=="联机游戏" && body.text.Contains("房主为 P1"),"Online title/body use existing prompt before backdrop sizing");
+            Prompt(t,b,titleSource,bodySource);
+            Check(title.text=="_联机游戏_" && body.text.Contains("房主为 P1"),"Online title/body use existing prompt before backdrop sizing");
             Check(title.font!=originalTitle && body.font!=originalBody,"Native TextMesh mapped fonts");
             object[] args={body.text,132f,body,null};Check(!(bool)Invoke(typeof(MenuChineseWrapPatch),"Prefix",args),"Online prompt uses existing Chinese wrap");
             body.text=(string)args[3];Check(body.GetComponent<Renderer>().bounds.size.x<=132.01f,"Intro body fits original prompt width");
             MenuTextMenuItem item=button.gameObject.AddComponent<MenuTextMenuItem>();MenuTextMenuItemData data=new MenuTextMenuItemData{m_text=OnlineText.Literal("Server list"),m_message="OnAction"};
             Invoke(typeof(MenuInitialisePatch),"Prefix",item,data);button.GetComponent<global::GUIText>().SetText(data.m_text);
             Check(button.text=="服务器列表" && data.m_text=="Server list" && data.m_message=="OnAction","Button display changes; source/action identifier retained");
-            Reload(plugin,root,"en");Check(title.text=="Play online" && body.text==bodySource && title.font==originalTitle,"English reload restores source and font");
-            Reload(plugin,root,"zh-Hans");Check(title.text=="联机游戏" && button.text=="服务器列表","Chinese reload without reconstructing prompt");
+            Reload(plugin,root,"en");Check(title.text=="PLAY_ONLINE" && body.text==bodySource && title.font==originalTitle,"English reload restores source and font");
+            Reload(plugin,root,"zh-Hans");Check(title.text=="_联机游戏_" && button.text=="服务器列表","Chinese reload without reconstructing prompt");
+            foreach (string source in new string[] { "Host lobby", "Server list", "Online lobby", "Close the lobby?", "Online" })
+            {
+                Prompt(t,b,OnlineText.Literal(source),"Unchanged body");
+                Check(title.text.StartsWith("_") && title.text.EndsWith("_") && ChineseTextWrapper.ContainsChinese(title.text), "Inverse online title: " + source);
+                Reload(plugin,root,"en");
+                Check(title.text==source.ToUpper().Replace(' ','_'), "English title formatting restored: " + source);
+                Reload(plugin,root,"zh-Hans");
+            }
+            foreach (string locale in new string[] { "es", "ru" })
+            {
+                Reload(plugin,root,locale); Prompt(t,b,OnlineText.Literal("Server list"),"Unchanged body");
+                Check(title.text.StartsWith("_") && title.text.EndsWith("_") && !title.text.Contains(" ") && !ChineseTextWrapper.ContainsChinese(title.text), "Other languages preserve inverse spaces/padding: " + locale);
+            }
+            Reload(plugin,root,"zh-Hans");
+            Prompt(t,b,"Play online","Unknown mod body");
+            Check(title.text=="PLAY_ONLINE", "Unmarked mod title does not use CrawlOnline table");
             string roster=OnlineText.ConcatArray(new object[]{OnlineText.Literal("P"),1,OnlineText.Literal("  "),"Public",OnlineText.Literal("  (host)")});
             b.SetText(roster);Check(body.text=="P1  Public  (房主)","Live lobby body keeps literal-like player name");
             roster=OnlineText.ConcatArray(new object[]{OnlineText.Literal("P"),2,OnlineText.Literal("  "),"Back",OnlineText.Literal("  "),23,OnlineText.Literal("ms")});

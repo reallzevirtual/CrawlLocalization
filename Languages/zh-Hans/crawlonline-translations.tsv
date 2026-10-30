@@ -134,3 +134,9 @@
 @online:Crawl Online version mismatch: host has 	Crawl Online 版本不一致：房主使用 	CrawlOnline 0.4.0 / ClientSession.HandleWelcome；仅本地显示，动态参数保持原文
 @online:, you have 	，你使用 	CrawlOnline 客户端名单及版本错误；仅显示时处理固定后缀/前缀
 @online:. Use the same version.	。请使用相同版本。	CrawlOnline 0.4.0 / HostSession.HandleHello；仅本地显示，动态参数保持原文
+@online:title:Play online	_联机游戏_	CrawlOnline inverse-font dialog title only; keep underscore padding (black blocks), not hyphens; ordinary buttons use @online:Play online
+@online:title:Host lobby	_创建大厅_	CrawlOnline inverse-font dialog title only; keep underscore padding (black blocks), not hyphens; ordinary buttons use @online:Host lobby
+@online:title:Server list	_服务器列表_	CrawlOnline inverse-font dialog title only; keep underscore padding (black blocks), not hyphens; ordinary buttons use @online:Server list
+@online:title:Online lobby	_联机大厅_	CrawlOnline inverse-font dialog title only; keep underscore padding (black blocks), not hyphens; ordinary buttons use @online:Online lobby
+@online:title:Close the lobby?	_关闭大厅？_	CrawlOnline inverse-font dialog title only; keep underscore padding (black blocks), not hyphens; ordinary buttons use @online:Close the lobby?
+@online:title:Online	_联机游戏_	CrawlOnline inverse-font dialog title only; keep underscore padding (black blocks), not hyphens; ordinary buttons use @online:Online

@@ -48,3 +48,6 @@ Of Nyarlathotep	От Ньярлатхотепа	Pause, evolution and results; sh
 Of Yog-Sothoth	От Йог-Сотота	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
 Of Azathoth	От Азатота	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
 Omega	Омега	Pause, evolution and results; sharedassets0.assets:44080/m_bossKillerNames
+@progression.prompt-title:Error	@TODO	Original game dialog title; inverse font: keep underscore padding and use underscores for word spaces
+@progression.prompt-title:Sign Out	@TODO	Original game dialog title; inverse font: keep underscore padding and use underscores for word spaces
+@progression.prompt-title:Achievement Unlocked	@TODO	Original game dialog title; inverse font: keep underscore padding and use underscores for word spaces

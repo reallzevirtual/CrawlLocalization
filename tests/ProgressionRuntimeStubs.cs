@@ -21,3 +21,5 @@ public static class SystemPlayers
     public static int GetMaxPlayers() { return Players.Length; }
     public static PlayerData GetPlayer(int id) { return Players[id]; }
 }
+
+public class SystemMenu : MonoBehaviour { }

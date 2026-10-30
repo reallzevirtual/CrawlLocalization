@@ -134,3 +134,9 @@
 @online:Crawl Online version mismatch: host has 	@TODO	CrawlOnline UI
 @online:, you have 	@TODO	CrawlOnline UI
 @online:. Use the same version.	@TODO	CrawlOnline UI
+@online:title:Play online	@TODO	CrawlOnline inverse-font dialog title only; keep underscore padding (black blocks), not hyphens; ordinary buttons use @online:Play online
+@online:title:Host lobby	@TODO	CrawlOnline inverse-font dialog title only; keep underscore padding (black blocks), not hyphens; ordinary buttons use @online:Host lobby
+@online:title:Server list	@TODO	CrawlOnline inverse-font dialog title only; keep underscore padding (black blocks), not hyphens; ordinary buttons use @online:Server list
+@online:title:Online lobby	@TODO	CrawlOnline inverse-font dialog title only; keep underscore padding (black blocks), not hyphens; ordinary buttons use @online:Online lobby
+@online:title:Close the lobby?	@TODO	CrawlOnline inverse-font dialog title only; keep underscore padding (black blocks), not hyphens; ordinary buttons use @online:Close the lobby?
+@online:title:Online	@TODO	CrawlOnline inverse-font dialog title only; keep underscore padding (black blocks), not hyphens; ordinary buttons use @online:Online

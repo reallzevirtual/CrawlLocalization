@@ -1,4 +1,4 @@
-﻿param(
+param(
     [Parameter(Mandatory=$true)][string]$PluginRoot,
     [Parameter(Mandatory=$true)][string]$Language,
     [string]$DisplayName,
@@ -19,21 +19,14 @@ $destination=Join-Path $PluginRoot ('Languages\'+$Language)
 if (!(Test-Path -LiteralPath $source -PathType Container)) { throw 'Missing English catalog next to the authoring scripts.' }
 if (Test-Path -LiteralPath $destination) { throw "Language folder already exists; nothing overwritten: $destination" }
 $utf8=[Text.UTF8Encoding]::new($false,$true)
-$tables=@(Get-ChildItem -LiteralPath $source -Filter '*translations.tsv')
-if (!$tables.Count) { throw 'No reference translation tables found.' }
-# Prepare every table in memory before creating a new language directory.
+. (Join-Path $PSScriptRoot 'catalog-common.ps1')
+$catalog=Read-CrawlCatalog $source
+# Validate the complete canonical catalog before creating a language directory.
 $files=@{}
-foreach ($table in $tables) {
-    $lines=[Collections.Generic.List[string]]::new()
-    $lines.Add('# Source/key<TAB>translation (@TODO means not translated)<TAB>English context')
-    foreach ($line in [IO.File]::ReadAllLines($table.FullName,$utf8)) {
-        if (!$line.Trim() -or $line.StartsWith('#')) { continue }
-        $cells=$line.Split("`t")
-        if ($cells.Length -notin @(2,3)) { throw "Malformed reference row in $($table.Name)" }
-        $comment=if ($cells.Length -eq 3) { $cells[2] } else { '' }
-        $lines.Add($cells[0]+"`t@TODO`t"+$comment)
-    }
-    $files[$table.Name]=($lines -join "`n")+"`n"
+foreach ($table in $catalog.Tables.Keys) {
+    $lines=@('# Source/key<TAB>translation (@TODO means not translated)<TAB>English context')
+    $lines+=@($catalog.Tables[$table] | ForEach-Object Line)
+    $files[$table]=($lines -join "`n")+"`n"
 }
 $files['language.ini']="Name=$DisplayName`nFallbackFonts=$FallbackFonts`n"
 $files['fonts.tsv']=[IO.File]::ReadAllText((Join-Path $source 'fonts.tsv'),$utf8)

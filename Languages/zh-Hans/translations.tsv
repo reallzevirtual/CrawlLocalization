@@ -88,8 +88,8 @@ Easter Eggs: OFF	彩蛋：关	选项／动态开关；MenuOptions
 Cabinet Mode: ON	街机模式：开	选项／动态开关；MenuOptions
 Cabinet Mode: OFF	街机模式：关	选项／动态开关；MenuOptions
 Note: Many keyboards do not\nsupport multiple players	注意：许多键盘不支持\n多名玩家同时操作	菜单独立 TextMesh／静态文字；sharedassets0.assets:38034 MenuOptionsKeyboard/TextInfo
-_DROP_IN_	-加入游戏-	菜单独立 TextMesh／静态文字；sharedassets0.assets:38035 MenuPause/MenuDropIn/Title
-_OPTIONS_	-设置-	菜单独立 TextMesh／静态文字；sharedassets0.assets:38067 MenuPause/MenuOptionsPaused/TitleOptions
+_DROP_IN_	_加入游戏_	菜单独立 TextMesh／静态文字；sharedassets0.assets:38035 MenuPause/MenuDropIn/Title
+_OPTIONS_	_设置_	菜单独立 TextMesh／静态文字；sharedassets0.assets:38067 MenuPause/MenuOptionsPaused/TitleOptions
 CONTROLLER_DISCONNECT	手柄连接已断开	菜单独立 TextMesh／静态文字；sharedassets0.assets:38077 MenuControllerDisconnect/TextTitle
 Hold\n button B\n(back\n/special)	按住\nB 键\n（返回／特殊技）	菜单独立 TextMesh／静态文字；sharedassets0.assets:38078 MenuOptionsKeyboard/ContainerBind/TextHold；sharedassets2.assets:240 MenuOptionsCabinet/ContainerBind/TextHold
 The gods reward you\nwith <color=#ea9d1a>gold</color> for damaging \n<color=#d4be9c>opposing heroes</color>.	伤害<color=#d4be9c>其他英雄</color>，\n即可获得诸神赐予的\n<color=#ea9d1a>金币</color>。	菜单独立 TextMesh／静态文字；sharedassets0.assets:38079 MenuPause/MenuTips/Tips/MenuTipGold/Text
@@ -112,14 +112,14 @@ Unexplored room	未探索的房间	菜单独立 TextMesh／静态文字；shared
 MAP	地图	菜单独立 TextMesh／静态文字；sharedassets0.assets:38108 MenuPause/MenuTips/Tips/MenuTipRooms/Text
 must not\nhave\nred shadow	不能有\n红色\n残影	菜单独立 TextMesh／静态文字；sharedassets0.assets:38110 MenuPause/MenuTips/Tips/MenuTipCombat/Text
 Special Move	特殊技	菜单独立 TextMesh／静态文字；sharedassets0.assets:38111 MenuPause/MenuTips/Tips/MenuTipCombat/Text
-_GAME_PAUSED_	-游戏暂停-	菜单独立 TextMesh／静态文字；sharedassets0.assets:38114 MenuPause/MenuPause/Text
+_GAME_PAUSED_	_游戏暂停_	菜单独立 TextMesh／静态文字；sharedassets0.assets:38114 MenuPause/MenuPause/Text
 Offer 5 <color=#ea9d1a>gold</color> to pay passage \nfor the dead and be \nteleported to the blacksmith.\n	献上 5 枚<color=#ea9d1a>金币</color>，\n为亡者支付路费，\n即可传送到铁匠铺。\n	菜单独立 TextMesh／静态文字；sharedassets0.assets:38115 MenuPause/MenuTips/Tips/MenuTipStoreTeleporter/Text
 Earn hero blood (  ) by \ndamaging <color=#d4be9c>opposing heroes</color>.\n	伤害<color=#d4be9c>其他英雄</color>，\n获得英雄之血（  ）。\n	菜单独立 TextMesh／静态文字；sharedassets0.assets:38116 MenuPause/MenuTips/Tips/MenuTipGold/Text
 gold	金币	菜单独立 TextMesh／静态文字；sharedassets0.assets:38117 MenuPause/MenuTips/Tips/MenuTipGold/Text
 change name	更改名字	菜单独立 TextMesh／静态文字；sharedassets0.assets:38119 MenuPause/MenuDropIn/Body/Text
 must have\nthe swirl	必须有\n旋涡标记	菜单独立 TextMesh／静态文字；sharedassets0.assets:38121 MenuPause/MenuTips/Tips/MenuTipCombat/Text
 Attack	攻击	菜单独立 TextMesh／静态文字；sharedassets0.assets:38122 MenuPause/MenuTips/Tips/MenuTipCombat/Text
-_GAMEPLAY_TIPS_	-游戏提示-	菜单独立 TextMesh／静态文字；sharedassets0.assets:38124 MenuPause/MenuTips/Text
+_GAMEPLAY_TIPS_	_游戏提示_	菜单独立 TextMesh／静态文字；sharedassets0.assets:38124 MenuPause/MenuTips/Text
 or press	或按	菜单独立 TextMesh／静态文字；sharedassets0.assets:38125 MenuPause/MenuTips/Tips/MenuTipBlobs/Text
 BLOB	黏液怪	菜单独立 TextMesh／静态文字；sharedassets0.assets:38126 MenuPause/MenuTips/Tips/MenuTipEctoplasm/Text
 into a	变为	菜单独立 TextMesh／静态文字；sharedassets0.assets:38127 MenuPause/MenuTips/Tips/MenuTipEctoplasm/Text

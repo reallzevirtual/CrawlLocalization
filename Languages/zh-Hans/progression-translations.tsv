@@ -3,8 +3,8 @@ _End the game?_	_结束本局游戏?_	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；M
 All progress will be lost, are you sure you want to quit?	本局进度将全部丢失，确定要退出吗？	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
 _Exit the tutorial?_	_退出教程?_	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
 To play the tutorial again, select 'Replay Tutorial' from the options menu. \n\n Are you sure you want to quit?	要再次游玩教程，请在设置菜单中开启「重玩教程」。\n\n确定要退出吗？	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
-@progression.join-title:{0}:{1}	P{0} 「{1}」 已加入	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
-@progression.leave-title:{0}:{1}	P{0} 「{1}」 已退出	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
+@progression.join-title:{0}:{1}	_P{0}_「{1}」_已加入_	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
+@progression.leave-title:{0}:{1}	_P{0}_「{1}」_已退出_	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
 @progression.join-body:{0}:{1}:{2}:{3}:{4}	已作为玩家 {0} 加入，名字为「{1}」\n\n英雄等级：{2}\n信奉：{3}\n（{4}）	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
 @progression.leave-body:{0}:{1}	玩家 {0}（{1}）将由电脑接管。	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
 None	无	MenuPause.MsgDropIn/MsgDropOut/MsgQuit；MenuPrompt.Initialise
@@ -48,3 +48,6 @@ Of Nyarlathotep	奈亚拉托提普之裔	sharedassets0.assets:44080/m_bossKiller
 Of Yog-Sothoth	犹格索托斯之裔	sharedassets0.assets:44080/m_bossKillerNames
 Of Azathoth	阿撒托斯之裔	sharedassets0.assets:44080/m_bossKillerNames
 Omega	欧米伽	sharedassets0.assets:44080/m_bossKillerNames
+@progression.prompt-title:Error	_错误_	Original game dialog title; inverse font: keep underscore padding and use underscores for word spaces
+@progression.prompt-title:Sign Out	_退出登录_	Original game dialog title; inverse font: keep underscore padding and use underscores for word spaces
+@progression.prompt-title:Achievement Unlocked	_成就解锁_	Original game dialog title; inverse font: keep underscore padding and use underscores for word spaces

@@ -134,3 +134,9 @@
 @online:Crawl Online version mismatch: host has 	Несовпадение версий Crawl Online: у хоста 	CrawlOnline UI
 @online:, you have 	, у вас 	CrawlOnline UI
 @online:. Use the same version.	. Используйте одинаковую версию.	CrawlOnline UI
+@online:title:Play online	_Играть_по_сети_	CrawlOnline inverse-font dialog title only; keep underscore padding (black blocks), not hyphens; ordinary buttons use @online:Play online
+@online:title:Host lobby	_Создать_лобби_	CrawlOnline inverse-font dialog title only; keep underscore padding (black blocks), not hyphens; ordinary buttons use @online:Host lobby
+@online:title:Server list	_Список_серверов_	CrawlOnline inverse-font dialog title only; keep underscore padding (black blocks), not hyphens; ordinary buttons use @online:Server list
+@online:title:Online lobby	_СЕТЕВОЕ_ЛОББИ_	CrawlOnline inverse-font dialog title only; keep underscore padding (black blocks), not hyphens; ordinary buttons use @online:Online lobby
+@online:title:Close the lobby?	_Закрыть_лобби?_	CrawlOnline inverse-font dialog title only; keep underscore padding (black blocks), not hyphens; ordinary buttons use @online:Close the lobby?
+@online:title:Online	_СЕТЕВАЯ_ИГРА_	CrawlOnline inverse-font dialog title only; keep underscore padding (black blocks), not hyphens; ordinary buttons use @online:Online

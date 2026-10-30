@@ -84,8 +84,8 @@ Easter Eggs: OFF	@TODO	Menus and settings
 Cabinet Mode: ON	@TODO	Menus and settings
 Cabinet Mode: OFF	@TODO	Menus and settings
 Note: Many keyboards do not\nsupport multiple players	@TODO	Menus and settings; sharedassets0.assets:38034
-_DROP_IN_	@TODO	Menus and settings; sharedassets0.assets:38035
-_OPTIONS_	@TODO	Menus and settings; sharedassets0.assets:38067
+_DROP_IN_	@TODO	Menus and settings; sharedassets0.assets:38035; preserve outer underscores (black masking/padding); use underscores instead of spaces in inverse-font titles
+_OPTIONS_	@TODO	Menus and settings; sharedassets0.assets:38067; preserve outer underscores (black masking/padding); use underscores instead of spaces in inverse-font titles
 CONTROLLER_DISCONNECT	@TODO	Menus and settings; sharedassets0.assets:38077
 Hold\n button B\n(back\n/special)	@TODO	Menus and settings; sharedassets0.assets:38078, sharedassets2.assets:240
 The gods reward you\nwith <color=#ea9d1a>gold</color> for damaging \n<color=#d4be9c>opposing heroes</color>.	@TODO	Menus and settings; sharedassets0.assets:38079
@@ -108,14 +108,14 @@ Unexplored room	@TODO	Menus and settings; sharedassets0.assets:38107
 MAP	@TODO	Menus and settings; sharedassets0.assets:38108
 must not\nhave\nred shadow	@TODO	Menus and settings; sharedassets0.assets:38110
 Special Move	@TODO	Menus and settings; sharedassets0.assets:38111
-_GAME_PAUSED_	@TODO	Menus and settings; sharedassets0.assets:38114
+_GAME_PAUSED_	@TODO	Menus and settings; sharedassets0.assets:38114; preserve outer underscores (black masking/padding); use underscores instead of spaces in inverse-font titles
 Offer 5 <color=#ea9d1a>gold</color> to pay passage \nfor the dead and be \nteleported to the blacksmith.\n	@TODO	Menus and settings; sharedassets0.assets:38115
 Earn hero blood (  ) by \ndamaging <color=#d4be9c>opposing heroes</color>.\n	@TODO	Menus and settings; sharedassets0.assets:38116
 gold	@TODO	Menus and settings; sharedassets0.assets:38117
 change name	@TODO	Menus and settings; sharedassets0.assets:38119
 must have\nthe swirl	@TODO	Menus and settings; sharedassets0.assets:38121
 Attack	@TODO	Menus and settings; sharedassets0.assets:38122
-_GAMEPLAY_TIPS_	@TODO	Menus and settings; sharedassets0.assets:38124
+_GAMEPLAY_TIPS_	@TODO	Menus and settings; sharedassets0.assets:38124; preserve outer underscores (black masking/padding); use underscores instead of spaces in inverse-font titles
 or press	@TODO	Menus and settings; sharedassets0.assets:38125
 BLOB	@TODO	Menus and settings; sharedassets0.assets:38126
 into a	@TODO	Menus and settings; sharedassets0.assets:38127
