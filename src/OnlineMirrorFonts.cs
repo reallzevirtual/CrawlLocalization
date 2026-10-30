@@ -4,7 +4,8 @@ using HarmonyLib;
 using UnityEngine;
 namespace CrawlLocalization
 {
-    // Optional display-only adapter. Never change Entity.State, Dirty, FontId or text.
+    // Display-only adapter for every language pack, independent of the optional addon.
+    // Never change Entity.State, Dirty, FontId or text.
     internal static class OnlineMirrorFonts
     {
         private static FieldInfo puppetField, meshField;

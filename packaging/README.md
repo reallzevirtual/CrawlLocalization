@@ -33,6 +33,9 @@ existing configuration. Missing packs or translations keep the original English.
 Press F8 after editing the configuration or translations. Restart after installing
 or replacing font files. No system font installation or Unity Editor is needed.
 Text baked into images is not translated by these language tables.
+Normal CrawlOnline clients use their selected language pack's fonts without the addon.
+Each player must install the localization plugin and their language fonts locally.
+Received text and layout are preserved; only local fonts and materials are adapted.
 For mixed Chinese/Latin/Cyrillic player names, install the separate optional
 `-CombinedFonts.zip` addon and restart. Remove its `crawl-combined.bundle` to
 restore normal fonts. Player names remain unchanged.

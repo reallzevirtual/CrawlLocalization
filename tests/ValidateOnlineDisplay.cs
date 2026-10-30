@@ -19,6 +19,66 @@ public static class ValidateOnlineDisplay
     static object Invoke(Type type,string method,params object[] args) {return type.GetMethod(method,BindingFlags.Static|BindingFlags.NonPublic).Invoke(null,args);}
     static void Reload(Plugin plugin,string root,string id)
     {plugin.Language=LanguagePack.Load(root,id,plugin.Warn);foreach(LocalizedMenuLabel label in plugin.Labels)label.Refresh();}
+    private sealed class MirrorPuppet { public TextMesh TM; }
+    private sealed class MirrorEntity { public object Puppet; public readonly string State = "untouched"; public uint Dirty = 512; }
+    static void ValidateNormalMirror(string root, Plugin plugin)
+    {
+        Check(!plugin.Fonts.HasCombinedFont, "Ordinary mirror test runs with addon detection disabled");
+        Type adapter = typeof(OnlineMirrorFonts);
+        adapter.GetField("puppetField", BindingFlags.NonPublic | BindingFlags.Static).SetValue(null, typeof(MirrorEntity).GetField("Puppet"));
+        adapter.GetField("meshField", BindingFlags.NonPublic | BindingFlags.Static).SetValue(null, typeof(MirrorPuppet).GetField("TM"));
+        GameObject stage = new GameObject("NormalMirrorValidation");
+        TextMesh mesh = Mesh(stage, "RemoteText");
+        Font original = mesh.font;
+        Renderer renderer = mesh.GetComponent<Renderer>();
+        Material received = new Material(original.material);
+        received.mainTexture = Texture2D.whiteTexture;
+        Texture receivedAtlas = received.mainTexture;
+        MirrorEntity entity = new MirrorEntity { Puppet = new MirrorPuppet { TM = mesh } };
+        try
+        {
+            foreach (string locale in new string[] { "zh-Hans", "ru", "es" })
+            {
+                plugin.Language = LanguagePack.Load(root, locale, plugin.Warn);
+                string text = locale == "zh-Hans" ? "开始游戏" : locale == "ru" ? "НАЧАТЬ ИГРУ" : "INICIAR PARTIDA";
+                foreach (int size in new int[] { 16, 160 })
+                {
+                    Invoke(adapter, "Before", entity);
+                    mesh.font = original; mesh.fontSize = size; mesh.characterSize = size == 16 ? 10f : 1f;
+                    mesh.lineSpacing = .5f; mesh.anchor = TextAnchor.MiddleCenter;
+                    mesh.text = text; renderer.sharedMaterial = received;
+                    Invoke(adapter, "After", entity);
+                    Check(mesh.text == text && mesh.font != original, "Already translated mirror selects local font without addon: " + locale);
+                    Check(Math.Abs(mesh.fontSize * mesh.characterSize - 160f) < .001f, "Received geometry preserved: " + locale);
+                    Check(renderer.sharedMaterial != received && renderer.sharedMaterial.mainTexture == mesh.font.material.mainTexture, "Local font and atlas paired after remote material write: " + locale);
+                    Check(received.mainTexture == receivedAtlas && entity.State == "untouched" && entity.Dirty == 512, "Network state and shared material unchanged: " + locale);
+                    for (int frame = 0; frame < 5; frame++) { Invoke(adapter, "Before", entity); Invoke(adapter, "After", entity); }
+                    Check(Math.Abs(mesh.fontSize * mesh.characterSize - 160f) < .001f && mesh.lineSpacing == .5f && mesh.anchor == TextAnchor.MiddleCenter, "Incremental updates do not accumulate scale or change layout: " + locale);
+                    LocalizedMenuLabel label = mesh.GetComponent<LocalizedMenuLabel>();
+                    label.Refresh();
+                    Check(mesh.text == text && Math.Abs(mesh.fontSize * mesh.characterSize - 160f) < .001f, "Reload retains remote text and geometry: " + locale);
+                    mesh.font.RequestCharactersInTexture(text + "ABC", 240, FontStyle.Bold);
+                    typeof(LocalizedMenuLabel).GetMethod("OnTextureRebuilt", BindingFlags.NonPublic | BindingFlags.Instance).Invoke(label, new object[] { mesh.font });
+                    Check(renderer.sharedMaterial.mainTexture == mesh.font.material.mainTexture, "Mirror atlas remains current after rebuild: " + locale);
+                }
+            }
+            Invoke(adapter, "Before", entity);
+            mesh.text = "READY"; renderer.sharedMaterial = received;
+            Invoke(adapter, "After", entity);
+            Check(mesh.text == "READY" && mesh.font != original, "ASCII player name is mapped without translation");
+            plugin.Language = LanguagePack.Load(root, "en", plugin.Warn);
+            mesh.GetComponent<LocalizedMenuLabel>().Refresh();
+            Check(mesh.text == "READY" && mesh.font == original, "No language mapping restores the received font");
+            Invoke(adapter, "Before", entity); Invoke(adapter, "After", entity);
+            Check(mesh.text == "READY" && renderer.sharedMaterial.mainTexture == original.material.mainTexture, "Unmapped mirror still repairs its atlas");
+        }
+        finally
+        {
+            UnityEngine.Object.DestroyImmediate(stage);
+            UnityEngine.Object.DestroyImmediate(received);
+            plugin.Language = LanguagePack.Load(root, "zh-Hans", plugin.Warn);
+        }
+    }
     public static void Run()
     {
         string root=Directory.GetParent(Directory.GetParent(Application.dataPath).FullName).FullName;
@@ -65,6 +125,7 @@ public static class ValidateOnlineDisplay
             GUIStyle automatic=new GUIStyle(style);automatic.fontSize=0;prepare=new object[]{OnlineText.Literal("Play online"),automatic};Invoke(typeof(OnlineOverlay),"Prepare",prepare);
             Check(((GUIStyle)prepare[1]).fontSize==12 && automatic.fontSize==0,"Default IMGUI size does not inherit system font's 32px creation size");
             Reload(plugin,root,"en");prepare=new object[]{OnlineText.Literal("Play online"),style};Check((string)Invoke(typeof(OnlineOverlay),"Prepare",prepare)=="Play online" && ReferenceEquals(prepare[1],style),"IMGUI English retains original style");
+            ValidateNormalMirror(root, plugin);
             ValidateCombinedFont.Run(root, plugin);
             string report="PASS: "+checks+" native CrawlOnline display/font/reload checks, including "+terms+" scoped table entries. Unity 5.4 components and fonts are real; game GUIText entry points are test doubles. No game or network session started.";
             File.WriteAllText(Path.Combine(root,"artifacts/online-display/result.txt"),report);Debug.Log("CRAWL_ONLINE_DISPLAY_OK\n"+report);

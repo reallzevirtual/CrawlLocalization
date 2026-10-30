@@ -77,6 +77,22 @@ namespace CrawlLocalization
             return false;
         }
 
+        // The host already selected the text and geometry. Choose the client's local
+        // matching font without translating again or applying the pack's scale twice.
+        // The combined addon is optional; normal language mappings work on their own.
+        internal bool TryChooseMirror(LanguagePack language, Font original, int size, FontStyle style, string text, out FontChoice choice)
+        {
+            choice = null;
+            if (TryCombined(original == null ? null : original.name, size, style, text, false, out choice)) return true;
+            FontRule rule;
+            if (!language.Fonts.TryGetValue(original == null ? "" : original.name, out rule) && !language.Fonts.TryGetValue("*", out rule)) return false;
+            Font candidate = Load(rule);
+            int requested = SamplingSize(language, size, text);
+            if (!Covers(candidate, text, requested, style)) return false;
+            choice = new FontChoice { Font = candidate, Size = requested, Style = style, Scale = (float)size / requested };
+            return true;
+        }
+
         // Optional addon only: never look up or translate a player's raw name.
         internal bool TryChooseUntranslated(LanguagePack language, Font original, int size, FontStyle style, string text, out FontChoice choice)
         {

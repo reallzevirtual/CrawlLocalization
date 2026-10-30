@@ -61,7 +61,7 @@ python .\tools\export_menu_texts.py --game-path '你的 Crawl 目录' --output a
 
 普通 `build-fonts.ps1` 使用原始 `Fonts/*.ttf` 重建中文字体；加 `-Combined` 才将同款通用字形补入生成目录 `Fonts/ChineseFallback/`，打包为 `Fonts/crawl-combined.bundle`。原始中文输入不改。`package-combined-fonts.ps1` 只打包这一份可选字体及说明、许可。
 
-`tests/check_bundle.py --game-path <游戏目录>` 验证标准中文字体；加 `--combined` 验证合并字体的内嵌 TTF、混合字符覆盖及原始布局参数。`tests/check-online-display.ps1` 验证可选字体真实 Unity TextMesh 显示、原始字形尺寸、名字保持原文、语言切换和镜像材质处理。镜像调用使用夹具，实际模组接口由 `check-online-il.ps1` 只读检查；不启动游戏或网络会话。
+`tests/check_bundle.py --game-path <游戏目录>` 验证标准中文字体；加 `--combined` 验证合并字体的内嵌 TTF、混合字符覆盖及原始布局参数。`tests/check-online-display.ps1` 同时验证不启用合并字体时的中文/俄语/西班牙语客户端字体映射、已翻译原文保留、同步字号比例、重复更新及材质覆盖，并验证可选字体真实 Unity TextMesh 显示、原始字形尺寸、名字保持原文、语言切换和镜像材质处理。镜像调用使用夹具，实际模组接口由 `check-online-il.ps1` 只读检查；不启动游戏或网络会话。
 
 `tests/test.ps1` 检查 addon 缺席时原行为、存在时直接选用合并字体、删除后恢复以及损坏时返回默认字体。`tests/check-packages.py` 同时检查普通、中文、制作、可选字体四个 ZIP 的精确内容。
 

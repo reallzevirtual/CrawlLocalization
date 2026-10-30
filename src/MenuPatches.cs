@@ -182,7 +182,9 @@ namespace CrawlLocalization
                     display = translated;
                     return display;
                 }
-                if (plugin.Fonts.TryChooseUntranslated(plugin.Language, originalFont, size, originalStyle, source, out choice))
+                if (mirrored
+                    ? plugin.Fonts.TryChooseMirror(plugin.Language, originalFont, size, originalStyle, source, out choice)
+                    : plugin.Fonts.TryChooseUntranslated(plugin.Language, originalFont, size, originalStyle, source, out choice))
                 {
                     Apply(choice);
                     display = source;

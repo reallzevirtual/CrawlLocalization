@@ -95,12 +95,12 @@ public static class ValidateCombinedFont
             typeof(LocalizedMenuLabel).GetMethod("OnTextureRebuilt",BindingFlags.NonPublic|BindingFlags.Instance).Invoke(label,new object[]{player.font});
             Check(renderer.sharedMaterial==active && active.mainTexture==player.font.material.mainTexture,"Atlas rebuild retains private material and refreshes texture");
             Invoke(adapter,"Before",entity);player.text="READY";Invoke(adapter,"After",entity);
-            Check(player.text=="READY" && player.font==ascii.Font && renderer.sharedMaterial==shared,"Mirror restores ASCII font without translating a name");
+            Check(player.text=="READY" && player.font!=ascii.Font && player.fontSize==16 && player.characterSize==10 && renderer.sharedMaterial.mainTexture==player.font.material.mainTexture,"Mirror uses selected font for ASCII without translating a name");
             Invoke(adapter,"Before",entity);
             Material mismatched=new Material(shared);mismatched.mainTexture=Texture2D.whiteTexture;
             renderer.sharedMaterial=mismatched;
             Invoke(adapter,"After",entity);
-            Check(player.font==ascii.Font && renderer.sharedMaterial!=mismatched && renderer.sharedMaterial.mainTexture==ascii.Font.material.mainTexture && mismatched.mainTexture==Texture2D.whiteTexture,"Mirror fixes a mismatched atlas even when the selected Font object is unchanged");
+            Check(player.font!=ascii.Font && renderer.sharedMaterial!=mismatched && renderer.sharedMaterial.mainTexture==player.font.material.mainTexture && mismatched.mainTexture==Texture2D.whiteTexture,"Mirror fixes a mismatched atlas without modifying the received material");
             Invoke(adapter,"Before",entity);renderer.sharedMaterial=shared;Invoke(adapter,"After",entity);
             UnityEngine.Object.DestroyImmediate(mismatched);
             GUIStyle style=new GUIStyle();style.font=ascii.Font;style.fontSize=12;

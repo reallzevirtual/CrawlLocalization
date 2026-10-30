@@ -250,6 +250,18 @@ namespace CrawlLocalization
                     Check(!service.HasCombinedFont, "No optional addon is enabled in normal packages");
                     Check(service.TryChoose(pack, original, 16, UnityEngine.FontStyle.Normal, "Яñ", out choice) && choice.Font == mapped, "Normal language mapping remains unchanged");
                     Check(!service.TryChooseUntranslated(pack, original, 16, UnityEngine.FontStyle.Normal, "中文Я", out choice), "Normal packages do not intercept unlocalized names");
+                    Check(service.TryChooseMirror(pack, original, 16, UnityEngine.FontStyle.Normal, "Яñ", out choice) && choice.Font == mapped && choice.Size == 16 && choice.Scale == 1f, "Mirror uses current language bundle without addon");
+                    Check(service.TryChooseMirror(pack, original, 160, UnityEngine.FontStyle.Normal, "READY", out choice) && choice.Font == mapped && choice.Size == 160 && choice.Scale == 1f, "Mirror also maps already-rendered ASCII text");
+                    pack.Fonts["CrawlSmall"].Scale = 2f;
+                    Check(service.TryChooseMirror(pack, original, 160, UnityEngine.FontStyle.Normal, "Яñ", out choice) && choice.Scale == 1f, "Mirror does not apply host layout scale a second time");
+                    pack.Fonts["CrawlSmall"].Scale = 1f;
+                    Check(!service.TryChooseMirror(pack, original, 16, UnityEngine.FontStyle.Normal, "中文Я", out choice), "Normal mirror does not implicitly load a Chinese or combined bundle");
+                    mapped.Characters += "中文";
+                    pack.Id = "zh-Hans";
+                    Check(service.TryChooseMirror(pack, original, 16, UnityEngine.FontStyle.Normal, "中文", out choice) && choice.Size == 160 && Math.Abs(choice.Scale - .1f) < .001f, "Chinese mirror sampling preserves received geometry");
+                    Check(service.TryChooseMirror(pack, original, 160, UnityEngine.FontStyle.Normal, "中文", out choice) && choice.Size == 160 && choice.Scale == 1f, "Already sampled host text is not enlarged again");
+                    pack.Id = "ru";
+                    mapped.Characters = "READYЯñ";
                 }
                 File.WriteAllText(combinedPath, "test");
                 using (FontService service = new FontService(messages.Add, messages.Add, root))
