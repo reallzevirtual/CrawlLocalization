@@ -1,200 +1,224 @@
 # Crawl Localization
 
-用于 **Windows 版 Crawl（Unity 5.4.2）** 的 BepInEx 5 本地化插件。当前提供简体中文、西班牙语和俄语，支持通过独立语言包添加其他语言，并为 **CrawlOnline 0.4.0** 提供可选界面翻译。当前插件版本由根目录 [VERSION](VERSION) 统一管理。
+A **BepInEx 5** localization plugin for **Crawl on Windows (Unity 5.4.2)**. Available language packs include Simplified Chinese, Spanish, and Russian. Additional languages can be created by editing external translation tables and font mappings, without rebuilding the plugin.
 
-本地化在本机显示层生效。插件使用外置译文表和字体资源，在内存中适配显示入口；保留游戏的原始标识、存档数据、随机选择及交互回调，不需要手动修改游戏 assets 或磁盘上的 DLL。
+The plugin also adapts the menus and text rendering of **CrawlOnline 0.4.0**. **During online play, mirrored game text follows the host's language. Different clients cannot currently select independent languages for that text.** See [CrawlOnline limitations](#crawlonline-limitations) before organizing a session with players using different languages.
 
-[更新记录](CHANGELOG.md) · [翻译技能与语言包规范](translator-kit/crawl-language-pack/SKILL.md) · [图片文字清单](docs/image-text.md) · [检查与资源导出](docs/testing.md)
+The current version is defined in [VERSION](VERSION). The plugin patches display code in memory; installation does not require editing game assets or DLLs on disk. Game identifiers, save data, random choices, and interaction callbacks are preserved.
 
-## 功能与范围
+[Changelog](CHANGELOG.md) · [Language pack guide / AI skill](translator-kit/crawl-language-pack/SKILL.md) · [Image-based text inventory](docs/image-text.md) · [Testing and extraction](docs/testing.md)
 
-- 主菜单、设置、键盘重绑、宝库图鉴和成就。
-- 邪神选择、挑衅试炼、开局提示、章节编号及随机楼层名称。
-- 商店武器、技能、遗物、药水及购买提示；常驻玩家装备面板。
-- 游戏内交互、暂停确认、怪物升级、首领登场和结算文字。
-- 序章教程消息和操作提示。
-- 安装 CrawlOnline 时的联机菜单、服务器列表、大厅和 F1 面板。
+## Supported content
 
-商店随机名称与描述沿用游戏的拼接顺序，翻译实际使用的文本片段。未知内容或缺少所需片段时保留原文。玩家名、房间名、地址、版本号和游戏数值不作为普通词条翻译。
+- Main menu, settings, keyboard bindings, Vault entries, and achievements.
+- God selection, challenges, opening tips, chapter numbers, and floor names.
+- Shop weapons, abilities, relics, potions, purchase prompts, and the equipment panel.
+- Gameplay interactions, pause confirmations, monster upgrades, boss introductions, and results.
+- Prologue tutorial messages and control prompts.
+- CrawlOnline menus, server list, lobby, and F1 overlay when the mod is installed.
 
-插件只处理已适配的文字入口，不自动覆盖所有 TextMesh、MonoBehaviour 或其他模组。`PROLOGUE`、`SALVATION`、部分升级／治疗／怒气反馈等属于图片文字，目前保留原图，详见[清单](docs/image-text.md)。CrawlOnline 更新或其他模组改写相同入口时，可能需要追加适配。
+Random weapon names and descriptions retain the game's composition order and translate the individual fragments. Unknown or unsupported content falls back to its source text. Player names, room names, addresses, version numbers, and game values are not translated as ordinary catalog entries.
 
-## 安装与更新
+Coverage is limited to adapted display paths; the plugin does not automatically translate every TextMesh, MonoBehaviour, or third-party mod. Text baked into images, including `PROLOGUE`, `SALVATION`, and some combat feedback, remains unchanged. See the [image-text inventory](docs/image-text.md). Updates to CrawlOnline or mods that change the same methods may require additional compatibility work.
 
-玩家需要 Windows 版 Crawl，以及与游戏匹配的 **BepInEx 5（32 位）**。使用发行包不需要 .NET SDK、Python 或 Unity Editor。
+## Install or update
 
-1. 安装并确认 BepInEx 能正常加载。
-2. 选择多语言包 `CrawlLocalization-<版本号>.zip`（全部非中文语言），或中文包 `CrawlLocalization-<版本号>-zh-Hans.zip`。关闭游戏，将所选包解压到 `Crawl/BepInEx/plugins/CrawlLocalization/`。
-3. 启动游戏生成配置；多语言包需将 `Language` 设置为 `es`、`ru` 或所需语言目录名。中文包使用 `zh-Hans`。旧配置不会自动改变。
+Requires Crawl for Windows and **BepInEx 5 (32-bit)**. Players do not need a .NET SDK, Python, or Unity Editor.
 
-以中文包为例，安装后的结构应为：
+1. Install BepInEx and confirm that it loads successfully.
+2. Close the game. Choose the default player ZIP for non-Chinese languages, or the separate `-zh-Hans.zip` for Simplified Chinese.
+3. Extract the package into `Crawl/BepInEx/plugins/CrawlLocalization/`.
+4. Launch the game to create the configuration, then select an installed language as described below. Existing configuration is not overwritten automatically.
+
+For example, the default player package contains:
 
 ```text
 Crawl/
 └─ BepInEx/
    └─ plugins/
       └─ CrawlLocalization/
+         ├─ README.md
          ├─ CrawlLocalization.dll
          ├─ Languages/
-         │  └─ zh-Hans/
-         │     ├─ language.ini
-         │     ├─ fonts.tsv
-         │     ├─ textmesh-paths.txt
-         │     └─ …translations.tsv
+         │  ├─ es/
+         │  └─ ru/
          └─ Fonts/
-            ├─ crawl-chinese-fonts.bundle
             ├─ crawl-multilingual.bundle
-            └─ …字体许可与来源说明
+            └─ (font license and notice files)
 ```
 
-更新前备份自己改过的语言包，再覆盖 DLL、语言数据和字体文件，重启游戏。避免多放一份旧 DLL，或多套一层解压目录。CrawlOnline 是可选模组；本地化包不包含它，也不要求安装它。
+The Chinese package instead contains `Languages/zh-Hans/` and `Fonts/crawl-chinese-fonts.bundle`. Each language folder includes translation tables, `language.ini`, `fonts.tsv`, and `textmesh-paths.txt`; keep these runtime files together.
 
-卸载时关闭游戏并移走 `BepInEx/plugins/CrawlLocalization/`。配置文件可以保留，或删除 `BepInEx/config/crawl.localization.cfg`。
+Back up any edited language files before updating. Replace the DLL, language files, and required fonts, then restart. Avoid duplicate plugin DLLs or an extra nested extraction directory. CrawlOnline is optional and is not included in these packages.
 
-## 配置与使用
+To uninstall, close the game and remove the `CrawlLocalization` plugin folder. You may also remove `BepInEx/config/crawl.localization.cfg`.
 
-配置位置：`Crawl/BepInEx/config/crawl.localization.cfg`。
+## Configuration
+
+Configuration file: `Crawl/BepInEx/config/crawl.localization.cfg`.
 
 ```ini
 [General]
-Language = zh-Hans
+Language = es
 ReloadKey = F8
 ```
 
-| 设置值 | 行为 |
+| Value | Behavior |
 | --- | --- |
-| `zh-Hans`、`zh-CN` | 使用简体中文包 |
-| `zh-Hant`、`zh-TW` | 使用独立繁体包，需要自行安装；默认发行包不包含 |
-| `es`、`ru` 等 | 读取 `Languages/` 下对应目录 |
-| `en` | 使用游戏原文和原字体 |
+| `es`, `ru`, or another language tag | Load the matching folder under `Languages/` |
+| `zh-Hans` or `zh-CN` | Load the Simplified Chinese pack |
+| `zh-Hant` or `zh-TW` | Load a separately installed Traditional Chinese pack; not included by default |
+| `en` | Keep original game/mod text locally; see the online limitation below |
 
-语言包互相独立。缺失词条、待译项或未安装的语言包保留原游戏／模组英文，不回退中文。原文模式不会撤销此前手动修改过的游戏资源。
+A fresh configuration defaults to `zh-Hans`; users of the non-Chinese package must select their language explicitly. Language packs are independent: missing entries, `@TODO` targets, or missing packs retain the original game/mod English instead of falling back to Chinese. This local fallback does not convert translated text received from an online host back to English. Original-text mode also cannot undo manually modified game assets.
 
-编辑配置或译文后按 **F8**，可重载并刷新已绑定文字；`ReloadKey = None` 可关闭快捷键。替换字体文件或补回先前缺失的字体文件后，需要重启游戏。
+Press **F8** after editing the configuration or translation tables to reload bound labels. Set `ReloadKey = None` to disable the shortcut. Restart after installing or replacing font files.
 
-重玩教程开关可能显示“开（当前模式禁用）”：表示设置已保存，但当前模式限制了教程启动。本插件保留原游戏和 CrawlOnline 的教程限制。
+The replay-tutorial option may indicate that it is enabled but unavailable in the current mode. This reflects the existing game/CrawlOnline tutorial restrictions.
+
+## CrawlOnline limitations
+
+**The host's language determines the game text seen by connected clients.** CrawlOnline 0.4.0 captures the host's rendered scene, including final TextMesh strings and layout parameters, and reconstructs it on each client. This applies to mirrored game menus, shop descriptions, prompts, and similar scene text, not just player names.
+
+For example, a Spanish-language host sends Spanish weapon names and descriptions. A client configured for Chinese still receives and displays those Spanish strings. The client's own connection UI and F1 overlay can use its local language, but the mirrored game text is not translated again.
+
+Since 0.14.4, clients adapt mirrored text to their current language pack's fonts and local font materials without requiring the combined-font addon. Received text and layout are retained, and language-pack scaling is not applied a second time. For a session using the same supported language, each player should install the current plugin and the corresponding language/font pack.
+
+### Recommendation for players using different languages
+
+**For now, use the original English game text when playing together.** Set `Language = en` on the host and every client and restart, or disable this localization plugin for that session. Use unmodified English game assets. Changing only a client's language to English cannot override translated strings sent by the host.
+
+The optional combined-font addon can display a wider range of characters, such as mixed Chinese, Latin, and Cyrillic names. **It does not translate between languages or enable independent client languages.**
+
+### Planned development
+
+A separate development branch is planned for localization specifically supporting players who use different languages in the same CrawlOnline session. The intended approach is to provide original text or translation identifiers and dynamic parameters alongside the display information, allowing each supported client to translate and lay out text in its own language while preserving player names.
+
+This is planned work, not a feature of the current release. Protocol compatibility, clients without localization support, and missing translations will need explicit fallback behavior. No release date is committed.
 
 ## Create another language
 
-Use `CrawlLocalization-<version>-Translator.zip`. It contains the DLL, an independent original-English catalog, `crawl-language-pack/SKILL.md`, and creation/checking scripts. It includes only the Latin/Cyrillic font bundle, with no Chinese translations or Chinese comments. The default player package includes non-Chinese language packs; Simplified Chinese has its own separate player package.
+Use `CrawlLocalization-<version>-Translator.zip`. It includes the DLL, an independent original-English catalog, the multilingual font bundle, `crawl-language-pack/SKILL.md`, and creation/checking scripts. It contains no Chinese translations or Chinese reference comments.
 
-Before editing, back up the English catalog and your generated language folder. Ask an AI to read the skill and specify the target language, or run this in the extracted translator package:
+Back up the English catalog and your generated language folder before editing. Ask an AI to read the skill and specify the target language, or run this inside the extracted translator package:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\crawl-language-pack\scripts\new-language.ps1 -PluginRoot . -Language es -DisplayName "Español"
 ```
 
-The script creates `Languages/es/` with 1,488 original-English entries. Translate column 2 from the English in column 1; column 3 provides English context. Unfinished targets remain `@TODO` and display original English. Four input aliases retained for old manually modified Chinese game assets are intentionally excluded from new templates.
+The script creates `Languages/es/` with 1,488 original-English entries. Translate column 2 from the English in column 1; column 3 provides English context. Leave unfinished targets as `@TODO`. Four legacy input aliases for manually modified Chinese assets are intentionally excluded from new templates.
 
-Tables are UTF-8 raw TSV, not quote-aware CSV. Preserve source keys, placeholders, tags, `[A]`/`[B]` markers, escapes and significant spaces. Do not add wrapping quotes or double existing quotes. Compare saved files with the pre-edit backup and run:
+Tables are **UTF-8 raw TSV**, not quote-aware CSV. Preserve source keys, placeholders, tags, `[A]`/`[B]` markers, escapes, and significant spaces. Do not add wrapping quotes or double existing quotes. Compare the result with your backup and validate it:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\crawl-language-pack\scripts\check-language.ps1 -PluginRoot . -Language es
 ```
 
-Add `-RequireComplete` when the language should be fully translated. The checker reads the independent `catalog/` next to its scripts, so it can detect edited source keys without consulting any translated pack. Keep that catalog unchanged during translation. In a source checkout the scripts are under `translator-kit/crawl-language-pack/scripts/`.
+Add `-RequireComplete` when the pack should be fully translated. The checker uses the independent `catalog/` beside its scripts; keep this English baseline unchanged during translation. In a source checkout, the scripts are under `translator-kit/crawl-language-pack/scripts/`.
 
-Set `Language = es` in `BepInEx/config/crawl.localization.cfg`, then press F8 or restart. The template maps the ten game font styles to `Fonts/crawl-multilingual.bundle`; distribute the multilingual bundle and its license/notice files. Mixed Chinese/Latin/Cyrillic names require the separate optional CombinedFonts addon (0.14.3+). Russian letters and Spanish accents are checked. Missing glyphs try the original font and configured fallback families. If none covers a translated label, its original English text is retained. Configure `fonts.tsv` and `language.ini` as needed and retain `textmesh-paths.txt`. Chinese-specific layout rules do not apply to other languages; other scripts' layout and glyph coverage still need in-game validation.
+Set `Language = es`, then press F8 or restart. The template maps the ten game font styles to `Fonts/crawl-multilingual.bundle`. Russian letters and Spanish accents have been checked; other scripts and layouts require suitable fonts and in-game verification. Chinese-specific wrapping and punctuation rules do not apply to other languages.
 
-No DLL rebuild is needed. Share the language directory, required fonts and language setting. Detailed table semantics, font configuration and backup workflow are in the [language pack skill](translator-kit/crawl-language-pack/SKILL.md).
+No DLL rebuild is needed to add translations. Distribute the language directory, required fonts and notices, and instructions for selecting the language. Retain `language.ini`, `fonts.tsv`, and `textmesh-paths.txt`. Detailed formats, backup procedures, and font configuration are in the [language pack skill](translator-kit/crawl-language-pack/SKILL.md).
 
-## 从源码构建与打包
+## Build and package
 
-构建环境需要：
+Requirements:
 
-- **PowerShell 7** 与 **.NET SDK**（提供 C# 编译器）。
-- 本机 Crawl 游戏文件，以及其 `BepInEx/core/` 中的 BepInEx 5 和 Harmony 程序集。
-- 仓库自带的 `Fonts/crawl-multilingual.bundle` 及许可说明和 `Fonts/crawl-chinese-fonts.bundle`。使用现成字体包不需要 Unity Editor。
+- **PowerShell 7** and a **.NET SDK** providing the C# compiler.
+- A local Crawl installation and the BepInEx 5 / Harmony assemblies under its `BepInEx/core/` directory.
+- The prebuilt font bundles and associated notices included in this repository. Unity Editor is not required to package them.
 
-构建使用游戏自己的 Mono / Unity 引用程序集，无需 NuGet。在项目根目录运行：
+Builds use the game's Mono/Unity reference assemblies and do not require NuGet. Run from the repository root, supplying your game path as needed:
 
 ```powershell
+# All non-Chinese packs (currently es and ru), plus the translator kit.
 pwsh -NoProfile -File .\build.ps1 -GamePath 'D:\SteamLibrary\steamapps\common\Crawl'
-```
 
-默认流程为：**离线检查 → 编译 DLL → 打包全部非中文语言和通用字体 → 生成玩家 ZIP 与制作包 ZIP**。不会自动安装或启动游戏。
-
-```powershell
-# 全部非中文语言，目前为 es、ru；新增非中文语言目录会自动纳入
-pwsh -NoProfile -File .\build.ps1
-
-# 只收录中文语言和原来的中文字体
+# Simplified Chinese only, with the Chinese font bundle.
 pwsh -NoProfile -File .\build.ps1 -Languages zh-Hans
 
-# 显式选择非中文语言子集
+# A selected non-Chinese pack, plus the translator kit.
 pwsh -NoProfile -File .\build.ps1 -Languages ru
+
+# Package the existing optional combined font separately.
+pwsh -NoProfile -File .\package-combined-fonts.ps1
 ```
 
-| 输出 | 用途 |
+The normal build runs offline checks, compiles the DLL, and creates ZIPs. It does not install the plugin or launch the game.
+
+| Output under `artifacts/` | Contents |
 | --- | --- |
-| `artifacts/CrawlLocalization-<版本号>.zip` | 默认玩家包：全部非中文语言、通用字体、全英文 README |
-| `artifacts/CrawlLocalization-<版本号>-zh-Hans.zip` | 中文玩家包：仅中文语言，只附带中文字体；全中文 README，无制作其他语言的说明 |
-| `artifacts/CrawlLocalization-<版本号>-CombinedFonts.zip` | 单独运行 `package-combined-fonts.ps1` 生成的可选合并字体包，无 DLL 和译文 |
-| `artifacts/CrawlLocalization-<版本号>-ru.zip` | 显式选择单个非中文语言时的独立玩家包 |
-| `artifacts/CrawlLocalization-<版本号>-Translator.zip` | 非中文构建另行生成的英文制作包：原文目录、通用字体和工具，无现成译文 |
+| `CrawlLocalization-<version>.zip` | All non-Chinese language packs, their mapped fonts, and an English player README |
+| `CrawlLocalization-<version>-zh-Hans.zip` | Simplified Chinese only, the Chinese font bundle, and a Chinese player README |
+| `CrawlLocalization-<version>-ru.zip` | An explicitly selected language pack; the suffix reflects the selection |
+| `CrawlLocalization-<version>-Translator.zip` | English source catalog, authoring tools, DLL, and multilingual font bundle; no translated packs |
+| `CrawlLocalization-<version>-CombinedFonts.zip` | Optional combined font, notices, and instructions; no DLL or translations |
 
-暂存目录与对应玩家 ZIP 同名（不含 `.zip`），每次构建只重建所选包的暂存内容。默认包和中文包可以同时保留，不互相覆盖。中文构建不会生成或改写 Translator 包。
+Normal player builds include the fonts referenced by the selected language mappings. The current Chinese package contains only the Chinese bundle; the current non-Chinese package and translator kit contain only the multilingual bundle. The combined addon is never included automatically.
 
-README 源文件分别为[英文玩家说明](packaging/README.md)、[中文玩家说明](packaging/zh-Hans/README.md)、[英文制作说明](packaging/translator/README.md)，打包时直接复制。玩家包只带运行所需的 DLL、语言文件、字体及相关许可，不带源码、docs、测试或源 TTF。
+To select multiple non-Chinese packs in PowerShell 7, use `.\build.ps1 -Languages @('es', 'ru')`. Chinese and non-Chinese packs must be built separately. A Chinese build does not generate or replace the translator kit.
 
-`-Languages` 支持在 PowerShell 7 终端传入数组，例如 `.\build.ps1 -Languages @('es', 'ru')`。中文与非中文混合选择会报错，应分开构建。三种发行包均附带 `crawl-chinese-fonts.bundle` 和 `crawl-multilingual.bundle`；其他语言专用字体按其映射附加。
+Staging folders have the same names as their player ZIPs without the extension. Player packages exclude source code, `docs/`, tests, and source TTFs. Package README files are copied from [English player instructions](packaging/README.md), [Chinese player instructions](packaging/zh-Hans/README.md), and [English authoring instructions](packaging/translator/README.md).
 
-制作包始终从独立英文 `catalog/` 打包，与玩家包的译文无关。维护者新增适配词条时需同步更新英文目录；普通翻译只改目标语言，不改目录基线。
+Use `-Install` only when you want to install the build into the specified game directory, with the game closed. It backs up the existing plugin folder under `artifacts/backups/` before copying files and does not launch the game. `-SkipTests` skips offline checks; normal builds should keep them enabled.
 
-需要构建后自动安装时，先关闭游戏：
+## Versioning and maintenance
+
+Edit the single version line in [VERSION](VERSION), then build normally. Use `major.minor.patch`, without a `v` prefix or prerelease suffix; each component must be between 0 and 65534. Translation corrections generally increment the patch version.
+
+The build derives the BepInEx plugin version, four-part assembly/file version, staging directory names, and ZIP names from that value. Generated version source stays under `artifacts/build/`. Builds do not increment the version automatically; rebuilding a version overwrites its corresponding outputs. Record release changes in [CHANGELOG.md](CHANGELOG.md) and commit them with `VERSION` and the related changes.
+
+Maintainers adding supported strings must update the independent English catalog as well as the relevant adapters. Translators edit their target pack, not the catalog baseline. `artifacts/` contains reproducible outputs and is excluded from Git.
+
+## Fonts
+
+For ordinary local translations, selection proceeds through the language's font mapping, the game's original font, and configured system fallback families. If no suitable font can render the translated label, the original text is retained. There is no automatic fallback between the Chinese and multilingual bundles, and no `.coverage.tsv` metadata is required.
+
+For mixed-script names, install the separate `-CombinedFonts.zip` into the plugin directory and restart. When `Fonts/crawl-combined.bundle` is present, the plugin prefers its matching font styles. Remove that bundle and restart to restore normal font selection. This changes character coverage, not the online language limitation described above.
+
+The combined fonts preserve the existing glyphs and layout metrics while adding Chinese, Latin, and Cyrillic coverage. Coverage is not guaranteed for every rare character, emoji, or complex script. Higher-resolution Han rendering uses compensating geometry scaling; it does not enable Chinese wrapping rules for other languages.
+
+Rebuilding font bundles requires an activated **Unity 5.4.2f2** editor, Python, UnityPy, and fontTools as required by the scripts:
 
 ```powershell
-pwsh -NoProfile -File .\build.ps1 -GamePath '你的 Crawl 目录' -Install
+# Rebuild the standard Chinese bundle.
+pwsh -NoProfile -File .\build-fonts.ps1 -UnityPath 'C:\Program Files\Unity\Hub\Editor\5.4.2f2\Editor\Unity.exe'
+
+# Rebuild the optional combined bundle.
+pwsh -NoProfile -File .\build-fonts.ps1 -Combined
+
+# Rebuild the multilingual bundle independently.
+pwsh -NoProfile -File .\build-multilingual-fonts.ps1
 ```
 
-`-Install` 会先把现有插件目录备份到 `artifacts/backups/`，然后复制构建结果，不启动游戏。`-SkipTests` 可跳过离线检查，常规构建建议保持默认检查。
+See the [multilingual font notes](Fonts/Multilingual/README.md) and [font project instructions](FontBundleProject/README.md) for generation, layout preservation, and old-editor compatibility. Do not upgrade the font project with a newer Unity version.
 
-## 发布新版本
+## Project layout and verification
 
-只需修改根目录 `VERSION` 的一行版本号，例如将 `0.13.0` 改为 `0.13.1`，再正常运行 `build.ps1`。格式固定为 `主版本.次版本.修订号`，不带 `v` 前缀或预发布后缀，每段范围为 0–65534。
+| Directory | Purpose |
+| --- | --- |
+| `src/` | Plugin, display adapters, translation and font services |
+| `Languages/` | Language tables and runtime configuration |
+| `Fonts/`, `FontBundleProject/` | Font sources, bundles, and Unity font project |
+| `translator-kit/` | English catalog, AI skill, creation and validation scripts |
+| `packaging/` | Instructions copied into release packages |
+| `tests/`, `tools/` | Offline checks, isolated Unity validation, and asset extraction |
+| `docs/` | Image-text inventory and maintenance/testing notes |
+| `artifacts/` | Ignored build outputs, logs, and generated files |
 
-构建会自动使用同一版本生成 BepInEx 插件版本、四段程序集／文件版本（如 `0.13.1.0`）、暂存目录和各发行 ZIP 名称。版本源码生成在 `artifacts/build/`，不修改 `src/`，也不会进入发行包。删除 `artifacts/` 后可重新生成。
-
-修改翻译通常递增修订号，例如 `0.13.0 → 0.13.1`。版本由维护者决定，普通构建不会自动加一；同一版本重复构建会覆盖对应暂存目录和 ZIP。发布时还需在 [CHANGELOG](CHANGELOG.md) 记录变更，并提交 `VERSION` 与相关修改。技能中的“0.13.0 或更新版本”是最低兼容要求，不随当前版本同步修改。
-
-## 字体、检查与项目结构
-
-默认包仅附带所选语言映射的字体：中文包使用原来的 `crawl-chinese-fonts.bundle`；其它语言玩家包和通用制作包仅附带 `crawl-multilingual.bundle`。正常字体选择为本语言映射 → 游戏原字体 → 配置的系统备用字体；失败时恢复原文。不再跨两份包内字体自动回退，也不使用 `.coverage.tsv`。
-
-普通 CrawlOnline 联机的客户端会使用自己当前语言包的字体，无需合并字体包；每位玩家都需要在本机安装本地化插件和对应字体。客户端保留房主同步的文字及布局，仅适配本地字体和材质。
-
-需要中俄西混排昵称时，可另外下载 `-CombinedFonts.zip`，解压到插件目录并重启。检测到 `Fonts/crawl-combined.bundle` 后，插件直接优先使用这一个合并字体包，包含十款原字体对应样式；无需改翻译表或配置。名字保持原文，CrawlOnline 客户端只调整显示字体／材质。删除这个 bundle 并重启即可恢复默认行为。
-
-合并字体保留原有字形、字宽、基线和行距，补齐中文与拉丁／俄文字形；不保证所有罕见字、emoji 或复杂排版。汉字的高采样配合反向缩放，不会给其它语言启用中文换行／标点规则。
-
-仅在替换字体源文件或重做 bundle 时，才需要已激活的 **Unity 5.4.2f2**、Python 和 UnityPy：
+Run routine offline checks with:
 
 ```powershell
-pwsh -NoProfile -File .\build-fonts.ps1 -UnityPath '你的 Unity 5.4.2f2\Editor\Unity.exe'
+pwsh -NoProfile -File .\tests\test.ps1
 ```
 
-可选合并字体：`pwsh -NoProfile -File build-fonts.ps1 -Combined`，再运行 `pwsh -NoProfile -File package-combined-fonts.ps1` 生成独立下载 ZIP。正常 `build.ps1` 不会包含它。
+Choose additional checks based on the change; see [testing and extraction](docs/testing.md). Isolated Unity tests do not replace real gameplay, interaction, animation, or multiplayer testing.
 
-通用多语言字体独立构建：`pwsh -NoProfile -File .\build-multilingual-fonts.ps1`，需要 Python 的 fontTools、UnityPy。制作步骤、字重和覆盖范围见[通用字体说明](Fonts/Multilingual/README.md)。此命令不会改动中文字体。
+## Troubleshooting
 
-旧编辑器兼容参数、字体布局恢复与验证方法见[字体工程说明](FontBundleProject/README.md)。不要用新版本 Unity 升级该工程。
-
-| 目录 | 内容 |
-| --- | --- |
-| `src/` | BepInEx 插件、显示适配与语言／字体服务 |
-| `Languages/` | 各语言的译文和运行配置 |
-| `Fonts/`、`FontBundleProject/` | 字体源、已构建 bundle 和字体工程 |
-| `translator-kit/` | 翻译技能、模板生成和校验脚本 |
-| `packaging/` | 随发行包复制的简短说明 |
-| `tests/`、`tools/` | 离线检查、独立 Unity 验证和资源导出 |
-| `docs/` | 图片文字清单与维护检查指南 |
-| `artifacts/` | 构建结果、检查日志和生成文件，不提交 Git |
-
-日常离线检查可运行 `pwsh -NoProfile -File .\tests\test.ps1`。其他检查按改动选择，见[检查与资源导出](docs/testing.md)。游戏内的位置、动画、输入及模组组合仍需实际验证。
-
-## 常见问题
-
-- **没有翻译：** 检查 DLL 路径、配置的语言目录及表格第一列；部分图片文字本来就未替换。
-- **方框、英文回退或字体没更新：** 查看字体文件、映射与备用字体，替换字体后重启。新增汉字也应检查字形覆盖。
-- **修改表格后报错或漏译：** 对照备份检查引号、制表符、占位符与转义，再运行校验脚本。
-- **需要诊断信息：** 查看 `BepInEx/LogOutput.log` 中的插件版本、语言、字体加载或回退警告。`Loaded embedded font` 表示加载包内字体，`Created font by family (file identity unverified)` 表示按系统家族名称创建字体。
+- **No translations:** check the DLL location, selected language folder, and source keys. Some image-based text is intentionally unchanged.
+- **Unexpected language online:** mirrored game text follows the host. Selecting another language on the client does not translate it again.
+- **Large text on a client:** ensure the client has version 0.14.4 or later and its required font bundle, then restart. Normal same-language sessions do not require the combined addon.
+- **Missing glyphs or unchanged fonts:** check font files and mappings, restart after replacements, and verify glyph coverage for newly added characters.
+- **Broken tables or missing entries after editing:** compare with the backup, check tabs, quotes, placeholders, and escapes, then run the language checker.
+- **Diagnostics:** inspect `BepInEx/LogOutput.log` for the plugin version, selected language, and font warnings. `Loaded embedded font` identifies a bundled font; `Created font by family (file identity unverified)` identifies a system-family lookup.
