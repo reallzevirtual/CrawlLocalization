@@ -144,3 +144,39 @@ python .\tools\export_progression_texts.py --game-path 'D:\SteamLibrary\steamapp
 ## ex2D 帧图调查（2026-10-29）
 
 可运行 `python tools/inspect_ex2d_frames.py --game-path <Crawl目录> --output artifacts/ex2d-audit`，导出六个代表动画的逐帧原画布 PNG、帧时长/事件及对照图。已确认序章标题为“空白帧＋标题图”，Follow ?为两帧问号闪烁，+WRATH为12帧、SALVATION为30个时间帧且含音效事件。字体生成图片可作为素材来源；保留原播放器及事件，仅替换显示资源的方案可行，但当前尚未实现图片本地化适配。
+
+
+<a id="shrine-feedback"></a>
+
+## 祭坛、书台与台座的交互结果（2026-10-30）
+
+已根据 `PropActionable.m_spawnOnAction` 和 `Effect.m_alsoSpawn` 追踪实际调用链，并导出帧图目视确认。用户报告的 `FOLLOWER / FOR ONE BATTLE` 和祭坛的 `WEAPON ENCHANTED / FOR ONE BATTLE` 均为 **ex2D 图片动画**，不是遗漏的 TextMesh 文本。以下五个标题对象及其子对象都没有 TextMesh；每个动画均有 10 个时间帧，标题与 `FOR ONE BATTLE` 都已画在图集中。
+
+所有 PathID 均位于 `Crawl_Data/sharedassets0.assets`：
+
+| 图片中的文字 | GameObject PathID / 名称 | Clip PathID | 图集元素 |
+| --- | --- | --- | --- |
+| FOLLOWER / FOR ONE BATTLE | 4401 / FX_Screen_Title_Follower_OneBattle | 42430 | bless_curse_screen_21…30 |
+| WEAPON ENCHANTED / FOR ONE BATTLE | 4400 / FX_Screen_Title_EnchantedWeapon_OneBattle | 42429 | bless_curse_screen_41…50 |
+| BLESSED / FOR ONE BATTLE | 4399 / FX_Screen_Title_Blessed_OneBattle | 42428 | bless_curse_screen_01…10 |
+| BLEED / FOR ONE BATTLE | 4398 / FX_Screen_Title_Bleed_OneBattle | 42427 | bless_curse_screen_71…80 |
+| HEAL IN BLOOD / FOR ONE BATTLE | 4402 / FX_Screen_Title_HealInBlood_OneBattle | 42431 | bless_curse_screen_61…70 |
+
+已确认的交互链：
+
+- 火焰/冰霜台座 `PropActionable_PodiumFlame`（58445）、`PropActionable_PodiumIce`（58446），以及三种书台（56679–56681）直接生成 4401，播放 FOLLOWER 标题。
+- 鲜血/火焰/绿焰/泪水祭坛（56691、56692、56696、56697）生成 `FX_Collect_Enchant`（GameObject 2514，Clip 42423）；其 Effect 49724 的 `m_alsoSpawn` 指向 4400，再播放 WEAPON ENCHANTED 标题。不能只导出最先生成的粒子特效，否则会漏掉真正的文字图片。
+- 三种宝石祭坛（56693–56695）经 `FX_Collect_Bless`（2511）生成 4399，播放 BLESSED 标题。
+- 两种墓碑（56698、56699）分别经 `FX_Collect_BlessBleed`（2512）、`FX_Collect_BlessHealInBlood`（2513）生成 4398、4402，播放 BLEED 和 HEAL IN BLOOD 标题。
+
+这里的交互结果图片与按键提示是两类显示：`DRINK BLOOD`、`DRINK TEARS`、`WORSHIP`、`STUDY`、`DECIPHER` 等按键提示已经在 `gameplay-translations.tsv` 中提供译文，并由 `GUIActionIndicator.SetText` 适配。添加这些标题的 TSV 行或换字体，不能改变图片中的英文。
+
+重现帧图导出：
+
+```powershell
+python tools/inspect_ex2d_frames.py --game-path 'D:\SteamLibrary\steamapps\common\Crawl' --output artifacts/shrine-feedback --clip-ids 42427 42428 42429 42430 42431 42423
+```
+
+`--clip-ids` 指定 `sharedassets0.assets` 内的动画 Clip PathID；省略时仍导出原先的六个代表动画。输出包括还原原画布的 PNG、对照图、帧时长、图集元素和动画事件。
+
+帧图及引用调查保存在本地排除版本控制的 `docs/my/shrine-feedback-2026-10-30/`。本次只补充调查工具和图片清单，未改变运行时代码、译文或游戏资源。后续图片汉化应保留原动画事件（声音、慢动作开始/结束）、帧时长、锚点和画布布局，仅替换文字图像；图片范围仍暂不实现。

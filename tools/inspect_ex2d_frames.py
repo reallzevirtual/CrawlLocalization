@@ -9,6 +9,8 @@ from PIL import Image,ImageDraw
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--game-path',type=Path,required=True)
 parser.add_argument('--output',type=Path,required=True)
+parser.add_argument('--clip-ids',type=int,nargs='+',default=[43859,40843,40765,43845,40735,42380],
+                    help='exSpriteAnimClip PathIDs in sharedassets0.assets; defaults to the representative audit set')
 a=parser.parse_args();a.output.mkdir(parents=True,exist_ok=True)
 gen=TypeTreeGenerator('5.4.2f2');gen.load_local_game(str(a.game_path))
 files={};schemas={};atlases={};textures={}
@@ -30,7 +32,7 @@ def schema(cls):
   schemas[cls]=TypeTreeNode.from_list(rows)
  return schemas[cls]
 report=[]
-for pid in [43859,40843,40765,43845,40735,42380]:
+for pid in a.clip_ids:
  obj=objects('sharedassets0.assets')[pid];clip=obj.read_typetree(schema('exSpriteAnimClip'))
  frames=[];info={'path_id':pid,'name':clip['m_Name'],'length':clip['length'],'wrap_mode':clip['wrapMode'],'stop_action':clip['stopAction'],'events':clip['eventInfos'],'frames':[]}
  for frame in clip['frameInfos']:
