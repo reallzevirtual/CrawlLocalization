@@ -180,3 +180,22 @@ python tools/inspect_ex2d_frames.py --game-path 'D:\SteamLibrary\steamapps\commo
 `--clip-ids` 指定 `sharedassets0.assets` 内的动画 Clip PathID；省略时仍导出原先的六个代表动画。输出包括还原原画布的 PNG、对照图、帧时长、图集元素和动画事件。
 
 帧图及引用调查保存在本地排除版本控制的 `docs/my/shrine-feedback-2026-10-30/`。本次只补充调查工具和图片清单，未改变运行时代码、译文或游戏资源。后续图片汉化应保留原动画事件（声音、慢动作开始/结束）、帧时长、锚点和画布布局，仅替换文字图像；图片范围仍暂不实现。
+
+## HUMANITY REGAINED（2026-10-30）
+
+击杀英雄、夺回人类形态时的 `HUMANITY REGAINED` 也是 ex2D 图集动画，不是 TextMesh 字符串。已导出四组帧图并查看蓝色版本，文字、闪光和装饰直接画在图片里；每种颜色均有 19 个时间帧，对应 19 个不同图集元素，长度约 3.517 秒，另有 3 个声音事件。
+
+所有资源均位于 `sharedassets0.assets`：
+
+| 颜色 | GameObject PathID | exSpriteAnimation PathID | Clip PathID / 名称 | 图集元素 |
+| --- | --- | --- | --- | --- |
+| 蓝 | 4881 | 57974 | 40727 / HumanityRegainedBlue | humReg_blue_01…19 |
+| 绿 | 4882 | 57975 | 40728 / HumanityRegainedGreen | humReg_green_01…19 |
+| 红 | 4883 | 57976 | 40729 / HumanityRegainedRed | humReg_red_01…19 |
+| 黄 | 4884 | 57977 | 40730 / HumanityRegainedYellow | humReg_yellow_01…19 |
+
+```powershell
+python tools/inspect_ex2d_frames.py --game-path 'D:\SteamLibrary\steamapps\common\Crawl' --output artifacts/humanity-regained --clip-ids 40727 40728 40729 40730
+```
+
+调查帧图保存在 `docs/my/humanity-regained-2026-10-30/`，共 76 张单帧 PNG 和四张对照图。按当前范围保留英文图片；未来替换时需要处理四种颜色，并保留各动画自己的帧时长和声音事件。不要与首领结算的 `HumanityStolen2Lines`（40731）混为一组。
